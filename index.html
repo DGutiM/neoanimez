@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NeoAnimeZ</title>
+<meta property="og:title" content="NeoAnimeZ">
+<meta property="og:description" content="Tu buscador de anime de confianza">
+<meta property="og:image" content="preview.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NeoAnimeZ">
+<meta name="twitter:description" content="Tu buscador de anime de confianza">
+<meta name="twitter:image" content="preview.png">
+<meta name="theme-color" content="#08080f">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="NeoAnimeZ">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#08080f; --surface:#0e0e1a; --surface2:#141426;
+  --border:rgba(255,255,255,0.07);
+  --pink:#ff2d78; --cyan:#00d4ff; --purple:#7b4fff;
+  --text:#e8e8f0; --muted:#6b6b8a;
+  --radius:14px; --nav:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;overscroll-behavior:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--purple);border-radius:4px}
+
+header{
+  position:sticky;top:0;z-index:100;
+  background:linear-gradient(180deg, rgba(8,8,15,.96), rgba(8,8,15,.88));
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:12px 18px 10px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
+}
+header::after{
+  content:"";
+  position:absolute;left:18px;right:18px;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,.35),rgba(123,79,255,.35),transparent);
+  opacity:.55;
+}
+header img{height:62px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(0,0,0,.28));transition:transform .22s ease, filter .22s ease, opacity .22s ease}
+.header-home-btn{cursor:pointer;transition:transform .18s ease, opacity .18s ease}
+.header-home-btn:hover img{transform:scale(1.02);filter:drop-shadow(0 10px 26px rgba(0,0,0,.34))}
+.header-home-btn:active img{transform:scale(.985);opacity:.92}
+.logo-fallback{font-family:'Orbitron',monospace;font-size:22px;font-weight:900;background:linear-gradient(90deg,#ff2d78,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+body.screen-transitioning .screen{pointer-events:none}
+body.intro-open{overflow:hidden}
+#intro-screen{
+  position:fixed;
+  inset:0;
+  z-index:350;
+  min-height:100dvh;
+  width:100%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:88px 16px calc(var(--nav) + 24px);
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,.12), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 26%),
+    linear-gradient(180deg, rgba(8,8,15,.985), rgba(8,8,15,.97));
+}
+#intro-screen.active{display:flex}
+#intro-screen.fade-in{animation:introFadeIn .3s ease forwards}
+#intro-screen.fade-out{animation:introFadeOut .22s ease forwards}
+@keyframes introFadeIn{from{opacity:0;transform:scale(.992)}to{opacity:1;transform:scale(1)}}
+@keyframes introFadeOut{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.992)}}
+.screen.fade-out{animation:screenFadeOut .22s ease forwards}
+.screen.fade-in{animation:screenFadeIn .28s ease forwards}
+@keyframes screenFadeOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(12px) scale(.992)}}
+@keyframes screenFadeIn{from{opacity:0;transform:translateY(14px) scale(.992)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* SCREENS */
+.screen{
+  display:none;
+  padding-bottom:max(
+    calc(var(--nav) + 150px),
+    calc(var(--nav) + env(safe-area-inset-bottom) + 110px)
+  );
+  animation:fadeUp .28s ease
+}
+.screen.active{display:block}
+#chat-screen{display:none;flex-direction:column;height:calc(100dvh - 66px - var(--nav))}
+#chat-screen.active{display:flex}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* CHAT */
+.chat-messages{flex:1;overflow-y:auto;padding:16px 16px 8px;display:flex;flex-direction:column;gap:14px}
+.chat-welcome{text-align:center;padding:28px 16px 12px}
+.chat-welcome .icon{font-size:42px;margin-bottom:10px}
+.chat-welcome h2{font-family:'Orbitron',monospace;font-size:14px;font-weight:700;margin-bottom:8px}
+.chat-welcome p{font-size:14px;color:var(--muted);line-height:1.7}
+
+.quick-prompts{display:flex;flex-wrap:wrap;gap:8px;padding:4px 16px 12px;justify-content:center}
+.qbtn{
+  background:var(--surface2);border:1px solid var(--border);border-radius:20px;
+  padding:8px 14px;font-family:'Rajdhani',sans-serif;font-size:13px;color:var(--text);
+  cursor:pointer;transition:border-color .2s,color .2s;
+}
+.qbtn:hover{border-color:var(--cyan);color:var(--cyan)}
+
+.msg{display:flex;gap:10px;animation:fadeUp .2s ease}
+.msg.user{flex-direction:row-reverse}
+.avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px}
+.msg.bot .avatar{background:linear-gradient(135deg,var(--purple),var(--cyan))}
+.msg.user .avatar{background:linear-gradient(135deg,var(--pink),var(--purple))}
+.bubble{max-width:82%;padding:11px 15px;border-radius:18px;line-height:1.5;font-size:15px}
+.msg.bot .bubble{background:var(--surface2);border:1px solid var(--border);border-top-left-radius:4px}
+.msg.user .bubble{background:linear-gradient(135deg,var(--purple),var(--pink));border-top-right-radius:4px;color:#fff}
+
+.rec-cards{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.rec-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:10px 12px;display:flex;gap:10px;align-items:flex-start;transition:border-color .2s;
+}
+.rec-card:hover{border-color:var(--cyan)}
+.rec-img{width:50px;height:70px;border-radius:8px;object-fit:cover;background:var(--surface2);flex-shrink:0}
+.rec-num{font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:.08em;margin-bottom:2px}
+.rec-title{font-family:'Orbitron',monospace;font-size:10px;font-weight:700;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rec-why{font-size:13px;line-height:1.4;color:var(--text);margin-bottom:5px}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;background:rgba(123,79,255,.15);color:var(--cyan);border:1px solid rgba(0,212,255,.15)}
+
+.typing-dots{display:flex;gap:4px;align-items:center}
+.typing-dots span{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+
+.chat-input-area{
+  padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));
+  background:var(--surface);border-top:1px solid var(--border);
+  display:flex;gap:10px;align-items:flex-end;flex-shrink:0;
+}
+.chat-input{
+  flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:22px;
+  padding:10px 16px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:15px;
+  resize:none;max-height:96px;outline:none;transition:border-color .2s;line-height:1.4;
+}
+.chat-input:focus{border-color:var(--purple)}
+.chat-input::placeholder{color:var(--muted)}
+.send-btn{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:transform .15s,opacity .15s;
+}
+.send-btn:hover{transform:scale(1.06)}
+.send-btn:active{transform:scale(.93);opacity:.8}
+.send-btn svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+
+/* INTRO */
+#intro-screen{
+  align-items:center;
+  justify-content:center;
+}
+.intro-card{scroll-margin-top:0;
+  width:100%;
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 28%),
+    linear-gradient(180deg, rgba(22,22,40,.98), rgba(12,12,24,.98));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:30px 22px;
+  text-align:center;
+  box-shadow:0 24px 48px rgba(0,0,0,.30);
+}
+.intro-logo{
+  width:min(100%, 360px);
+  max-height:220px;
+  object-fit:contain;
+  margin:0 auto 18px;
+  display:block;
+}
+.intro-title{
+  font-family:'Orbitron',monospace;
+  font-size:24px;
+  line-height:1.18;
+  margin-bottom:10px;
+  letter-spacing:.02em;
+}
+.intro-sub{
+  font-size:15px;
+  color:#a8a8c2;
+  line-height:1.65;
+  margin-bottom:22px;
+  max-width:34ch;
+  margin-inline:auto;
+}
+.intro-start{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:#fff;
+  font-family:'Orbitron',monospace;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  cursor:pointer;
+  transition:transform .18s, opacity .2s, box-shadow .2s;
+  box-shadow:0 16px 34px rgba(123,79,255,.28);
+}
+.intro-start:hover{opacity:.92;transform:translateY(-1px)}
+.intro-start:active{transform:translateY(0);opacity:.82}
+.pre-search-note{
+  text-align:center;
+  padding:34px 18px;
+  color:var(--muted);
+  line-height:1.7;
+  border:1px dashed rgba(255,255,255,.08);
+  border-radius:18px;
+  background:rgba(20,20,38,.55);
+}
+
+/* FILTERS */
+#filter-screen{padding:16px}
+.sec-head{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:14px}
+.glow{height:1px;background:linear-gradient(90deg,transparent,var(--cyan),var(--purple),transparent);margin-bottom:16px;opacity:.35}
+
+.filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.fg label{display:block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8c8ca9;margin-bottom:7px}
+.fsel{
+  width:100%;background:linear-gradient(180deg, rgba(22,22,40,.96), rgba(15,15,28,.96));border:1px solid rgba(255,255,255,.08);border-radius:14px;
+  padding:12px 14px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;
+  outline:none;appearance:none; box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;cursor:pointer;transition:border-color .2s;
+}
+.fsel:focus{border-color:var(--purple)}
+.fsel option{background:#0e0e1a}
+.full{grid-column:1/-1}
+
+.apply-btn{
+  width:100%;padding:16px;background:linear-gradient(135deg,var(--purple),var(--pink));
+  border:none;border-radius:18px;color:#fff;
+  font-family:'Orbitron',monospace;font-size:12px;font-weight:700;letter-spacing:.14em;
+  cursor:pointer;transition:opacity .2s,transform .15s, box-shadow .2s;margin-bottom:20px;
+  box-shadow:0 16px 34px rgba(255,45,120,.18);
+}
+.apply-btn:hover{opacity:.9;transform:translateY(-1px)}
+.apply-btn:active{transform:translateY(0);opacity:.8}
+
+.fresults{display:flex;flex-direction:column;gap:10px;padding-bottom:36px}
+.fcard{
+  background:linear-gradient(180deg, rgba(20,20,38,.96), rgba(14,14,26,.98));
+  border:1px solid rgba(255,255,255,.07);border-radius:18px;
+  padding:13px;display:flex;gap:12px;align-items:flex-start;
+  transition:border-color .2s, transform .2s, box-shadow .2s;animation:fadeUp .22s ease;
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+}
+.fcard:hover{border-color:rgba(123,79,255,.58);transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.22)}
+.fcard-img{width:58px;height:82px;border-radius:10px;object-fit:cover;background:var(--surface);flex-shrink:0;box-shadow:0 10px 22px rgba(0,0,0,.26)}
+.fcard-title{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.03em}
+.fcard-meta{font-size:12px;color:#9a9ab4;margin-bottom:6px}
+.fcard-desc{font-size:13px;color:var(--text);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.no-res{text-align:center;padding:42px 20px;color:#a2a2bd;font-size:15px;line-height:1.8;background:linear-gradient(180deg, rgba(20,20,38,.72), rgba(14,14,26,.82));border:1px dashed rgba(255,255,255,.08);border-radius:18px}
+
+/* RANKING */
+#ranking-screen,#shop-screen{padding:16px}
+.rlist{display:flex;flex-direction:column;gap:11px;padding-bottom:36px}
+.rcard{
+  background:linear-gradient(180deg, rgba(20,20,38,.96), rgba(14,14,26,.98));border:1px solid rgba(255,255,255,.07);border-radius:18px;
+  padding:13px;display:flex;gap:13px;align-items:center;
+  transition:border-color .2s,transform .2s, box-shadow .2s;
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+}
+.rcard:hover{border-color:rgba(0,212,255,.55);transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.22)}
+.rnum{font-family:'Orbitron',monospace;font-size:24px;font-weight:900;width:34px;text-align:center;flex-shrink:0;color:transparent;-webkit-text-stroke:1px;opacity:.9}
+.rcard:nth-child(1) .rnum{-webkit-text-stroke-color:#ffd700}
+.rcard:nth-child(2) .rnum{-webkit-text-stroke-color:#c0c0c0}
+.rcard:nth-child(3) .rnum{-webkit-text-stroke-color:#cd7f32}
+.rcard:nth-child(n+4) .rnum{-webkit-text-stroke-color:var(--muted)}
+.rimg{width:58px;height:82px;border-radius:10px;object-fit:cover;background:var(--surface);flex-shrink:0;box-shadow:0 10px 22px rgba(0,0,0,.26)}
+.rinfo{flex:1;min-width:0}
+.rtitle{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;margin-bottom:5px;letter-spacing:.03em}
+.rgenres{font-size:12px;color:var(--muted);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rdesc{font-size:13px;line-height:1.4;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+.bottom-spacer{
+  height:max(
+    calc(var(--nav) + 110px),
+    calc(var(--nav) + env(safe-area-inset-bottom) + 80px)
+  );
+  pointer-events:none;
+}
+
+/* NAV */
+nav{
+  position:fixed;bottom:0;left:0;right:0;height:calc(var(--nav) + env(safe-area-inset-bottom));
+  background:rgba(8,8,15,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);display:flex;z-index:200;
+  padding-bottom:env(safe-area-inset-bottom);
+  box-shadow:0 -10px 30px rgba(0,0,0,.35);
+}
+nav::before{
+  content:"";
+  position:absolute;
+  top:-30px;
+  left:0;
+  right:0;
+  height:30px;
+  background:linear-gradient(to top, rgba(8,8,15,1), transparent);
+  pointer-events:none;
+}
+
+.nbtn{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  background:none;border:none;color:var(--muted);
+  font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:color .2s;padding:8px;
+}
+.nbtn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nbtn.active{color:var(--cyan)}
+.nbtn:hover{color:var(--text)}
+
+/* SHOP */
+.shop-card{
+  margin-bottom:36px;
+  background:
+    radial-gradient(circle at top left, rgba(0,212,255,.10), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 28%),
+    linear-gradient(180deg, rgba(20,20,38,.96), rgba(12,12,24,.98));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:26px 18px 22px;
+  text-align:center;
+  box-shadow:0 18px 36px rgba(0,0,0,.22);
+}
+.shop-icon{
+  width:86px;height:86px;margin:0 auto 16px;border-radius:24px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg, rgba(123,79,255,.24), rgba(0,212,255,.16));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 18px 34px rgba(0,0,0,.22);
+}
+.shop-icon svg{width:42px;height:42px;stroke:var(--cyan);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.shop-title{font-family:'Orbitron',monospace;font-size:18px;margin-bottom:8px;letter-spacing:.04em}
+.shop-sub{font-size:15px;color:#a7a7c1;line-height:1.7;max-width:30ch;margin:0 auto 16px}
+.shop-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cyan);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.18);
+}
+.shop-list{margin-top:18px;display:grid;gap:10px}
+.shop-item{
+  text-align:left;padding:13px 14px;border-radius:16px;background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06); color:#c5c5d8;
+}
+.shop-item strong{display:block;color:#fff;font-size:14px;margin-bottom:3px}
+
+
+/* MODAL ANIME */
+.card-clickable{cursor:pointer}
+.card-clickable:active{transform:scale(.995)}
+.modal-backdrop{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(2,4,12,.76);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:none;align-items:center;justify-content:center;
+  padding:16px;
+}
+.modal-backdrop.open{display:flex}
+.modal-sheet{
+  width:min(100%,560px);
+  max-height:min(86dvh,860px);
+  overflow:auto;
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,.12), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 28%),
+    linear-gradient(180deg, rgba(18,18,34,.98), rgba(8,8,18,.98));
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:26px;
+  box-shadow:0 28px 56px rgba(0,0,0,.42);
+  padding:18px;
+  animation:modalPop .22s ease;
+}
+.modal-close{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  margin-left:auto;cursor:pointer;font-size:18px;
+}
+.modal-hero{display:flex;gap:16px;align-items:flex-start;margin-top:8px}
+.modal-cover{
+  width:112px;height:156px;border-radius:16px;object-fit:cover;
+  background:var(--surface2);flex-shrink:0;box-shadow:0 14px 28px rgba(0,0,0,.30)
+}
+.modal-title{
+  font-family:'Orbitron',monospace;font-size:18px;line-height:1.3;margin-bottom:8px
+}
+.modal-meta{font-size:13px;color:#a4a4bf;line-height:1.7;margin-bottom:10px}
+.modal-desc{font-size:15px;line-height:1.75;color:var(--text);margin:14px 0 0}
+.modal-desc.loading{color:#9a9ab4}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.modal-detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:10px;
+}
+.modal-detail{
+  padding:10px 12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+}
+.modal-detail-label{
+  font-family:'Orbitron',monospace;
+  font-size:9px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+.modal-detail-value{
+  font-size:14px;
+  line-height:1.45;
+  color:var(--text);
+}
+.modal-actions{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+  flex-wrap:wrap;
+}
+.modal-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:132px;
+  padding:11px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+  background:linear-gradient(135deg, rgba(123,79,255,.26), rgba(0,212,255,.18));
+}
+.modal-link.secondary{
+  background:rgba(255,255,255,.03);
+  color:var(--text);
+}
+.modal-link.hidden{display:none}
+.modal-section-title{
+  font-family:'Orbitron',monospace;font-size:11px;letter-spacing:.12em;
+  color:var(--muted);text-transform:uppercase;margin-top:18px;margin-bottom:10px
+}
+@keyframes modalPop{
+  from{opacity:0;transform:translateY(10px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media(max-width:520px){
+  .modal-backdrop{padding:12px}
+  .modal-sheet{padding:14px;border-radius:22px;max-height:min(82dvh,760px)}
+  .modal-hero{gap:12px}
+  .modal-cover{width:96px;height:136px}
+  .modal-title{font-size:16px}
+  .modal-detail-grid{grid-template-columns:1fr}
+  .modal-actions{flex-direction:column}
+  .modal-link{width:100%}
+}
+
+@media(min-width:600px){
+  body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  header,
+  #chat-screen,
+  #filter-screen,
+  #ranking-screen,
+  #shop-screen{
+    max-width:520px;
+    width:100%;
+    margin-inline:auto;
+  }
+
+  #intro-screen{
+    width:100%;
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+  .intro-card{
+    width:min(100%, 520px);
+    margin-inline:auto;
+  }
+
+  nav{max-width:480px;left:50%;right:auto;transform:translateX(-50%)}
+}
+</style>
+</head>
+<body>
+
+<header class="header-home-btn" onclick="goHome()" aria-label="Volver al inicio">
+  <img src="logo.png" alt="NeoAnimeZ"
+    onerror="this.outerHTML='<span class=\'logo-fallback\'>NeoAnimeZ</span>'">
+  
+</header>
+
+
+<!-- INTRO -->
+<div id="intro-screen" class="screen active">
+  <div class="intro-card">
+    <img class="intro-logo" src="logo.png" alt="NeoAnimeZ"
+      onerror="this.outerHTML='<span class=\'logo-fallback\'>NeoAnimeZ</span>'">
+    <div class="intro-title">Descubre tu próximo anime</div>
+    <div class="intro-sub">Elige filtros y descubre series o pelis que encajen contigo en segundos.</div>
+    <button class="intro-start" onclick="startApp()">EMPEZAR</button>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<div id="filter-screen" class="screen">
+  <div class="sec-head">Buscador por filtros</div>
+  <div class="glow"></div>
+  <div class="filter-grid">
+    <div class="fg">
+      <label>Género</label>
+      <select class="fsel" id="f-genre">
+        <option value="">Cualquiera</option>
+        <option>Action</option><option>Adventure</option><option>Avant Garde</option>
+        <option>Award Winning</option><option>Comedy</option><option>Drama</option>
+        <option>Fantasy</option><option>Horror</option><option>Mystery</option>
+        <option>Romance</option><option>Sci-Fi</option><option>Slice of Life</option>
+        <option>Sports</option><option>Supernatural</option><option>Suspense</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Longitud</label>
+      <select class="fsel" id="f-length">
+        <option value="">Cualquiera</option>
+        <option value="corto">Corto (&lt;25 ep)</option>
+        <option value="medio">Medio (25–75 ep)</option>
+        <option value="largo">Largo (75+ ep)</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Tono</label>
+      <select class="fsel" id="f-tone">
+        <option value="">Cualquiera</option>
+        <option value="oscuro">Oscuro</option>
+        <option value="emocional">Emocional</option>
+        <option value="epico">Épico</option>
+        <option value="ligero">Ligero</option>
+        <option value="absurdo">Absurdo</option>
+        <option value="intenso">Intenso</option>
+        <option value="melancolico">Melancólico</option>
+        <option value="relajado">Relajado</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Acción</label>
+      <select class="fsel" id="f-action">
+        <option value="">Cualquiera</option>
+        <option value="alto">Alta</option>
+        <option value="medio">Media</option>
+        <option value="bajo">Baja / Nula</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Temática</label>
+      <select class="fsel" id="f-theme">
+        <option value="">Cualquiera</option>
+        <option value="Isekai">Isekai</option>
+        <option value="Psychological">Psicológico</option>
+        <option value="Mecha">Mecha</option>
+        <option value="Historical">Histórico</option>
+        <option value="Time Travel">Viajes en el tiempo</option>
+        <option value="Music">Música</option>
+        <option value="Video Game">Videojuegos</option>
+        <option value="Crime">Crimen</option>
+        <option value="Parody">Parodia</option>
+        <option value="Zombies">Zombies</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Emisión</label>
+      <select class="fsel" id="f-status">
+        <option value="">Cualquiera</option>
+        <option value="true">En emisión</option>
+        <option value="false">Finalizado</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Tipo</label>
+      <select class="fsel" id="f-type">
+        <option value="">Cualquiera</option>
+        <option value="TV">Serie</option>
+        <option value="Movie">Película</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Popularidad</label>
+      <select class="fsel" id="f-popular">
+        <option value="">Cualquiera</option>
+        <option value="true">Popular</option>
+        <option value="false">Joya menos conocida</option>
+      </select>
+    </div>
+    <div class="fg full">
+      <label>Época</label>
+      <select class="fsel" id="f-year">
+        <option value="">Cualquiera</option>
+        <option value="2020">Reciente (desde 2020)</option>
+        <option value="2015">Desde 2015</option>
+        <option value="2010">Desde 2010</option>
+        <option value="2000">Desde 2000</option>
+        <option value="classic">Clásicos (antes del 2000)</option>
+      </select>
+    </div>
+  </div>
+  <button class="apply-btn" onclick="applyFilters()">BUSCAR ANIME</button>
+  <div class="fresults" id="filterResults"><div class="pre-search-note">Selecciona tus filtros y pulsa <strong>Buscar anime</strong> para ver resultados.</div></div>
+</div>
+
+<!-- RANKING -->
+<div id="ranking-screen" class="screen">
+  <div class="sec-head">Top NeoAnimeZ</div>
+  <div class="glow"></div>
+  <div class="rlist" id="rankingList"></div>
+</div>
+
+
+<!-- TIENDA -->
+<div id="shop-screen" class="screen">
+  <div class="sec-head">Tienda</div>
+  <div class="glow"></div>
+  <div class="shop-card">
+    <div class="shop-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M6 8h12l-1 10H7L6 8Z"/>
+        <path d="M9 8a3 3 0 1 1 6 0"/>
+        <path d="M9 12h.01M15 12h.01"/>
+        <path d="M10 15c.5.7 1.1 1 2 1s1.5-.3 2-1"/>
+      </svg>
+    </div>
+    <div class="shop-title">NeoMarket</div>
+    <div class="shop-sub">La futura tienda de NeoAnimeZ: una zona cuidada para descubrir manga, ropa y accesorios con estética anime sin que parezca una tienda cutre.</div>
+    <div class="shop-badge">✨ Próximamente</div>
+    <div class="shop-list">
+      <div class="shop-item"><strong>Manga</strong>Tomos, packs por saga y ediciones especiales para coleccionar o regalar.</div>
+      <div class="shop-item"><strong>Ropa</strong>Camisetas, sudaderas y prendas con diseño anime más limpio y ponible.</div>
+      <div class="shop-item"><strong>Accesorios</strong>Fundas, pósters, llaveros, setup de escritorio y detalles para el día a día.</div>
+      <div class="shop-item"><strong>Gym</strong>Botellas, toallas, bolsas y accesorios con energía shonen para entrenar.</div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-spacer" aria-hidden="true"></div>
+
+<nav>
+  <button class="nbtn" id="nav-filter" onclick="showScreen('filter')">
+    <svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+    Buscar
+  </button>
+  <button class="nbtn" id="nav-ranking" onclick="showScreen('ranking')">
+    <svg viewBox="0 0 24 24"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
+    Ranking
+  </button>
+  <button class="nbtn" id="nav-shop" onclick="showScreen('shop')">
+    <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 10H7L6 8Z"/><path d="M9 8a3 3 0 1 1 6 0"/></svg>
+    Tienda
+  </button>
+</nav>
+
+
+<div id="animeModal" class="modal-backdrop" aria-hidden="true">
+  <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="animeModalTitle">
+    <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeAnimeModal()">✕</button>
+    <div class="modal-hero">
+      <img id="animeModalImg" class="modal-cover" src="" alt="">
+      <div style="min-width:0">
+        <div id="animeModalTitle" class="modal-title"></div>
+        <div id="animeModalMeta" class="modal-meta"></div>
+        <div id="animeModalTags" class="modal-tags"></div>
+      </div>
+    </div>
+    <div class="modal-section-title">Descripción</div>
+    <div id="animeModalDesc" class="modal-desc"></div>
+
+    </div>
+</div>
+
+    <div class="modal-actions">
+      <a id="animeModalMalLink" class="modal-link hidden" href="#" target="_blank" rel="noopener noreferrer">Ver en MAL</a>
+      <a id="animeModalTrailerLink" class="modal-link secondary hidden" href="#" target="_blank" rel="noopener noreferrer">Ver trailer</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const DB = [{"title": "Attack on Titan", "episodes": 87, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Drama", "Suspense", "Fantasy"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2013, "description": "La humanidad lucha contra gigantes que amenazan su existencia.", "type": "TV", "franchise": "Attack on Titan", "ongoing": false, "source_tags_original": ["accion", "drama", "fantasia", "oscuro"], "themes": []}, {"title": "Jujutsu Kaisen", "episodes": 47, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Fantasy", "Supernatural"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2020, "description": "Hechiceros combaten maldiciones en el mundo moderno.", "type": "TV", "franchise": "Jujutsu Kaisen", "ongoing": true, "source_tags_original": ["accion", "fantasia", "oscuro"], "themes": []}, {"title": "Demon Slayer", "episodes": 55, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Fantasy", "Supernatural"], "tone": "emocional", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2019, "description": "Un joven lucha contra demonios para salvar a su hermana.", "type": "TV", "franchise": "Demon Slayer", "ongoing": true, "source_tags_original": ["accion", "aventura", "fantasia"], "themes": []}, {"title": "One Piece", "episodes": 1100, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "epico", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 1999, "description": "Piratas buscan el mayor tesoro del mundo.", "type": "TV", "franchise": "One Piece", "ongoing": true, "source_tags_original": ["accion", "aventura", "comedia"], "themes": []}, {"title": "Naruto", "episodes": 720, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy"], "tone": "epico", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 2002, "description": "Un ninja busca reconocimiento y convertirse en líder.", "type": "TV", "franchise": "Naruto", "ongoing": false, "source_tags_original": ["accion", "aventura"], "themes": []}, {"title": "Death Note", "episodes": 37, "length": "medio", "demographic": "Shounen", "genres": ["Supernatural", "Suspense", "Mystery"], "tone": "oscuro", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2006, "description": "Un cuaderno permite matar a cualquier persona.", "type": "TV", "franchise": "Death Note", "ongoing": false, "source_tags_original": ["misterio", "psicologico", "oscuro"], "themes": ["Psychological"]}, {"title": "Chainsaw Man", "episodes": 12, "length": "corto", "demographic": "Shounen", "genres": ["Action", "Fantasy", "Supernatural", "Horror"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2022, "description": "Un joven se fusiona con un demonio motosierra.", "type": "TV", "franchise": "Chainsaw Man", "ongoing": false, "source_tags_original": ["accion", "oscuro", "fantasia"], "themes": []}, {"title": "Frieren", "episodes": 28, "length": "medio", "demographic": "Seinen", "genres": ["Adventure", "Drama", "Fantasy", "Award Winning"], "tone": "emocional", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2023, "description": "Una elfa reflexiona sobre la vida tras la aventura.", "type": "TV", "franchise": "Frieren", "ongoing": true, "source_tags_original": ["fantasia", "drama", "aventura"], "themes": []}, {"title": "Spy x Family", "episodes": 37, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Comedy", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2022, "description": "Una familia falsa llena de secretos.", "type": "TV", "franchise": "Spy x Family", "ongoing": true, "source_tags_original": ["comedia", "accion", "slice of life"], "themes": []}, {"title": "Vinland Saga", "episodes": 48, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Adventure", "Drama"], "tone": "oscuro", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 2019, "description": "Vikingos, venganza y evolución personal.", "type": "TV", "franchise": "Vinland Saga", "ongoing": true, "source_tags_original": ["accion", "historico", "drama"], "themes": ["Historical"]}, {"title": "Sword Art Online", "episodes": 96, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy", "Romance"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2012, "description": "Jugadores atrapados en un mundo virtual mortal.", "type": "TV", "franchise": "Sword Art Online", "ongoing": true, "source_tags_original": ["isekai", "accion", "fantasia"], "themes": ["Isekai"]}, {"title": "Mushoku Tensei", "episodes": 48, "length": "medio", "demographic": "Seinen", "genres": ["Adventure", "Drama", "Fantasy"], "tone": "emocional", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2021, "description": "Una segunda oportunidad en otro mundo.", "type": "TV", "franchise": "Mushoku Tensei", "ongoing": true, "source_tags_original": ["isekai", "drama", "fantasia"], "themes": ["Isekai"]}, {"title": "Re:Zero", "episodes": 50, "length": "medio", "demographic": "Seinen", "genres": ["Drama", "Fantasy", "Suspense", "Supernatural"], "tone": "oscuro", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2016, "description": "Morir para volver a empezar y cambiar el destino.", "type": "TV", "franchise": "Re:Zero", "ongoing": true, "source_tags_original": ["isekai", "drama", "oscuro"], "themes": ["Isekai"]}, {"title": "Code Geass", "episodes": 50, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Drama", "Sci-Fi", "Suspense"], "tone": "intenso", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2006, "description": "Un genio rebelde busca cambiar el mundo.", "type": "TV", "franchise": "Code Geass", "ongoing": false, "source_tags_original": ["mecha", "accion", "estrategia"], "themes": ["Mecha", "Strategy"]}, {"title": "Neon Genesis Evangelion", "episodes": 26, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Drama", "Sci-Fi", "Avant Garde", "Suspense"], "tone": "oscuro", "fast_start": false, "action_level": "medio", "emotional": true, "popular": true, "year": 1995, "description": "Adolescentes pilotan robots en un mundo apocalíptico.", "type": "TV", "franchise": "Neon Genesis Evangelion", "ongoing": false, "source_tags_original": ["mecha", "psicologico", "drama"], "themes": ["Mecha", "Psychological"]}, {"title": "86 Eighty-Six", "episodes": 23, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Drama", "Sci-Fi", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2021, "description": "Soldados invisibles luchan en una guerra injusta.", "type": "TV", "franchise": "86 Eighty-Six", "ongoing": false, "source_tags_original": ["mecha", "drama", "accion"], "themes": ["Mecha"]}, {"title": "Haikyuu", "episodes": 85, "length": "largo", "demographic": "Shounen", "genres": ["Comedy", "Drama", "Sports"], "tone": "epico", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2014, "description": "Un equipo de voleibol lucha por la cima.", "type": "TV", "franchise": "Haikyuu", "ongoing": false, "source_tags_original": ["deportes", "drama"], "themes": []}, {"title": "Blue Lock", "episodes": 24, "length": "corto", "demographic": "Shounen", "genres": ["Sports", "Drama"], "tone": "intenso", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2022, "description": "Competición extrema para crear al mejor delantero.", "type": "TV", "franchise": "Blue Lock", "ongoing": false, "source_tags_original": ["deportes", "accion"], "themes": []}, {"title": "Your Name", "episodes": 1, "length": "corto", "demographic": "Shounen", "genres": ["Award Winning", "Drama", "Romance", "Supernatural", "Suspense"], "tone": "emocional", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2016, "description": "Dos jóvenes conectados por un fenómeno sobrenatural.", "type": "Movie", "franchise": "Your Name", "ongoing": false, "source_tags_original": ["romance", "drama", "fantasia"], "themes": []}, {"title": "Cyberpunk Edgerunners", "episodes": 10, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Drama", "Sci-Fi"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2022, "description": "Un chico sobrevive en un mundo futurista brutal.", "type": "TV", "franchise": "Cyberpunk Edgerunners", "ongoing": false, "source_tags_original": ["sci-fi", "accion", "drama"], "themes": []}, {"title": "Steins;Gate", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Drama", "Sci-Fi", "Suspense", "Award Winning"], "tone": "intenso", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2011, "description": "Un grupo descubre cómo enviar mensajes al pasado.", "type": "TV", "franchise": "Steins;Gate", "ongoing": false, "source_tags_original": ["sci-fi", "psicologico", "drama"], "themes": ["Psychological"]}, {"title": "Made in Abyss", "episodes": 25, "length": "medio", "demographic": "Seinen", "genres": ["Adventure", "Drama", "Fantasy", "Mystery", "Sci-Fi"], "tone": "oscuro", "fast_start": false, "action_level": "medio", "emotional": true, "popular": true, "year": 2017, "description": "Exploradores descienden a un abismo lleno de misterios.", "type": "TV", "franchise": "Made in Abyss", "ongoing": false, "source_tags_original": ["aventura", "fantasia", "oscuro"], "themes": []}, {"title": "The Promised Neverland", "episodes": 23, "length": "corto", "demographic": "Shounen", "genres": ["Mystery", "Sci-Fi", "Suspense", "Horror"], "tone": "oscuro", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2019, "description": "Niños intentan escapar de un destino aterrador.", "type": "TV", "franchise": "The Promised Neverland", "ongoing": false, "source_tags_original": ["misterio", "drama", "psicologico"], "themes": ["Psychological"]}, {"title": "Erased", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Mystery", "Drama", "Sci-Fi", "Supernatural", "Suspense"], "tone": "emocional", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2016, "description": "Un hombre vuelve al pasado para evitar tragedias.", "type": "TV", "franchise": "Erased", "ongoing": false, "source_tags_original": ["misterio", "drama", "viajes en el tiempo"], "themes": ["Time Travel"]}, {"title": "Tokyo Ghoul", "episodes": 48, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Drama", "Horror", "Mystery", "Supernatural"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2014, "description": "Un estudiante se convierte en mitad humano mitad ghoul.", "type": "TV", "franchise": "Tokyo Ghoul", "ongoing": false, "source_tags_original": ["accion", "oscuro", "drama"], "themes": []}, {"title": "Parasyte", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Drama", "Horror", "Sci-Fi", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2014, "description": "Parásitos alienígenas invaden cuerpos humanos.", "type": "TV", "franchise": "Parasyte", "ongoing": false, "source_tags_original": ["accion", "psicologico", "sci-fi"], "themes": ["Psychological"]}, {"title": "Mob Psycho 100", "episodes": 37, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Comedy", "Slice of Life", "Supernatural"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2016, "description": "Un chico psíquico busca una vida normal.", "type": "TV", "franchise": "Mob Psycho 100", "ongoing": false, "source_tags_original": ["accion", "comedia", "sobrenatural"], "themes": []}, {"title": "Dr Stone", "episodes": 58, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Drama", "Sci-Fi"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2019, "description": "Reconstruir la civilización con ciencia.", "type": "TV", "franchise": "Dr Stone", "ongoing": true, "source_tags_original": ["aventura", "ciencia"], "themes": ["Educational"]}, {"title": "Fire Force", "episodes": 48, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Comedy", "Sci-Fi", "Supernatural"], "tone": "intenso", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2019, "description": "Bomberos combaten humanos en combustión espontánea.", "type": "TV", "franchise": "Fire Force", "ongoing": true, "source_tags_original": ["accion", "fantasia", "sobrenatural"], "themes": []}, {"title": "Black Clover", "episodes": 170, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2017, "description": "Un chico sin magia lucha por ser el mejor.", "type": "TV", "franchise": "Black Clover", "ongoing": true, "source_tags_original": ["accion", "fantasia", "aventura"], "themes": []}, {"title": "No Game No Life", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Adventure", "Comedy", "Fantasy"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2014, "description": "Dos genios dominan un mundo basado en juegos.", "type": "TV", "franchise": "No Game No Life", "ongoing": false, "source_tags_original": ["isekai", "juegos", "fantasia"], "themes": ["Isekai", "Video Game"]}, {"title": "Overlord", "episodes": 52, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Adventure", "Fantasy", "Supernatural"], "tone": "oscuro", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2015, "description": "Un jugador atrapado en un mundo como villano poderoso.", "type": "TV", "franchise": "Overlord", "ongoing": true, "source_tags_original": ["isekai", "accion", "fantasia"], "themes": ["Isekai"]}, {"title": "Konosuba", "episodes": 31, "length": "medio", "demographic": "Seinen", "genres": ["Adventure", "Comedy", "Fantasy"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2016, "description": "Un grupo absurdo vive aventuras ridículas en otro mundo.", "type": "TV", "franchise": "Konosuba", "ongoing": false, "source_tags_original": ["isekai", "comedia", "fantasia"], "themes": ["Isekai"]}, {"title": "That Time I Got Reincarnated as a Slime", "episodes": 72, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2018, "description": "Un hombre renace como slime en otro mundo.", "type": "TV", "franchise": "That Time I Got Reincarnated as a Slime", "ongoing": true, "source_tags_original": ["isekai", "fantasia", "aventura"], "themes": ["Isekai"]}, {"title": "Tengen Toppa Gurren Lagann", "episodes": 27, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Drama", "Sci-Fi"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2007, "description": "Superar límites humanos en batallas gigantes.", "type": "TV", "franchise": "Tengen Toppa Gurren Lagann", "ongoing": false, "source_tags_original": ["mecha", "accion", "aventura"], "themes": ["Mecha"]}, {"title": "Darling in the Franxx", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Drama", "Romance", "Sci-Fi"], "tone": "emocional", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2018, "description": "Pilotos jóvenes luchan y descubren emociones.", "type": "TV", "franchise": "Darling in the Franxx", "ongoing": false, "source_tags_original": ["mecha", "romance", "accion"], "themes": ["Mecha"]}, {"title": "Mobile Suit Gundam: Iron-Blooded Orphans", "episodes": 50, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Drama", "Sci-Fi"], "tone": "oscuro", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 2015, "description": "Niños soldados luchan por su libertad.", "type": "TV", "franchise": "Mobile Suit Gundam: Iron-Blooded Orphans", "ongoing": false, "source_tags_original": ["mecha", "drama", "accion"], "themes": ["Mecha"]}, {"title": "Kaguya-sama: Love is War", "episodes": 37, "length": "medio", "demographic": "Seinen", "genres": ["Comedy", "Romance", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2019, "description": "Dos genios compiten por que el otro confiese amor.", "type": "TV", "franchise": "Kaguya-sama: Love is War", "ongoing": false, "source_tags_original": ["romance", "comedia", "psicologico"], "themes": ["Psychological"]}, {"title": "Toradora", "episodes": 25, "length": "medio", "demographic": "Shounen", "genres": ["Comedy", "Drama", "Romance", "Slice of Life"], "tone": "emocional", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2008, "description": "Relaciones adolescentes complejas y reales.", "type": "TV", "franchise": "Toradora", "ongoing": false, "source_tags_original": ["romance", "slice of life", "drama"], "themes": []}, {"title": "Clannad After Story", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Award Winning", "Drama", "Fantasy", "Romance", "Slice of Life", "Supernatural"], "tone": "emocional", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2008, "description": "Una historia profunda sobre familia y vida.", "type": "TV", "franchise": "Clannad After Story", "ongoing": false, "source_tags_original": ["drama", "romance", "slice of life"], "themes": []}, {"title": "Oshi no Ko", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Drama", "Mystery", "Supernatural", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2023, "description": "El lado oscuro de la industria del entretenimiento.", "type": "TV", "franchise": "Oshi no Ko", "ongoing": true, "source_tags_original": ["drama", "psicologico", "industria"], "themes": ["Psychological", "Showbiz"]}, {"title": "Hell's Paradise", "episodes": 13, "length": "corto", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy", "Supernatural", "Horror"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2023, "description": "Criminales buscan el elixir de la vida en una isla mortal.", "type": "TV", "franchise": "Hell's Paradise", "ongoing": false, "source_tags_original": ["accion", "fantasia", "oscuro"], "themes": []}, {"title": "Solo Leveling", "episodes": 25, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2024, "description": "Un cazador débil se vuelve el más fuerte.", "type": "TV", "franchise": "Solo Leveling", "ongoing": true, "source_tags_original": ["accion", "fantasia"], "themes": []}, {"title": "The Eminence in Shadow", "episodes": 32, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Comedy", "Fantasy"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2022, "description": "Un chico finge ser un genio oculto y resulta serlo.", "type": "TV", "franchise": "The Eminence in Shadow", "ongoing": true, "source_tags_original": ["isekai", "accion", "comedia"], "themes": ["Isekai"]}, {"title": "Classroom of the Elite", "episodes": 38, "length": "medio", "demographic": "Seinen", "genres": ["Drama", "Mystery", "Suspense"], "tone": "intenso", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2017, "description": "Estudiantes compiten en un sistema educativo extremo.", "type": "TV", "franchise": "Classroom of the Elite", "ongoing": false, "source_tags_original": ["psicologico", "drama"], "themes": ["Psychological"]}, {"title": "Horimiya", "episodes": 26, "length": "medio", "demographic": "Shounen", "genres": ["Comedy", "Drama", "Romance", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2021, "description": "Una historia romántica sencilla y realista.", "type": "TV", "franchise": "Horimiya", "ongoing": false, "source_tags_original": ["romance", "slice of life"], "themes": []}, {"title": "My Dress-Up Darling", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Comedy", "Drama", "Romance", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2022, "description": "Un chico tímido descubre el mundo del cosplay.", "type": "TV", "franchise": "My Dress-Up Darling", "ongoing": false, "source_tags_original": ["romance", "comedia", "slice of life"], "themes": []}, {"title": "Bocchi the Rock", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Comedy", "Drama", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2022, "description": "Una chica introvertida intenta triunfar en una banda.", "type": "TV", "franchise": "Bocchi the Rock", "ongoing": false, "source_tags_original": ["comedia", "slice of life", "musica"], "themes": ["Music"]}, {"title": "Ranking of Kings", "episodes": 23, "length": "corto", "demographic": "Shounen", "genres": ["Adventure", "Drama", "Fantasy"], "tone": "emocional", "fast_start": false, "action_level": "medio", "emotional": true, "popular": true, "year": 2021, "description": "Un príncipe débil busca demostrar su valía.", "type": "TV", "franchise": "Ranking of Kings", "ongoing": false, "source_tags_original": ["fantasia", "aventura", "drama"], "themes": []}, {"title": "Dororo", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Adventure", "Drama", "Fantasy", "Historical", "Supernatural"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2019, "description": "Un guerrero lucha contra demonios para recuperar su cuerpo.", "type": "TV", "franchise": "Dororo", "ongoing": false, "source_tags_original": ["accion", "historico", "fantasia"], "themes": ["Historical"]}, {"title": "Akame ga Kill", "episodes": 24, "length": "corto", "demographic": "Shounen", "genres": ["Action", "Adventure", "Drama", "Fantasy", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2014, "description": "Asesinos luchan contra un imperio corrupto.", "type": "TV", "franchise": "Akame ga Kill", "ongoing": false, "source_tags_original": ["accion", "drama", "oscuro"], "themes": []}, {"title": "Fate/Zero", "episodes": 25, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Drama", "Fantasy", "Supernatural", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2011, "description": "Magos invocan héroes para una guerra mortal.", "type": "TV", "franchise": "Fate", "ongoing": false, "source_tags_original": ["accion", "fantasia", "drama"], "themes": []}, {"title": "Fate/stay night: Unlimited Blade Works", "episodes": 26, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Fantasy", "Supernatural", "Suspense"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2014, "description": "Batallas mágicas entre héroes legendarios.", "type": "TV", "franchise": "Fate", "ongoing": false, "source_tags_original": ["accion", "fantasia"], "themes": []}, {"title": "Great Teacher Onizuka", "episodes": 43, "length": "medio", "demographic": "Shounen", "genres": ["Comedy", "Drama", "Slice of Life", "Suspense"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 1999, "description": "Un profesor poco convencional cambia vidas.", "type": "TV", "franchise": "Great Teacher Onizuka", "ongoing": false, "source_tags_original": ["comedia", "drama"], "themes": []}, {"title": "Monster", "episodes": 74, "length": "medio", "demographic": "Seinen", "genres": ["Drama", "Mystery", "Suspense"], "tone": "oscuro", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2004, "description": "Un médico persigue a un asesino que salvó.", "type": "TV", "franchise": "Monster", "ongoing": false, "source_tags_original": ["psicologico", "drama", "thriller"], "themes": ["Psychological"]}, {"title": "Rainbow", "episodes": 26, "length": "medio", "demographic": "Seinen", "genres": ["Drama", "Suspense"], "tone": "oscuro", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": false, "year": 2010, "description": "Supervivencia y amistad en una prisión juvenil.", "type": "TV", "franchise": "Rainbow", "ongoing": false, "source_tags_original": ["drama", "historico"], "themes": ["Historical"]}, {"title": "Ping Pong the Animation", "episodes": 11, "length": "corto", "demographic": "Seinen", "genres": ["Drama", "Sports", "Avant Garde", "Award Winning"], "tone": "emocional", "fast_start": false, "action_level": "medio", "emotional": true, "popular": false, "year": 2014, "description": "Dos amigos compiten en tenis de mesa.", "type": "TV", "franchise": "Ping Pong the Animation", "ongoing": false, "source_tags_original": ["deportes", "drama"], "themes": []}, {"title": "Run with the Wind", "episodes": 23, "length": "corto", "demographic": "Seinen", "genres": ["Drama", "Sports", "Slice of Life"], "tone": "emocional", "fast_start": false, "action_level": "medio", "emotional": true, "popular": false, "year": 2018, "description": "Un equipo universitario intenta correr una maratón.", "type": "TV", "franchise": "Run with the Wind", "ongoing": false, "source_tags_original": ["deportes", "drama"], "themes": []}, {"title": "Devilman Crybaby", "episodes": 10, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Drama", "Horror", "Supernatural", "Avant Garde", "Award Winning"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2018, "description": "Humanos y demonios en una historia brutal.", "type": "TV", "franchise": "Devilman Crybaby", "ongoing": false, "source_tags_original": ["accion", "psicologico", "oscuro"], "themes": ["Psychological"]}, {"title": "Angel Beats", "episodes": 13, "length": "corto", "demographic": "Shounen", "genres": ["Action", "Comedy", "Drama", "Fantasy", "Supernatural"], "tone": "emocional", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2010, "description": "Almas atrapadas en un extraño limbo escolar.", "type": "TV", "franchise": "Angel Beats", "ongoing": false, "source_tags_original": ["drama", "fantasia", "comedia"], "themes": []}, {"title": "Zom 100", "episodes": 12, "length": "corto", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Horror", "Supernatural"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2023, "description": "Un chico disfruta la vida en un apocalipsis zombi.", "type": "TV", "franchise": "Zom 100", "ongoing": false, "source_tags_original": ["comedia", "accion", "zombies"], "themes": ["Zombies"]}, {"title": "Mashle", "episodes": 24, "length": "corto", "demographic": "Shounen", "genres": ["Action", "Comedy", "Fantasy"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2023, "description": "Un chico sin magia domina un mundo mágico con fuerza bruta.", "type": "TV", "franchise": "Mashle", "ongoing": false, "source_tags_original": ["comedia", "accion", "fantasia"], "themes": []}, {"title": "Undead Unluck", "episodes": 24, "length": "corto", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Romance", "Supernatural"], "tone": "ligero", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2023, "description": "Una chica con mala suerte extrema conoce a un inmortal.", "type": "TV", "franchise": "Undead Unluck", "ongoing": false, "source_tags_original": ["accion", "comedia", "sobrenatural"], "themes": []}, {"title": "Summertime Rendering", "episodes": 25, "length": "medio", "demographic": "Seinen", "genres": ["Drama", "Mystery", "Sci-Fi", "Supernatural", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2022, "description": "Un misterio en una isla con bucles temporales.", "type": "TV", "franchise": "Summertime Rendering", "ongoing": false, "source_tags_original": ["misterio", "thriller", "sobrenatural"], "themes": []}, {"title": "Odd Taxi", "episodes": 13, "length": "corto", "demographic": "Seinen", "genres": ["Mystery", "Suspense", "Slice of Life", "Drama"], "tone": "intenso", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2021, "description": "Un taxista se ve envuelto en una conspiración.", "type": "TV", "franchise": "Odd Taxi", "ongoing": false, "source_tags_original": ["misterio", "drama"], "themes": []}, {"title": "Call of the Night", "episodes": 13, "length": "corto", "demographic": "Shounen", "genres": ["Mystery", "Romance", "Supernatural"], "tone": "relajado", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2022, "description": "Un chico conoce a una vampira en la noche.", "type": "TV", "franchise": "Call of the Night", "ongoing": false, "source_tags_original": ["romance", "sobrenatural", "slice of life"], "themes": []}, {"title": "The Dangers in My Heart", "episodes": 25, "length": "medio", "demographic": "Shounen", "genres": ["Comedy", "Romance", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2023, "description": "Un chico antisocial descubre el amor.", "type": "TV", "franchise": "The Dangers in My Heart", "ongoing": false, "source_tags_original": ["romance", "comedia", "slice of life"], "themes": []}, {"title": "Insomniacs After School", "episodes": 13, "length": "corto", "demographic": "Seinen", "genres": ["Drama", "Romance", "Slice of Life"], "tone": "relajado", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2023, "description": "Dos estudiantes conectan por su insomnio.", "type": "TV", "franchise": "Insomniacs After School", "ongoing": false, "source_tags_original": ["romance", "slice of life"], "themes": []}, {"title": "Skip and Loafer", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Comedy", "Drama", "Romance", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2023, "description": "Una chica rural se adapta a la vida en la ciudad.", "type": "TV", "franchise": "Skip and Loafer", "ongoing": false, "source_tags_original": ["slice of life", "comedia", "romance"], "themes": []}, {"title": "Lycoris Recoil", "episodes": 13, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Sci-Fi", "Slice of Life"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2022, "description": "Agentes secretas con vida cotidiana normal.", "type": "TV", "franchise": "Lycoris Recoil", "ongoing": false, "source_tags_original": ["accion", "slice of life"], "themes": []}, {"title": "Akiba Maid War", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Comedy", "Drama"], "tone": "absurdo", "fast_start": true, "action_level": "medio", "emotional": false, "popular": false, "year": 2022, "description": "Maid cafés convertidos en guerras criminales.", "type": "TV", "franchise": "Akiba Maid War", "ongoing": false, "source_tags_original": ["comedia", "accion", "parodia"], "themes": ["Parody"]}, {"title": "Ranking of Kings: Treasure Chest of Courage", "episodes": 10, "length": "corto", "demographic": "Shounen", "genres": ["Adventure", "Drama", "Fantasy"], "tone": "emocional", "fast_start": false, "action_level": "medio", "emotional": true, "popular": false, "year": 2023, "description": "Historias adicionales del mundo de Ranking of Kings.", "type": "TV", "franchise": "Ranking of Kings: Treasure Chest of Courage", "ongoing": false, "source_tags_original": ["fantasia", "aventura"], "themes": []}, {"title": "Shangri-La Frontier", "episodes": 50, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Sci-Fi"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2023, "description": "Un jugador experto se enfrenta a un juego desafiante.", "type": "TV", "franchise": "Shangri-La Frontier", "ongoing": true, "source_tags_original": ["accion", "videojuegos", "aventura"], "themes": ["Video Game"]}, {"title": "Drifters", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2016, "description": "Guerreros históricos transportados a otro mundo.", "type": "TV", "franchise": "Drifters", "ongoing": false, "source_tags_original": ["accion", "fantasia", "historico"], "themes": ["Historical"]}, {"title": "The Rising of the Shield Hero", "episodes": 50, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Drama", "Fantasy"], "tone": "oscuro", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2019, "description": "Un héroe traicionado lucha por sobrevivir.", "type": "TV", "franchise": "The Rising of the Shield Hero", "ongoing": true, "source_tags_original": ["isekai", "accion", "drama"], "themes": ["Isekai"]}, {"title": "Cautious Hero", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2019, "description": "Un héroe extremadamente cauteloso salva el mundo.", "type": "TV", "franchise": "Cautious Hero", "ongoing": false, "source_tags_original": ["isekai", "comedia", "fantasia"], "themes": ["Isekai"]}, {"title": "Beastars", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Drama", "Mystery", "Romance", "Supernatural", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2019, "description": "Relaciones complejas en un mundo de animales.", "type": "TV", "franchise": "Beastars", "ongoing": false, "source_tags_original": ["drama", "romance", "psicologico"], "themes": ["Psychological"]}, {"title": "Great Pretender", "episodes": 23, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Adventure", "Comedy", "Suspense"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2020, "description": "Estafadores internacionales en grandes golpes.", "type": "TV", "franchise": "Great Pretender", "ongoing": false, "source_tags_original": ["crimen", "comedia", "drama"], "themes": ["Crime"]}, {"title": "Vivy: Fluorite Eye's Song", "episodes": 13, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Drama", "Sci-Fi"], "tone": "emocional", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2021, "description": "Una IA intenta salvar el futuro de la humanidad.", "type": "TV", "franchise": "Vivy: Fluorite Eye's Song", "ongoing": false, "source_tags_original": ["sci-fi", "accion", "drama"], "themes": []}, {"title": "Bleach: Thousand-Year Blood War", "episodes": 40, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy", "Supernatural"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2022, "description": "La batalla final entre shinigamis y quincys.", "type": "TV", "franchise": "Bleach", "ongoing": true, "source_tags_original": ["accion", "fantasia", "aventura"], "themes": []}, {"title": "Boruto", "episodes": 293, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy"], "tone": "ligero", "fast_start": false, "action_level": "medio", "emotional": true, "popular": true, "year": 2017, "description": "Nueva generación de ninjas tras Naruto.", "type": "TV", "franchise": "Naruto", "ongoing": true, "source_tags_original": ["accion", "aventura"], "themes": []}, {"title": "Fairy Tail", "episodes": 328, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2009, "description": "Magos viven aventuras en un gremio.", "type": "TV", "franchise": "Fairy Tail", "ongoing": false, "source_tags_original": ["accion", "fantasia", "aventura"], "themes": []}, {"title": "The Seven Deadly Sins", "episodes": 100, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy", "Supernatural"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2014, "description": "Caballeros legendarios luchan contra el mal.", "type": "TV", "franchise": "The Seven Deadly Sins", "ongoing": false, "source_tags_original": ["accion", "fantasia", "aventura"], "themes": []}, {"title": "Noragami", "episodes": 25, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Supernatural"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2014, "description": "Un dios menor busca fama ayudando humanos.", "type": "TV", "franchise": "Noragami", "ongoing": false, "source_tags_original": ["accion", "sobrenatural", "comedia"], "themes": []}, {"title": "Durarara!!", "episodes": 60, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Mystery", "Supernatural", "Suspense"], "tone": "intenso", "fast_start": false, "action_level": "medio", "emotional": false, "popular": true, "year": 2010, "description": "Historias cruzadas en una ciudad llena de secretos.", "type": "TV", "franchise": "Durarara!!", "ongoing": false, "source_tags_original": ["misterio", "accion", "drama"], "themes": []}, {"title": "Bungo Stray Dogs", "episodes": 61, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Comedy", "Mystery", "Supernatural", "Suspense"], "tone": "intenso", "fast_start": true, "action_level": "medio", "emotional": false, "popular": true, "year": 2016, "description": "Detectives con poderes especiales resuelven casos.", "type": "TV", "franchise": "Bungo Stray Dogs", "ongoing": true, "source_tags_original": ["accion", "misterio", "sobrenatural"], "themes": []}, {"title": "Golden Kamuy", "episodes": 49, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Adventure", "Comedy", "Drama", "Mystery"], "tone": "intenso", "fast_start": false, "action_level": "medio", "emotional": true, "popular": true, "year": 2018, "description": "Búsqueda de un tesoro en la era postguerra.", "type": "TV", "franchise": "Golden Kamuy", "ongoing": true, "source_tags_original": ["aventura", "historico", "accion"], "themes": ["Historical"]}, {"title": "To Your Eternity", "episodes": 40, "length": "medio", "demographic": "Shounen", "genres": ["Adventure", "Drama", "Fantasy", "Supernatural"], "tone": "emocional", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2021, "description": "Un ser inmortal aprende sobre la vida.", "type": "TV", "franchise": "To Your Eternity", "ongoing": true, "source_tags_original": ["drama", "fantasia"], "themes": []}, {"title": "A Silent Voice", "episodes": 1, "length": "corto", "demographic": "Shounen", "genres": ["Award Winning", "Drama", "Romance", "Slice of Life"], "tone": "emocional", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2016, "description": "Redención y bullying en una historia conmovedora.", "type": "Movie", "franchise": "A Silent Voice", "ongoing": false, "source_tags_original": ["drama", "romance"], "themes": []}, {"title": "Suzume", "episodes": 1, "length": "corto", "demographic": "Shounen", "genres": ["Adventure", "Drama", "Fantasy", "Romance", "Supernatural"], "tone": "emocional", "fast_start": true, "action_level": "bajo", "emotional": true, "popular": true, "year": 2022, "description": "Una chica viaja cerrando puertas misteriosas.", "type": "Movie", "franchise": "Suzume", "ongoing": false, "source_tags_original": ["fantasia", "aventura", "romance"], "themes": []}, {"title": "Blue Exorcist", "episodes": 61, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Comedy", "Fantasy", "Supernatural"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2011, "description": "Un chico lucha contra su origen demoníaco.", "type": "TV", "franchise": "Blue Exorcist", "ongoing": true, "source_tags_original": ["accion", "fantasia"], "themes": []}, {"title": "Soul Eater", "episodes": 51, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Comedy", "Fantasy", "Supernatural"], "tone": "ligero", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2008, "description": "Estudiantes cazan almas para volverse más fuertes.", "type": "TV", "franchise": "Soul Eater", "ongoing": false, "source_tags_original": ["accion", "fantasia", "comedia"], "themes": []}, {"title": "Dorohedoro", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Comedy", "Fantasy", "Horror", "Supernatural"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2020, "description": "Un mundo violento lleno de magia y caos.", "type": "TV", "franchise": "Dorohedoro", "ongoing": false, "source_tags_original": ["accion", "oscuro", "comedia"], "themes": []}, {"title": "FLCL", "episodes": 6, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Adventure", "Comedy", "Drama", "Sci-Fi", "Avant Garde"], "tone": "absurdo", "fast_start": true, "action_level": "medio", "emotional": false, "popular": false, "year": 2000, "description": "Historia surrealista de crecimiento personal.", "type": "TV", "franchise": "FLCL", "ongoing": false, "source_tags_original": ["accion", "comedia", "surrealista"], "themes": ["Avant Garde"]}, {"title": "Serial Experiments Lain", "episodes": 13, "length": "corto", "demographic": "Seinen", "genres": ["Drama", "Mystery", "Sci-Fi", "Supernatural", "Avant Garde", "Award Winning"], "tone": "oscuro", "fast_start": false, "action_level": "bajo", "emotional": false, "popular": true, "year": 1998, "description": "Una chica se adentra en el mundo digital.", "type": "TV", "franchise": "Serial Experiments Lain", "ongoing": false, "source_tags_original": ["psicologico", "sci-fi"], "themes": ["Psychological"]}, {"title": "Samurai Champloo", "episodes": 26, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2004, "description": "Viaje con samuráis en estilo hip-hop.", "type": "TV", "franchise": "Samurai Champloo", "ongoing": false, "source_tags_original": ["accion", "aventura", "historico"], "themes": ["Historical"]}, {"title": "Trigun", "episodes": 26, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Drama", "Sci-Fi"], "tone": "ligero", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 1998, "description": "Un pistolero pacifista en un mundo salvaje.", "type": "TV", "franchise": "Trigun", "ongoing": false, "source_tags_original": ["accion", "aventura", "sci-fi"], "themes": []}, {"title": "Hellsing Ultimate", "episodes": 10, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Horror", "Supernatural"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2006, "description": "Una organización combate vampiros.", "type": "TV", "franchise": "Hellsing Ultimate", "ongoing": false, "source_tags_original": ["accion", "oscuro", "sobrenatural"], "themes": []}, {"title": "Kill la Kill", "episodes": 24, "length": "corto", "demographic": "Seinen", "genres": ["Action", "Comedy", "Sci-Fi", "Avant Garde"], "tone": "intenso", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2013, "description": "Una estudiante busca venganza en una academia extrema.", "type": "TV", "franchise": "Kill la Kill", "ongoing": false, "source_tags_original": ["accion", "comedia"], "themes": []}, {"title": "Dragon Ball", "episodes": 153, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "ligero", "fast_start": false, "action_level": "medio", "emotional": true, "popular": true, "year": 1986, "description": "Las primeras aventuras de Goku en busca de las bolas de dragón.", "type": "TV", "franchise": "Dragon Ball", "ongoing": false, "source_tags_original": ["accion", "aventura", "comedia"], "themes": []}, {"title": "Dragon Ball Z", "episodes": 291, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "epico", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 1989, "description": "Guerreros protegen la Tierra de amenazas poderosas.", "type": "TV", "franchise": "Dragon Ball", "ongoing": false, "source_tags_original": ["accion", "aventura"], "themes": []}, {"title": "Dragon Ball GT", "episodes": 64, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "epico", "fast_start": false, "action_level": "medio", "emotional": false, "popular": true, "year": 1996, "description": "Nueva aventura con Goku convertido en niño.", "type": "TV", "franchise": "Dragon Ball", "ongoing": false, "source_tags_original": ["accion", "aventura"], "themes": []}, {"title": "Dragon Ball Super", "episodes": 131, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Comedy", "Fantasy"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2015, "description": "Nuevos dioses, universos y torneos de poder.", "type": "TV", "franchise": "Dragon Ball", "ongoing": true, "source_tags_original": ["accion", "aventura"], "themes": []}, {"title": "Bleach", "episodes": 366, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy", "Supernatural"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2004, "description": "Un joven obtiene poderes de shinigami.", "type": "TV", "franchise": "Bleach", "ongoing": false, "source_tags_original": ["accion", "sobrenatural"], "themes": []}, {"title": "Gintama", "episodes": 367, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Comedy", "Drama", "Sci-Fi", "Supernatural"], "tone": "absurdo", "fast_start": false, "action_level": "medio", "emotional": true, "popular": true, "year": 2006, "description": "Comedia absurda con momentos épicos y emocionales.", "type": "TV", "franchise": "Gintama", "ongoing": false, "source_tags_original": ["comedia", "accion", "parodia"], "themes": ["Parody"]}, {"title": "Cowboy Bebop", "episodes": 26, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Adventure", "Drama", "Sci-Fi", "Award Winning"], "tone": "melancolico", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 1998, "description": "Cazarrecompensas viajan por el espacio en busca de trabajo.", "type": "TV", "franchise": "Cowboy Bebop", "ongoing": false, "source_tags_original": ["accion", "sci-fi", "aventura"], "themes": []}, {"title": "The Disastrous Life of Saiki K.", "episodes": 120, "length": "largo", "demographic": "Shounen", "genres": ["Comedy", "Slice of Life", "Supernatural"], "tone": "ligero", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2016, "description": "Un chico con poderes psíquicos solo quiere una vida tranquila.", "type": "TV", "franchise": "The Disastrous Life of Saiki K.", "ongoing": false, "source_tags_original": ["comedia", "sobrenatural", "slice of life"], "themes": []}, {"title": "Grand Blue", "episodes": 12, "length": "corto", "demographic": "Seinen", "genres": ["Comedy", "Slice of Life", "Romance"], "tone": "absurdo", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2018, "description": "Comedia universitaria caótica alrededor del buceo y la amistad.", "type": "TV", "franchise": "Grand Blue", "ongoing": false, "source_tags_original": ["comedia", "slice of life"], "themes": []}, {"title": "Anohana", "episodes": 11, "length": "corto", "demographic": "Shounen", "genres": ["Drama", "Slice of Life", "Supernatural"], "tone": "emocional", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2011, "description": "Un grupo de amigos intenta superar una pérdida del pasado.", "type": "TV", "franchise": "Anohana", "ongoing": false, "source_tags_original": ["drama", "slice of life", "sobrenatural"], "themes": []}, {"title": "Kaiji", "episodes": 52, "length": "medio", "demographic": "Seinen", "genres": ["Drama", "Mystery", "Suspense"], "tone": "intenso", "fast_start": true, "action_level": "bajo", "emotional": false, "popular": true, "year": 2007, "description": "Juegos de riesgo extremo, tensión y decisiones al límite.", "type": "TV", "franchise": "Kaiji", "ongoing": false, "source_tags_original": ["psicologico", "thriller", "drama"], "themes": ["Psychological"]}, {"title": "March Comes in Like a Lion", "episodes": 44, "length": "medio", "demographic": "Seinen", "genres": ["Drama", "Slice of Life"], "tone": "emocional", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2016, "description": "Un joven jugador de shogi lidia con soledad, presión y crecimiento personal.", "type": "TV", "franchise": "March Comes in Like a Lion", "ongoing": false, "source_tags_original": ["drama", "slice of life", "psicologico"], "themes": ["Psychological"]}, {"title": "Berserk (1997)", "episodes": 25, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Adventure", "Drama", "Fantasy", "Supernatural"], "tone": "oscuro", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 1997, "description": "Fantasía oscura brutal con uno de los protagonistas más icónicos del anime.", "type": "TV", "franchise": "Berserk (1997)", "ongoing": false, "source_tags_original": ["accion", "fantasia", "oscuro"], "themes": []}, {"title": "Hajime no Ippo", "episodes": 126, "length": "largo", "demographic": "Shounen", "genres": ["Comedy", "Drama", "Sports"], "tone": "epico", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 2000, "description": "Un chico descubre el boxeo y lucha por superarse.", "type": "TV", "franchise": "Hajime no Ippo", "ongoing": false, "source_tags_original": ["deportes", "accion"], "themes": []}, {"title": "Your Lie in April", "episodes": 22, "length": "corto", "demographic": "Shounen", "genres": ["Drama", "Romance", "Slice of Life"], "tone": "emocional", "fast_start": false, "action_level": "bajo", "emotional": true, "popular": true, "year": 2014, "description": "Un pianista recupera su pasión gracias a una violinista.", "type": "TV", "franchise": "Your Lie in April", "ongoing": false, "source_tags_original": ["romance", "drama", "musica"], "themes": ["Music"]}, {"title": "Tokyo Revengers", "episodes": 50, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Drama", "Supernatural", "Suspense"], "tone": "emocional", "fast_start": true, "action_level": "medio", "emotional": true, "popular": true, "year": 2021, "description": "Viajes en el tiempo para cambiar el destino.", "type": "TV", "franchise": "Tokyo Revengers", "ongoing": false, "source_tags_original": ["accion", "drama"], "themes": []}, {"title": "Black Lagoon", "episodes": 29, "length": "medio", "demographic": "Seinen", "genres": ["Action", "Adventure", "Drama", "Suspense"], "tone": "oscuro", "fast_start": true, "action_level": "alto", "emotional": false, "popular": true, "year": 2006, "description": "Mercenarios en un mundo criminal sin ley.", "type": "TV", "franchise": "Black Lagoon", "ongoing": false, "source_tags_original": ["accion", "crimen"], "themes": ["Crime"]}, {"title": "Fullmetal Alchemist: Brotherhood", "episodes": 64, "length": "medio", "demographic": "Shounen", "genres": ["Action", "Adventure", "Drama", "Fantasy", "Award Winning"], "tone": "epico", "fast_start": true, "action_level": "alto", "emotional": true, "popular": true, "year": 2009, "description": "Dos hermanos buscan recuperar sus cuerpos.", "type": "TV", "franchise": "Fullmetal Alchemist: Brotherhood", "ongoing": false, "source_tags_original": ["accion", "fantasia", "aventura"], "themes": []}, {"title": "Hunter x Hunter (2011)", "episodes": 148, "length": "largo", "demographic": "Shounen", "genres": ["Action", "Adventure", "Fantasy"], "tone": "epico", "fast_start": false, "action_level": "alto", "emotional": true, "popular": true, "year": 2011, "description": "Un niño busca a su padre en un mundo lleno de desafíos.", "type": "TV", "franchise": "Hunter x Hunter (2011)", "ongoing": false, "source_tags_original": ["accion", "aventura"], "themes": []}];
+const RANKING_DATA = [{"title": "One Piece", "mal_id": 21}, {"title": "Hajime no Ippo", "mal_id": 263}, {"title": "Dragon Ball Z", "mal_id": 813}, {"title": "Attack on Titan", "mal_id": 16498}, {"title": "Naruto", "mal_id": 20}, {"title": "Rurouni Kenshin", "mal_id": 45}, {"title": "Hunter x Hunter (2011)", "mal_id": 11061}, {"title": "Death Note", "mal_id": 1535}, {"title": "Frieren", "mal_id": 52991}, {"title": "Demon Slayer", "mal_id": 38000}];
+
+// ── IMAGE via Jikan (MAL oficial, gratis) ──
+const imgCache = {};
+const synopsisCache = {};
+const translationCache = {};
+const TITLE_TO_MAL_ID = {
+  'Demon Slayer': 38000,
+  'Kimetsu no Yaiba': 38000,
+  'Attack on Titan': 16498,
+  'Shingeki no Kyojin': 16498,
+  'One Piece': 21,
+  'Naruto': 20,
+  'Death Note': 1535,
+  'Frieren': 52991,
+  'Hajime no Ippo': 263,
+  'Dragon Ball Z': 813,
+  'Rurouni Kenshin': 45,
+  'Hunter x Hunter (2011)': 11061
+};
+
+async function getImg(title) {
+  if (imgCache[title] !== undefined) return imgCache[title];
+  imgCache[title] = '';
+  try {
+    if (TITLE_TO_MAL_ID[title]) {
+      const byId = await getImgById(TITLE_TO_MAL_ID[title]);
+      if (byId) {
+        imgCache[title] = byId;
+        return imgCache[title];
+      }
+    }
+    await new Promise(r => setTimeout(r, 350));
+    const r = await fetch('https://api.jikan.moe/v4/anime?q=' + encodeURIComponent(title) + '&limit=1');
+    const d = await r.json();
+    imgCache[title] = d?.data?.[0]?.images?.jpg?.large_image_url || '';
+  } catch {}
+  return imgCache[title];
+}
+async function getImgById(id) {
+  const key = 'id' + id;
+  if (imgCache[key] !== undefined) return imgCache[key];
+  imgCache[key] = '';
+  try {
+    const r = await fetch('https://api.jikan.moe/v4/anime/' + id);
+    const d = await r.json();
+    imgCache[key] = d?.data?.images?.jpg?.large_image_url || '';
+  } catch {}
+  return imgCache[key];
+}
+
+async function getAnimeFullData(title) {
+  if (synopsisCache[title] !== undefined) return synopsisCache[title];
+  synopsisCache[title] = null;
+  try {
+    let data = null;
+    if (TITLE_TO_MAL_ID[title]) {
+      const r = await fetch('https://api.jikan.moe/v4/anime/' + TITLE_TO_MAL_ID[title] + '/full');
+      const d = await r.json();
+      data = d?.data || null;
+    }
+    if (!data) {
+      await new Promise(r => setTimeout(r, 350));
+      const r = await fetch('https://api.jikan.moe/v4/anime?q=' + encodeURIComponent(title) + '&limit=1');
+      const d = await r.json();
+      const hit = d?.data?.[0] || null;
+      if (hit?.mal_id) {
+        const fr = await fetch('https://api.jikan.moe/v4/anime/' + hit.mal_id + '/full');
+        const fd = await fr.json();
+        data = fd?.data || hit || null;
+      } else {
+        data = hit;
+      }
+    }
+    synopsisCache[title] = data || null;
+  } catch {
+    synopsisCache[title] = null;
+  }
+  return synopsisCache[title];
+}
+
+async function translateToSpanish(text) {
+  const clean = (text || '').replace(/\s+/g, ' ').trim();
+  if (!clean) return '';
+  if (translationCache[clean] !== undefined) return translationCache[clean];
+
+  const translateChunk = async (chunk) => {
+    try {
+      const url = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent(chunk) + '&langpair=en|es';
+      const r = await fetch(url);
+      const d = await r.json();
+      const translated = (d?.responseData?.translatedText || '').trim();
+      if (!translated || /QUERY LENGTH LIMIT EXCEEDED/i.test(translated)) return '';
+      return translated;
+    } catch {
+      return '';
+    }
+  };
+
+  try {
+    if (clean.length <= 420) {
+      const translated = await translateChunk(clean);
+      translationCache[clean] = translated || clean;
+      return translationCache[clean];
+    }
+
+    const sentences = clean.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [clean];
+    const chunks = [];
+    let current = '';
+
+    for (const sentence of sentences) {
+      const piece = sentence.trim();
+      const candidate = (current ? current + ' ' : '') + piece;
+      if (candidate.length > 380 && current) {
+        chunks.push(current.trim());
+        current = piece;
+      } else {
+        current = candidate;
+      }
+    }
+    if (current.trim()) chunks.push(current.trim());
+
+    const translatedChunks = [];
+    for (const chunk of chunks.slice(0, 8)) {
+      const translated = await translateChunk(chunk);
+      translatedChunks.push(translated || chunk);
+    }
+
+    const finalText = translatedChunks.join(' ').trim();
+    translationCache[clean] = finalText || clean;
+  } catch {
+    translationCache[clean] = clean;
+  }
+  return translationCache[clean];
+}
+
+
+function cleanSynopsisText(text) {
+  const raw = String(text || '').trim();
+  if (!raw) return '';
+  return raw
+    .replace(/\[Escrito por MAL Rewrite\]\s*$/i, '')
+    .replace(/\[Written by MAL Rewrite\]\s*$/i, '')
+    .replace(/\s*\(source:.*?\)\s*$/i, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+async function getSpanishSynopsis(anime) {
+  const fallback = (anime?.description || 'Sin descripción disponible.').trim();
+  const title = anime?.title || '';
+  try {
+    const full = await getAnimeFullData(title);
+    const raw = (full?.synopsis || '').trim();
+    if (!raw) return fallback;
+    const translated = await translateToSpanish(raw);
+    if (/QUERY LENGTH LIMIT EXCEEDED/i.test(translated || '')) return cleanSynopsisText(fallback);
+    return cleanSynopsisText(translated || fallback);
+  } catch {
+    return cleanSynopsisText(fallback);
+  }
+}
+
+const BLANK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='70'%3E%3Crect width='50' height='70' fill='%23141426'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='%236b6b8a' font-size='22'%3E%F0%9F%8E%8C%3C/text%3E%3C/svg%3E";
+
+
+let hasStarted = false;
+
+function openIntro(noAnimation = false) {
+  const intro = document.getElementById('intro-screen');
+  if (!intro) return;
+
+  closeAnimeModal();
+  document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('active'));
+  document.body.classList.add('intro-open');
+
+  const current = [...document.querySelectorAll('.screen')].find(s => s.classList.contains('active'));
+
+  if (noAnimation) {
+    document.querySelectorAll('.screen').forEach(s => {
+      s.classList.remove('active', 'fade-in', 'fade-out');
+    });
+    intro.classList.remove('fade-in', 'fade-out');
+    intro.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    return;
+  }
+
+  document.body.classList.add('screen-transitioning');
+  if (current) current.classList.add('fade-out');
+  if (intro.classList.contains('active')) return;
+
+  setTimeout(() => {
+    document.querySelectorAll('.screen').forEach(s => {
+      s.classList.remove('active', 'fade-in', 'fade-out');
+    });
+    intro.classList.remove('fade-out');
+    intro.classList.add('active', 'fade-in');
+    setTimeout(() => {
+      intro.classList.remove('fade-in');
+      document.body.classList.remove('screen-transitioning');
+    }, 300);
+  }, current ? 170 : 0);
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function dismissIntroIfNeeded(animate = false) {
+  const intro = document.getElementById('intro-screen');
+  if (!intro || !intro.classList.contains('active')) {
+    document.body.classList.remove('intro-open');
+    hasStarted = true;
+    return;
+  }
+
+  hasStarted = true;
+  document.body.classList.remove('intro-open');
+
+  if (!animate) {
+    intro.classList.remove('active', 'fade-in', 'fade-out');
+    return;
+  }
+
+  intro.classList.remove('fade-in');
+  intro.classList.add('fade-out');
+  setTimeout(() => {
+    intro.classList.remove('active', 'fade-out');
+  }, 220);
+}
+
+function setActiveScreen(screenId, navId = null, animate = false) {
+  const screens = [...document.querySelectorAll('.screen')].filter(s => s.id !== 'intro-screen');
+  const target = document.getElementById(screenId);
+  if (!target) return;
+
+  document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('active'));
+  if (navId) {
+    const nav = document.getElementById(navId);
+    if (nav) nav.classList.add('active');
+  }
+
+  const current = screens.find(s => s.classList.contains('active') && s.id !== screenId);
+  screens.forEach(s => {
+    if (s.id !== screenId) {
+      s.classList.remove('fade-in', 'fade-out', 'active');
+    }
+  });
+
+  if (!animate) {
+    target.classList.remove('fade-out');
+    target.classList.add('active', 'fade-in');
+    setTimeout(() => target.classList.remove('fade-in'), 280);
+    return;
+  }
+
+  document.body.classList.add('screen-transitioning');
+
+  if (current) {
+    current.classList.remove('fade-in');
+    current.classList.add('fade-out');
+  }
+
+  setTimeout(() => {
+    if (current) {
+      current.classList.remove('active', 'fade-out');
+    }
+    target.classList.add('active', 'fade-in');
+    setTimeout(() => {
+      target.classList.remove('fade-in');
+      document.body.classList.remove('screen-transitioning');
+    }, 300);
+  }, current ? 160 : 0);
+}
+
+function startApp() {
+  dismissIntroIfNeeded(true);
+  setActiveScreen('filter-screen', 'nav-filter', true);
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function goHome() {
+  openIntro(false);
+}
+
+function showScreen(name) {
+  dismissIntroIfNeeded(true);
+  setActiveScreen(name + '-screen', 'nav-' + name, true);
+  if (name === 'ranking') loadRanking();
+}
+
+
+async function applyFilters() {
+  const genre     = document.getElementById('f-genre').value;
+  const length    = document.getElementById('f-length').value;
+  const tone      = document.getElementById('f-tone').value;
+  const action    = document.getElementById('f-action').value;
+  const theme     = document.getElementById('f-theme').value;
+  const status    = document.getElementById('f-status').value;
+  const type      = document.getElementById('f-type').value;
+  const popular   = document.getElementById('f-popular').value;
+  const yearVal   = document.getElementById('f-year').value;
+
+  
+
+  let results = DB.filter(a => {
+    if (genre   && !a.genres.includes(genre)) return false;
+    if (length  && a.length !== length) return false;
+    if (tone    && a.tone !== tone) return false;
+    if (action  && a.action_level !== action) return false;
+    if (theme   && !(a.themes || []).includes(theme)) return false;
+    if (status === 'true'  && !a.ongoing) return false;
+    if (status === 'false' &&  a.ongoing) return false;
+    if (type    && a.type !== type) return false;
+    if (popular === 'true'  && !a.popular) return false;
+    if (popular === 'false' &&  a.popular) return false;
+    if (yearVal === 'classic' && a.year >= 2000) return false;
+    if (yearVal && yearVal !== 'classic' && a.year < parseInt(yearVal)) return false;
+    return true;
+  }).sort((a, b) => (b.popular - a.popular) || (b.year - a.year));
+
+  const container = document.getElementById('filterResults');
+  container.innerHTML = '';
+
+  if (!results.length) {
+    container.innerHTML = '<div class="no-res">😶‍🌫️ Sin resultados con esos filtros.<br><small>Prueba con menos restricciones.</small></div>';
+    return;
+  }
+
+  results.forEach((a, idx) => {
+    const imgId = 'fi-' + idx + '-' + a.title.replace(/\W/g,'-');
+    const meta = [
+      a.year,
+      a.type === 'Movie' ? 'Película' : `${a.episodes} ep`,
+      a.ongoing ? 'En emisión' : 'Finalizado'
+    ].join(' · ');
+    const chips = [
+      ...(a.genres || []).slice(0, 2),
+      ...((a.themes || []).slice(0,1))
+    ].slice(0,3);
+
+    const div = document.createElement('div');
+    div.className = 'fcard card-clickable';
+    div.innerHTML = `
+      <img class="fcard-img" id="${imgId}" src="${BLANK}" alt="${a.title}">
+      <div>
+        <div class="fcard-title">${a.title}</div>
+        <div class="fcard-meta">${meta}</div>
+        <div class="fcard-desc">${a.description}</div>
+        <div class="tags" style="margin-top:5px">${chips.map(g=>'<span class="tag">'+g+'</span>').join('')}</div>
+      </div>`;
+    div.addEventListener('click', () => {
+      const imgNow = div.querySelector('.fcard-img')?.src || BLANK;
+      openAnimeModal(a, imgNow);
+    });
+    container.appendChild(div);
+    setTimeout(async () => {
+      const url = await getImg(a.title);
+      const el = document.getElementById(imgId);
+      if (el && url) el.src = url;
+    }, idx * 250);
+  });
+}
+
+let rankingLoaded = false;
+async function loadRanking() {
+  if (rankingLoaded) return;
+  rankingLoaded = true;
+  const container = document.getElementById('rankingList');
+
+  for (let i = 0; i < RANKING_DATA.length; i++) {
+    const r = RANKING_DATA[i];
+    const db = DB.find(a => a.title === r.title) || DB.find(a => a.franchise === r.title) || {};
+    const imgId = 'ri-' + i;
+    const div = document.createElement('div');
+    div.className = 'rcard card-clickable';
+    div.innerHTML = `
+      <div class="rnum">${String(i+1).padStart(2,'0')}</div>
+      <img class="rimg" id="${imgId}" src="${BLANK}" alt="${r.title}">
+      <div class="rinfo">
+        <div class="rtitle">${r.title}</div>
+        <div class="rgenres">${(db.genres||[]).join(' · ')}</div>
+        <div class="rdesc">${db.description||''}</div>
+      </div>`;
+    div.addEventListener('click', () => {
+      const imgNow = div.querySelector('.rimg')?.src || BLANK;
+      openAnimeModal({...db, title:r.title, description:db.description || ''}, imgNow);
+    });
+    container.appendChild(div);
+    setTimeout(async () => {
+      const url = await getImgById(r.mal_id);
+      const el = document.getElementById(imgId);
+      if (el && url) el.src = url;
+    }, i * 250);
+  }
+}
+
+
+
+function openAnimeModal(anime, imgSrc = BLANK) {
+  const modal = document.getElementById('animeModal');
+  const img = document.getElementById('animeModalImg');
+  const title = document.getElementById('animeModalTitle');
+  const meta = document.getElementById('animeModalMeta');
+  const desc = document.getElementById('animeModalDesc');
+  const tags = document.getElementById('animeModalTags');
+  
+  
+  
+  
+  
+  
+  if (!modal || !anime) return;
+
+  img.src = imgSrc || BLANK;
+  img.alt = anime.title || '';
+  title.textContent = anime.title || '';
+
+  const metaParts = [];
+  if (anime.year) metaParts.push(String(anime.year));
+  if (anime.type === 'Movie') metaParts.push('Película');
+  else if (anime.episodes) metaParts.push(`${anime.episodes} episodios`);
+  if (anime.length) {
+    const durationMap = { corto:'corta', medio:'media', largo:'larga' };
+    metaParts.push(`Duración ${durationMap[anime.length] || anime.length}`);
+  }
+  if (anime.tone) metaParts.push(`Tono ${anime.tone}`);
+  if (typeof anime.ongoing === 'boolean') metaParts.push(anime.ongoing ? 'En emisión' : 'Finalizado');
+  meta.textContent = metaParts.join(' · ');
+
+  const allTags = [...(anime.genres || []), ...((anime.themes || []))];
+  tags.innerHTML = allTags.map(t => `<span class="tag">${t}</span>`).join('');
+
+  desc.textContent = 'Cargando sinopsis ampliada...';
+  desc.classList.add('loading');
+                
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  const requestId = String(Date.now()) + Math.random().toString(16).slice(2);
+  modal.dataset.requestId = requestId;
+
+  Promise.all([getSpanishSynopsis({title: anime.title, description: anime.description}), getAnimeFullData(anime.title || '')]).then(([text, full]) => {
+    if (modal.dataset.requestId !== requestId) return;
+
+    desc.textContent = cleanSynopsisText(text || anime.description || 'Sin descripción disponible.');
+    desc.classList.remove('loading');
+
+        
+    const seasonParts = [];
+    if (full?.season) seasonParts.push(String(full.season).charAt(0).toUpperCase() + String(full.season).slice(1));
+    if (full?.year) seasonParts.push(String(full.year));
+    
+    
+    if (full?.url) {
+                }
+    const trailerUrl = full?.trailer?.url || full?.trailer?.embed_url || '';
+    if (trailerUrl) {
+                }
+  }).catch(() => {
+    if (modal.dataset.requestId !== requestId) return;
+    desc.textContent = cleanSynopsisText(anime.description || 'Sin descripción disponible.');
+    desc.classList.remove('loading');
+                  });
+}
+
+function closeAnimeModal() {
+  const modal = document.getElementById('animeModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('animeModal');
+  if (e.target === modal) closeAnimeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAnimeModal();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  openIntro(true);
+  const container = document.getElementById('filterResults');
+  if (container && !container.innerHTML.trim()) {
+    container.innerHTML = '<div class="pre-search-note">Selecciona tus filtros y pulsa <strong>Buscar anime</strong> para descubrir resultados.</div>';
+  }
+});
+</script>
+</body>
+</html>
