@@ -1,0 +1,3297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NeoAnimeZ</title>
+<meta property="og:title" content="NeoAnimeZ">
+<meta property="og:description" content="Tu buscador de anime de confianza">
+<meta property="og:image" content="preview.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NeoAnimeZ">
+<meta name="twitter:description" content="Tu buscador de anime de confianza">
+<meta name="twitter:image" content="preview.png">
+<meta name="theme-color" content="#08080f">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="NeoAnimeZ">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#08080f; --surface:#0e0e1a; --surface2:#141426;
+  --border:rgba(255,255,255,0.07);
+  --pink:#ff2d78; --cyan:#00d4ff; --purple:#7b4fff;
+  --text:#e8e8f0; --muted:#6b6b8a;
+  --radius:14px; --nav:64px;
+  --demo-accent:rgba(0,212,255,.24);
+  --genre-accent:rgba(212,175,55,.34);
+  --theme-accent:rgba(255,70,70,.28);
+  --type-accent:rgba(0,212,255,.18);
+  --year-accent:rgba(123,79,255,.30);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);height:-webkit-fill-available}
+body{min-height:100vh;min-height:100svh;min-height:-webkit-fill-available;background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;-webkit-tap-highlight-color:transparent;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--purple);border-radius:4px}
+
+header{
+  position:sticky;top:0;z-index:100;
+  background:linear-gradient(180deg, rgba(8,8,15,.96), rgba(8,8,15,.88));
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:calc(env(safe-area-inset-top) + 12px) 18px 10px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
+  min-height:calc(84px + env(safe-area-inset-top));
+}
+header::after{
+  content:"";
+  position:absolute;left:18px;right:18px;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,.35),rgba(123,79,255,.35),transparent);
+  opacity:.55;
+}
+header img{height:62px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(0,0,0,.28));transition:transform .22s ease, filter .22s ease, opacity .22s ease}
+.header-home-btn{position:relative;z-index:1}
+.header-home-btn{cursor:pointer;transition:transform .18s ease, opacity .18s ease;background:none;border:none;padding:0;display:inline-flex;align-items:center;justify-content:center}
+.header-home-btn:hover img{transform:scale(1.02);filter:drop-shadow(0 10px 26px rgba(0,0,0,.34))}
+.header-home-btn:active img{transform:scale(.985);opacity:.92}
+.logo-fallback{font-family:'Orbitron',monospace;font-size:22px;font-weight:900;background:linear-gradient(90deg,#ff2d78,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+body.screen-transitioning .screen{pointer-events:none}
+body.intro-open{overflow:hidden}
+body.standalone-ios header{position:sticky}
+body.standalone-ios nav{position:fixed}
+body.standalone-ios header{
+  padding-top:calc(env(safe-area-inset-top) + 18px);
+  min-height:calc(96px + env(safe-area-inset-top));
+}
+body.standalone-ios header img{height:56px}
+@media (display-mode: standalone){
+  html{height:-webkit-fill-available}
+  body{min-height:-webkit-fill-available}
+}
+@supports (-webkit-touch-callout: none){
+  body.standalone-ios #intro-screen{min-height:-webkit-fill-available}
+  body.standalone-ios #chat-screen{min-height:calc(-webkit-fill-available - 66px - var(--nav))}
+}
+
+#intro-screen{
+  position:fixed;
+  inset:0;
+  z-index:350;
+  min-height:100vh;
+  min-height:100svh;
+  min-height:-webkit-fill-available;
+  width:100%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:88px 16px calc(var(--nav) + 24px);
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,.12), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 26%),
+    linear-gradient(180deg, rgba(8,8,15,.985), rgba(8,8,15,.97));
+}
+#intro-screen.active{display:flex}
+#intro-screen.fade-in{animation:introFadeIn .3s ease forwards}
+#intro-screen.fade-out{animation:introFadeOut .22s ease forwards}
+@keyframes introFadeIn{from{opacity:0;transform:scale(.992)}to{opacity:1;transform:scale(1)}}
+@keyframes introFadeOut{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.992)}}
+.screen.fade-out{animation:screenFadeOut .22s ease forwards}
+.screen.fade-in{animation:screenFadeIn .28s ease forwards}
+@keyframes screenFadeOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(12px) scale(.992)}}
+@keyframes screenFadeIn{from{opacity:0;transform:translateY(14px) scale(.992)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* SCREENS */
+.screen{
+  display:none;
+  padding-bottom:max(
+    calc(var(--nav) + 150px),
+    calc(var(--nav) + env(safe-area-inset-bottom) + 110px)
+  );
+  animation:fadeUp .28s ease
+}
+.screen.active{display:block}
+#chat-screen{display:none;flex-direction:column;min-height:calc(100vh - 66px - var(--nav));min-height:calc(100svh - 66px - var(--nav));height:auto}
+#chat-screen.active{display:flex}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* CHAT */
+.chat-messages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 16px 8px;display:flex;flex-direction:column;gap:14px}
+.chat-welcome{text-align:center;padding:28px 16px 12px}
+.chat-welcome .icon{font-size:42px;margin-bottom:10px}
+.chat-welcome h2{font-family:'Orbitron',monospace;font-size:14px;font-weight:700;margin-bottom:8px}
+.chat-welcome p{font-size:14px;color:var(--muted);line-height:1.7}
+
+.quick-prompts{display:flex;flex-wrap:wrap;gap:8px;padding:4px 16px 12px;justify-content:center}
+.qbtn{
+  background:var(--surface2);border:1px solid var(--border);border-radius:20px;
+  padding:8px 14px;font-family:'Rajdhani',sans-serif;font-size:13px;color:var(--text);
+  cursor:pointer;transition:border-color .2s,color .2s;
+}
+.qbtn:hover{border-color:var(--cyan);color:var(--cyan)}
+
+.msg{display:flex;gap:10px;animation:fadeUp .2s ease}
+.msg.user{flex-direction:row-reverse}
+.avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px}
+.msg.bot .avatar{background:linear-gradient(135deg,var(--purple),var(--cyan))}
+.msg.user .avatar{background:linear-gradient(135deg,var(--pink),var(--purple))}
+.bubble{max-width:82%;padding:11px 15px;border-radius:18px;line-height:1.5;font-size:15px}
+.msg.bot .bubble{background:var(--surface2);border:1px solid var(--border);border-top-left-radius:4px}
+.msg.user .bubble{background:linear-gradient(135deg,var(--purple),var(--pink));border-top-right-radius:4px;color:#fff}
+
+.rec-cards{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.rec-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:10px 12px;display:flex;gap:10px;align-items:flex-start;transition:border-color .2s;
+}
+.rec-card:hover{border-color:var(--cyan)}
+.rec-img{width:50px;height:70px;border-radius:8px;object-fit:cover;background:var(--surface2);flex-shrink:0}
+.rec-num{font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:.08em;margin-bottom:2px}
+.rec-title{font-family:'Orbitron',monospace;font-size:10px;font-weight:700;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rec-why{font-size:13px;line-height:1.4;color:var(--text);margin-bottom:5px}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;background:rgba(123,79,255,.15);color:var(--cyan);border:1px solid rgba(0,212,255,.15)}
+
+.typing-dots{display:flex;gap:4px;align-items:center}
+.typing-dots span{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+
+.chat-input-area{
+  padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));
+  background:var(--surface);border-top:1px solid var(--border);
+  display:flex;gap:10px;align-items:flex-end;flex-shrink:0;
+}
+.chat-input{
+  flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:22px;
+  padding:10px 16px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:15px;
+  resize:none;max-height:96px;outline:none;transition:border-color .2s;line-height:1.4;
+}
+.chat-input:focus{border-color:var(--purple)}
+.chat-input::placeholder{color:var(--muted)}
+.send-btn{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:transform .15s,opacity .15s;
+}
+.send-btn:hover{transform:scale(1.06)}
+.send-btn:active{transform:scale(.93);opacity:.8}
+.send-btn svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+
+/* INTRO */
+#intro-screen{
+  align-items:center;
+  justify-content:center;
+}
+.intro-card{scroll-margin-top:0;
+  width:100%;
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 28%),
+    linear-gradient(180deg, rgba(22,22,40,.98), rgba(12,12,24,.98));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:30px 22px;
+  text-align:center;
+  box-shadow:0 24px 48px rgba(0,0,0,.30);
+}
+.intro-logo{
+  width:min(100%, 360px);
+  max-height:220px;
+  object-fit:contain;
+  margin:0 auto 18px;
+  display:block;
+}
+.intro-title{
+  font-family:'Orbitron',monospace;
+  font-size:24px;
+  line-height:1.18;
+  margin-bottom:10px;
+  letter-spacing:.02em;
+}
+.intro-sub{
+  font-size:15px;
+  color:#a8a8c2;
+  line-height:1.65;
+  margin-bottom:22px;
+  max-width:34ch;
+  margin-inline:auto;
+}
+.intro-start{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:#fff;
+  font-family:'Orbitron',monospace;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  cursor:pointer;
+  transition:transform .18s, opacity .2s, box-shadow .2s;
+  box-shadow:0 16px 34px rgba(123,79,255,.28);
+}
+.intro-start:hover{opacity:.92;transform:translateY(-1px)}
+.intro-start:active{transform:translateY(0);opacity:.82}
+
+.intro-socials{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-top:18px;
+}
+.intro-socials a{
+  width:38px;
+  height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.02);
+  color:#b9bdd3;
+  text-decoration:none;
+  transition:transform .18s ease, border-color .2s ease, color .2s ease, background .2s ease, opacity .2s ease;
+  opacity:.88;
+}
+.intro-socials a:hover{
+  color:#fff;
+  border-color:rgba(0,212,255,.28);
+  background:rgba(255,255,255,.04);
+  transform:translateY(-1px);
+}
+.intro-socials a:active{
+  transform:translateY(0) scale(.96);
+  opacity:.78;
+}
+.intro-socials svg{
+  width:18px;
+  height:18px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.pre-search-note{
+  text-align:center;
+  padding:34px 18px;
+  color:var(--muted);
+  line-height:1.7;
+  border:1px dashed rgba(255,255,255,.08);
+  border-radius:18px;
+  background:rgba(20,20,38,.55);
+}
+
+/* FILTERS */
+#filter-screen{padding:14px}
+.sec-head{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin:2px 0 14px;text-align:center}
+.glow{height:1px;background:linear-gradient(90deg,transparent,var(--cyan),var(--purple),transparent);margin-bottom:16px;opacity:.35}
+
+.filter-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:10px;margin-bottom:16px}
+.fg{display:flex;flex-direction:column;min-width:0}
+.fg label{display:block;font-size:14px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#c9ccef;margin-bottom:8px;text-align:center;line-height:1.2}
+.fsel{
+  width:100%;min-height:48px;background:linear-gradient(180deg, rgba(22,22,40,.96), rgba(15,15,28,.96));border:1px solid rgba(255,255,255,.08);border-radius:14px;
+  padding:12px 46px 12px 46px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;
+  outline:none;appearance:none; box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;cursor:pointer;transition:border-color .2s;
+  text-align:center;
+  text-align-last:center;
+}
+.fsel:focus{border-color:var(--purple)}
+.fsel option{background:#0e0e1a}
+.full{grid-column:1/-1}
+
+.full{grid-column:1/-1}
+
+.genre-stack,.theme-stack{display:flex;flex-direction:column;gap:8px;width:100%}
+.genre-row,.theme-row{position:relative;display:block;width:100%}
+.genre-row .fsel,.theme-row .fsel{
+  width:100%;
+  max-width:none;
+  display:block;
+  padding-left:40px;
+  padding-right:42px;
+  text-align:center;
+  text-align-last:center;
+}
+.genre-row-actions,.theme-row-actions{
+  position:absolute;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:20px;
+  height:20px;
+  z-index:2;
+  pointer-events:none;
+}
+.genre-row-actions:empty,.theme-row-actions:empty{display:none}
+.genre-remove-btn,.genre-add-btn,.theme-remove-btn,.theme-add-btn{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  border-radius:14px;
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:transform .15s ease, border-color .2s ease, color .2s ease, opacity .2s ease;
+}
+.genre-remove-btn,.theme-remove-btn{
+  width:20px;
+  min-width:20px;
+  height:20px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  background:transparent;
+  font-size:15px;
+  line-height:1;
+  color:#b9bdd3;
+  pointer-events:auto;
+}
+.genre-add-btn,.theme-add-btn{width:100%;display:block;margin-top:6px;padding:9px 12px;font-size:9px;background:rgba(255,255,255,.03)}
+.genre-remove-btn:hover,.genre-add-btn:hover,.theme-remove-btn:hover,.theme-add-btn:hover{border-color:rgba(0,212,255,.35);color:var(--cyan);transform:translateY(-1px)}
+.genre-remove-btn:active,.genre-add-btn:active,.theme-remove-btn:active,.theme-add-btn:active{transform:translateY(0);opacity:.85}
+.filter-section{
+  width:100%;
+  display:block;
+  padding:10px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.02);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  box-sizing:border-box;
+}
+.filter-section.demo-section{border-color:var(--demo-accent);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,212,255,.025))}
+.filter-section.genre-section{border-color:rgba(212,175,55,.58);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(212,175,55,.06))}
+.filter-section.theme-section{border-color:rgba(230,57,70,.50);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(230,57,70,.06))}
+.filter-section.type-section{border-color:var(--type-accent);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,212,255,.02))}
+.filter-section.year-section{border-color:rgba(123,79,255,.56);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(123,79,255,.06))}
+.results-summary{
+  display:none;
+  margin:-2px 0 10px;
+  padding:0 2px;
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#9fa3c8;
+}
+.results-summary.show{display:block}
+.fcard.top-rank{
+  position:relative;
+  overflow:hidden;
+  border-width:1px;
+}
+.fcard.top-rank::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:18px;
+  padding:1px;
+  background:linear-gradient(135deg,var(--top-accent),rgba(255,255,255,.12));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  opacity:.95;
+}
+.rank-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:8px;
+  padding:5px 9px;
+  border-radius:999px;
+  font-family:'Orbitron',monospace;
+  font-size:9px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--top-accent);
+  background:color-mix(in srgb, var(--top-accent) 14%, rgba(255,255,255,.03));
+  border:1px solid color-mix(in srgb, var(--top-accent) 38%, rgba(255,255,255,.08));
+}
+.rank-badge strong{color:#fff;font-weight:700}
+.top-1{--top-accent:#ffd700}
+.top-2{--top-accent:#c0c0c0}
+.top-3{--top-accent:#cd7f32}
+.top-4{--top-accent:#00d4ff}
+.top-5{--top-accent:#b57cff}
+.score-line{
+  font-size:12px;
+  color:#b9bddc;
+  margin-bottom:6px;
+}
+.score-line strong{color:#fff}
+
+
+.apply-btn{
+  width:100%;padding:14px;background:linear-gradient(135deg,var(--purple),var(--pink));
+  border:none;border-radius:18px;color:#fff;
+  font-family:'Orbitron',monospace;font-size:12px;font-weight:700;letter-spacing:.14em;
+  cursor:pointer;transition:opacity .2s,transform .15s, box-shadow .2s;margin-bottom:16px;
+  box-shadow:0 16px 34px rgba(255,45,120,.18);
+}
+.apply-btn:hover{opacity:.9;transform:translateY(-1px)}
+.apply-btn:active{transform:translateY(0);opacity:.8}
+
+.fresults{display:flex;flex-direction:column;gap:10px;padding-bottom:36px}
+.fcard{
+  background:linear-gradient(180deg, rgba(20,20,38,.96), rgba(14,14,26,.98));
+  border:1px solid rgba(255,255,255,.07);border-radius:18px;
+  padding:13px;display:flex;gap:12px;align-items:flex-start;
+  transition:border-color .2s, transform .2s, box-shadow .2s;animation:fadeUp .22s ease;
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+  min-width:0;
+}
+.fcard:hover{border-color:rgba(123,79,255,.58);transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.22)}
+.fcard-img{width:58px;height:82px;border-radius:10px;object-fit:cover;background:var(--surface);flex-shrink:0;box-shadow:0 10px 22px rgba(0,0,0,.26)}
+.fcard-title{
+  font-family:'Orbitron',monospace;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:5px;
+  letter-spacing:.03em;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  line-height:1.35;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.fcard-meta{font-size:12px;color:#9a9ab4;margin-bottom:6px}
+.fcard-desc{font-size:13px;color:var(--text);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.no-res{text-align:center;padding:42px 20px;color:#a2a2bd;font-size:15px;line-height:1.8;background:linear-gradient(180deg, rgba(20,20,38,.72), rgba(14,14,26,.82));border:1px dashed rgba(255,255,255,.08);border-radius:18px}
+
+/* RANKING */
+#ranking-screen,#search-screen,#info-screen{padding:16px}
+.rlist{display:flex;flex-direction:column;gap:11px;padding-bottom:36px}
+.rcard{
+  background:linear-gradient(180deg, rgba(20,20,38,.96), rgba(14,14,26,.98));border:1px solid rgba(255,255,255,.07);border-radius:18px;
+  padding:13px;display:flex;gap:13px;align-items:center;
+  transition:border-color .2s,transform .2s, box-shadow .2s;
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+}
+.rcard:hover{border-color:rgba(0,212,255,.55);transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.22)}
+.rnum{font-family:'Orbitron',monospace;font-size:24px;font-weight:900;width:34px;text-align:center;flex-shrink:0;color:transparent;-webkit-text-stroke:1px;opacity:.9}
+.rcard:nth-child(1) .rnum{-webkit-text-stroke-color:#ffd700}
+.rcard:nth-child(2) .rnum{-webkit-text-stroke-color:#c0c0c0}
+.rcard:nth-child(3) .rnum{-webkit-text-stroke-color:#cd7f32}
+.rcard:nth-child(n+4) .rnum{-webkit-text-stroke-color:var(--muted)}
+.rimg{width:58px;height:82px;border-radius:10px;object-fit:cover;background:var(--surface);flex-shrink:0;box-shadow:0 10px 22px rgba(0,0,0,.26)}
+.rinfo{flex:1;min-width:0}
+.rtitle{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;margin-bottom:5px;letter-spacing:.03em}
+.rgenres{font-size:12px;color:var(--muted);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rdesc{font-size:13px;line-height:1.4;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+.bottom-spacer{
+  height:max(
+    calc(var(--nav) + 110px),
+    calc(var(--nav) + env(safe-area-inset-bottom) + 80px)
+  );
+  pointer-events:none;
+}
+
+/* NAV */
+nav{
+  position:fixed;bottom:0;left:0;right:0;height:calc(var(--nav) + env(safe-area-inset-bottom));
+  background:rgba(8,8,15,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);display:flex;z-index:200;
+  padding-bottom:env(safe-area-inset-bottom);
+  box-shadow:0 -10px 30px rgba(0,0,0,.35);
+}
+nav::before{
+  content:"";
+  position:absolute;
+  top:-30px;
+  left:0;
+  right:0;
+  height:30px;
+  background:linear-gradient(to top, rgba(8,8,15,1), transparent);
+  pointer-events:none;
+}
+
+.nbtn{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  background:none;border:none;color:var(--muted);
+  font-family:'Rajdhani',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:color .2s;padding:8px 4px;
+}
+.nbtn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nbtn.active{color:var(--cyan)}
+.nbtn:hover{color:var(--text)}
+
+/* SHOP */
+.shop-card{
+  margin-bottom:36px;
+  background:
+    radial-gradient(circle at top left, rgba(0,212,255,.10), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 28%),
+    linear-gradient(180deg, rgba(20,20,38,.96), rgba(12,12,24,.98));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:26px 18px 22px;
+  text-align:center;
+  box-shadow:0 18px 36px rgba(0,0,0,.22);
+}
+.shop-icon{
+  width:86px;height:86px;margin:0 auto 16px;border-radius:24px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg, rgba(123,79,255,.24), rgba(0,212,255,.16));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 18px 34px rgba(0,0,0,.22);
+}
+.shop-icon svg{width:42px;height:42px;stroke:var(--cyan);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.shop-title{font-family:'Orbitron',monospace;font-size:18px;margin-bottom:8px;letter-spacing:.04em}
+.shop-sub{font-size:15px;color:#a7a7c1;line-height:1.7;max-width:30ch;margin:0 auto 16px}
+.shop-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cyan);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.18);
+}
+.shop-list{margin-top:18px;display:grid;gap:10px}
+.shop-item{
+  text-align:left;padding:13px 14px;border-radius:16px;background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06); color:#c5c5d8;
+}
+.shop-item strong{display:block;color:#fff;font-size:14px;margin-bottom:3px}
+
+
+/* SEARCH */
+.search-panel{
+  margin-bottom:18px;
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,.08), transparent 34%),
+    linear-gradient(180deg, rgba(20,20,38,.96), rgba(12,12,24,.98));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:18px 16px 16px;
+  box-shadow:0 18px 36px rgba(0,0,0,.20);
+}
+.search-title{
+  font-family:'Orbitron',monospace;
+  font-size:14px;
+  text-align:center;
+  margin-bottom:6px;
+  letter-spacing:.04em;
+}
+.search-sub{
+  text-align:center;
+  color:#a7a7c1;
+  font-size:14px;
+  line-height:1.65;
+  margin:0 auto 14px;
+  max-width:34ch;
+}
+.search-field{position:relative}
+.search-input{
+  width:100%;
+  min-height:52px;
+  padding:14px 48px 14px 16px;
+  background:linear-gradient(180deg, rgba(22,22,40,.96), rgba(15,15,28,.96));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  color:var(--text);
+  font-family:'Rajdhani',sans-serif;
+  font-size:16px;
+  outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+.search-input:focus{
+  border-color:rgba(0,212,255,.48);
+  box-shadow:0 0 0 3px rgba(0,212,255,.08);
+}
+.search-input::placeholder{color:#7d81a3}
+.search-clear{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  color:#c5c7dc;
+  font-size:18px;
+  line-height:1;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.search-clear.show{display:flex}
+.search-clear:hover{color:var(--cyan);border-color:rgba(0,212,255,.28)}
+
+/* INFO */
+.info-stack{display:flex;flex-direction:column;gap:12px;padding-bottom:34px}
+.info-card{
+  background:
+    radial-gradient(circle at top left, rgba(0,212,255,.08), transparent 34%),
+    linear-gradient(180deg, rgba(20,20,38,.96), rgba(12,12,24,.98));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:18px 16px;
+  box-shadow:0 18px 36px rgba(0,0,0,.20);
+}
+.info-title{
+  font-family:'Orbitron',monospace;
+  font-size:16px;
+  letter-spacing:.04em;
+  margin-bottom:8px;
+  text-align:center;
+}
+.info-text{
+  color:#b5b7ce;
+  font-size:14px;
+  line-height:1.7;
+  text-align:center;
+}
+.info-mail{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:14px;
+  width:100%;
+  min-height:46px;
+  border-radius:16px;
+  border:1px solid rgba(0,212,255,.18);
+  background:rgba(0,212,255,.06);
+  color:#dff9ff;
+  text-decoration:none;
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.info-mail:hover{border-color:rgba(0,212,255,.34);color:#fff}
+.info-mini{
+  margin-top:10px;
+  display:block;
+  font-size:12px;
+  color:#8b8faa;
+  line-height:1.65;
+}
+
+.info-legal{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:2px;
+}
+.info-accordion{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  background:rgba(255,255,255,.03);
+  overflow:hidden;
+}
+.info-accordion summary{
+  list-style:none;
+  cursor:pointer;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  font-family:'Orbitron',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#dfe3fb;
+}
+.info-accordion summary::-webkit-details-marker{display:none}
+.info-accordion summary::after{
+  content:"+";
+  flex-shrink:0;
+  font-size:16px;
+  line-height:1;
+  color:var(--cyan);
+  transition:transform .2s ease, opacity .2s ease;
+}
+.info-accordion[open] summary::after{
+  content:"−";
+}
+.info-accordion-body{
+  padding:0 16px 16px;
+  color:#b5b7ce;
+  font-size:14px;
+  line-height:1.7;
+}
+.info-accordion-body p + p{
+  margin-top:10px;
+}
+.info-accordion-body strong{
+  color:#fff;
+}
+
+
+/* USER */
+.user-shell{display:flex;flex-direction:column;gap:14px;padding-bottom:36px}
+.user-card,.auth-card{
+  background:radial-gradient(circle at top left, rgba(123,79,255,.10), transparent 34%),linear-gradient(180deg, rgba(20,20,38,.96), rgba(12,12,24,.98));
+  border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:18px 16px;box-shadow:0 18px 36px rgba(0,0,0,.20)
+}
+.user-title{font-family:'Orbitron',monospace;font-size:16px;letter-spacing:.04em;margin-bottom:8px;text-align:center}
+.user-text{color:#b5b7ce;font-size:14px;line-height:1.7;text-align:center}
+.user-status-note{margin-top:10px;text-align:center;font-size:12px;color:#8b8faa;line-height:1.6}
+.auth-tabs{display:flex;gap:8px;margin-bottom:14px}
+.auth-tab{flex:1;min-height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#c5c7dc;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.auth-tab.active{border-color:rgba(0,212,255,.30);color:#fff;background:rgba(0,212,255,.10)}
+.auth-form{display:flex;flex-direction:column;gap:10px}
+.auth-form.hidden{display:none}
+.auth-input{width:100%;min-height:48px;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(22,22,40,.96), rgba(15,15,28,.96));color:var(--text);font-family:'Rajdhani',sans-serif;font-size:15px;outline:none}
+.auth-input:focus{border-color:rgba(0,212,255,.35)}
+.forgot-password-btn{min-height:20px;align-self:center;background:none;border:none;color:#9ea4ca;font-family:'Rajdhani',sans-serif;font-size:14px;cursor:pointer;padding:2px 0 0;text-decoration:underline;text-underline-offset:3px}
+.forgot-password-btn:hover{color:var(--cyan)}
+.account-divider{
+  height:1px;
+  margin:4px 0 2px;
+  background:linear-gradient(90deg, transparent, rgba(0,212,255,.28), transparent);
+  opacity:.75;
+}
+.account-settings{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:12px;
+  padding:0 16px 16px;
+}
+.account-settings-form{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+#accountAccordion{overflow:hidden}
+#accountAccordion .user-logout{margin-top:6px}
+.account-settings-title{
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#d8dcf6;
+  text-align:center;
+}
+.account-helper{
+  font-size:12px;
+  line-height:1.6;
+  color:#9398ba;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .auth-input,
+  .search-input,
+  .chat-input{
+    font-size:16px;
+  }
+}
+
+.auth-submit,.user-logout,.status-chip-btn,.status-clear-btn{min-height:44px;border:none;border-radius:14px;cursor:pointer;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.auth-submit,.user-logout{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff}
+.user-logout{width:100%;margin-top:12px}
+.auth-feedback{margin-top:10px;font-size:13px;line-height:1.6;text-align:center;color:#aeb3d3;min-height:20px}
+.auth-feedback.error{color:#ff9cb5}
+.auth-feedback.success{color:#8ff0ff}
+.user-section{display:flex;flex-direction:column;gap:10px}
+.user-section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 2px}
+.user-section-title{font-family:'Orbitron',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#d4d7f0}
+.user-count{font-size:11px;color:#8f94b5}
+.user-empty{padding:18px 14px;border-radius:16px;border:1px dashed rgba(255,255,255,.08);background:rgba(255,255,255,.02);color:#8f94b5;text-align:center;line-height:1.6}
+.user-anime-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 14px;border-radius:16px;
+  background:linear-gradient(180deg, rgba(20,20,38,.96), rgba(14,14,26,.98));
+  border:1px solid rgba(255,255,255,.07);
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+  cursor:pointer;
+  transition:border-color .2s ease, transform .18s ease, box-shadow .2s ease;
+}
+.user-anime-row:hover{border-color:rgba(0,212,255,.34);transform:translateY(-1px);box-shadow:0 18px 34px rgba(0,0,0,.22)}
+.user-anime-name{
+  flex:1;min-width:0;
+  font-family:'Orbitron',monospace;font-size:11px;line-height:1.45;
+  color:#eef1ff;letter-spacing:.02em;
+  white-space:normal;overflow-wrap:anywhere;word-break:break-word;
+}
+.user-remove-btn{
+  width:30px;min-width:30px;height:30px;
+  display:inline-flex;align-items:center;justify-content:center;
+  border-radius:999px;border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);color:#c5c7dc;
+  cursor:pointer;font-size:18px;line-height:1;flex-shrink:0;
+  transition:transform .15s ease, border-color .2s ease, color .2s ease, opacity .2s ease;
+}
+.user-remove-btn:hover{border-color:rgba(255,45,120,.34);color:#fff;transform:translateY(-1px)}
+.user-remove-btn:active{transform:translateY(0);opacity:.82}
+.status-chip-btn{padding:8px 10px;background:rgba(255,255,255,.04);color:#d1d4eb;border:1px solid rgba(255,255,255,.08)}
+.status-chip-btn.active{background:rgba(0,212,255,.12);border-color:rgba(0,212,255,.30);color:#fff}
+.status-clear-btn{padding:8px 10px;background:rgba(255,255,255,.03);color:#c5c7dc;border:1px solid rgba(255,255,255,.08)}
+.modal-status-box{margin-top:16px;padding:14px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+.modal-status-title{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#cfd2eb;margin-bottom:10px}
+.modal-status-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.modal-status-message{margin-top:10px;font-size:12px;line-height:1.6;color:#9fa4c7}
+.modal-status-message.error{color:#ff9cb5}
+.modal-status-message.success{color:#8ff0ff}
+.modal-status-box.hidden{display:none}
+@media (max-width: 640px){
+  .modal-status-grid{grid-template-columns:1fr}
+}
+
+/* MODAL ANIME */
+.card-clickable{cursor:pointer}
+.card-clickable:active{transform:scale(.995)}
+.modal-backdrop{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(2,4,12,.76);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:none;align-items:center;justify-content:center;
+  padding:16px;
+}
+.modal-backdrop.open{display:flex}
+.modal-sheet{
+  width:min(100%,560px);
+  max-height:min(86dvh,860px);
+  overflow:auto;
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,.12), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(255,45,120,.12), transparent 28%),
+    linear-gradient(180deg, rgba(18,18,34,.98), rgba(8,8,18,.98));
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:26px;
+  box-shadow:0 28px 56px rgba(0,0,0,.42);
+  padding:18px;
+  animation:modalPop .22s ease;
+}
+.modal-close{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  margin-left:auto;cursor:pointer;font-size:18px;
+}
+.modal-hero{display:flex;gap:16px;align-items:flex-start;margin-top:8px}
+.modal-cover{
+  width:112px;height:156px;border-radius:16px;object-fit:cover;
+  background:var(--surface2);flex-shrink:0;box-shadow:0 14px 28px rgba(0,0,0,.30)
+}
+.modal-title{
+  font-family:'Orbitron',monospace;font-size:18px;line-height:1.3;margin-bottom:8px
+}
+.modal-meta{font-size:13px;color:#a4a4bf;line-height:1.7;margin-bottom:10px}
+.modal-desc{font-size:15px;line-height:1.75;color:var(--text);margin:14px 0 0}
+.modal-desc.loading{color:#9a9ab4}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.modal-detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:10px;
+}
+.modal-detail{
+  padding:10px 12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+}
+.modal-detail-label{
+  font-family:'Orbitron',monospace;
+  font-size:9px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+.modal-detail-value{
+  font-size:14px;
+  line-height:1.45;
+  color:var(--text);
+}
+.modal-actions{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+  flex-wrap:wrap;
+}
+.modal-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:132px;
+  padding:11px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+  background:linear-gradient(135deg, rgba(123,79,255,.26), rgba(0,212,255,.18));
+}
+.modal-link.secondary{
+  background:rgba(255,255,255,.03);
+  color:var(--text);
+}
+.modal-link.hidden{display:none}
+.modal-section-title{
+  font-family:'Orbitron',monospace;font-size:11px;letter-spacing:.12em;
+  color:var(--muted);text-transform:uppercase;margin-top:18px;margin-bottom:10px
+}
+@keyframes modalPop{
+  from{opacity:0;transform:translateY(10px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media(max-width:430px){
+  header{padding-left:14px;padding-right:14px}
+  header img{height:56px;max-width:min(58vw, 220px)}
+}
+
+@media(max-width:520px){
+  .modal-backdrop{padding:12px}
+  .modal-sheet{padding:14px;border-radius:22px;max-height:min(82dvh,760px)}
+  .modal-hero{gap:12px}
+  .modal-cover{width:96px;height:136px}
+  .modal-title{font-size:16px}
+  .modal-detail-grid{grid-template-columns:1fr}
+  .modal-actions{flex-direction:column}
+  .modal-link{width:100%}
+}
+
+@media(min-width:600px){
+  :root{
+    --nav:72px;
+  }
+
+  body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  header,
+  #chat-screen,
+  #filter-screen,
+  #ranking-screen,
+  #search-screen,
+  #info-screen,
+  #user-screen{
+    max-width:920px;
+    width:min(92vw, 920px);
+    margin-inline:auto;
+  }
+
+  #intro-screen{
+    width:100%;
+    padding-left:32px;
+    padding-right:32px;
+  }
+
+  .intro-card{
+    width:min(100%, 680px);
+    margin-inline:auto;
+  }
+
+  .filter-grid{
+    grid-template-columns:1fr 1fr;
+    column-gap:16px;
+    row-gap:12px;
+  }
+
+  .fresults,
+  .rlist,
+  .info-stack{
+    padding-bottom:20px;
+  }
+
+  .bottom-spacer{
+    display:none;
+  }
+
+  nav{
+    position:fixed;
+    top:50%;
+    right:24px;
+    left:auto;
+    bottom:auto;
+    transform:translateY(-50%);
+    width:82px;
+    height:auto;
+    max-width:none;
+    padding:10px 0;
+    flex-direction:column;
+    border:1px solid var(--border);
+    border-radius:24px;
+    background:rgba(8,8,15,.94);
+    box-shadow:0 18px 38px rgba(0,0,0,.35);
+  }
+
+  nav::before{
+    display:none;
+  }
+
+  .nbtn{
+    min-height:74px;
+    padding:10px 6px;
+    font-size:9px;
+  }
+
+  body.screen-transitioning .screen{pointer-events:none}
+  .screen{animation:none}
+}
+
+@media(min-width:1100px){
+  header,
+  #chat-screen,
+  #filter-screen,
+  #ranking-screen,
+  #search-screen,
+  #info-screen,
+  #user-screen{
+    width:min(88vw, 980px);
+    max-width:980px;
+  }
+
+  nav{
+    right:32px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  @media (display-mode: standalone) {
+    header{
+      padding-top: calc(12px + env(safe-area-inset-top));
+      height: auto;
+    }
+    header img{
+      margin-top: 6px;
+    }
+  }
+}
+
+
+.intro-socials a.insta{
+  transform: scale(1.15);
+  opacity: 1;
+  position:relative;
+}
+
+.intro-socials a.insta svg{
+  stroke:#fff;
+}
+
+.intro-socials a.insta::after{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius:14px;
+  background: radial-gradient(circle, rgba(255,45,120,0.35), transparent 70%);
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.intro-socials a.insta:hover::after{
+  opacity:1;
+}
+
+
+#user-screen{padding:16px;}
+#user-screen .sec-head{margin-top:2px;}
+.user-active{color:var(--cyan)!important;text-shadow:0 0 8px rgba(0,212,255,.6);} 
+.user-active svg{stroke:var(--cyan);} 
+
+
+html.is-resetting-results {
+  cursor: progress;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media(min-width:600px){
+  .screen.fade-out,
+  .screen.fade-in,
+  #intro-screen.fade-in,
+  #intro-screen.fade-out{
+    animation:none !important;
+  }
+}
+
+</style>
+<!-- Google Analytics -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SF806D05CQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SF806D05CQ');
+</script>
+
+</head>
+<body>
+
+<header aria-label="Cabecera NeoAnimeZ">
+  <button class="header-home-btn" type="button" onclick="goHome()" aria-label="Volver al inicio">
+    <img src="logo.png" alt="NeoAnimeZ"
+      onerror="this.outerHTML='<span class=\'logo-fallback\'>NeoAnimeZ</span>'">
+  </button>
+
+</header>
+
+
+<!-- INTRO -->
+<div id="intro-screen" class="screen active">
+  <div class="intro-card">
+    <img class="intro-logo" src="logo.png" alt="NeoAnimeZ"
+      onerror="this.outerHTML='<span class=\'logo-fallback\'>NeoAnimeZ</span>'">
+    <div class="intro-title">Descubre tu próximo anime</div>
+    <div class="intro-sub">Elige filtros y descubre series o pelis que encajen contigo en segundos.</div>
+
+    <button class="intro-start" onclick="startApp()">EMPEZAR</button>
+    
+    <div class="intro-socials" aria-label="Redes sociales">
+
+      <!-- Twitter -->
+      <a href="https://twitter.com/neoanimez" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 4l16 16"></path>
+          <path d="M20 4L4 20"></path>
+        </svg>
+      </a>
+
+      <!-- Twitch -->
+      <a href="https://www.twitch.tv/neoanimez" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 4h14v10l-4 4h-4l-2 2v-2H5z"></path>
+          <path d="M10 8v4"></path>
+          <path d="M14 8v4"></path>
+        </svg>
+      </a>
+
+      <!-- INSTAGRAM -->
+      <a href="https://www.instagram.com/neoanimez?igsh=djlnbzU5eGUycDNp&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="insta">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17" cy="7" r="1.2"></circle>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@neoanimez" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 24 24">
+          <path d="M14 5c1 2 2.5 3 4.5 3"></path>
+          <path d="M14 5v9.5a4 4 0 1 1-4-4"></path>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@neoanimez" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="6.5" width="18" height="11" rx="3"></rect>
+          <path d="M10 9.5l5 3-5 3z"></path>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- FILTROS -->
+<div id="filter-screen" class="screen">
+  <div class="sec-head">Catálogo por filtros</div>
+  <div class="glow"></div>
+  <div class="filter-grid">
+    <div class="fg full">
+      <label>Demografía</label>
+      <div class="filter-section demo-section">
+        <select class="fsel" id="f-demo">
+          <option value="">Cualquiera</option>
+          <option value="Josei">Josei</option>
+          <option value="Kids">Kodomo</option>
+          <option value="Seinen">Seinen</option>
+          <option value="Shoujo">Shoujo</option>
+          <option value="Shounen">Shounen</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fg full">
+      <label>Géneros</label>
+      <div class="filter-section genre-section">
+        <div id="genreFilters" class="genre-stack">
+          <div class="genre-row">
+            <select class="fsel genre-select">
+              <option value="">Cualquiera</option>
+              <option value="Action">Acción</option>
+              <option value="Adventure">Aventura</option>
+              <option value="Sci-Fi">Ciencia ficción</option>
+              <option value="Comedy">Comedia</option>
+              <option value="Sports">Deportes</option>
+              <option value="Drama">Drama</option>
+              <option value="Ecchi">Ecchi</option>
+              <option value="Avant Garde">Experimental</option>
+              <option value="Fantasy">Fantasía</option>
+              <option value="Gourmet">Gastronomía</option>
+              <option value="Girls Love">Girls Love</option>
+              <option value="Horror">Terror</option>
+              <option value="Mystery">Misterio</option>
+              <option value="Award Winning">Premiados</option>
+              <option value="Romance">Romance</option>
+              <option value="Slice of Life">Vida cotidiana</option>
+              <option value="Supernatural">Sobrenatural</option>
+              <option value="Suspense">Suspense</option>
+              <option value="Boys Love">Boys Love</option>
+              <option value="Hentai">Hentai</option>
+            </select>
+              <div class="genre-row-actions"></div>
+          </div>
+        </div>
+        <button class="genre-add-btn" type="button" onclick="addGenreSelect()">+ Añadir género</button>
+      </div>
+    </div>
+
+    <div class="fg full">
+      <label>Temas</label>
+      <div class="filter-section theme-section">
+        <div id="themeFilters" class="theme-stack">
+        <div class="theme-row">
+          <select class="fsel theme-select">
+            <option value="">Cualquiera</option>
+            <option value="Adult Cast">Adulto</option>
+            <option value="Anthropomorphic">Antropomórfico</option>
+            <option value="Performing Arts">Artes escénicas</option>
+            <option value="Visual Arts">Artes visuales</option>
+            <option value="CGDCT">CGDCT (Moe)</option>
+            <option value="Racing">Carreras</option>
+            <option value="Organized Crime">Crimen organizado</option>
+            <option value="Otaku Culture">Cultura otaku</option>
+            <option value="Delinquents">Delincuentes</option>
+            <option value="Combat Sports">Deportes de combate</option>
+            <option value="Team Sports">Deportes de equipo</option>
+            <option value="Detective">Detectives</option>
+            <option value="Space">Espacio</option>
+            <option value="School">Escolar</option>
+            <option value="Strategy Game">Estrategia</option>
+            <option value="Urban Fantasy">Fantasía urbana</option>
+            <option value="Gore">Gore</option>
+            <option value="Gag Humor">Humor absurdo</option>
+            <option value="Historical">Histórico</option>
+            <option value="Idols (Female)">Idols femeninos</option>
+            <option value="Idols (Male)">Idols masculinos</option>
+            <option value="Isekai">Isekai</option>
+            <option value="Iyashikei">Iyashikei</option>
+            <option value="Mahou Shoujo">Mahou Shoujo</option>
+            <option value="Medical">Médico</option>
+            <option value="Mecha">Mecha</option>
+            <option value="Military">Militar</option>
+            <option value="Mythology">Mitología</option>
+            <option value="Music">Música</option>
+            <option value="Parody">Parodia</option>
+            <option value="Psychological">Psicológico</option>
+            <option value="Reincarnation">Reencarnación</option>
+            <option value="Samurai">Samurai</option>
+            <option value="Showbiz">Showbiz</option>
+            <option value="Survival">Supervivencia</option>
+            <option value="Super Power">Superpoderes</option>
+            <option value="Love Polygon">Triángulo amoroso</option>
+            <option value="Vampire">Vampiros</option>
+            <option value="Time Travel">Viajes en el tiempo</option>
+            <option value="Workplace">Trabajo</option>
+          </select>
+            <div class="theme-row-actions"></div>
+        </div>
+        </div>
+        <button class="theme-add-btn" type="button" onclick="addThemeSelect()">+ Añadir tema</button>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Tipo</label>
+      <div class="filter-section type-section">
+        <select class="fsel" id="f-type">
+          <option value="">Cualquiera</option>
+          <option value="TV">Serie</option>
+          <option value="Movie">Película</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Fecha estreno</label>
+      <div class="filter-section year-section">
+        <select class="fsel" id="f-year">
+          <option value="">Cualquiera</option>
+          <option value="2020s">2020s</option>
+          <option value="2010s">2010s</option>
+          <option value="2000s">2000s</option>
+          <option value="1990s">1990s</option>
+          <option value="classic">Clásicos</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button class="apply-btn" onclick="applyFilters()">BUSCAR ANIME</button>
+  <div class="results-summary" id="resultsSummary"></div>
+  <div class="fresults" id="filterResults"><div class="pre-search-note">Selecciona tus filtros y pulsa <strong>Buscar anime</strong> para ver resultados.</div></div>
+</div>
+
+<!-- RANKING -->
+<div id="ranking-screen" class="screen">
+  <div class="sec-head">Top NeoAnimeZ</div>
+  <div class="glow"></div>
+  <div class="rlist" id="rankingList"></div>
+</div>
+
+
+
+<!-- BUSCAR -->
+<div id="search-screen" class="screen">
+  <div class="sec-head">Buscar por título</div>
+  <div class="glow"></div>
+
+  <div class="search-panel">
+    <div class="search-title">Encuentra un anime por nombre</div>
+    <div class="search-sub">Escribe una palabra, un título completo o un nombre alternativo y te mostraré las coincidencias más cercanas.</div>
+    <div class="search-field">
+      <input id="titleSearchInput" class="search-input" type="search" placeholder="Escribe un título..." autocomplete="off" spellcheck="false">
+      <button id="titleSearchClear" class="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
+    </div>
+    <button class="apply-btn" type="button" id="titleSearchButton">BUSCAR ANIME</button>
+  </div>
+
+  <div class="results-summary" id="searchResultsSummary"></div>
+  <div class="fresults" id="titleSearchResults">
+    <div class="pre-search-note">Escribe al menos <strong>2 letras</strong> para buscar coincidencias por título, alias o nombre alternativo.</div>
+  </div>
+</div>
+
+<!-- INFO -->
+<div id="info-screen" class="screen">
+  <div class="sec-head">Info</div>
+  <div class="glow"></div>
+
+  <div class="info-stack">
+    <div class="info-card">
+      <div class="info-title">NeoAnimeZ</div>
+      <div class="info-text">Proyecto independiente para descubrir anime de forma rápida, visual y cómoda tanto en móvil como en escritorio.</div>
+      <a class="info-mail" href="mailto:neoanimeztweet@gmail.com">neoanimeztweet@gmail.com</a>
+      <span class="info-mini">Si ves errores en fichas, títulos o traducciones, escríbeme y lo reviso.</span>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">Fuentes y datos</div>
+      <div class="info-text">Las fichas se basan en datos de referencia externos procesados y adaptados por NeoAnimeZ para mejorar la búsqueda, el filtrado y la lectura dentro de la web.</div>
+      <span class="info-mini">La información puede incluir nombres alternativos, traducciones y organización propia para hacer el catálogo más usable.</span>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">Aviso</div>
+      <div class="info-text">NeoAnimeZ es un proyecto independiente y no representa a servicios oficiales de terceros. Si alguna información necesita corrección o retirada, puedes contactar por correo.</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">Seguridad y privacidad</div>
+      <div class="info-text">Aquí puedes consultar de forma resumida cómo se gestiona el acceso a cuentas, el uso de datos básicos y las condiciones generales de uso de NeoAnimeZ.</div>
+      <div class="info-legal">
+        <details class="info-accordion">
+          <summary>Seguridad de cuenta</summary>
+          <div class="info-accordion-body">
+            <p>NeoAnimeZ utiliza autenticación gestionada mediante <strong>Supabase Auth</strong> para el registro y acceso de usuarios.</p>
+            <p>Las contraseñas <strong>no se almacenan en texto visible</strong>. El acceso a la información personal de cada cuenta se limita mediante reglas de seguridad para que cada usuario solo pueda consultar y modificar sus propios datos dentro de la plataforma.</p>
+            <p>Aunque se aplican medidas técnicas razonables, <strong>ningún sistema conectado a internet puede garantizar seguridad absoluta</strong>. Por ello, se recomienda usar una contraseña robusta y no reutilizar contraseñas sensibles de otros servicios.</p>
+          </div>
+        </details>
+
+        <details class="info-accordion">
+          <summary>Política de privacidad</summary>
+          <div class="info-accordion-body">
+            <p>NeoAnimeZ recoge únicamente los datos necesarios para el funcionamiento de la cuenta y de la lista personal del usuario.</p>
+            <p><strong>Datos utilizados:</strong> correo electrónico de acceso y estados de seguimiento de anime guardados por el usuario dentro de su cuenta.</p>
+            <p><strong>Finalidad:</strong> permitir el inicio de sesión, mantener la lista personal y ofrecer funciones asociadas a la cuenta.</p>
+            <p>NeoAnimeZ no vende datos personales ni utiliza la información de cuenta con fines comerciales ajenos al funcionamiento de la web. Si el usuario deja de utilizar el servicio, podrá dejar de acceder a su cuenta en cualquier momento.</p>
+          </div>
+        </details>
+
+        <details class="info-accordion">
+          <summary>Términos de uso</summary>
+          <div class="info-accordion-body">
+            <p>NeoAnimeZ es una plataforma orientada a la consulta y organización personal de contenido relacionado con anime.</p>
+            <p>El usuario se compromete a no utilizar la web con fines ilícitos, a no intentar acceder a datos de terceros y a no interferir intencionadamente en el funcionamiento del servicio.</p>
+            <p>La información mostrada puede proceder de fuentes externas, traducciones o adaptaciones propias de NeoAnimeZ, por lo que <strong>pueden existir errores, diferencias de criterio o cambios con el tiempo</strong>.</p>
+            <p>El uso continuado de la plataforma implica la aceptación de estas condiciones básicas de uso.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- USER -->
+<div id="user-screen" class="screen">
+  <div class="sec-head">Mi Lista</div>
+  <div class="glow"></div>
+
+  <div id="userGuestView" class="user-shell">
+    <div class="auth-card">
+      <div class="user-title">Personaliza tu lista de anime</div>
+      <div class="user-text">Inicia sesión o crea una cuenta para guardar tus animes en <strong>En progreso</strong>, <strong>Completados</strong>, <strong>Pendientes</strong> y <strong>Droppeados</strong>.</div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="authTabLogin" type="button" onclick="switchAuthTab('login')">Iniciar sesión</button>
+        <button class="auth-tab" id="authTabSignup" type="button" onclick="switchAuthTab('signup')">Registrarse</button>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <input class="auth-input" id="loginEmail" type="email" placeholder="Correo electrónico" autocomplete="email" required>
+        <input class="auth-input" id="loginPassword" type="password" placeholder="Contraseña" autocomplete="current-password" required>
+        <button class="auth-submit" type="submit">Entrar</button>
+        <button class="forgot-password-btn" type="button" onclick="handleForgotPasswordRequest()">¿Olvidaste tu contraseña?</button>
+      </form>
+      <form id="signupForm" class="auth-form hidden">
+        <input class="auth-input" id="signupEmail" type="email" placeholder="Correo electrónico" autocomplete="email" required>
+        <input class="auth-input" id="signupPassword" type="password" placeholder="Contraseña (mínimo 6 caracteres)" autocomplete="new-password" required>
+        <input class="auth-input" id="signupPasswordConfirm" type="password" placeholder="Repite la contraseña" autocomplete="new-password" required>
+        <button class="auth-submit" type="submit">Crear cuenta</button>
+      </form>
+      <div id="authFeedback" class="auth-feedback"></div>
+    </div>
+  </div>
+
+  <div id="userLoggedView" class="user-shell" style="display:none">
+    <div class="user-card">
+      <div class="user-title">Mi lista</div>
+      <div class="user-text" id="userEmailText"></div>
+      <div class="user-status-note">Gestiona el estado desde la ficha del anime. Aquí solo verás el título y una X para quitarlo.</div>
+      <details id="accountAccordion" class="info-accordion" style="margin-top:12px;">
+        <summary id="accountAccordionSummary">Mi cuenta</summary>
+        <div class="account-settings">
+          <div class="account-settings-title" id="accountSettingsTitle">Cambiar contraseña</div>
+          <div class="account-helper" id="accountHelper">Escribe una nueva contraseña y repítela para actualizar tu cuenta.</div>
+          <form id="changePasswordForm" class="account-settings-form">
+            <input class="auth-input" id="changePasswordNew" type="password" placeholder="Nueva contraseña" autocomplete="new-password" minlength="6" required>
+            <input class="auth-input" id="changePasswordConfirm" type="password" placeholder="Repite la nueva contraseña" autocomplete="new-password" minlength="6" required>
+            <button class="auth-submit" type="submit">Guardar contraseña</button>
+          </form>
+          <button class="user-logout" type="button" onclick="handleLogout()">Cerrar sesión</button>
+          <div id="accountFeedback" class="auth-feedback"></div>
+        </div>
+      </details>
+    </div>
+
+    <div class="user-section">
+      <div class="user-section-head"><div class="user-section-title">En progreso</div><div class="user-count" id="countWatching">0</div></div>
+      <div id="userWatchingList"></div>
+    </div>
+    <div class="user-section">
+      <div class="user-section-head"><div class="user-section-title">Completados</div><div class="user-count" id="countCompleted">0</div></div>
+      <div id="userCompletedList"></div>
+    </div>
+    <div class="user-section">
+      <div class="user-section-head"><div class="user-section-title">Pendientes</div><div class="user-count" id="countPending">0</div></div>
+      <div id="userPendingList"></div>
+    </div>
+    <div class="user-section">
+      <div class="user-section-head"><div class="user-section-title">Droppeados</div><div class="user-count" id="countDropped">0</div></div>
+      <div id="userDroppedList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-spacer" aria-hidden="true"></div>
+
+
+
+<nav>
+  <button class="nbtn" id="nav-filter" onclick="showScreen('filter')">
+    <svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+    Catálogo
+  </button>
+  <button class="nbtn" id="nav-ranking" onclick="showScreen('ranking')">
+    <svg viewBox="0 0 24 24"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
+    Ranking
+  </button>
+  <button class="nbtn" id="nav-user" onclick="showScreen('user')">
+    <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="8" r="4"></circle></svg>
+    Mi lista
+  </button>
+  <button class="nbtn" id="nav-search" onclick="showScreen('search')">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><line x1="16" y1="16" x2="20" y2="20"></line></svg>
+    Buscar
+  </button>
+  <button class="nbtn" id="nav-info" onclick="showScreen('info')">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="10" x2="12" y2="16"></line><circle cx="12" cy="7" r="1"></circle></svg>
+    Info
+  </button>
+</nav>
+
+
+
+<div id="animeModal" class="modal-backdrop" aria-hidden="true">
+  <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="animeModalTitle">
+    <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeAnimeModal()">✕</button>
+    <div class="modal-hero">
+      <img id="animeModalImg" class="modal-cover" src="" alt="">
+      <div style="min-width:0">
+        <div id="animeModalTitle" class="modal-title"></div>
+        <div id="animeModalMeta" class="modal-meta"></div>
+        <div id="animeModalTags" class="modal-tags"></div>
+      </div>
+    </div>
+    <div class="modal-section-title">Descripción</div>
+    <div id="animeModalDesc" class="modal-desc"></div>
+    <div class="modal-status-box">
+      <div class="modal-status-title">Tu estado</div>
+      <div class="modal-status-grid">
+        <button class="status-chip-btn" type="button" data-status-btn="pending" onclick="saveAnimeStatusFromModal('pending')">Pendientes</button>
+        <button class="status-chip-btn" type="button" data-status-btn="watching" onclick="saveAnimeStatusFromModal('watching')">En progreso</button>
+        <button class="status-chip-btn" type="button" data-status-btn="completed" onclick="saveAnimeStatusFromModal('completed')">Completados</button>
+        <button class="status-chip-btn" type="button" data-status-btn="dropped" onclick="saveAnimeStatusFromModal('dropped')">Droppeados</button>
+      </div>
+      <button class="status-clear-btn" type="button" style="width:100%;margin-top:8px" onclick="clearAnimeStatusFromModal()">Quitar de mi lista</button>
+      <div id="modalStatusMessage" class="modal-status-message">Inicia sesión para guardar este anime en tu lista.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+  document.documentElement.classList.add('standalone-ios');
+  document.addEventListener('DOMContentLoaded', () => document.body.classList.add('standalone-ios'));
+}
+
+let DB = [];
+const RANKING_DATA = [
+  {"title": "One Piece", "mal_id": 21},
+  {"title": "Hajime no Ippo", "mal_id": 263},
+  {"title": "Dragon Ball Z", "mal_id": 813},
+  {"title": "Attack on Titan", "mal_id": 16498},
+  {"title": "Naruto", "mal_id": 20},
+  {"title": "Rurouni Kenshin", "mal_id": 45},
+  {"title": "Hunter x Hunter (2011)", "mal_id": 11061},
+  {"title": "Death Note", "mal_id": 1535},
+  {"title": "Frieren", "mal_id": 52991},
+  {"title": "Demon Slayer", "mal_id": 38000}
+];
+
+const imgCache = {};
+const TITLE_TO_MAL_ID = {
+  'Demon Slayer': 38000,
+  'Kimetsu no Yaiba': 38000,
+  'Attack on Titan': 16498,
+  'Shingeki no Kyojin': 16498,
+  'One Piece': 21,
+  'Naruto': 20,
+  'Death Note': 1535,
+  'Frieren': 52991,
+  'Hajime no Ippo': 263,
+  'Dragon Ball Z': 813,
+  'Rurouni Kenshin': 45,
+  'Hunter x Hunter (2011)': 11061
+};
+
+const BLANK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='70'%3E%3Crect width='50' height='70' fill='%23141426'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='%236b6b8a' font-size='22'%3E%F0%9F%8E%8C%3C/text%3E%3C/svg%3E";
+
+const SUPABASE_URL = 'https://edygetjrdnbziidcmuww.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_FhmkdfUHZ_KO17VcpoTBAA_nwEXJI5k';
+const AUTH_REDIRECT_URL = 'https://neoanimez.com';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const STATUS_LABELS = {
+  pending: 'Pendientes',
+  watching: 'En progreso',
+  completed: 'Completados',
+  dropped: 'Droppeados'
+};
+const STATUS_ORDER = ['watching', 'completed', 'pending', 'dropped'];
+let currentUser = null;
+let currentModalAnime = null;
+let userAnimeMap = new Map();
+let activeScreenName = 'intro';
+let lastScreenName = 'intro';
+let needsCatalogReset = false;
+let needsSearchReset = false;
+let isCleaningHeavyResults = false;
+let isPasswordRecoveryFlow = false;
+
+const APP_STATE_KEY = 'neoanimez_app_state_v2';
+const APP_DEFAULT_STATE = {
+  introDismissed: false,
+  activeScreen: 'intro'
+};
+
+function readAppState() {
+  try {
+    const raw = localStorage.getItem(APP_STATE_KEY);
+    if (!raw) return { ...APP_DEFAULT_STATE };
+    return { ...APP_DEFAULT_STATE, ...JSON.parse(raw) };
+  } catch {
+    return { ...APP_DEFAULT_STATE };
+  }
+}
+
+function writeAppState(patch = {}) {
+  try {
+    const next = { ...readAppState(), ...patch };
+    localStorage.setItem(APP_STATE_KEY, JSON.stringify(next));
+    return next;
+  } catch {
+    return { ...APP_DEFAULT_STATE, ...patch };
+  }
+}
+
+function persistActiveScreen(name) {
+  writeAppState({
+    introDismissed: name !== 'intro',
+    activeScreen: name || 'intro'
+  });
+}
+
+function resetAuthForms() {
+  document.getElementById('loginForm')?.reset();
+  document.getElementById('signupForm')?.reset();
+  document.getElementById('changePasswordForm')?.reset();
+}
+
+function cleanupAuthRedirectUrl() {
+  try {
+    const currentUrl = new URL(window.location.href);
+    const hadHashTokens = /access_token|refresh_token|type=/.test(currentUrl.hash || '');
+    const hadQueryCode = currentUrl.searchParams.has('code');
+    if (!hadHashTokens && !hadQueryCode) return;
+
+    currentUrl.hash = '';
+    currentUrl.searchParams.delete('code');
+    currentUrl.searchParams.delete('type');
+    currentUrl.searchParams.delete('token');
+    currentUrl.searchParams.delete('token_hash');
+    currentUrl.searchParams.delete('error');
+    currentUrl.searchParams.delete('error_code');
+    currentUrl.searchParams.delete('error_description');
+    window.history.replaceState({}, document.title, currentUrl.pathname + currentUrl.search);
+  } catch {}
+}
+
+function getAuthUrlState() {
+  try {
+    const currentUrl = new URL(window.location.href);
+    const hashParams = new URLSearchParams((currentUrl.hash || '').replace(/^#/, ''));
+    return {
+      url: currentUrl,
+      type: currentUrl.searchParams.get('type') || hashParams.get('type') || '',
+      code: currentUrl.searchParams.get('code') || '',
+      accessToken: hashParams.get('access_token') || '',
+      refreshToken: hashParams.get('refresh_token') || ''
+    };
+  } catch {
+    return { url: null, type: '', code: '', accessToken: '', refreshToken: '' };
+  }
+}
+
+function isRecoveryUrl() {
+  const state = getAuthUrlState();
+  return state.type === 'recovery';
+}
+
+async function bootstrapAuthFromUrl() {
+  const state = getAuthUrlState();
+  let session = null;
+  let recoveryDetected = state.type === 'recovery';
+
+  if (state.code) {
+    const { data, error } = await supabaseClient.auth.exchangeCodeForSession(state.code);
+    if (!error && data?.session) {
+      session = data.session;
+      recoveryDetected = recoveryDetected || data.session.user?.recovery_sent_at != null || state.type === 'recovery';
+    } else if (error) {
+      console.error('Error intercambiando code por sesión:', error);
+    }
+  }
+
+  if (!session && state.accessToken && state.refreshToken) {
+    const { data, error } = await supabaseClient.auth.setSession({
+      access_token: state.accessToken,
+      refresh_token: state.refreshToken
+    });
+    if (!error && data?.session) {
+      session = data.session;
+    } else if (error) {
+      console.error('Error restaurando sesión desde hash:', error);
+    }
+  }
+
+  if (recoveryDetected) {
+    isPasswordRecoveryFlow = true;
+  }
+
+  return session;
+}
+
+
+function getAnimeById(animeId) {
+  return DB.find(a => Number(a.mal_id) === Number(animeId)) || null;
+}
+
+function formatAuthError(message = '') {
+  const text = String(message || '').trim();
+  if (!text) return 'Ha ocurrido un error. Inténtalo otra vez.';
+  if (text.toLowerCase().includes('invalid login credentials')) return 'Correo o contraseña incorrectos.';
+  if (text.toLowerCase().includes('email rate limit exceeded')) return 'Has intentado demasiadas veces. Espera un poco y vuelve a probar.';
+  if (text.toLowerCase().includes('password should be at least 6 characters')) return 'La contraseña debe tener al menos 6 caracteres.';
+  if (text.toLowerCase().includes('user already registered')) return 'Ese correo ya está registrado.';
+  if (text.toLowerCase().includes('auth session missing')) return 'La sesión de cambio de contraseña se perdió. Abre otra vez el enlace del correo o vuelve a iniciar sesión.';
+  return text;
+}
+
+function setAuthFeedback(message = '', type = '') {
+  ['authFeedback', 'accountFeedback'].forEach(id => {
+    const box = document.getElementById(id);
+    if (!box) return;
+    box.textContent = message;
+    box.className = 'auth-feedback';
+    if (type) box.classList.add(type);
+  });
+}
+
+function setModalStatusMessage(message = '', type = '') {
+  const box = document.getElementById('modalStatusMessage');
+  if (!box) return;
+  box.textContent = message;
+  box.className = 'modal-status-message';
+  if (type) box.classList.add(type);
+}
+
+function updateAccountModeUI() {
+  const summary = document.getElementById('accountAccordionSummary');
+  const title = document.getElementById('accountSettingsTitle');
+  const helper = document.getElementById('accountHelper');
+  const submitBtn = document.querySelector('#changePasswordForm button[type="submit"]');
+  if (!summary || !title || !helper || !submitBtn) return;
+
+  if (isPasswordRecoveryFlow) {
+    summary.textContent = 'Restablecer contraseña';
+    title.textContent = 'Restablecer contraseña';
+    helper.textContent = 'Has entrado desde el correo de recuperación. Escribe una contraseña nueva y repítela para restablecer tu acceso.';
+    submitBtn.textContent = 'Restablecer contraseña';
+  } else {
+    summary.textContent = 'Mi cuenta';
+    title.textContent = 'Cambiar contraseña';
+    helper.textContent = 'Escribe una nueva contraseña y repítela para actualizar tu cuenta.';
+    submitBtn.textContent = 'Guardar contraseña';
+  }
+}
+
+async function getActiveSessionUser() {
+  if (currentUser?.id) {
+    return currentUser;
+  }
+
+  const { data: sessionData, error: sessionError } = await supabaseClient.auth.getSession();
+  if (!sessionError && sessionData?.session?.user) {
+    return sessionData.session.user;
+  }
+
+  const bootstrappedSession = await bootstrapAuthFromUrl();
+  if (bootstrappedSession?.user) {
+    return bootstrappedSession.user;
+  }
+
+  try {
+    const { data: refreshedData, error: refreshedError } = await supabaseClient.auth.refreshSession();
+    if (!refreshedError && refreshedData?.session?.user) {
+      return refreshedData.session.user;
+    }
+  } catch (refreshErr) {
+    console.error('Error refrescando sesión activa:', refreshErr);
+  }
+
+  const { data: finalSessionData } = await supabaseClient.auth.getSession();
+  return finalSessionData?.session?.user || null;
+}
+
+async function updatePasswordWithRecoveryFallback(newPassword) {
+  let lastError = null;
+
+  const tryUpdate = async () => {
+    const result = await supabaseClient.auth.updateUser({ password: newPassword });
+    if (result?.error) lastError = result.error;
+    return result;
+  };
+
+  let result = await tryUpdate();
+  if (!result?.error) return result;
+
+  const errorText = String(result.error?.message || '').toLowerCase();
+  const authState = getAuthUrlState();
+
+  if (errorText.includes('auth session missing') || errorText.includes('session missing') || errorText.includes('jwt')) {
+    if (authState.accessToken && authState.refreshToken) {
+      try {
+        const restored = await supabaseClient.auth.setSession({
+          access_token: authState.accessToken,
+          refresh_token: authState.refreshToken
+        });
+        if (!restored?.error && restored?.data?.session) {
+          currentUser = restored.data.session.user || currentUser;
+          result = await tryUpdate();
+          if (!result?.error) return result;
+        }
+      } catch (restoreErr) {
+        console.error('Error reponiendo sesión desde hash antes de actualizar contraseña:', restoreErr);
+      }
+    }
+
+    try {
+      const refreshed = await supabaseClient.auth.refreshSession();
+      if (!refreshed?.error && refreshed?.data?.session) {
+        currentUser = refreshed.data.session.user || currentUser;
+        result = await tryUpdate();
+        if (!result?.error) return result;
+      }
+    } catch (refreshErr) {
+      console.error('Error refrescando sesión antes de actualizar contraseña:', refreshErr);
+    }
+  }
+
+  return result?.error ? result : { data: null, error: lastError || new Error('unknown') };
+}
+
+function switchAuthTab(tab) {
+  const loginTab = document.getElementById('authTabLogin');
+  const signupTab = document.getElementById('authTabSignup');
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+  if (!loginTab || !signupTab || !loginForm || !signupForm) return;
+  const loginActive = tab !== 'signup';
+  loginTab.classList.toggle('active', loginActive);
+  signupTab.classList.toggle('active', !loginActive);
+  loginForm.classList.toggle('hidden', !loginActive);
+  signupForm.classList.toggle('hidden', loginActive);
+  setAuthFeedback('');
+}
+
+function updateUserTriggers() {
+  const navBtn = document.getElementById('nav-user');
+  if (currentUser) {
+    navBtn?.classList.add('user-active');
+  } else {
+    navBtn?.classList.remove('user-active');
+  }
+}
+
+function updateModalStatusUI() {
+  const buttons = document.querySelectorAll('[data-status-btn]');
+  const statusBox = document.querySelector('.modal-status-box');
+  const currentStatus = currentModalAnime ? userAnimeMap.get(Number(currentModalAnime.mal_id)) : null;
+  buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.statusBtn === currentStatus));
+
+  if (!currentModalAnime) {
+    statusBox?.classList.remove('hidden');
+    setModalStatusMessage('Selecciona un anime.', '');
+    return;
+  }
+  if (!currentUser) {
+    statusBox?.classList.add('hidden');
+    return;
+  }
+
+  statusBox?.classList.remove('hidden');
+  if (currentStatus) {
+    setModalStatusMessage(`Estado actual: ${STATUS_LABELS[currentStatus]}.`, 'success');
+  } else {
+    setModalStatusMessage('Este anime todavía no está en tu lista.', '');
+  }
+}
+
+function buildUserAnimeCard(anime, status) {
+  const row = document.createElement('div');
+  row.className = 'user-anime-row';
+  row.innerHTML = `
+    <div class="user-anime-name">${anime.title || 'Anime'}</div>
+    <button type="button" class="user-remove-btn" aria-label="Quitar ${anime.title || 'anime'} de ${STATUS_LABELS[status]}">×</button>
+  `;
+
+  row.addEventListener('click', () => {
+    openAnimeModal(anime, anime.image || BLANK);
+  });
+
+  row.querySelector('.user-remove-btn')?.addEventListener('click', async (event) => {
+    event.stopPropagation();
+    await clearAnimeStatus(anime);
+  });
+
+  return row;
+}
+
+function renderUserLists() {
+  const buckets = {
+    watching: [],
+    completed: [],
+    pending: [],
+    dropped: []
+  };
+
+  userAnimeMap.forEach((status, animeId) => {
+    const anime = getAnimeById(animeId);
+    if (!anime || !buckets[status]) return;
+    buckets[status].push(anime);
+  });
+
+  Object.entries({
+    watching: 'userWatchingList',
+    completed: 'userCompletedList',
+    pending: 'userPendingList',
+    dropped: 'userDroppedList'
+  }).forEach(([status, elementId]) => {
+    const container = document.getElementById(elementId);
+    const count = document.getElementById('count' + status.charAt(0).toUpperCase() + status.slice(1));
+    if (!container) return;
+    const list = buckets[status].sort((a,b) => String(a.title||'').localeCompare(String(b.title||''), 'es', {sensitivity:'base'}));
+    if (count) count.textContent = String(list.length);
+    container.innerHTML = '';
+    if (!list.length) {
+      container.innerHTML = `<div class="user-empty">No tienes animes en <strong>${STATUS_LABELS[status]}</strong>.</div>`;
+      return;
+    }
+    list.forEach(anime => container.appendChild(buildUserAnimeCard(anime, status)));
+  });
+
+  updateModalStatusUI();
+}
+
+async function fetchUserStatuses() {
+  if (!currentUser) {
+    userAnimeMap = new Map();
+    renderUserLists();
+    return;
+  }
+  const { data, error } = await supabaseClient
+    .from('user_anime_status')
+    .select('anime_id, status')
+    .eq('user_id', currentUser.id);
+
+  if (error) {
+    console.error('Error cargando estados:', error);
+    return;
+  }
+
+  userAnimeMap = new Map((data || []).map(row => [Number(row.anime_id), row.status]));
+  renderUserLists();
+}
+
+function renderUserScreen() {
+  const guest = document.getElementById('userGuestView');
+  const logged = document.getElementById('userLoggedView');
+  const email = document.getElementById('userEmailText');
+  const passwordForm = document.getElementById('changePasswordForm');
+  const accountAccordion = document.getElementById('accountAccordion');
+  if (!guest || !logged) return;
+  guest.style.display = currentUser ? 'none' : '';
+  logged.style.display = currentUser ? '' : 'none';
+  if (email) email.textContent = currentUser ? `Sesión iniciada con ${currentUser.email}` : '';
+  if (accountAccordion) {
+    accountAccordion.style.display = currentUser ? '' : 'none';
+    if (!currentUser) accountAccordion.removeAttribute('open');
+  }
+  if (passwordForm && !currentUser) {
+    passwordForm.reset();
+  }
+  updateUserTriggers();
+  updateModalStatusUI();
+  updateAccountModeUI();
+  if (currentUser) renderUserLists();
+}
+
+async function syncAuthState() {
+  const bootstrappedSession = await bootstrapAuthFromUrl();
+  const { data } = await supabaseClient.auth.getSession();
+  currentUser = bootstrappedSession?.user || data?.session?.user || null;
+  if (isRecoveryUrl() && currentUser) {
+    isPasswordRecoveryFlow = true;
+  }
+  renderUserScreen();
+  await fetchUserStatuses();
+  if (isPasswordRecoveryFlow && currentUser) {
+    showScreen('user');
+    document.getElementById('accountAccordion')?.setAttribute('open', '');
+    updateAccountModeUI();
+    setAuthFeedback('Has entrado en modo recuperación. Restablece tu contraseña desde Mi cuenta.', 'success');
+    setTimeout(() => document.getElementById('changePasswordNew')?.focus(), 50);
+  }
+}
+
+async function handleLogin(event) {
+  event.preventDefault();
+  const email = document.getElementById('loginEmail')?.value?.trim() || '';
+  const password = document.getElementById('loginPassword')?.value || '';
+  setAuthFeedback('Entrando...');
+  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+  if (error) {
+    setAuthFeedback(formatAuthError(error.message), 'error');
+    return;
+  }
+  document.getElementById('loginForm')?.reset();
+  setAuthFeedback('Sesión iniciada.', 'success');
+}
+
+async function handleSignup(event) {
+  event.preventDefault();
+  const email = document.getElementById('signupEmail')?.value?.trim() || '';
+  const password = document.getElementById('signupPassword')?.value || '';
+  const confirmPassword = document.getElementById('signupPasswordConfirm')?.value || '';
+
+  if (password.length < 6) {
+    setAuthFeedback('La contraseña debe tener al menos 6 caracteres.', 'error');
+    return;
+  }
+  if (password !== confirmPassword) {
+    setAuthFeedback('Las contraseñas no coinciden.', 'error');
+    return;
+  }
+
+  setAuthFeedback('Creando cuenta...');
+  const { error } = await supabaseClient.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: AUTH_REDIRECT_URL
+    }
+  });
+  if (error) {
+    setAuthFeedback(formatAuthError(error.message), 'error');
+    return;
+  }
+  document.getElementById('signupForm')?.reset();
+  setAuthFeedback('Cuenta creada. Revisa tu correo y usa el enlace para volver a NeoAnimeZ.', 'success');
+}
+
+async function handleLogout() {
+  setAuthFeedback('Cerrando sesión...');
+
+  const previousUser = currentUser;
+  currentUser = null;
+  userAnimeMap = new Map();
+  isPasswordRecoveryFlow = false;
+
+  document.getElementById('accountAccordion')?.removeAttribute('open');
+  updateAccountModeUI();
+  resetAuthForms();
+  switchAuthTab('login');
+  renderUserScreen();
+  renderUserLists();
+  updateUserTriggers();
+
+  try {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+      console.error('Error al cerrar sesión:', error);
+      currentUser = previousUser;
+      await fetchUserStatuses();
+      renderUserScreen();
+      setAuthFeedback('No se pudo cerrar la sesión.', 'error');
+      return;
+    }
+
+    setAuthFeedback('Sesión cerrada.', 'success');
+  } catch (err) {
+    console.error('Error al cerrar sesión:', err);
+    currentUser = previousUser;
+    await fetchUserStatuses();
+    renderUserScreen();
+    setAuthFeedback('No se pudo cerrar la sesión.', 'error');
+  }
+}
+
+async function handleForgotPasswordRequest() {
+  const email = document.getElementById('loginEmail')?.value?.trim() || '';
+  if (!email) {
+    setAuthFeedback('Escribe tu correo en el campo de inicio de sesión para enviarte el enlace.', 'error');
+    return;
+  }
+
+  setAuthFeedback('Enviando enlace de recuperación...');
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    redirectTo: AUTH_REDIRECT_URL
+  });
+
+  if (error) {
+    setAuthFeedback(formatAuthError(error.message), 'error');
+    return;
+  }
+
+  setAuthFeedback('Te hemos enviado un correo para restablecer tu contraseña.', 'success');
+}
+
+async function handleChangePassword(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('changePasswordForm');
+  const submitBtn = form?.querySelector('button[type="submit"]');
+  const newPassword = document.getElementById('changePasswordNew')?.value || '';
+  const confirmPassword = document.getElementById('changePasswordConfirm')?.value || '';
+  const idleLabel = isPasswordRecoveryFlow ? 'Restablecer contraseña' : 'Guardar contraseña';
+  const busyLabel = isPasswordRecoveryFlow ? 'Restableciendo...' : 'Actualizando...';
+
+  if (newPassword.length < 6) {
+    setAuthFeedback('La nueva contraseña debe tener al menos 6 caracteres.', 'error');
+    return;
+  }
+  if (newPassword !== confirmPassword) {
+    setAuthFeedback('Las nuevas contraseñas no coinciden.', 'error');
+    return;
+  }
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.textContent = busyLabel;
+  }
+
+  setAuthFeedback(isPasswordRecoveryFlow ? 'Restableciendo contraseña...' : 'Actualizando contraseña...');
+
+  const restoreSubmit = () => {
+    if (!submitBtn) return;
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = '';
+    submitBtn.textContent = idleLabel;
+  };
+
+  try {
+    const sessionUser = await getActiveSessionUser();
+
+    if (!sessionUser) {
+      currentUser = null;
+      userAnimeMap = new Map();
+      renderUserScreen();
+      renderUserLists();
+      showScreen('user');
+      setAuthFeedback(
+        isPasswordRecoveryFlow
+          ? 'No se detectó una sesión válida de recuperación. Abre otra vez el enlace del correo.'
+          : 'Tu sesión no está activa. Inicia sesión otra vez para cambiar la contraseña.',
+        'error'
+      );
+      restoreSubmit();
+      return;
+    }
+
+    currentUser = sessionUser;
+
+    const { data, error } = await updatePasswordWithRecoveryFallback(newPassword);
+
+    if (error) {
+      setAuthFeedback(formatAuthError(error.message), 'error');
+      restoreSubmit();
+      return;
+    }
+
+    if (!data?.user) {
+      setAuthFeedback('Supabase no confirmó el cambio de contraseña. Vuelve a intentarlo.', 'error');
+      restoreSubmit();
+      return;
+    }
+
+    form?.reset();
+    document.getElementById('accountAccordion')?.removeAttribute('open');
+    isPasswordRecoveryFlow = false;
+    cleanupAuthRedirectUrl();
+    updateAccountModeUI();
+
+    try {
+      await supabaseClient.auth.signOut();
+    } catch (signOutErr) {
+      console.error('Error cerrando sesión tras cambiar contraseña:', signOutErr);
+    }
+
+    currentUser = null;
+    userAnimeMap = new Map();
+    isPasswordRecoveryFlow = false;
+    resetAuthForms();
+    switchAuthTab('login');
+    renderUserScreen();
+    renderUserLists();
+    updateUserTriggers();
+    setAuthFeedback('Contraseña cambiada correctamente. Vuelve a iniciar sesión para continuar.', 'success');
+
+    setTimeout(() => {
+      goHome();
+    }, 900);
+  } catch (err) {
+    console.error('Error actualizando contraseña:', err);
+    setAuthFeedback('No se pudo actualizar la contraseña.', 'error');
+  } finally {
+    restoreSubmit();
+  }
+}
+
+async function saveAnimeStatus(anime, status) {
+  if (!anime?.mal_id) return;
+
+  const { data: sessionData, error: sessionError } = await supabaseClient.auth.getSession();
+  const sessionUser = sessionData?.session?.user || null;
+
+  if (sessionError || !sessionUser) {
+    currentUser = null;
+    userAnimeMap = new Map();
+    renderUserScreen();
+    renderUserLists();
+    setModalStatusMessage('Tu sesión no está activa. Inicia sesión otra vez.', 'error');
+    showScreen('user');
+    return;
+  }
+
+  currentUser = sessionUser;
+  setModalStatusMessage('Guardando estado...', '');
+
+  const payload = {
+    user_id: currentUser.id,
+    anime_id: Number(anime.mal_id),
+    status,
+    updated_at: new Date().toISOString()
+  };
+
+  try {
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), 8000)
+    );
+
+    const savePromise = supabaseClient
+      .from('user_anime_status')
+      .upsert(payload, { onConflict: 'user_id,anime_id' });
+
+    const result = await Promise.race([savePromise, timeoutPromise]);
+    const error = result?.error;
+
+    if (error) {
+      console.error('Error guardando estado:', error);
+      setModalStatusMessage('No se pudo guardar el estado.', 'error');
+      return;
+    }
+
+    userAnimeMap.set(Number(anime.mal_id), status);
+    renderUserLists();
+    setModalStatusMessage(`Guardado en ${STATUS_LABELS[status]}.`, 'success');
+  } catch (err) {
+    console.error('Error guardando estado:', err);
+    setModalStatusMessage(
+      err && err.message === 'timeout'
+        ? 'La operación tardó demasiado. Vuelve a intentarlo.'
+        : 'La operación falló.',
+      'error'
+    );
+  }
+}
+
+async function clearAnimeStatus(anime) {
+  if (!currentUser || !anime?.mal_id) return;
+  const { error } = await supabaseClient
+    .from('user_anime_status')
+    .delete()
+    .eq('user_id', currentUser.id)
+    .eq('anime_id', Number(anime.mal_id));
+  if (error) {
+    console.error('Error borrando estado:', error);
+    setModalStatusMessage('No se pudo quitar de tu lista.', 'error');
+    return;
+  }
+  userAnimeMap.delete(Number(anime.mal_id));
+  renderUserLists();
+  setModalStatusMessage('Anime quitado de tu lista.', 'success');
+}
+
+async function saveAnimeStatusFromModal(status) {
+  if (!currentModalAnime) return;
+  await saveAnimeStatus(currentModalAnime, status);
+}
+
+async function clearAnimeStatusFromModal() {
+  if (!currentModalAnime) return;
+  await clearAnimeStatus(currentModalAnime);
+}
+
+async function loadDB() {
+  try {
+    const res = await fetch('anime-lista.json?v=20260401-3', { cache: 'default' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DB = await res.json();
+
+    DB = DB.map(a => ({
+      ...a,
+      description: a.description_es || a.description || ''
+    }));
+
+    console.log('✅ JSON cargado:', DB.length);
+    console.log('🌍 Español activo:', DB.find(a => a.title === '[Oshi no Ko] 3rd Season')?.description?.slice(0, 80));
+  } catch (e) {
+    console.error('❌ Error cargando anime-lista.json', e);
+    DB = [];
+    const container = document.getElementById('filterResults');
+    if (container) {
+      container.innerHTML = '<div class="no-res">No se pudo cargar <strong>anime-lista.json</strong>.<br><small>Comprueba que está en la misma carpeta que index.html.</small></div>';
+    }
+  }
+}
+
+
+function normalizeTitle(title = '') {
+  return String(title).trim().toLowerCase();
+}
+
+function normalizeLoose(text = '') {
+  return String(text)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function getSearchAliases(anime = {}) {
+  const raw = [
+    anime.title,
+    anime.franchise,
+    anime.title_english,
+    anime.title_japanese,
+    ...(anime.title_synonyms || []),
+    ...(anime.search_titles || [])
+  ].filter(Boolean);
+
+  const seen = new Set();
+  const aliases = [];
+  raw.forEach(value => {
+    const cleaned = normalizeLoose(value);
+    if (!cleaned || seen.has(cleaned)) return;
+    seen.add(cleaned);
+    aliases.push({ raw: String(value), clean: cleaned });
+  });
+  return aliases;
+}
+
+function findAnimeByTitle(title) {
+  const target = normalizeLoose(title);
+  if (!target) return null;
+  return DB.find(a => getSearchAliases(a).some(alias => alias.clean === target)) || null;
+}
+
+
+async function getImgById(id) {
+  const key = 'id-' + id;
+  if (imgCache[key] !== undefined) return imgCache[key];
+  imgCache[key] = '';
+  try {
+    const r = await fetch('https://api.jikan.moe/v4/anime/' + id);
+    const d = await r.json();
+    imgCache[key] = d?.data?.images?.jpg?.large_image_url || d?.data?.images?.jpg?.image_url || '';
+  } catch {}
+  return imgCache[key];
+}
+
+async function getImg(animeOrTitle) {
+  const anime = typeof animeOrTitle === 'object' ? animeOrTitle : findAnimeByTitle(animeOrTitle) || { title: animeOrTitle };
+  const cacheKey = anime.mal_id ? 'anime-' + anime.mal_id : 'title-' + (anime.title || '');
+  if (imgCache[cacheKey] !== undefined) return imgCache[cacheKey];
+
+  if (anime.image) {
+    imgCache[cacheKey] = anime.image;
+    return anime.image;
+  }
+
+  imgCache[cacheKey] = '';
+  try {
+    const malId = anime.mal_id || TITLE_TO_MAL_ID[anime.title] || TITLE_TO_MAL_ID[anime.title_japanese];
+    if (malId) {
+      const byId = await getImgById(malId);
+      if (byId) {
+        imgCache[cacheKey] = byId;
+        return byId;
+      }
+    }
+
+    await new Promise(r => setTimeout(r, 350));
+    const query = anime.title_japanese || anime.title || '';
+    const r = await fetch('https://api.jikan.moe/v4/anime?q=' + encodeURIComponent(query) + '&limit=1');
+    const d = await r.json();
+    imgCache[cacheKey] = d?.data?.[0]?.images?.jpg?.large_image_url || d?.data?.[0]?.images?.jpg?.image_url || '';
+  } catch {}
+
+  return imgCache[cacheKey];
+}
+
+let hasStarted = false;
+
+function setResetCursor(active) {
+  document.documentElement.classList.toggle('is-resetting-results', !!active);
+}
+
+function clearCatalogResults({ preserveFilters = true } = {}) {
+  const container = document.getElementById('filterResults');
+  if (container) {
+    container.innerHTML = '<div class="pre-search-note">Selecciona tus filtros y pulsa <strong>Buscar anime</strong> para ver resultados.</div>';
+  }
+  updateResultsSummary(0);
+
+  if (!preserveFilters) {
+    document.getElementById('f-demo') && (document.getElementById('f-demo').value = '');
+    document.getElementById('f-type') && (document.getElementById('f-type').value = '');
+    document.getElementById('f-year') && (document.getElementById('f-year').value = '');
+
+    const genreSelects = [...document.querySelectorAll('.genre-select')];
+    genreSelects.forEach((select, index) => {
+      if (index === 0) select.value = '';
+      else select.closest('.genre-row')?.remove();
+    });
+
+    const themeSelects = [...document.querySelectorAll('.theme-select')];
+    themeSelects.forEach((select, index) => {
+      if (index === 0) select.value = '';
+      else select.closest('.theme-row')?.remove();
+    });
+
+    ensureGenreRemoveButtons();
+    ensureThemeRemoveButtons();
+  }
+}
+
+function clearSearchResults({ preserveQuery = false } = {}) {
+  const input = document.getElementById('titleSearchInput');
+  const container = document.getElementById('titleSearchResults');
+  if (input && !preserveQuery) input.value = '';
+  if (container) {
+    container.innerHTML = '<div class="pre-search-note">Escribe al menos <strong>2 letras</strong> para buscar coincidencias por título, alias o nombre alternativo.</div>';
+  }
+  updateSimpleSummary('searchResultsSummary', 0);
+  toggleSearchClearButton();
+  updateAccountModeUI();
+}
+
+function scheduleHeavyScreenReset(fromScreen, toScreen) {
+  if (fromScreen === 'filter' && toScreen !== 'filter') {
+    needsCatalogReset = true;
+  }
+  if (fromScreen === 'search' && toScreen !== 'search') {
+    needsSearchReset = true;
+  }
+  if (fromScreen === 'user' && toScreen === 'filter') {
+    needsCatalogReset = true;
+  }
+  if (fromScreen === 'user' && toScreen === 'search') {
+    needsSearchReset = true;
+  }
+}
+
+function flushPendingScreenResets(targetName) {
+  if (isCleaningHeavyResults) return;
+  const needsAnyReset = (targetName === 'filter' && needsCatalogReset) || (targetName === 'search' && needsSearchReset);
+  if (!needsAnyReset) return;
+
+  isCleaningHeavyResults = true;
+  setResetCursor(true);
+
+  requestAnimationFrame(() => {
+    if (targetName === 'filter' && needsCatalogReset) {
+      clearCatalogResults({ preserveFilters: true });
+      needsCatalogReset = false;
+    }
+    if (targetName === 'search' && needsSearchReset) {
+      clearSearchResults({ preserveQuery: false });
+      needsSearchReset = false;
+    }
+
+    requestAnimationFrame(() => {
+      isCleaningHeavyResults = false;
+      setResetCursor(false);
+    });
+  });
+}
+
+function flushBackgroundScreenResets(targetName) {
+  if (isCleaningHeavyResults) return;
+  const shouldClearCatalog = targetName !== 'filter' && needsCatalogReset;
+  const shouldClearSearch = targetName !== 'search' && needsSearchReset;
+  if (!shouldClearCatalog && !shouldClearSearch) return;
+
+  isCleaningHeavyResults = true;
+  requestAnimationFrame(() => {
+    if (shouldClearCatalog) {
+      clearCatalogResults({ preserveFilters: true });
+      needsCatalogReset = false;
+    }
+    if (shouldClearSearch) {
+      clearSearchResults({ preserveQuery: false });
+      needsSearchReset = false;
+    }
+    requestAnimationFrame(() => {
+      isCleaningHeavyResults = false;
+      setResetCursor(false);
+    });
+  });
+}
+
+function openIntro(noAnimation = false) {
+  const intro = document.getElementById('intro-screen');
+  if (!intro) return;
+
+  closeAnimeModal();
+  document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('active'));
+  document.body.classList.add('intro-open');
+
+  const current = [...document.querySelectorAll('.screen')].find(s => s.classList.contains('active'));
+
+  if (noAnimation) {
+    document.querySelectorAll('.screen').forEach(s => {
+      s.classList.remove('active', 'fade-in', 'fade-out');
+    });
+    lastScreenName = activeScreenName;
+    activeScreenName = 'intro';
+    persistActiveScreen('intro');
+    intro.classList.remove('fade-in', 'fade-out');
+    intro.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    return;
+  }
+
+  document.body.classList.add('screen-transitioning');
+  if (current) current.classList.add('fade-out');
+  if (intro.classList.contains('active')) return;
+
+  setTimeout(() => {
+    document.querySelectorAll('.screen').forEach(s => {
+      s.classList.remove('active', 'fade-in', 'fade-out');
+    });
+    lastScreenName = activeScreenName;
+    activeScreenName = 'intro';
+    persistActiveScreen('intro');
+    intro.classList.remove('fade-out');
+    intro.classList.add('active', 'fade-in');
+    setTimeout(() => {
+      intro.classList.remove('fade-in');
+      document.body.classList.remove('screen-transitioning');
+    }, 300);
+  }, current ? 170 : 0);
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function dismissIntroIfNeeded(animate = false) {
+  const intro = document.getElementById('intro-screen');
+  if (!intro || !intro.classList.contains('active')) {
+    document.body.classList.remove('intro-open');
+    hasStarted = true;
+    return;
+  }
+
+  hasStarted = true;
+  document.body.classList.remove('intro-open');
+
+  if (!animate) {
+    intro.classList.remove('active', 'fade-in', 'fade-out');
+    return;
+  }
+
+  intro.classList.remove('fade-in');
+  intro.classList.add('fade-out');
+  setTimeout(() => {
+    intro.classList.remove('active', 'fade-out');
+  }, 220);
+}
+
+function setActiveScreen(screenId, navId = null, animate = false) {
+  const screens = [...document.querySelectorAll('.screen')].filter(s => s.id !== 'intro-screen');
+  const target = document.getElementById(screenId);
+  if (!target) return;
+
+  const targetName = screenId.replace(/-screen$/, '');
+  const fromScreen = activeScreenName;
+  scheduleHeavyScreenReset(fromScreen, targetName);
+
+  document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('active'));
+  if (navId) {
+    const nav = document.getElementById(navId);
+    if (nav) nav.classList.add('active');
+  }
+
+  const current = screens.find(s => s.classList.contains('active') && s.id !== screenId);
+  screens.forEach(s => {
+    if (s.id !== screenId) {
+      s.classList.remove('fade-in', 'fade-out', 'active');
+    }
+  });
+
+  lastScreenName = fromScreen;
+  activeScreenName = targetName;
+  persistActiveScreen(targetName);
+
+  const shouldAnimate = animate && window.innerWidth < 600 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!shouldAnimate) {
+    target.classList.remove('fade-out', 'fade-in');
+    target.classList.add('active');
+    flushPendingScreenResets(targetName);
+    flushBackgroundScreenResets(targetName);
+    return;
+  }
+
+  document.body.classList.add('screen-transitioning');
+
+  if (current) {
+    current.classList.remove('fade-in');
+    current.classList.add('fade-out');
+  }
+
+  setTimeout(() => {
+    if (current) current.classList.remove('active', 'fade-out');
+    target.classList.add('active', 'fade-in');
+    flushPendingScreenResets(targetName);
+    flushBackgroundScreenResets(targetName);
+    setTimeout(() => {
+      target.classList.remove('fade-in');
+      document.body.classList.remove('screen-transitioning');
+    }, 180);
+  }, current ? 90 : 0);
+}
+
+function startApp() {
+  dismissIntroIfNeeded(true);
+  setActiveScreen('filter-screen', 'nav-filter', true);
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function goHome() {
+  setResetCursor(false);
+  openIntro(false);
+}
+
+function showScreen(name) {
+  if (activeScreenName === name && hasStarted) {
+    if (name === 'ranking') loadRanking();
+    return;
+  }
+  dismissIntroIfNeeded(true);
+  setActiveScreen(name + '-screen', 'nav-' + name, true);
+  if (name === 'ranking') loadRanking();
+}
+
+function addGenreSelect(value = '') {
+  const stack = document.getElementById('genreFilters');
+  if (!stack) return;
+
+  const firstSelect = stack.querySelector('.genre-select');
+  const row = document.createElement('div');
+  row.className = 'genre-row';
+
+  const select = firstSelect.cloneNode(true);
+  select.value = value;
+
+  const actions = document.createElement('div');
+  actions.className = 'genre-row-actions';
+
+  const removeBtn = document.createElement('button');
+  removeBtn.type = 'button';
+  removeBtn.className = 'genre-remove-btn';
+  removeBtn.textContent = '×';
+  removeBtn.setAttribute('aria-label', 'Quitar género');
+  removeBtn.addEventListener('click', () => {
+    row.remove();
+    ensureGenreRemoveButtons();
+  });
+
+  actions.appendChild(removeBtn);
+  row.appendChild(actions);
+  row.appendChild(select);
+  stack.appendChild(row);
+  ensureGenreRemoveButtons();
+}
+
+function ensureGenreRemoveButtons() {
+  const rows = [...document.querySelectorAll('#genreFilters .genre-row')];
+  rows.forEach((row, index) => {
+    let actions = row.querySelector('.genre-row-actions');
+    if (!actions) {
+      actions = document.createElement('div');
+      actions.className = 'genre-row-actions';
+      row.prepend(actions);
+    }
+
+    let btn = actions.querySelector('.genre-remove-btn');
+
+    if (index === 0) {
+      actions.innerHTML = '';
+    } else if (!btn) {
+      btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'genre-remove-btn';
+      btn.textContent = '×';
+      btn.setAttribute('aria-label', 'Quitar género');
+      btn.addEventListener('click', () => {
+        row.remove();
+        ensureGenreRemoveButtons();
+      });
+      actions.appendChild(btn);
+    }
+  });
+}
+
+function getSelectedGenres() {
+  return [...document.querySelectorAll('.genre-select')]
+    .map(select => select.value)
+    .filter(Boolean)
+    .filter((value, index, arr) => arr.indexOf(value) === index);
+}
+
+function addThemeSelect(value = '') {
+  const stack = document.getElementById('themeFilters');
+  if (!stack) return;
+
+  const firstSelect = stack.querySelector('.theme-select');
+  const row = document.createElement('div');
+  row.className = 'theme-row';
+
+  const select = firstSelect.cloneNode(true);
+  select.value = value;
+
+  const actions = document.createElement('div');
+  actions.className = 'theme-row-actions';
+
+  const removeBtn = document.createElement('button');
+  removeBtn.type = 'button';
+  removeBtn.className = 'theme-remove-btn';
+  removeBtn.textContent = '×';
+  removeBtn.setAttribute('aria-label', 'Quitar tema');
+  removeBtn.addEventListener('click', () => {
+    row.remove();
+    ensureThemeRemoveButtons();
+  });
+
+  actions.appendChild(removeBtn);
+  row.appendChild(actions);
+  row.appendChild(select);
+  stack.appendChild(row);
+  ensureThemeRemoveButtons();
+}
+
+function ensureThemeRemoveButtons() {
+  const rows = [...document.querySelectorAll('#themeFilters .theme-row')];
+  rows.forEach((row, index) => {
+    let actions = row.querySelector('.theme-row-actions');
+    if (!actions) {
+      actions = document.createElement('div');
+      actions.className = 'theme-row-actions';
+      row.prepend(actions);
+    }
+
+    let btn = actions.querySelector('.theme-remove-btn');
+
+    if (index === 0) {
+      actions.innerHTML = '';
+    } else if (!btn) {
+      btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'theme-remove-btn';
+      btn.textContent = '×';
+      btn.setAttribute('aria-label', 'Quitar tema');
+      btn.addEventListener('click', () => {
+        row.remove();
+        ensureThemeRemoveButtons();
+      });
+      actions.appendChild(btn);
+    }
+  });
+}
+
+function getSelectedThemes() {
+  return [...document.querySelectorAll('.theme-select')]
+    .map(select => select.value)
+    .filter(Boolean)
+    .filter((value, index, arr) => arr.indexOf(value) === index);
+}
+
+function getAnimeSortValue(anime) {
+  const score = Number(anime.score);
+  return Number.isFinite(score) ? score : -1;
+}
+
+function getVotesSortValue(anime) {
+  const votes = Number(anime.scored_by);
+  return Number.isFinite(votes) ? votes : -1;
+}
+
+function sortAnimeResults(list) {
+  return [...list].sort((a, b) => {
+    const scoreDiff = getAnimeSortValue(b) - getAnimeSortValue(a);
+    if (scoreDiff !== 0) return scoreDiff;
+
+    const votesDiff = getVotesSortValue(b) - getVotesSortValue(a);
+    if (votesDiff !== 0) return votesDiff;
+
+    const yearDiff = (Number(b.year) || -1) - (Number(a.year) || -1);
+    if (yearDiff !== 0) return yearDiff;
+
+    return String(a.title || '').localeCompare(String(b.title || ''), 'es', { sensitivity: 'base' });
+  });
+}
+
+function updateResultsSummary(count) {
+  const summary = document.getElementById('resultsSummary');
+  if (!summary) return;
+  if (!count) {
+    summary.textContent = '';
+    summary.classList.remove('show');
+    return;
+  }
+  summary.textContent = `Títulos encontrados · ${count}`;
+  summary.classList.add('show');
+}
+
+async function applyFilters() {
+  const container = document.getElementById('filterResults');
+  if (!DB.length) {
+    updateResultsSummary(0);
+    container.innerHTML = '<div class="no-res">La base de datos todavía no está lista.<br><small>Recarga la página si el problema continúa.</small></div>';
+    return;
+  }
+
+  const genres = getSelectedGenres();
+  const themes = getSelectedThemes();
+  const type = document.getElementById('f-type').value;
+  const demo = document.getElementById('f-demo').value;
+  const year = document.getElementById('f-year').value;
+
+  let results = DB.filter(a => {
+    const animeYear = Number(a.year) || 0;
+    const animeGenres = a.genres || [];
+    const animeThemes = a.themes || [];
+
+    if (genres.length && !genres.every(genre => animeGenres.includes(genre))) return false;
+    if (themes.length && !themes.every(theme => animeThemes.includes(theme))) return false;
+    if (type && a.type !== type) return false;
+    if (demo && a.demographic !== demo) return false;
+
+    if (year === '2020s' && !(animeYear >= 2020 && animeYear <= 2029)) return false;
+    if (year === '2010s' && !(animeYear >= 2010 && animeYear <= 2019)) return false;
+    if (year === '2000s' && !(animeYear >= 2000 && animeYear <= 2009)) return false;
+    if (year === '1990s' && !(animeYear >= 1990 && animeYear <= 1999)) return false;
+    if (year === 'classic' && !(animeYear > 0 && animeYear < 1990)) return false;
+
+    return true;
+  });
+
+  results = sortAnimeResults(results);
+
+  container.innerHTML = '';
+
+  if (!results.length) {
+    updateResultsSummary(0);
+    container.innerHTML = '<div class="no-res">😶‍🌫️ Sin resultados con esos filtros.<br><small>Prueba con menos restricciones.</small></div>';
+    return;
+  }
+
+  updateResultsSummary(results.length);
+
+  results.forEach((a, idx) => {
+    container.appendChild(renderAnimeCard(a, idx, 'catalog'));
+  });
+}
+
+
+function updateSimpleSummary(id, count, label = 'Resultados') {
+  const summary = document.getElementById(id);
+  if (!summary) return;
+  if (!count) {
+    summary.textContent = '';
+    summary.classList.remove('show');
+    return;
+  }
+  summary.textContent = `${label} · ${count}`;
+  summary.classList.add('show');
+}
+
+function renderAnimeCard(anime, idx, mode = 'catalog') {
+  const imgId = `${mode}-${idx}-${String(anime.title || 'anime').replace(/\W/g, '-')}`;
+  const meta = [
+    anime.year || '—',
+    anime.type === 'Movie' ? 'Película' : `${anime.episodes || '?'} ep`,
+    anime.demographic || '—'
+  ].join(' · ');
+
+  const chips = [
+    ...(anime.genres || []).slice(0, 2),
+    ...(anime.themes || []).slice(0, 2),
+    anime.demographic
+  ].filter(Boolean).slice(0, 5);
+
+  const displayTitle = anime.title || '';
+  const scoreValue = Number.isFinite(Number(anime.score)) ? Number(anime.score).toFixed(2) : '—';
+  const votesValue = Number.isFinite(Number(anime.scored_by)) ? Number(anime.scored_by).toLocaleString('es-ES') : '—';
+  const showTop = mode === 'catalog' && idx < 5;
+  const rankClass = showTop ? ` top-rank top-${idx + 1}` : '';
+  const badge = showTop ? `<div class="rank-badge"><strong>TOP ${idx + 1}</strong></div>` : '';
+  const scoreLine = mode === 'catalog'
+    ? `<div class="score-line"><strong>${scoreValue}</strong> · ${votesValue} votos</div>`
+    : '';
+
+  const div = document.createElement('div');
+  div.className = `fcard card-clickable${rankClass}`;
+  div.innerHTML = `
+    <img class="fcard-img" id="${imgId}" src="${BLANK}" alt="${anime.title}">
+    <div style="min-width:0;flex:1">
+      ${badge}
+      <div class="fcard-title">${displayTitle}</div>
+      <div class="fcard-meta">${meta}</div>
+      ${scoreLine}
+      <div class="fcard-desc">${anime.description_es || anime.description || 'Sin descripción disponible.'}</div>
+      <div class="tags" style="margin-top:5px">${chips.map(g => '<span class="tag">' + g + '</span>').join('')}</div>
+    </div>`;
+  div.addEventListener('click', () => {
+    const imgNow = div.querySelector('.fcard-img')?.src || BLANK;
+    openAnimeModal(anime, imgNow);
+  });
+
+  if (idx < 24) {
+    setTimeout(async () => {
+      const url = await getImg(anime);
+      const el = document.getElementById(imgId);
+      if (el && url) el.src = url;
+    }, Math.min(idx, 12) * 55);
+  }
+
+  return div;
+}
+
+function scoreAnimeMatch(anime, query) {
+  const normalizedQuery = normalizeLoose(query);
+  if (!normalizedQuery) return -1;
+
+  const aliases = getSearchAliases(anime);
+  if (!aliases.length) return -1;
+
+  const queryTokens = normalizedQuery.split(' ').filter(Boolean);
+  let best = -1;
+
+  aliases.forEach(alias => {
+    const text = alias.clean;
+    if (!text) return;
+
+    let score = -1;
+
+    if (text === normalizedQuery) score = 1200;
+    else if (text.startsWith(normalizedQuery)) score = 920;
+    else if (text.includes(` ${normalizedQuery}`)) score = 840;
+    else if (queryTokens.every(token => text.includes(token))) score = 650;
+    else if (text.includes(normalizedQuery)) score = 520;
+    else {
+      const tokenHits = queryTokens.filter(token => text.includes(token)).length;
+      if (tokenHits) score = 260 + tokenHits * 70;
+    }
+
+    if (score < 0) return;
+
+    const compactText = text.replace(/\s+/g, '');
+    const compactQuery = normalizedQuery.replace(/\s+/g, '');
+    if (compactText.startsWith(compactQuery)) score += 80;
+    if (compactText.includes(compactQuery)) score += 30;
+
+    const lengthPenalty = Math.max(0, text.length - normalizedQuery.length);
+    score -= Math.min(140, lengthPenalty * 2);
+
+    if (normalizeLoose(anime.title) === text) score += 55;
+    if (normalizeLoose(anime.franchise) === text) score += 25;
+
+    best = Math.max(best, score);
+  });
+
+  return best;
+}
+
+function sortTitleSearchResults(results) {
+  return [...results].sort((a, b) => {
+    if (b._searchScore !== a._searchScore) return b._searchScore - a._searchScore;
+
+    const votesDiff = getVotesSortValue(b) - getVotesSortValue(a);
+    if (votesDiff !== 0) return votesDiff;
+
+    const scoreDiff = getAnimeSortValue(b) - getAnimeSortValue(a);
+    if (scoreDiff !== 0) return scoreDiff;
+
+    return String(a.title || '').localeCompare(String(b.title || ''), 'es', { sensitivity: 'base' });
+  });
+}
+
+function toggleSearchClearButton() {
+  const input = document.getElementById('titleSearchInput');
+  const clear = document.getElementById('titleSearchClear');
+  if (!input || !clear) return;
+  clear.classList.toggle('show', !!input.value.trim());
+}
+
+function performTitleSearch() {
+  const input = document.getElementById('titleSearchInput');
+  const container = document.getElementById('titleSearchResults');
+  if (!input || !container) return;
+
+  const rawQuery = input.value || '';
+  const query = normalizeLoose(rawQuery);
+  toggleSearchClearButton();
+  updateAccountModeUI();
+  container.innerHTML = '';
+
+  if (!DB.length) {
+    updateSimpleSummary('searchResultsSummary', 0);
+    container.innerHTML = '<div class="no-res">La base de datos todavía no está lista.<br><small>Recarga la página si el problema continúa.</small></div>';
+    return;
+  }
+
+  if (query.length < 2) {
+    updateSimpleSummary('searchResultsSummary', 0);
+    container.innerHTML = '<div class="pre-search-note">Escribe al menos <strong>2 letras</strong> para buscar coincidencias por título, alias o nombre alternativo.</div>';
+    return;
+  }
+
+  const results = sortTitleSearchResults(
+    DB.map(anime => ({ ...anime, _searchScore: scoreAnimeMatch(anime, query) }))
+      .filter(anime => anime._searchScore >= 320)
+  ).slice(0, 40);
+
+  if (!results.length) {
+    updateSimpleSummary('searchResultsSummary', 0);
+    container.innerHTML = '<div class="no-res">No encontré coincidencias suficientes.<br><small>Prueba con otra palabra, un alias o un título más corto.</small></div>';
+    return;
+  }
+
+  updateSimpleSummary('searchResultsSummary', results.length, 'Títulos encontrados');
+  results.forEach((anime, idx) => container.appendChild(renderAnimeCard(anime, idx, 'search')));
+}
+
+let rankingLoaded = false;
+async function loadRanking() {
+  if (rankingLoaded) return;
+  rankingLoaded = true;
+
+  const container = document.getElementById('rankingList');
+  if (!container) return;
+  container.innerHTML = '';
+
+  for (let i = 0; i < RANKING_DATA.length; i++) {
+    const r = RANKING_DATA[i];
+    const db = findAnimeByTitle(r.title) || DB.find(a => a.mal_id === r.mal_id) || {};
+    const imgId = 'ri-' + i;
+    const div = document.createElement('div');
+    div.className = 'rcard card-clickable';
+    div.innerHTML = `
+      <div class="rnum">${String(i + 1).padStart(2, '0')}</div>
+      <img class="rimg" id="${imgId}" src="${BLANK}" alt="${r.title}">
+      <div class="rinfo">
+        <div class="rtitle">${r.title}</div>
+        <div class="rgenres">${(db.genres || []).join(' · ')}</div>
+        <div class="rdesc">${db.description_es || db.description || ''}</div>
+      </div>`;
+
+    div.addEventListener('click', () => {
+      const imgNow = div.querySelector('.rimg')?.src || BLANK;
+      openAnimeModal({ ...db, title: db.title || r.title }, imgNow);
+    });
+
+    container.appendChild(div);
+
+    setTimeout(async () => {
+      let url = db.image || '';
+      if (!url && db.title) url = await getImg(db);
+      if (!url && r.mal_id) url = await getImgById(r.mal_id);
+      const el = document.getElementById(imgId);
+      if (el && url) el.src = url;
+    }, i * 60);
+  }
+}
+
+function openAnimeModal(anime, imgSrc = BLANK) {
+  const modal = document.getElementById('animeModal');
+  const img = document.getElementById('animeModalImg');
+  const title = document.getElementById('animeModalTitle');
+  const meta = document.getElementById('animeModalMeta');
+  const desc = document.getElementById('animeModalDesc');
+  const tags = document.getElementById('animeModalTags');
+  const statusBox = document.querySelector('.modal-status-box');
+
+  if (!modal || !anime) return;
+
+  currentModalAnime = anime;
+  img.src = imgSrc || anime.image || BLANK;
+  img.alt = anime.title || '';
+
+  const displayTitle = anime.title || '';
+  title.textContent = displayTitle;
+
+  const metaParts = [];
+  if (anime.year) metaParts.push(String(anime.year));
+  if (anime.type === 'Movie') metaParts.push('Película');
+  else if (anime.episodes) metaParts.push(`${anime.episodes} episodios`);
+  if (anime.length) {
+    const durationMap = { corto: 'corta', medio: 'media', largo: 'larga' };
+    metaParts.push(`Duración ${durationMap[anime.length] || anime.length}`);
+  }
+  if (anime.demographic) metaParts.push(anime.demographic);
+  if (anime.tone) metaParts.push(`Tono ${anime.tone}`);
+  if (typeof anime.ongoing === 'boolean') metaParts.push(anime.ongoing ? 'En emisión' : 'Finalizado');
+  if (Number.isFinite(Number(anime.score))) metaParts.push(`Nota ${Number(anime.score).toFixed(2)}`);
+  if (Number.isFinite(Number(anime.scored_by))) metaParts.push(`${Number(anime.scored_by).toLocaleString('es-ES')} votos`);
+
+  meta.textContent = metaParts.join(' · ');
+  const allTags = [...(anime.genres || []), ...(anime.themes || [])];
+  tags.innerHTML = allTags.map(t => `<span class="tag">${t}</span>`).join('');
+
+  desc.textContent = anime.description_es || anime.description || 'Sin descripción disponible.';
+  desc.classList.remove('loading');
+  statusBox?.classList.toggle('hidden', !currentUser);
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  updateModalStatusUI();
+}
+
+function closeAnimeModal() {
+  const modal = document.getElementById('animeModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  currentModalAnime = null;
+}
+
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('animeModal');
+  if (e.target === modal) closeAnimeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAnimeModal();
+});
+
+window.addEventListener('pagehide', () => {
+  persistActiveScreen(activeScreenName);
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+    persistActiveScreen(activeScreenName);
+  }
+});
+
+window.addEventListener('pageshow', () => {
+  persistActiveScreen(activeScreenName);
+});
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadDB();
+  const savedAppState = readAppState();
+  if (savedAppState.introDismissed && ['filter', 'ranking', 'user', 'search', 'info'].includes(savedAppState.activeScreen)) {
+    dismissIntroIfNeeded(false);
+    setActiveScreen(savedAppState.activeScreen + '-screen', 'nav-' + savedAppState.activeScreen, false);
+    if (savedAppState.activeScreen === 'ranking') loadRanking();
+  } else {
+    openIntro(true);
+    persistActiveScreen('intro');
+  }
+  ensureGenreRemoveButtons();
+  ensureThemeRemoveButtons();
+  updateResultsSummary(0);
+  updateSimpleSummary('searchResultsSummary', 0);
+
+  const filterContainer = document.getElementById('filterResults');
+  if (filterContainer && !filterContainer.innerHTML.trim()) {
+    filterContainer.innerHTML = '<div class="pre-search-note">Selecciona tus filtros y pulsa <strong>Buscar anime</strong> para descubrir resultados.</div>';
+  }
+
+  const searchInput = document.getElementById('titleSearchInput');
+  const searchClear = document.getElementById('titleSearchClear');
+  const searchButton = document.getElementById('titleSearchButton');
+  if (searchInput) {
+    searchInput.addEventListener('input', toggleSearchClearButton);
+    searchInput.addEventListener('search', performTitleSearch);
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        performTitleSearch();
+      }
+    });
+  }
+  if (searchButton) {
+    searchButton.addEventListener('click', performTitleSearch);
+  }
+  if (searchClear) {
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      performTitleSearch();
+      searchInput.focus();
+    });
+  }
+  toggleSearchClearButton();
+  updateAccountModeUI();
+
+  document.getElementById('loginForm')?.addEventListener('submit', handleLogin);
+  document.getElementById('signupForm')?.addEventListener('submit', handleSignup);
+  document.getElementById('changePasswordForm')?.addEventListener('submit', handleChangePassword);
+
+  supabaseClient.auth.onAuthStateChange(async (event, session) => {
+    currentUser = session?.user || null;
+    if (event === 'PASSWORD_RECOVERY' || isRecoveryUrl()) {
+      isPasswordRecoveryFlow = true;
+    }
+    if (currentUser) {
+      document.getElementById('loginForm')?.reset();
+      document.getElementById('signupForm')?.reset();
+    } else if (!isPasswordRecoveryFlow) {
+      resetAuthForms();
+      switchAuthTab('login');
+    }
+    renderUserScreen();
+    await fetchUserStatuses();
+    if (isPasswordRecoveryFlow && currentUser) {
+      showScreen('user');
+      document.getElementById('accountAccordion')?.setAttribute('open', '');
+      updateAccountModeUI();
+    setAuthFeedback('Has entrado en modo recuperación. Restablece tu contraseña desde Mi cuenta.', 'success');
+    }
+  });
+
+  await syncAuthState();
+  cleanupAuthRedirectUrl();
+});
+
+</script>
+</body>
+</html>
