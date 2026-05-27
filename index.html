@@ -4541,7 +4541,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260527-calendar2';
+const APP_VERSION = '20260527-calendar3';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -7004,6 +7004,7 @@ const SCHEDULE_CALENDAR_DAY_ORDER = ['monday', 'tuesday', 'wednesday', 'thursday
 const SCHEDULE_JS_DAY_KEYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const SCHEDULE_PERSONAL_STATUSES = new Set(['watching', 'pending']);
 const SCHEDULE_FEATURED_LIMIT = 12;
+const SCHEDULE_NEXT_MONTH_PREVIEW_DAYS = 7;
 const SCHEDULE_DAY_LABELS = {
   monday: 'Lunes',
   tuesday: 'Martes',
@@ -7068,8 +7069,10 @@ function getScheduleMonthTitle(date = new Date()) {
 
 function getScheduleCalendarBaseDates(reference = new Date()) {
   const currentMonth = new Date(reference.getFullYear(), reference.getMonth(), 1, 12);
-  const nextMonth = new Date(reference.getFullYear(), reference.getMonth() + 1, 1, 12);
-  return [currentMonth, nextMonth];
+  const daysInCurrentMonth = new Date(reference.getFullYear(), reference.getMonth() + 1, 0).getDate();
+  const shouldShowNextMonth = reference.getDate() >= daysInCurrentMonth - SCHEDULE_NEXT_MONTH_PREVIEW_DAYS + 1;
+  if (!shouldShowNextMonth) return [currentMonth];
+  return [currentMonth, new Date(reference.getFullYear(), reference.getMonth() + 1, 1, 12)];
 }
 
 function capitalizeFirst(value = '') {
@@ -7297,7 +7300,7 @@ function renderScheduleCalendar(entries, selectedDate, baseDates = getScheduleCa
   const legend = document.getElementById('userScheduleLegend');
   if (!calendar) return;
 
-  if (monthTitle) monthTitle.textContent = 'Este mes y el siguiente';
+  if (monthTitle) monthTitle.textContent = baseDates.length > 1 ? 'Este mes y el siguiente' : 'Este mes';
   if (legend) legend.textContent = userScheduleMode === 'featured' ? 'Top semanal' : 'Día con emisión';
 
   calendar.innerHTML = '';
