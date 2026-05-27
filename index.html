@@ -4526,7 +4526,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260522-quick2';
+const APP_VERSION = '20260527-june1';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -6989,6 +6989,7 @@ const SCHEDULE_CALENDAR_DAY_ORDER = ['monday', 'tuesday', 'wednesday', 'thursday
 const SCHEDULE_JS_DAY_KEYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const SCHEDULE_PERSONAL_STATUSES = new Set(['watching', 'pending']);
 const SCHEDULE_FEATURED_LIMIT = 12;
+const SCHEDULE_NEXT_MONTH_FROM_DAY = 24;
 const SCHEDULE_DAY_LABELS = {
   monday: 'Lunes',
   tuesday: 'Martes',
@@ -7049,6 +7050,14 @@ function getScheduleDateDayKey(date) {
 
 function getScheduleMonthTitle(date = new Date()) {
   return date.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+}
+
+function getScheduleCalendarBaseDate(reference = new Date()) {
+  const baseDate = new Date(reference.getFullYear(), reference.getMonth(), 1, 12);
+  if (reference.getDate() >= SCHEDULE_NEXT_MONTH_FROM_DAY) {
+    baseDate.setMonth(baseDate.getMonth() + 1);
+  }
+  return baseDate;
 }
 
 function capitalizeFirst(value = '') {
@@ -7171,7 +7180,7 @@ function findBestScheduleDate(entries, baseDate = new Date()) {
   return new Date(year, month, startDay, 12);
 }
 
-function ensureScheduleSelectedDate(entries, baseDate = new Date()) {
+function ensureScheduleSelectedDate(entries, baseDate = getScheduleCalendarBaseDate()) {
   const selected = parseScheduleDateKey(userScheduleSelectedDateKey);
   if (selected && selected.getFullYear() === baseDate.getFullYear() && selected.getMonth() === baseDate.getMonth()) {
     return selected;
@@ -7200,13 +7209,12 @@ function updateScheduleModeButtons() {
   });
 }
 
-function renderScheduleCalendar(entries, selectedDate) {
+function renderScheduleCalendar(entries, selectedDate, baseDate = getScheduleCalendarBaseDate()) {
   const calendar = document.getElementById('userScheduleCalendar');
   const monthTitle = document.getElementById('userScheduleMonthTitle');
   const legend = document.getElementById('userScheduleLegend');
   if (!calendar) return;
 
-  const baseDate = new Date();
   const year = baseDate.getFullYear();
   const month = baseDate.getMonth();
   const firstDay = new Date(year, month, 1, 12);
@@ -7355,8 +7363,9 @@ function renderUserSchedule() {
   updateScheduleModeButtons();
 
   const entries = getActiveScheduleEntries();
-  const selectedDate = ensureScheduleSelectedDate(entries);
-  renderScheduleCalendar(entries, selectedDate);
+  const scheduleBaseDate = getScheduleCalendarBaseDate();
+  const selectedDate = ensureScheduleSelectedDate(entries, scheduleBaseDate);
+  renderScheduleCalendar(entries, selectedDate, scheduleBaseDate);
 
   if (sub) {
     const generated = animeSchedulePayload.generated_at ? ` Actualizado: ${new Date(animeSchedulePayload.generated_at).toLocaleDateString('es-ES')}.` : '';
