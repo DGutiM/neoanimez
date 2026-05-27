@@ -1990,6 +1990,21 @@ body.intro-open .title-language-widget{display:none}
   background:#00d4ff;
   box-shadow:0 0 12px rgba(0,212,255,.58);
 }
+.user-calendar-stack{
+  display:grid;
+  gap:14px;
+}
+.user-calendar-block{
+  display:grid;
+  gap:8px;
+}
+.user-calendar-block-title{
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:#aebcff;
+}
 .user-calendar-grid{
   display:grid;
   grid-template-columns:repeat(7, minmax(0, 1fr));
@@ -4289,7 +4304,7 @@ body.cookie-banner-visible #intro-screen{
           <div class="user-calendar-title" id="userScheduleMonthTitle">Este mes</div>
           <div class="user-calendar-legend" id="userScheduleLegend">Día con emisión</div>
         </div>
-        <div class="user-calendar-grid" id="userScheduleCalendar"></div>
+        <div class="user-calendar-stack" id="userScheduleCalendar"></div>
         <div class="user-schedule-day-title" id="userScheduleDayTitle"></div>
         <div class="user-schedule-list" id="userScheduleList"></div>
       </div>
@@ -4526,7 +4541,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260527-june1';
+const APP_VERSION = '20260527-calendar2';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -6989,7 +7004,6 @@ const SCHEDULE_CALENDAR_DAY_ORDER = ['monday', 'tuesday', 'wednesday', 'thursday
 const SCHEDULE_JS_DAY_KEYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const SCHEDULE_PERSONAL_STATUSES = new Set(['watching', 'pending']);
 const SCHEDULE_FEATURED_LIMIT = 12;
-const SCHEDULE_NEXT_MONTH_FROM_DAY = 24;
 const SCHEDULE_DAY_LABELS = {
   monday: 'Lunes',
   tuesday: 'Martes',
@@ -7052,12 +7066,10 @@ function getScheduleMonthTitle(date = new Date()) {
   return date.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
 }
 
-function getScheduleCalendarBaseDate(reference = new Date()) {
-  const baseDate = new Date(reference.getFullYear(), reference.getMonth(), 1, 12);
-  if (reference.getDate() >= SCHEDULE_NEXT_MONTH_FROM_DAY) {
-    baseDate.setMonth(baseDate.getMonth() + 1);
-  }
-  return baseDate;
+function getScheduleCalendarBaseDates(reference = new Date()) {
+  const currentMonth = new Date(reference.getFullYear(), reference.getMonth(), 1, 12);
+  const nextMonth = new Date(reference.getFullYear(), reference.getMonth() + 1, 1, 12);
+  return [currentMonth, nextMonth];
 }
 
 function capitalizeFirst(value = '') {
@@ -7180,13 +7192,20 @@ function findBestScheduleDate(entries, baseDate = new Date()) {
   return new Date(year, month, startDay, 12);
 }
 
-function ensureScheduleSelectedDate(entries, baseDate = getScheduleCalendarBaseDate()) {
+function isSameScheduleMonth(date, baseDate) {
+  return !!date && !!baseDate && date.getFullYear() === baseDate.getFullYear() && date.getMonth() === baseDate.getMonth();
+}
+
+function ensureScheduleSelectedDate(entries, baseDates = getScheduleCalendarBaseDates()) {
   const selected = parseScheduleDateKey(userScheduleSelectedDateKey);
-  if (selected && selected.getFullYear() === baseDate.getFullYear() && selected.getMonth() === baseDate.getMonth()) {
+  if (selected && baseDates.some(baseDate => isSameScheduleMonth(selected, baseDate))) {
     return selected;
   }
 
-  const nextDate = findBestScheduleDate(entries, baseDate);
+  const bestWithItems = baseDates
+    .map(baseDate => findBestScheduleDate(entries, baseDate))
+    .find(date => getScheduleEntriesForDate(date, entries).length);
+  const nextDate = bestWithItems || findBestScheduleDate(entries, baseDates[0] || new Date());
   userScheduleSelectedDateKey = formatScheduleDateKey(nextDate);
   return nextDate;
 }
@@ -7209,11 +7228,18 @@ function updateScheduleModeButtons() {
   });
 }
 
-function renderScheduleCalendar(entries, selectedDate, baseDate = getScheduleCalendarBaseDate()) {
-  const calendar = document.getElementById('userScheduleCalendar');
-  const monthTitle = document.getElementById('userScheduleMonthTitle');
-  const legend = document.getElementById('userScheduleLegend');
-  if (!calendar) return;
+function appendScheduleMonthCalendar(container, entries, selectedDate, baseDate) {
+  const block = document.createElement('section');
+  block.className = 'user-calendar-block';
+
+  const blockTitle = document.createElement('div');
+  blockTitle.className = 'user-calendar-block-title';
+  blockTitle.textContent = capitalizeFirst(getScheduleMonthTitle(baseDate));
+  block.appendChild(blockTitle);
+
+  const grid = document.createElement('div');
+  grid.className = 'user-calendar-grid';
+  block.appendChild(grid);
 
   const year = baseDate.getFullYear();
   const month = baseDate.getMonth();
@@ -7223,22 +7249,18 @@ function renderScheduleCalendar(entries, selectedDate, baseDate = getScheduleCal
   const todayKey = formatScheduleDateKey(new Date());
   const selectedKey = formatScheduleDateKey(selectedDate);
 
-  if (monthTitle) monthTitle.textContent = capitalizeFirst(getScheduleMonthTitle(baseDate));
-  if (legend) legend.textContent = userScheduleMode === 'featured' ? 'Top semanal' : 'Día con emisión';
-
-  calendar.innerHTML = '';
   SCHEDULE_CALENDAR_DAY_ORDER.forEach(dayKey => {
     const header = document.createElement('div');
     header.className = 'user-calendar-weekday';
     header.textContent = SCHEDULE_WEEKDAY_SHORT[dayKey] || '';
-    calendar.appendChild(header);
+    grid.appendChild(header);
   });
 
   for (let i = 0; i < leadingBlanks; i++) {
     const blank = document.createElement('div');
     blank.className = 'user-calendar-day is-outside';
     blank.setAttribute('aria-hidden', 'true');
-    calendar.appendChild(blank);
+    grid.appendChild(blank);
   }
 
   for (let day = 1; day <= daysInMonth; day++) {
@@ -7263,8 +7285,23 @@ function renderScheduleCalendar(entries, selectedDate, baseDate = getScheduleCal
       ${dayEntries.length ? `<span class="user-calendar-dot">${dayEntries.length}</span>` : ''}
     `;
     button.addEventListener('click', () => selectUserScheduleDate(dateKey));
-    calendar.appendChild(button);
+    grid.appendChild(button);
   }
+
+  container.appendChild(block);
+}
+
+function renderScheduleCalendar(entries, selectedDate, baseDates = getScheduleCalendarBaseDates()) {
+  const calendar = document.getElementById('userScheduleCalendar');
+  const monthTitle = document.getElementById('userScheduleMonthTitle');
+  const legend = document.getElementById('userScheduleLegend');
+  if (!calendar) return;
+
+  if (monthTitle) monthTitle.textContent = 'Este mes y el siguiente';
+  if (legend) legend.textContent = userScheduleMode === 'featured' ? 'Top semanal' : 'Día con emisión';
+
+  calendar.innerHTML = '';
+  baseDates.forEach(baseDate => appendScheduleMonthCalendar(calendar, entries, selectedDate, baseDate));
 }
 
 function buildScheduleEntryRow(entry) {
@@ -7363,9 +7400,9 @@ function renderUserSchedule() {
   updateScheduleModeButtons();
 
   const entries = getActiveScheduleEntries();
-  const scheduleBaseDate = getScheduleCalendarBaseDate();
-  const selectedDate = ensureScheduleSelectedDate(entries, scheduleBaseDate);
-  renderScheduleCalendar(entries, selectedDate, scheduleBaseDate);
+  const scheduleBaseDates = getScheduleCalendarBaseDates();
+  const selectedDate = ensureScheduleSelectedDate(entries, scheduleBaseDates);
+  renderScheduleCalendar(entries, selectedDate, scheduleBaseDates);
 
   if (sub) {
     const generated = animeSchedulePayload.generated_at ? ` Actualizado: ${new Date(animeSchedulePayload.generated_at).toLocaleDateString('es-ES')}.` : '';
