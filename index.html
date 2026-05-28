@@ -2742,6 +2742,97 @@ body.intro-open .title-language-widget{display:none}
   max-width:1060px;
   margin:0 auto;
 }
+.neo-arcade-menu{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.neo-arcade-menu.hidden{display:none}
+.neo-arcade-game-card{
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-end;
+  gap:10px;
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(circle at top right, rgba(0,212,255,.20), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(255,45,120,.13), transparent 40%),
+    linear-gradient(180deg, rgba(17,19,36,.98), rgba(8,8,18,.98));
+  color:#f5f7ff;
+  padding:18px;
+  text-align:left;
+  cursor:pointer;
+  box-shadow:0 20px 44px rgba(0,0,0,.24);
+  transition:transform .16s, border-color .2s, box-shadow .2s;
+}
+.neo-arcade-game-card::before{
+  content:'';
+  position:absolute;
+  inset:16px 18px auto auto;
+  width:104px;
+  height:68px;
+  border-radius:999px 42px 999px 42px;
+  background:
+    linear-gradient(135deg, rgba(245,252,255,.92), rgba(78,231,255,.78) 42%, rgba(42,141,255,.70) 72%, rgba(255,45,120,.62));
+  clip-path:polygon(0 50%, 58% 0, 100% 50%, 58% 100%);
+  box-shadow:0 0 26px rgba(0,212,255,.22);
+  opacity:.82;
+}
+.neo-arcade-game-card.runner::before{
+  width:92px;
+  height:92px;
+  border-radius:28px;
+  clip-path:polygon(18% 12%, 78% 12%, 94% 50%, 78% 88%, 18% 88%, 4% 50%);
+  background:
+    linear-gradient(135deg, rgba(255,214,102,.92), rgba(255,45,120,.78) 48%, rgba(123,79,255,.76));
+}
+.neo-arcade-game-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(0,212,255,.30);
+  box-shadow:0 24px 52px rgba(0,212,255,.10);
+}
+.neo-arcade-game-card strong{
+  position:relative;
+  font-family:'Orbitron',monospace;
+  font-size:21px;
+  line-height:1.15;
+  color:#fff;
+}
+.neo-arcade-game-card span,
+.neo-arcade-game-card em{
+  position:relative;
+}
+.neo-arcade-game-card > span:not(.neo-arcade-game-kicker){
+  color:#b9bfdc;
+  font-size:13px;
+  line-height:1.55;
+  max-width:360px;
+}
+.neo-arcade-game-card em{
+  margin-top:2px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.045);
+  color:#8ff0ff;
+  padding:7px 10px;
+  font-family:'Orbitron',monospace;
+  font-size:9px;
+  font-style:normal;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+.neo-arcade-game-kicker{
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#72f6ff;
+}
 .neo-arcade-card{
   border-radius:22px;
   border:1px solid rgba(0,212,255,.18);
@@ -2751,6 +2842,10 @@ body.intro-open .title-language-widget{display:none}
     linear-gradient(180deg, rgba(17,19,36,.96), rgba(10,10,22,.98));
   box-shadow:0 24px 50px rgba(0,0,0,.26);
   padding:18px;
+}
+.neo-arcade-card.hidden{display:none}
+.neo-arcade-games-back{
+  margin-bottom:14px;
 }
 .neo-arcade-head{
   display:flex;
@@ -3342,6 +3437,8 @@ button:disabled,
   .neo-arcade-head{align-items:stretch;flex-direction:column}
   .neo-arcade-title{font-size:19px}
   .neo-arcade-score-pill{align-self:flex-start}
+  .neo-arcade-menu{grid-template-columns:1fr}
+  .neo-arcade-game-card{min-height:178px}
   .neo-arcade-layout{grid-template-columns:1fr}
   .neo-arcade-stage{height:min(48vh,360px);min-height:300px;border-radius:17px}
   .neo-arcade-panel{gap:10px}
@@ -3987,6 +4084,10 @@ body.cookie-banner-visible #intro-screen{
         <strong>NeoAdivino</strong>
         <span>Juega a adivinar anime o personaje con preguntas rápidas.</span>
       </button>
+      <button class="neo-today-action" type="button" style="--today-color:#ff8f2d" onclick="goNeoTodayAction('arcade')">
+        <strong>NeoArcade</strong>
+        <span>Partidas rápidas con ranking clásico de 3 iniciales.</span>
+      </button>
     </div>
   </div>
 </div>
@@ -4306,11 +4407,27 @@ body.cookie-banner-visible #intro-screen{
     </div>
 
     <div class="neo-arcade-shell">
-      <section class="neo-arcade-card">
+      <div class="neo-arcade-menu" id="neoArcadeMenu">
+        <button class="neo-arcade-game-card ship" type="button" onclick="startNeoArcadeGame('neonave_dash')">
+          <span class="neo-arcade-game-kicker">Juego 01</span>
+          <strong>NeoNave Dash</strong>
+          <span>Pilota la nave N, cruza portales y recoge orbes para encadenar combo.</span>
+          <em>Tap / clic / espacio</em>
+        </button>
+        <button class="neo-arcade-game-card runner" type="button" onclick="startNeoArcadeGame('neorunner_rush')">
+          <span class="neo-arcade-game-kicker">Juego 02</span>
+          <strong>NeoRunner Rush</strong>
+          <span>Corre sin parar por una ciudad neón y salta prismas antes de chocar.</span>
+          <em>Tap / clic / espacio</em>
+        </button>
+      </div>
+
+      <section class="neo-arcade-card hidden" id="neoArcadeGameArea">
+        <button class="community-back-btn neo-arcade-games-back" type="button" onclick="backToNeoArcadeGames()">← Juegos</button>
         <div class="neo-arcade-head">
           <div>
-            <div class="neo-arcade-kicker">NeoWave Dash</div>
-            <div class="neo-arcade-title">Surfea el neón</div>
+            <div class="neo-arcade-kicker" id="neoArcadeGameKicker">NeoNave Dash</div>
+            <div class="neo-arcade-title" id="neoArcadeGameTitle">Pilota la N</div>
           </div>
           <div class="neo-arcade-score-pill">
             <span id="neoArcadeScore">0</span>
@@ -4320,7 +4437,7 @@ body.cookie-banner-visible #intro-screen{
 
         <div class="neo-arcade-layout">
           <div class="neo-arcade-stage">
-            <canvas id="neoWaveCanvas" width="900" height="420" aria-label="NeoWave Dash"></canvas>
+            <canvas id="neoWaveCanvas" width="900" height="420" aria-label="NeoArcade"></canvas>
             <div class="neo-wave-overlay" id="neoWaveOverlay">
               <div class="neo-wave-overlay-title">Toca para empezar</div>
               <div class="neo-wave-overlay-sub">Móvil: toca la pantalla. Ordenador: clic, espacio o flecha arriba.</div>
@@ -4341,7 +4458,7 @@ body.cookie-banner-visible #intro-screen{
 
             <div class="neo-arcade-instructions">
               <strong>Instrucciones</strong>
-              <span>Impulsa la ola para cruzar portales y recoger orbes. Cada portal suma 1 punto y cada orbe suma 2. Si tocas un borde o una sombra, termina la partida.</span>
+              <span id="neoArcadeInstructionsText">Pilota la nave para cruzar portales y recoger orbes. Cada portal suma 1 punto y cada orbe suma 2. Si tocas un borde o una sombra, termina la partida.</span>
             </div>
 
             <button class="neo-arcade-action" id="neoWaveActionBtn" type="button" onclick="handleNeoWaveAction()">Empezar</button>
@@ -4910,7 +5027,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260527-arcade2';
+const APP_VERSION = '20260528-arcade4';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -4979,8 +5096,31 @@ const STATUS_ORDER = ['watching', 'completed', 'pending', 'dropped'];
 const RESULTS_PAGE_SIZE = 20;
 const COMMUNITY_PRIOR_SCORE = 7;
 const COMMUNITY_PRIOR_WEIGHT = 20;
-const ARCADE_GAME_KEY = 'neowave_dash';
+const ARCADE_DEFAULT_GAME_KEY = 'neonave_dash';
+const ARCADE_GAMES = {
+  neonave_dash: {
+    key: 'neonave_dash',
+    kind: 'ship',
+    kicker: 'NeoNave Dash',
+    title: 'Pilota la N',
+    action: 'Impulsar',
+    startTitle: 'Toca para despegar',
+    startSub: 'Móvil: toca la pantalla. Ordenador: clic, espacio o flecha arriba.',
+    instructions: 'Pilota la nave para cruzar portales y recoger orbes. Cada portal suma 1 punto y cada orbe suma 2. Si tocas un borde o una sombra, termina la partida.'
+  },
+  neorunner_rush: {
+    key: 'neorunner_rush',
+    kind: 'runner',
+    kicker: 'NeoRunner Rush',
+    title: 'Salta el Rift',
+    action: 'Saltar',
+    startTitle: 'Toca para correr',
+    startSub: 'Corre solo: tú solo decides cuándo saltar.',
+    instructions: 'El runner avanza siempre. Toca para saltar prismas, recoge núcleos de neón y aguanta cada vez más velocidad. Si chocas, termina la partida.'
+  }
+};
 const ARCADE_LOCAL_BEST_KEY = 'neoanimez_arcade_neowave_best_v1';
+const ARCADE_PLAYER_KEY = 'neoanimez_arcade_player_key_v1';
 let currentUser = null;
 let currentModalAnime = null;
 let currentRecommendationReason = '';
@@ -5042,6 +5182,7 @@ let arcadeAnimationFrame = 0;
 let arcadeLastFrame = 0;
 let arcadeCanvasInitialized = false;
 let arcadeSubmitting = false;
+let activeArcadeGameKey = ARCADE_DEFAULT_GAME_KEY;
 const neoGuessIndexFileCache = new Map();
 const neoGuessDetailFileCache = new Map();
 const neoGuessCharacterAnimeCache = new WeakMap();
@@ -8532,9 +8673,7 @@ function openNeoArcadeGame() {
   document.getElementById('communityGuessView')?.classList.add('hidden');
   document.getElementById('communityArcadeView')?.classList.remove('hidden');
   activeCommunityThread = null;
-  initNeoArcadeGame();
-  resetNeoWaveGame();
-  loadNeoArcadeLeaderboard();
+  showNeoArcadeMenu();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -8545,14 +8684,72 @@ function closeNeoArcadeGame() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function getActiveArcadeGame() {
+  return ARCADE_GAMES[activeArcadeGameKey] || ARCADE_GAMES[ARCADE_DEFAULT_GAME_KEY];
+}
+
+function isNeoRunnerGame() {
+  return getActiveArcadeGame().kind === 'runner';
+}
+
+function getNeoArcadeBestKey() {
+  return `${ARCADE_LOCAL_BEST_KEY}:${getActiveArcadeGame().key}`;
+}
+
+function showNeoArcadeMenu() {
+  stopNeoArcadeLoop();
+  document.getElementById('neoArcadeMenu')?.classList.remove('hidden');
+  document.getElementById('neoArcadeGameArea')?.classList.add('hidden');
+  document.getElementById('neoArcadeSubmitForm')?.classList.add('hidden');
+  setNeoArcadeFeedback('');
+  arcadeGame = null;
+}
+
+function backToNeoArcadeGames() {
+  showNeoArcadeMenu();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startNeoArcadeGame(gameKey = ARCADE_DEFAULT_GAME_KEY) {
+  activeArcadeGameKey = ARCADE_GAMES[gameKey] ? gameKey : ARCADE_DEFAULT_GAME_KEY;
+  updateNeoArcadeGameLabels();
+  document.getElementById('neoArcadeMenu')?.classList.add('hidden');
+  document.getElementById('neoArcadeGameArea')?.classList.remove('hidden');
+  initNeoArcadeGame();
+  resetNeoWaveGame();
+  loadNeoArcadeLeaderboard();
+  window.setTimeout(() => document.getElementById('neoArcadeGameArea')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+}
+
+function updateNeoArcadeGameLabels() {
+  const game = getActiveArcadeGame();
+  const kicker = document.getElementById('neoArcadeGameKicker');
+  const title = document.getElementById('neoArcadeGameTitle');
+  const instructions = document.getElementById('neoArcadeInstructionsText');
+  const canvas = document.getElementById('neoWaveCanvas');
+  if (kicker) kicker.textContent = game.kicker;
+  if (title) title.textContent = game.title;
+  if (instructions) instructions.textContent = game.instructions;
+  if (canvas) canvas.setAttribute('aria-label', game.kicker);
+}
+
 function readNeoArcadeBest() {
-  const value = Number(localStorage.getItem(ARCADE_LOCAL_BEST_KEY));
+  const value = Number(localStorage.getItem(getNeoArcadeBestKey()));
   return Number.isFinite(value) && value > 0 ? Math.floor(value) : 0;
 }
 
 function writeNeoArcadeBest(score) {
   const normalized = Math.max(0, Math.floor(Number(score) || 0));
-  localStorage.setItem(ARCADE_LOCAL_BEST_KEY, String(normalized));
+  localStorage.setItem(getNeoArcadeBestKey(), String(normalized));
+}
+
+function getNeoArcadePlayerKey() {
+  let key = localStorage.getItem(ARCADE_PLAYER_KEY);
+  if (!key) {
+    key = crypto?.randomUUID?.() || `neo-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+    localStorage.setItem(ARCADE_PLAYER_KEY, key);
+  }
+  return key;
 }
 
 function sanitizeArcadeInitials(value) {
@@ -8592,7 +8789,7 @@ function updateNeoArcadeHud() {
   if (bestEl) bestEl.textContent = String(best);
   if (topEl) topEl.textContent = Number.isFinite(Number(topScore)) ? String(topScore) : '--';
   if (actionBtn && arcadeGame) {
-    actionBtn.textContent = arcadeGame.running ? 'Impulsar' : arcadeGame.gameOver ? 'Reintentar' : 'Empezar';
+    actionBtn.textContent = arcadeGame.running ? getActiveArcadeGame().action : arcadeGame.gameOver ? 'Reintentar' : 'Empezar';
   }
 }
 
@@ -8606,7 +8803,7 @@ function renderNeoArcadeLeaderboard(message = '') {
     return;
   }
   if (!arcadeScores.length) {
-    list.innerHTML = '<div class="ranking-empty">Todavía no hay marcas. La primera ola puede ser tuya.</div>';
+    list.innerHTML = '<div class="ranking-empty">Todavía no hay marcas. La primera partida puede ser tuya.</div>';
     updateNeoArcadeHud();
     updateNeoArcadeSubmitPrompt();
     return;
@@ -8628,7 +8825,7 @@ async function loadNeoArcadeLeaderboard() {
   try {
     const { data } = await safeSupabase(
       'get_arcade_leaderboard',
-      () => supabaseClient.rpc('get_arcade_leaderboard', { p_game_key: ARCADE_GAME_KEY, p_limit: 10 }),
+      () => supabaseClient.rpc('get_arcade_leaderboard', { p_game_key: getActiveArcadeGame().key, p_limit: 10 }),
       { timeout: 9000, retries: 1 }
     );
     arcadeFeatureAvailable = true;
@@ -8657,12 +8854,11 @@ function updateNeoArcadeSubmitPrompt() {
   const submitForm = document.getElementById('neoArcadeSubmitForm');
   if (!submitForm || !arcadeGame?.gameOver) return;
   const score = Math.floor(Number(arcadeGame.score) || 0);
-  const shouldShow = currentUser && isNeoArcadeTopTenScore(score);
+  const shouldShow = isNeoArcadeTopTenScore(score);
   submitForm.classList.toggle('hidden', !shouldShow);
   if (!shouldShow && score > 0) {
-    if (!currentUser) setNeoArcadeFeedback('Inicia sesión para subir marcas al Top Comunidad.');
-    else if (!arcadeFeatureAvailable) setNeoArcadeFeedback('Falta activar el ranking arcade en Supabase.', 'error');
-    else setNeoArcadeFeedback('Buena ola. Para subir marca necesitas entrar en el Top 10.');
+    if (!arcadeFeatureAvailable) setNeoArcadeFeedback('Falta activar el ranking arcade en Supabase.', 'error');
+    else setNeoArcadeFeedback('Buena partida. Para subir marca necesitas entrar en el Top 10.');
   }
 }
 
@@ -8676,10 +8872,6 @@ async function submitNeoArcadeScore(event) {
     setNeoArcadeFeedback('Haz una partida antes de subir marca.', 'error');
     return;
   }
-  if (!currentUser) {
-    setNeoArcadeFeedback('Inicia sesión para entrar en el Top Comunidad. Tu récord local queda guardado.', 'error');
-    return;
-  }
   if (initials.length !== 3) {
     setNeoArcadeFeedback('Usa exactamente 3 letras o números.', 'error');
     initialsInput?.focus();
@@ -8689,13 +8881,13 @@ async function submitNeoArcadeScore(event) {
   arcadeSubmitting = true;
   setNeoArcadeFeedback('Subiendo marca...');
   try {
-    await ensureSupabaseWriteReady();
-    await safeSupabaseMutation(
+    await safeSupabase(
       'submit_arcade_score',
       () => supabaseClient.rpc('submit_arcade_score', {
-        p_game_key: ARCADE_GAME_KEY,
+        p_game_key: getActiveArcadeGame().key,
         p_initials: initials,
-        p_score: score
+        p_score: score,
+        p_player_key: getNeoArcadePlayerKey()
       }),
       { timeout: 9000, retries: 1 }
     );
@@ -8714,6 +8906,7 @@ async function submitNeoArcadeScore(event) {
 }
 
 function createNeoWaveState() {
+  if (isNeoRunnerGame()) return createNeoRunnerState();
   return {
     running: false,
     gameOver: false,
@@ -8740,6 +8933,7 @@ function initNeoArcadeGame() {
   const canvas = document.getElementById('neoWaveCanvas');
   if (!canvas) return;
   if (!arcadeGame) arcadeGame = createNeoWaveState();
+  updateNeoArcadeGameLabels();
   resizeNeoWaveCanvas();
   updateNeoArcadeHud();
   if (!arcadeCanvasInitialized) {
@@ -8777,6 +8971,11 @@ function resizeNeoWaveCanvas() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   arcadeGame.width = width;
   arcadeGame.height = height;
+  if (isNeoRunnerGame()) {
+    resizeNeoRunnerGame();
+    drawNeoWaveGame();
+    return;
+  }
   arcadeGame.playerX = Math.max(74, Math.min(150, width * .22));
   arcadeGame.radius = width < 520 ? 15 : 17;
   if (!arcadeGame.running) arcadeGame.playerY = height * .48;
@@ -8785,6 +8984,7 @@ function resizeNeoWaveCanvas() {
 }
 
 function resetNeoWaveGame() {
+  if (isNeoRunnerGame()) return resetNeoRunnerGame();
   arcadeGame = {
     ...createNeoWaveState(),
     width: arcadeGame?.width || 900,
@@ -8794,13 +8994,15 @@ function resetNeoWaveGame() {
   arcadeGame.playerY = arcadeGame.height * .48;
   document.getElementById('neoArcadeSubmitForm')?.classList.add('hidden');
   setNeoArcadeFeedback('');
-  setNeoWaveOverlay('Toca para empezar', 'Móvil: toca la pantalla. Ordenador: clic, espacio o flecha arriba.');
+  const game = getActiveArcadeGame();
+  setNeoWaveOverlay(game.startTitle, game.startSub);
   updateNeoArcadeHud();
   resizeNeoWaveCanvas();
   startNeoArcadeLoop();
 }
 
 function startNeoWaveGame() {
+  if (isNeoRunnerGame()) return startNeoRunnerGame();
   if (!arcadeGame) arcadeGame = createNeoWaveState();
   arcadeGame.running = true;
   arcadeGame.gameOver = false;
@@ -8842,6 +9044,7 @@ function addNeoWaveParticles(x, y, count = 8, color = 'rgba(114,247,255,.95)') {
 }
 
 function handleNeoWaveAction() {
+  if (isNeoRunnerGame()) return handleNeoRunnerAction();
   if (!arcadeGame || arcadeGame.gameOver) {
     resetNeoWaveGame();
     startNeoWaveGame();
@@ -8870,9 +9073,7 @@ function endNeoWaveGame() {
   const topTen = isNeoArcadeTopTenScore(arcadeGame.score);
   setNeoWaveOverlay(
     `Partida terminada: ${arcadeGame.score} pts`,
-    currentUser
-      ? topTen ? 'Has entrado en zona Top 10: guarda tu marca con 3 iniciales.' : 'Buena ola. Vuelve a intentarlo para entrar en el Top 10.'
-      : 'Inicia sesión si quieres aparecer en el Top Comunidad.'
+    topTen ? 'Has entrado en zona Top 10: guarda tu marca con 3 iniciales.' : 'Buena partida. Vuelve a intentarlo para entrar en el Top 10.'
   );
   updateNeoArcadeSubmitPrompt();
   updateNeoArcadeHud();
@@ -8896,6 +9097,7 @@ function spawnNeoWaveObstacle() {
 }
 
 function updateNeoWaveGame(dt) {
+  if (isNeoRunnerGame()) return updateNeoRunnerGame(dt);
   if (!arcadeGame?.running) return;
   arcadeGame.elapsed += dt;
   arcadeGame.velocity += 760 * dt;
@@ -8960,6 +9162,7 @@ function updateNeoWaveGame(dt) {
 }
 
 function drawNeoWaveGame() {
+  if (isNeoRunnerGame()) return drawNeoRunnerGame();
   const canvas = document.getElementById('neoWaveCanvas');
   if (!canvas || !arcadeGame) return;
   const ctx = canvas.getContext('2d');
@@ -9083,30 +9286,366 @@ function drawNeoWavePlayer(ctx) {
   ctx.save();
   ctx.translate(playerX, playerY);
   const bob = Math.sin(elapsed * 12) * 2;
-  ctx.shadowColor = 'rgba(0,212,255,.78)';
-  ctx.shadowBlur = 18;
-  const gradient = ctx.createRadialGradient(-4, -5 + bob, 3, 0, 0, radius + 14);
-  gradient.addColorStop(0, '#f7feff');
-  gradient.addColorStop(.42, '#52edff');
-  gradient.addColorStop(.74, '#2a8dff');
-  gradient.addColorStop(1, '#ff2d78');
-  ctx.fillStyle = gradient;
+  ctx.rotate(Math.max(-.45, Math.min(.45, arcadeGame.velocity / 720)));
+  ctx.shadowColor = 'rgba(0,212,255,.82)';
+  ctx.shadowBlur = 20;
+  const body = ctx.createLinearGradient(-radius - 14, 0, radius + 22, 0);
+  body.addColorStop(0, '#eaffff');
+  body.addColorStop(.35, '#59ecff');
+  body.addColorStop(.72, '#287dff');
+  body.addColorStop(1, '#ff2d78');
+  ctx.fillStyle = body;
   ctx.beginPath();
-  ctx.ellipse(0, 0, radius + 7, radius, -.12, 0, Math.PI * 2);
+  ctx.moveTo(radius + 24, 0);
+  ctx.quadraticCurveTo(5, -radius - 14 + bob, -radius - 18, -radius * .58);
+  ctx.quadraticCurveTo(-radius - 8, 0, -radius - 18, radius * .58);
+  ctx.quadraticCurveTo(5, radius + 14 - bob, radius + 24, 0);
   ctx.fill();
+  ctx.strokeStyle = 'rgba(245,252,255,.76)';
+  ctx.lineWidth = 2;
+  ctx.stroke();
 
-  ctx.shadowColor = 'rgba(255,45,120,.55)';
+  ctx.shadowColor = 'rgba(255,45,120,.56)';
   ctx.shadowBlur = 12;
-  ctx.strokeStyle = 'rgba(255,255,255,.82)';
+  ctx.fillStyle = 'rgba(4,8,24,.74)';
+  ctx.beginPath();
+  ctx.ellipse(1, 0, radius * .82, radius * .58, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(114,247,255,.85)';
+  ctx.stroke();
+
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = '#dffbff';
+  ctx.font = '800 18px Orbitron, monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('N', 1, 1);
+
+  ctx.shadowColor = 'rgba(0,212,255,.72)';
+  ctx.shadowBlur = 16;
+  ctx.beginPath();
+  ctx.moveTo(-radius - 18, -7);
+  ctx.lineTo(-radius - 34, 0);
+  ctx.lineTo(-radius - 18, 7);
+  ctx.strokeStyle = 'rgba(114,247,255,.62)';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  ctx.restore();
+}
+
+function createNeoRunnerState() {
+  return {
+    running: false,
+    gameOver: false,
+    score: 0,
+    best: readNeoArcadeBest(),
+    width: 900,
+    height: 420,
+    playerX: 122,
+    runnerY: 300,
+    runnerVy: 0,
+    runnerW: 34,
+    runnerH: 46,
+    groundY: 350,
+    onGround: true,
+    obstacles: [],
+    particles: [],
+    combo: 0,
+    bestCombo: 0,
+    lastBonus: '',
+    lastBonusTtl: 0,
+    spawnTimer: 0,
+    elapsed: 0
+  };
+}
+
+function resizeNeoRunnerGame() {
+  if (!arcadeGame) return;
+  arcadeGame.playerX = Math.max(78, Math.min(136, arcadeGame.width * .18));
+  arcadeGame.runnerW = arcadeGame.width < 520 ? 31 : 36;
+  arcadeGame.runnerH = arcadeGame.width < 520 ? 42 : 48;
+  arcadeGame.groundY = arcadeGame.height - (arcadeGame.height < 340 ? 46 : 60);
+  if (!arcadeGame.running || arcadeGame.onGround) {
+    arcadeGame.runnerY = arcadeGame.groundY - arcadeGame.runnerH;
+    arcadeGame.onGround = true;
+  }
+}
+
+function resetNeoRunnerGame() {
+  arcadeGame = {
+    ...createNeoRunnerState(),
+    width: arcadeGame?.width || 900,
+    height: arcadeGame?.height || 420
+  };
+  resizeNeoRunnerGame();
+  document.getElementById('neoArcadeSubmitForm')?.classList.add('hidden');
+  setNeoArcadeFeedback('');
+  const game = getActiveArcadeGame();
+  setNeoWaveOverlay(game.startTitle, game.startSub);
+  updateNeoArcadeHud();
+  resizeNeoWaveCanvas();
+  startNeoArcadeLoop();
+}
+
+function startNeoRunnerGame() {
+  if (!arcadeGame) arcadeGame = createNeoRunnerState();
+  arcadeGame.running = true;
+  arcadeGame.gameOver = false;
+  arcadeGame.score = 0;
+  arcadeGame.runnerVy = 0;
+  arcadeGame.obstacles = [];
+  arcadeGame.particles = [];
+  arcadeGame.combo = 0;
+  arcadeGame.bestCombo = 0;
+  arcadeGame.lastBonus = '';
+  arcadeGame.lastBonusTtl = 0;
+  arcadeGame.spawnTimer = .8;
+  arcadeGame.elapsed = 0;
+  arcadeGame.onGround = true;
+  arcadeGame.runnerY = arcadeGame.groundY - arcadeGame.runnerH;
+  document.getElementById('neoArcadeSubmitForm')?.classList.add('hidden');
+  setNeoArcadeFeedback('');
+  setNeoWaveOverlay('', '', true);
+  addNeoWaveParticles(arcadeGame.playerX, arcadeGame.runnerY + arcadeGame.runnerH, 12, 'rgba(255,214,102,.92)');
+  updateNeoArcadeHud();
+  startNeoArcadeLoop();
+}
+
+function handleNeoRunnerAction() {
+  if (!arcadeGame || arcadeGame.gameOver) {
+    resetNeoRunnerGame();
+    startNeoRunnerGame();
+    return;
+  }
+  if (!arcadeGame.running) {
+    startNeoRunnerGame();
+    return;
+  }
+  if (arcadeGame.onGround) {
+    arcadeGame.runnerVy = -520;
+    arcadeGame.onGround = false;
+    addNeoWaveParticles(arcadeGame.playerX + 4, arcadeGame.groundY - 2, 10, 'rgba(0,212,255,.88)');
+  }
+}
+
+function spawnNeoRunnerObstacle() {
+  if (!arcadeGame) return;
+  const tall = Math.random() > .62;
+  const width = tall ? 30 + Math.random() * 14 : 38 + Math.random() * 18;
+  const height = tall ? 52 + Math.random() * 24 : 30 + Math.random() * 18;
+  const obstacle = {
+    x: arcadeGame.width + 40,
+    y: arcadeGame.groundY - height,
+    width,
+    height,
+    passed: false,
+    coreCollected: false,
+    coreX: arcadeGame.width + 40 + width + 36 + Math.random() * 26,
+    coreY: arcadeGame.groundY - height - 38 - Math.random() * 34
+  };
+  arcadeGame.obstacles.push(obstacle);
+}
+
+function neoArcadeRectsOverlap(a, b) {
+  return a.x < b.x + b.width &&
+    a.x + a.width > b.x &&
+    a.y < b.y + b.height &&
+    a.y + a.height > b.y;
+}
+
+function updateNeoRunnerGame(dt) {
+  if (!arcadeGame?.running) return;
+  arcadeGame.elapsed += dt;
+  arcadeGame.lastBonusTtl = Math.max(0, arcadeGame.lastBonusTtl - dt);
+  const speed = Math.min(355, 210 + arcadeGame.score * 2.1);
+
+  arcadeGame.runnerVy += 1120 * dt;
+  arcadeGame.runnerY += arcadeGame.runnerVy * dt;
+  if (arcadeGame.runnerY + arcadeGame.runnerH >= arcadeGame.groundY) {
+    arcadeGame.runnerY = arcadeGame.groundY - arcadeGame.runnerH;
+    arcadeGame.runnerVy = 0;
+    arcadeGame.onGround = true;
+  }
+
+  arcadeGame.particles.forEach(particle => {
+    particle.x += particle.vx * dt;
+    particle.y += particle.vy * dt;
+    particle.vy += 120 * dt;
+    particle.life -= dt;
+  });
+  arcadeGame.particles = arcadeGame.particles.filter(particle => particle.life > 0);
+
+  arcadeGame.spawnTimer -= dt;
+  if (arcadeGame.spawnTimer <= 0) {
+    spawnNeoRunnerObstacle();
+    arcadeGame.spawnTimer = Math.max(.86, 1.34 - arcadeGame.score * .008) + Math.random() * .34;
+  }
+
+  const playerBox = {
+    x: arcadeGame.playerX - arcadeGame.runnerW * .42,
+    y: arcadeGame.runnerY + 4,
+    width: arcadeGame.runnerW * .84,
+    height: arcadeGame.runnerH - 6
+  };
+
+  arcadeGame.obstacles.forEach(obstacle => {
+    obstacle.x -= speed * dt;
+    obstacle.coreX -= speed * dt;
+
+    if (!obstacle.passed && obstacle.x + obstacle.width < arcadeGame.playerX - arcadeGame.runnerW / 2) {
+      obstacle.passed = true;
+      arcadeGame.score += 1;
+      updateNeoArcadeHud();
+    }
+
+    if (!obstacle.coreCollected) {
+      const dx = arcadeGame.playerX - obstacle.coreX;
+      const dy = (arcadeGame.runnerY + arcadeGame.runnerH * .45) - obstacle.coreY;
+      if (Math.hypot(dx, dy) < 24) {
+        obstacle.coreCollected = true;
+        arcadeGame.combo += 1;
+        arcadeGame.score += 2;
+        arcadeGame.lastBonus = arcadeGame.combo >= 3 ? `combo x${arcadeGame.combo}` : '+2 núcleo';
+        arcadeGame.lastBonusTtl = .9;
+        addNeoWaveParticles(obstacle.coreX, obstacle.coreY, 14, 'rgba(255,214,102,.95)');
+        updateNeoArcadeHud();
+      }
+    }
+
+    if (neoArcadeRectsOverlap(playerBox, obstacle)) {
+      arcadeGame.combo = 0;
+      endNeoWaveGame();
+    }
+  });
+
+  arcadeGame.obstacles = arcadeGame.obstacles.filter(obstacle => obstacle.x + obstacle.width > -60 || obstacle.coreX > -40);
+}
+
+function drawNeoRunnerGame() {
+  const canvas = document.getElementById('neoWaveCanvas');
+  if (!canvas || !arcadeGame) return;
+  const ctx = canvas.getContext('2d');
+  const { width, height } = arcadeGame;
+  ctx.clearRect(0, 0, width, height);
+
+  const bg = ctx.createLinearGradient(0, 0, width, height);
+  bg.addColorStop(0, '#070917');
+  bg.addColorStop(.58, '#0d0718');
+  bg.addColorStop(1, '#180912');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.save();
+  ctx.globalAlpha = .34;
+  for (let i = 0; i < 14; i += 1) {
+    const x = (i * 95 - arcadeGame.elapsed * 85) % (width + 120);
+    ctx.strokeStyle = i % 2 ? 'rgba(255,45,120,.18)' : 'rgba(0,212,255,.18)';
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x - 95, height);
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  ctx.save();
+  const ground = ctx.createLinearGradient(0, arcadeGame.groundY, 0, height);
+  ground.addColorStop(0, 'rgba(0,212,255,.26)');
+  ground.addColorStop(1, 'rgba(255,45,120,.08)');
+  ctx.fillStyle = ground;
+  ctx.fillRect(0, arcadeGame.groundY, width, height - arcadeGame.groundY);
+  ctx.strokeStyle = 'rgba(114,247,255,.55)';
   ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo(-radius - 8, 2);
-  ctx.quadraticCurveTo(-6, -radius - 12 + bob, radius + 12, -5);
+  ctx.moveTo(0, arcadeGame.groundY + .5);
+  ctx.lineTo(width, arcadeGame.groundY + .5);
   ctx.stroke();
+  ctx.restore();
+
+  arcadeGame.obstacles.forEach(obstacle => {
+    drawNeoRunnerObstacle(ctx, obstacle);
+    if (!obstacle.coreCollected) drawNeoRunnerCore(ctx, obstacle);
+  });
+  drawNeoWaveParticles(ctx);
+  drawNeoRunnerPlayer(ctx);
+  drawNeoWaveBonus(ctx);
+}
+
+function drawNeoRunnerObstacle(ctx, obstacle) {
+  ctx.save();
+  const gradient = ctx.createLinearGradient(obstacle.x, obstacle.y, obstacle.x + obstacle.width, obstacle.y + obstacle.height);
+  gradient.addColorStop(0, 'rgba(255,45,120,.74)');
+  gradient.addColorStop(.56, 'rgba(123,79,255,.52)');
+  gradient.addColorStop(1, 'rgba(0,212,255,.34)');
+  ctx.fillStyle = gradient;
+  ctx.strokeStyle = 'rgba(255,130,175,.72)';
+  ctx.lineWidth = 2;
+  ctx.shadowColor = 'rgba(255,45,120,.42)';
+  ctx.shadowBlur = 14;
   ctx.beginPath();
-  ctx.moveTo(-radius - 6, 9);
-  ctx.quadraticCurveTo(1, radius + 8 - bob, radius + 14, 4);
-  ctx.strokeStyle = 'rgba(114,247,255,.72)';
+  ctx.moveTo(obstacle.x + obstacle.width * .5, obstacle.y);
+  ctx.lineTo(obstacle.x + obstacle.width, obstacle.y + obstacle.height);
+  ctx.lineTo(obstacle.x, obstacle.y + obstacle.height);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawNeoRunnerCore(ctx, obstacle) {
+  const pulse = Math.sin(arcadeGame.elapsed * 10 + obstacle.coreX * .02) * 2;
+  ctx.save();
+  ctx.shadowColor = 'rgba(255,214,102,.78)';
+  ctx.shadowBlur = 18;
+  ctx.fillStyle = '#ffd666';
+  ctx.strokeStyle = 'rgba(255,255,255,.70)';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.arc(obstacle.coreX, obstacle.coreY, 9 + pulse * .25, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawNeoRunnerPlayer(ctx) {
+  const { playerX, runnerY, runnerW, runnerH, elapsed } = arcadeGame;
+  const foot = arcadeGame.onGround ? Math.sin(elapsed * 22) * 3 : 0;
+  ctx.save();
+  ctx.translate(playerX, runnerY);
+  ctx.shadowColor = 'rgba(0,212,255,.80)';
+  ctx.shadowBlur = 18;
+  const body = ctx.createLinearGradient(-runnerW / 2, 0, runnerW / 2, runnerH);
+  body.addColorStop(0, '#eaffff');
+  body.addColorStop(.42, '#55e8ff');
+  body.addColorStop(.78, '#2c7dff');
+  body.addColorStop(1, '#ff2d78');
+  ctx.fillStyle = body;
+  ctx.beginPath();
+  neoArcadeRoundRectPath(ctx, -runnerW / 2, 2, runnerW, runnerH - 8, 12);
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(245,252,255,.72)';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = 'rgba(5,8,22,.82)';
+  ctx.beginPath();
+  ctx.arc(0, runnerH * .42, runnerW * .30, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(114,247,255,.82)';
+  ctx.stroke();
+  ctx.fillStyle = '#eaffff';
+  ctx.font = '800 13px Orbitron, monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('N', 0, runnerH * .43);
+
+  ctx.strokeStyle = 'rgba(114,247,255,.82)';
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(-runnerW * .22, runnerH - 5);
+  ctx.lineTo(-runnerW * .38, runnerH + foot);
+  ctx.moveTo(runnerW * .22, runnerH - 5);
+  ctx.lineTo(runnerW * .38, runnerH - foot);
   ctx.stroke();
   ctx.restore();
 }
@@ -12155,6 +12694,11 @@ function goNeoTodayAction(action) {
   if (action === 'guess') {
     showScreen('ranking');
     window.setTimeout(openNeoGuessGame, 180);
+    return;
+  }
+  if (action === 'arcade') {
+    showScreen('ranking');
+    window.setTimeout(openNeoArcadeGame, 180);
     return;
   }
   if (['filter', 'search', 'user', 'info'].includes(action)) {
