@@ -5082,7 +5082,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260713-community-calendar2';
+const APP_VERSION = '20260713-airing-sync3';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -14178,10 +14178,10 @@ window.addEventListener('online', () => {
 document.addEventListener('DOMContentLoaded', async () => {
   initCookieBanner();
   renderIntroFlashMessage();
-  await loadDB();
   loadAnimeSchedule().catch(error => {
     console.warn('No se pudo precargar el calendario:', error);
   });
+  await loadDB();
   const publicProfileSlug = readPublicProfileSlugFromUrl();
   const savedAppState = readAppState();
   const passwordJustUpdated = (() => {

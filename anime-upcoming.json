@@ -9,9 +9,9 @@
     "translated_descriptions": 307,
     "cleaned_description_fields": 647,
     "curated": true,
-    "curated_at": "2026-07-13T10:17:38+00:00",
+    "curated_at": "2026-07-13T10:55:29+00:00",
     "source_total": 911,
-    "source_after_filter": 404,
+    "source_after_filter": 415,
     "limits": {
       "most_anticipated": 20,
       "season": 10,
@@ -41,6 +41,7 @@
     "winter": [],
     "spring": [],
     "summer": [
+      61469,
       60636,
       48820,
       61607,
@@ -48,9 +49,8 @@
       62312,
       64107,
       64012,
-      64019,
-      63366,
-      63011
+      60568,
+      64019
     ],
     "fall": [
       61987,
@@ -62,7 +62,7 @@
       59088,
       62844,
       62582,
-      57612
+      50668
     ],
     "most_anticipated_2027": [
       57584,
@@ -90,6 +90,91 @@
     ]
   },
   "items": [
+    {
+      "title": "Steel Ball Run: JoJo no Kimyou na Bouken",
+      "mal_id": 61469,
+      "image": "https://cdn.myanimelist.net/images/anime/1448/154111l.jpg",
+      "episodes": 11,
+      "length": "corto",
+      "demographic": "Seinen",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Mystery",
+        "Supernatural"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": true,
+      "year": 2026,
+      "description": "In the American Old West, the world's greatest race is about to begin. Thousands line up in San Diego to travel over six thousand kilometers for a chance to win the grand prize of fifty million dollars. With the era of the horse reaching its end, contestants are allowed to use any kind of vehicle they wish. Competitors will have to endure grueling conditions, traveling up to a hundred kilometers a day through uncharted wastelands. The Steel Ball Run is truly a one-of-a-kind event. The youthful Johnny Joestar, a crippled former horse racer, has come to San Diego to watch the start of the race. There he encounters Gyro Zeppeli, a racer with two steel balls at his waist instead of a gun. Johnny witnesses Gyro using one of his steel balls to unleash a fantastical power, compelling a man to fire his gun at himself during a duel. In the midst of the action, Johnny happens to touch the steel ball and feels a power surging through his legs, allowing him to stand up for the first time in two years. Vowing to find the secret of the steel balls, Johnny decides to compete in the race, and so begins his bizarre adventure across America on the Steel Ball Run.",
+      "type": "ONA",
+      "franchise": "Steel Ball Run",
+      "ongoing": false,
+      "source_tags_original": [
+        "Manga",
+        "R - 17+ (violence & profanity)"
+      ],
+      "themes": [
+        "Historical",
+        "Racing"
+      ],
+      "score": 9.11,
+      "scored_by": 97759,
+      "_update_status": "jikan_upcoming",
+      "title_english": "Steel Ball Run: JoJo's Bizarre Adventure",
+      "title_japanese": "スティール・ボール・ラン ジョジョの奇妙な冒険",
+      "title_synonyms": [
+        "JoJo's Bizarre Adventure Part 7: Steel Ball Run",
+        "JoJo no Kimyou na Bouken Part 7: Steel Ball Run",
+        "SBR"
+      ],
+      "search_titles": [
+        "Steel Ball Run: JoJo no Kimyou na Bouken",
+        "Steel Ball Run: JoJo's Bizarre Adventure",
+        "スティール・ボール・ラン ジョジョの奇妙な冒険",
+        "JoJo's Bizarre Adventure Part 7: Steel Ball Run",
+        "JoJo no Kimyou na Bouken Part 7: Steel Ball Run",
+        "SBR"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "winter",
+      "upcoming_season_label": "Invierno",
+      "upcoming_sources": [
+        "2026/winter"
+      ],
+      "aired_from": "2026-09-25",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 215111,
+      "favorites": 7365,
+      "mal_popularity": 1309,
+      "anticipation_score": 710.86,
+      "jikan_url": "https://myanimelist.net/anime/61469/Steel_Ball_Run__JoJo_no_Kimyou_na_Bouken",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/TWw06YDOQy0?si=SxzUyy3Q-7R6PxzG?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "Steel Ball Run: La extraña aventura de JoJo",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Steel Ball Run: La extraña aventura de JoJo",
+        "Carrera de bolas de acero: JoJo no Kimyou na Bouken",
+        "JoJo's Bizarre Adventure Parte 7: Steel Ball Run"
+      ],
+      "description_es": "En el Viejo Oeste americano, la carrera más grande del mundo está a punto de comenzar. Miles de personas hacen fila en San Diego para viajar más de seis mil kilómetros y tener la oportunidad de ganar el gran premio de cincuenta millones de dólares. Con la era del caballo llegando a su fin, los concursantes pueden utilizar cualquier tipo de vehículo que deseen. Los competidores tendrán que soportar condiciones agotadoras, viajando hasta cien kilómetros por día a través de páramos inexplorados. Steel Ball Run es verdaderamente un evento único en su tipo.\n\nEl joven Johnny Joestar, un ex corredor de caballos lisiado, ha venido a San Diego para presenciar el inicio de la carrera. Allí se encuentra con Gyro Zeppeli, un corredor con dos bolas de acero en la cintura en lugar de una pistola. Johnny es testigo de cómo Gyro usa una de sus bolas de acero para desatar un poder fantástico, lo que obliga a un hombre a dispararse a sí mismo durante un duelo. En medio de la acción, Johnny toca la bola de acero y siente un poder surgiendo a través de sus piernas, lo que le permite ponerse de pie por primera vez en dos años. Prometiendo encontrar el secreto de las bolas de acero, Johnny decide competir en la carrera y así comienza su extraña aventura por todo Estados Unidos en Steel Ball Run.",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)"
+    },
     {
       "title": "Kage no Jitsuryokusha ni Naritakute! Movie: Zankyou-hen",
       "mal_id": 57584,
@@ -451,7 +536,7 @@
       "title": "Bleach: Sennen Kessen-hen - Kashin-tan",
       "mal_id": 60636,
       "image": "https://cdn.myanimelist.net/images/anime/1653/154517l.jpg",
-      "episodes": null,
+      "episodes": 13,
       "length": "corto",
       "demographic": "Shounen",
       "genres": [
@@ -492,7 +577,7 @@
         "2026/summer",
         "upcoming"
       ],
-      "aired_from": "2026-07-25T00:00:00+00:00",
+      "aired_from": "2026-07-25",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
@@ -514,7 +599,11 @@
       "search_titles_es": [
         "Bleach: Guerra de sangre de los mil años - La calamidad"
       ],
-      "description_es": "Parte final de Bleach: Sennen Kessen-hen."
+      "description_es": "Parte final de Bleach: Sennen Kessen-hen.",
+      "broadcast_day": "Saturdays",
+      "broadcast_time": "23:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Saturdays at 23:00 (JST)"
     },
     {
       "title": "Kusuriya no Hitorigoto 3rd Season",
@@ -858,8 +947,8 @@
         "2026/summer",
         "upcoming"
       ],
-      "aired_from": "2026-08-28T00:00:00+00:00",
-      "aired_to": "",
+      "aired_from": "2026-08-28",
+      "aired_to": "2026-08-28",
       "airing_status": "Not yet aired",
       "broadcast": {
         "day": null,
@@ -879,7 +968,11 @@
       "title_es_status": "kept",
       "search_titles_es": [
         "Puella Magi Madoka Magica la película - Walpurgisnacht: Rising"
-      ]
+      ],
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)"
     },
     {
       "title": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru Season 2",
@@ -1588,7 +1681,7 @@
         "2026/fall",
         "upcoming"
       ],
-      "aired_from": "2026-10-04T00:00:00+00:00",
+      "aired_from": "2026-10-04",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
@@ -1610,7 +1703,11 @@
       "search_titles_es": [
         "Caja azul temporada 2"
       ],
-      "description_es": "Segunda temporada de Ao no Hako."
+      "description_es": "Segunda temporada de Ao no Hako.",
+      "broadcast_day": "Sundays",
+      "broadcast_time": "16:30",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Sundays at 16:30 (JST)"
     },
     {
       "title": "Made in Abyss: Mezameru Shinpi",
@@ -1663,7 +1760,7 @@
         "2026/fall",
         "upcoming"
       ],
-      "aired_from": "2026-10-23T00:00:00+00:00",
+      "aired_from": "2026-10-23",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
@@ -1685,7 +1782,11 @@
       "search_titles_es": [
         "Hecho en el abismo: Mezameru Shinpi"
       ],
-      "description_es": "Secuela de Made in Abyss: Retsujitsu no Ougonkyou."
+      "description_es": "Secuela de Made in Abyss: Retsujitsu no Ougonkyou.",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)"
     },
     {
       "title": "[Oshi no Ko] 4th Season",
@@ -1877,7 +1978,7 @@
         "2026/fall",
         "upcoming"
       ],
-      "aired_from": "2026-10-03T00:00:00+00:00",
+      "aired_from": "2026-10-03",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
@@ -2090,7 +2191,7 @@
         "2026/fall",
         "upcoming"
       ],
-      "aired_from": "2026-12-01T00:00:00+00:00",
+      "aired_from": "2026-12-11",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
@@ -2112,7 +2213,11 @@
       "search_titles_es": [
         "La película El diario del boticario"
       ],
-      "description_es": "Película original de Kusuriya no Hitorigoto."
+      "description_es": "Película original de Kusuriya no Hitorigoto.",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)"
     },
     {
       "title": "The One Piece",
@@ -2305,8 +2410,8 @@
         "2026/fall",
         "upcoming"
       ],
-      "aired_from": "2026-10-16T00:00:00+00:00",
-      "aired_to": "",
+      "aired_from": "2026-10-16",
+      "aired_to": "2026-10-16",
       "airing_status": "Not yet aired",
       "broadcast": {
         "day": null,
@@ -2327,89 +2432,93 @@
       "search_titles_es": [
         "Rascal no sueña con un querido amigo"
       ],
-      "description_es": "Secuela de Seishun Buta Yarou wa Santa Claus no Yume wo Minai."
+      "description_es": "Secuela de Seishun Buta Yarou wa Santa Claus no Yume wo Minai.",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)"
     },
     {
-      "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-      "mal_id": 57612,
-      "image": "https://cdn.myanimelist.net/images/anime/1137/158402l.jpg",
-      "episodes": null,
+      "title": "Mahoutsukai no Yoru",
+      "mal_id": 50668,
+      "image": "https://cdn.myanimelist.net/images/anime/1121/156211l.jpg",
+      "episodes": 1,
       "length": "corto",
       "demographic": "",
       "genres": [
-        "Action",
-        "Fantasy"
+        "Mystery",
+        "Supernatural"
       ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": true,
       "popular": false,
       "year": 2026,
-      "description": "Second season of Kikansha no Mahou wa Tokubetsu desu.",
-      "type": "TV",
-      "franchise": "Kikansha no Mahou wa Tokubetsu desu",
+      "description": "Set near the end of the Showa period in the late 1980s, an old mansion in Misaki Town is rumored to be the home of a witch. Aoko abruptly enters the world of magi after her grandfather suddenly decides to have Aoko become the Aozaki family's successor. Since then, Aoko moves into the Kuonji Mansion and begins to learn magecraft from the young magus Alice Kuonji, the rumored witch of the mansion. After witnessing the two using magecraft, Soujuurou Shizuki is also forced to live with them until a rune to remove his memories is discovered.",
+      "type": "Movie",
+      "franchise": "Mahoutsukai no Yoru",
       "ongoing": false,
       "source_tags_original": [
-        "Web manga",
-        "PG-13 - Teens 13 or older"
+        "Visual novel"
       ],
-      "themes": [
-        "School",
-        "Time Travel"
-      ],
+      "themes": [],
       "score": null,
       "scored_by": null,
       "_update_status": "jikan_upcoming",
-      "title_english": "A Returner's Magic Should Be Special Season 2",
-      "title_japanese": "帰還者の魔法は特別です 2期",
+      "title_english": "Witch on the Holy Night",
+      "title_japanese": "魔法使いの夜",
       "title_synonyms": [
-        "Gwihwanja-ui Mabeop-eun Teukbyeol-haeya Hamnida",
-        "귀환자의 마법은 특별해야 합니다"
+        "A Magician's Night",
+        "MahoYo"
       ],
       "search_titles": [
-        "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "A Returner's Magic Should Be Special Season 2",
-        "帰還者の魔法は特別です 2期",
-        "Gwihwanja-ui Mabeop-eun Teukbyeol-haeya Hamnida",
-        "귀환자의 마법은 특별해야 합니다"
+        "Mahoutsukai no Yoru",
+        "Witch on the Holy Night",
+        "魔法使いの夜",
+        "A Magician's Night",
+        "MahoYo"
       ],
       "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
+      "upcoming_season": "winter",
+      "upcoming_season_label": "Invierno",
       "upcoming_sources": [
-        "2026/fall",
+        "2026/winter",
         "upcoming"
       ],
-      "aired_from": "2026-10-01T00:00:00+00:00",
+      "aired_from": "2026-11-20",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
-        "day": "Thursdays",
-        "time": "00:45",
-        "timezone": "Asia/Tokyo",
-        "string": "Thursdays at 00:45 (JST)"
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
       },
-      "members": 37739,
-      "favorites": 96,
-      "mal_popularity": 4221,
-      "anticipation_score": 548.9,
-      "jikan_url": "https://myanimelist.net/anime/57612/Kikansha_no_Mahou_wa_Tokubetsu_desu_2nd_Season",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/cqkwxupd80I?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "La magia de un retornado debería ser especial temporada 2",
+      "members": 35832,
+      "favorites": 173,
+      "mal_popularity": 4337,
+      "anticipation_score": 552.68,
+      "jikan_url": "https://myanimelist.net/anime/50668/Mahoutsukai_no_Yoru",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/T19PU9ZB_2g?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "Bruja en la Noche Santa",
       "title_es_reviewed": false,
       "title_es_source": "title_english",
       "title_es_status": "kept",
       "search_titles_es": [
-        "La magia de un retornado debería ser especial temporada 2"
+        "Bruja en la Noche Santa"
       ],
-      "description_es": "Segunda temporada de Kikansha no Mahou wa Tokubetsu desu."
+      "description_es": "Ambientada cerca del final del período Showa, a finales de la década de 1980, se rumorea que una antigua mansión en la ciudad de Misaki es el hogar de una bruja. Aoko ingresa abruptamente al mundo de los magos después de que su abuelo de repente decide que Aoko se convierta en la sucesora de la familia Aozaki. Desde entonces, Aoko se muda a la Mansión Kuonji y comienza a aprender hechicería de la joven maga Alice Kuonji, la rumoreada bruja de la mansión. Después de presenciar a los dos usando magia, Soujuurou Shizuki también se ve obligado a vivir con ellos hasta que se descubre una runa para eliminar sus recuerdos.",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)"
     },
     {
       "title": "Shiguang Dailiren III",
       "mal_id": 61607,
       "image": "https://cdn.myanimelist.net/images/anime/1801/158559l.jpg",
-      "episodes": 12,
+      "episodes": 24,
       "length": "medio",
       "demographic": "",
       "genres": [
@@ -2462,7 +2571,7 @@
         "2026/summer",
         "upcoming"
       ],
-      "aired_from": "2026-08-14T00:00:00+00:00",
+      "aired_from": "2026-08-14",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
@@ -2484,7 +2593,11 @@
       "search_titles_es": [
         "Shiguang Dailiren III"
       ],
-      "description_es": "Después de que el incidente de Li Tianchen llegó a su fin, Time Photo Studio volvió a una paz superficial. Sin embargo, la noticia de la desaparición de Xia Fei una vez más llevó a todos a una encrucijada del destino. Con el regreso de Vein y el despertar de sus superpoderes por parte de Qiao Ling, Cheng Xiaoshi y Lu Guang descubren gradualmente los secretos del caso del incendio de Bahati, y el padre de Cheng Xiaoshi, Cheng Weimin, y su madre, Shao Yuanyuan, también parecen tener conexiones intrincadas con él. A medida que la investigación se profundiza, Liu Xiao, de una organización misteriosa, comienza su operación, y la intervención del oficial de policía de Yingdu, Jae, complica aún más esta búsqueda de la verdad..."
+      "description_es": "Después de que el incidente de Li Tianchen llegó a su fin, Time Photo Studio volvió a una paz superficial. Sin embargo, la noticia de la desaparición de Xia Fei una vez más llevó a todos a una encrucijada del destino. Con el regreso de Vein y el despertar de sus superpoderes por parte de Qiao Ling, Cheng Xiaoshi y Lu Guang descubren gradualmente los secretos del caso del incendio de Bahati, y el padre de Cheng Xiaoshi, Cheng Weimin, y su madre, Shao Yuanyuan, también parecen tener conexiones intrincadas con él. A medida que la investigación se profundiza, Liu Xiao, de una organización misteriosa, comienza su operación, y la intervención del oficial de policía de Yingdu, Jae, complica aún más esta búsqueda de la verdad...",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "12:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 12:00 (JST)"
     },
     {
       "title": "Nige Jouzu no Wakagimi 2nd Season",
@@ -2536,7 +2649,7 @@
         "2026/summer",
         "upcoming"
       ],
-      "aired_from": "2026-07-01T00:00:00+00:00",
+      "aired_from": "2026-07-17",
       "aired_to": "",
       "airing_status": "Not yet aired",
       "broadcast": {
@@ -2558,7 +2671,11 @@
       "search_titles_es": [
         "El esquivo samurái temporada 2"
       ],
-      "description_es": "Segunda temporada de Nige Jouzu no Wakagimi."
+      "description_es": "Segunda temporada de Nige Jouzu no Wakagimi.",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "23:30",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 23:30 (JST)"
     },
     {
       "title": "Sekiro: No Defeat",
@@ -2631,7 +2748,7 @@
       "title": "Boku no Hero Academia: I Am a Hero Too",
       "mal_id": 64107,
       "image": "https://cdn.myanimelist.net/images/anime/1697/157239l.jpg",
-      "episodes": null,
+      "episodes": 1,
       "length": "corto",
       "demographic": "Shounen",
       "genres": [
@@ -2672,8 +2789,8 @@
         "2026/summer",
         "upcoming"
       ],
-      "aired_from": "2026-08-03T00:00:00+00:00",
-      "aired_to": "",
+      "aired_from": "2026-08-03",
+      "aired_to": "2026-08-03",
       "airing_status": "Not yet aired",
       "broadcast": {
         "day": null,
@@ -2695,7 +2812,11 @@
         "My Hero Academia: Yo también soy un héroe",
         "My Hero Academia"
       ],
-      "description_es": "Adaptación del manga one-shot del fanbook de 2025 Boku no Hero Academia: Ultra-Age tras la visita de la estudiante de secundaria Eri a la U.A. Escuela secundaria."
+      "description_es": "Adaptación del manga one-shot del fanbook de 2025 Boku no Hero Academia: Ultra-Age tras la visita de la estudiante de secundaria Eri a la U.A. Escuela secundaria.",
+      "broadcast_day": "Mondays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Mondays at 00:00 (JST)"
     },
     {
       "title": "The Ribbon Hero",
@@ -2744,8 +2865,8 @@
         "2026/summer",
         "upcoming"
       ],
-      "aired_from": "2026-08-08T00:00:00+00:00",
-      "aired_to": "",
+      "aired_from": "2026-08-08",
+      "aired_to": "2026-08-08",
       "airing_status": "Not yet aired",
       "broadcast": {
         "day": null,
@@ -2766,7 +2887,84 @@
       "search_titles_es": [
         "El héroe de la cinta"
       ],
-      "description_es": "Zafiro es la princesa de un reino que ya no existe. Habiendo perdido todo en su tierra natal, Silverland, debido a la calamidad conocida como \"Nergal\", deambula desesperada hasta que finalmente llega a Goldland. Aunque agobiada por su pasado, comienza a encontrar un rayo de esperanza al encontrarse con la amabilidad de la gente de allí. Pero como para burlarse de su nueva y pacífica vida, la calamidad Nergal aparece una vez más. La misma desesperación que una vez redujo su tierra natal a cenizas ahora amenaza con robarle también la luz a esta tierra. \"No volveré a perder nada. Y tampoco dejaré que nadie más pierda nada\". Secándose las lágrimas de tristeza, la niña toma su espada. Esta es la historia de un héroe solitario que se ata la cinta y decide desafiar su destino."
+      "description_es": "Zafiro es la princesa de un reino que ya no existe. Habiendo perdido todo en su tierra natal, Silverland, debido a la calamidad conocida como \"Nergal\", deambula desesperada hasta que finalmente llega a Goldland. Aunque agobiada por su pasado, comienza a encontrar un rayo de esperanza al encontrarse con la amabilidad de la gente de allí. Pero como para burlarse de su nueva y pacífica vida, la calamidad Nergal aparece una vez más. La misma desesperación que una vez redujo su tierra natal a cenizas ahora amenaza con robarle también la luz a esta tierra. \"No volveré a perder nada. Y tampoco dejaré que nadie más pierda nada\". Secándose las lágrimas de tristeza, la niña toma su espada. Esta es la historia de un héroe solitario que se ata la cinta y decide desafiar su destino.",
+      "broadcast_day": "Saturdays",
+      "broadcast_time": "18:01",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Saturdays at 18:01 (JST)"
+    },
+    {
+      "title": "Jiyi Guanli Ju (2026)",
+      "mal_id": 60568,
+      "image": "https://cdn.myanimelist.net/images/anime/1288/147047l.jpg",
+      "episodes": 7,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Mystery"
+      ],
+      "tone": "oscuro",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2026,
+      "description": "In order to go back to the past, Guan Chao tries hard to find the \"burning stone\" that activates the time gun, but accidentally falls into the Memory Management Bureau. Only by conquering the BUG people in the memory layer can he return to reality. With the help of administrators such as Fangtang and Baizhong, can Guan Chao successfully complete the task? What kind of challenges are awaiting Guan Chao in each memory layer...",
+      "type": "ONA",
+      "franchise": "Jiyi Guanli Ju (2026)",
+      "ongoing": false,
+      "source_tags_original": [
+        "Original"
+      ],
+      "themes": [
+        "Psychological",
+        "Super Power"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "False Memory",
+      "title_japanese": "记忆管理局",
+      "title_synonyms": [],
+      "search_titles": [
+        "Jiyi Guanli Ju (2026)",
+        "False Memory",
+        "记忆管理局"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "winter",
+      "upcoming_season_label": "Invierno",
+      "upcoming_sources": [
+        "upcoming"
+      ],
+      "aired_from": "2026-08-02",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 5350,
+      "favorites": 21,
+      "mal_popularity": 9346,
+      "anticipation_score": 446.27,
+      "jikan_url": "https://myanimelist.net/anime/60568/Jiyi_Guanli_Ju_2026",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/XzIfoPPwbU8?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "Memoria falsa",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Memoria falsa"
+      ],
+      "description_es": "Para volver al pasado, Guan Chao se esfuerza por encontrar la \"piedra ardiente\" que activa la pistola del tiempo, pero accidentalmente cae en la Oficina de Gestión de la Memoria. Sólo conquistando a la gente BUG en la capa de memoria podrá volver a la realidad. Con la ayuda de administradores como Fangtang y Baizhong, ¿podrá Guan Chao completar con éxito la tarea? ¿Qué tipo de desafíos le esperan a Guan Chao en cada capa de memoria...",
+      "broadcast_day": "Sundays",
+      "broadcast_time": "13:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Sundays at 13:00 (JST)"
     },
     {
       "title": "Saishuu Gakushou Hibike! Euphonium: Kouhen",
@@ -2815,8 +3013,8 @@
         "2026/summer",
         "upcoming"
       ],
-      "aired_from": "2026-09-11T00:00:00+00:00",
-      "aired_to": "",
+      "aired_from": "2026-09-11",
+      "aired_to": "2026-09-11",
       "airing_status": "Not yet aired",
       "broadcast": {
         "day": null,
@@ -2837,146 +3035,11 @@
       "search_titles_es": [
         "¡Sonido! Bombardino: La película final, parte 2"
       ],
-      "description_es": "¡Segunda mitad de Saishuu Gakushou Hibike! Bombardino."
-    },
-    {
-      "title": "Kimi to Hanabi to Yakusoku to",
-      "mal_id": 63366,
-      "image": "https://cdn.myanimelist.net/images/anime/1430/158086l.jpg",
-      "episodes": 1,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Romance"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Set around the Nagaoka Festival Grand Fireworks Show, one of Japan's three major fireworks displays, this story follows two high school students, Makoto and Akira. Though they live far apart in Tokyo and have never met, their lives are unexpectedly brought together by a single, mysterious painting of a firework. Drawn together by this strange connection, the two grow closer as time runs short. As the festival approaches, Makoto and Akira are faced with a decision that will change their futures forever.",
-      "type": "Movie",
-      "franchise": "Kimi to Hanabi to Yakusoku to",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "君と花火と約束と",
-      "title_synonyms": [
-        "You",
-        "Fireworks",
-        "and Our Promise"
-      ],
-      "search_titles": [
-        "Kimi to Hanabi to Yakusoku to",
-        "君と花火と約束と",
-        "You",
-        "Fireworks",
-        "and Our Promise"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-17T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 4168,
-      "favorites": 7,
-      "mal_popularity": 10175,
-      "anticipation_score": 424.51,
-      "jikan_url": "https://myanimelist.net/anime/63366/Kimi_to_Hanabi_to_Yakusoku_to",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/a37yywFt78M?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Kimi a Hanabi a Yakusoku a",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Kimi a Hanabi a Yakusoku a"
-      ],
-      "description_es": "Ambientada en el Gran Espectáculo de Fuegos Artificiales del Festival de Nagaoka, uno de los tres principales espectáculos de fuegos artificiales de Japón, esta historia sigue a dos estudiantes de secundaria, Makoto y Akira. Aunque viven muy separados en Tokio y nunca se han conocido, sus vidas se unen inesperadamente gracias a una única y misteriosa pintura de un fuego artificial. Unidos por esta extraña conexión, los dos se vuelven más cercanos a medida que el tiempo se acaba. A medida que se acerca el festival, Makoto y Akira se enfrentan a una decisión que cambiará su futuro para siempre."
-    },
-    {
-      "title": "Chiikawa Movie: Ningyo no Shima no Himitsu",
-      "mal_id": 63011,
-      "image": "https://cdn.myanimelist.net/images/anime/1761/157085l.jpg",
-      "episodes": 1,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Slice of Life"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Anime adaptation of the Siren arc.",
-      "type": "Movie",
-      "franchise": "Chiikawa Movie",
-      "ongoing": false,
-      "source_tags_original": [
-        "Web manga",
-        "G - All Ages"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Chiikawa Movie: The Secret of the Mermaid Island",
-      "title_japanese": "映画ちいかわ 人魚の島のひみつ",
-      "title_synonyms": [],
-      "search_titles": [
-        "Chiikawa Movie: Ningyo no Shima no Himitsu",
-        "Chiikawa Movie: The Secret of the Mermaid Island",
-        "映画ちいかわ 人魚の島のひみつ"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-24T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 1989,
-      "favorites": 4,
-      "mal_popularity": 12740,
-      "anticipation_score": 386.32,
-      "jikan_url": "https://myanimelist.net/anime/63011/Chiikawa_Movie__Ningyo_no_Shima_no_Himitsu",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/N5439yrq_l8?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Película de Chiikawa: El secreto de la isla de las sirenas",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Película de Chiikawa: El secreto de la isla de las sirenas"
-      ],
-      "description_es": "Adaptación al anime del arco de Siren."
+      "description_es": "¡Segunda mitad de Saishuu Gakushou Hibike! Bombardino.",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)"
     }
   ]
 }
