@@ -5,13 +5,13 @@
     "year": 2026,
     "include_tba": true,
     "sort": "Más esperados: members desc, favorites desc, popularity asc mediante anticipation_score",
-    "total": 60,
+    "total": 40,
     "translated_descriptions": 307,
     "cleaned_description_fields": 647,
     "curated": true,
-    "curated_at": "2026-06-22T09:54:51+00:00",
+    "curated_at": "2026-07-13T10:17:38+00:00",
     "source_total": 911,
-    "source_after_filter": 880,
+    "source_after_filter": 404,
     "limits": {
       "most_anticipated": 20,
       "season": 10,
@@ -38,41 +38,19 @@
     "most_anticipated_2027": "Más esperados 2027"
   },
   "sections": {
-    "winter": [
-      59978,
-      57658,
-      55825,
-      56009,
-      61469,
-      60058,
-      60371,
-      59229,
-      55830,
-      58788
-    ],
-    "spring": [
-      51553,
-      61316,
-      59708,
-      59970,
-      62001,
-      56876,
-      59983,
-      62568,
-      56734,
-      62601
-    ],
+    "winter": [],
+    "spring": [],
     "summer": [
-      49233,
-      59193,
-      62076,
       60636,
       48820,
-      54000,
-      62542,
-      61126,
-      60522,
-      62811
+      61607,
+      60059,
+      62312,
+      64107,
+      64012,
+      64019,
+      63366,
+      63011
     ],
     "fall": [
       61987,
@@ -112,1712 +90,6 @@
     ]
   },
   "items": [
-    {
-      "title": "Sousou no Frieren 2nd Season",
-      "mal_id": 59978,
-      "image": "https://cdn.myanimelist.net/images/anime/1921/154528l.jpg",
-      "episodes": 10,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "Following the First-Class Mage Exam, the trio—elven mage Frieren, warrior Stark, and first-class mage Fern—gains access to the dangerous Northern Plateau. As the party presses onward toward Aureole, formidable adversaries force Stark to confront his insecurities, solidifying his resolve and his role as the party's frontliner. Meanwhile, Fern continues to cherish the gifts she has been blessed with throughout her life, each a reminder of those she holds dear. Frieren—still honoring her vow to understand humanity—revisits memories of her journey with the Hero's party and her fleeting encounter with a legendary figure. As she reflects on the passage of time, the elven mage quietly questions whether she has truly changed, yet in the small, almost subtle choices that she makes, there are signs that she might have become more human than she realizes.",
-      "type": "TV",
-      "franchise": "Sousou no Frieren",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [],
-      "score": 8.87,
-      "scored_by": 253565,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Frieren: Beyond Journey's End Season 2",
-      "title_japanese": "葬送のフリーレン 第2期",
-      "title_synonyms": [
-        "Frieren at the Funeral Season 2"
-      ],
-      "search_titles": [
-        "Sousou no Frieren 2nd Season",
-        "Frieren: Beyond Journey's End Season 2",
-        "葬送のフリーレン 第2期",
-        "Frieren at the Funeral Season 2"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-16T00:00:00+00:00",
-      "aired_to": "2026-03-27T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Fridays",
-        "time": "23:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 23:00 (JST)"
-      },
-      "members": 562483,
-      "favorites": 7474,
-      "mal_popularity": 446,
-      "anticipation_score": 756.46,
-      "jikan_url": "https://myanimelist.net/anime/59978/Sousou_no_Frieren_2nd_Season",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/RH-FcW94z00?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Frieren: Más allá del final del viaje Temporada 2",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Frieren: Más allá del final del viaje Temporada 2",
-        "Sousou no Frieren 2da temporada",
-        "Frieren en el funeral Temporada 2",
-        "Frieren",
-        "Frieren: Tras finalizar el viaje"
-      ],
-      "description_es": "Después del examen de mago de primera clase, el trío (el mago elfo Frieren, el guerrero Stark y el mago de primera clase Fern) obtiene acceso a la peligrosa Meseta Norte. A medida que el partido avanza hacia Aureole, formidables adversarios obligan a Stark a enfrentar sus inseguridades, solidificando su determinación y su papel como líder del partido. Mientras tanto, Fern continúa apreciando los regalos con los que ha sido bendecida a lo largo de su vida, cada uno de los cuales es un recordatorio de sus seres queridos.\n\nFrieren, aún honrando su promesa de comprender a la humanidad, revive recuerdos de su viaje con el grupo del Héroe y su fugaz encuentro con una figura legendaria. Mientras reflexiona sobre el paso del tiempo, la maga elfa se pregunta en silencio si realmente ha cambiado, pero en las pequeñas y casi sutiles decisiones que toma, hay signos de que podría haberse vuelto más humana de lo que cree."
-    },
-    {
-      "title": "Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen",
-      "mal_id": 57658,
-      "image": "https://cdn.myanimelist.net/images/anime/1659/154920l.jpg",
-      "episodes": 12,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Supernatural"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "Kenjaku, the one known as Noritoshi Kamo and most recently as Suguru Getou, has initiated the next step in his destructive, thousand-year plan of ordinary humans' evolution and eventual eradication. The jujutsu world higher-ups reinstate 15-year-old Yuuji Itadori's execution, as Satoru Gojou is incapacitated as a result of Kenjaku's master plan in Shibuya. While Yuuji is unaware of this, he patrols the abandoned Tokyo streets with Chousou, exterminating any and all cursed spirits in his way. Meanwhile, the bigoted and arrogant Naoya Zenin's pride takes a hit when Megumi Fushiguro is selected as the Zenin Clan's next head. To draw out Megumi and eliminate him, he goes after Yuuji—but Yuuta Okkotsu is set on being Yuuji's executioner. Kenjaku's \"Culling Game\"—a rigorous battle royale spanning throughout Japan and forcing the jujutsu competitors to kill each other—is set in motion, and the young jujutsu sorcerers join the fray to settle old scores, free Gojou, and liberate the jujutsu world from the threat that is Kenjaku.",
-      "type": "TV",
-      "franchise": "Jujutsu Kaisen",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [],
-      "score": 8.61,
-      "scored_by": 256442,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Jujutsu Kaisen: The Culling Game Part 1",
-      "title_japanese": "呪術廻戦 「死滅回游 前編」",
-      "title_synonyms": [
-        "Jujutsu Kaisen 3rd Season"
-      ],
-      "search_titles": [
-        "Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen",
-        "Jujutsu Kaisen: The Culling Game Part 1",
-        "呪術廻戦 「死滅回游 前編」",
-        "Jujutsu Kaisen 3rd Season"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-09T00:00:00+00:00",
-      "aired_to": "2026-03-27T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Fridays",
-        "time": "00:26",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:26 (JST)"
-      },
-      "members": 524767,
-      "favorites": 4102,
-      "mal_popularity": 490,
-      "anticipation_score": 747.21,
-      "jikan_url": "https://myanimelist.net/anime/57658/Jujutsu_Kaisen__Shimetsu_Kaiyuu_-_Zenpen",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/ruX3rIj3--w?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Jujutsu Kaisen: El juego del sacrificio, parte 1",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Jujutsu Kaisen: El juego del sacrificio, parte 1",
-        "Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen",
-        "Jujutsu Kaisen 3ra temporada"
-      ],
-      "description_es": "Kenjaku, conocido como Noritoshi Kamo y más recientemente como Suguru Getou, ha iniciado el siguiente paso en su destructivo plan de mil años de evolución y eventual erradicación de los humanos comunes. Los superiores del mundo del jujutsu restablecen la ejecución de Yuuji Itadori, de 15 años, ya que Satoru Gojou queda incapacitado como resultado del plan maestro de Kenjaku en Shibuya. Si bien Yuuji no se da cuenta de esto, patrulla las calles abandonadas de Tokio con Chousou, exterminando a todos los espíritus malditos en su camino.\n\nMientras tanto, el orgullo del intolerante y arrogante Naoya Zenin se ve afectado cuando Megumi Fushiguro es seleccionada como la próxima líder del Clan Zenin. Para sacar a Megumi y eliminarlo, va tras Yuuji, pero Yuuta Okkotsu está decidido a ser el verdugo de Yuuji. El \"Juego de sacrificio\" de Kenjaku, una rigurosa batalla real que se extiende por todo Japón y que obliga a los competidores de jujutsu a matarse entre sí, se pone en marcha, y los jóvenes hechiceros de jujutsu se unen a la refriega para ajustar viejas cuentas, liberar a Gojou y liberar al mundo del jujutsu de la amenaza que es Kenjaku."
-    },
-    {
-      "title": "Jigokuraku 2nd Season",
-      "mal_id": 55825,
-      "image": "https://cdn.myanimelist.net/images/anime/1772/154456l.jpg",
-      "episodes": 12,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Supernatural"
-      ],
-      "tone": "oscuro",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "Seeking the key to the elixir of immortality, the group arrives at the fortress of the island's monstrous ruler, the \"Tensen.\" To survive and escape the island, cooperation becomes essential—regardless of whether one is a condemned criminal or an executioner. Meanwhile, the shogunate orders additional landings on the island of the Immortal Realm, led by Shugen Yamada Asayemon. Among them are the Ishigakure clan, who share a past with Gabimaru. Desperate to find the elixir and escape the island, Gabimaru and his companions face the Tensen in a battle that escalates into an all-out confrontation between humans and immortals!",
-      "type": "TV",
-      "franchise": "Jigokuraku",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [
-        "Gore",
-        "Historical",
-        "Samurai"
-      ],
-      "score": 8.17,
-      "scored_by": 140849,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Hell's Paradise Season 2",
-      "title_japanese": "地獄楽第二期",
-      "title_synonyms": [
-        "Paradition",
-        "Heavenhell"
-      ],
-      "search_titles": [
-        "Jigokuraku 2nd Season",
-        "Hell's Paradise Season 2",
-        "地獄楽第二期",
-        "Paradition",
-        "Heavenhell"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-11T00:00:00+00:00",
-      "aired_to": "2026-03-29T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Sundays",
-        "time": "23:45",
-        "timezone": "Asia/Tokyo",
-        "string": "Sundays at 23:45 (JST)"
-      },
-      "members": 393669,
-      "favorites": 3051,
-      "mal_popularity": 696,
-      "anticipation_score": 729.47,
-      "jikan_url": "https://myanimelist.net/anime/55825/Jigokuraku_2nd_Season",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/kBnmkMngfak?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "El paraíso del infierno temporada 2",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "El paraíso del infierno temporada 2",
-        "Jigokuraku 2da temporada",
-        "Paradición"
-      ],
-      "description_es": "Buscando la clave del elixir de la inmortalidad, el grupo llega a la fortaleza del monstruoso gobernante de la isla, el \"Tensen\". Para sobrevivir y escapar de la isla, la cooperación se vuelve esencial, independientemente de si uno es un criminal condenado o un verdugo.\n\nMientras tanto, el shogunato ordena desembarcos adicionales en la isla del Reino Inmortal, liderados por Shugen Yamada Asayemon. Entre ellos se encuentra el clan Ishigakure, que comparte pasado con Gabimaru.\n\nDesesperados por encontrar el elixir y escapar de la isla, Gabimaru y sus compañeros se enfrentan a los Tensen en una batalla que desemboca en una confrontación total entre humanos e inmortales."
-    },
-    {
-      "title": "Tongari Boushi no Atelier",
-      "mal_id": 51553,
-      "image": "https://cdn.myanimelist.net/images/anime/1726/155542l.jpg",
-      "episodes": 13,
-      "length": "medio",
-      "demographic": "Seinen",
-      "genres": [
-        "Fantasy"
-      ],
-      "tone": "emocional",
-      "fast_start": true,
-      "action_level": "medio",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "In a world where witches wield breathtaking magic, Coco, coming from a humble background, often wishes she were born one herself. After all, the secret behind casting magic is strictly guarded from non-witches. But when Coco manages to catch a glimpse of the witch Qifrey casting a spell, her revelation on the truth behind magic drastically alters the course of her life. However, Coco's curiosity pays a steep price when a disastrous spell cast in ignorance brings a tragic fate upon her beloved mother. Qifrey takes the shaken girl in, recognizing both her resolve to save her mother and her link to a group of forbidden magic heretics. Secrets are a heavy burden, and between navigating a society that views her as an uninvited guest and mastering the art of magic, Coco must give her all to prove her worth as a witch.",
-      "type": "TV",
-      "franchise": "Tongari Boushi no Atelier",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [],
-      "score": 8.68,
-      "scored_by": 65444,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Witch Hat Atelier",
-      "title_japanese": "とんがり帽子のアトリエ",
-      "title_synonyms": [
-        "Atelier of Witch Hat"
-      ],
-      "search_titles": [
-        "Tongari Boushi no Atelier",
-        "Witch Hat Atelier",
-        "とんがり帽子のアトリエ",
-        "Atelier of Witch Hat"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-06T00:00:00+00:00",
-      "aired_to": "2026-06-22T00:00:00+00:00",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Mondays",
-        "time": "23:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Mondays at 23:00 (JST)"
-      },
-      "members": 343972,
-      "favorites": 4040,
-      "mal_popularity": 814,
-      "anticipation_score": 723.82,
-      "jikan_url": "https://myanimelist.net/anime/51553/Tongari_Boushi_no_Atelier",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/d1reryPOMX0?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Taller de sombreros de bruja",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Taller de sombreros de bruja",
-        "Tongari Boushi no Atelier",
-        "Atelier de Sombrero de Bruja"
-      ],
-      "description_es": "Coco, la hija de una humilde modista, siempre ha estado fascinada por la magia y las brujas que la lanzan, a pesar de las estrictas precauciones que toman para ocultar sus métodos al público. Sin embargo, cuando Coco aprovecha una oportunidad de oro para espiar a la hábil bruja Qifrey, ¡se da cuenta de que su libro ilustrado favorito siempre fue un libro de magia disfrazado! En su emoción, inmediatamente comienza a probar los distintos hechizos.\n\nCuando un hechizo causa un desastre en su casa, Qifrey la rescata justo a tiempo y decide entrenarla, dándose cuenta de que ella es la primera pista que encontró que podría ayudarlo a localizar a los Brimmed Caps, un peligroso grupo de herejes que experimentan con magia prohibida que altera el cuerpo y difunden artefactos mágicos entre los plebeyos. Pero antes de que Coco y Qifrey puedan enfrentarse a los Brimmed Caps, ella tendrá que mejorar sus habilidades mágicas y aprender a llevarse bien con los otros aprendices de Qifrey."
-    },
-    {
-      "title": "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
-      "mal_id": 56009,
-      "image": "https://cdn.myanimelist.net/images/anime/1062/151911l.jpg",
-      "episodes": 12,
-      "length": "medio",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "In a world where the title of Hero is treated as a punishment rather than an honor, the worst criminals are sentenced to the front lines of an endless war against the Demon Lords. Branded as Heroes, they are forced into military service without even the mercy of death, condemned to be revived and sent back into battle forever. Among them is Xylo Forbartz, once a respected commander of the Holy Knights. Now the leader of Penal Hero Unit 9004, he commands a squad of convicts considered expendable by the very nation they serve. During one chaotic mission, he encounters Teoritta, a living weapon known as a Goddess, whose presence threatens to shift the balance of both the war and his own fate. As the unit is sent on increasingly dangerous operations, Xylo must balance leading his unit, surviving the battles he finds himself in, and uncovering the truth behind his own sentencing.",
-      "type": "TV",
-      "franchise": "Yuusha-kei ni Shosu",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [],
-      "score": 8.14,
-      "scored_by": 140407,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Sentenced to Be a Hero",
-      "title_japanese": "勇者刑に処す 懲罰勇者9004隊刑務記録",
-      "title_synonyms": [
-        "Sentenced to Brave Punishment",
-        "Punishment for Brave Hero: 9004 Corps Prison Record",
-        "Sentenced to Hero Punishment: The Service Records of the 9004th Penitent Hero Corps",
-        "Hero Punishment",
-        "Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004"
-      ],
-      "search_titles": [
-        "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
-        "Sentenced to Be a Hero",
-        "勇者刑に処す 懲罰勇者9004隊刑務記録",
-        "Sentenced to Brave Punishment",
-        "Punishment for Brave Hero: 9004 Corps Prison Record",
-        "Sentenced to Hero Punishment: The Service Records of the 9004th Penitent Hero Corps",
-        "Hero Punishment",
-        "Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-03T00:00:00+00:00",
-      "aired_to": "2026-03-26T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Thursdays",
-        "time": "22:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Thursdays at 22:30 (JST)"
-      },
-      "members": 329502,
-      "favorites": 1729,
-      "mal_popularity": 857,
-      "anticipation_score": 715.74,
-      "jikan_url": "https://myanimelist.net/anime/56009/Yuusha-kei_ni_Shosu__Choubatsu_Yuusha_9004-tai_Keimu_Kiroku",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/GcRs1JC7xeg?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Sentenciado a ser un héroe",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Sentenciado a ser un héroe",
-        "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
-        "Condenado a un castigo valiente"
-      ],
-      "description_es": "\"Héroe\" es el peor castigo del mundo. Los condenados por crímenes atroces son sentenciados a convertirse en \"héroes\" y obligados a realizar el servicio militar obligatorio en la guerra contra los Demon Lords. A estos convictos ni siquiera se les permite morir; si los matan, resucitarán para luchar otro día.\n\nEl héroe Xylo Forbartz, exjefe de la Orden de los Caballeros Santos, lidera una unidad penal de deplorables que luchan en el frente. Es en estas terribles circunstancias que conoce a Teoritta, una de las armas más poderosas del mundo. \"Cuando hasta el último enemigo haya sido derrotado, debes colmarme de elogios y acariciarme la cabeza\". Para sobrevivir y vengarse de quienes le hicieron daño, hace un pacto con la diosa y se lanza de cabeza a una vorágine de guerra e intriga."
-    },
-    {
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
-      "mal_id": 61316,
-      "image": "https://cdn.myanimelist.net/images/anime/1540/155824l.jpg",
-      "episodes": 19,
-      "length": "medio",
-      "demographic": "",
-      "genres": [
-        "Drama",
-        "Fantasy",
-        "Suspense"
-      ],
-      "tone": "oscuro",
-      "fast_start": true,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "In the deadly battle at the Watergate City of Priestella, Subaru and his allies barely emerged victorious—but their triumph came at a great cost. Through the \"Authority of Gluttony,\" Rem was put into suspended animation, while Crusch's memories and even Julius’s name were devoured. As he searches for a way to save them, Subaru learns of the \"Sage\" Shaula—an all-seeing being said to possess every form of knowledge. His next destination is the Pleiades Watchtower, home to the Sage, the farthest tower standing in the vast, uncharted desert known as the Auguria Dunes—a place so perilous that even the mightiest \"Sword Saint,\" Reinhard, failed to conquer it. The fury of nature, unknown magical beasts, and unimaginable dangers lie ahead. Together with his friends, Subaru embarks on a life-risking journey to reclaim what was lost.",
-      "type": "TV",
-      "franchise": "Re",
-      "ongoing": true,
-      "source_tags_original": [
-        "Light novel",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [
-        "Isekai",
-        "Psychological",
-        "Time Travel"
-      ],
-      "score": 9.2,
-      "scored_by": 65186,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Re:ZERO -Starting Life in Another World- Season 4",
-      "title_japanese": "Re:ゼロから始める異世界生活 4th season",
-      "title_synonyms": [
-        "Re: Life in a different world from zero",
-        "ReZero"
-      ],
-      "search_titles": [
-        "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
-        "Re:ZERO -Starting Life in Another World- Season 4",
-        "Re:ゼロから始める異世界生活 4th season",
-        "Re: Life in a different world from zero",
-        "ReZero"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-08T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Wednesdays",
-        "time": "22:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Wednesdays at 22:00 (JST)"
-      },
-      "members": 265025,
-      "favorites": 5380,
-      "mal_popularity": 1071,
-      "anticipation_score": 715.35,
-      "jikan_url": "https://myanimelist.net/anime/61316/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_4th_Season",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/jVl4bY81iIs?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Re:ZERO -Comenzando la vida en otro mundo- Temporada 4",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Re:ZERO -Comenzando la vida en otro mundo- Temporada 4",
-        "Re:Zero kara Hajimeru Isekai Seikatsu 4ta temporada",
-        "Re: La vida en un mundo diferente desde cero."
-      ],
-      "description_es": "En la mortal batalla en la ciudad Watergate de Priestella, Subaru y sus aliados apenas salieron victoriosos, pero su triunfo tuvo un gran costo. A través de la \"Autoridad de la Gula\", Rem quedó en animación suspendida, mientras que los recuerdos de Crusch e incluso el nombre de Julius fueron devorados. Mientras busca una manera de salvarlos, Subaru aprende sobre el \"hombre sabio\" Shaula, un ser que todo lo ve y que posee todo tipo de conocimiento. Su próximo destino es la Atalaya de las Pléyades, hogar de un hombre sabio, la torre más lejana en el vasto e inexplorado desierto conocido como las Dunas de Auguria, un lugar tan peligroso que ni siquiera el más poderoso \"Santo de la Espada\", Reinhard, no logró conquistarlo. La furia de la naturaleza, bestias mágicas desconocidas y peligros inimaginables nos esperan. Junto con sus amigos, Subaru se embarca en un arriesgado viaje para recuperar lo perdido."
-    },
-    {
-      "title": "Steel Ball Run: JoJo no Kimyou na Bouken",
-      "mal_id": 61469,
-      "image": "https://cdn.myanimelist.net/images/anime/1448/154111l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "Seinen",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Mystery",
-        "Supernatural"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "In the American Old West, the world's greatest race is about to begin. Thousands line up in San Diego to travel over six thousand kilometers for a chance to win the grand prize of fifty million dollars. With the era of the horse reaching its end, contestants are allowed to use any kind of vehicle they wish. Competitors will have to endure grueling conditions, traveling up to a hundred kilometers a day through uncharted wastelands. The Steel Ball Run is truly a one-of-a-kind event. The youthful Johnny Joestar, a crippled former horse racer, has come to San Diego to watch the start of the race. There he encounters Gyro Zeppeli, a racer with two steel balls at his waist instead of a gun. Johnny witnesses Gyro using one of his steel balls to unleash a fantastical power, compelling a man to fire his gun at himself during a duel. In the midst of the action, Johnny happens to touch the steel ball and feels a power surging through his legs, allowing him to stand up for the first time in two years. Vowing to find the secret of the steel balls, Johnny decides to compete in the race, and so begins his bizarre adventure across America on the Steel Ball Run.",
-      "type": "ONA",
-      "franchise": "Steel Ball Run",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [
-        "Historical",
-        "Racing"
-      ],
-      "score": 9.11,
-      "scored_by": 97759,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Steel Ball Run: JoJo's Bizarre Adventure",
-      "title_japanese": "スティール・ボール・ラン ジョジョの奇妙な冒険",
-      "title_synonyms": [
-        "JoJo's Bizarre Adventure Part 7: Steel Ball Run",
-        "JoJo no Kimyou na Bouken Part 7: Steel Ball Run",
-        "SBR"
-      ],
-      "search_titles": [
-        "Steel Ball Run: JoJo no Kimyou na Bouken",
-        "Steel Ball Run: JoJo's Bizarre Adventure",
-        "スティール・ボール・ラン ジョジョの奇妙な冒険",
-        "JoJo's Bizarre Adventure Part 7: Steel Ball Run",
-        "JoJo no Kimyou na Bouken Part 7: Steel Ball Run",
-        "SBR"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-03-19T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 215111,
-      "favorites": 7365,
-      "mal_popularity": 1309,
-      "anticipation_score": 710.86,
-      "jikan_url": "https://myanimelist.net/anime/61469/Steel_Ball_Run__JoJo_no_Kimyou_na_Bouken",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/TWw06YDOQy0?si=SxzUyy3Q-7R6PxzG?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Steel Ball Run: La extraña aventura de JoJo",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Steel Ball Run: La extraña aventura de JoJo",
-        "Carrera de bolas de acero: JoJo no Kimyou na Bouken",
-        "JoJo's Bizarre Adventure Parte 7: Steel Ball Run"
-      ],
-      "description_es": "En el Viejo Oeste americano, la carrera más grande del mundo está a punto de comenzar. Miles de personas hacen fila en San Diego para viajar más de seis mil kilómetros y tener la oportunidad de ganar el gran premio de cincuenta millones de dólares. Con la era del caballo llegando a su fin, los concursantes pueden utilizar cualquier tipo de vehículo que deseen. Los competidores tendrán que soportar condiciones agotadoras, viajando hasta cien kilómetros por día a través de páramos inexplorados. Steel Ball Run es verdaderamente un evento único en su tipo.\n\nEl joven Johnny Joestar, un ex corredor de caballos lisiado, ha venido a San Diego para presenciar el inicio de la carrera. Allí se encuentra con Gyro Zeppeli, un corredor con dos bolas de acero en la cintura en lugar de una pistola. Johnny es testigo de cómo Gyro usa una de sus bolas de acero para desatar un poder fantástico, lo que obliga a un hombre a dispararse a sí mismo durante un duelo. En medio de la acción, Johnny toca la bola de acero y siente un poder surgiendo a través de sus piernas, lo que le permite ponerse de pie por primera vez en dos años. Prometiendo encontrar el secreto de las bolas de acero, Johnny decide competir en la carrera y así comienza su extraña aventura por todo Estados Unidos en Steel Ball Run."
-    },
-    {
-      "title": "[Oshi no Ko] 3rd Season",
-      "mal_id": 60058,
-      "image": "https://cdn.myanimelist.net/images/anime/1979/153329l.jpg",
-      "episodes": 11,
-      "length": "medio",
-      "demographic": "Seinen",
-      "genres": [
-        "Drama"
-      ],
-      "tone": "emocional",
-      "fast_start": true,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "Satisfied with his investigation of Lala Lai Theatrical Company, Aquamarine \"Aqua\" Hoshino shifts his focus from revenge to career growth and becomes a regular on the variety show Dig Deep! Chase the Impawsible. With memories of his mother still lingering in his mind, Aqua cuts contact with Kana Arima, leaving her unable to enjoy the surging popularity of her idol group, B-Komachi. Meanwhile, following the bone-chilling discovery during B-Komachi's recent music video shoot, Aqua's sister, Ruby, resolves to solve the murders of those dearest to her. With the help of another soul still weighed down by Ai Hoshino's untimely demise, Ruby rises through the ranks, using any means necessary to get her way.",
-      "type": "TV",
-      "franchise": "[Oshi no Ko]",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Reincarnation",
-        "Showbiz"
-      ],
-      "score": 8.7,
-      "scored_by": 116633,
-      "_update_status": "jikan_upcoming",
-      "title_english": "[Oshi No Ko] Season 3",
-      "title_japanese": "【推しの子】 第3期",
-      "title_synonyms": [
-        "My Star Season 3"
-      ],
-      "search_titles": [
-        "[Oshi no Ko] 3rd Season",
-        "[Oshi No Ko] Season 3",
-        "【推しの子】 第3期",
-        "My Star Season 3"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-14T00:00:00+00:00",
-      "aired_to": "2026-03-25T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Wednesdays",
-        "time": "23:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Wednesdays at 23:00 (JST)"
-      },
-      "members": 276759,
-      "favorites": 2224,
-      "mal_popularity": 1026,
-      "anticipation_score": 710.07,
-      "jikan_url": "https://myanimelist.net/anime/60058/Oshi_no_Ko_3rd_Season",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/JGYY6Pui5Kc?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "[Oshi No Ko] Temporada 3",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "[Oshi No Ko] Temporada 3",
-        "[Oshi no Ko] 3.ª temporada",
-        "Mi estrella temporada 3"
-      ],
-      "description_es": "Satisfecho con su investigación sobre Lala Lai Theatrical Company, Aquamarine \"Aqua\" Hoshino cambia su enfoque de la venganza al crecimiento profesional y se convierte en un habitual del programa de variedades Dig Deep! Persigue lo Impasible. Con los recuerdos de su madre aún presentes en su mente, Aqua corta el contacto con Kana Arima, dejándola incapaz de disfrutar de la creciente popularidad de su grupo ídolo, B-Komachi.\n\nMientras tanto, tras el escalofriante descubrimiento durante la reciente filmación del vídeo musical de B-Komachi, la hermana de Aqua, Ruby, decide resolver los asesinatos de sus seres más queridos. Con la ayuda de otra alma todavía abrumada por la prematura desaparición de Ai Hoshino, Ruby asciende de rango, utilizando todos los medios necesarios para salirse con la suya."
-    },
-    {
-      "title": "Seihantai na Kimi to Boku",
-      "mal_id": 60371,
-      "image": "https://cdn.myanimelist.net/images/anime/1140/154457l.jpg",
-      "episodes": 12,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Comedy",
-        "Romance"
-      ],
-      "tone": "ligero",
-      "fast_start": true,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "Miyu Suzuki is a high school girl whose cheerful outlook on life is tempered by her need to fit in. Coincidentally, beside her in the classroom sits Yuusuke Tani, a boy unconcerned with others' expectations. Their exchanges rarely extend beyond brief discourse, yet the polarity of their demeanors unexpectedly draws them to one another. As their mutual interest grows, the newfound feelings are no longer easy to ignore. Eventually, Suzuki voices what is inside her heart, forcing both of them to confront the unspoken affection between them. With each passing moment, their relationship evolves, and they gradually come to better understand themselves and the person who is their polar opposite.",
-      "type": "TV",
-      "franchise": "Seihantai na Kimi to Boku",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "School"
-      ],
-      "score": 8.29,
-      "scored_by": 98999,
-      "_update_status": "jikan_upcoming",
-      "title_english": "You and I Are Polar Opposites",
-      "title_japanese": "正反対な君と僕",
-      "title_synonyms": [],
-      "search_titles": [
-        "Seihantai na Kimi to Boku",
-        "You and I Are Polar Opposites",
-        "正反対な君と僕"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-11T00:00:00+00:00",
-      "aired_to": "2026-03-29T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Sundays",
-        "time": "17:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Sundays at 17:00 (JST)"
-      },
-      "members": 211697,
-      "favorites": 1705,
-      "mal_popularity": 1329,
-      "anticipation_score": 694.95,
-      "jikan_url": "https://myanimelist.net/anime/60371/Seihantai_na_Kimi_to_Boku",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/jZVJLee_2Bw?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Tú y yo somos polos opuestos",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Tú y yo somos polos opuestos",
-        "Seihantai na Kimi a Boku"
-      ],
-      "description_es": "Junto a Miyu Suzuki, una chica de secundaria moderna y alegre, se sienta Yuusuke Tani, un chico tranquilo y franco. Sus interacciones son breves y se limitan a las preguntas aleatorias espontáneas de Suzuki y las respuestas concisas de Tani. Sin embargo, detrás de estos simples intercambios, los sentimientos de amor están floreciendo silenciosamente.\n\nSuzuki ve a Tani tal como es: un chico sencillo que respeta a todos por igual y que no se preocupa en absoluto por encajar. A diferencia de Tani, ella está demasiado obsesionada con lo que piensan los demás y desesperada por mantener en secreto a la persona que le gusta. Sin embargo, un ligero malentendido lleva a Suzuki a confesar sus sentimientos y, para su deleite, Tani siente lo mismo. Nerviosa de emoción, la joven pareja comienza a salir, embarcándose en un maravilloso viaje de amistad y amor."
-    },
-    {
-      "title": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4th Season: 2-nensei-hen 1 Gakki",
-      "mal_id": 59708,
-      "image": "https://cdn.myanimelist.net/images/anime/1176/153626l.jpg",
-      "episodes": 16,
-      "length": "medio",
-      "demographic": "",
-      "genres": [
-        "Drama",
-        "Suspense"
-      ],
-      "tone": "oscuro",
-      "fast_start": true,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "As soon as Kiyotaka Ayanokouji and the rest of Class D officially enter their second year at Tokyo Metropolitan Advanced Nurturing High School, they face their next special test: each second-year student will have to team up with a first-year student to take a written exam. Although the test seems simple enough, every pair must achieve a specific number of points to avoid a harsh penalty, raising the demand for academically proficient individuals. Without a break, Class D scouts for potential partners. However, Ayanokouji also faces a serious threat since the secret first-rate institution called White Room has enrolled another prodigy at the school to get him expelled. As Ayanokouji begins his masterful schemes once more, he must stay vigilant for new and old enemies alike.",
-      "type": "TV",
-      "franchise": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
-      "ongoing": true,
-      "source_tags_original": [
-        "Light novel",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Psychological",
-        "School"
-      ],
-      "score": 7.99,
-      "scored_by": 31709,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Classroom of the Elite 4th Season: Second Year, First Semester",
-      "title_japanese": "ようこそ実力至上主義の教室へ 4th Season 2年生編1学期",
-      "title_synonyms": [
-        "Welcome to the Classroom of the Elite",
-        "You-jitsu 4th Season",
-        "Classroom of the Elite IV: Year 2"
-      ],
-      "search_titles": [
-        "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4th Season: 2-nensei-hen 1 Gakki",
-        "Classroom of the Elite 4th Season: Second Year, First Semester",
-        "ようこそ実力至上主義の教室へ 4th Season 2年生編1学期",
-        "Welcome to the Classroom of the Elite",
-        "You-jitsu 4th Season",
-        "Classroom of the Elite IV: Year 2"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-01T00:00:00+00:00",
-      "aired_to": "2026-06-24T00:00:00+00:00",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Wednesdays",
-        "time": "21:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Wednesdays at 21:30 (JST)"
-      },
-      "members": 215489,
-      "favorites": 1409,
-      "mal_popularity": 1305,
-      "anticipation_score": 689.79,
-      "jikan_url": "https://myanimelist.net/anime/59708/Youkoso_Jitsuryoku_Shijou_Shugi_no_Kyoushitsu_e_4th_Season__2-nensei-hen_1_Gakki",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/QtIvKG8q5iM?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Aula de Élite 4ta Temporada: Segundo Año, Primer Semestre",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Aula de Élite 4ta Temporada: Segundo Año, Primer Semestre",
-        "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4ta temporada: 2-nensei-hen 1 Gakki",
-        "Bienvenido al Aula de la Élite"
-      ],
-      "description_es": "Cuando Ayanokouji y sus compañeros de clase comienzan su segundo año en Advanced Nurturing High School, son recibidos por una nueva serie de exámenes y un nuevo grupo de estudiantes de primer año bastante singulares. Tendrán que conocerse rápidamente, porque el primer examen especial empareja a los de primer año con los de segundo año en una prueba escrita, ¡y solo los de segundo año enfrentan la expulsión si su equipo tiene un mal desempeño! ¿Peor aún? Parece que uno de los nuevos de primer año también es de la Sala Blanca. ¿Podrá Ayanokouji evitar la expulsión mientras descubre la identidad de este enemigo oculto?"
-    },
-    {
-      "title": "Tensei shitara Slime Datta Ken 4th Season",
-      "mal_id": 59970,
-      "image": "https://cdn.myanimelist.net/images/anime/1171/158551l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "Demon Lord Rimuru's dream of creating an alliance between humans and monsters takes a step closer to being realized. As Tempest continues to prosper, Granville Rozzo and his granddaughter, Maribel Rozzo, clash with Demon Lord Rimuru over their plan to protect mankind by ruling over them. Meanwhile, in El Dorado, Demon Lord Leon works toward goals of his own. The awakening of a new Hero draws near!",
-      "type": "TV",
-      "franchise": "Tensei shitara Slime Datta Ken",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Isekai",
-        "Reincarnation"
-      ],
-      "score": 8.11,
-      "scored_by": 24775,
-      "_update_status": "jikan_upcoming",
-      "title_english": "That Time I Got Reincarnated as a Slime Season 4",
-      "title_japanese": "転生したらスライムだった件 第4期",
-      "title_synonyms": [
-        "Tensura 4"
-      ],
-      "search_titles": [
-        "Tensei shitara Slime Datta Ken 4th Season",
-        "That Time I Got Reincarnated as a Slime Season 4",
-        "転生したらスライムだった件 第4期",
-        "Tensura 4"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-03T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Fridays",
-        "time": "23:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 23:00 (JST)"
-      },
-      "members": 210261,
-      "favorites": 1290,
-      "mal_popularity": 1339,
-      "anticipation_score": 686.94,
-      "jikan_url": "https://myanimelist.net/anime/59970/Tensei_shitara_Slime_Datta_Ken_4th_Season",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/7SBfpSGiJQI?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Esa vez que me reencarné en Slime Temporada 4",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Esa vez que me reencarné en Slime Temporada 4",
-        "Tensei Shitara Slime Datta Ken 4ta temporada",
-        "Tensura 4"
-      ],
-      "description_es": "El sueño del Señor Demonio Rimuru de crear una alianza entre humanos y monstruos está un paso más cerca de hacerse realidad. Mientras Tempest continúa prosperando, Granville Rozzo y su nieta, Maribel Rozzo, chocan con Demon Lord Rimuru por su plan para proteger a la humanidad gobernando sobre ellos. Mientras tanto, en El Dorado, Demon Lord Leon trabaja para alcanzar sus propios objetivos. ¡Se acerca el despertar de un nuevo héroe!"
-    },
-    {
-      "title": "Enen no Shouboutai: San no Shou Part 2",
-      "mal_id": 59229,
-      "image": "https://cdn.myanimelist.net/images/anime/1508/152472l.jpg",
-      "episodes": 13,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Fantasy",
-        "Sci-Fi"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "Second part of Enen no Shouboutai: San no Shou.",
-      "type": "TV",
-      "franchise": "Enen no Shouboutai",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Urban Fantasy"
-      ],
-      "score": 8.11,
-      "scored_by": 77481,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Fire Force Season 3 Part 2",
-      "title_japanese": "炎炎ノ消防隊 参ノ章 第2クール",
-      "title_synonyms": [],
-      "search_titles": [
-        "Enen no Shouboutai: San no Shou Part 2",
-        "Fire Force Season 3 Part 2",
-        "炎炎ノ消防隊 参ノ章 第2クール"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-10T00:00:00+00:00",
-      "aired_to": "2026-04-04T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Saturdays",
-        "time": "01:53",
-        "timezone": "Asia/Tokyo",
-        "string": "Saturdays at 01:53 (JST)"
-      },
-      "members": 203880,
-      "favorites": 743,
-      "mal_popularity": 1384,
-      "anticipation_score": 683.79,
-      "jikan_url": "https://myanimelist.net/anime/59229/Enen_no_Shouboutai__San_no_Shou_Part_2",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/voLZJvdwUEE?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Fuerza de Fuego Temporada 3 Parte 2",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Fuerza de Fuego Temporada 3 Parte 2",
-        "Enen no Shouboutai: San no Shou Parte 2"
-      ],
-      "description_es": "Segunda parte de Enen no Shouboutai: San no Shou."
-    },
-    {
-      "title": "Fate/strange Fake",
-      "mal_id": 55830,
-      "image": "https://cdn.myanimelist.net/images/anime/1752/150192l.jpg",
-      "episodes": 13,
-      "length": "medio",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "A new Holy Grail War is emerging in Snowfield, Nevada, where mages from around the world summon Servants, heroic spirits drawn from myth and history, to fight on their behalf. However, this war seems to differ from previous ones. The organization behind it appears to have used data from the Fuyuki Grail War for their ritual, resulting in strange happenings. Unbeknownst to most participants, this budding conflict is actually a fake Grail War. There exists another set of seven true Servants who are summoned to fight in the genuine Holy Grail War. One of these Servants is a powerful Saber-class who saves the life of Ayaka Sajou, his apparent master, after being summoned. With hidden agendas and unpredictable forces at play, the line between the fake and true Grail War becomes unclear, turning Snowfield into a dangerous battlefield.",
-      "type": "TV",
-      "franchise": "Fate/strange Fake",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [
-        "Urban Fantasy"
-      ],
-      "score": 8.29,
-      "scored_by": 65348,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Fate/strange Fake",
-      "title_japanese": "Fate/strange Fake",
-      "title_synonyms": [],
-      "search_titles": [
-        "Fate/strange Fake"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-03T00:00:00+00:00",
-      "aired_to": "2026-03-28T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Saturdays",
-        "time": "23:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Saturdays at 23:30 (JST)"
-      },
-      "members": 178790,
-      "favorites": 1153,
-      "mal_popularity": 1551,
-      "anticipation_score": 682.0,
-      "jikan_url": "https://myanimelist.net/anime/55830/Fate_strange_Fake",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/EzbZP62K1-Q?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Destino/extraño Falso",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Destino/extraño Falso"
-      ],
-      "description_es": "Una nueva Guerra del Santo Grial está surgiendo en Snowfield, Nevada, donde magos de todo el mundo convocan a Servants, espíritus heroicos extraídos del mito y la historia, para luchar en su nombre. Sin embargo, esta guerra parece diferir de las anteriores. La organización detrás parece haber utilizado datos de la Guerra del Grial de Fuyuki para su ritual, lo que resultó en sucesos extraños. \n\nSin que la mayoría de los participantes lo sepan, este conflicto en ciernes es en realidad una falsa Guerra del Grial. Existe otro grupo de siete verdaderos Servants que son convocados para luchar en la genuina Guerra del Santo Grial. Uno de estos Servants es un poderoso clase Saber que salva la vida de Ayaka Sajou, su aparente maestro, después de ser convocado. \n\nCon agendas ocultas y fuerzas impredecibles en juego, la línea entre la falsa y la verdadera Guerra del Grial se vuelve confusa, lo que convierte a Snowfield en un peligroso campo de batalla."
-    },
-    {
-      "title": "Yomi no Tsugai",
-      "mal_id": 62001,
-      "image": "https://cdn.myanimelist.net/images/anime/1171/156397l.jpg",
-      "episodes": 24,
-      "length": "largo",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Supernatural"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "In an isolated village, two twins were born, separated by day and night. It is years later, and while the older brother Yuru has become a hunter of animals, his sister Asa has been locked away in a cage, ordered to perform a special duty that prohibits her from meeting more than a few select individuals. On an otherwise inconspicuous day, a group of armed men riding in helicopters, referred to as \"dragons\" by the citizens, assaults the village in search of Yuru, killing every adult on sight. When Yuru attempts to meet up with Asa and flee, he finds a dead body instead—on top of that, the person who killed her claims to be Yuru's true twin sister. Before the woman can capture him, Yuru is rescued by a man named Ryuu \"Dera\" Tadera, an outsider who frequently visits the village. However, it is not long before the two are cornered. In a last-ditch effort, Dera makes Yuru give a gift to the deity of the village, summoning a pair of daemons whose existence is bound to reveal the truth behind these chaotic events.",
-      "type": "TV",
-      "franchise": "Yomi no Tsugai",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [],
-      "score": 7.94,
-      "scored_by": 29049,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Daemons of the Shadow Realm",
-      "title_japanese": "黄泉のツガイ",
-      "title_synonyms": [
-        "Tsugai of the Underworld"
-      ],
-      "search_titles": [
-        "Yomi no Tsugai",
-        "Daemons of the Shadow Realm",
-        "黄泉のツガイ",
-        "Tsugai of the Underworld"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-04T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Saturdays",
-        "time": "23:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Saturdays at 23:30 (JST)"
-      },
-      "members": 196932,
-      "favorites": 846,
-      "mal_popularity": 1423,
-      "anticipation_score": 680.21,
-      "jikan_url": "https://myanimelist.net/anime/62001/Yomi_no_Tsugai",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/ufD2IvYem0k?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Demonios del Reino de las Sombras",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Demonios del Reino de las Sombras",
-        "Yomi no Tsugai",
-        "Tsugai del inframundo"
-      ],
-      "description_es": "En un pueblo aislado nacieron dos gemelos, separados por el día y la noche. Han pasado años, y mientras el hermano mayor Yuru se ha convertido en un cazador de animales, su hermana Asa ha sido encerrada en una jaula y se le ha ordenado realizar un deber especial que le prohíbe conocer a más de unos pocos individuos selectos.\n\nEn un día que normalmente pasa desapercibido, un grupo de hombres armados que viajan en helicópteros, a los que los ciudadanos llaman \"dragones\", asalta la aldea en busca de Yuru y mata a todos los adultos que ve. Cuando Yuru intenta reunirse con Asa y huir, encuentra un cadáver; además, la persona que la mató afirma ser la verdadera hermana gemela de Yuru.\n\nAntes de que la mujer pueda capturarlo, Yuru es rescatado por un hombre llamado Dera, un forastero que visita con frecuencia la aldea. Sin embargo, no pasa mucho tiempo antes de que los dos se vean acorralados. En un último esfuerzo, Dera hace que Yuru le dé un regalo a la deidad de la aldea, convocando a un par de demonios cuya existencia seguramente revelará la verdad detrás de estos caóticos eventos."
-    },
-    {
-      "title": "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken 2",
-      "mal_id": 56876,
-      "image": "https://cdn.myanimelist.net/images/anime/1989/154843l.jpg",
-      "episodes": 12,
-      "length": "medio",
-      "demographic": "",
-      "genres": [
-        "Romance"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "Second season of Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken.",
-      "type": "TV",
-      "franchise": "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "School"
-      ],
-      "score": 7.19,
-      "scored_by": 25435,
-      "_update_status": "jikan_upcoming",
-      "title_english": "The Angel Next Door Spoils Me Rotten 2",
-      "title_japanese": "お隣の天使様にいつの間にか駄目人間にされていた件 2期",
-      "title_synonyms": [],
-      "search_titles": [
-        "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken 2",
-        "The Angel Next Door Spoils Me Rotten 2",
-        "お隣の天使様にいつの間にか駄目人間にされていた件 2期"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-03T00:00:00+00:00",
-      "aired_to": "2026-06-19T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Fridays",
-        "time": "22:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 22:30 (JST)"
-      },
-      "members": 146995,
-      "favorites": 1944,
-      "mal_popularity": 1810,
-      "anticipation_score": 675.54,
-      "jikan_url": "https://myanimelist.net/anime/56876/Otonari_no_Tenshi-sama_ni_Itsunomanika_Dame_Ningen_ni_Sareteita_Ken_2",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/8Gtb1uhjPKs?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "El ángel de al lado me mima podrido 2",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "El ángel de al lado me mima podrido 2",
-        "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken 2"
-      ],
-      "description_es": "Segunda temporada de Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken."
-    },
-    {
-      "title": "Tsue to Tsurugi no Wistoria Season 2",
-      "mal_id": 59983,
-      "image": "https://cdn.myanimelist.net/images/anime/1190/155788l.jpg",
-      "episodes": 12,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "As the year nears its end, the time for final exams arrives at Rigarden Magical Academy. Despite being the only student without any magic aptitude, Will Serfort aims to score perfect grades in every subject, which would allow him to ascend to the Wizard's Tower and reunite with his childhood friend, Elfaria Albis Serfort. However, Will's hard work comes tumbling down when he fails the very last, biased exam, disqualifying him from entering the Wizard's Tower. Meanwhile, Elfaria and the other Magia Vander—the five most powerful mages—perform the annual ritual that protects their world from the dangerous Celestial Hosts. As the ritual temporarily leaves the Magia Vander drained of magic, a large army of monsters suddenly appears and begins attacking mages and civilians alike. To make matters worse, the mages are unable to hold off the invasion due to the monsters' special weaponry that nullifies their magic. Refusing to let the world end in despair, Will and his masterful swordsmanship quickly become a cornerstone in stopping the attack.",
-      "type": "TV",
-      "franchise": "Tsue to Tsurugi no Wistoria Season",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "School"
-      ],
-      "score": 8.24,
-      "scored_by": 25789,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Wistoria: Wand and Sword Season 2",
-      "title_japanese": "杖と剣のウィストリア Season 2",
-      "title_synonyms": [
-        "Wistoria's Wand and Sword Season 2"
-      ],
-      "search_titles": [
-        "Tsue to Tsurugi no Wistoria Season 2",
-        "Wistoria: Wand and Sword Season 2",
-        "杖と剣のウィストリア Season 2",
-        "Wistoria's Wand and Sword Season 2"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-12T00:00:00+00:00",
-      "aired_to": "2026-06-28T00:00:00+00:00",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Sundays",
-        "time": "16:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Sundays at 16:30 (JST)"
-      },
-      "members": 166750,
-      "favorites": 877,
-      "mal_popularity": 1643,
-      "anticipation_score": 672.85,
-      "jikan_url": "https://myanimelist.net/anime/59983/Tsue_to_Tsurugi_no_Wistoria_Season_2",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/57OL0uTIBVg?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Wistoria: Varita y espada Temporada 2",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Wistoria: Varita y espada Temporada 2"
-      ],
-      "description_es": "Segunda temporada de Tsue to Tsurugi no Wistoria."
-    },
-    {
-      "title": "Ikoku Nikki",
-      "mal_id": 58788,
-      "image": "https://cdn.myanimelist.net/images/anime/1791/154233l.jpg",
-      "episodes": 13,
-      "length": "medio",
-      "demographic": "Josei",
-      "genres": [
-        "Drama"
-      ],
-      "tone": "emocional",
-      "fast_start": true,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "Thirty-five-year-old novelist Makio Koudai never had a good relationship with her older sister Minori, who always berated her for being different. Due to this, Makio is not stricken with grief upon hearing the news that Minori and her husband died in a car crash. But when Makio is asked to identify their bodies, she runs into her 15-year-old niece, Asa Takumi, whom she has not seen in years. As Asa struggles to process her parents' death, Makio reassures her that her complicated feelings are valid and suggests that the teenager start writing in a diary as a way to cope with the loss. Upon learning that no other relatives wanted to take in Asa, Makio decides to become her guardian despite her lack of experience. In a world full of uncertainty, the novelist and teenager must learn to live with each other while figuring themselves out.",
-      "type": "TV",
-      "franchise": "Ikoku Nikki",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [],
-      "score": 8.73,
-      "scored_by": 41060,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Journal with Witch",
-      "title_japanese": "違国日記",
-      "title_synonyms": [
-        "Different Country Diary",
-        "Foreign Country Diary"
-      ],
-      "search_titles": [
-        "Ikoku Nikki",
-        "Journal with Witch",
-        "違国日記",
-        "Different Country Diary",
-        "Foreign Country Diary"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "2026/winter"
-      ],
-      "aired_from": "2026-01-04T00:00:00+00:00",
-      "aired_to": "2026-03-29T00:00:00+00:00",
-      "airing_status": "Finished Airing",
-      "broadcast": {
-        "day": "Sundays",
-        "time": "23:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Sundays at 23:00 (JST)"
-      },
-      "members": 116209,
-      "favorites": 1941,
-      "mal_popularity": 2169,
-      "anticipation_score": 666.82,
-      "jikan_url": "https://myanimelist.net/anime/58788/Ikoku_Nikki",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/DX6mmkoByyc?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Diario con bruja",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Diario con bruja",
-        "Nikki Ikoku",
-        "Diario de diferentes países"
-      ],
-      "description_es": "La novelista Makio Koudai, de 35 años, nunca tuvo una buena relación con su hermana mayor Minori, quien siempre la reprendía por ser diferente. Debido a esto, Makio no se siente afligido al escuchar la noticia de que Minori y su esposo murieron en un accidente automovilístico. Pero cuando le piden a Makio que identifique sus cuerpos, se topa con su sobrina de 15 años, Asa Takumi, a quien no ha visto en años.\n\nMientras Asa lucha por procesar la muerte de sus padres, Makio le asegura que sus sentimientos complicados son válidos y sugiere que la adolescente comience a escribir un diario como una forma de afrontar la pérdida. Al enterarse de que ningún otro familiar quería acoger a Asa, Makio decide convertirse en su tutor a pesar de su falta de experiencia. En un mundo lleno de incertidumbre, el novelista y el adolescente deben aprender a vivir juntos mientras se descubren a sí mismos."
-    },
-    {
-      "title": "Dr. Stone: Science Future Part 3",
-      "mal_id": 62568,
-      "image": "https://cdn.myanimelist.net/images/anime/1773/155779l.jpg",
-      "episodes": 13,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Adventure",
-        "Comedy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "After reconciling with Dr. Xeno, Senkuu Ishigami is close to realizing his long-held dream: the space mission to the Moon is finally underway. While Dr. Xeno begins the development of their rocket's engine, Senkuu's team continues navigating through continents and seas in search of essential resources and people to assemble the necessary infrastructure for the mission as well as revive the entire human population. Meanwhile, the enigmatic Whyman continues to cast its shadow over Earth from the Moon. But with the combined might of humanity finally coming together, it is only a matter of time before Senkuu and the others confront Whyman and get the answers that have eluded humanity for centuries.",
-      "type": "TV",
-      "franchise": "Dr. Stone",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [],
-      "score": 8.3,
-      "scored_by": 21381,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Dr. Stone: Science Future Part 3",
-      "title_japanese": "Dr.STONE SCIENCE FUTURE 第3クール",
-      "title_synonyms": [
-        "Dr. Stone 4th Season Part 3"
-      ],
-      "search_titles": [
-        "Dr. Stone: Science Future Part 3",
-        "Dr.STONE SCIENCE FUTURE 第3クール",
-        "Dr. Stone 4th Season Part 3"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-02T00:00:00+00:00",
-      "aired_to": "2026-06-25T00:00:00+00:00",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Thursdays",
-        "time": "22:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Thursdays at 22:00 (JST)"
-      },
-      "members": 154399,
-      "favorites": 516,
-      "mal_popularity": 1746,
-      "anticipation_score": 663.29,
-      "jikan_url": "https://myanimelist.net/anime/62568/Dr_Stone__Science_Future_Part_3",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/O8Mf9JEYDUI?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Dr. Stone: El futuro de la ciencia, parte 3",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Dr. Stone: El futuro de la ciencia, parte 3",
-        "Dr. Stone 4ta temporada Parte 3"
-      ],
-      "description_es": "Tercera parte de Dr. Stone: Science Future."
-    },
-    {
-      "title": "Youjo Senki II",
-      "mal_id": 49233,
-      "image": "https://cdn.myanimelist.net/images/anime/1917/158371l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": true,
-      "year": 2026,
-      "description": "Second season of Youjo Senki.",
-      "type": "TV",
-      "franchise": "Youjo Senki",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [
-        "Isekai",
-        "Military",
-        "Reincarnation"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Saga of Tanya the Evil II",
-      "title_japanese": "幼女戦記 II",
-      "title_synonyms": [
-        "The Military Chronicles of a Little Girl II",
-        "Youjo Senki 2nd Season"
-      ],
-      "search_titles": [
-        "Youjo Senki II",
-        "Saga of Tanya the Evil II",
-        "幼女戦記 II",
-        "The Military Chronicles of a Little Girl II",
-        "Youjo Senki 2nd Season"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-08T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": "Wednesdays",
-        "time": "21:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Wednesdays at 21:30 (JST)"
-      },
-      "members": 212225,
-      "favorites": 3422,
-      "mal_popularity": 1331,
-      "anticipation_score": 662.36,
-      "jikan_url": "https://myanimelist.net/anime/49233/Youjo_Senki_II",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/3-Cj3dXwQWI?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Saga de Tanya la Malvada II",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Saga de Tanya la Malvada II"
-      ],
-      "description_es": "Segunda temporada de Youjo Senki."
-    },
-    {
-      "title": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
-      "mal_id": 56734,
-      "image": "https://cdn.myanimelist.net/images/anime/1423/155713l.jpg",
-      "episodes": 12,
-      "length": "medio",
-      "demographic": "",
-      "genres": [
-        "Romance"
-      ],
-      "tone": "emocional",
-      "fast_start": true,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "I, Maehara Maki, struggled to connect with anyone during my high school years, finding it hard to make friends. Then, a turning point arrived. A girl named Asanagi entered my life. Despite being clandestinely referred to as the \"second cutest girl in class\" by the boys, she chose to spend her Fridays with me instead of her best friend Amami, who held the \"cutest girl in class\" title. In the comfort of my home, we delved into the realm of games, watched movies, immersed ourselves in manga, indulged in junk food—pizza, hamburgers—and guzzled cola, carefree and content. To the outside world, we might have seemed a bit messy, but to both Asanagi and me, it was a cherished, hidden time together.",
-      "type": "TV",
-      "franchise": "Class de",
-      "ongoing": true,
-      "source_tags_original": [
-        "Light novel",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "School"
-      ],
-      "score": 7.91,
-      "scored_by": 24905,
-      "_update_status": "jikan_upcoming",
-      "title_english": "I Made Friends with the Second Prettiest Girl in My Class",
-      "title_japanese": "クラスで2番目に可愛い女の子と友だちになった",
-      "title_synonyms": [
-        "I Became Friends with the Second Cutest Girl in the Class.",
-        "Kuranika"
-      ],
-      "search_titles": [
-        "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
-        "I Made Friends with the Second Prettiest Girl in My Class",
-        "クラスで2番目に可愛い女の子と友だちになった",
-        "I Became Friends with the Second Cutest Girl in the Class.",
-        "Kuranika"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-07T00:00:00+00:00",
-      "aired_to": "2026-06-23T00:00:00+00:00",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Tuesdays",
-        "time": "23:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Tuesdays at 23:30 (JST)"
-      },
-      "members": 125657,
-      "favorites": 838,
-      "mal_popularity": 2040,
-      "anticipation_score": 659.79,
-      "jikan_url": "https://myanimelist.net/anime/56734/Class_de_2-banme_ni_Kawaii_Onnanoko_to_Tomodachi_ni_Natta",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/ICOxQWf8zFU?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Me hice amiga de la segunda chica más bonita de mi clase",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Me hice amiga de la segunda chica más bonita de mi clase"
-      ],
-      "description_es": "Yo, Maehara Maki, luché por conectarme con alguien durante mis años de escuela secundaria y me resultaba difícil hacer amigos. Entonces llegó un punto de inflexión. Una niña llamada Asanagi entró en mi vida. A pesar de que los chicos la llamaban clandestinamente la \"segunda chica más linda de la clase\", ella eligió pasar los viernes conmigo en lugar de con su mejor amiga Amami, quien ostentaba el título de \"la chica más linda de la clase\". En la comodidad de mi hogar, nos adentramos en el reino de los juegos, vimos películas, nos sumergimos en manga, disfrutamos de comida chatarra (pizza, hamburguesas) y bebimos refrescos de cola, despreocupados y contentos. Para el mundo exterior, podríamos haber parecido un poco desordenados, pero tanto para Asanagi como para mí, fue un momento preciado y escondido juntos."
-    },
-    {
-      "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
-      "mal_id": 59193,
-      "image": "https://cdn.myanimelist.net/images/anime/1527/158340l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Adventure",
-        "Drama",
-        "Fantasy",
-        "Ecchi"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "Third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
-      "type": "TV",
-      "franchise": "Mushoku Tensei",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel",
-        "R - 17+ (violence & profanity)"
-      ],
-      "themes": [
-        "Isekai",
-        "Reincarnation"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Mushoku Tensei: Jobless Reincarnation Season 3",
-      "title_japanese": "無職転生 III ～異世界行ったら本気だす～",
-      "title_synonyms": [],
-      "search_titles": [
-        "Mushoku Tensei III: Isekai Ittara Honki Dasu",
-        "Mushoku Tensei: Jobless Reincarnation Season 3",
-        "無職転生 III ～異世界行ったら本気だす～"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-06T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": "Mondays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Mondays at 00:00 (JST)"
-      },
-      "members": 200570,
-      "favorites": 1852,
-      "mal_popularity": 1411,
-      "anticipation_score": 653.47,
-      "jikan_url": "https://myanimelist.net/anime/59193/Mushoku_Tensei_III__Isekai_Ittara_Honki_Dasu",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/ODxfIvSgWuo?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Mushoku Tensei: Reencarnación desempleada Temporada 3",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Mushoku Tensei: Reencarnación desempleada Temporada 3"
-      ],
-      "description_es": "Tercera temporada de Mushoku Tensei: Isekai Ittara Honki Dasu."
-    },
-    {
-      "title": "Super no Ura de Yani Suu Futari",
-      "mal_id": 62076,
-      "image": "https://cdn.myanimelist.net/images/anime/1768/156339l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "Seinen",
-      "genres": [
-        "Romance"
-      ],
-      "tone": "emocional",
-      "fast_start": true,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "The sole thing that gets the middle-aged Sasaki through his soul-sucking job is a cheerful smile from Yamada—the young woman who works at a nearby 24-hour supermarket he frequents. After every tiring day of getting berated by his boss, Sasaki stops by the store to have his spirit healed by his favorite cashier. After a particularly grueling day, Sasaki shows up at the supermarket, only to find that Yamada's shift has already ended. Disappointed, he searches for a place to smoke when a woman from behind the store calls him over to join her. The bold and dangerously playful Tayama is quick to call out Sasaki's peculiar habit of always seeking out her coworker—even going as far as telling Yamada about Sasaki's vested interest in her. Now, in addition to seeing his adored cashier Yamada, Sasaki also visits the store to see if his new smoking partner Tayama is around. But there is more to Tayama's mischievousness than she initially lets on. With every cigarette, an unlikely friendship begins to blossom.",
-      "type": "TV",
-      "franchise": "Super no Ura de Yani Suu Futari",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Adult Cast",
-        "Love Status Quo"
-      ],
-      "score": 8.56,
-      "scored_by": 18057,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Smoking Behind the Supermarket with You",
-      "title_japanese": "スーパーの裏でヤニ吸うふたり",
-      "title_synonyms": [
-        "Behind the Supermarket",
-        "Smoking with You.",
-        "Super no Ura de Yani Suu Hanashi",
-        "A Story About Smoking at the Back of the Supermarket",
-        "YaniSuu"
-      ],
-      "search_titles": [
-        "Super no Ura de Yani Suu Futari",
-        "Smoking Behind the Supermarket with You",
-        "スーパーの裏でヤニ吸うふたり",
-        "Behind the Supermarket",
-        "Smoking with You.",
-        "Super no Ura de Yani Suu Hanashi",
-        "A Story About Smoking at the Back of the Supermarket",
-        "YaniSuu"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer"
-      ],
-      "aired_from": "2026-06-03T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Thursdays",
-        "time": "23:56",
-        "timezone": "Asia/Tokyo",
-        "string": "Thursdays at 23:56 (JST)"
-      },
-      "members": 102206,
-      "favorites": 719,
-      "mal_popularity": 2380,
-      "anticipation_score": 647.95,
-      "jikan_url": "https://myanimelist.net/anime/62076/Super_no_Ura_de_Yani_Suu_Futari",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/aOOwNK6Ul6E?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Detrás del Supermercado, Fumando Contigo.",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Detrás del Supermercado, Fumando Contigo."
-      ],
-      "description_es": "Lo único que hace que Sasaki, de mediana edad, supere su trabajo de chupar almas es una sonrisa alegre de Yamada, la joven que trabaja en un supermercado cercano abierto las 24 horas que él frecuenta. Después de cada día agotador de ser reprendido por su jefe, Sasaki pasa por la tienda para que su cajero favorito sane su espíritu. Después de un día particularmente agotador, Sasaki aparece en el supermercado y descubre que el turno de Yamada ya ha terminado. Decepcionado, busca un lugar para fumar cuando una mujer detrás de la tienda lo llama para que se una a ella. La audaz y peligrosamente juguetona Tayama se apresura a denunciar el peculiar hábito de Sasaki de buscar siempre a su compañero de trabajo, llegando incluso a contarle a Yamada sobre el interés creado de Sasaki en ella. Ahora, además de ver a su adorado cajero Yamada, Sasaki también visita la tienda para ver si su nuevo compañero fumador Tayama está cerca. Pero hay más en la picardía de Tayama de lo que inicialmente deja entrever. Con cada cigarrillo, comienza a florecer una amistad improbable."
-    },
-    {
-      "title": "Marriagetoxin",
-      "mal_id": 62601,
-      "image": "https://cdn.myanimelist.net/images/anime/1927/154309l.jpg",
-      "episodes": 13,
-      "length": "medio",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Comedy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": true,
-      "year": 2026,
-      "description": "For centuries, the Poison Masters have perfected the art of assassination. Among them, the Gero family stands as one of the five most powerful families of Masters, wielding unmatched skill and influence. Hikaru Gero, heir to this infamous bloodline, has lived his life deep in the shadows of the underworld, far removed from love or marriage. However, to ensure the Poison Master bloodline does not die out, the head of the Gero family declares that Hikaru's sister will be forced to bear an heir. Soon after, Hikaru crosses paths with Mei Kinosaki, a brilliant marriage swindler who also happens to be his current assassination target. Determined to protect his sister and solve the succession problem himself, Hikaru makes an unexpected request on the spot—asking Mei to help him get married. \"...That's the first time anyone's ever proposed like that.\" And so, with the cunning marriage swindler Mei as his advisor, the elite assassin Hikaru sets out on the toughest mission for love. His goal? The ultimate marriage. The most unlikely duo—an assassin and a marriage swindler—take on the world's toughest mission for love!",
-      "type": "TV",
-      "franchise": "Marriagetoxin",
-      "ongoing": true,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Adult Cast"
-      ],
-      "score": 7.53,
-      "scored_by": 18263,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Marriagetoxin",
-      "title_japanese": "マリッジトキシン",
-      "title_synonyms": [
-        "Marriage Toxin"
-      ],
-      "search_titles": [
-        "Marriagetoxin",
-        "マリッジトキシン",
-        "Marriage Toxin"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "2026/spring"
-      ],
-      "aired_from": "2026-04-07T00:00:00+00:00",
-      "aired_to": "2026-06-30T00:00:00+00:00",
-      "airing_status": "Currently Airing",
-      "broadcast": {
-        "day": "Tuesdays",
-        "time": "23:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Tuesdays at 23:00 (JST)"
-      },
-      "members": 121718,
-      "favorites": 298,
-      "mal_popularity": 2094,
-      "anticipation_score": 646.55,
-      "jikan_url": "https://myanimelist.net/anime/62601/Marriagetoxin",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/71eDinaX9-c?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "toxina del matrimonio",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "toxina del matrimonio"
-      ],
-      "description_es": "Durante siglos, los Maestros del Veneno han perfeccionado el arte del asesinato. Entre ellos, la familia Gero se erige como una de las cinco familias de Maestros más poderosas y ejerce una habilidad e influencia incomparables. Hikaru Gero, heredero de este infame linaje, ha vivido su vida en las sombras del inframundo, muy alejado del amor o el matrimonio.\n\nSin embargo, para garantizar que el linaje de Poison Master no se extinga, el jefe de la familia Gero declara que la hermana de Hikaru se verá obligada a tener un heredero. Poco después, Hikaru se cruza con Mei Kinosaki, una brillante estafadora matrimonial que también es su actual objetivo de asesinato. Decidido a proteger a su hermana y resolver él mismo el problema de sucesión, Hikaru hace una petición inesperada en el acto: pedirle a Mei que lo ayude a casarse.\n\n\"...Esa es la primera vez que alguien propone algo así.\"\n\nY así, con la astuta estafadora matrimonial Mei como asesora, el asesino de élite Hikaru emprende la misión más difícil por amor. ¿Su objetivo? El matrimonio definitivo. ¡El dúo más improbable, un asesino y un estafador matrimonial, asume la misión de amor más difícil del mundo!"
-    },
     {
       "title": "Kage no Jitsuryokusha ni Naritakute! Movie: Zankyou-hen",
       "mal_id": 57584,
@@ -2690,83 +962,6 @@
       "description_es": "Segunda temporada de Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru"
     },
     {
-      "title": "Otome Game Sekai wa Mob ni Kibishii Sekai desu 2",
-      "mal_id": 54000,
-      "image": "https://cdn.myanimelist.net/images/anime/1285/158337l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Fantasy",
-        "Romance"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Second season of Otome Game Sekai wa Mob ni Kibishii Sekai desu.",
-      "type": "TV",
-      "franchise": "Otome Game Sekai wa Mob ni Kibishii Sekai desu",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Harem",
-        "Isekai",
-        "Mecha",
-        "Reincarnation",
-        "School"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs 2",
-      "title_japanese": "乙女ゲー世界はモブに厳しい世界です2",
-      "title_synonyms": [
-        "Mobseka"
-      ],
-      "search_titles": [
-        "Otome Game Sekai wa Mob ni Kibishii Sekai desu 2",
-        "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs 2",
-        "乙女ゲー世界はモブに厳しい世界です2",
-        "Mobseka"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-08T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": "Wednesdays",
-        "time": "23:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Wednesdays at 23:30 (JST)"
-      },
-      "members": 72876,
-      "favorites": 440,
-      "mal_popularity": 2934,
-      "anticipation_score": 593.85,
-      "jikan_url": "https://myanimelist.net/anime/54000/Otome_Game_Sekai_wa_Mob_ni_Kibishii_Sekai_desu_2",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/d3n8-15GCG8?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Atrapado en un simulador de citas: el mundo de los juegos Otome es difícil para Mobs 2",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Atrapado en un simulador de citas: el mundo de los juegos Otome es difícil para Mobs 2"
-      ],
-      "description_es": "Segunda temporada de Otome Game Sekai wa Mob ni Kibishii Sekai desu."
-    },
-    {
       "title": "Kimetsu no Yaiba Movie 2: Mugenjou-hen",
       "mal_id": 62546,
       "image": "https://cdn.myanimelist.net/images/anime/1000/152184l.jpg",
@@ -3195,76 +1390,6 @@
         "Gachiakuta Temporada 2"
       ],
       "description_es": "Segunda temporada de Gachiakuta."
-    },
-    {
-      "title": "Grand Blue Season 3",
-      "mal_id": 62542,
-      "image": "https://cdn.myanimelist.net/images/anime/1615/158194l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "Seinen",
-      "genres": [
-        "Comedy"
-      ],
-      "tone": "ligero",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": false,
-      "popular": false,
-      "year": 2026,
-      "description": "Third season of Grand Blue.",
-      "type": "TV",
-      "franchise": "Grand Blue Season",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Adult Cast",
-        "Gag Humor"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Grand Blue Dreaming Season 3",
-      "title_japanese": "ぐらんぶる Season 3",
-      "title_synonyms": [],
-      "search_titles": [
-        "Grand Blue Season 3",
-        "Grand Blue Dreaming Season 3",
-        "ぐらんぶる Season 3"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-07T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": "Tuesdays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Tuesdays at 00:00 (JST)"
-      },
-      "members": 60371,
-      "favorites": 172,
-      "mal_popularity": 3268,
-      "anticipation_score": 575.77,
-      "jikan_url": "https://myanimelist.net/anime/62542/Grand_Blue_Season_3",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/KJw6ZZaMOWA?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Gran sueño azul temporada 3",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Gran sueño azul temporada 3"
-      ],
-      "description_es": "Tercera temporada de Grand Blue."
     },
     {
       "title": "Mashle: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
@@ -3706,80 +1831,6 @@
       "description_es": "Cuarta temporada de Kono Subarashii Sekai ni Shukufuku wo!."
     },
     {
-      "title": "Kimi ga Shinu made Koi wo Shitai",
-      "mal_id": 61126,
-      "image": "https://cdn.myanimelist.net/images/anime/1850/158429l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Fantasy",
-        "Girls Love"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "The death of Sheena Totsuki's roommate is casually announced at the start of class, and the day carries on as usual. In an orphanage that raises children as soldiers, death is nothing new to the residents. With their home country embroiled in a war that has dragged on for too many years and shows no signs of stopping, the institution's children are sent off to die in battle every day. In contrast to the other orphans, Sheena is deeply disturbed by the ongoing conflict and wishes for it to end. On the night of her roommate's death, Sheena met a blood-covered girl who remained jubilant despite the condition she was in. The next day, the girl appears as a new student in Sheena's class and introduces herself as Mimi Kagari. Initially thought to be a school myth, Mimi is said to be the secret weapon of the orphanage—a girl who cannot die. Assigned as Sheena's new roommate, Mimi hopes to get along with her and get accustomed to school life. However, unsettled by Mimi's carefree attitude toward the war, Sheena struggles to accept the world they live in, all while their unusual friendship flourishes amid the bleak situation.",
-      "type": "TV",
-      "franchise": "Kimi ga Shinu made Koi wo Shitai",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga"
-      ],
-      "themes": [
-        "School"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "I Want to Love You Till Your Dying Day",
-      "title_japanese": "きみが死ぬまで恋をしたい",
-      "title_synonyms": [
-        "My Wish Is to Fall in Love Until You Die.",
-        "Kimishinu"
-      ],
-      "search_titles": [
-        "Kimi ga Shinu made Koi wo Shitai",
-        "I Want to Love You Till Your Dying Day",
-        "きみが死ぬまで恋をしたい",
-        "My Wish Is to Fall in Love Until You Die.",
-        "Kimishinu"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-07T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": "Tuesdays",
-        "time": "21:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Tuesdays at 21:30 (JST)"
-      },
-      "members": 47587,
-      "favorites": 267,
-      "mal_popularity": 3738,
-      "anticipation_score": 569.78,
-      "jikan_url": "https://myanimelist.net/anime/61126/Kimi_ga_Shinu_made_Koi_wo_Shitai",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/zJLbfK_9ZmQ?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Quiero amarte hasta el día de tu muerte",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Quiero amarte hasta el día de tu muerte"
-      ],
-      "description_es": "La muerte del compañero de cuarto de Sheena Totsuki se anuncia casualmente al comienzo de la clase y el día continúa como de costumbre. En un orfanato que cría a niños como soldados, la muerte no es nada nuevo para los residentes. Con su país de origen envuelto en una guerra que se ha prolongado durante demasiados años y no muestra signos de detenerse, los niños de la institución son enviados a morir en la batalla todos los días. A diferencia de los demás huérfanos, Sheena está profundamente perturbada por el conflicto en curso y desea que termine. La noche de la muerte de su compañera de cuarto, Sheena conoció a una niña cubierta de sangre que permaneció jubilosa a pesar de la condición en la que se encontraba. Al día siguiente, la niña aparece como una nueva estudiante en la clase de Sheena y se presenta como Mimi Kagari. Inicialmente se pensó que era un mito escolar, pero se dice que Mimi es el arma secreta del orfanato: una niña que no puede morir. Mimi, asignada como nueva compañera de cuarto de Sheena, espera llevarse bien con ella y acostumbrarse a la vida escolar. Sin embargo, inquieta por la actitud despreocupada de Mimi hacia la guerra, Sheena lucha por aceptar el mundo en el que viven, mientras su inusual amistad florece en medio de la sombría situación."
-    },
-    {
       "title": "Tokyo Revengers: Santen Sensou-hen",
       "mal_id": 59088,
       "image": "https://cdn.myanimelist.net/images/anime/1340/148694l.jpg",
@@ -3849,80 +1900,6 @@
         "Vengadores de Tokio: Santen Sensou-hen"
       ],
       "description_es": "Secuela de Tokyo Revengers: Tenjiku-hen."
-    },
-    {
-      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-      "mal_id": 60522,
-      "image": "https://cdn.myanimelist.net/images/anime/1544/157046l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2026,
-      "description": "Second season of Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu.",
-      "type": "TV",
-      "franchise": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu",
-      "ongoing": false,
-      "source_tags_original": [
-        "Light novel",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Isekai"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Skeleton Knight in Another World II",
-      "title_japanese": "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-      "title_synonyms": [
-        "Skeleton Knight in Another World 2nd Season"
-      ],
-      "search_titles": [
-        "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-        "Skeleton Knight in Another World II",
-        "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-        "Skeleton Knight in Another World 2nd Season"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-06T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": "Mondays",
-        "time": "22:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Mondays at 22:00 (JST)"
-      },
-      "members": 53052,
-      "favorites": 144,
-      "mal_popularity": 3504,
-      "anticipation_score": 568.21,
-      "jikan_url": "https://myanimelist.net/anime/60522/Gaikotsu_Kishi-sama_Tadaima_Isekai_e_Odekakechuu_II",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/_AWlBggXI9U?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Caballero esqueleto en otro mundo II",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Caballero esqueleto en otro mundo II"
-      ],
-      "description_es": "Segunda temporada de Gaikotsu Kishi-sama, Tadaima Isekai y Odekakechuu."
     },
     {
       "title": "SK∞ 2nd Season",
@@ -4205,81 +2182,6 @@
       "description_es": "Remake de One Piece."
     },
     {
-      "title": "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo 3rd Season",
-      "mal_id": 62811,
-      "image": "https://cdn.myanimelist.net/images/anime/1106/157174l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "Seinen",
-      "genres": [
-        "Comedy",
-        "Romance"
-      ],
-      "tone": "ligero",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Third season of Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo.",
-      "type": "TV",
-      "franchise": "Kimi no Koto ga Daidaidaidaidaisuki na",
-      "ongoing": false,
-      "source_tags_original": [
-        "Manga",
-        "PG-13 - Teens 13 or older"
-      ],
-      "themes": [
-        "Harem",
-        "Parody",
-        "School"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "The 100 Girlfriends Who Really, Really, Really, Really, Really Love You Season 3",
-      "title_japanese": "君のことが大大大大大好きな100人の彼女 3期",
-      "title_synonyms": [
-        "Hyakkano 3rd Season"
-      ],
-      "search_titles": [
-        "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo 3rd Season",
-        "The 100 Girlfriends Who Really, Really, Really, Really, Really Love You Season 3",
-        "君のことが大大大大大好きな100人の彼女 3期",
-        "Hyakkano 3rd Season"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "2026/summer",
-        "upcoming"
-      ],
-      "aired_from": "2026-07-05T00:00:00+00:00",
-      "aired_to": "",
-      "airing_status": "Not yet aired",
-      "broadcast": {
-        "day": "Sundays",
-        "time": "22:30",
-        "timezone": "Asia/Tokyo",
-        "string": "Sundays at 22:30 (JST)"
-      },
-      "members": 41091,
-      "favorites": 150,
-      "mal_popularity": 4056,
-      "anticipation_score": 557.28,
-      "jikan_url": "https://myanimelist.net/anime/62811/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season",
-      "trailer_url": "https://www.youtube-nocookie.com/embed/VMywkje8jWA?enablejsapi=1&wmode=opaque&autoplay=1",
-      "title_es": "Las 100 novias que de verdad, de verdad, de verdad, de verdad, de verdad te aman Temporada 3",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Las 100 novias que de verdad, de verdad, de verdad, de verdad, de verdad te aman Temporada 3"
-      ],
-      "description_es": "Tercera temporada de Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo."
-    },
-    {
       "title": "Kusuriya no Hitorigoto 3rd Season Part 2",
       "mal_id": 62841,
       "image": "https://cdn.myanimelist.net/images/anime/1667/152812l.jpg",
@@ -4502,6 +2404,579 @@
         "La magia de un retornado debería ser especial temporada 2"
       ],
       "description_es": "Segunda temporada de Kikansha no Mahou wa Tokubetsu desu."
+    },
+    {
+      "title": "Shiguang Dailiren III",
+      "mal_id": 61607,
+      "image": "https://cdn.myanimelist.net/images/anime/1801/158559l.jpg",
+      "episodes": 12,
+      "length": "medio",
+      "demographic": "",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Suspense"
+      ],
+      "tone": "oscuro",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "After the Li Tianchen incident came to a close, Time Photo Studio returned to a superficial peace. However, the news of Xia Fei's disappearance once again drew everyone into a crossroads of fate. With Vein's return and Qiao Ling's awakening of her superpowers, Cheng Xiaoshi and Lu Guang gradually uncover the secrets of the Bahati fire case, and Cheng Xiaoshi's father, Cheng Weimin, and mother, Shao Yuanyuan, also seem to have intricate connections to it. As the investigation deepens, Liu Xiao from a mysterious organization begins his operation, and the intervention of Yingdu police officer Jae further complicates this pursuit of the truth...",
+      "type": "ONA",
+      "franchise": "Shiguang Dailiren",
+      "ongoing": false,
+      "source_tags_original": [
+        "Original",
+        "R - 17+ (violence & profanity)"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Super Power",
+        "Time Travel"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "",
+      "title_japanese": "时光代理人III",
+      "title_synonyms": [
+        "时光代理人 第三季 Part One",
+        "Link Click Season 3 Part One",
+        "Shiguang Dailiren III Part One",
+        "时光代理人III Part One"
+      ],
+      "search_titles": [
+        "Shiguang Dailiren III",
+        "时光代理人III",
+        "时光代理人 第三季 Part One",
+        "Link Click Season 3 Part One",
+        "Shiguang Dailiren III Part One",
+        "时光代理人III Part One"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-08-14T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 26402,
+      "favorites": 78,
+      "mal_popularity": 4945,
+      "anticipation_score": 530.92,
+      "jikan_url": "https://myanimelist.net/anime/61607/Shiguang_Dailiren_III",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/3e3CpxgmolQ?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "Shiguang Dailiren III",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Shiguang Dailiren III"
+      ],
+      "description_es": "Después de que el incidente de Li Tianchen llegó a su fin, Time Photo Studio volvió a una paz superficial. Sin embargo, la noticia de la desaparición de Xia Fei una vez más llevó a todos a una encrucijada del destino. Con el regreso de Vein y el despertar de sus superpoderes por parte de Qiao Ling, Cheng Xiaoshi y Lu Guang descubren gradualmente los secretos del caso del incendio de Bahati, y el padre de Cheng Xiaoshi, Cheng Weimin, y su madre, Shao Yuanyuan, también parecen tener conexiones intrincadas con él. A medida que la investigación se profundiza, Liu Xiao, de una organización misteriosa, comienza su operación, y la intervención del oficial de policía de Yingdu, Jae, complica aún más esta búsqueda de la verdad..."
+    },
+    {
+      "title": "Nige Jouzu no Wakagimi 2nd Season",
+      "mal_id": 60059,
+      "image": "https://cdn.myanimelist.net/images/anime/1289/156329l.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "Shounen",
+      "genres": [
+        "Adventure",
+        "Comedy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2026,
+      "description": "Second season of Nige Jouzu no Wakagimi.",
+      "type": "TV",
+      "franchise": "Nige Jouzu no Wakagimi",
+      "ongoing": false,
+      "source_tags_original": [
+        "Manga",
+        "R - 17+ (violence & profanity)"
+      ],
+      "themes": [
+        "Historical",
+        "Samurai"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "The Elusive Samurai Season 2",
+      "title_japanese": "逃げ上手の若君 第二期",
+      "title_synonyms": [
+        "Nigewaka"
+      ],
+      "search_titles": [
+        "Nige Jouzu no Wakagimi 2nd Season",
+        "The Elusive Samurai Season 2",
+        "逃げ上手の若君 第二期",
+        "Nigewaka"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-07-01T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": "Unknown"
+      },
+      "members": 33056,
+      "favorites": 29,
+      "mal_popularity": 4489,
+      "anticipation_score": 530.79,
+      "jikan_url": "https://myanimelist.net/anime/60059/Nige_Jouzu_no_Wakagimi_2nd_Season",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/ZKY5R3r5a3M?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "El esquivo samurái temporada 2",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "El esquivo samurái temporada 2"
+      ],
+      "description_es": "Segunda temporada de Nige Jouzu no Wakagimi."
+    },
+    {
+      "title": "Sekiro: No Defeat",
+      "mal_id": 62312,
+      "image": "https://cdn.myanimelist.net/images/anime/1944/157379l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2026,
+      "description": "The time is Sengoku. Japan is fractured into many independent nations entangled in ceaseless war. At the center lies Ashina, a land of sacred earth and ancient mystery. Two decades after Sword Saint Isshin Ashina reclaimed the region in a brutal coup, a new threat emerges from within: The Interior Ministry. Desperate to protect his homeland, Isshin's grandson Gen'ichirou turns to forbidden powers. The only hope lies in a kidnapped boy—the Divine Heir—and his silent protector: a loyal shinobi known only as Sekiro. This is the story of a lord and his retainer—and their quest to restore balance to a nation on the edge.",
+      "type": "Movie",
+      "franchise": "Sekiro",
+      "ongoing": false,
+      "source_tags_original": [
+        "Game"
+      ],
+      "themes": [
+        "Historical",
+        "Samurai"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "Sekiro: No Defeat",
+      "title_japanese": "SEKIRO: NO DEFEAT",
+      "title_synonyms": [],
+      "search_titles": [
+        "Sekiro: No Defeat"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-09-04T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 22853,
+      "favorites": 104,
+      "mal_popularity": 5259,
+      "anticipation_score": 527.47,
+      "jikan_url": "https://myanimelist.net/anime/62312/Sekiro__No_Defeat",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/y5MiWXKGVyc?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "Sekiro: Sin derrota",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Sekiro: Sin derrota"
+      ],
+      "description_es": "El tiempo es Sengoku. Japón está dividido en muchas naciones independientes enredadas en guerras incesantes. En el centro se encuentra Ashina, una tierra de tierra sagrada y misterio antiguo. Dos décadas después de que Sword Saint Isshin Ashina recuperara la región mediante un brutal golpe de estado, surge una nueva amenaza desde dentro: el Ministerio del Interior. Desesperado por proteger su tierra natal, el nieto de Isshin, Gen'ichirou, recurre a poderes prohibidos. La única esperanza reside en un niño secuestrado, el Heredero Divino, y su protector silencioso: un shinobi leal conocido sólo como Sekiro. Esta es la historia de un señor y su vasallo, y su búsqueda para restablecer el equilibrio en una nación al límite."
+    },
+    {
+      "title": "Boku no Hero Academia: I Am a Hero Too",
+      "mal_id": 64107,
+      "image": "https://cdn.myanimelist.net/images/anime/1697/157239l.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "Shounen",
+      "genres": [
+        "Action"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2026,
+      "description": "Adaptation of the one-shot manga from the 2025 fanbook Boku no Hero Academia: Ultra-Age following high schooler Eri visit to U.A. High School.",
+      "type": "ONA",
+      "franchise": "Boku no Hero Academia",
+      "ongoing": false,
+      "source_tags_original": [
+        "Manga"
+      ],
+      "themes": [
+        "School",
+        "Super Power"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "My Hero Academia: I Am a Hero Too",
+      "title_japanese": "僕のヒーローアカデミア I am a hero too",
+      "title_synonyms": [],
+      "search_titles": [
+        "Boku no Hero Academia: I Am a Hero Too",
+        "My Hero Academia: I Am a Hero Too",
+        "僕のヒーローアカデミア I am a hero too"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-08-03T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 15697,
+      "favorites": 15,
+      "mal_popularity": 6078,
+      "anticipation_score": 491.18,
+      "jikan_url": "https://myanimelist.net/anime/64107/Boku_no_Hero_Academia__I_Am_a_Hero_Too",
+      "trailer_url": "",
+      "title_es": "My Hero Academia: Yo también soy un héroe",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "translated",
+      "search_titles_es": [
+        "My Hero Academia: Yo también soy un héroe",
+        "My Hero Academia"
+      ],
+      "description_es": "Adaptación del manga one-shot del fanbook de 2025 Boku no Hero Academia: Ultra-Age tras la visita de la estudiante de secundaria Eri a la U.A. Escuela secundaria."
+    },
+    {
+      "title": "The Ribbon Hero",
+      "mal_id": 64012,
+      "image": "https://cdn.myanimelist.net/images/anime/1048/158218l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "Shoujo",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "Sapphire is the princess of a kingdom that no longer exists. Having lost everything in her homeland of Silverland to the calamity known as \"Nergal,\" she wanders in despair until she finally arrives in Goldland. Though burdened by her past, she begins to find a glimmer of hope as she encounters the kindness of the people there. But as if to sneer at her peaceful new life, the calamity Nergal appears once more. The very despair that once reduced her homeland to ashes now threatens to steal the light from this land as well. \"I won't lose anything ever again. And I won't let anyone else lose anything either.\" Brushing away her tears of sorrow, the girl takes up her sword. This is the story of a lone hero who ties her ribbon and resolves to defy her fate.",
+      "type": "ONA",
+      "franchise": "The Ribbon Hero",
+      "ongoing": false,
+      "source_tags_original": [
+        "Manga"
+      ],
+      "themes": [
+        "Crossdressing"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "The Ribbon Hero",
+      "title_japanese": "THE RIBBON HERO リボンヒーロー",
+      "title_synonyms": [],
+      "search_titles": [
+        "The Ribbon Hero",
+        "THE RIBBON HERO リボンヒーロー"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-08-08T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 7235,
+      "favorites": 18,
+      "mal_popularity": 8288,
+      "anticipation_score": 458.33,
+      "jikan_url": "https://myanimelist.net/anime/64012/The_Ribbon_Hero",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/OmaHHbnKeYk?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "El héroe de la cinta",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "El héroe de la cinta"
+      ],
+      "description_es": "Zafiro es la princesa de un reino que ya no existe. Habiendo perdido todo en su tierra natal, Silverland, debido a la calamidad conocida como \"Nergal\", deambula desesperada hasta que finalmente llega a Goldland. Aunque agobiada por su pasado, comienza a encontrar un rayo de esperanza al encontrarse con la amabilidad de la gente de allí. Pero como para burlarse de su nueva y pacífica vida, la calamidad Nergal aparece una vez más. La misma desesperación que una vez redujo su tierra natal a cenizas ahora amenaza con robarle también la luz a esta tierra. \"No volveré a perder nada. Y tampoco dejaré que nadie más pierda nada\". Secándose las lágrimas de tristeza, la niña toma su espada. Esta es la historia de un héroe solitario que se ata la cinta y decide desafiar su destino."
+    },
+    {
+      "title": "Saishuu Gakushou Hibike! Euphonium: Kouhen",
+      "mal_id": 64019,
+      "image": "https://cdn.myanimelist.net/images/anime/1735/158372l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Drama"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "Second half of Saishuu Gakushou Hibike! Euphonium.",
+      "type": "Movie",
+      "franchise": "Saishuu Gakushou Hibike! Euphonium",
+      "ongoing": false,
+      "source_tags_original": [
+        "Novel",
+        "PG-13 - Teens 13 or older"
+      ],
+      "themes": [
+        "Music",
+        "Performing Arts",
+        "School"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "Sound! Euphonium: The Final Movie Part 2",
+      "title_japanese": "最終楽章 響け！ユーフォニアム 後編",
+      "title_synonyms": [],
+      "search_titles": [
+        "Saishuu Gakushou Hibike! Euphonium: Kouhen",
+        "Sound! Euphonium: The Final Movie Part 2",
+        "最終楽章 響け！ユーフォニアム 後編"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-09-11T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 5281,
+      "favorites": 6,
+      "mal_popularity": 9400,
+      "anticipation_score": 433.74,
+      "jikan_url": "https://myanimelist.net/anime/64019/Saishuu_Gakushou_Hibike_Euphonium__Kouhen",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/ynf-VjW-U4A?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "¡Sonido! Bombardino: La película final, parte 2",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "¡Sonido! Bombardino: La película final, parte 2"
+      ],
+      "description_es": "¡Segunda mitad de Saishuu Gakushou Hibike! Bombardino."
+    },
+    {
+      "title": "Kimi to Hanabi to Yakusoku to",
+      "mal_id": 63366,
+      "image": "https://cdn.myanimelist.net/images/anime/1430/158086l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Romance"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "bajo",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "Set around the Nagaoka Festival Grand Fireworks Show, one of Japan's three major fireworks displays, this story follows two high school students, Makoto and Akira. Though they live far apart in Tokyo and have never met, their lives are unexpectedly brought together by a single, mysterious painting of a firework. Drawn together by this strange connection, the two grow closer as time runs short. As the festival approaches, Makoto and Akira are faced with a decision that will change their futures forever.",
+      "type": "Movie",
+      "franchise": "Kimi to Hanabi to Yakusoku to",
+      "ongoing": false,
+      "source_tags_original": [
+        "Light novel"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "",
+      "title_japanese": "君と花火と約束と",
+      "title_synonyms": [
+        "You",
+        "Fireworks",
+        "and Our Promise"
+      ],
+      "search_titles": [
+        "Kimi to Hanabi to Yakusoku to",
+        "君と花火と約束と",
+        "You",
+        "Fireworks",
+        "and Our Promise"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-07-17T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 4168,
+      "favorites": 7,
+      "mal_popularity": 10175,
+      "anticipation_score": 424.51,
+      "jikan_url": "https://myanimelist.net/anime/63366/Kimi_to_Hanabi_to_Yakusoku_to",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/a37yywFt78M?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "Kimi a Hanabi a Yakusoku a",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Kimi a Hanabi a Yakusoku a"
+      ],
+      "description_es": "Ambientada en el Gran Espectáculo de Fuegos Artificiales del Festival de Nagaoka, uno de los tres principales espectáculos de fuegos artificiales de Japón, esta historia sigue a dos estudiantes de secundaria, Makoto y Akira. Aunque viven muy separados en Tokio y nunca se han conocido, sus vidas se unen inesperadamente gracias a una única y misteriosa pintura de un fuego artificial. Unidos por esta extraña conexión, los dos se vuelven más cercanos a medida que el tiempo se acaba. A medida que se acerca el festival, Makoto y Akira se enfrentan a una decisión que cambiará su futuro para siempre."
+    },
+    {
+      "title": "Chiikawa Movie: Ningyo no Shima no Himitsu",
+      "mal_id": 63011,
+      "image": "https://cdn.myanimelist.net/images/anime/1761/157085l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Slice of Life"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "bajo",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "Anime adaptation of the Siren arc.",
+      "type": "Movie",
+      "franchise": "Chiikawa Movie",
+      "ongoing": false,
+      "source_tags_original": [
+        "Web manga",
+        "G - All Ages"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_upcoming",
+      "title_english": "Chiikawa Movie: The Secret of the Mermaid Island",
+      "title_japanese": "映画ちいかわ 人魚の島のひみつ",
+      "title_synonyms": [],
+      "search_titles": [
+        "Chiikawa Movie: Ningyo no Shima no Himitsu",
+        "Chiikawa Movie: The Secret of the Mermaid Island",
+        "映画ちいかわ 人魚の島のひみつ"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "2026/summer",
+        "upcoming"
+      ],
+      "aired_from": "2026-07-24T00:00:00+00:00",
+      "aired_to": "",
+      "airing_status": "Not yet aired",
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 1989,
+      "favorites": 4,
+      "mal_popularity": 12740,
+      "anticipation_score": 386.32,
+      "jikan_url": "https://myanimelist.net/anime/63011/Chiikawa_Movie__Ningyo_no_Shima_no_Himitsu",
+      "trailer_url": "https://www.youtube-nocookie.com/embed/N5439yrq_l8?enablejsapi=1&wmode=opaque&autoplay=1",
+      "title_es": "Película de Chiikawa: El secreto de la isla de las sirenas",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Película de Chiikawa: El secreto de la isla de las sirenas"
+      ],
+      "description_es": "Adaptación al anime del arco de Siren."
     }
   ]
 }

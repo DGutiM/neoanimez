@@ -545,14 +545,21 @@ body.standalone-ios header img{height:56px}
 
 /* RANKING */
 #ranking-screen,#search-screen,#info-screen,#public-profile-screen{padding:16px}
-.ranking-stack{display:flex;flex-direction:column;gap:12px;padding-bottom:36px}
+.ranking-stack{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  padding-bottom:36px;
+}
 .ranking-group{
   background:linear-gradient(180deg, rgba(20,20,38,.96), rgba(12,12,24,.98));
   border:1px solid rgba(255,255,255,.08);
   border-radius:22px;
   box-shadow:0 18px 36px rgba(0,0,0,.20);
   overflow:hidden;
+  min-height:112px;
 }
+.ranking-group.open{grid-column:1/-1;min-height:0}
 .ranking-toggle{
   width:100%;
   border:none;
@@ -564,7 +571,9 @@ body.standalone-ios header img{height:56px}
   gap:12px;
   padding:16px 16px;
   cursor:pointer;
+  min-height:112px;
 }
+.ranking-group.open .ranking-toggle{min-height:0}
 .ranking-toggle:active{opacity:.9}
 .ranking-toggle-left{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
 .ranking-toggle-title{font-family:'Orbitron',monospace;font-size:12px;letter-spacing:.08em}
@@ -3486,6 +3495,9 @@ body.intro-open .title-language-widget{display:none}
   color:#ffd5e5;
 }
 @media(max-width:520px){
+  .ranking-stack{grid-template-columns:1fr;gap:10px}
+  .ranking-group{min-height:0}
+  .ranking-toggle{min-height:92px;padding:14px 15px}
   .community-board-top{grid-template-columns:1fr;justify-items:center}
   .community-board-top > div{grid-column:1;text-align:center}
   .community-back-btn{grid-column:1;justify-self:start}
@@ -3759,7 +3771,7 @@ button:disabled,
   .neo-today-title{font-size:19px}
   .neo-today-grid{grid-template-columns:1fr;gap:9px}
   .neo-today-action{min-height:86px}
-  .community-ranking-tabs{grid-template-columns:1fr;padding:0 8px 8px}
+  .community-ranking-tabs{grid-template-columns:repeat(3,minmax(0,1fr));padding:0 8px 8px}
   .title-language-widget{right:12px;top:calc(env(safe-area-inset-top) + 22px)}
   body.standalone-ios .title-language-widget{top:calc(env(safe-area-inset-top) + 31px)}
 }
@@ -4174,26 +4186,6 @@ body.cookie-banner-visible #intro-screen{
   </div>
 </div>
 
-<div id="neoTodayOverlay" class="neo-today-overlay hidden" aria-hidden="true">
-  <div class="neo-today-card" role="dialog" aria-modal="true" aria-labelledby="neoTodayTitle">
-    <button class="neo-today-close" type="button" aria-label="Cerrar aviso" onclick="closeNeoToday()">×</button>
-    <div class="neo-today-kicker" id="neoTodayKicker">Novedades anime</div>
-    <div class="neo-today-title" id="neoTodayTitle">Novedades de Junio</div>
-    <div class="neo-today-sub" id="neoTodaySub">Noticias y eventos de anime que estamos siguiendo este mes en NeoAnimeZ.</div>
-    <ul class="neo-today-alert-list" id="neoTodayNewsList">
-      <li>
-        <div class="neo-news-meta">NeoAnimeZ · Junio</div>
-        <div class="neo-news-title">Cargando novedades del mes...</div>
-        <div class="neo-news-summary">Si el archivo mensual tarda en cargar, la web seguirá funcionando con un aviso básico.</div>
-      </li>
-    </ul>
-    <div class="neo-today-actions">
-      <button class="neo-today-btn primary" type="button" onclick="goNeoTodayAction('community')">Ver comunidad</button>
-      <button class="neo-today-btn" type="button" onclick="closeNeoToday()">Cerrar</button>
-    </div>
-  </div>
-</div>
-
 <!-- FILTROS -->
 <div id="filter-screen" class="screen">
   <div class="sec-head">Catálogo por filtros</div>
@@ -4341,51 +4333,19 @@ body.cookie-banner-visible #intro-screen{
 
   <div class="community-overview" id="communityOverview">
     <div class="ranking-stack">
-      <section class="ranking-group open" id="communityNewsSection">
-        <button class="ranking-toggle" type="button" data-target="communityNewsList">
-          <span class="ranking-toggle-left">
-            <span class="ranking-toggle-title" id="communityNewsTitle">Novedades de Junio</span>
-            <span class="ranking-toggle-sub" id="communityNewsSub">Noticias y eventos de anime que estamos siguiendo este mes.</span>
-          </span>
-          <span class="ranking-toggle-icon">⌄</span>
-        </button>
-        <div class="ranking-body">
-          <ul class="neo-today-alert-list" id="communityNewsList">
-            <li>
-              <div class="neo-news-meta">NeoAnimeZ</div>
-              <div class="neo-news-title">Cargando novedades del mes...</div>
-              <div class="neo-news-summary">Las noticias se cargan desde el archivo mensual de NeoAnimeZ.</div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="ranking-group" id="rankingNeoSection">
-        <button class="ranking-toggle" type="button" data-target="rankingList">
-          <span class="ranking-toggle-left">
-            <span class="ranking-toggle-title">Selección NeoAnimeZ</span>
-            <span class="ranking-toggle-sub">Recomendaciones personales de nuestro equipo.</span>
-          </span>
-          <span class="ranking-toggle-icon">⌄</span>
-        </button>
-        <div class="ranking-body">
-          <div class="rlist" id="rankingList"></div>
-        </div>
-      </section>
-
       <section class="ranking-group" id="rankingCommunitySection">
         <button class="ranking-toggle" type="button" data-target="rankingCommunityList">
           <span class="ranking-toggle-left">
             <span class="ranking-toggle-title">Top Comunidad</span>
-            <span class="ranking-toggle-sub">Ordenado por nota ponderada y cantidad de votos.</span>
+            <span class="ranking-toggle-sub">Selección NeoAnimeZ y puntuaciones de la comunidad.</span>
           </span>
           <span class="ranking-toggle-icon">⌄</span>
         </button>
         <div class="ranking-body">
           <div class="community-ranking-tabs" role="tablist" aria-label="Orden de Top Comunidad">
-            <button class="community-ranking-tab active" type="button" data-community-ranking-mode="best" onclick="setCommunityRankingMode('best')">Mejor valorados</button>
+            <button class="community-ranking-tab active" type="button" data-community-ranking-mode="selection" onclick="setCommunityRankingMode('selection')">Selección NeoAnimeZ</button>
+            <button class="community-ranking-tab" type="button" data-community-ranking-mode="best" onclick="setCommunityRankingMode('best')">Mejor valorados</button>
             <button class="community-ranking-tab" type="button" data-community-ranking-mode="popular" onclick="setCommunityRankingMode('popular')">Más votados</button>
-            <button class="community-ranking-tab" type="button" data-community-ranking-mode="hidden" onclick="setCommunityRankingMode('hidden')">Joyas ocultas</button>
           </div>
           <div class="rlist" id="rankingCommunityList"></div>
         </div>
@@ -4404,35 +4364,6 @@ body.cookie-banner-visible #intro-screen{
         </div>
       </section>
 
-      <section class="ranking-group community-board-entry" id="communityBoardEntry">
-        <button class="ranking-toggle" type="button" onclick="openCommunityBoard()">
-          <span class="ranking-toggle-left">
-            <span class="ranking-toggle-title">Tablón NeoAnimeZ</span>
-            <span class="ranking-toggle-sub">Preguntas oficiales y respuestas de la comunidad.</span>
-          </span>
-          <span class="ranking-toggle-icon">›</span>
-        </button>
-      </section>
-
-      <section class="ranking-group community-game-entry" id="communityGuessEntry">
-        <button class="ranking-toggle" type="button" onclick="openNeoGuessGame()">
-          <span class="ranking-toggle-left">
-            <span class="ranking-toggle-title">NeoAdivino</span>
-            <span class="ranking-toggle-sub">Piensa en un personaje de anime y deja que NeoAnimeZ se moje.</span>
-          </span>
-          <span class="ranking-toggle-icon">?</span>
-        </button>
-      </section>
-
-      <section class="ranking-group community-arcade-entry" id="communityArcadeEntry">
-        <button class="ranking-toggle" type="button" onclick="openNeoArcadeGame()">
-          <span class="ranking-toggle-left">
-            <span class="ranking-toggle-title">NeoArcade</span>
-            <span class="ranking-toggle-sub">Esquiva portales con la ola NeoAnimeZ y compite en el Top Comunidad.</span>
-          </span>
-          <span class="ranking-toggle-icon">▶</span>
-        </button>
-      </section>
     </div>
   </div>
 
@@ -5151,7 +5082,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260623-list-news-community1';
+const APP_VERSION = '20260713-community-calendar2';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -5256,7 +5187,7 @@ let userProgressMap = new Map();
 let userDataOwnerId = '';
 let userPublicProfile = null;
 let communityRatingMap = new Map();
-let communityRankingMode = 'best';
+let communityRankingMode = 'selection';
 let upcomingAnimeMap = new Map();
 let upcomingPayload = null;
 let activeScreenName = 'intro';
@@ -13757,7 +13688,7 @@ function updateCommunityRankingModeButtons() {
 }
 
 function setCommunityRankingMode(mode) {
-  communityRankingMode = ['best', 'popular', 'hidden'].includes(mode) ? mode : 'best';
+  communityRankingMode = ['selection', 'best', 'popular'].includes(mode) ? mode : 'selection';
   updateCommunityRankingModeButtons();
   renderCommunityRanking();
 }
@@ -13784,22 +13715,10 @@ function getCommunityRankingItems(mode = communityRankingMode) {
       const weightedDiff = b.rating.weighted - a.rating.weighted;
       if (weightedDiff !== 0) return weightedDiff;
       return b.rating.average - a.rating.average;
-    },
-    hidden: (a, b) => {
-      const avgDiff = b.rating.average - a.rating.average;
-      if (avgDiff !== 0) return avgDiff;
-      const weightedDiff = b.rating.weighted - a.rating.weighted;
-      if (weightedDiff !== 0) return weightedDiff;
-      return a.rating.count - b.rating.count;
     }
   };
 
-  let items = base;
-  if (mode === 'hidden') {
-    items = base.filter(item => item.rating.count <= 6 && item.rating.average >= 7.5);
-  }
-
-  return items
+  return base
     .sort((a, b) => {
       const diff = (sorters[mode] || sorters.best)(a, b);
       if (diff !== 0) return diff;
@@ -13810,8 +13729,29 @@ function getCommunityRankingItems(mode = communityRankingMode) {
 
 function getCommunityRankingEmptyMessage() {
   if (communityRankingMode === 'popular') return 'Todavía no hay suficientes votos para ordenar por participación.';
-  if (communityRankingMode === 'hidden') return 'Aún no hay joyas ocultas con votos suficientes. Irán apareciendo cuando la comunidad puntúe más.';
   return 'Todavía no hay puntuaciones de la comunidad. Cuando los usuarios empiecen a votar, aparecerán aquí.';
+}
+
+function renderNeoSelection(container) {
+  container.innerHTML = '';
+  RANKING_DATA.forEach((rankingItem, index) => {
+    const fromCatalog = findAnimeByTitle(rankingItem.title)
+      || DB.find(anime => Number(anime.mal_id) === Number(rankingItem.mal_id))
+      || {};
+    const anime = {
+      ...fromCatalog,
+      title: fromCatalog.title || rankingItem.title,
+      mal_id: fromCatalog.mal_id || rankingItem.mal_id
+    };
+    const imageId = `ri-${index}`;
+    const card = buildRankingCard({ anime, rank: index + 1, imageId });
+    card.addEventListener('click', () => {
+      const image = card.querySelector('.rimg')?.src || BLANK;
+      openAnimeModal(anime, image);
+    });
+    container.appendChild(card);
+    loadAnimeImageById(imageId, anime, index * 60);
+  });
 }
 
 function renderCommunityRanking(emptyMessage = '') {
@@ -13820,6 +13760,10 @@ function renderCommunityRanking(emptyMessage = '') {
 
   communityContainer.innerHTML = '';
   updateCommunityRankingModeButtons();
+  if (communityRankingMode === 'selection') {
+    renderNeoSelection(communityContainer);
+    return;
+  }
   if (emptyMessage) {
     communityContainer.innerHTML = `<div class="ranking-empty">${emptyMessage}</div>`;
     return;
@@ -13840,7 +13784,7 @@ function renderCommunityRanking(emptyMessage = '') {
       : item.rating.average.toFixed(1);
     const scoreSubText = communityRankingMode === 'popular'
       ? (item.rating.count === 1 ? 'voto' : 'votos')
-      : (communityRankingMode === 'hidden' ? 'joya' : votesLabel);
+      : votesLabel;
     const div = buildRankingCard({
       anime: item.anime,
       rank: index + 1,
@@ -14013,42 +13957,20 @@ async function loadRanking() {
   if (rankingLoaded) {
     await fetchCommunityRatings({ silent: true });
     if (!upcomingPayload) await loadUpcomingRanking();
-    if (!monthlyNewsLoaded) await loadMonthlyNews();
     return;
   }
   rankingLoaded = true;
-  renderMonthlyNews();
 
-  const neoContainer = document.getElementById('rankingList');
   const communityContainer = document.getElementById('rankingCommunityList');
   const upcomingContainer = document.getElementById('rankingUpcomingList');
-  if (!neoContainer || !communityContainer || !upcomingContainer) return;
-  neoContainer.innerHTML = '';
-  communityContainer.innerHTML = '<div class="ranking-empty">Cargando puntuaciones de la comunidad...</div>';
+  if (!communityContainer || !upcomingContainer) return;
+  renderCommunityRanking();
   upcomingContainer.innerHTML = '<div class="ranking-empty">Cargando más esperados...</div>';
   hydrateCachedCommunityRatings();
 
-  for (let i = 0; i < RANKING_DATA.length; i++) {
-    const r = RANKING_DATA[i];
-    const db = findAnimeByTitle(r.title) || DB.find(a => a.mal_id === r.mal_id) || {};
-    const anime = { ...db, title: db.title || r.title, mal_id: db.mal_id || r.mal_id };
-    const imgId = 'ri-' + i;
-    const div = buildRankingCard({ anime, rank: i + 1, imageId: imgId });
-
-    div.addEventListener('click', () => {
-      const imgNow = div.querySelector('.rimg')?.src || BLANK;
-      openAnimeModal(anime, imgNow);
-    });
-
-    neoContainer.appendChild(div);
-
-    loadAnimeImageById(imgId, anime, i * 60);
-  }
-
   await Promise.all([
     fetchCommunityRatings({ silent: true }),
-    loadUpcomingRanking(),
-    loadMonthlyNews()
+    loadUpcomingRanking()
   ]);
 }
 
@@ -14257,6 +14179,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   initCookieBanner();
   renderIntroFlashMessage();
   await loadDB();
+  loadAnimeSchedule().catch(error => {
+    console.warn('No se pudo precargar el calendario:', error);
+  });
   const publicProfileSlug = readPublicProfileSlugFromUrl();
   const savedAppState = readAppState();
   const passwordJustUpdated = (() => {
