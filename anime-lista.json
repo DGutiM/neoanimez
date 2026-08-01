@@ -35684,7 +35684,7 @@
     "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen - Ryoushu no Youjo",
     "mal_id": 57466,
     "image": "https://myanimelist.net/images/anime/1371/155054l.jpg",
-    "episodes": 0,
+    "episodes": 24,
     "length": "medio",
     "demographic": "",
     "genres": [
@@ -137143,7 +137143,7 @@
     "title": "Lian Qi Shi Wan Nian",
     "mal_id": 54437,
     "image": "https://myanimelist.net/images/anime/1567/133308l.jpg",
-    "episodes": 360,
+    "episodes": 420,
     "length": "largo",
     "demographic": "",
     "genres": [
@@ -212434,7 +212434,7 @@
     "description": "Haruka Miyama sees Hiro, her best friend's son, as a member of her family. However, things become complicated when Hiro confesses his love and seduces Haruka while the latter's husband is on a business trip. Knowing that what they are doing is wrong, Haruka tries as best she can to reject him without hurting him, but she ends up giving in.",
     "type": "OVA",
     "franchise": "Gobaku: Moe Mama Tsurezure",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [],
     "themes": [],
     "description_es": "Haruka Miyama ve a Hiro, el hijo de su mejor amiga, como un miembro más de su familia. Sin embargo, las cosas se complican cuando Hiro confiesa su amor y seduce a Haruka mientras el marido de esta última está en un viaje de negocios. Sabiendo que lo que están haciendo está mal, Haruka intenta lo mejor que puede rechazarlo sin lastimarlo, pero termina cediendo.",
@@ -212455,13 +212455,13 @@
     "search_titles_es": [
       "Gobaku: Moe Mama Tsurezure"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2024-06-28",
-    "aired_to": ""
+    "aired_to": "2024-10-25"
   },
   {
     "title": "Jibi Eopseo",
@@ -226674,7 +226674,7 @@
     "title": "Dushi Gu Xian Yi",
     "mal_id": 59967,
     "image": "https://myanimelist.net/images/anime/1461/150190l.jpg",
-    "episodes": 180,
+    "episodes": 195,
     "length": "medio",
     "demographic": "",
     "genres": [
@@ -241599,7 +241599,7 @@
     "title": "Nikuen",
     "mal_id": 60470,
     "image": "https://myanimelist.net/images/anime/1896/149989l.jpg",
-    "episodes": 0,
+    "episodes": 2,
     "length": "medio",
     "demographic": "",
     "genres": [
@@ -241614,7 +241614,7 @@
     "description": "Rumors spread around the school about a new app that hypnotizes people. Meanwhile, busty high school student Aoi Era finally finds a boyfriend, and they go to visit her. In the hallway, they are met by her mother Yuko, who only looks out into the hallway, but does not come out. The girl has little interest in this situation. But it should be.",
     "type": "OVA",
     "franchise": "Nikuen",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [],
     "themes": [],
     "description_es": "En la escuela corren rumores sobre una nueva aplicación que hipnotiza a la gente. Mientras tanto, la tetona estudiante de secundaria Aoi Era finalmente encuentra novio y van a visitarla. En el pasillo, se encuentran con su madre Yuko, quien sólo mira hacia el pasillo, pero no sale. La niña tiene poco interés en esta situación. Pero debería serlo.",
@@ -241635,13 +241635,13 @@
     "search_titles_es": [
       "Yo tenía"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2025-02-21",
-    "aired_to": ""
+    "aired_to": "2025-04-18"
   },
   {
     "title": "Gegege no Kitarou: Daikaijuu",
@@ -247865,7 +247865,7 @@
     "title": "Bleach: Sennen Kessen-hen - Kashin-tan",
     "mal_id": 60636,
     "image": "https://myanimelist.net/images/anime/1653/154517l.jpg",
-    "episodes": 13,
+    "episodes": 10,
     "length": "corto",
     "demographic": "Shounen",
     "genres": [
@@ -247882,7 +247882,7 @@
     "description": "Final part of Bleach: Sennen Kessen-hen.",
     "type": "TV",
     "franchise": "Bleach",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "R - 17+ (violence & profanity)"
@@ -247907,7 +247907,7 @@
       "Bleach: Guerra de sangre de los mil años - La calamidad"
     ],
     "description_es": "Parte final de Bleach: Sennen Kessen-hen.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "23:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -248694,7 +248694,8 @@
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Fridays at 00:00 (JST)",
-    "aired_from": "2026-12-11"
+    "aired_from": "2026-12-11",
+    "aired_to": "2026-12-11"
   },
   {
     "title": "Tantei wa Mou, Shindeiru. Season 2",
@@ -249705,7 +249706,7 @@
     "broadcast_time": "23:56",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Thursdays at 23:56 (JST)",
-    "aired_from": "2026-07-09",
+    "aired_from": "2026-07-10",
     "aired_to": ""
   },
   {
@@ -250156,7 +250157,7 @@
     "title": "Nige Jouzu no Wakagimi 2nd Season",
     "mal_id": 60059,
     "image": "https://myanimelist.net/images/anime/1289/156329l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Shounen",
     "genres": [
@@ -250172,7 +250173,7 @@
     "description": "Second season of Nige Jouzu no Wakagimi.",
     "type": "TV",
     "franchise": "Nige Jouzu no Wakagimi",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "R - 17+ (violence & profanity)"
@@ -250203,7 +250204,7 @@
       "El esquivo samurái temporada 2"
     ],
     "description_es": "Segunda temporada de Nige Jouzu no Wakagimi.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -251102,7 +251103,7 @@
     "title": "Tai-Ari deshita.: Ojousama wa Kakutou Game nante Shinai",
     "mal_id": 46488,
     "image": "https://myanimelist.net/images/anime/1343/156268l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Seinen",
     "genres": [
@@ -251154,7 +251155,7 @@
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Tuesdays at 20:30 (JST)",
     "aired_from": "2026-07-07",
-    "aired_to": ""
+    "aired_to": "2026-09-22"
   },
   {
     "title": "Dragon Ball Super: Beerus",
@@ -251593,11 +251594,11 @@
     ],
     "description_es": "Tercera temporada de Ranma ½ (2024).",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "00:56",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 00:56 (JST)",
+    "aired_from": "2026-10-04",
     "aired_to": ""
   },
   {
@@ -251663,7 +251664,7 @@
     "title": "Futsutsuka na Akujo dewa Gozaimasu ga: Suuguu Chouso Torikae Den",
     "mal_id": 61240,
     "image": "https://myanimelist.net/images/anime/1177/148527l.jpg",
-    "episodes": null,
+    "episodes": 11,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -255106,11 +255107,11 @@
     ],
     "description_es": "Tumbada en su lecho de muerte sin aparentemente ninguna posibilidad de recuperarse, la joven Nia Liston pronto sucumbirá a su enfermedad. Incapaces de perder la esperanza, sus padres buscan desesperadamente una cura incluso en los lugares más oscuros, lo que lleva a la aparición de un hombre encapuchado que afirma que puede ayudar a Nia a deshacerse de su enfermedad. Pero en lugar de curarla, el hombre encapuchado trasplanta el alma de un héroe fallecido que quedó invicto en la batalla al frágil cuerpo de la niña. Al tener una segunda oportunidad en la vida como Nia, la heroína está decidida a recuperar la fuerza de su nuevo cuerpo mediante el uso de una técnica conocida como chi para atacar y eliminar la enfermedad desde sus raíces. Como su entusiasmo por el combate también ha quedado atrás, Nia está ansiosa por volver a explorar el mundo. Sin embargo, el alma inquieta del héroe anhela encontrar un oponente digno que pueda derrotarla en el campo de batalla, provocando el caos donde quiera que vaya Nia.",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Tuesdays",
+    "broadcast_time": "21:26",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Tuesdays at 21:26 (JST)",
+    "aired_from": "2026-10-06",
     "aired_to": ""
   },
   {
@@ -256759,7 +256760,9 @@
       "¡Sueño de explosión! Ave Mujica: Primer Amanecer"
     ],
     "description_es": "¡Nueva película para BanG Dream! Ave Mujica.",
-    "airing_status": "Not yet aired"
+    "airing_status": "Not yet aired",
+    "aired_from": "2026-10-16",
+    "aired_to": "2026-10-16"
   },
   {
     "title": "Meikyuu no Shiori",
@@ -257491,7 +257494,7 @@
       "Kimi a Hanabi a Yakusoku a"
     ],
     "description_es": "Ambientada en el Gran Espectáculo de Fuegos Artificiales del Festival de Nagaoka, uno de los tres principales espectáculos de fuegos artificiales de Japón, esta historia sigue a dos estudiantes de secundaria, Makoto y Akira. Aunque viven muy separados en Tokio y nunca se han conocido, sus vidas se unen inesperadamente gracias a una única y misteriosa pintura de un fuego artificial. Unidos por esta extraña conexión, los dos se vuelven más cercanos a medida que el tiempo se acaba. A medida que se acerca el festival, Makoto y Akira se enfrentan a una decisión que cambiará su futuro para siempre.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -257964,7 +257967,7 @@
       "Película de Chiikawa: El secreto de la isla de las sirenas"
     ],
     "description_es": "Adaptación al anime del arco de Siren.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -258613,11 +258616,11 @@
     ],
     "description_es": "Noriko Tachiki lleva algún tiempo soñando con una hermosa tierra de fantasía, aunque sus amigos creen que es sólo su imaginación. Un día, de camino a casa, Noriko se topa con una bomba disfrazada de bolsa de papel que explota justo delante de ella. Sin embargo, en lugar de morir, es transportada a un misterioso bosque lleno de extrañas plantas y criaturas. Mientras comienza a navegar por el bosque, Noriko es repentinamente atacada por un monstruo gigante parecido a un gusano. Afortunadamente, es salvada por Izark Kia Tarj, un espadachín que no habla su idioma. Al carecer de la fuerza para sobrevivir por sí misma, Noriko decide seguir a su estoico salvador, aprovechando la oportunidad para aprender el idioma de la tierra extranjera y ser más útil para Izark. Sin que ella lo sepa, Noriko es una pieza crucial de una antigua profecía. Ella es \"El Despertar\", un ser destinado a desatar el mayor mal conocido como el \"Demonio del Cielo\". Mientras personas influyentes conspiran para capturar a Noriko por sus supuestos poderes, tanto ella como Izark deben valerse por sí mismos y superar un futuro plagado de caos.",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Mondays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Mondays at 00:00 (JST)",
+    "aired_from": "2026-10-05",
     "aired_to": ""
   },
   {
@@ -258997,7 +259000,7 @@
     "title": "Yi Nian Yong Heng 4th Season",
     "mal_id": 62248,
     "image": "https://myanimelist.net/images/anime/1034/151455l.jpg",
-    "episodes": null,
+    "episodes": 46,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -259014,7 +259017,7 @@
     "description": "For the sake of all living beings, Bai Xiaochun is forced to engage in a final battle with Tongtian Daoist. With the old world shattered, the group is scattered across the Eternal Continent beyond the heavens. Here, Bai Xiaochun will face even greater challenges and more powerful enemies…",
     "type": "ONA",
     "franchise": "Yi Nian Yong Heng",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -259045,11 +259048,11 @@
       "Una voluntad eterna 4ta temporada"
     ],
     "description_es": "Por el bien de todos los seres vivos, Bai Xiaochun se ve obligado a participar en una batalla final con el taoísta tongtiano. Con el viejo mundo destrozado, el grupo se encuentra disperso por el Continente Eterno más allá de los cielos. Aquí, Bai Xiaochun enfrentará desafíos aún mayores y enemigos más poderosos…",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Wednesdays",
-    "broadcast_time": "00:00",
+    "broadcast_time": "11:00",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Wednesdays at 00:00 (JST)",
+    "broadcast_string": "Wednesdays at 11:00 (JST)",
     "aired_from": "2026-07-22",
     "aired_to": ""
   },
@@ -259313,7 +259316,7 @@
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
-    "aired_from": "",
+    "aired_from": "2026-10-03",
     "aired_to": ""
   },
   {
@@ -259802,13 +259805,13 @@
       "Cyborg 009: Némesis"
     ],
     "description_es": "Nuevo proyecto de animación para Cyborg 009.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Sundays at 00:00 (JST)",
     "aired_from": "2026-07-19",
-    "aired_to": ""
+    "aired_to": "2026-07-19"
   },
   {
     "title": "Kai Pai La! Guaishou Da Dianying",
@@ -260033,7 +260036,7 @@
     "title": "Biao Ren Er",
     "mal_id": 62241,
     "image": "https://myanimelist.net/images/anime/1859/151421l.jpg",
-    "episodes": null,
+    "episodes": 8,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -260048,7 +260051,7 @@
     "description": "In the third year of the Daye era, unrest stirred on the frontier. Emperor Yang of Sui made a northern tour to intimidate the western borders. Entrusted by an old friend, the escort Dao Ma escorted the rebel leader Zhi Shilang to Chang'an to fulfill his ideal of saving the world from chaos. However, a single, hateful eye followed him closely. Past events and present crises surfaced; in this chaotic world, see how Dao Ma stirs up a bloody storm in the martial world!",
     "type": "ONA",
     "franchise": "Biao Ren Er",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Manga",
       "R - 17+ (violence & profanity)"
@@ -260080,13 +260083,13 @@
       "Espadas de los Guardianes 2da Temporada"
     ],
     "description_es": "En el tercer año de la era Daye, se produjeron disturbios en la frontera. El emperador Yang de Sui hizo una gira por el norte para intimidar las fronteras occidentales. Encargada por un viejo amigo, la escolta Dao Ma escoltó al líder rebelde Zhi Shilang a Chang'an para cumplir su ideal de salvar al mundo del caos. Sin embargo, un único ojo lleno de odio lo siguió de cerca. Acontecimientos pasados ​​y crisis presentes salieron a la luz; ¡En este mundo caótico, mira cómo Dao Ma provoca una tormenta sangrienta en el mundo marcial!",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-06-11",
-    "aired_to": ""
+    "aired_to": "2026-07-23"
   },
   {
     "title": "Ojisan wa Kawaii Mono ga Osuki.",
@@ -260131,11 +260134,11 @@
     ],
     "description_es": "Mitsutaka Oji es un apuesto oficinista de 40 años que es admirado por sus colegas. Por supuesto, tiene un secreto que intenta ocultar a todos: le encantan las cosas lindas. Pero con su sobrino yendo a su apartamento, ¡el secreto de Mitsutaka ahora está en peligro!",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "22:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 22:00 (JST)",
+    "aired_from": "2026-10-04",
     "aired_to": ""
   },
   {
@@ -260349,7 +260352,7 @@
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
-    "aired_from": "",
+    "aired_from": "2026-10-07",
     "aired_to": ""
   },
   {
@@ -261770,7 +261773,7 @@
     "description": "Three ordinary schoolboys come into possession of a DVD that supposedly opens a gateway to a parallel universe, but when their backs are turned Pyontarou's little sister Futaba passes through and gets kidnapped by the aliens that have overrun that version of Earth! Discovering that their cartoonish bodies make them supermen in the hyper-realistic parallel universe, the boys set out to rescue Futaba.",
     "type": "TV",
     "franchise": "Thunder",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -261795,7 +261798,13 @@
     "search_titles_es": [
       "Trueno 3"
     ],
-    "description_es": "Tres escolares comunes y corrientes toman posesión de un DVD que supuestamente abre una puerta a un universo paralelo, pero cuando les dan la espalda, la hermana pequeña de Pyontarou, Futaba, pasa y es secuestrada por los extraterrestres que han invadido esa versión de la Tierra. Al descubrir que sus cuerpos caricaturescos los convierten en superhombres en el universo paralelo hiperrealista, los chicos se propusieron rescatar a Futaba."
+    "description_es": "Tres escolares comunes y corrientes toman posesión de un DVD que supuestamente abre una puerta a un universo paralelo, pero cuando les dan la espalda, la hermana pequeña de Pyontarou, Futaba, pasa y es secuestrada por los extraterrestres que han invadido esa versión de la Tierra. Al descubrir que sus cuerpos caricaturescos los convierten en superhombres en el universo paralelo hiperrealista, los chicos se propusieron rescatar a Futaba.",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Thursdays",
+    "broadcast_time": "00:44",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Thursdays at 00:44 (JST)",
+    "aired_from": "2026-07-09"
   },
   {
     "title": "The Bloody Mary",
@@ -262003,7 +262012,7 @@
     "title": "Mahou no Princess Minky Momo: Akogare no Yume e - Magokoro no Duo",
     "mal_id": 63167,
     "image": "https://myanimelist.net/images/anime/1006/156292l.jpg",
-    "episodes": null,
+    "episodes": 1,
     "length": "corto",
     "demographic": "",
     "genres": [],
@@ -262050,12 +262059,12 @@
     ],
     "description_es": "Un nuevo video anime original de Mahou no Princess Minky Momo.",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
-    "aired_to": ""
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
+    "aired_from": "2026-11-13",
+    "aired_to": "2026-11-13"
   },
   {
     "title": "Himitsu no AiPri Movie: Mankai Buzzlume Live!",
@@ -262176,7 +262185,7 @@
     "description": "Luo Li has been trapped in the soulless Yinzhou Continent since he was a child and became the number one killer of Tianjue Killing Hall. His father, Master Ciyun, sacrificed himself to buy Luo Li a chance to escape from Yinzhou and go to Zhongtian Main World to find the true way to cultivate immortality.",
     "type": "ONA",
     "franchise": "Dadao Duxing",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -262204,13 +262213,13 @@
       "Caminando el camino solo"
     ],
     "description_es": "Luo Li ha estado atrapado en el desalmado continente Yinzhou desde que era un niño y se convirtió en el asesino número uno de Tianjue Killing Hall. Su padre, el maestro Ciyun, se sacrificó para darle a Luo Li la oportunidad de escapar de Yinzhou e ir al mundo principal de Zhongtian para encontrar la verdadera manera de cultivar la inmortalidad.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-04-06",
-    "aired_to": ""
+    "aired_to": "2026-07-13"
   },
   {
     "title": "Zhongguo Qi Tan 2",
@@ -262366,7 +262375,7 @@
     "title": "Jiang Ye",
     "mal_id": 60571,
     "image": "https://myanimelist.net/images/anime/1021/156293l.jpg",
-    "episodes": 16,
+    "episodes": 19,
     "length": "medio",
     "demographic": "",
     "genres": [
@@ -262646,7 +262655,7 @@
       "Crayon Shin-chan Película 34: ¡Kikikaikai! Ora no Youkai Bake-shon"
     ],
     "description_es": "La película número 34 de Crayon Shin-chan.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -263296,7 +263305,7 @@
     "description": "The story follows Li Xiongmao, a human boy raised by the demon race, who is ordered by his master to leave Black and White Mountain to kill three enemies who destroyed the demon race. In the process of investigating the truth, he gradually uncovers the conflict between humans and demons, the secrets of the dynasty, and the mystery of his own destiny.",
     "type": "ONA",
     "franchise": "Li Xiongmao",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Novel"
     ],
@@ -263319,12 +263328,12 @@
       "Li Xiong Mao"
     ],
     "description_es": "La historia sigue a Li Xiongmao, un niño humano criado por la raza demoníaca, a quien su maestro le ordena abandonar la Montaña Blanca y Negra para matar a tres enemigos que destruyeron la raza demoníaca. En el proceso de investigar la verdad, poco a poco descubre el conflicto entre humanos y demonios, los secretos de la dinastía y el misterio de su propio destino.",
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Wednesdays",
+    "broadcast_time": "10:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Wednesdays at 10:00 (JST)",
+    "aired_from": "2026-07-29",
     "aired_to": ""
   },
   {
@@ -263371,7 +263380,14 @@
     "search_titles_es": [
       "¡¡Pelea de cartas!! Vanguardia: Divinez Unmei Seisen-hen"
     ],
-    "description_es": "¡¡Arco final de Cardfight!! Vanguardia: Serie D."
+    "description_es": "¡¡Arco final de Cardfight!! Vanguardia: Serie D.",
+    "airing_status": "Not yet aired",
+    "broadcast_day": "Saturdays",
+    "broadcast_time": "23:30",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Saturdays at 23:30 (JST)",
+    "aired_from": "2026-11-07",
+    "aired_to": "2026-11-21"
   },
   {
     "title": "Cang Yuan Tu Qianzhuan: Dongning Fu de Xiatian",
@@ -263465,7 +263481,9 @@
     "search_titles_es": [
       "Zorro: Kitsuné-tsuki"
     ],
-    "airing_status": "Not yet aired"
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-07-19",
+    "aired_to": "2026-07-19"
   },
   {
     "title": "Gelpiyo",
@@ -263585,7 +263603,7 @@
     "description": "On Yulan Continent, a fantasy world filled with magical creatures and dazzling sorcery, a fallen noble boy from Wushan Town, Linley Baruch, steps into his dusty ancestral home one day and accidentally discovers what seems to be an ordinary ring, the Coiling Dragon Ring. From that moment on, his life is forever changed. With the help of the ring spirit, Delia Covet, Linley embarks on a legendary journey and begins his path to becoming a great mage. Driven by perseverance, determination, and an unyielding spirit, the young man from a small town continues to break through his limits, tempering himself through countless life and death trials as he rises step by step to the peak of power.",
     "type": "ONA",
     "franchise": "Panlong",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -263610,13 +263628,13 @@
       "Dragón Enrollado"
     ],
     "description_es": "En el continente Yulan, un mundo de fantasía lleno de criaturas mágicas y hechicería deslumbrante, un niño noble caído de la ciudad de Wushan, Linley Baruch, entra un día en su polvoriento hogar ancestral y descubre accidentalmente lo que parece ser un anillo ordinario, el Anillo del Dragón Enrollado. A partir de ese momento su vida cambia para siempre. Con la ayuda del espíritu del anillo, Delia Covet, Linley se embarca en un viaje legendario y comienza su camino para convertirse en un gran mago. Impulsado por la perseverancia, la determinación y un espíritu inquebrantable, el joven de un pequeño pueblo continúa superando sus límites, templandose a través de innumerables pruebas de vida o muerte mientras asciende paso a paso hasta la cima del poder.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-04-30",
-    "aired_to": ""
+    "aired_to": "2026-07-09"
   },
   {
     "title": "Hyakushou Kizoku 3rd Season Specials",
@@ -263713,7 +263731,14 @@
     "search_titles_es": [
       "Shiranuhi"
     ],
-    "description_es": "El corto está ambientado en una ciudad costera de Kumamoto a finales del verano de 1996. Minato, un niño de 10 años, vive una vida precaria con su padre borracho. La única fuente de fuerza de Minato es Ben-chan, una diosa con forma de niña que apareció en la isla Benten. El tiempo que pasa con ella son los únicos momentos en los que se siente como él mismo. Pero cuando está a punto de ser separado de Ben-chan debido a que lo enviarán a un hogar para niños, Minato le reza a un Shiranuhi, una luz misteriosa que flota sobre el mar, para que le conceda un deseo. Su deseo, lleno de odio hacia su padre, acaba convirtiéndose en una maldición."
+    "description_es": "El corto está ambientado en una ciudad costera de Kumamoto a finales del verano de 1996. Minato, un niño de 10 años, vive una vida precaria con su padre borracho. La única fuente de fuerza de Minato es Ben-chan, una diosa con forma de niña que apareció en la isla Benten. El tiempo que pasa con ella son los únicos momentos en los que se siente como él mismo. Pero cuando está a punto de ser separado de Ben-chan debido a que lo enviarán a un hogar para niños, Minato le reza a un Shiranuhi, una luz misteriosa que flota sobre el mar, para que le conceda un deseo. Su deseo, lleno de odio hacia su padre, acaba convirtiéndose en una maldición.",
+    "airing_status": "Not yet aired",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
+    "aired_from": "2026-08-21",
+    "aired_to": "2026-08-21"
   },
   {
     "title": "PetitCure: Precure Fairies Season 3",
@@ -264762,7 +264787,7 @@
     "description": "A chance encounter between young Tang Zhi and a dragon maiden unexpectedly awakened his \"Heavenly Eye\"—allowing him to see gods and spirits roaming the mortal realm. These unique eyes led him into a world that coexisted with the mundane. Through unforgettable experiences, Tang Zhi made friends with all sorts of people and experienced laughter and warmth in seemingly ordinary yet subtly wondrous daily moments. An ordinary scholar, encountering and accompanying a group of gods and spirits with diverse personalities amidst the everyday life of the mortal world—this story of adventure, friendship, and growth is slowly unfolding.",
     "type": "ONA",
     "franchise": "Tang Zhi Zhi Yi",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Original",
       "PG-13 - Teens 13 or older"
@@ -264788,13 +264813,13 @@
       "Tang Zhi Zhi Yi"
     ],
     "description_es": "Un encuentro casual entre el joven Tang Zhi y una doncella dragón despertó inesperadamente su \"Ojo Celestial\", permitiéndole ver dioses y espíritus deambulando por el reino de los mortales. Estos ojos únicos lo llevaron a un mundo que coexistía con lo mundano. A través de experiencias inolvidables, Tang Zhi se hizo amigo de todo tipo de personas y experimentó la risa y la calidez en momentos diarios aparentemente ordinarios pero sutilmente maravillosos. Un erudito común y corriente que se encuentra y acompaña a un grupo de dioses y espíritus con diversas personalidades en medio de la vida cotidiana del mundo mortal: esta historia de aventuras, amistad y crecimiento se va desarrollando lentamente.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-02-02",
-    "aired_to": ""
+    "aired_to": "2026-07-13"
   },
   {
     "title": "Tiancai Julebu",
@@ -265028,7 +265053,10 @@
     "search_titles_es": [
       "Moshi, Korekara Umareru no Nara"
     ],
-    "description_es": "Unos gemelos sin nombre aterrizan en cierto planeta. Dirigidos por un guía, se aventuran en un mundo misterioso en busca de su madre, a quien nunca han conocido. Sin embargo, su camino comienza a desmoronarse bajo el peso del dolor de su madre."
+    "description_es": "Unos gemelos sin nombre aterrizan en cierto planeta. Dirigidos por un guía, se aventuran en un mundo misterioso en busca de su madre, a quien nunca han conocido. Sin embargo, su camino comienza a desmoronarse bajo el peso del dolor de su madre.",
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-07-19",
+    "aired_to": "2026-07-19"
   },
   {
     "title": "Side Quest King (KISAI remix)",
@@ -265885,7 +265913,7 @@
     "description": "Part two of Fei Ren Zai 3rd Season.",
     "type": "ONA",
     "franchise": "Fei Ren Zai",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web manga",
       "PG-13 - Teens 13 or older"
@@ -265920,13 +265948,13 @@
       "Fei Ren Zai 3.ª temporada, parte 2"
     ],
     "description_es": "Segunda parte de la tercera temporada de Fei Ren Zai.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Tuesdays",
     "broadcast_time": "13:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Tuesdays at 13:00 (JST)",
     "aired_from": "2026-05-05",
-    "aired_to": ""
+    "aired_to": "2026-07-14"
   },
   {
     "title": "Cardfight!! Vanguard 15-shuunen Kinen PV",
@@ -266494,7 +266522,7 @@
     "title": "Zeri Feisheng",
     "mal_id": 61619,
     "image": "https://myanimelist.net/images/anime/1414/156918l.jpg",
-    "episodes": null,
+    "episodes": 30,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -266511,7 +266539,7 @@
     "description": "In chaotic times, evil spirits are rampant and treacherous people are in power. At the same time, the underworld invaded, and the forces of the two worlds poisoned the human world. The snake catcher Xu Ying could not stand and watch the gods working for the underworld oppress the common people, so he rebelled and committed the crime of killing the gods. He also killed the court officials who did nothing. He was hunted down by the forces of the two worlds and began his life of escape...",
     "type": "ONA",
     "franchise": "Zeri Feisheng",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -266540,7 +266568,13 @@
     "search_titles_es": [
       "Zeri Feisheng"
     ],
-    "description_es": "En tiempos caóticos, los espíritus malignos campan a sus anchas y hay personas traidoras en el poder. Al mismo tiempo, el inframundo invadió y las fuerzas de los dos mundos envenenaron el mundo humano. El cazador de serpientes Xu Ying no podía soportar y ver a los dioses que trabajaban para el inframundo oprimir a la gente común, por lo que se rebeló y cometió el crimen de matar a los dioses. También mató a los funcionarios judiciales que no hicieron nada. Fue perseguido por las fuerzas de los dos mundos y comenzó su vida de escape..."
+    "description_es": "En tiempos caóticos, los espíritus malignos campan a sus anchas y hay personas traidoras en el poder. Al mismo tiempo, el inframundo invadió y las fuerzas de los dos mundos envenenaron el mundo humano. El cazador de serpientes Xu Ying no podía soportar y ver a los dioses que trabajaban para el inframundo oprimir a la gente común, por lo que se rebeló y cometió el crimen de matar a los dioses. También mató a los funcionarios judiciales que no hicieron nada. Fue perseguido por las fuerzas de los dos mundos y comenzó su vida de escape...",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Saturdays",
+    "broadcast_time": "10:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Saturdays at 10:00 (JST)",
+    "aired_from": "2026-07-18"
   },
   {
     "title": "Dongda Gao Wu Xueyuan",
@@ -266562,7 +266596,7 @@
     "description": "Orphan Qin Yu was specially admitted to the top cultivation academy, Dongda Martial Academy. Behind the city's calm, a demonic threat quietly approached. Qin Yu vowed to lead his fellow disciples to resist the invading demons.",
     "type": "ONA",
     "franchise": "Dongda Gao Wu Xueyuan",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Original",
       "PG-13 - Teens 13 or older"
@@ -266590,7 +266624,7 @@
       "Academia Marcial Oriental"
     ],
     "description_es": "El huérfano Qin Yu fue admitido especialmente en la principal academia de cultivo, la Academia Marcial Dongda. Detrás de la calma de la ciudad, una amenaza demoníaca se acercaba silenciosamente. Qin Yu prometió liderar a sus compañeros discípulos para resistir a los demonios invasores.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
@@ -267834,7 +267868,7 @@
     "description": "",
     "type": "OVA",
     "franchise": "Harem Shima e Youkoso!",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Visual novel",
       "Rx - Hentai"
@@ -267857,7 +267891,7 @@
     "search_titles_es": [
       "¡Harem Shima y Youkoso!"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -268175,7 +268209,7 @@
     "description": "Gu Feiyang, the third strongest warrior on the Tianwu Continent and the Martial Emperor Pojun, was bound by the world's rules, his cultivation stuck at the Nine Heavens Martial Emperor realm for many years, unable to break through. To escape this predicament, he used the affections of Qu Hongyan, the mistress of the Shenxiao Palace, to orchestrate a grand scheme, sacrificing extraterrestrial demonic energy to reincarnate and cultivate anew. In his reincarnation, he was named Li Yunxiao, a 15-year-old boy from the Tianshui Kingdom and the eldest grandson of the Li family of the Marshal's Mansion. At this time, Tianshui was beset by powerful enemies invading from the outside and princes vying for the throne from within, making the Li family, who held military power, the center of a vortex of crisis. Faced with the power struggles of everyone, Li Yunxiao stood at a higher level, calmly breaking through the impasse. He deeply understood that in this world where martial arts reign supreme, all power ultimately came from within, and his goal remained singular: to complete the scheme laid out in his previous life and build a foundation for the Divine Realm.",
     "type": "ONA",
     "franchise": "Wangu Zhizun",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -268204,7 +268238,7 @@
       "El Eterno Supremo, Li Yunxiao"
     ],
     "description_es": "Gu Feiyang, el tercer guerrero más fuerte en el continente Tianwu y el emperador marcial Pojun, estaba sujeto a las reglas del mundo, su cultivo estancado en el reino del Emperador Marcial de los Nueve Cielos durante muchos años, incapaz de abrirse paso. Para escapar de esta situación, utilizó el afecto de Qu Hongyan, la dueña del Palacio Shenxiao, para orquestar un gran plan, sacrificando energía demoníaca extraterrestre para reencarnar y cultivarse de nuevo. En su reencarnación, fue nombrado Li Yunxiao, un chico de 15 años del Reino de Tianshui y el nieto mayor de la familia Li de la Mansión del Mariscal. En ese momento, Tianshui estaba acosado por enemigos poderosos que invadían desde el exterior y príncipes que competían por el trono desde dentro, convirtiendo a la familia Li, que ostentaba el poder militar, en el centro de un vórtice de crisis. Frente a las luchas de poder de todos, Li Yunxiao se situó en un nivel superior, superando con calma el punto muerto. Comprendió profundamente que en este mundo donde reinan las artes marciales, todo el poder en última instancia proviene de dentro, y su objetivo sigue siendo singular: completar el plan establecido en su vida anterior y construir una base para el Reino Divino.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
@@ -268287,7 +268321,7 @@
     "description": "In the ancient apocalypse, Xihe, a girl from the Huihua tribe, escaped from a tragic rebellion in her tribe's territory. Breaking free from the control of the Qiongming Demon Clan, she embarks on a journey to find the Demon-Slaying Divine Sword, igniting a war between six armies.",
     "type": "ONA",
     "franchise": "Yun Shen Buzhi Meng Special",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Original"
     ],
@@ -268319,13 +268353,13 @@
       "Eclipse of Illusion SP: La Guerra del Miasma"
     ],
     "description_es": "En el antiguo apocalipsis, Xihe, una niña de la tribu Huihua, escapó de una trágica rebelión en el territorio de su tribu. Liberándose del control del Clan Demonio Qiongming, se embarca en un viaje para encontrar la Espada Divina Asesina de Demonios, iniciando una guerra entre seis ejércitos.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Wednesdays",
     "broadcast_time": "11:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Wednesdays at 11:00 (JST)",
     "aired_from": "2026-06-17",
-    "aired_to": ""
+    "aired_to": "2026-07-15"
   },
   {
     "title": "Xi Yangyang Yu Hui Tailang: Gu Guguai Jie You Guguai",
@@ -271335,7 +271369,7 @@
     "title": "Yi Zhan Cangqiong",
     "mal_id": 62789,
     "image": "https://cdn.myanimelist.net/images/anime/1969/157604l.jpg",
-    "episodes": null,
+    "episodes": 26,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -271351,7 +271385,7 @@
     "description": "In the darkest moment of Celestial Realm, the crippled youth Gu An seized the power of an ancient god amid life-or-death peril. Wielding infinite spiritual energy and a mortal blade, he destroyed evildoers, avenged deep grudges, and struck down the heavens.",
     "type": "ONA",
     "franchise": "Yi Zhan Cangqiong",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Original",
       "PG-13 - Teens 13 or older"
@@ -271379,12 +271413,12 @@
       "guaan"
     ],
     "description_es": "En el momento más oscuro del Reino Celestial, el joven lisiado Gu An tomó el poder de un dios antiguo en medio de un peligro de vida o muerte. Blandiendo una energía espiritual infinita y una espada mortal, destruyó a los malhechores, vengó agravios profundos y derribó los cielos.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
-    "aired_from": "",
+    "aired_from": "2026-07-28",
     "aired_to": ""
   },
   {
@@ -271570,7 +271604,7 @@
     "title_es": "Cyberpunk: Edgerunners 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Cyberpunk: Edgerunners 2"
     ],
@@ -271624,7 +271658,7 @@
     "title_es": "Kaiju No. 8: La semana de Narumi en el trabajo",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kaiju No. 8: La semana de Narumi en el trabajo"
     ],
@@ -271678,7 +271712,7 @@
     "title_es": "My Hero Academia: Yo también soy un héroe",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "My Hero Academia: Yo también soy un héroe",
       "My Hero Academia"
@@ -271730,7 +271764,7 @@
     "title_es": "Baki-dou: El samurái invencible Parte 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Baki-dou: El samurái invencible Parte 2"
     ],
@@ -271791,7 +271825,7 @@
     "title_es": "El hechicero Iceblade gobernará el mundo II",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "El hechicero Iceblade gobernará el mundo II"
     ],
@@ -271842,7 +271876,7 @@
     "title_es": "Noche de tontos",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Noche de tontos"
     ],
@@ -271909,7 +271943,7 @@
     "title_es": "Hana-Kimi Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hana-Kimi Temporada 2"
     ],
@@ -271967,7 +272001,7 @@
     "title_es": "Yowaki Max Reijou nanoni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Yowaki Max Reijou nanoni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta"
     ],
@@ -272021,7 +272055,7 @@
     "title_es": "sobrecargado",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "sobrecargado"
     ],
@@ -272084,7 +272118,7 @@
     "title_es": "Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru.",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru."
     ],
@@ -272133,7 +272167,7 @@
     "title_es": "Detective Conan: La respuesta de la estrella dorada",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Detective Conan: La respuesta de la estrella dorada"
     ],
@@ -272206,7 +272240,7 @@
     "title_es": "Hua Xianzi: Mofa Xiang Dui Lun",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hua Xianzi: Mofa Xiang Dui Lun"
     ],
@@ -272265,11 +272299,13 @@
     "title_es": "Zhan Shen: Fanchen Shenyu II",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Zhan Shen: Fanchen Shenyu II"
     ],
-    "description_es": "Después de que se resolvió la crisis de Cangnan, Lin Qiye completó el entrenamiento y evaluación de Night Watchman de un año de duración en la montaña Jinnan y se convirtió en un Night Watchman formal. Luego regresó al Escuadrón 136 y, junto con sus compañeros, se embarcó en una nueva batalla contra la Iglesia de los Dioses Antiguos... Un nuevo dios maligno occidental hizo su debut, y la cima de la humanidad se reunió en Cangnan, donde una enorme tormenta de desastre se estaba gestando silenciosamente."
+    "description_es": "Después de que se resolvió la crisis de Cangnan, Lin Qiye completó el entrenamiento y evaluación de Night Watchman de un año de duración en la montaña Jinnan y se convirtió en un Night Watchman formal. Luego regresó al Escuadrón 136 y, junto con sus compañeros, se embarcó en una nueva batalla contra la Iglesia de los Dioses Antiguos... Un nuevo dios maligno occidental hizo su debut, y la cima de la humanidad se reunió en Cangnan, donde una enorme tormenta de desastre se estaba gestando silenciosamente.",
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-06-25"
   },
   {
     "title": "Zombie Stage",
@@ -272319,7 +272355,7 @@
     "title_es": "Etapa zombi",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Etapa zombi"
     ],
@@ -272372,7 +272408,7 @@
     "title_es": "Los siete caballeros del reino de Marronnier",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Los siete caballeros del reino de Marronnier"
     ],
@@ -272424,7 +272460,7 @@
     "title_es": "Hermanas Mágicas Lulutto Lilly Parte 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hermanas Mágicas Lulutto Lilly Parte 2"
     ],
@@ -272477,7 +272513,7 @@
     "title_es": "Sr. Osomatsu 4ta temporada: Los diez Matsuno",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sr. Osomatsu 4ta temporada: Los diez Matsuno"
     ],
@@ -272522,7 +272558,7 @@
     "title_es": "Rubia",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Rubia"
     ],
@@ -272549,7 +272585,7 @@
     "description": "Yi Feng transmigrates to the Immortal River Continent. Born without spiritual roots, he can only barely survive using the \"essential life skills\" bestowed upon him by the system. Unbeknownst to him, in the eyes of other cultivators, his strength is already god-like, and his every move affects the entire Immortal River Continent. Unaware of his surroundings, Yi Feng skillfully resolves numerous crises, bringing many exciting and hilarious scenes, and offering new opportunities and choices to the people living on this continent.",
     "type": "ONA",
     "franchise": "Wan Ren Zhi Shang",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web manga",
       "PG-13 - Teens 13 or older"
@@ -272566,17 +272602,17 @@
       "Above Myriads",
       "万人之上"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-06-09",
-    "aired_to": "",
+    "aired_to": "2026-07-21",
     "title_es": "Por encima de miríadas",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Por encima de miríadas"
     ],
@@ -272635,7 +272671,7 @@
     "title_es": "Teatro de las Tinieblas: Yamishibai 17",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Teatro de las Tinieblas: Yamishibai 17"
     ],
@@ -272681,7 +272717,7 @@
     "title_es": "Brujas Maebashi: Emoemories - Brujas florecientes",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Brujas Maebashi: Emoemories - Brujas florecientes"
     ],
@@ -272750,7 +272786,7 @@
     "title_es": "Más allá de la mirada del tiempo 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Más allá de la mirada del tiempo 2da temporada"
     ],
@@ -272808,7 +272844,7 @@
     "title_es": "Puesto avanzado: Cuentos fuera de servicio",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Puesto avanzado: Cuentos fuera de servicio"
     ],
@@ -272859,7 +272895,7 @@
     "title_es": "Muramata-san no Aijou",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Muramata-san no Aijou"
     ]
@@ -272911,7 +272947,7 @@
     "title_es": "Juuou Mujin Dandivine",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Juuou Mujin Dandivine"
     ],
@@ -272969,7 +273005,7 @@
     "title_es": "Elegía para los secuaces: El puño de la estrella polar, parte 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Elegía para los secuaces: El puño de la estrella polar, parte 2"
     ],
@@ -273013,7 +273049,7 @@
     "title_es": "Muchuu no Tou",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Muchuu no Tou"
     ]
@@ -273063,7 +273099,7 @@
     "title_es": "Netorareta Bakunyuu Tsuma-tachi 2",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Netorareta Bakunyuu Tsuma-tachi 2"
     ]
@@ -273087,7 +273123,7 @@
     "description": "",
     "type": "OVA",
     "franchise": "Inaka ni wa Kore Kurai Shika Goraku ga Nai",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "Rx - Hentai"
@@ -273103,7 +273139,7 @@
       "Inaka ni wa Kore Kurai Shika Goraku ga Nai",
       "田舎にはこれくらいしか娯楽がない"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -273113,7 +273149,7 @@
     "title_es": "Inaka ni wa Kore Kurai Shika Goraku ga Nai",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Inaka ni wa Kore Kurai Shika Goraku ga Nai"
     ]
@@ -273163,7 +273199,7 @@
     "title_es": "Pure x Holic: ¿¡Junketsu Otome a Konin Kankei!? La Animación",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Pure x Holic: ¿¡Junketsu Otome a Konin Kankei!? La Animación"
     ]
@@ -273187,7 +273223,7 @@
     "description": "",
     "type": "OVA",
     "franchise": "Deco",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "Rx - Hentai"
@@ -273206,11 +273242,11 @@
     "title_es": "Deco x Deco La Animación",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Deco x Deco La Animación"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -273262,7 +273298,7 @@
     "title_es": "Sare Tsuma wa Ubawaretai",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sare Tsuma wa Ubawaretai"
     ]
@@ -273307,7 +273343,7 @@
     "title_es": "Majo no Tani no Yoru",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Majo no Tani no Yoru"
     ],
@@ -273362,7 +273398,7 @@
     "title_es": "Fatal Fury: La ciudad de los lobos - Mr. KARATE Tráiler",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Fatal Fury: La ciudad de los lobos - Mr. KARATE Tráiler"
     ],
@@ -273406,7 +273442,7 @@
     "title_es": "Eri",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Eri"
     ],
@@ -273453,7 +273489,7 @@
     "title_es": "Hamehara: ¡Dolor Sekuhara desu!",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hamehara: ¡Dolor Sekuhara desu!"
     ]
@@ -273505,7 +273541,7 @@
     "title_es": "Temporada final de Gran Hermano",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Temporada final de Gran Hermano"
     ],
@@ -273568,7 +273604,7 @@
     "title_es": "Jueshi Zhan Hun 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Jueshi Zhan Hun 2da temporada"
     ],
@@ -273624,7 +273660,7 @@
     "title_es": "Chenghuang",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Chenghuang"
     ],
@@ -273676,7 +273712,7 @@
     "title_es": "PV especial conmemorativo del 25 aniversario de Bunch: El camino del amo de casa",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "PV especial conmemorativo del 25 aniversario de Bunch: El camino del amo de casa"
     ],
@@ -273721,7 +273757,7 @@
     "title_es": "Película del 15º aniversario de MAPPA: Seikatsu",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Película del 15º aniversario de MAPPA: Seikatsu"
     ],
@@ -273774,7 +273810,7 @@
     "title_es": "Bestias fabulosas 6ta temporada",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Bestias fabulosas 6ta temporada"
     ],
@@ -273828,7 +273864,7 @@
     "title_es": "Agente demoníaco",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Agente demoníaco"
     ],
@@ -273875,7 +273911,7 @@
     "title_es": "Pétalos",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Pétalos"
     ],
@@ -273929,7 +273965,7 @@
     "title_es": "Todos los deseos se hacen realidad",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Todos los deseos se hacen realidad"
     ],
@@ -273975,7 +274011,7 @@
     "title_es": "Equipo Airman ga Taosenai.Nekokan [Neko] Versión Premium",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Equipo Airman ga Taosenai.Nekokan [Neko] Versión Premium"
     ],
@@ -274031,7 +274067,7 @@
     "title_es": "Manténgase bajo perfil, jefe de secta",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Manténgase bajo perfil, jefe de secta"
     ],
@@ -274080,7 +274116,7 @@
     "title_es": "Mou Hitori no Alice",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Mou Hitori no Alice"
     ],
@@ -274138,7 +274174,7 @@
     "title_es": "Bebés de pan",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Bebés de pan"
     ]
@@ -274190,7 +274226,7 @@
     "title_es": "Pie no Mi: ¡Oshi no Mori y Youkoso!",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Pie no Mi: ¡Oshi no Mori y Youkoso!"
     ],
@@ -274235,7 +274271,7 @@
     "title_es": "Carisma del azabache romano",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Carisma del azabache romano"
     ],
@@ -274280,7 +274316,7 @@
     "title_es": "Espejismo",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Espejismo"
     ],
@@ -274323,7 +274359,7 @@
     "title_es": "¡No, gracias lindo!",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "¡No, gracias lindo!"
     ],
@@ -274367,7 +274403,7 @@
     "title_es": "Kamisama Hajimemashita (Música)",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kamisama Hajimemashita (Música)"
     ],
@@ -274412,7 +274448,7 @@
     "title_es": "Todo el mundo azul",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Todo el mundo azul"
     ],
@@ -274457,7 +274493,7 @@
     "title_es": "Torimodosou, Ichiban Taisetsu na Mono wo: Proyecto GIST",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Torimodosou, Ichiban Taisetsu na Mono wo: Proyecto GIST"
     ],
@@ -274514,7 +274550,7 @@
     "title_es": "Tomica y Tom (TV) Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Tomica y Tom (TV) Temporada 2"
     ],
@@ -274559,7 +274595,7 @@
     "title_es": "El sueño de Lachenalia",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "El sueño de Lachenalia"
     ],
@@ -274603,7 +274639,7 @@
     "title_es": "Ciencia espacial",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Ciencia espacial"
     ],
@@ -274644,7 +274680,7 @@
     "title_es": "Yuruyuru Zukan",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Yuruyuru Zukan"
     ],
@@ -274688,7 +274724,7 @@
     "title_es": "Abismo en el mundo",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Abismo en el mundo"
     ],
@@ -274735,7 +274771,7 @@
     "title_es": "Kishi Kaisen",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kishi Kaisen"
     ],
@@ -274779,7 +274815,7 @@
     "title_es": "sakujitsu",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "sakujitsu"
     ],
@@ -274823,7 +274859,7 @@
     "title_es": "Duende",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Duende"
     ],
@@ -274876,7 +274912,7 @@
     "title_es": "Shi Wangzhe A? 6ta temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Shi Wangzhe A? 6ta temporada"
     ],
@@ -274928,7 +274964,7 @@
     "title_es": "Ruguo Lishi Shi Yiqun Miao: Daming Huangchao Pian",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Ruguo Lishi Shi Yiqun Miao: Daming Huangchao Pian"
     ],
@@ -274981,10 +275017,659 @@
     "title_es": "Misión: Familia Yozakura Temporada 2 Parte 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Misión: Familia Yozakura Temporada 2 Parte 2"
     ],
     "description_es": "Segunda parte de la segunda temporada de Yozakura-san Chi no Daisakusen."
+  },
+  {
+    "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
+    "mal_id": 61227,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx188034-oRwVKBMezOOk.jpg",
+    "episodes": 4,
+    "length": "medio",
+    "demographic": "",
+    "genres": [
+      "Comedy"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": true,
+    "popular": false,
+    "year": 2025,
+    "description": "Four part adaptation of the Girls und Panzer: Motto Love Love Sakusen desu! manga.",
+    "type": "Movie",
+    "franchise": "Girls und Panzer",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Female Protagonist",
+      "Parody",
+      "School",
+      "Ensemble Cast",
+      "School Club",
+      "Cute Girls Doing Cute Things",
+      "Primarily Female Cast"
+    ],
+    "score": 7.2,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ガールズ＆パンツァー もっとらぶらぶ作戦です！",
+    "title_synonyms": [
+      "Girls & Panzer - Motto Love Love Sakusen desu!"
+    ],
+    "search_titles": [
+      "Girls und Panzer: Motto Love Love Sakusen desu!",
+      "ガールズ＆パンツァー もっとらぶらぶ作戦です！",
+      "Girls & Panzer - Motto Love Love Sakusen desu!"
+    ],
+    "title_es": "Girls und Panzer: Lema Love Love Sakusen desu!",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Girls und Panzer: Lema Love Love Sakusen desu!"
+    ],
+    "description_es": "Adaptación en cuatro partes de Girls und Panzer: Motto Love Love Sakusen desu! manga."
+  },
+  {
+    "title": "Chikyuu Daisuki! Kikkun",
+    "mal_id": 64578,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213426-6CWFD7ZbHbQJ.png",
+    "episodes": 52,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Sci-Fi"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2026,
+    "description": "The anime centers on Kikkun, an extraterrestrial life form who came from a distant planet to invade Earth. But the invasion team members assigned in Japan finds the country comfortable, and now wants to protect Japan and Earth, forgetting their original motive.",
+    "type": "TV",
+    "franchise": "Chikyuu Daisuki! Kikkun",
+    "ongoing": true,
+    "source_tags_original": [
+      "ORIGINAL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "地球大好き！きっくん",
+    "title_synonyms": [
+      "Earth Loving Kikkun!"
+    ],
+    "search_titles": [
+      "Chikyuu Daisuki! Kikkun",
+      "地球大好き！きっくん",
+      "Earth Loving Kikkun!"
+    ],
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-07-01",
+    "title_es": "¡Chikyuu Daisuki! Kikún",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "¡Chikyuu Daisuki! Kikún"
+    ],
+    "description_es": "El anime se centra en Kikkun, una forma de vida extraterrestre que vino de un planeta distante para invadir la Tierra. Pero los miembros del equipo de invasión asignados en Japón encuentran cómodo el país y ahora quieren proteger Japón y la Tierra, olvidando su motivo original."
+  },
+  {
+    "title": "Let's Roll, Cinnamoroll! 2",
+    "mal_id": 64537,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213861-PNBuQOrphcbK.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Slice of Life"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2026,
+    "description": "Second season of Let's Roll, Cinnamoroll! .",
+    "type": "ONA",
+    "franchise": "Let's Roll, Cinnamoroll!",
+    "ongoing": true,
+    "source_tags_original": [
+      "ORIGINAL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "Let's Roll, Cinnamoroll! 2",
+    "title_japanese": "レッツロールシナモロール",
+    "title_synonyms": [],
+    "search_titles": [
+      "Let's Roll, Cinnamoroll! 2",
+      "レッツロールシナモロール"
+    ],
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-07-02",
+    "title_es": "¡Vamos a rodar, Cinnamoroll! 2",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "¡Vamos a rodar, Cinnamoroll! 2"
+    ],
+    "description_es": "Segunda temporada de Let's Roll, Cinnamoroll! ."
+  },
+  {
+    "title": "Rusuban",
+    "mal_id": 64580,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213908-ZBUHQxLVUzSW.jpg",
+    "episodes": 1,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Slice of Life"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2026,
+    "description": "Set in August 1987, the story follows one day in the life of Tokko as she stays at home in a large house while her family is away.",
+    "type": "Movie",
+    "franchise": "Rusuban",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "るすばん",
+    "title_synonyms": [],
+    "search_titles": [
+      "Rusuban",
+      "るすばん"
+    ],
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-08-01",
+    "aired_to": "2026-08-01",
+    "title_es": "Rusubán",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Rusubán"
+    ],
+    "description_es": "Ambientada en agosto de 1987, la historia sigue un día en la vida de Tokko mientras ella se queda en una casa grande mientras su familia está fuera."
+  },
+  {
+    "title": "Bananya: At-Home Party",
+    "mal_id": 64519,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213750-5hVyApOz4YXe.png",
+    "episodes": 1,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": true,
+    "popular": true,
+    "year": 2026,
+    "description": "Special short commemorating the 10th anniversary of the Bananya series. When I woke up, I was in an unfamiliar world. In front of me was a cat peeking out of a banana, a \"Bananya.\" I couldn't believe my eyes. For some reason, my body was also made of a banana...",
+    "type": "Special",
+    "franchise": "Bananya",
+    "ongoing": false,
+    "source_tags_original": [
+      "ORIGINAL"
+    ],
+    "themes": [],
+    "score": 6.0,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "Bananya 10th Anniversary Special",
+    "title_japanese": "ばなにゃ あっとほーむぱーてぃー",
+    "title_synonyms": [],
+    "search_titles": [
+      "Bananya: At-Home Party",
+      "Bananya 10th Anniversary Special",
+      "ばなにゃ あっとほーむぱーてぃー"
+    ],
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-07-10",
+    "aired_to": "2026-07-10",
+    "title_es": "Especial 10º Aniversario de Bananya",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Especial 10º Aniversario de Bananya"
+    ],
+    "description_es": "Corto especial conmemorativo del décimo aniversario de la serie Bananya. Cuando desperté, estaba en un mundo desconocido. Frente a mí había un gato asomando entre un plátano, un \"Bananya\". No podía creer lo que veía. Por alguna razón, mi cuerpo también estaba hecho de un plátano..."
+  },
+  {
+    "title": "Youjo Shenki 2",
+    "mal_id": 64577,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b213961-x2ZvvtkYSTC9.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Fantasy"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2026,
+    "description": "The second season of Youjo Shenki . Chibi parody of Youjo Senki.",
+    "type": "ONA",
+    "franchise": "Youjo Shenki",
+    "ongoing": true,
+    "source_tags_original": [
+      "LIGHT_NOVEL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ようじょしぇんき2",
+    "title_synonyms": [],
+    "search_titles": [
+      "Youjo Shenki 2",
+      "ようじょしぇんき2"
+    ],
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Thursdays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Thursdays at 00:00 (JST)",
+    "aired_from": "2026-07-09",
+    "title_es": "Youjo Shenki 2",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Youjo Shenki 2"
+    ],
+    "description_es": "La segunda temporada de Youjo Shenki. Chibi parodia de Youjo Senki."
+  },
+  {
+    "title": "Snack HAZAMA",
+    "mal_id": 64543,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213831-jrH7JR6feW1q.png",
+    "episodes": 12,
+    "length": "medio",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Ecchi",
+      "Supernatural"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2026,
+    "description": "A weekly mini anime shown with each episode of Ushiro no Shoumen Kamui-san exclusively on the AT-X broadcast of the TV anime and online on OceanVeil.",
+    "type": "TV",
+    "franchise": "Snack HAZAMA",
+    "ongoing": true,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": 5.1,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "Snack Hazama",
+    "title_japanese": "スナックはざま-HAZAMA-",
+    "title_synonyms": [
+      "うしろの正面カムイさんミニアニメ",
+      "Ushiro no Shoumen Kamui-san Mini Anime"
+    ],
+    "search_titles": [
+      "Snack HAZAMA",
+      "スナックはざま-HAZAMA-",
+      "うしろの正面カムイさんミニアニメ",
+      "Ushiro no Shoumen Kamui-san Mini Anime"
+    ],
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Saturdays",
+    "broadcast_time": "01:42",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Saturdays at 01:42 (JST)",
+    "aired_from": "2026-07-04",
+    "aired_to": "2026-09-19",
+    "title_es": "Merienda Hazama",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Merienda Hazama"
+    ],
+    "description_es": "Un mini anime semanal que se muestra con cada episodio de Ushiro no Shoumen Kamui-san exclusivamente en la transmisión AT-X del anime televisivo y en línea en OceanVeil."
+  },
+  {
+    "title": "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku",
+    "mal_id": 63292,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205896-BW1GwqXSUyir.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Fantasy"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2026,
+    "description": "RPG player Makoto Takatsuki is hurled into another world with awful skills and stats. But he soon meets a goddess named Noah, who asks him to become her 1st believer in return for blessings.",
+    "type": "TV",
+    "franchise": "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku",
+    "ongoing": false,
+    "source_tags_original": [
+      "LIGHT_NOVEL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "信者ゼロの女神サマと始める異世界攻略",
+    "title_synonyms": [
+      "Full Clearing Another World under a Goddess with Zero Believers",
+      "Clear the world like a game with the zero believer goddess"
+    ],
+    "search_titles": [
+      "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku",
+      "信者ゼロの女神サマと始める異世界攻略",
+      "Full Clearing Another World under a Goddess with Zero Believers",
+      "Clear the world like a game with the zero believer goddess"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "Shinja Zero no Megami-sama a Hajimeru Isekai Kouryaku",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Shinja Zero no Megami-sama a Hajimeru Isekai Kouryaku"
+    ],
+    "description_es": "El jugador de rol Makoto Takatsuki es arrojado a otro mundo con habilidades y estadísticas terribles. Pero pronto conoce a una diosa llamada Noé, quien le pide que se convierta en su primer creyente a cambio de bendiciones."
+  },
+  {
+    "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+    "mal_id": 64298,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212667-8g5ktyrx34Yl.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Ecchi",
+      "Supernatural"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": false,
+    "year": 2026,
+    "description": "The landlord finds a ring that can control yokai and proceeds to use it on a beautiful snow woman living in one of the apartments!",
+    "type": "TV",
+    "franchise": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+    "ongoing": false,
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+    "title_synonyms": [
+      "The Shy Snow Woman and the Cursed Ring"
+    ],
+    "search_titles": [
+      "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+      "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+      "The Shy Snow Woman and the Cursed Ring"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "Hitozukiai ga Nigate na Miboujin no Yukionna-san a Noroi no Yubiwa",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Hitozukiai ga Nigate na Miboujin no Yukionna-san a Noroi no Yubiwa"
+    ],
+    "description_es": "¡El propietario encuentra un anillo que puede controlar yokai y procede a usarlo con una hermosa mujer de las nieves que vive en uno de los apartamentos!"
+  },
+  {
+    "title": "Diamond no Ace act II: Second Season Part 2",
+    "mal_id": 64505,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213658-VSoILO1l46B7.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Sports"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": false,
+    "year": 2026,
+    "description": "The second cour of the second season of Diamond no Ace act II .",
+    "type": "TV",
+    "franchise": "Diamond no Ace act",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ダイヤのA actⅡ -Second Season- 第2クール",
+    "title_synonyms": [],
+    "search_titles": [
+      "Diamond no Ace act II: Second Season Part 2",
+      "ダイヤのA actⅡ -Second Season- 第2クール"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "Diamond no Ace acto II: Segunda temporada Parte 2",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Diamond no Ace acto II: Segunda temporada Parte 2"
+    ],
+    "description_es": "El segundo curso de la segunda temporada de Diamond no Ace acto II."
+  },
+  {
+    "title": "Seitokai ni mo Ana wa Aru!",
+    "mal_id": 61578,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-lICYnO8xvlYw.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Slice of Life"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": false,
+    "year": 2026,
+    "description": "Mizunoe Ume just wanted to avoid repeating a grade when he joined the student council. After all, it seemed like an easy fix to his current academic problems. But then, he met his fellow council members. Each of them is eccentric in their own way-one's an airhead, another's scary, one's secretly a pervert, but all in all, they're just really weird! Yet somehow, they're also oddly cute and endearing. Which means Mizunoe is stuck with them and all the chaos they bring to the table.",
+    "type": "TV",
+    "franchise": "Seitokai ni mo Ana wa Aru!",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Nudity",
+      "Femboy"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "生徒会にも穴はある！",
+    "title_synonyms": [
+      "Even the Student Council Has Its Holes!",
+      "生穴る",
+      "NamaAnaru"
+    ],
+    "search_titles": [
+      "Seitokai ni mo Ana wa Aru!",
+      "生徒会にも穴はある！",
+      "Even the Student Council Has Its Holes!",
+      "生穴る",
+      "NamaAnaru"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "Seitokai ni mo Ana wa Aru!",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Seitokai ni mo Ana wa Aru!"
+    ],
+    "description_es": "Mizunoe Ume solo quería evitar repetir grado cuando se unió al consejo estudiantil. Después de todo, parecía una solución fácil a sus problemas académicos actuales. Pero luego conoció a sus compañeros del consejo. Cada uno de ellos es excéntrico a su manera: uno es un cabeza hueca, otro da miedo, uno es secretamente un pervertido, pero en general, ¡son realmente raros! Sin embargo, de alguna manera, también son extrañamente lindos y entrañables. Lo que significa que Mizunoe está atrapada con ellos y con todo el caos que traen a la mesa."
+  },
+  {
+    "title": "Mob Psycho 100: 10 Shuunen Kinen Tokubetsu Eizou",
+    "mal_id": 64597,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214031-VjZ9YM1NsmJd.jpg",
+    "episodes": 1,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Slice of Life",
+      "Supernatural"
+    ],
+    "tone": "ligero",
+    "fast_start": true,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": false,
+    "year": 2026,
+    "description": "A short animation for Mob Psycho 100 to commemorate the anime series’ tenth milestone that debuted at the “Mob Psycho 100 10th Anniversary Reunion Event\" in Fukagawa Mirai Hall.",
+    "type": "Special",
+    "franchise": "Mob Psycho",
+    "ongoing": false,
+    "source_tags_original": [
+      "ORIGINAL"
+    ],
+    "themes": [],
+    "score": 7.6,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "Mob Psycho 100 10th Anniversary Special Movie",
+    "title_japanese": "モブサイコ100 10周年記念特別映像",
+    "title_synonyms": [],
+    "search_titles": [
+      "Mob Psycho 100: 10 Shuunen Kinen Tokubetsu Eizou",
+      "Mob Psycho 100 10th Anniversary Special Movie",
+      "モブサイコ100 10周年記念特別映像"
+    ],
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-07-12",
+    "aired_to": "2026-07-12",
+    "title_es": "Película especial del décimo aniversario de Mob Psycho 100",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Película especial del décimo aniversario de Mob Psycho 100"
+    ],
+    "description_es": "Una breve animación de Mob Psycho 100 para conmemorar el décimo hito de la serie de anime que debutó en el \"Evento de reunión del décimo aniversario de Mob Psycho 100\" en Fukagawa Mirai Hall."
+  },
+  {
+    "title": "Koori no Jouheki 2nd Season",
+    "mal_id": 64534,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213805-kQXiLbsLBkX4.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": false,
+    "year": 2026,
+    "description": "The second season of Koori no Jouheki .",
+    "type": "TV",
+    "franchise": "Koori no Jouheki",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "The Ramparts of Ice Season 2",
+    "title_japanese": "氷の城壁 第2期",
+    "title_synonyms": [],
+    "search_titles": [
+      "Koori no Jouheki 2nd Season",
+      "The Ramparts of Ice Season 2",
+      "氷の城壁 第2期"
+    ],
+    "airing_status": "Not yet aired",
+    "broadcast_day": "Thursdays",
+    "broadcast_time": "11:56",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Thursdays at 11:56 (JST)",
+    "aired_from": "2026-10-01",
+    "title_es": "Las murallas de hielo temporada 2",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Las murallas de hielo temporada 2"
+    ],
+    "description_es": "La segunda temporada de Koori no Jouheki."
   }
 ]

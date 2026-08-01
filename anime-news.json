@@ -1,67 +1,14 @@
 {
-  "month": "2026-06",
-  "title": "Novedades de Junio",
-  "subtitle": "Noticias y eventos de anime que estamos siguiendo este mes en NeoAnimeZ.",
-  "updated_at": "2026-06-22T10:12:41+00:00",
+  "month": "2026-08",
+  "title": "Novedades de Agosto",
+  "subtitle": "Noticias, eventos y emisiones de anime que seguimos este mes en NeoAnimeZ.",
+  "updated_at": "2026-08-01T14:39:15+00:00",
   "source_note": "Selección editorial de titulares enlazados. NeoAnimeZ muestra resumen propio y no copia artículos completos.",
   "items": [
     {
-      "title": "MAPPA concentra las miradas con su aniversario",
-      "summary": "El evento de aniversario del estudio ha reunido novedades y conversación alrededor de Jujutsu Kaisen, Chainsaw Man, Attack on Titan y otros títulos clave.",
-      "date": "2026-06-19",
-      "source": "Economic Times",
-      "url": "https://m.economictimes.com/news/new-updates/from-jujutsu-kaisen-season-4-to-chainsaw-man-assassins-arc-to-attack-on-titan-big-announcements-likely-at-mappa-event/articleshow/131532897.cms",
-      "tags": [
-        "MAPPA",
-        "Jujutsu Kaisen",
-        "Chainsaw Man",
-        "Attack on Titan"
-      ],
-      "priority": 100
-    },
-    {
-      "title": "Jujutsu Kaisen enseña nuevo material de su continuación",
-      "summary": "La nueva etapa del anime sigue centrada en el arco del Juego del Sacrificio, con más información prevista tras los últimos avances promocionales.",
-      "date": "2026-06-20",
-      "source": "GamesRadar+",
-      "url": "https://www.gamesradar.com/entertainment/anime-shows/jujutsu-kaisen-season-4-release-date-trailer-cast-story-culling-game-part-2/",
-      "tags": [
-        "Jujutsu Kaisen",
-        "Tráiler",
-        "Temporada nueva"
-      ],
-      "priority": 95
-    },
-    {
-      "title": "Chainsaw Man apunta al arco de los asesinos",
-      "summary": "La continuación del anime mantiene el foco en International Assassins Arc, todavía sin fecha cerrada pero con nuevo impulso promocional.",
-      "date": "2026-06-20",
-      "source": "GamesRadar+",
-      "url": "https://www.gamesradar.com/chainsaw-man-season-2-release-date-cast-trailer-crunchyroll/",
-      "tags": [
-        "Chainsaw Man",
-        "MAPPA",
-        "Tráiler"
-      ],
-      "priority": 90
-    },
-    {
-      "title": "Attack on Titan recibe una imagen especial de aniversario",
-      "summary": "Shingeki no Kyojin vuelve a aparecer ligado al aniversario de MAPPA con material conmemorativo y conversación renovada entre fans.",
-      "date": "2026-06-18",
-      "source": "Meristation",
-      "url": "https://as.com/meristation/manga-y-anime/shingeki-no-kyojin-se-prepara-para-el-15-aniversario-de-su-estudio-con-una-imagen-que-nos-devuelve-al-final-de-la-historia-f202606-n/",
-      "tags": [
-        "Attack on Titan",
-        "MAPPA",
-        "Aniversario"
-      ],
-      "priority": 86
-    },
-    {
-      "title": "Calendario de verano actualizado en NeoAnimeZ",
-      "summary": "Hemos refrescado los estrenos y emisiones para que puedas consultar junio y julio al llegar al final del mes.",
-      "date": "2026-06-22",
+      "title": "Calendario de agosto actualizado en NeoAnimeZ",
+      "summary": "Hemos renovado las emisiones, episodios y próximos estrenos para que Mi calendario muestre la programación activa de agosto.",
+      "date": "2026-08-01",
       "source": "NeoAnimeZ",
       "url": "",
       "tags": [
@@ -69,7 +16,59 @@
         "Verano 2026",
         "Estrenos"
       ],
-      "priority": 80
+      "priority": 100
+    },
+    {
+      "title": "Re:ZERO inicia el arco de la Reconquista el 12 de agosto",
+      "summary": "La cuarta temporada retoma su emisión con un nuevo arco, acompañado de imagen promocional y vídeo musical.",
+      "date": "2026-08-12",
+      "source": "Crunchyroll News",
+      "url": "https://www.crunchyroll.com/news/latest/2026/6/17/re-zero-starting-life-in-another-world-season-4-anime-recapture-arc-visual-music-video",
+      "tags": [
+        "Re:ZERO",
+        "Nueva emisión",
+        "12 de agosto"
+      ],
+      "priority": 96
+    },
+    {
+      "title": "Link Click temporada 3 llega el 14 de agosto",
+      "summary": "La tercera temporada forma parte de la programación de verano y tiene su estreno previsto para mediados de mes.",
+      "date": "2026-08-14",
+      "source": "Crunchyroll News",
+      "url": "https://www.crunchyroll.com/news/seasonal-lineup/2026/6/17/summer-anime-2026-crunchyroll",
+      "tags": [
+        "Link Click",
+        "Temporada 3",
+        "14 de agosto"
+      ],
+      "priority": 92
+    },
+    {
+      "title": "Anime NYC prepara estrenos y paneles del 20 al 23 de agosto",
+      "summary": "El evento reunirá proyecciones anticipadas y celebraciones de series como Bungo Stray Dogs y Re:ZERO.",
+      "date": "2026-08-20",
+      "source": "Crunchyroll News",
+      "url": "https://www.crunchyroll.com/news/announcements/2026/7/20/anime-nyc-2026-crunchyroll-panels-premieres-schedule",
+      "tags": [
+        "Anime NYC",
+        "Evento",
+        "Estrenos"
+      ],
+      "priority": 88
+    },
+    {
+      "title": "Bleach entra en su parte final con The Calamity",
+      "summary": "La última parte de Thousand-Year Blood War ya está en emisión y ha estrenado nuevas secuencias de apertura y cierre.",
+      "date": "2026-07-25",
+      "source": "Crunchyroll Noticias",
+      "url": "https://www.crunchyroll.com/es-es/news/latest/2026/7/25/bleach-thousand-year-blood-war-final-part-the-calamity-anime-opening-ending",
+      "tags": [
+        "Bleach",
+        "The Calamity",
+        "En emisión"
+      ],
+      "priority": 84
     }
   ]
 }

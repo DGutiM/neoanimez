@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20260713-airing-sync3';
+const CACHE_VERSION = '20260801-august-sync3';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 

@@ -2340,6 +2340,15 @@ body.intro-open .title-language-widget{display:none}
   border-color:rgba(255,91,125,.26);
   background:linear-gradient(180deg, rgba(41,18,28,.98), rgba(27,13,20,.98));
 }
+.user-anime-cover{
+  width:48px;
+  height:68px;
+  flex-shrink:0;
+  border-radius:10px;
+  object-fit:cover;
+  background:#141426;
+  box-shadow:0 8px 20px rgba(0,0,0,.24);
+}
 .user-anime-title-row{
   display:flex;
   align-items:flex-start;
@@ -3556,6 +3565,9 @@ button:disabled,
   .daily-continue-cover,.daily-schedule-cover{width:42px;height:58px}
   .daily-continue-actions{grid-column:2;flex-direction:row;justify-content:flex-start}
   .daily-schedule-badge{grid-column:2;justify-self:start}
+  .user-anime-row.status-watching{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center}
+  .user-anime-row.status-watching .user-anime-cover{width:44px;height:60px}
+  .user-anime-row.status-watching .user-row-actions{grid-column:2;justify-content:flex-start}
   .user-schedule-head{align-items:center;flex-direction:row}
   .user-calendar-day{aspect-ratio:1;min-height:34px;border-radius:11px;padding:0}
   .user-calendar-number{top:7px;left:7px}
@@ -5082,7 +5094,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260713-airing-sync3';
+const APP_VERSION = '20260801-august-sync3';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -6732,7 +6744,13 @@ function updateModalStatusUI() {
 }
 
 function isUpcomingAnime(anime = null) {
-  return !!anime && (anime._update_status === 'jikan_upcoming' || !!anime.upcoming_season || !!anime.upcoming_year);
+  if (!anime) return false;
+  if (anime._update_status === 'jikan_upcoming' || anime.upcoming_season || anime.upcoming_year) return true;
+  if (String(anime.airing_status || '').trim().toLowerCase() === 'not yet aired') return true;
+
+  const premiereValue = anime.aired_from || anime.airing_start || anime.start_date || anime.premiere_date;
+  const premiereTime = Date.parse(String(premiereValue || ''));
+  return anime.ongoing !== true && Number.isFinite(premiereTime) && premiereTime > Date.now();
 }
 
 function setModalRatingMessage(message = '', type = '') {
@@ -6967,6 +6985,7 @@ function buildUserAnimeCard(anime, status) {
     : `Sumar un episodio visto en ${displayTitle}`;
 
   row.innerHTML = `
+    ${status === 'watching' ? `<img class="user-anime-cover" src="${EMPTY_IMAGE}" alt="${escapeHtml(displayTitle)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}
     <div class="user-anime-main">
       <div class="user-anime-title-row">
         <div class="user-anime-name">${displayTitle}</div>
@@ -6989,8 +7008,13 @@ function buildUserAnimeCard(anime, status) {
   `;
 
   row.addEventListener('click', () => {
-    openAnimeModal(anime, anime.image || BLANK);
+    const imgNow = row.querySelector('.user-anime-cover')?.src || anime.image || BLANK;
+    openAnimeModal(anime, imgNow);
   });
+
+  if (status === 'watching') {
+    loadAnimeImageElement(row.querySelector('.user-anime-cover'), anime, 0);
+  }
 
   row.querySelector('.user-remove-btn')?.addEventListener('click', async (event) => {
     event.stopPropagation();
@@ -12767,14 +12791,14 @@ function setActiveScreen(screenId, navId = null, animate = false) {
 
 function getDefaultMonthlyNewsPayload() {
   return {
-    month: '2026-06',
-    title: 'Novedades de Junio',
+    month: '2026-08',
+    title: 'Novedades de Agosto',
     subtitle: 'Noticias y eventos de anime que estamos siguiendo este mes en NeoAnimeZ.',
     items: [
       {
         title: 'Novedades de anime en seguimiento',
         summary: 'Estamos preparando la selección mensual de noticias, eventos y estrenos destacados.',
-        date: '2026-06-22',
+        date: '2026-08-01',
         source: 'NeoAnimeZ',
         url: '',
         tags: ['Anime', 'Noticias']
@@ -13882,7 +13906,13 @@ function buildUpcomingCard(anime, sectionId) {
   if (title) title.textContent = displayTitle;
   if (date) date.textContent = formatUpcomingDate(anime);
   if (type) {
-    const parts = [anime.type, anime.upcoming_season_label].filter(Boolean);
+    const sectionSeasonLabels = {
+      winter: 'Invierno',
+      spring: 'Primavera',
+      summer: 'Verano',
+      fall: 'Otoño'
+    };
+    const parts = [anime.type, sectionSeasonLabels[sectionId] || anime.upcoming_season_label].filter(Boolean);
     type.textContent = parts.join(' · ');
   }
   return div;
@@ -13996,9 +14026,19 @@ function renderAnimeModalContent(anime, { loadingDetails = false } = {}) {
   }
   if (anime.demographic) metaParts.push(anime.demographic);
   if (anime.tone) metaParts.push(`Tono ${anime.tone}`);
-  if (typeof anime.ongoing === 'boolean') metaParts.push(anime.ongoing ? 'En emisión' : 'Finalizado');
-  if (Number.isFinite(Number(anime.score))) metaParts.push(`Nota ${Number(anime.score).toFixed(2)}`);
-  if (Number.isFinite(Number(anime.scored_by))) metaParts.push(`${Number(anime.scored_by).toLocaleString('es-ES')} votos`);
+  if (typeof anime.ongoing === 'boolean') {
+    metaParts.push(isUpcomingAnime(anime) ? 'Próximo estreno' : (anime.ongoing ? 'En emisión' : 'Finalizado'));
+    const premiereDate = formatUpcomingDate(anime);
+    if (premiereDate !== 'Fecha desconocida') metaParts.push(`Fecha de estreno: ${premiereDate}`);
+  }
+  const databaseScore = Number(anime.score);
+  const databaseVotes = Number(anime.scored_by);
+  if (anime.score != null && Number.isFinite(databaseScore) && databaseScore > 0) {
+    metaParts.push(`Nota ${databaseScore.toFixed(2)}`);
+  }
+  if (anime.scored_by != null && Number.isFinite(databaseVotes) && databaseVotes > 0) {
+    metaParts.push(`${databaseVotes.toLocaleString('es-ES')} votos`);
+  }
 
   meta.textContent = metaParts.join(' · ');
   const allTags = [...(anime.genres || []), ...(anime.themes || [])];
