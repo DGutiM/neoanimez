@@ -4036,16 +4036,21 @@ button.timeline-node.extra-format:hover{border-color:rgba(255,91,153,.52);box-sh
     grid-template-columns:repeat(var(--relation-count,1),minmax(0,1fr));gap:6px
   }
   .anime-relation-card{
-    min-height:88px;padding:9px;display:flex;align-items:flex-start;gap:0;border-radius:13px
+    min-height:76px;padding:7px;border-radius:13px
   }
-  .anime-relations-list:not([data-count="1"]) .anime-relation-img,
-  .anime-relations-list:not([data-count="1"]) .anime-relation-meta,
-  .anime-relations-list:not([data-count="1"]) .anime-relation-open{display:none}
-  .anime-relations-list:not([data-count="1"]) .anime-relation-copy{width:100%;gap:5px}
-  .anime-relations-list:not([data-count="1"]) .anime-relation-label{font-size:7px;white-space:nowrap}
-  .anime-relations-list:not([data-count="1"]) .anime-relation-title{
-    font-size:8px;line-height:1.42;-webkit-line-clamp:3
+  .anime-relations-list[data-count="2"] .anime-relation-card{
+    display:grid;grid-template-columns:34px minmax(0,1fr);gap:7px;align-items:center
   }
+  .anime-relations-list[data-count="2"] .anime-relation-img{
+    display:block;width:34px;height:50px;border-radius:7px
+  }
+  .anime-relations-list[data-count="2"] .anime-relation-copy{min-width:0;gap:4px}
+  .anime-relations-list[data-count="2"] .anime-relation-label{font-size:6px;white-space:nowrap}
+  .anime-relations-list[data-count="2"] .anime-relation-title{
+    font-size:8px;line-height:1.38;-webkit-line-clamp:3
+  }
+  .anime-relations-list[data-count="2"] .anime-relation-meta,
+  .anime-relations-list[data-count="2"] .anime-relation-open{display:none}
   .anime-relations-list[data-count="1"] .anime-relation-card{
     min-height:76px;display:grid;grid-template-columns:44px minmax(0,1fr) 14px;gap:8px;padding:7px
   }
@@ -5448,7 +5453,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260811-saga-map5';
+const APP_VERSION = '20260811-saga-map6';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -5630,9 +5635,11 @@ let animeTimelineIndexLoadPromise = null;
 let animeTimelineFiles = [];
 const animeTimelineNavigationMap = new Map();
 const animeTimelineBlockCache = new Map();
+const animeTimelineSeriesNavigationMap = new Map();
 let activeAnimeTimeline = null;
 let activeAnimeTimelineNodes = new Map();
 let activeAnimeTimelineCurrentId = 0;
+let activeAnimeTimelineDisplayEdges = [];
 let animeTimelineMode = 'all';
 let animeTimelineDrawFrame = 0;
 let animeTimelineResizeTimer = 0;
@@ -14570,6 +14577,92 @@ function clearAnimeRelationsUI() {
   timeline?.classList.add('hidden');
 }
 
+const ANIME_TIMELINE_MAIN_LINE_INCLUDE_IDS = new Set();
+const ANIME_TIMELINE_MAIN_LINE_EXCLUDE_IDS = new Set();
+
+function normalizeAnimeTimelineFormat(value) {
+  return String(value || '').trim().toUpperCase().replace(/[\s-]+/g, '_');
+}
+
+function isAnimeTimelineMainSeriesFormat(value, episodes = 0, title = '') {
+  const format = normalizeAnimeTimelineFormat(value);
+  if (['TV', 'TV_SHORT', 'ANIME'].includes(format)) return true;
+  if (format !== 'ONA') return false;
+  const episodeCount = Number(episodes) || 0;
+  return episodeCount >= 4 || /\b(season|temporada|part|cour)\b/i.test(String(title || ''));
+}
+
+function isAnimeTimelineMainSeriesNode(node = {}) {
+  const animeId = Number(node.mal_id);
+  if (ANIME_TIMELINE_MAIN_LINE_INCLUDE_IDS.has(animeId)) return true;
+  if (ANIME_TIMELINE_MAIN_LINE_EXCLUDE_IDS.has(animeId) || node.role === 'secondary') return false;
+  return isAnimeTimelineMainSeriesFormat(
+    node.format || node.type,
+    node.episodes,
+    node.title_english || node.title
+  );
+}
+
+function isAnimeMainSeriesEntry(anime = {}) {
+  const animeId = Number(anime.mal_id);
+  if (ANIME_TIMELINE_MAIN_LINE_INCLUDE_IDS.has(animeId)) return true;
+  if (ANIME_TIMELINE_MAIN_LINE_EXCLUDE_IDS.has(animeId)) return false;
+  return isAnimeTimelineMainSeriesFormat(
+    anime.type || anime.format,
+    anime.episodes,
+    anime.title_english || anime.title
+  );
+}
+
+function getAnimeTimelineReleaseKey(anime = {}) {
+  const raw = String(anime.release_date || anime.aired_from || anime.year || '').trim();
+  const match = raw.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);
+  if (!match) return '9999-99-99';
+  return `${match[1]}-${match[2] || '99'}-${match[3] || '99'}`;
+}
+
+function compareAnimeTimelineNodes(a = {}, b = {}, levelById = null) {
+  if (levelById) {
+    const levelA = Number(levelById[String(a.mal_id)] ?? 0);
+    const levelB = Number(levelById[String(b.mal_id)] ?? 0);
+    if (levelA !== levelB) return levelA - levelB;
+  }
+  return getAnimeTimelineReleaseKey(a).localeCompare(getAnimeTimelineReleaseKey(b))
+    || Number(a.mal_id) - Number(b.mal_id);
+}
+
+function getAnimeTimelineMainSeriesNodes(timeline, nodesMap) {
+  const levelById = timeline?.levels || {};
+  return (timeline?.nodes || [])
+    .map(nodeId => nodesMap.get(Number(nodeId)))
+    .filter(node => node && isAnimeTimelineMainSeriesNode(node))
+    .sort((a, b) => compareAnimeTimelineNodes(a, b, levelById));
+}
+
+function cacheAnimeTimelineSeriesNavigation(timeline, nodesMap) {
+  if (!timeline || !(nodesMap instanceof Map)) return;
+  const allNodes = (timeline.nodes || [])
+    .map(nodeId => nodesMap.get(Number(nodeId)))
+    .filter(Boolean);
+  const mainNodes = getAnimeTimelineMainSeriesNodes(timeline, nodesMap);
+  allNodes.forEach(node => {
+    animeTimelineSeriesNavigationMap.set(Number(node.mal_id), {
+      resolved: true,
+      isMainLine: false,
+      previousId: 0,
+      nextId: 0
+    });
+  });
+  mainNodes.forEach((node, index) => {
+    animeTimelineSeriesNavigationMap.set(Number(node.mal_id), {
+      resolved: true,
+      isMainLine: true,
+      previousId: Number(mainNodes[index - 1]?.mal_id) || 0,
+      nextId: Number(mainNodes[index + 1]?.mal_id) || 0
+    });
+  });
+}
+
 function getAnimeRelationMeta(anime = {}) {
   const parts = [];
   if (anime.year) parts.push(String(anime.year));
@@ -14618,6 +14711,32 @@ function buildAnimeRelationCard(anime, kind) {
   card.append(image, copy, open);
   card.addEventListener('click', () => openAnimeModal(anime, anime.image || BLANK));
   return card;
+}
+
+function getAnimeRelationCards(anime, relations) {
+  const resolved = animeTimelineSeriesNavigationMap.get(Number(anime?.mal_id));
+  if (resolved?.resolved) {
+    if (!resolved.isMainLine) return [];
+    return [
+      ['prequel', resolved.previousId],
+      ['sequel', resolved.nextId]
+    ].map(([kind, targetId]) => ({ kind, anime: getAnimeById(targetId) }))
+      .filter(item => item.anime);
+  }
+
+  if (!isAnimeMainSeriesEntry(anime)) return [];
+  const getCandidates = ids => (Array.isArray(ids) ? ids : [])
+    .map(targetId => getAnimeById(targetId))
+    .filter(target => target && isAnimeMainSeriesEntry(target))
+    .sort((a, b) => compareAnimeTimelineNodes(a, b));
+  const previousCandidates = getCandidates(relations?.prequels);
+  const nextCandidates = getCandidates(relations?.sequels);
+  const previous = previousCandidates[previousCandidates.length - 1];
+  const next = nextCandidates[0];
+  return [
+    previous ? { kind: 'prequel', anime: previous } : null,
+    next ? { kind: 'sequel', anime: next } : null
+  ].filter(Boolean);
 }
 
 function renderAnimeTimelineAction(anime) {
@@ -14680,17 +14799,11 @@ function renderAnimeRelations(anime = currentModalAnime) {
     return false;
   }
 
-  const cards = [];
-  [
-    ['prequel', relations?.prequels || []],
-    ['sequel', relations?.sequels || []]
-  ].forEach(([kind, ids]) => {
-    ids.forEach(targetId => {
-      const target = getAnimeById(targetId);
-      if (!target) return;
-      cards.push({ card: buildAnimeRelationCard(target, kind), anime: target });
-    });
-  });
+  const cards = getAnimeRelationCards(anime, relations)
+    .map(({ kind, anime: target }) => ({
+      card: buildAnimeRelationCard(target, kind),
+      anime: target
+    }));
 
   if (!cards.length && !hasTimeline) {
     section.classList.add('hidden');
@@ -14725,9 +14838,25 @@ async function renderAnimeRelationsForModal(anime) {
       console.warn('No se pudo cargar el índice de mapas de sagas:', error);
     }));
   }
-  if (!requests.length) return;
-  await Promise.allSettled(requests);
+  if (requests.length) await Promise.allSettled(requests);
   if (Number(currentModalAnime?.mal_id) === requestedId) renderAnimeRelations(currentModalAnime);
+
+  const navigation = animeTimelineNavigationMap.get(requestedId);
+  if (!navigation) return;
+  try {
+    const payload = await loadAnimeTimelineBlock(navigation.file);
+    const timeline = payload.timelines?.[String(navigation.timelineId)];
+    if (!timeline) return;
+    const nodes = new Map();
+    (timeline.nodes || []).forEach(nodeId => {
+      const node = payload.nodes?.[String(nodeId)];
+      if (node) nodes.set(Number(nodeId), node);
+    });
+    cacheAnimeTimelineSeriesNavigation(timeline, nodes);
+    if (Number(currentModalAnime?.mal_id) === requestedId) renderAnimeRelations(currentModalAnime);
+  } catch (error) {
+    console.warn('No se pudo resolver la linea principal de la saga:', error);
+  }
 }
 
 function getAnimeTimelineNodeTitle(node = {}) {
@@ -14766,8 +14895,8 @@ function formatAnimeTimelineType(value) {
 }
 
 function isAnimeTimelineExtraFormat(value) {
-  return ['MOVIE', 'OVA', 'ONA', 'SPECIAL', 'TV_SPECIAL', 'MUSIC', 'PV']
-    .includes(String(value || '').trim().toUpperCase());
+  return ['MOVIE', 'OVA', 'SPECIAL', 'TV_SPECIAL', 'MUSIC', 'PV']
+    .includes(normalizeAnimeTimelineFormat(value));
 }
 
 function renderAnimeTimelineLoading(message = 'Preparando el mapa de la saga…', isError = false) {
@@ -14818,7 +14947,10 @@ async function openAnimeTimeline(anime = currentModalAnime) {
   activeAnimeTimelineCurrentId = requestedId;
   activeAnimeTimeline = null;
   activeAnimeTimelineNodes = new Map();
-  animeTimelineMode = isAnimeTimelineMobileLayout() ? 'continuity' : 'all';
+  activeAnimeTimelineDisplayEdges = [];
+  animeTimelineMode = isAnimeTimelineMobileLayout() && isAnimeMainSeriesEntry(anime)
+    ? 'continuity'
+    : 'all';
   if (title) title.textContent = `Mapa de ${getAnimeDisplayTitle(anime)}`;
   if (summary) summary.textContent = 'Orden visual, fechas, películas y rutas relacionadas.';
   const mainModeButton = document.getElementById('animeTimelineModeMain');
@@ -14851,12 +14983,13 @@ async function openAnimeTimeline(anime = currentModalAnime) {
     });
     activeAnimeTimeline = timeline;
     activeAnimeTimelineNodes = nodes;
+    cacheAnimeTimelineSeriesNavigation(timeline, nodes);
 
-    const continuityCount = [...nodes.values()].filter(node => node.role === 'continuity').length;
+    const continuityCount = getAnimeTimelineMainSeriesNodes(timeline, nodes).length;
     const secondaryCount = Math.max(0, nodes.size - continuityCount);
     const externalCount = [...nodes.values()].filter(node => !node.local).length;
-    const summaryParts = [`${nodes.size} entregas`, `${continuityCount} en continuidad`];
-    if (secondaryCount) summaryParts.push(`${secondaryCount} películas o ramas`);
+    const summaryParts = [`${nodes.size} entregas`, `${continuityCount} en la serie principal`];
+    if (secondaryCount) summaryParts.push(`${secondaryCount} películas, OVA o ramas`);
     if (externalCount) summaryParts.push(`${externalCount} aún fuera del catálogo`);
     if (summary) summary.textContent = summaryParts.join(' · ');
     renderAnimeTimelineGraph({ centerCurrent: true });
@@ -14880,6 +15013,7 @@ function closeAnimeTimeline() {
   activeAnimeTimeline = null;
   activeAnimeTimelineNodes = new Map();
   activeAnimeTimelineCurrentId = 0;
+  activeAnimeTimelineDisplayEdges = [];
   document.body.style.overflow = document.querySelector('.modal-backdrop.open') ? 'hidden' : '';
 }
 
@@ -14900,7 +15034,7 @@ function buildAnimeTimelineNode(node, index) {
   const localAnime = node.local ? getAnimeById(nodeId) : null;
   const isLocal = !!localAnime;
   const isCurrent = nodeId === activeAnimeTimelineCurrentId;
-  const isSecondary = node.role === 'secondary';
+  const isSecondary = !isAnimeTimelineMainSeriesNode(node);
   const isExtraFormat = isAnimeTimelineExtraFormat(node.format);
   const card = document.createElement(isLocal ? 'button' : 'div');
   if (isLocal) card.type = 'button';
@@ -14949,6 +15083,106 @@ function buildAnimeTimelineNode(node, index) {
   return card;
 }
 
+function getAnimeTimelineReleaseTime(node = {}) {
+  const raw = String(node.release_date || node.aired_from || node.year || '').trim();
+  const match = raw.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);
+  if (!match) return Number.POSITIVE_INFINITY;
+  const year = Number(match[1]);
+  const month = match[2] ? Number(match[2]) - 1 : 5;
+  const day = match[3] ? Number(match[3]) : 15;
+  return Date.UTC(year, month, day);
+}
+
+function getAnimeTimelineBranchPosition(node, mainNodes) {
+  if (mainNodes.length <= 1) return 0;
+  const time = getAnimeTimelineReleaseTime(node);
+  const mainTimes = mainNodes.map(getAnimeTimelineReleaseTime);
+  if (!Number.isFinite(time)) return mainNodes.length - 1;
+  if (time <= mainTimes[0]) return 0;
+  if (time >= mainTimes[mainTimes.length - 1]) return mainNodes.length - 1;
+  for (let index = 0; index < mainTimes.length - 1; index += 1) {
+    const start = mainTimes[index];
+    const end = mainTimes[index + 1];
+    if (time < start || time > end) continue;
+    const ratio = end > start ? (time - start) / (end - start) : 0.5;
+    return index + Math.min(0.82, Math.max(0.18, ratio));
+  }
+  return mainNodes.length - 1;
+}
+
+function chooseAnimeTimelineMainAnchor(node, mainNodes) {
+  if (!mainNodes.length) return null;
+  const mainById = new Map(mainNodes.map(item => [Number(item.mal_id), item]));
+  const nodeId = Number(node.mal_id);
+  const adjacency = new Map();
+  (activeAnimeTimeline?.edges || []).forEach(edge => {
+    const fromId = Number(edge.from);
+    const toId = Number(edge.to);
+    if (!adjacency.has(fromId)) adjacency.set(fromId, new Set());
+    if (!adjacency.has(toId)) adjacency.set(toId, new Set());
+    adjacency.get(fromId).add(toId);
+    adjacency.get(toId).add(fromId);
+  });
+
+  const chooseByDate = candidates => {
+    const nodeTime = getAnimeTimelineReleaseTime(node);
+    const dated = candidates.map(candidate => ({
+      candidate,
+      time: getAnimeTimelineReleaseTime(candidate)
+    }));
+    const previous = dated
+      .filter(item => Number.isFinite(item.time) && item.time <= nodeTime)
+      .sort((a, b) => b.time - a.time)[0];
+    if (previous) return previous.candidate;
+    return dated.sort((a, b) => Math.abs(a.time - nodeTime) - Math.abs(b.time - nodeTime))[0]?.candidate || candidates[0];
+  };
+
+  const direct = [...(adjacency.get(nodeId) || [])]
+    .map(animeId => mainById.get(animeId))
+    .filter(Boolean);
+  if (direct.length) return chooseByDate(direct);
+
+  const visited = new Set([nodeId]);
+  let frontier = [nodeId];
+  while (frontier.length) {
+    const next = [];
+    const matches = [];
+    frontier.forEach(animeId => {
+      (adjacency.get(animeId) || []).forEach(neighbourId => {
+        if (visited.has(neighbourId)) return;
+        visited.add(neighbourId);
+        const mainNode = mainById.get(neighbourId);
+        if (mainNode) matches.push(mainNode);
+        else next.push(neighbourId);
+      });
+    });
+    if (matches.length) return chooseByDate(matches);
+    frontier = next;
+  }
+  return chooseByDate(mainNodes);
+}
+
+function assignAnimeTimelineBranchLanes(branches, cardWidth) {
+  const laneEnds = { top: [], bottom: [] };
+  const clearance = cardWidth + 14;
+  branches.sort((a, b) => a.left - b.left || compareAnimeTimelineNodes(a.node, b.node));
+  branches.forEach((branch, index) => {
+    const preferred = index % 2 === 0 ? 'top' : 'bottom';
+    const choices = [preferred, preferred === 'top' ? 'bottom' : 'top'].map(side => {
+      const lane = laneEnds[side].findIndex(lastLeft => branch.left - lastLeft >= clearance);
+      return { side, lane: lane >= 0 ? lane : laneEnds[side].length };
+    }).sort((a, b) => a.lane - b.lane || (a.side === preferred ? -1 : 1));
+    const selected = choices[0];
+    branch.side = selected.side;
+    branch.lane = selected.lane;
+    laneEnds[selected.side][selected.lane] = branch.left;
+  });
+  return {
+    top: laneEnds.top.length,
+    bottom: laneEnds.bottom.length
+  };
+}
+
 function renderAnimeTimelineGraph({ centerCurrent = false } = {}) {
   const viewport = document.getElementById('animeTimelineViewport');
   const loading = document.getElementById('animeTimelineLoading');
@@ -14960,9 +15194,14 @@ function renderAnimeTimelineGraph({ centerCurrent = false } = {}) {
   const allNodes = (activeAnimeTimeline.nodes || [])
     .map(nodeId => activeAnimeTimelineNodes.get(Number(nodeId)))
     .filter(Boolean);
-  const visibleNodes = animeTimelineMode === 'continuity'
-    ? allNodes.filter(node => node.role === 'continuity' || Number(node.mal_id) === activeAnimeTimelineCurrentId)
-    : allNodes;
+  const mainNodes = getAnimeTimelineMainSeriesNodes(activeAnimeTimeline, activeAnimeTimelineNodes);
+  const mainIds = new Set(mainNodes.map(node => Number(node.mal_id)));
+  const currentNode = activeAnimeTimelineNodes.get(activeAnimeTimelineCurrentId);
+  const visibleBranches = animeTimelineMode === 'all'
+    ? allNodes.filter(node => !mainIds.has(Number(node.mal_id)))
+    : (currentNode && !mainIds.has(Number(currentNode.mal_id)) ? [currentNode] : []);
+  const spineNodes = mainNodes.length ? mainNodes : [currentNode || visibleBranches[0]].filter(Boolean);
+  const visibleNodes = [...spineNodes, ...visibleBranches.filter(node => !spineNodes.includes(node))];
   if (!visibleNodes.length) {
     renderAnimeTimelineLoading('No hay entregas visibles en esta ruta.', true);
     return;
@@ -14972,83 +15211,89 @@ function renderAnimeTimelineGraph({ centerCurrent = false } = {}) {
   canvas.classList.remove('hidden');
   grid.replaceChildren();
   svg.replaceChildren();
+  activeAnimeTimelineDisplayEdges = [];
 
-  const levelById = activeAnimeTimeline.levels || {};
-  const groups = new Map();
-  visibleNodes.forEach(node => {
-    const level = Number(levelById[String(node.mal_id)] ?? 0);
-    if (!groups.has(level)) groups.set(level, []);
-    groups.get(level).push(node);
-  });
-  const levels = [...groups.keys()].sort((a, b) => a - b);
-  levels.forEach(level => {
-    groups.get(level).sort((a, b) => {
-      if (a.role !== b.role) return a.role === 'continuity' ? -1 : 1;
-      return String(a.release_date || a.year || '9999').localeCompare(String(b.release_date || b.year || '9999')) || Number(a.mal_id) - Number(b.mal_id);
-    });
-  });
-
-  const getCentralNodes = entries => entries.filter(node => (
-    node.role === 'continuity' ||
-    (animeTimelineMode === 'continuity' && Number(node.mal_id) === activeAnimeTimelineCurrentId)
-  ));
-  let renderedIndex = 0;
   const mobileLayout = isAnimeTimelineMobileLayout();
   canvas.dataset.timelineLayout = mobileLayout ? 'horizontal-mobile' : 'desktop';
   const cardWidth = mobileLayout ? 176 : 196;
-  const cardHeight = 82;
+  const mainHeight = 82;
+  const branchHeight = 76;
   const columnGap = mobileLayout ? 56 : 70;
-  const rowStep = mobileLayout ? 96 : 104;
-  const padX = mobileLayout ? 26 : 34;
-  const padY = mobileLayout ? 24 : 30;
-  const branchGap = mobileLayout ? 24 : 30;
-  const blockHeight = count => count > 0 ? (count - 1) * rowStep + cardHeight : 0;
-  const centralCounts = levels.map(level => getCentralNodes(groups.get(level)).length);
-  const branchCounts = levels.map((level, index) => groups.get(level).length - centralCounts[index]);
-  const maxCentralRows = Math.max(...centralCounts, 1);
-  const maxTopRows = Math.max(...branchCounts.map(count => Math.ceil(count / 2)), 0);
-  const maxBottomRows = Math.max(...branchCounts.map(count => Math.floor(count / 2)), 0);
-  const mainBlockHeight = blockHeight(maxCentralRows);
-  const upperExtent = mainBlockHeight / 2 + (maxTopRows ? branchGap + blockHeight(maxTopRows) : 0);
-  const lowerExtent = mainBlockHeight / 2 + (maxBottomRows ? branchGap + blockHeight(maxBottomRows) : 0);
-  const contentWidth = padX * 2 + levels.length * cardWidth + Math.max(0, levels.length - 1) * columnGap;
-  const contentHeight = padY * 2 + Math.max(cardHeight, 2 * Math.max(upperExtent, lowerExtent));
+  const rowStep = mobileLayout ? 94 : 100;
+  const padX = mobileLayout ? 28 : 38;
+  const padY = mobileLayout ? 26 : 34;
+  const branchGap = mobileLayout ? 28 : 34;
+  const columnStep = cardWidth + columnGap;
+  const contentWidth = padX * 2 + spineNodes.length * cardWidth + Math.max(0, spineNodes.length - 1) * columnGap;
   const canvasWidth = Math.max(viewport.clientWidth, contentWidth);
-  const canvasHeight = Math.max(viewport.clientHeight, contentHeight);
+  const horizontalOffset = Math.max(0, (canvasWidth - contentWidth) / 2);
+  const mainLeftById = new Map();
+  spineNodes.forEach((node, index) => {
+    mainLeftById.set(Number(node.mal_id), horizontalOffset + padX + index * columnStep);
+  });
+
+  const branchLayouts = visibleBranches
+    .filter(node => !spineNodes.includes(node))
+    .map(node => {
+      const anchor = chooseAnimeTimelineMainAnchor(node, mainNodes.length ? mainNodes : spineNodes);
+      const position = getAnimeTimelineBranchPosition(node, mainNodes.length ? mainNodes : spineNodes);
+      return {
+        node,
+        anchor,
+        left: horizontalOffset + padX + position * columnStep
+      };
+    });
+  const laneCount = assignAnimeTimelineBranchLanes(branchLayouts, cardWidth);
+  const topHeight = laneCount.top
+    ? branchGap + branchHeight + (laneCount.top - 1) * rowStep
+    : 0;
+  const bottomHeight = laneCount.bottom
+    ? branchGap + branchHeight + (laneCount.bottom - 1) * rowStep
+    : 0;
+  const graphHeight = padY * 2 + topHeight + mainHeight + bottomHeight;
+  const canvasHeight = Math.max(viewport.clientHeight, graphHeight);
+  const verticalOffset = Math.max(0, (canvasHeight - graphHeight) / 2);
+  const mainTop = verticalOffset + padY + topHeight;
   canvas.style.width = `${canvasWidth}px`;
   canvas.style.height = `${canvasHeight}px`;
   grid.style.width = `${canvasWidth}px`;
   grid.style.height = `${canvasHeight}px`;
 
-  levels.forEach((level, columnIndex) => {
-    const entries = groups.get(level);
-    const centralNodes = getCentralNodes(entries);
-    const branchNodes = entries.filter(node => !centralNodes.includes(node));
-    const topCount = Math.ceil(branchNodes.length / 2);
-    const topNodes = branchNodes.slice(0, topCount);
-    const bottomNodes = branchNodes.slice(topCount);
-    const centralHeight = blockHeight(Math.max(centralNodes.length, 1));
-    const centralStartY = (canvasHeight - centralHeight) / 2;
-    const appendNode = (node, top) => {
-      const card = buildAnimeTimelineNode(node, renderedIndex++);
-      card.style.position = 'absolute';
-      card.style.left = `${padX + columnIndex * (cardWidth + columnGap)}px`;
-      card.style.top = `${top}px`;
-      card.style.width = `${cardWidth}px`;
-      grid.appendChild(card);
-    };
+  let renderedIndex = 0;
+  const appendNode = (node, left, top, anchorId = 0) => {
+    const card = buildAnimeTimelineNode(node, renderedIndex++);
+    card.style.position = 'absolute';
+    card.style.left = `${left}px`;
+    card.style.top = `${top}px`;
+    card.style.width = `${cardWidth}px`;
+    card.dataset.timelinePrimary = String(mainIds.has(Number(node.mal_id)));
+    if (anchorId) card.dataset.timelineAnchorId = String(anchorId);
+    grid.appendChild(card);
+  };
 
-    centralNodes.forEach((node, rowIndex) => {
-      appendNode(node, centralStartY + rowIndex * rowStep);
+  spineNodes.forEach(node => {
+    appendNode(node, mainLeftById.get(Number(node.mal_id)), mainTop);
+  });
+  for (let index = 0; index < mainNodes.length - 1; index += 1) {
+    activeAnimeTimelineDisplayEdges.push({
+      from: Number(mainNodes[index].mal_id),
+      to: Number(mainNodes[index + 1].mal_id),
+      kind: 'continuity'
     });
+  }
 
-    if (topNodes.length) {
-      const topStartY = centralStartY - branchGap - blockHeight(topNodes.length);
-      topNodes.forEach((node, rowIndex) => appendNode(node, topStartY + rowIndex * rowStep));
-    }
-    if (bottomNodes.length) {
-      const bottomStartY = centralStartY + centralHeight + branchGap;
-      bottomNodes.forEach((node, rowIndex) => appendNode(node, bottomStartY + rowIndex * rowStep));
+  branchLayouts.forEach(branch => {
+    const top = branch.side === 'top'
+      ? mainTop - branchGap - branchHeight - branch.lane * rowStep
+      : mainTop + mainHeight + branchGap + branch.lane * rowStep;
+    const anchorId = Number(branch.anchor?.mal_id) || 0;
+    appendNode(branch.node, branch.left, top, anchorId);
+    if (anchorId && anchorId !== Number(branch.node.mal_id)) {
+      activeAnimeTimelineDisplayEdges.push({
+        from: anchorId,
+        to: Number(branch.node.mal_id),
+        kind: 'branch'
+      });
     }
   });
 
@@ -15087,13 +15332,12 @@ function drawAnimeTimelineConnections() {
 
   const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
   createAnimeTimelineMarker(defs, 'timeline-arrow-main', '#35ddff');
-  createAnimeTimelineMarker(defs, 'timeline-arrow-secondary', '#ff5b99');
   svg.appendChild(defs);
 
   const visibleIds = new Set(
     [...grid.querySelectorAll('[data-timeline-node-id]')].map(card => Number(card.dataset.timelineNodeId))
   );
-  (activeAnimeTimeline.edges || []).forEach(edge => {
+  (activeAnimeTimelineDisplayEdges || []).forEach(edge => {
     const fromId = Number(edge.from);
     const toId = Number(edge.to);
     if (!visibleIds.has(fromId) || !visibleIds.has(toId)) return;
@@ -15109,7 +15353,15 @@ function drawAnimeTimelineConnections() {
     let y2;
     let pathData;
     const secondary = edge.kind === 'branch';
-    if (Math.abs(fromCenterX - toCenterX) < 20) {
+    if (secondary) {
+      const branchAbove = to.offsetTop < from.offsetTop;
+      x1 = fromCenterX;
+      y1 = branchAbove ? from.offsetTop : from.offsetTop + from.offsetHeight;
+      x2 = toCenterX;
+      y2 = branchAbove ? to.offsetTop + to.offsetHeight : to.offsetTop;
+      const middleY = (y1 + y2) / 2;
+      pathData = `M ${x1} ${y1} C ${x1} ${middleY}, ${x2} ${middleY}, ${x2} ${y2}`;
+    } else if (Math.abs(fromCenterX - toCenterX) < 20) {
       const forward = to.offsetTop >= from.offsetTop;
       x1 = fromCenterX;
       y1 = forward ? from.offsetTop + from.offsetHeight : from.offsetTop;
@@ -15130,7 +15382,7 @@ function drawAnimeTimelineConnections() {
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('class', `timeline-edge${secondary ? ' secondary' : ''}`);
     path.setAttribute('d', pathData);
-    path.setAttribute('marker-end', `url(#${secondary ? 'timeline-arrow-secondary' : 'timeline-arrow-main'})`);
+    if (!secondary) path.setAttribute('marker-end', 'url(#timeline-arrow-main)');
     svg.appendChild(path);
   });
 }
