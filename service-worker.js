@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20260811-saga-map6';
+const CACHE_VERSION = '20260811-saga-map7';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 
