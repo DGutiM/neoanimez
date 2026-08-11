@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20260801-premiered-pending1';
+const CACHE_VERSION = '20260811-watch-order1';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 
@@ -54,6 +54,7 @@ function isCatalogRequest(request) {
     url.pathname.endsWith('/anime-upcoming.json') ||
     url.pathname.endsWith('/anime-schedule.json') ||
     url.pathname.endsWith('/anime-news.json') ||
+    url.pathname.endsWith('/anime-relations.json') ||
     url.pathname.includes('/anime-details/') ||
     url.pathname.includes('/character-index/') ||
     url.pathname.includes('/character-details/');

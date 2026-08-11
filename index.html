@@ -3801,6 +3801,133 @@ button:disabled,
   font-family:'Orbitron',monospace;font-size:11px;letter-spacing:.12em;
   color:var(--muted);text-transform:uppercase;margin-top:18px;margin-bottom:10px
 }
+.anime-relations-section.hidden{display:none}
+.anime-relations-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;
+}
+.anime-relation-card{
+  width:100%;
+  min-width:0;
+  min-height:88px;
+  padding:8px;
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr) 18px;
+  gap:9px;
+  align-items:center;
+  text-align:left;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.035);
+  color:#eef1ff;
+  cursor:pointer;
+  overflow:hidden;
+  transition:transform .16s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.anime-relation-card:hover{
+  transform:translateY(-1px);
+  border-color:rgba(0,212,255,.34);
+  background:rgba(0,212,255,.07);
+}
+.anime-relation-card:focus-visible{outline:2px solid #8ff0ff;outline-offset:2px}
+.anime-relation-card.relation-sequel{
+  border-color:rgba(255,45,120,.18);
+  background:linear-gradient(135deg,rgba(255,45,120,.07),rgba(123,79,255,.04));
+}
+.anime-relation-card.relation-sequel:hover{
+  border-color:rgba(255,45,120,.38);
+  background:linear-gradient(135deg,rgba(255,45,120,.12),rgba(123,79,255,.07));
+  box-shadow:0 0 20px rgba(255,45,120,.08);
+}
+.anime-relation-img{
+  width:52px;
+  height:72px;
+  border-radius:10px;
+  object-fit:cover;
+  background:var(--surface2);
+  box-shadow:0 8px 18px rgba(0,0,0,.24);
+}
+.anime-relation-copy{min-width:0;display:flex;flex-direction:column;gap:5px}
+.anime-relation-label{
+  font-family:'Orbitron',monospace;
+  font-size:8px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#72efff;
+}
+.relation-sequel .anime-relation-label{color:#ff91bd}
+.anime-relation-title{
+  min-width:0;
+  font-family:'Orbitron',monospace;
+  font-size:10px;
+  line-height:1.38;
+  color:#f3f5ff;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+.anime-relation-meta{
+  min-width:0;
+  color:#949abf;
+  font-size:10px;
+  line-height:1.35;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.anime-relation-open{
+  color:#8188ad;
+  font-size:20px;
+  line-height:1;
+  text-align:center;
+}
+.anime-series-order{margin-top:10px}
+.anime-series-order.hidden,.anime-series-panel.hidden{display:none}
+.anime-series-toggle{
+  width:100%;min-height:44px;padding:9px 12px;display:flex;align-items:center;gap:10px;
+  border:1px solid rgba(0,212,255,.18);border-radius:14px;
+  background:linear-gradient(135deg,rgba(0,212,255,.07),rgba(123,79,255,.06));
+  color:#eef3ff;text-align:left;cursor:pointer;
+}
+.anime-series-toggle:hover{border-color:rgba(0,212,255,.36);background:rgba(0,212,255,.09)}
+.anime-series-toggle:focus-visible{outline:2px solid #8ff0ff;outline-offset:2px}
+.anime-series-toggle-title{
+  min-width:0;flex:1;font-family:'Orbitron',monospace;font-size:10px;line-height:1.35
+}
+.anime-series-toggle-count{font-size:10px;color:#9ca3c5;white-space:nowrap}
+.anime-series-toggle-icon{
+  width:24px;height:24px;display:grid;place-items:center;border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);color:#72efff;font-size:16px;line-height:1
+}
+.anime-series-panel{margin-top:8px;padding:10px;border-left:1px solid rgba(0,212,255,.22)}
+.anime-series-note{margin:0 0 9px;color:#969dbc;font-size:11px;line-height:1.55}
+.anime-series-list{display:flex;flex-direction:column;gap:6px}
+.anime-series-row{
+  width:100%;min-width:0;min-height:48px;padding:7px 9px;display:grid;
+  grid-template-columns:28px minmax(0,1fr) 18px;gap:9px;align-items:center;
+  border:1px solid rgba(255,255,255,.075);border-radius:11px;
+  background:rgba(255,255,255,.025);color:#edf0ff;text-align:left;cursor:pointer;
+}
+.anime-series-row:hover{border-color:rgba(0,212,255,.3);background:rgba(0,212,255,.06)}
+.anime-series-row:focus-visible{outline:2px solid #8ff0ff;outline-offset:2px}
+.anime-series-row.current{
+  border-color:rgba(114,255,154,.34);background:rgba(114,255,154,.07);cursor:default
+}
+.anime-series-index{
+  width:28px;height:28px;display:grid;place-items:center;border-radius:50%;
+  border:1px solid rgba(0,212,255,.25);color:#72efff;font-family:'Orbitron',monospace;font-size:9px
+}
+.anime-series-row.current .anime-series-index{border-color:rgba(114,255,154,.5);color:#72ff9a}
+.anime-series-copy{min-width:0;display:flex;flex-direction:column;gap:3px}
+.anime-series-title{
+  min-width:0;font-family:'Orbitron',monospace;font-size:9px;line-height:1.35;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.anime-series-meta{color:#8e95b5;font-size:9px;line-height:1.3}
+.anime-series-current{color:#72ff9a;font-size:8px;text-transform:uppercase}
+.anime-series-open{color:#7f86a9;font-size:18px;text-align:center}
 @keyframes modalPop{
   from{opacity:0;transform:translateY(10px) scale(.98)}
   to{opacity:1;transform:translateY(0) scale(1)}
@@ -3818,6 +3945,10 @@ button:disabled,
   .modal-hero{gap:12px;padding-right:42px}
   .modal-cover{width:96px;height:136px}
   .modal-title{font-size:16px}
+  .anime-relations-list{grid-template-columns:1fr}
+  .anime-relation-card{min-height:84px}
+  .anime-series-panel{padding:8px 0 0 8px}
+  .anime-series-row{grid-template-columns:28px minmax(0,1fr) 16px}
   .random-panel{align-items:stretch;flex-direction:column;gap:12px}
   .random-actions{width:100%;grid-template-columns:repeat(auto-fit, minmax(128px, 1fr));gap:8px}
   .random-btn{height:48px;border-radius:16px;padding:0 12px}
@@ -5028,6 +5159,11 @@ body.cookie-banner-visible #intro-screen{
         <div id="animeRecommendationNote" class="modal-reco-note hidden"></div>
       </div>
     </div>
+    <div id="animeRelationsSection" class="anime-relations-section hidden" aria-live="polite">
+      <div class="modal-section-title">Orden de la serie</div>
+      <div id="animeRelationsList" class="anime-relations-list"></div>
+      <div id="animeSeriesOrder" class="anime-series-order hidden"></div>
+    </div>
     <div class="modal-section-title">Descripción</div>
     <div id="animeModalDesc" class="modal-desc"></div>
     <div class="modal-status-box">
@@ -5141,7 +5277,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260801-premiered-pending1';
+const APP_VERSION = '20260811-watch-order1';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -5149,6 +5285,7 @@ const CATALOG_FALLBACK_URL = `anime-lista.json?v=${CATALOG_VERSION}`;
 const UPCOMING_URL = `anime-upcoming.json?v=${CATALOG_VERSION}`;
 const SCHEDULE_URL = `anime-schedule.json?v=${CATALOG_VERSION}`;
 const NEWS_URL = `anime-news.json?v=${CATALOG_VERSION}`;
+const RELATIONS_URL = `anime-relations.json?v=${CATALOG_VERSION}`;
 const PUBLIC_PROFILE_SLUG_RE = /^[a-z0-9][a-z0-9-]{2,29}$/;
 const SUPABASE_LOCK_TIMEOUT_MS = 4500;
 const SUPABASE_PROJECT_REF = (() => {
@@ -5313,6 +5450,12 @@ let titleSearchDebounce = null;
 let analyticsLoaded = false;
 let titleDisplayMode = readTitleDisplayMode();
 let splitCatalogEnabled = false;
+let animeRelationsLoaded = false;
+let animeRelationsLoadPromise = null;
+const animeRelationsMap = new Map();
+const animeSeriesMap = new Map();
+const animeSeriesNavigationMap = new Map();
+let animeSeriesOrderExpanded = false;
 const screenScrollPositions = {};
 const detailBlockCache = new Map();
 const detailBlockRequests = new Map();
@@ -5683,6 +5826,7 @@ function refreshVisibleAnimeTitles() {
   if (currentModalAnime) {
     const title = document.getElementById('animeModalTitle');
     if (title) title.textContent = getAnimeDisplayTitle(currentModalAnime);
+    renderAnimeRelations(currentModalAnime);
   }
 }
 
@@ -12129,6 +12273,72 @@ async function fetchCatalogJson(path, options = {}) {
   }
 }
 
+async function loadAnimeRelations({ force = false } = {}) {
+  if (animeRelationsLoaded && !force) return animeRelationsMap;
+  if (animeRelationsLoadPromise && !force) return animeRelationsLoadPromise;
+
+  const request = (async () => {
+    const payload = await fetchCatalogJson(RELATIONS_URL, {
+      preferCache: !force,
+      timeout: 10000
+    });
+    const relations = payload?.relations;
+    if (!relations || typeof relations !== 'object' || Array.isArray(relations)) {
+      throw new Error('anime-relations.json no contiene un mapa de relaciones valido.');
+    }
+
+    animeRelationsMap.clear();
+    animeSeriesMap.clear();
+    animeSeriesNavigationMap.clear();
+    Object.entries(relations).forEach(([animeId, value]) => {
+      const id = Number(animeId);
+      if (!Number.isFinite(id) || id <= 0 || !value || typeof value !== 'object') return;
+      const normalizeIds = items => [...new Set(
+        (Array.isArray(items) ? items : [])
+          .map(Number)
+          .filter(targetId => Number.isFinite(targetId) && targetId > 0 && targetId !== id)
+      )];
+      animeRelationsMap.set(id, {
+        prequels: normalizeIds(value.prequels),
+        sequels: normalizeIds(value.sequels)
+      });
+    });
+    Object.entries(payload?.series || {}).forEach(([seriesId, value]) => {
+      const id = Number(seriesId);
+      if (!Number.isFinite(id) || id <= 0 || !value || typeof value !== 'object') return;
+      const entries = [...new Set((Array.isArray(value.entries) ? value.entries : []).map(Number))]
+        .filter(targetId => Number.isFinite(targetId) && targetId > 0);
+      if (entries.length < 2) return;
+      animeSeriesMap.set(id, {
+        entries,
+        roots: [...new Set((Array.isArray(value.roots) ? value.roots : []).map(Number))]
+          .filter(targetId => Number.isFinite(targetId) && targetId > 0),
+        hasBranches: value.has_branches === true,
+        hasCycle: value.has_cycle === true
+      });
+    });
+    Object.entries(payload?.navigation || {}).forEach(([animeId, value]) => {
+      const id = Number(animeId);
+      const seriesId = Number(value?.series_id);
+      const orderIndex = Number(value?.order_index);
+      if (!Number.isFinite(id) || id <= 0 || !animeSeriesMap.has(seriesId)) return;
+      animeSeriesNavigationMap.set(id, {
+        seriesId,
+        orderIndex: Number.isFinite(orderIndex) && orderIndex > 0 ? orderIndex : 1
+      });
+    });
+    animeRelationsLoaded = true;
+    return animeRelationsMap;
+  })();
+
+  animeRelationsLoadPromise = request;
+  try {
+    return await request;
+  } finally {
+    animeRelationsLoadPromise = null;
+  }
+}
+
 async function loadDB() {
   try {
     let rawDB;
@@ -14130,6 +14340,223 @@ function renderAnimeModalContent(anime, { loadingDetails = false } = {}) {
   }
 }
 
+function clearAnimeRelationsUI() {
+  const section = document.getElementById('animeRelationsSection');
+  const list = document.getElementById('animeRelationsList');
+  const order = document.getElementById('animeSeriesOrder');
+  section?.classList.add('hidden');
+  list?.replaceChildren();
+  order?.replaceChildren();
+  order?.classList.add('hidden');
+}
+
+function getAnimeRelationMeta(anime = {}) {
+  const parts = [];
+  if (anime.year) parts.push(String(anime.year));
+  if (anime.type) parts.push(String(anime.type));
+  const episodes = Number(anime.episodes);
+  if (Number.isFinite(episodes) && episodes > 0) parts.push(`${episodes} ep`);
+  return parts.join(' · ');
+}
+
+function buildAnimeRelationCard(anime, kind) {
+  const isPrequel = kind === 'prequel';
+  const displayTitle = getAnimeDisplayTitle(anime);
+  const card = document.createElement('button');
+  card.type = 'button';
+  card.className = `anime-relation-card relation-${kind}`;
+  card.dataset.animeRelationId = String(anime.mal_id);
+  card.setAttribute('aria-label', `Abrir entrega ${isPrequel ? 'anterior' : 'siguiente'}: ${displayTitle}`);
+
+  const image = document.createElement('img');
+  image.className = 'anime-relation-img';
+  image.src = BLANK;
+  image.alt = '';
+
+  const copy = document.createElement('span');
+  copy.className = 'anime-relation-copy';
+
+  const label = document.createElement('span');
+  label.className = 'anime-relation-label';
+  label.textContent = isPrequel ? '← Precuela · anterior' : 'Secuela · siguiente →';
+
+  const title = document.createElement('span');
+  title.className = 'anime-relation-title';
+  title.textContent = displayTitle;
+
+  const meta = document.createElement('span');
+  meta.className = 'anime-relation-meta';
+  meta.textContent = getAnimeRelationMeta(anime);
+
+  const open = document.createElement('span');
+  open.className = 'anime-relation-open';
+  open.setAttribute('aria-hidden', 'true');
+  open.textContent = '›';
+
+  copy.append(label, title);
+  if (meta.textContent) copy.appendChild(meta);
+  card.append(image, copy, open);
+  card.addEventListener('click', () => openAnimeModal(anime, anime.image || BLANK));
+  return card;
+}
+
+function buildAnimeSeriesRow(anime, index, currentAnimeId) {
+  const isCurrent = Number(anime.mal_id) === Number(currentAnimeId);
+  const row = document.createElement('button');
+  row.type = 'button';
+  row.className = `anime-series-row${isCurrent ? ' current' : ''}`;
+  if (isCurrent) row.setAttribute('aria-current', 'true');
+  row.setAttribute('aria-label', isCurrent
+    ? `${getAnimeDisplayTitle(anime)}, ficha actual`
+    : `Abrir ${getAnimeDisplayTitle(anime)}`);
+
+  const number = document.createElement('span');
+  number.className = 'anime-series-index';
+  number.textContent = String(index + 1).padStart(2, '0');
+
+  const copy = document.createElement('span');
+  copy.className = 'anime-series-copy';
+  const title = document.createElement('span');
+  title.className = 'anime-series-title';
+  title.textContent = getAnimeDisplayTitle(anime);
+  copy.appendChild(title);
+  if (isCurrent) {
+    const current = document.createElement('span');
+    current.className = 'anime-series-current';
+    current.textContent = 'Estás aquí';
+    copy.appendChild(current);
+  } else {
+    const meta = document.createElement('span');
+    meta.className = 'anime-series-meta';
+    meta.textContent = getAnimeRelationMeta(anime);
+    if (meta.textContent) copy.appendChild(meta);
+  }
+
+  const open = document.createElement('span');
+  open.className = 'anime-series-open';
+  open.setAttribute('aria-hidden', 'true');
+  open.textContent = isCurrent ? '•' : '›';
+  row.append(number, copy, open);
+  if (!isCurrent) row.addEventListener('click', () => openAnimeModal(anime, anime.image || BLANK));
+  return row;
+}
+
+function renderAnimeSeriesOrder(anime) {
+  const container = document.getElementById('animeSeriesOrder');
+  if (!container || !anime) return false;
+  container.replaceChildren();
+  container.classList.add('hidden');
+
+  const navigation = animeSeriesNavigationMap.get(Number(anime.mal_id));
+  const series = navigation ? animeSeriesMap.get(navigation.seriesId) : null;
+  if (!series || series.entries.length < 3) return false;
+  const entries = series.entries.map(getAnimeById).filter(Boolean);
+  if (entries.length < 3) return false;
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'anime-series-toggle';
+  toggle.setAttribute('aria-expanded', String(animeSeriesOrderExpanded));
+
+  const toggleTitle = document.createElement('span');
+  toggleTitle.className = 'anime-series-toggle-title';
+  toggleTitle.textContent = series.hasBranches ? 'Ver mapa completo de la saga' : 'Ver orden completo';
+  const count = document.createElement('span');
+  count.className = 'anime-series-toggle-count';
+  count.textContent = `${entries.length} ${series.hasBranches ? 'entregas' : 'partes'}`;
+  const icon = document.createElement('span');
+  icon.className = 'anime-series-toggle-icon';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.textContent = animeSeriesOrderExpanded ? '−' : '+';
+  toggle.append(toggleTitle, count, icon);
+
+  const panel = document.createElement('div');
+  panel.className = `anime-series-panel${animeSeriesOrderExpanded ? '' : ' hidden'}`;
+  const note = document.createElement('p');
+  note.className = 'anime-series-note';
+  if (series.hasBranches) {
+    note.textContent = 'Esta saga tiene rutas alternativas. El orden es orientativo y combina continuidad y estreno.';
+  } else if (series.hasCycle) {
+    note.textContent = 'Orden orientativo: la fuente relaciona algunas entregas en ambos sentidos.';
+  } else {
+    note.textContent = 'Orden de continuidad entre las entregas relacionadas.';
+  }
+  const list = document.createElement('div');
+  list.className = 'anime-series-list';
+  entries.forEach((entry, index) => list.appendChild(
+    buildAnimeSeriesRow(entry, index, anime.mal_id)
+  ));
+  panel.append(note, list);
+
+  toggle.addEventListener('click', () => {
+    animeSeriesOrderExpanded = !animeSeriesOrderExpanded;
+    toggle.setAttribute('aria-expanded', String(animeSeriesOrderExpanded));
+    panel.classList.toggle('hidden', !animeSeriesOrderExpanded);
+    icon.textContent = animeSeriesOrderExpanded ? '−' : '+';
+  });
+  container.append(toggle, panel);
+  container.classList.remove('hidden');
+  return true;
+}
+
+function renderAnimeRelations(anime = currentModalAnime) {
+  const section = document.getElementById('animeRelationsSection');
+  const list = document.getElementById('animeRelationsList');
+  if (!section || !list || !anime || !animeRelationsLoaded) {
+    if (!animeRelationsLoaded) clearAnimeRelationsUI();
+    return false;
+  }
+
+  list.replaceChildren();
+  const relations = animeRelationsMap.get(Number(anime.mal_id));
+  const hasSeriesOrder = renderAnimeSeriesOrder(anime);
+  if (!relations && !hasSeriesOrder) {
+    section.classList.add('hidden');
+    return false;
+  }
+
+  const cards = [];
+  [
+    ['prequel', relations?.prequels || []],
+    ['sequel', relations?.sequels || []]
+  ].forEach(([kind, ids]) => {
+    ids.forEach(targetId => {
+      const target = getAnimeById(targetId);
+      if (!target) return;
+      cards.push({ card: buildAnimeRelationCard(target, kind), anime: target });
+    });
+  });
+
+  if (!cards.length && !hasSeriesOrder) {
+    section.classList.add('hidden');
+    return false;
+  }
+
+  cards.forEach(({ card }) => list.appendChild(card));
+  list.classList.toggle('hidden', !cards.length);
+  section.classList.remove('hidden');
+  cards.forEach(({ card, anime: target }, index) => {
+    loadAnimeImageElement(card.querySelector('.anime-relation-img'), target, index * 40);
+  });
+  return true;
+}
+
+async function renderAnimeRelationsForModal(anime) {
+  clearAnimeRelationsUI();
+  const requestedId = Number(anime?.mal_id);
+  if (!requestedId) return;
+  if (animeRelationsLoaded) {
+    renderAnimeRelations(anime);
+    return;
+  }
+  try {
+    await loadAnimeRelations();
+    if (Number(currentModalAnime?.mal_id) === requestedId) renderAnimeRelations(currentModalAnime);
+  } catch (error) {
+    console.warn('No se pudo cargar la continuidad del anime:', error);
+  }
+}
+
 function resetAnimeModalScroll(modal) {
   const sheet = modal?.querySelector?.('.modal-sheet');
   if (!sheet) return;
@@ -14146,6 +14573,9 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
 
   if (!modal || !anime) return;
 
+  if (Number(currentModalAnime?.mal_id) !== Number(anime.mal_id)) {
+    animeSeriesOrderExpanded = false;
+  }
   currentModalAnime = anime;
   currentRecommendationReason = options.recommendationReason || '';
   if (img) img.src = BLANK;
@@ -14153,6 +14583,7 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
 
   const needsDetails = splitCatalogEnabled && !!getCatalogDetailFile(anime) && !anime._details_loaded;
   renderAnimeModalContent(anime, { loadingDetails: needsDetails });
+  renderAnimeRelationsForModal(anime);
   statusBox?.classList.toggle('hidden', !currentUser);
 
   modal.classList.add('open');
@@ -14168,6 +14599,7 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
       if (!fullAnime || Number(currentModalAnime?.mal_id) !== Number(anime.mal_id)) return;
       currentModalAnime = fullAnime;
       renderAnimeModalContent(fullAnime);
+      renderAnimeRelations(fullAnime);
       updateModalStatusUI();
       updateModalRatingUI();
       updateModalProgressUI();
@@ -14184,6 +14616,7 @@ function closeAnimeModal() {
   document.body.style.overflow = '';
   currentModalAnime = null;
   currentRecommendationReason = '';
+  clearAnimeRelationsUI();
 }
 
 document.addEventListener('click', (e) => {
@@ -14295,6 +14728,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.warn('No se pudo precargar el calendario:', error);
   });
   await loadDB();
+  window.setTimeout(() => {
+    loadAnimeRelations().catch(error => {
+      console.warn('No se pudo precargar anime-relations.json:', error);
+    });
+  }, 700);
   const publicProfileSlug = readPublicProfileSlugFromUrl();
   const savedAppState = readAppState();
   const passwordJustUpdated = (() => {
