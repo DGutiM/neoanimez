@@ -3804,7 +3804,7 @@ button:disabled,
 .anime-relations-section.hidden{display:none}
 .anime-relations-list{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:repeat(var(--relation-count,2),minmax(0,1fr));
   gap:9px;
 }
 .anime-relation-card{
@@ -4032,8 +4032,26 @@ button.timeline-node.extra-format:hover{border-color:rgba(255,91,153,.52);box-sh
   .modal-hero{gap:12px;padding-right:42px}
   .modal-cover{width:96px;height:136px}
   .modal-title{font-size:16px}
-  .anime-relations-list{grid-template-columns:1fr}
-  .anime-relation-card{min-height:84px}
+  .anime-relations-list{
+    grid-template-columns:repeat(var(--relation-count,1),minmax(0,1fr));gap:6px
+  }
+  .anime-relation-card{
+    min-height:88px;padding:9px;display:flex;align-items:flex-start;gap:0;border-radius:13px
+  }
+  .anime-relations-list:not([data-count="1"]) .anime-relation-img,
+  .anime-relations-list:not([data-count="1"]) .anime-relation-meta,
+  .anime-relations-list:not([data-count="1"]) .anime-relation-open{display:none}
+  .anime-relations-list:not([data-count="1"]) .anime-relation-copy{width:100%;gap:5px}
+  .anime-relations-list:not([data-count="1"]) .anime-relation-label{font-size:7px;white-space:nowrap}
+  .anime-relations-list:not([data-count="1"]) .anime-relation-title{
+    font-size:8px;line-height:1.42;-webkit-line-clamp:3
+  }
+  .anime-relations-list[data-count="1"] .anime-relation-card{
+    min-height:76px;display:grid;grid-template-columns:44px minmax(0,1fr) 14px;gap:8px;padding:7px
+  }
+  .anime-relations-list[data-count="1"] .anime-relation-img{width:44px;height:62px;border-radius:8px}
+  .anime-relations-list[data-count="1"] .anime-relation-title{font-size:9px}
+  .anime-relations-list[data-count="1"] .anime-relation-meta{font-size:9px}
   .timeline-backdrop{padding:0}
   .timeline-sheet{width:100%;height:100dvh;max-height:none;min-height:0;border-radius:0;border-left:0;border-right:0}
   .timeline-head{padding:15px 50px 12px 14px}
@@ -4045,11 +4063,11 @@ button.timeline-node.extra-format:hover{border-color:rgba(255,91,153,.52);box-sh
   .timeline-legend{gap:9px}
   .timeline-scroll-progress{display:block}
   .timeline-locate{display:grid}
-  .timeline-viewport{overflow-x:hidden;scrollbar-gutter:stable}
-  .timeline-node{height:88px}
-  .timeline-node.secondary,.timeline-node.extra-format{height:82px}
-  .timeline-node-img{height:66px}
-  .timeline-node.secondary .timeline-node-img,.timeline-node.extra-format .timeline-node-img{height:62px}
+  .timeline-viewport{
+    overflow:auto;scrollbar-gutter:stable;-webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;touch-action:pan-x pan-y;scroll-snap-type:x proximity
+  }
+  .timeline-node{scroll-snap-align:center}
   .random-panel{align-items:stretch;flex-direction:column;gap:12px}
   .random-actions{width:100%;grid-template-columns:repeat(auto-fit, minmax(128px, 1fr));gap:8px}
   .random-btn{height:48px;border-radius:16px;padding:0 12px}
@@ -5430,7 +5448,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260811-saga-map4';
+const APP_VERSION = '20260811-saga-map5';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -14546,6 +14564,8 @@ function clearAnimeRelationsUI() {
   const timeline = document.getElementById('animeTimelineAction');
   section?.classList.add('hidden');
   list?.replaceChildren();
+  list?.removeAttribute('data-count');
+  list?.style.removeProperty('--relation-count');
   timeline?.replaceChildren();
   timeline?.classList.add('hidden');
 }
@@ -14677,6 +14697,8 @@ function renderAnimeRelations(anime = currentModalAnime) {
     return false;
   }
 
+  list.dataset.count = String(cards.length);
+  list.style.setProperty('--relation-count', String(Math.max(1, cards.length)));
   cards.forEach(({ card }) => list.appendChild(card));
   list.classList.toggle('hidden', !cards.length);
   section.classList.remove('hidden');
@@ -14775,9 +14797,14 @@ function isAnimeTimelineMobileLayout() {
 function updateAnimeTimelineScrollProgress() {
   const viewport = document.getElementById('animeTimelineViewport');
   const progress = document.getElementById('animeTimelineScrollProgress');
+  const canvas = document.getElementById('animeTimelineCanvas');
   if (!viewport || !progress) return;
-  const scrollable = Math.max(0, viewport.scrollHeight - viewport.clientHeight);
-  const ratio = scrollable > 0 ? Math.min(1, Math.max(0, viewport.scrollTop / scrollable)) : 1;
+  const horizontalMobile = canvas?.dataset.timelineLayout === 'horizontal-mobile';
+  const scrollable = horizontalMobile
+    ? Math.max(0, viewport.scrollWidth - viewport.clientWidth)
+    : Math.max(0, viewport.scrollHeight - viewport.clientHeight);
+  const offset = horizontalMobile ? viewport.scrollLeft : viewport.scrollTop;
+  const ratio = scrollable > 0 ? Math.min(1, Math.max(0, offset / scrollable)) : 1;
   progress.style.width = `${ratio * 100}%`;
 }
 
@@ -14967,103 +14994,63 @@ function renderAnimeTimelineGraph({ centerCurrent = false } = {}) {
   ));
   let renderedIndex = 0;
   const mobileLayout = isAnimeTimelineMobileLayout();
-  canvas.dataset.timelineLayout = mobileLayout ? 'mobile' : 'desktop';
+  canvas.dataset.timelineLayout = mobileLayout ? 'horizontal-mobile' : 'desktop';
+  const cardWidth = mobileLayout ? 176 : 196;
+  const cardHeight = 82;
+  const columnGap = mobileLayout ? 56 : 70;
+  const rowStep = mobileLayout ? 96 : 104;
+  const padX = mobileLayout ? 26 : 34;
+  const padY = mobileLayout ? 24 : 30;
+  const branchGap = mobileLayout ? 24 : 30;
+  const blockHeight = count => count > 0 ? (count - 1) * rowStep + cardHeight : 0;
+  const centralCounts = levels.map(level => getCentralNodes(groups.get(level)).length);
+  const branchCounts = levels.map((level, index) => groups.get(level).length - centralCounts[index]);
+  const maxCentralRows = Math.max(...centralCounts, 1);
+  const maxTopRows = Math.max(...branchCounts.map(count => Math.ceil(count / 2)), 0);
+  const maxBottomRows = Math.max(...branchCounts.map(count => Math.floor(count / 2)), 0);
+  const mainBlockHeight = blockHeight(maxCentralRows);
+  const upperExtent = mainBlockHeight / 2 + (maxTopRows ? branchGap + blockHeight(maxTopRows) : 0);
+  const lowerExtent = mainBlockHeight / 2 + (maxBottomRows ? branchGap + blockHeight(maxBottomRows) : 0);
+  const contentWidth = padX * 2 + levels.length * cardWidth + Math.max(0, levels.length - 1) * columnGap;
+  const contentHeight = padY * 2 + Math.max(cardHeight, 2 * Math.max(upperExtent, lowerExtent));
+  const canvasWidth = Math.max(viewport.clientWidth, contentWidth);
+  const canvasHeight = Math.max(viewport.clientHeight, contentHeight);
+  canvas.style.width = `${canvasWidth}px`;
+  canvas.style.height = `${canvasHeight}px`;
+  grid.style.width = `${canvasWidth}px`;
+  grid.style.height = `${canvasHeight}px`;
 
-  if (mobileLayout) {
-    const viewportWidth = Math.max(280, viewport.clientWidth);
-    const mainLeft = 36;
-    const mainRight = 30;
-    const branchLeft = 52;
-    const branchRight = 30;
-    const nodeGap = 16;
-    const levelGap = 34;
-    const padTop = 28;
-    const padBottom = 66;
-    let cursorY = padTop;
+  levels.forEach((level, columnIndex) => {
+    const entries = groups.get(level);
+    const centralNodes = getCentralNodes(entries);
+    const branchNodes = entries.filter(node => !centralNodes.includes(node));
+    const topCount = Math.ceil(branchNodes.length / 2);
+    const topNodes = branchNodes.slice(0, topCount);
+    const bottomNodes = branchNodes.slice(topCount);
+    const centralHeight = blockHeight(Math.max(centralNodes.length, 1));
+    const centralStartY = (canvasHeight - centralHeight) / 2;
+    const appendNode = (node, top) => {
+      const card = buildAnimeTimelineNode(node, renderedIndex++);
+      card.style.position = 'absolute';
+      card.style.left = `${padX + columnIndex * (cardWidth + columnGap)}px`;
+      card.style.top = `${top}px`;
+      card.style.width = `${cardWidth}px`;
+      grid.appendChild(card);
+    };
 
-    levels.forEach((level, levelIndex) => {
-      const entries = groups.get(level);
-      const centralNodes = getCentralNodes(entries);
-      const branchNodes = entries.filter(node => !centralNodes.includes(node));
-      [...centralNodes, ...branchNodes].forEach(node => {
-        const isBranch = !centralNodes.includes(node);
-        const nodeHeight = node.role === 'secondary' || isAnimeTimelineExtraFormat(node.format) ? 82 : 88;
-        const left = isBranch ? branchLeft : mainLeft;
-        const right = isBranch ? branchRight : mainRight;
-        const card = buildAnimeTimelineNode(node, renderedIndex++);
-        card.style.position = 'absolute';
-        card.style.left = `${left}px`;
-        card.style.top = `${cursorY}px`;
-        card.style.width = `${Math.max(210, viewportWidth - left - right)}px`;
-        grid.appendChild(card);
-        cursorY += nodeHeight + nodeGap;
-      });
-      if (levelIndex < levels.length - 1) cursorY += levelGap;
+    centralNodes.forEach((node, rowIndex) => {
+      appendNode(node, centralStartY + rowIndex * rowStep);
     });
 
-    const canvasWidth = viewportWidth;
-    const canvasHeight = Math.max(viewport.clientHeight, cursorY - nodeGap + padBottom);
-    canvas.style.width = `${canvasWidth}px`;
-    canvas.style.height = `${canvasHeight}px`;
-    grid.style.width = `${canvasWidth}px`;
-    grid.style.height = `${canvasHeight}px`;
-  } else {
-    const cardWidth = 196;
-    const cardHeight = 82;
-    const columnGap = 70;
-    const rowStep = 104;
-    const padX = 34;
-    const padY = 30;
-    const branchGap = 30;
-    const blockHeight = count => count > 0 ? (count - 1) * rowStep + cardHeight : 0;
-    const centralCounts = levels.map(level => getCentralNodes(groups.get(level)).length);
-    const branchCounts = levels.map((level, index) => groups.get(level).length - centralCounts[index]);
-    const maxCentralRows = Math.max(...centralCounts, 1);
-    const maxTopRows = Math.max(...branchCounts.map(count => Math.ceil(count / 2)), 0);
-    const maxBottomRows = Math.max(...branchCounts.map(count => Math.floor(count / 2)), 0);
-    const mainBlockHeight = blockHeight(maxCentralRows);
-    const upperExtent = mainBlockHeight / 2 + (maxTopRows ? branchGap + blockHeight(maxTopRows) : 0);
-    const lowerExtent = mainBlockHeight / 2 + (maxBottomRows ? branchGap + blockHeight(maxBottomRows) : 0);
-    const contentWidth = padX * 2 + levels.length * cardWidth + Math.max(0, levels.length - 1) * columnGap;
-    const contentHeight = padY * 2 + Math.max(cardHeight, 2 * Math.max(upperExtent, lowerExtent));
-    const canvasWidth = Math.max(viewport.clientWidth, contentWidth);
-    const canvasHeight = Math.max(viewport.clientHeight, contentHeight);
-    canvas.style.width = `${canvasWidth}px`;
-    canvas.style.height = `${canvasHeight}px`;
-    grid.style.width = `${canvasWidth}px`;
-    grid.style.height = `${canvasHeight}px`;
-
-    levels.forEach((level, columnIndex) => {
-      const entries = groups.get(level);
-      const centralNodes = getCentralNodes(entries);
-      const branchNodes = entries.filter(node => !centralNodes.includes(node));
-      const topCount = Math.ceil(branchNodes.length / 2);
-      const topNodes = branchNodes.slice(0, topCount);
-      const bottomNodes = branchNodes.slice(topCount);
-      const centralHeight = blockHeight(Math.max(centralNodes.length, 1));
-      const centralStartY = (canvasHeight - centralHeight) / 2;
-      const appendNode = (node, top) => {
-        const card = buildAnimeTimelineNode(node, renderedIndex++);
-        card.style.position = 'absolute';
-        card.style.left = `${padX + columnIndex * (cardWidth + columnGap)}px`;
-        card.style.top = `${top}px`;
-        grid.appendChild(card);
-      };
-
-      centralNodes.forEach((node, rowIndex) => {
-        appendNode(node, centralStartY + rowIndex * rowStep);
-      });
-
-      if (topNodes.length) {
-        const topStartY = centralStartY - branchGap - blockHeight(topNodes.length);
-        topNodes.forEach((node, rowIndex) => appendNode(node, topStartY + rowIndex * rowStep));
-      }
-      if (bottomNodes.length) {
-        const bottomStartY = centralStartY + centralHeight + branchGap;
-        bottomNodes.forEach((node, rowIndex) => appendNode(node, bottomStartY + rowIndex * rowStep));
-      }
-    });
-  }
+    if (topNodes.length) {
+      const topStartY = centralStartY - branchGap - blockHeight(topNodes.length);
+      topNodes.forEach((node, rowIndex) => appendNode(node, topStartY + rowIndex * rowStep));
+    }
+    if (bottomNodes.length) {
+      const bottomStartY = centralStartY + centralHeight + branchGap;
+      bottomNodes.forEach((node, rowIndex) => appendNode(node, bottomStartY + rowIndex * rowStep));
+    }
+  });
 
   if (animeTimelineDrawFrame) cancelAnimationFrame(animeTimelineDrawFrame);
   animeTimelineDrawFrame = requestAnimationFrame(() => {
@@ -15106,7 +15093,6 @@ function drawAnimeTimelineConnections() {
   const visibleIds = new Set(
     [...grid.querySelectorAll('[data-timeline-node-id]')].map(card => Number(card.dataset.timelineNodeId))
   );
-  const mobileLayout = canvas.dataset.timelineLayout === 'mobile';
   (activeAnimeTimeline.edges || []).forEach(edge => {
     const fromId = Number(edge.from);
     const toId = Number(edge.to);
@@ -15123,21 +15109,7 @@ function drawAnimeTimelineConnections() {
     let y2;
     let pathData;
     const secondary = edge.kind === 'branch';
-    if (mobileLayout) {
-      const railX = secondary ? canvas.offsetWidth - 16 : 18;
-      x1 = secondary ? from.offsetLeft + from.offsetWidth : from.offsetLeft;
-      y1 = from.offsetTop + from.offsetHeight / 2;
-      x2 = secondary ? to.offsetLeft + to.offsetWidth : to.offsetLeft;
-      y2 = to.offsetTop + to.offsetHeight / 2;
-      const direction = y2 >= y1 ? 1 : -1;
-      const bend = Math.min(22, Math.max(10, Math.abs(y2 - y1) / 4));
-      pathData = [
-        `M ${x1} ${y1}`,
-        `C ${railX} ${y1}, ${railX} ${y1}, ${railX} ${y1 + direction * bend}`,
-        `L ${railX} ${y2 - direction * bend}`,
-        `C ${railX} ${y2}, ${railX} ${y2}, ${x2} ${y2}`
-      ].join(' ');
-    } else if (Math.abs(fromCenterX - toCenterX) < 20) {
+    if (Math.abs(fromCenterX - toCenterX) < 20) {
       const forward = to.offsetTop >= from.offsetTop;
       x1 = fromCenterX;
       y1 = forward ? from.offsetTop + from.offsetHeight : from.offsetTop;
@@ -15165,13 +15137,11 @@ function drawAnimeTimelineConnections() {
 
 function centerAnimeTimelineCurrent({ behavior = 'auto' } = {}) {
   const viewport = document.getElementById('animeTimelineViewport');
-  const canvas = document.getElementById('animeTimelineCanvas');
   const current = document.querySelector(`#animeTimelineGrid [data-timeline-node-id="${activeAnimeTimelineCurrentId}"]`)
     || document.querySelector('#animeTimelineGrid [data-timeline-node-id]');
   if (!viewport || !current) return;
-  const mobileLayout = canvas?.dataset.timelineLayout === 'mobile';
   viewport.scrollTo({
-    left: mobileLayout ? 0 : Math.max(0, current.offsetLeft - (viewport.clientWidth - current.offsetWidth) / 2),
+    left: Math.max(0, current.offsetLeft - (viewport.clientWidth - current.offsetWidth) / 2),
     top: Math.max(0, current.offsetTop - (viewport.clientHeight - current.offsetHeight) / 2),
     behavior
   });
