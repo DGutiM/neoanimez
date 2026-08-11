@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20260811-watch-order1';
+const CACHE_VERSION = '20260811-timeline-tree1';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 
@@ -55,7 +55,9 @@ function isCatalogRequest(request) {
     url.pathname.endsWith('/anime-schedule.json') ||
     url.pathname.endsWith('/anime-news.json') ||
     url.pathname.endsWith('/anime-relations.json') ||
+    url.pathname.endsWith('/anime-timeline-index.json') ||
     url.pathname.includes('/anime-details/') ||
+    url.pathname.includes('/anime-timelines/') ||
     url.pathname.includes('/character-index/') ||
     url.pathname.includes('/character-details/');
 }

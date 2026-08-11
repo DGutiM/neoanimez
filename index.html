@@ -3928,6 +3928,117 @@ button:disabled,
 .anime-series-meta{color:#8e95b5;font-size:9px;line-height:1.3}
 .anime-series-current{color:#72ff9a;font-size:8px;text-transform:uppercase}
 .anime-series-open{color:#7f86a9;font-size:18px;text-align:center}
+.anime-timeline-action{margin-top:9px}
+.anime-timeline-action.hidden{display:none}
+.anime-timeline-tree-btn{
+  width:100%;min-height:52px;padding:9px 12px;display:flex;align-items:center;gap:11px;
+  border:1px solid rgba(114,255,154,.24);border-radius:14px;
+  background:linear-gradient(135deg,rgba(114,255,154,.09),rgba(0,212,255,.07),rgba(123,79,255,.05));
+  color:#f1fff6;text-align:left;cursor:pointer;
+  transition:border-color .2s ease,background .2s ease,box-shadow .2s ease,transform .16s ease;
+}
+.anime-timeline-tree-btn:hover{
+  transform:translateY(-1px);border-color:rgba(114,255,154,.48);
+  background:linear-gradient(135deg,rgba(114,255,154,.14),rgba(0,212,255,.10),rgba(123,79,255,.07));
+  box-shadow:0 0 22px rgba(114,255,154,.08)
+}
+.anime-timeline-tree-btn:focus-visible{outline:2px solid #9effbb;outline-offset:2px}
+.anime-timeline-tree-icon{
+  width:34px;height:34px;min-width:34px;display:grid;place-items:center;border-radius:10px;
+  border:1px solid rgba(114,255,154,.3);background:rgba(114,255,154,.08);color:#72ff9a
+}
+.anime-timeline-tree-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.anime-timeline-tree-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px}
+.anime-timeline-tree-title{font-family:'Orbitron',monospace;font-size:10px;line-height:1.35}
+.anime-timeline-tree-sub{color:#9ba5c3;font-size:9px;line-height:1.3}
+.anime-timeline-tree-open{color:#72ff9a;font-size:20px;line-height:1}
+
+.timeline-backdrop{
+  position:fixed;inset:0;z-index:590;display:none;align-items:center;justify-content:center;
+  padding:16px;background:rgba(2,4,12,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)
+}
+.timeline-backdrop.open{display:flex}
+.timeline-sheet{
+  width:min(1180px,100%);height:min(90dvh,840px);min-height:420px;display:flex;flex-direction:column;
+  overflow:hidden;border:1px solid rgba(114,255,154,.18);border-radius:22px;
+  background:
+    radial-gradient(circle at 12% 0,rgba(0,212,255,.11),transparent 30%),
+    radial-gradient(circle at 88% 100%,rgba(255,45,120,.09),transparent 28%),
+    linear-gradient(180deg,rgba(15,17,31,.99),rgba(6,7,15,.99));
+  box-shadow:0 32px 80px rgba(0,0,0,.58);animation:modalPop .22s ease
+}
+.timeline-head{
+  position:relative;z-index:5;flex:none;padding:16px 58px 13px 18px;
+  border-bottom:1px solid rgba(255,255,255,.075);
+  background:linear-gradient(90deg,rgba(8,24,35,.98),rgba(12,13,26,.98) 48%,rgba(24,10,23,.98))
+}
+.timeline-close{
+  position:absolute;right:14px;top:14px;width:36px;height:36px;display:grid;place-items:center;
+  border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(10,11,22,.86);
+  color:#eef1ff;font-size:16px;cursor:pointer
+}
+.timeline-close:hover{border-color:rgba(255,45,120,.42);color:#ff86b2}
+.timeline-kicker{
+  display:flex;align-items:center;gap:7px;margin-bottom:5px;color:#72ff9a;
+  font-family:'Orbitron',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase
+}
+.timeline-kicker svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.timeline-title{margin:0;color:#f2f5ff;font-family:'Orbitron',monospace;font-size:17px;line-height:1.3}
+.timeline-summary{margin:6px 0 0;color:#99a0bc;font-size:10px;line-height:1.5}
+.timeline-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.timeline-legend{display:flex;align-items:center;flex-wrap:wrap;gap:12px;color:#929ab8;font-size:9px}
+.timeline-legend-item{display:inline-flex;align-items:center;gap:6px}
+.timeline-legend-line{width:23px;height:0;border-top:2px solid #35ddff;box-shadow:0 0 7px rgba(53,221,255,.28)}
+.timeline-legend-line.secondary{border-top:1px dashed #ff5b99;box-shadow:none}
+.timeline-legend-dot{width:8px;height:8px;border-radius:50%;background:#72ff9a;box-shadow:0 0 9px rgba(114,255,154,.55)}
+.timeline-mode{
+  flex:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:3px;
+  border:1px solid rgba(255,255,255,.09);border-radius:10px;background:rgba(255,255,255,.025)
+}
+.timeline-mode-btn{
+  min-height:30px;padding:5px 10px;border:0;border-radius:7px;background:transparent;
+  color:#8e95b3;font-family:'Orbitron',monospace;font-size:8px;cursor:pointer
+}
+.timeline-mode-btn.active{background:rgba(0,212,255,.12);color:#77ecff;box-shadow:inset 0 0 0 1px rgba(0,212,255,.2)}
+.timeline-viewport{
+  position:relative;z-index:1;flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;
+  scrollbar-color:rgba(0,212,255,.35) rgba(255,255,255,.025)
+}
+.timeline-canvas{position:relative;min-width:100%;min-height:100%}
+.timeline-canvas.hidden,.timeline-loading.hidden{display:none}
+.timeline-connections{position:absolute;inset:0;z-index:1;overflow:visible;pointer-events:none}
+.timeline-edge{fill:none;stroke:#35ddff;stroke-width:2.2;opacity:.68;filter:drop-shadow(0 0 3px rgba(53,221,255,.28))}
+.timeline-edge.secondary{stroke:#ff5b99;stroke-width:1.35;stroke-dasharray:6 6;opacity:.5;filter:none}
+.timeline-grid{position:absolute;inset:0;z-index:2;display:grid;align-items:center;justify-items:start}
+.timeline-node{
+  width:196px;height:82px;min-width:0;padding:8px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:9px;
+  align-items:center;border:1px solid rgba(0,212,255,.2);border-radius:12px;
+  background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(15,16,31,.96) 62%);
+  color:#eef3ff;text-align:left;overflow:hidden
+}
+button.timeline-node{cursor:pointer;transition:transform .15s ease,border-color .2s ease,box-shadow .2s ease}
+button.timeline-node:hover{transform:translateY(-1px);border-color:rgba(0,212,255,.48);box-shadow:0 8px 20px rgba(0,0,0,.24)}
+button.timeline-node:focus-visible{outline:2px solid #84edff;outline-offset:2px}
+.timeline-node.secondary{
+  height:76px;border-color:rgba(255,45,120,.2);
+  background:linear-gradient(135deg,rgba(255,45,120,.075),rgba(15,16,31,.96) 64%)
+}
+.timeline-node.current{border-color:rgba(114,255,154,.68);box-shadow:0 0 0 1px rgba(114,255,154,.12),0 0 22px rgba(114,255,154,.12)}
+.timeline-node.external{opacity:.74;border-style:dashed}
+.timeline-node-img{width:44px;height:62px;border-radius:8px;object-fit:cover;background:#141426}
+.timeline-node.secondary .timeline-node-img{height:56px}
+.timeline-node-copy{min-width:0;display:flex;flex-direction:column;gap:4px}
+.timeline-node-title{
+  min-width:0;color:#f3f5ff;font-family:'Orbitron',monospace;font-size:9px;line-height:1.35;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden
+}
+.timeline-node-date{color:#73e9ff;font-size:9px;line-height:1.25}
+.timeline-node-meta{min-width:0;color:#8f96b4;font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timeline-node-badge{width:max-content;max-width:100%;color:#72ff9a;font-size:7px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timeline-node.secondary .timeline-node-badge{color:#ff8cb6}
+.timeline-empty{padding:36px 20px;color:#9ba1bb;text-align:center;font-size:12px;line-height:1.6}
+.timeline-loading{display:grid;place-items:center;gap:10px;min-height:220px;color:#9ba1bb;font-size:11px;text-align:center}
+.timeline-loading-ring{width:28px;height:28px;border:2px solid rgba(255,255,255,.12);border-top-color:#45e4ff;border-radius:50%;animation:spin .8s linear infinite}
 @keyframes modalPop{
   from{opacity:0;transform:translateY(10px) scale(.98)}
   to{opacity:1;transform:translateY(0) scale(1)}
@@ -3949,6 +4060,15 @@ button:disabled,
   .anime-relation-card{min-height:84px}
   .anime-series-panel{padding:8px 0 0 8px}
   .anime-series-row{grid-template-columns:28px minmax(0,1fr) 16px}
+  .timeline-backdrop{padding:0}
+  .timeline-sheet{width:100%;height:100dvh;max-height:none;min-height:0;border-radius:0;border-left:0;border-right:0}
+  .timeline-head{padding:15px 50px 12px 14px}
+  .timeline-close{right:10px;top:11px}
+  .timeline-title{font-size:15px}
+  .timeline-toolbar{align-items:flex-start;flex-direction:column;gap:9px}
+  .timeline-mode{width:100%}
+  .timeline-mode-btn{min-height:34px}
+  .timeline-legend{gap:9px}
   .random-panel{align-items:stretch;flex-direction:column;gap:12px}
   .random-actions{width:100%;grid-template-columns:repeat(auto-fit, minmax(128px, 1fr));gap:8px}
   .random-btn{height:48px;border-radius:16px;padding:0 12px}
@@ -5163,6 +5283,7 @@ body.cookie-banner-visible #intro-screen{
       <div class="modal-section-title">Orden de la serie</div>
       <div id="animeRelationsList" class="anime-relations-list"></div>
       <div id="animeSeriesOrder" class="anime-series-order hidden"></div>
+      <div id="animeTimelineAction" class="anime-timeline-action hidden"></div>
     </div>
     <div class="modal-section-title">Descripción</div>
     <div id="animeModalDesc" class="modal-desc"></div>
@@ -5205,6 +5326,47 @@ body.cookie-banner-visible #intro-screen{
       <button class="progress-save-btn" type="button" onclick="saveAnimeProgressFromModal()">Guardar progreso</button>
       <button class="progress-clear-btn" type="button" onclick="clearAnimeProgressFromModal()">Quitar progreso</button>
       <div id="modalProgressMessage" class="modal-tool-message">Guarda por qué episodio vas.</div>
+    </div>
+  </div>
+</div>
+
+<div id="animeTimelineModal" class="timeline-backdrop" aria-hidden="true">
+  <div class="timeline-sheet" role="dialog" aria-modal="true" aria-labelledby="animeTimelineTitle">
+    <div class="timeline-head">
+      <button class="timeline-close" type="button" aria-label="Cerrar árbol temporal" onclick="closeAnimeTimeline()">✕</button>
+      <div class="timeline-kicker">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="6" cy="6" r="3"></circle>
+          <circle cx="18" cy="6" r="3"></circle>
+          <circle cx="12" cy="18" r="3"></circle>
+          <path d="M6 9v3a6 6 0 0 0 6 6"></path>
+          <path d="M18 9v3a6 6 0 0 1-6 6"></path>
+        </svg>
+        Árbol temporal
+      </div>
+      <h2 id="animeTimelineTitle" class="timeline-title">Mapa de la saga</h2>
+      <p id="animeTimelineSummary" class="timeline-summary">Continuidad principal, películas y rutas relacionadas.</p>
+      <div class="timeline-toolbar">
+        <div class="timeline-legend" aria-label="Leyenda del mapa">
+          <span class="timeline-legend-item"><span class="timeline-legend-line"></span>Continuidad</span>
+          <span class="timeline-legend-item"><span class="timeline-legend-line secondary"></span>Películas y ramas</span>
+          <span class="timeline-legend-item"><span class="timeline-legend-dot"></span>Ficha actual</span>
+        </div>
+        <div class="timeline-mode" aria-label="Contenido visible">
+          <button id="animeTimelineModeMain" class="timeline-mode-btn" type="button" onclick="setAnimeTimelineMode('continuity')">Ruta principal</button>
+          <button id="animeTimelineModeAll" class="timeline-mode-btn active" type="button" onclick="setAnimeTimelineMode('all')">Mapa completo</button>
+        </div>
+      </div>
+    </div>
+    <div id="animeTimelineViewport" class="timeline-viewport">
+      <div id="animeTimelineLoading" class="timeline-loading">
+        <span class="timeline-loading-ring" aria-hidden="true"></span>
+        Preparando el árbol de la saga…
+      </div>
+      <div id="animeTimelineCanvas" class="timeline-canvas hidden">
+        <svg id="animeTimelineConnections" class="timeline-connections" aria-hidden="true"></svg>
+        <div id="animeTimelineGrid" class="timeline-grid"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -5277,7 +5439,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260811-watch-order1';
+const APP_VERSION = '20260811-timeline-tree1';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -5286,6 +5448,7 @@ const UPCOMING_URL = `anime-upcoming.json?v=${CATALOG_VERSION}`;
 const SCHEDULE_URL = `anime-schedule.json?v=${CATALOG_VERSION}`;
 const NEWS_URL = `anime-news.json?v=${CATALOG_VERSION}`;
 const RELATIONS_URL = `anime-relations.json?v=${CATALOG_VERSION}`;
+const TIMELINE_INDEX_URL = `anime-timeline-index.json?v=${CATALOG_VERSION}`;
 const PUBLIC_PROFILE_SLUG_RE = /^[a-z0-9][a-z0-9-]{2,29}$/;
 const SUPABASE_LOCK_TIMEOUT_MS = 4500;
 const SUPABASE_PROJECT_REF = (() => {
@@ -5456,6 +5619,16 @@ const animeRelationsMap = new Map();
 const animeSeriesMap = new Map();
 const animeSeriesNavigationMap = new Map();
 let animeSeriesOrderExpanded = false;
+let animeTimelineIndexLoaded = false;
+let animeTimelineIndexLoadPromise = null;
+let animeTimelineFiles = [];
+const animeTimelineNavigationMap = new Map();
+const animeTimelineBlockCache = new Map();
+let activeAnimeTimeline = null;
+let activeAnimeTimelineNodes = new Map();
+let activeAnimeTimelineCurrentId = 0;
+let animeTimelineMode = 'all';
+let animeTimelineDrawFrame = 0;
 const screenScrollPositions = {};
 const detailBlockCache = new Map();
 const detailBlockRequests = new Map();
@@ -5827,6 +6000,12 @@ function refreshVisibleAnimeTitles() {
     const title = document.getElementById('animeModalTitle');
     if (title) title.textContent = getAnimeDisplayTitle(currentModalAnime);
     renderAnimeRelations(currentModalAnime);
+  }
+  if (activeAnimeTimeline) {
+    const currentNode = activeAnimeTimelineNodes.get(activeAnimeTimelineCurrentId);
+    const timelineTitle = document.getElementById('animeTimelineTitle');
+    if (timelineTitle && currentNode) timelineTitle.textContent = `Árbol de ${getAnimeTimelineNodeTitle(currentNode)}`;
+    renderAnimeTimelineGraph();
   }
 }
 
@@ -12339,6 +12518,64 @@ async function loadAnimeRelations({ force = false } = {}) {
   }
 }
 
+async function loadAnimeTimelineIndex({ force = false } = {}) {
+  if (animeTimelineIndexLoaded && !force) return animeTimelineNavigationMap;
+  if (animeTimelineIndexLoadPromise && !force) return animeTimelineIndexLoadPromise;
+
+  const request = (async () => {
+    const payload = await fetchCatalogJson(TIMELINE_INDEX_URL, {
+      preferCache: !force,
+      timeout: 10000
+    });
+    const files = Array.isArray(payload?.files) ? payload.files.filter(Boolean).map(String) : [];
+    const navigation = payload?.navigation;
+    if (!files.length || !navigation || typeof navigation !== 'object' || Array.isArray(navigation)) {
+      throw new Error('anime-timeline-index.json no contiene un índice válido.');
+    }
+
+    animeTimelineFiles = files;
+    animeTimelineNavigationMap.clear();
+    Object.entries(navigation).forEach(([animeId, value]) => {
+      const id = Number(animeId);
+      const timelineId = Number(Array.isArray(value) ? value[0] : value?.timeline_id);
+      const blockIndex = Number(Array.isArray(value) ? value[1] : value?.block_index);
+      const file = files[blockIndex];
+      if (!Number.isFinite(id) || id <= 0 || !Number.isFinite(timelineId) || timelineId <= 0 || !file) return;
+      animeTimelineNavigationMap.set(id, { timelineId, blockIndex, file });
+    });
+    animeTimelineIndexLoaded = true;
+    return animeTimelineNavigationMap;
+  })();
+
+  animeTimelineIndexLoadPromise = request;
+  try {
+    return await request;
+  } finally {
+    animeTimelineIndexLoadPromise = null;
+  }
+}
+
+async function loadAnimeTimelineBlock(file, { force = false } = {}) {
+  const cleanFile = String(file || '').trim();
+  if (!cleanFile || !animeTimelineFiles.includes(cleanFile)) {
+    throw new Error('Bloque de árbol temporal desconocido.');
+  }
+  if (animeTimelineBlockCache.has(cleanFile) && !force) {
+    return animeTimelineBlockCache.get(cleanFile);
+  }
+
+  const versionedFile = `${cleanFile}${cleanFile.includes('?') ? '&' : '?'}v=${CATALOG_VERSION}`;
+  const payload = await fetchCatalogJson(versionedFile, {
+    preferCache: !force,
+    timeout: 12000
+  });
+  if (!payload?.timelines || !payload?.nodes) {
+    throw new Error('El bloque del árbol temporal no contiene datos válidos.');
+  }
+  animeTimelineBlockCache.set(cleanFile, payload);
+  return payload;
+}
+
 async function loadDB() {
   try {
     let rawDB;
@@ -14344,10 +14581,13 @@ function clearAnimeRelationsUI() {
   const section = document.getElementById('animeRelationsSection');
   const list = document.getElementById('animeRelationsList');
   const order = document.getElementById('animeSeriesOrder');
+  const timeline = document.getElementById('animeTimelineAction');
   section?.classList.add('hidden');
   list?.replaceChildren();
   order?.replaceChildren();
   order?.classList.add('hidden');
+  timeline?.replaceChildren();
+  timeline?.classList.add('hidden');
 }
 
 function getAnimeRelationMeta(anime = {}) {
@@ -14460,7 +14700,7 @@ function renderAnimeSeriesOrder(anime) {
 
   const toggleTitle = document.createElement('span');
   toggleTitle.className = 'anime-series-toggle-title';
-  toggleTitle.textContent = series.hasBranches ? 'Ver mapa completo de la saga' : 'Ver orden completo';
+  toggleTitle.textContent = 'Ver orden relacionado';
   const count = document.createElement('span');
   count.className = 'anime-series-toggle-count';
   count.textContent = `${entries.length} ${series.hasBranches ? 'entregas' : 'partes'}`;
@@ -14475,7 +14715,7 @@ function renderAnimeSeriesOrder(anime) {
   const note = document.createElement('p');
   note.className = 'anime-series-note';
   if (series.hasBranches) {
-    note.textContent = 'Esta saga tiene rutas alternativas. El orden es orientativo y combina continuidad y estreno.';
+    note.textContent = 'Lista rápida de entregas relacionadas. Para ver la continuidad y sus ramas, abre el árbol temporal.';
   } else if (series.hasCycle) {
     note.textContent = 'Orden orientativo: la fuente relaciona algunas entregas en ambos sentidos.';
   } else {
@@ -14499,18 +14739,64 @@ function renderAnimeSeriesOrder(anime) {
   return true;
 }
 
+function renderAnimeTimelineAction(anime) {
+  const container = document.getElementById('animeTimelineAction');
+  if (!container) return false;
+  container.replaceChildren();
+  container.classList.add('hidden');
+  const navigation = animeTimelineNavigationMap.get(Number(anime?.mal_id));
+  if (!animeTimelineIndexLoaded || !navigation) return false;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'anime-timeline-tree-btn';
+  button.setAttribute('aria-label', `Abrir árbol temporal de ${getAnimeDisplayTitle(anime)}`);
+
+  const icon = document.createElement('span');
+  icon.className = 'anime-timeline-tree-icon';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="6" r="3"></circle><circle cx="12" cy="18" r="3"></circle><path d="M6 9v3a6 6 0 0 0 6 6"></path><path d="M18 9v3a6 6 0 0 1-6 6"></path></svg>';
+
+  const copy = document.createElement('span');
+  copy.className = 'anime-timeline-tree-copy';
+  const title = document.createElement('span');
+  title.className = 'anime-timeline-tree-title';
+  title.textContent = 'Árbol de la saga';
+  const subtitle = document.createElement('span');
+  subtitle.className = 'anime-timeline-tree-sub';
+  subtitle.textContent = 'Continuidad, fechas, películas y rutas relacionadas';
+  copy.append(title, subtitle);
+
+  const open = document.createElement('span');
+  open.className = 'anime-timeline-tree-open';
+  open.setAttribute('aria-hidden', 'true');
+  open.textContent = '›';
+
+  button.append(icon, copy, open);
+  button.addEventListener('click', () => openAnimeTimeline(anime));
+  container.appendChild(button);
+  container.classList.remove('hidden');
+  return true;
+}
+
 function renderAnimeRelations(anime = currentModalAnime) {
   const section = document.getElementById('animeRelationsSection');
   const list = document.getElementById('animeRelationsList');
-  if (!section || !list || !anime || !animeRelationsLoaded) {
-    if (!animeRelationsLoaded) clearAnimeRelationsUI();
+  if (!section || !list || !anime) {
     return false;
   }
 
   list.replaceChildren();
+  const hasTimeline = renderAnimeTimelineAction(anime);
+  if (!animeRelationsLoaded) {
+    document.getElementById('animeSeriesOrder')?.classList.add('hidden');
+    list.classList.add('hidden');
+    section.classList.toggle('hidden', !hasTimeline);
+    return hasTimeline;
+  }
   const relations = animeRelationsMap.get(Number(anime.mal_id));
   const hasSeriesOrder = renderAnimeSeriesOrder(anime);
-  if (!relations && !hasSeriesOrder) {
+  if (!relations && !hasSeriesOrder && !hasTimeline) {
     section.classList.add('hidden');
     return false;
   }
@@ -14527,7 +14813,7 @@ function renderAnimeRelations(anime = currentModalAnime) {
     });
   });
 
-  if (!cards.length && !hasSeriesOrder) {
+  if (!cards.length && !hasSeriesOrder && !hasTimeline) {
     section.classList.add('hidden');
     return false;
   }
@@ -14545,16 +14831,365 @@ async function renderAnimeRelationsForModal(anime) {
   clearAnimeRelationsUI();
   const requestedId = Number(anime?.mal_id);
   if (!requestedId) return;
-  if (animeRelationsLoaded) {
-    renderAnimeRelations(anime);
+  renderAnimeRelations(anime);
+
+  const requests = [];
+  if (!animeRelationsLoaded) {
+    requests.push(loadAnimeRelations().catch(error => {
+      console.warn('No se pudo cargar la continuidad del anime:', error);
+    }));
+  }
+  if (!animeTimelineIndexLoaded) {
+    requests.push(loadAnimeTimelineIndex().catch(error => {
+      console.warn('No se pudo cargar el índice de árboles temporales:', error);
+    }));
+  }
+  if (!requests.length) return;
+  await Promise.allSettled(requests);
+  if (Number(currentModalAnime?.mal_id) === requestedId) renderAnimeRelations(currentModalAnime);
+}
+
+function getAnimeTimelineNodeTitle(node = {}) {
+  const localAnime = node.local ? getAnimeById(node.mal_id) : null;
+  return getAnimeDisplayTitle(localAnime || node);
+}
+
+function formatAnimeTimelineDate(value, fallbackYear = null) {
+  const raw = String(value || '').trim();
+  const match = raw.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);
+  if (!match) return fallbackYear ? String(fallbackYear) : 'Fecha sin confirmar';
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  if (!month) return String(year);
+  const date = new Date(Date.UTC(year, month - 1, day || 1));
+  return new Intl.DateTimeFormat('es-ES', day
+    ? { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }
+    : { month: 'long', year: 'numeric', timeZone: 'UTC' }
+  ).format(date);
+}
+
+function formatAnimeTimelineType(value) {
+  const normalized = String(value || '').trim().toUpperCase();
+  const labels = {
+    TV: 'Serie TV',
+    MOVIE: 'Película',
+    OVA: 'OVA',
+    ONA: 'ONA',
+    SPECIAL: 'Especial',
+    TV_SPECIAL: 'Especial TV',
+    MUSIC: 'Vídeo musical',
+    PV: 'Promocional'
+  };
+  return labels[normalized] || String(value || 'Anime').replaceAll('_', ' ');
+}
+
+function renderAnimeTimelineLoading(message = 'Preparando el árbol de la saga…', isError = false) {
+  const loading = document.getElementById('animeTimelineLoading');
+  const canvas = document.getElementById('animeTimelineCanvas');
+  if (!loading || !canvas) return;
+  canvas.classList.add('hidden');
+  loading.classList.remove('hidden');
+  loading.replaceChildren();
+  if (!isError) {
+    const ring = document.createElement('span');
+    ring.className = 'timeline-loading-ring';
+    ring.setAttribute('aria-hidden', 'true');
+    loading.appendChild(ring);
+  }
+  const copy = document.createElement('span');
+  copy.textContent = message;
+  loading.appendChild(copy);
+}
+
+async function openAnimeTimeline(anime = currentModalAnime) {
+  const modal = document.getElementById('animeTimelineModal');
+  const title = document.getElementById('animeTimelineTitle');
+  const summary = document.getElementById('animeTimelineSummary');
+  const requestedId = Number(anime?.mal_id);
+  if (!modal || !requestedId) return;
+
+  activeAnimeTimelineCurrentId = requestedId;
+  activeAnimeTimeline = null;
+  activeAnimeTimelineNodes = new Map();
+  animeTimelineMode = 'all';
+  if (title) title.textContent = `Árbol de ${getAnimeDisplayTitle(anime)}`;
+  if (summary) summary.textContent = 'Continuidad principal, películas y rutas relacionadas.';
+  document.getElementById('animeTimelineModeMain')?.classList.remove('active');
+  document.getElementById('animeTimelineModeAll')?.classList.add('active');
+  renderAnimeTimelineLoading();
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  try {
+    if (!animeTimelineIndexLoaded) await loadAnimeTimelineIndex();
+    const navigation = animeTimelineNavigationMap.get(requestedId);
+    if (!navigation) throw new Error('Esta ficha aún no dispone de un árbol temporal.');
+    const payload = await loadAnimeTimelineBlock(navigation.file);
+    if (activeAnimeTimelineCurrentId !== requestedId || !modal.classList.contains('open')) return;
+    const timeline = payload.timelines?.[String(navigation.timelineId)];
+    if (!timeline) throw new Error('No se encontró el árbol temporal de esta saga.');
+
+    const nodes = new Map();
+    (timeline.nodes || []).forEach(nodeId => {
+      const node = payload.nodes?.[String(nodeId)];
+      if (node) nodes.set(Number(nodeId), node);
+    });
+    activeAnimeTimeline = timeline;
+    activeAnimeTimelineNodes = nodes;
+
+    const continuityCount = [...nodes.values()].filter(node => node.role === 'continuity').length;
+    const secondaryCount = Math.max(0, nodes.size - continuityCount);
+    const externalCount = [...nodes.values()].filter(node => !node.local).length;
+    const summaryParts = [`${nodes.size} entregas`, `${continuityCount} en continuidad`];
+    if (secondaryCount) summaryParts.push(`${secondaryCount} películas o ramas`);
+    if (externalCount) summaryParts.push(`${externalCount} aún fuera del catálogo`);
+    if (summary) summary.textContent = summaryParts.join(' · ');
+    renderAnimeTimelineGraph({ centerCurrent: true });
+  } catch (error) {
+    console.warn('No se pudo abrir el árbol temporal:', error);
+    if (activeAnimeTimelineCurrentId === requestedId) {
+      renderAnimeTimelineLoading(error?.message || 'No se pudo cargar el árbol temporal.', true);
+    }
+  }
+}
+
+function closeAnimeTimeline() {
+  const modal = document.getElementById('animeTimelineModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  if (animeTimelineDrawFrame) cancelAnimationFrame(animeTimelineDrawFrame);
+  animeTimelineDrawFrame = 0;
+  activeAnimeTimeline = null;
+  activeAnimeTimelineNodes = new Map();
+  activeAnimeTimelineCurrentId = 0;
+  document.body.style.overflow = document.querySelector('.modal-backdrop.open') ? 'hidden' : '';
+}
+
+function setAnimeTimelineMode(mode) {
+  if (!['continuity', 'all'].includes(mode) || !activeAnimeTimeline) return;
+  animeTimelineMode = mode;
+  document.getElementById('animeTimelineModeMain')?.classList.toggle('active', mode === 'continuity');
+  document.getElementById('animeTimelineModeAll')?.classList.toggle('active', mode === 'all');
+  renderAnimeTimelineGraph({ centerCurrent: true });
+}
+
+function buildAnimeTimelineNode(node, index) {
+  const nodeId = Number(node?.mal_id);
+  const localAnime = node.local ? getAnimeById(nodeId) : null;
+  const isLocal = !!localAnime;
+  const isCurrent = nodeId === activeAnimeTimelineCurrentId;
+  const isSecondary = node.role === 'secondary';
+  const card = document.createElement(isLocal ? 'button' : 'div');
+  if (isLocal) card.type = 'button';
+  card.className = `timeline-node${isSecondary ? ' secondary' : ''}${isCurrent ? ' current' : ''}${isLocal ? '' : ' external'}`;
+  card.dataset.timelineNodeId = String(nodeId);
+  if (isCurrent) card.setAttribute('aria-current', 'true');
+
+  const displayTitle = getAnimeTimelineNodeTitle(node);
+  if (isLocal) {
+    card.setAttribute('aria-label', isCurrent ? `${displayTitle}, ficha actual` : `Abrir ficha de ${displayTitle}`);
+    card.addEventListener('click', () => {
+      closeAnimeTimeline();
+      openAnimeModal(localAnime, localAnime.image || BLANK);
+    });
+  }
+
+  const image = document.createElement('img');
+  image.className = 'timeline-node-img';
+  image.src = BLANK;
+  image.alt = '';
+
+  const copy = document.createElement('span');
+  copy.className = 'timeline-node-copy';
+  const title = document.createElement('span');
+  title.className = 'timeline-node-title';
+  title.textContent = displayTitle;
+  const date = document.createElement('span');
+  date.className = 'timeline-node-date';
+  date.textContent = formatAnimeTimelineDate(node.release_date, node.year);
+  const meta = document.createElement('span');
+  meta.className = 'timeline-node-meta';
+  const metaParts = [formatAnimeTimelineType(node.format)];
+  const episodes = Number(node.episodes);
+  if (Number.isFinite(episodes) && episodes > 0) metaParts.push(`${episodes} ep`);
+  meta.textContent = metaParts.join(' · ');
+  const badge = document.createElement('span');
+  badge.className = 'timeline-node-badge';
+  badge.textContent = isCurrent
+    ? 'Estás aquí'
+    : (!isLocal ? 'Fuera del catálogo' : (isSecondary ? 'Rama relacionada' : ''));
+
+  copy.append(title, date, meta);
+  if (badge.textContent) copy.appendChild(badge);
+  card.append(image, copy);
+  loadAnimeImageElement(image, localAnime || node, Math.min(index * 18, 420));
+  return card;
+}
+
+function renderAnimeTimelineGraph({ centerCurrent = false } = {}) {
+  const viewport = document.getElementById('animeTimelineViewport');
+  const loading = document.getElementById('animeTimelineLoading');
+  const canvas = document.getElementById('animeTimelineCanvas');
+  const grid = document.getElementById('animeTimelineGrid');
+  const svg = document.getElementById('animeTimelineConnections');
+  if (!viewport || !loading || !canvas || !grid || !svg || !activeAnimeTimeline) return;
+
+  const allNodes = (activeAnimeTimeline.nodes || [])
+    .map(nodeId => activeAnimeTimelineNodes.get(Number(nodeId)))
+    .filter(Boolean);
+  const visibleNodes = animeTimelineMode === 'continuity'
+    ? allNodes.filter(node => node.role === 'continuity' || Number(node.mal_id) === activeAnimeTimelineCurrentId)
+    : allNodes;
+  if (!visibleNodes.length) {
+    renderAnimeTimelineLoading('No hay entregas visibles en esta ruta.', true);
     return;
   }
-  try {
-    await loadAnimeRelations();
-    if (Number(currentModalAnime?.mal_id) === requestedId) renderAnimeRelations(currentModalAnime);
-  } catch (error) {
-    console.warn('No se pudo cargar la continuidad del anime:', error);
-  }
+
+  loading.classList.add('hidden');
+  canvas.classList.remove('hidden');
+  grid.replaceChildren();
+  svg.replaceChildren();
+
+  const levelById = activeAnimeTimeline.levels || {};
+  const groups = new Map();
+  visibleNodes.forEach(node => {
+    const level = Number(levelById[String(node.mal_id)] ?? 0);
+    if (!groups.has(level)) groups.set(level, []);
+    groups.get(level).push(node);
+  });
+  const levels = [...groups.keys()].sort((a, b) => a - b);
+  levels.forEach(level => {
+    groups.get(level).sort((a, b) => {
+      if (a.role !== b.role) return a.role === 'continuity' ? -1 : 1;
+      return String(a.release_date || a.year || '9999').localeCompare(String(b.release_date || b.year || '9999')) || Number(a.mal_id) - Number(b.mal_id);
+    });
+  });
+
+  const cardWidth = 196;
+  const cardHeight = 82;
+  const columnGap = 70;
+  const rowStep = 104;
+  const padX = 34;
+  const padY = 30;
+  const maxRows = Math.max(...levels.map(level => groups.get(level).length), 1);
+  const contentWidth = padX * 2 + levels.length * cardWidth + Math.max(0, levels.length - 1) * columnGap;
+  const contentHeight = padY * 2 + Math.max(cardHeight, (maxRows - 1) * rowStep + cardHeight);
+  const canvasWidth = Math.max(viewport.clientWidth, contentWidth);
+  const canvasHeight = Math.max(viewport.clientHeight, contentHeight);
+  canvas.style.width = `${canvasWidth}px`;
+  canvas.style.height = `${canvasHeight}px`;
+  grid.style.width = `${canvasWidth}px`;
+  grid.style.height = `${canvasHeight}px`;
+
+  let renderedIndex = 0;
+  levels.forEach((level, columnIndex) => {
+    const entries = groups.get(level);
+    const columnHeight = Math.max(cardHeight, (entries.length - 1) * rowStep + cardHeight);
+    const startY = Math.max(padY, (canvasHeight - columnHeight) / 2);
+    entries.forEach((node, rowIndex) => {
+      const card = buildAnimeTimelineNode(node, renderedIndex++);
+      card.style.position = 'absolute';
+      card.style.left = `${padX + columnIndex * (cardWidth + columnGap)}px`;
+      card.style.top = `${startY + rowIndex * rowStep}px`;
+      grid.appendChild(card);
+    });
+  });
+
+  if (animeTimelineDrawFrame) cancelAnimationFrame(animeTimelineDrawFrame);
+  animeTimelineDrawFrame = requestAnimationFrame(() => {
+    drawAnimeTimelineConnections();
+    if (centerCurrent) centerAnimeTimelineCurrent();
+  });
+}
+
+function createAnimeTimelineMarker(svg, id, color) {
+  const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+  marker.setAttribute('id', id);
+  marker.setAttribute('markerWidth', '7');
+  marker.setAttribute('markerHeight', '7');
+  marker.setAttribute('refX', '6');
+  marker.setAttribute('refY', '3.5');
+  marker.setAttribute('orient', 'auto');
+  const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  arrow.setAttribute('d', 'M0 0 L7 3.5 L0 7 Z');
+  arrow.setAttribute('fill', color);
+  marker.appendChild(arrow);
+  svg.appendChild(marker);
+}
+
+function drawAnimeTimelineConnections() {
+  const canvas = document.getElementById('animeTimelineCanvas');
+  const grid = document.getElementById('animeTimelineGrid');
+  const svg = document.getElementById('animeTimelineConnections');
+  if (!canvas || !grid || !svg || !activeAnimeTimeline || canvas.classList.contains('hidden')) return;
+  svg.replaceChildren();
+  svg.setAttribute('width', String(canvas.offsetWidth));
+  svg.setAttribute('height', String(canvas.offsetHeight));
+  svg.setAttribute('viewBox', `0 0 ${canvas.offsetWidth} ${canvas.offsetHeight}`);
+
+  const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+  createAnimeTimelineMarker(defs, 'timeline-arrow-main', '#35ddff');
+  createAnimeTimelineMarker(defs, 'timeline-arrow-secondary', '#ff5b99');
+  svg.appendChild(defs);
+
+  const visibleIds = new Set(
+    [...grid.querySelectorAll('[data-timeline-node-id]')].map(card => Number(card.dataset.timelineNodeId))
+  );
+  (activeAnimeTimeline.edges || []).forEach(edge => {
+    const fromId = Number(edge.from);
+    const toId = Number(edge.to);
+    if (!visibleIds.has(fromId) || !visibleIds.has(toId)) return;
+    const from = grid.querySelector(`[data-timeline-node-id="${fromId}"]`);
+    const to = grid.querySelector(`[data-timeline-node-id="${toId}"]`);
+    if (!from || !to) return;
+
+    const fromCenterX = from.offsetLeft + from.offsetWidth / 2;
+    const toCenterX = to.offsetLeft + to.offsetWidth / 2;
+    let x1;
+    let y1;
+    let x2;
+    let y2;
+    let pathData;
+    if (Math.abs(fromCenterX - toCenterX) < 20) {
+      const forward = to.offsetTop >= from.offsetTop;
+      x1 = fromCenterX;
+      y1 = forward ? from.offsetTop + from.offsetHeight : from.offsetTop;
+      x2 = toCenterX;
+      y2 = forward ? to.offsetTop : to.offsetTop + to.offsetHeight;
+      const middleY = (y1 + y2) / 2;
+      pathData = `M ${x1} ${y1} C ${x1 + 34} ${middleY}, ${x2 + 34} ${middleY}, ${x2} ${y2}`;
+    } else {
+      const forward = toCenterX >= fromCenterX;
+      x1 = forward ? from.offsetLeft + from.offsetWidth : from.offsetLeft;
+      y1 = from.offsetTop + from.offsetHeight / 2;
+      x2 = forward ? to.offsetLeft : to.offsetLeft + to.offsetWidth;
+      y2 = to.offsetTop + to.offsetHeight / 2;
+      const middleX = (x1 + x2) / 2;
+      pathData = `M ${x1} ${y1} C ${middleX} ${y1}, ${middleX} ${y2}, ${x2} ${y2}`;
+    }
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const secondary = edge.kind === 'branch';
+    path.setAttribute('class', `timeline-edge${secondary ? ' secondary' : ''}`);
+    path.setAttribute('d', pathData);
+    path.setAttribute('marker-end', `url(#${secondary ? 'timeline-arrow-secondary' : 'timeline-arrow-main'})`);
+    svg.appendChild(path);
+  });
+}
+
+function centerAnimeTimelineCurrent() {
+  const viewport = document.getElementById('animeTimelineViewport');
+  const current = document.querySelector(`#animeTimelineGrid [data-timeline-node-id="${activeAnimeTimelineCurrentId}"]`)
+    || document.querySelector('#animeTimelineGrid [data-timeline-node-id]');
+  if (!viewport || !current) return;
+  viewport.scrollTo({
+    left: Math.max(0, current.offsetLeft - (viewport.clientWidth - current.offsetWidth) / 2),
+    top: Math.max(0, current.offsetTop - (viewport.clientHeight - current.offsetHeight) / 2),
+    behavior: 'auto'
+  });
 }
 
 function resetAnimeModalScroll(modal) {
@@ -14622,6 +15257,8 @@ function closeAnimeModal() {
 document.addEventListener('click', (e) => {
   const modal = document.getElementById('animeModal');
   if (e.target === modal) closeAnimeModal();
+  const timelineModal = document.getElementById('animeTimelineModal');
+  if (e.target === timelineModal) closeAnimeTimeline();
   const scheduleModal = document.getElementById('scheduleDayModal');
   if (e.target === scheduleModal) closeScheduleDayModal();
   const todayOverlay = document.getElementById('neoTodayOverlay');
@@ -14678,12 +15315,23 @@ document.addEventListener('click', (e) => {
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
+    const timelineModal = document.getElementById('animeTimelineModal');
+    if (timelineModal?.classList.contains('open')) {
+      closeAnimeTimeline();
+      return;
+    }
     closeNeoToday();
     closeScheduleDayModal();
     closeAnimeModal();
     toggleTitleLanguagePanel(false);
   }
 });
+
+window.addEventListener('resize', () => {
+  if (!activeAnimeTimeline) return;
+  if (animeTimelineDrawFrame) cancelAnimationFrame(animeTimelineDrawFrame);
+  animeTimelineDrawFrame = requestAnimationFrame(drawAnimeTimelineConnections);
+}, { passive: true });
 
 window.addEventListener('pagehide', () => {
   lastAppHiddenAt = Date.now();
@@ -14731,6 +15379,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.setTimeout(() => {
     loadAnimeRelations().catch(error => {
       console.warn('No se pudo precargar anime-relations.json:', error);
+    });
+    loadAnimeTimelineIndex().catch(error => {
+      console.warn('No se pudo precargar anime-timeline-index.json:', error);
     });
   }, 700);
   const publicProfileSlug = readPublicProfileSlugFromUrl();
