@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import argparse
+import concurrent.futures
 import datetime as dt
 import json
 import os
@@ -11,7 +12,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 
 DEFAULT_INPUT = "anime-lista.json"
@@ -173,6 +174,7 @@ def main() -> int:
     parser.add_argument("--retries", type=int, default=4, help="Reintentos por fragmento.")
     parser.add_argument("--delay", type=float, default=0.75, help="Pausa entre llamadas a Google Translate.")
     parser.add_argument("--save-every", type=int, default=20, help="Guarda progreso cada N traducciones.")
+    parser.add_argument("--workers", type=int, default=1, help="Traducciones simultáneas (recomendado: 4-6).")
     parser.add_argument("--quiet", action="store_true", help="Muestra menos salida.")
     args = parser.parse_args()
 
@@ -205,13 +207,8 @@ def main() -> int:
     if args.in_place:
         backup_path = make_backup(args.input)
 
-    translated_count = 0
-    for index, anime in enumerate(pending, start=1):
-        title = clean_text(anime.get("title")) or str(anime.get("mal_id") or index)
-        if not args.quiet:
-            print(f"[{index}/{len(pending)}] {title}")
-
-        anime["description_es"] = translate_text(
+    def translate_anime(anime: Dict[str, Any]) -> Tuple[Dict[str, Any], str]:
+        translated = translate_text(
             anime.get("description"),
             source_lang=args.source_lang,
             cache=cache,
@@ -219,13 +216,30 @@ def main() -> int:
             retries=args.retries,
             delay=args.delay,
         )
-        translated_count += 1
+        return anime, translated
 
-        if translated_count % max(1, args.save_every) == 0:
-            save_json(args.cache, cache)
-            save_json(output_path, data)
-            if not args.quiet:
-                print(f"[INFO] Progreso guardado: {translated_count}")
+    translated_count = 0
+    failures = 0
+    workers = max(1, min(8, args.workers))
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(translate_anime, anime) for anime in pending]
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                anime, translated = future.result()
+                anime["description_es"] = translated
+                translated_count += 1
+            except Exception as error:  # noqa: BLE001
+                failures += 1
+                print(f"[WARN] Descripción pospuesta: {error}")
+
+            completed = translated_count + failures
+            if not args.quiet and completed % 10 == 0:
+                print(f"[{completed}/{len(pending)}] completadas={translated_count} pendientes={failures}")
+            if completed and completed % max(1, args.save_every) == 0:
+                save_json(args.cache, dict(cache))
+                save_json(output_path, data)
+                if not args.quiet:
+                    print(f"[INFO] Progreso guardado: {completed}")
 
     save_json(args.cache, cache)
     save_json(output_path, data)
@@ -234,6 +248,8 @@ def main() -> int:
         print(f"Backup: {backup_path}")
     print(f"Guardado: {output_path}")
     print(f"Descripciones traducidas: {translated_count}")
+    if failures:
+        print(f"Descripciones pospuestas: {failures}")
     return 0
 
 

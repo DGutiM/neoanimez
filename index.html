@@ -5472,7 +5472,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260811-saga-map7';
+const APP_VERSION = '20260813-saga-catalog8';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -14670,63 +14670,18 @@ function getAnimeTimelineMainSeriesNodes(timeline, nodesMap) {
 
 function cacheAnimeTimelineSeriesNavigation(timeline, nodesMap) {
   if (!timeline || !(nodesMap instanceof Map)) return;
+  const levelById = timeline.levels || {};
   const allNodes = (timeline.nodes || [])
     .map(nodeId => nodesMap.get(Number(nodeId)))
-    .filter(node => node && !isAnimeTimelineIgnoredNode(node));
-  const mainNodes = getAnimeTimelineMainSeriesNodes(timeline, nodesMap);
-  const mainIds = new Set(mainNodes.map(node => Number(node.mal_id)));
-  const outgoing = new Map();
-  const incoming = new Map();
-  (timeline.edges || []).forEach(edge => {
-    if (edge.kind !== 'continuity') return;
-    const fromId = Number(edge.from);
-    const toId = Number(edge.to);
-    if (!outgoing.has(fromId)) outgoing.set(fromId, new Set());
-    if (!incoming.has(toId)) incoming.set(toId, new Set());
-    outgoing.get(fromId).add(toId);
-    incoming.get(toId).add(fromId);
-  });
+    .filter(node => node && !isAnimeTimelineIgnoredNode(node))
+    .sort((a, b) => compareAnimeTimelineNodes(a, b, levelById));
 
-  const findConnectedMain = (startId, adjacency, direction) => {
-    const visited = new Set([startId]);
-    let frontier = [startId];
-    while (frontier.length) {
-      const next = [];
-      const candidates = [];
-      frontier.forEach(animeId => {
-        (adjacency.get(animeId) || []).forEach(neighbourId => {
-          if (visited.has(neighbourId)) return;
-          visited.add(neighbourId);
-          if (mainIds.has(neighbourId)) candidates.push(nodesMap.get(neighbourId));
-          else next.push(neighbourId);
-        });
-      });
-      if (candidates.length) {
-        candidates.sort((a, b) => compareAnimeTimelineNodes(a, b, timeline.levels || {}));
-        return direction === 'previous'
-          ? Number(candidates[candidates.length - 1]?.mal_id) || 0
-          : Number(candidates[0]?.mal_id) || 0;
-      }
-      frontier = next;
-    }
-    return 0;
-  };
-
-  allNodes.forEach(node => {
+  allNodes.forEach((node, index) => {
     animeTimelineSeriesNavigationMap.set(Number(node.mal_id), {
       resolved: true,
-      isMainLine: false,
-      previousId: 0,
-      nextId: 0
-    });
-  });
-  mainNodes.forEach(node => {
-    const animeId = Number(node.mal_id);
-    animeTimelineSeriesNavigationMap.set(Number(node.mal_id), {
-      resolved: true,
-      isMainLine: true,
-      previousId: findConnectedMain(animeId, incoming, 'previous'),
-      nextId: findConnectedMain(animeId, outgoing, 'next')
+      isMainLine: isAnimeTimelineMainSeriesNode(node),
+      previousId: Number(allNodes[index - 1]?.mal_id) || 0,
+      nextId: Number(allNodes[index + 1]?.mal_id) || 0
     });
   });
 }
@@ -14784,7 +14739,6 @@ function buildAnimeRelationCard(anime, kind) {
 function getAnimeRelationCards(anime, relations) {
   const resolved = animeTimelineSeriesNavigationMap.get(Number(anime?.mal_id));
   if (resolved?.resolved) {
-    if (!resolved.isMainLine) return [];
     return [
       ['prequel', resolved.previousId],
       ['sequel', resolved.nextId]
@@ -14792,10 +14746,9 @@ function getAnimeRelationCards(anime, relations) {
       .filter(item => item.anime);
   }
 
-  if (!isAnimeMainSeriesEntry(anime)) return [];
   const getCandidates = ids => (Array.isArray(ids) ? ids : [])
     .map(targetId => getAnimeById(targetId))
-    .filter(target => target && isAnimeMainSeriesEntry(target))
+    .filter(Boolean)
     .sort((a, b) => compareAnimeTimelineNodes(a, b));
   const previousCandidates = getCandidates(relations?.prequels);
   const nextCandidates = getCandidates(relations?.sequels);
@@ -14923,7 +14876,7 @@ async function renderAnimeRelationsForModal(anime) {
     cacheAnimeTimelineSeriesNavigation(timeline, nodes);
     if (Number(currentModalAnime?.mal_id) === requestedId) renderAnimeRelations(currentModalAnime);
   } catch (error) {
-    console.warn('No se pudo resolver la linea principal de la saga:', error);
+    console.warn('No se pudo resolver la cronologia completa de la saga:', error);
   }
 }
 

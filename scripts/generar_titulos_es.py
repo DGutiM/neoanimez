@@ -185,9 +185,13 @@ def translate_many_google_gtx(texts: List[str], source_lang: str, timeout: int) 
     if len(texts) == 1:
         return [translate_google_gtx(texts[0], source_lang, timeout)]
 
-    joined = "\n".join(texts)
+    separator = "__NEOANIMEZ_SPLIT_8F3A__"
+    joined = f"\n{separator}\n".join(texts)
     translated = translate_google_gtx(joined, source_lang, timeout)
-    parts = [clean_title(part) for part in translated.splitlines()]
+    parts = [
+        clean_title(part)
+        for part in re.split(rf"\s*{re.escape(separator)}\s*", translated, flags=re.IGNORECASE)
+    ]
     parts = [part for part in parts if part]
 
     if len(parts) != len(texts):
@@ -318,8 +322,13 @@ def enrich_anime(
                 translated_title = manual_aliases[0] if manual_aliases else source_text
                 status = "fallback"
 
+    previous_search_titles_es = anime.get("search_titles_es") or []
     translated_aliases = []
-    if args.translate_aliases:
+    should_translate_aliases = bool(
+        args.translate_aliases
+        and (args.force or not existing_title_es or not previous_search_titles_es)
+    )
+    if should_translate_aliases:
         for field, text, lang in alias_sources_for_translation(anime, args.alias_limit):
             try:
                 translated_aliases.append(
@@ -336,7 +345,6 @@ def enrich_anime(
                 if not args.quiet:
                     print(f"[WARN] No se pudo traducir alias {text!r}: {exc}")
 
-    previous_search_titles_es = anime.get("search_titles_es") or []
     anime["title_es"] = translated_title
     anime["title_es_reviewed"] = bool(anime.get("title_es_reviewed", False))
     anime["title_es_source"] = source_field
