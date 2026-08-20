@@ -122,8 +122,8 @@ def main() -> int:
     parser.add_argument("--top", type=int, default=20, help="Reservado por compatibilidad; ya no se muestra un bloque global.")
     parser.add_argument("--season", type=int, default=10, help="Cantidad por temporada.")
     parser.add_argument("--unknown", type=int, default=10, help="Cantidad para Fecha indefinida.")
-    parser.add_argument("--extra-year-input", action="append", default=[], help="Upcoming completo extra para añadir como 'Mas esperados YYYY'.")
-    parser.add_argument("--extra-year-top", type=int, default=10, help="Cantidad por cada año extra.")
+    parser.add_argument("--extra-year-input", action="append", default=[], help="Upcoming completo extra para añadir dividido por temporadas.")
+    parser.add_argument("--extra-year-top", type=int, default=10, help="Cantidad por temporada de cada año extra.")
     parser.add_argument("--include-adult", action="store_true", help="No filtra contenido adulto.")
     parser.add_argument("--no-backup", action="store_true", help="No crea backup del archivo de salida.")
     args = parser.parse_args()
@@ -193,13 +193,13 @@ def main() -> int:
 
     main_year = safe_int((payload.get("meta") or {}).get("year"))
 
-    def current_season(record: Dict[str, Any]) -> str:
+    def season_for_year(record: Dict[str, Any], year: int) -> str:
         aired_from = clean_text(record.get("aired_from"))[:10]
         try:
             premiere = dt.date.fromisoformat(aired_from)
         except ValueError:
             premiere = None
-        if premiere and (not main_year or premiere.year == main_year):
+        if premiere and premiere.year == year:
             if premiere.month <= 3:
                 return "winter"
             if premiere.month <= 6:
@@ -207,11 +207,14 @@ def main() -> int:
             if premiere.month <= 9:
                 return "summer"
             return "fall"
-        if real_upcoming_year(record) == main_year:
+        if real_upcoming_year(record) == year:
             fallback = clean_text(record.get("upcoming_season")).casefold()
             if fallback in SECTION_ORDER:
                 return fallback
         return ""
+
+    def current_season(record: Dict[str, Any]) -> str:
+        return season_for_year(record, main_year)
 
     source_sections = payload.get("sections") if isinstance(payload.get("sections"), dict) else {}
     curated_sections: Dict[str, List[int]] = {}
@@ -255,25 +258,31 @@ def main() -> int:
             and item.get("mal_id")
             and real_upcoming_year(item) == extra_year
             and int(item["mal_id"]) not in selected_ids
+            and is_still_upcoming(item)
             and (args.include_adult or not is_adult(item))
         ]
         extra_items.sort(key=sort_key)
-        section_id = f"most_anticipated_{extra_year}"
-        section_ids = unique_existing_ids(
-            [item.get("mal_id") for item in extra_items],
-            {int(item["mal_id"]) for item in extra_items},
-            args.extra_year_top,
-        )
-        if not section_ids:
-            continue
-        curated_sections[section_id] = section_ids
-        section_order.append(section_id)
-        section_labels[section_id] = f"Más esperados {extra_year}"
         for item in extra_items:
             anime_id = int(item["mal_id"])
             if anime_id not in items_by_id:
                 items_by_id[anime_id] = item
-        selected_ids.update(section_ids)
+
+        extra_allowed_ids = {int(item["mal_id"]) for item in extra_items}
+        for season_id in SECTION_ORDER:
+            candidates = [item for item in extra_items if season_for_year(item, extra_year) == season_id]
+            candidates.sort(key=sort_key)
+            section_ids = unique_existing_ids(
+                [item.get("mal_id") for item in candidates],
+                extra_allowed_ids,
+                args.extra_year_top,
+            )
+            if not section_ids:
+                continue
+            section_id = f"{season_id}_{extra_year}"
+            curated_sections[section_id] = section_ids
+            section_order.append(section_id)
+            section_labels[section_id] = f"{SEASON_LABELS[season_id]} {extra_year}"
+            selected_ids.update(section_ids)
 
     unknown_source_ids = [
         anime_id for anime_id in source_sections.get("unknown", [])
@@ -302,7 +311,7 @@ def main() -> int:
                 "most_anticipated": args.top,
                 "season": args.season,
                 "unknown": args.unknown,
-                "extra_year": args.extra_year_top,
+                "extra_year_season": args.extra_year_top,
             },
             "adult_filtered": not args.include_adult,
         },

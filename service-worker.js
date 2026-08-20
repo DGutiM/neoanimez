@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20260813-watch-order9';
+const CACHE_VERSION = '20260820-season-2027';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 

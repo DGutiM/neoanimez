@@ -8,6 +8,7 @@ import os
 import random
 import re
 import shutil
+import subprocess
 import time
 import urllib.error
 import urllib.parse
@@ -84,6 +85,42 @@ def unique_values(values: Iterable[Any]) -> List[str]:
     return output
 
 
+def fetch_json_with_curl(url: str) -> Optional[Dict[str, Any]]:
+    curl = shutil.which("curl")
+    if not curl:
+        return None
+    try:
+        result = subprocess.run(
+            [
+                curl,
+                "-fsSL",
+                "--retry",
+                "2",
+                "--retry-all-errors",
+                "--connect-timeout",
+                "10",
+                "--max-time",
+                str(TIMEOUT_SECONDS),
+                "-H",
+                "Accept: application/json",
+                "-A",
+                "NeoAnimeZ-JikanSync/1.0",
+                url,
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=TIMEOUT_SECONDS + 10,
+        )
+        payload = json.loads(result.stdout)
+        if isinstance(payload, dict):
+            print("[INFO] Descarga recuperada mediante curl")
+            return payload
+    except (OSError, subprocess.SubprocessError, json.JSONDecodeError):
+        return None
+    return None
+
+
 def fetch_json(url: str) -> Dict[str, Any]:
     last_error = None
     for attempt in range(1, MAX_RETRIES + 1):
@@ -111,12 +148,20 @@ def fetch_json(url: str) -> Dict[str, Any]:
             wait_seconds = min(35, wait_seconds + random.uniform(0.25, 1.1))
 
             if status in (429, 500, 502, 503, 504):
+                if attempt == 1:
+                    curl_payload = fetch_json_with_curl(url)
+                    if curl_payload is not None:
+                        return curl_payload
                 print(f"[WARN] HTTP {status}. Reintento {attempt}/{MAX_RETRIES} en {wait_seconds:.1f}s")
                 time.sleep(wait_seconds)
                 continue
             raise
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
             last_error = error
+            if attempt == 1:
+                curl_payload = fetch_json_with_curl(url)
+                if curl_payload is not None:
+                    return curl_payload
             wait_seconds = min(35, REQUEST_DELAY_SECONDS * attempt + random.uniform(0.25, 1.1))
             print(f"[WARN] Error temporal: {error}. Reintento {attempt}/{MAX_RETRIES} en {wait_seconds:.1f}s")
             time.sleep(wait_seconds)

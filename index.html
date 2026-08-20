@@ -600,11 +600,11 @@ body.standalone-ios header img{height:56px}
   overflow:hidden;
 }
 .upcoming-season[data-section="most_anticipated"]{--season-color:rgba(123,79,255,.82);--season-soft:rgba(123,79,255,.14)}
-.upcoming-season[data-section="winter"]{--season-color:rgba(91,206,255,.84);--season-soft:rgba(91,206,255,.14)}
-.upcoming-season[data-section="spring"]{--season-color:rgba(114,255,154,.82);--season-soft:rgba(114,255,154,.13)}
-.upcoming-season[data-section="summer"]{--season-color:rgba(255,214,102,.86);--season-soft:rgba(255,214,102,.13)}
-.upcoming-season[data-section="fall"]{--season-color:rgba(255,139,91,.86);--season-soft:rgba(255,139,91,.13)}
-.upcoming-season[data-section="unknown"]{--season-color:rgba(170,155,255,.78);--season-soft:rgba(170,155,255,.12)}
+.upcoming-season[data-section^="winter"]{--season-color:rgba(91,206,255,.84);--season-soft:rgba(91,206,255,.14)}
+.upcoming-season[data-section^="spring"]{--season-color:rgba(114,255,154,.82);--season-soft:rgba(114,255,154,.13)}
+.upcoming-season[data-section^="summer"]{--season-color:rgba(255,214,102,.86);--season-soft:rgba(255,214,102,.13)}
+.upcoming-season[data-section^="fall"]{--season-color:rgba(255,139,91,.86);--season-soft:rgba(255,139,91,.13)}
+.upcoming-season[data-section^="unknown"]{--season-color:rgba(170,155,255,.78);--season-soft:rgba(170,155,255,.12)}
 .upcoming-season[data-section^="most_anticipated_"]{--season-color:rgba(255,45,120,.84);--season-soft:rgba(255,45,120,.13)}
 .upcoming-season summary{
   list-style:none;
@@ -5559,7 +5559,7 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260813-watch-order9';
+const APP_VERSION = '20260820-season-2027';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -14527,7 +14527,8 @@ function buildUpcomingCard(anime, sectionId) {
       summer: 'Verano',
       fall: 'Otoño'
     };
-    const parts = [anime.type, sectionSeasonLabels[sectionId] || anime.upcoming_season_label].filter(Boolean);
+    const sectionSeason = String(sectionId || '').split('_')[0];
+    const parts = [anime.type, sectionSeasonLabels[sectionSeason] || anime.upcoming_season_label].filter(Boolean);
     type.textContent = parts.join(' · ');
   }
   return div;
