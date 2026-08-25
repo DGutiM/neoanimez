@@ -1372,6 +1372,53 @@ body.intro-open .title-language-widget{display:none}
 .info-accordion-body strong{
   color:#fff;
 }
+.info-setting-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:14px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  background:rgba(7,8,20,.46);
+  cursor:pointer;
+}
+.info-setting-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.info-setting-copy strong{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:.05em}
+.info-setting-copy small{color:#9297b4;font-size:12px;line-height:1.45}
+.info-switch{position:relative;display:inline-flex;flex:0 0 auto}
+.info-switch input{position:absolute;opacity:0;pointer-events:none}
+.info-switch-track{
+  position:relative;
+  display:block;
+  width:52px;
+  height:30px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  background:rgba(255,255,255,.07);
+  transition:background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.info-switch-thumb{
+  position:absolute;
+  top:4px;
+  left:4px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#a6abc5;
+  transition:transform .2s ease,background .2s ease;
+}
+.info-switch input:checked + .info-switch-track{
+  border-color:rgba(255,45,120,.58);
+  background:rgba(255,45,120,.18);
+  box-shadow:0 0 18px rgba(255,45,120,.12);
+}
+.info-switch input:checked + .info-switch-track .info-switch-thumb{
+  transform:translateX(22px);
+  background:#ff6aa5;
+}
+.info-switch input:focus-visible + .info-switch-track{outline:2px solid var(--cyan);outline-offset:3px}
+.info-setting-feedback{min-height:18px;margin-top:8px;color:#8ff0ff;font-size:11px;line-height:1.5}
 
 
 /* USER */
@@ -4637,7 +4684,7 @@ body.cookie-banner-visible #intro-screen{
               <option value="Supernatural">Sobrenatural</option>
               <option value="Suspense">Suspense</option>
               <option value="Boys Love">Boys Love</option>
-              <option value="Hentai">Hentai</option>
+              <option value="Hentai" data-adult-only>Hentai</option>
             </select>
               <div class="genre-row-actions"></div>
           </div>
@@ -5054,10 +5101,9 @@ body.cookie-banner-visible #intro-screen{
           <summary>Política de privacidad</summary>
           <div class="info-accordion-body">
             <p>NeoAnimeZ recoge únicamente los datos necesarios para el funcionamiento de la cuenta y de la lista personal del usuario.</p>
-            <p><strong>Datos utilizados:</strong> correo electrónico de acceso, estados de seguimiento, puntuaciones, progreso de episodios, perfil público opcional y mensajes publicados voluntariamente en el tablón de comunidad.</p>
-            <p><strong>Finalidad:</strong> permitir el inicio de sesión, mantener la lista personal, guardar puntuaciones y progreso, mostrar tops de comunidad con datos agregados y habilitar conversaciones públicas dentro del tablón.</p>
+            <p><strong>Datos utilizados:</strong> correo electrónico de acceso, estados de seguimiento, puntuaciones, progreso de episodios y perfil público opcional.</p>
+            <p><strong>Finalidad:</strong> permitir el inicio de sesión, mantener la lista personal, guardar puntuaciones y progreso y mostrar tops de comunidad con datos agregados.</p>
             <p>Las puntuaciones individuales se asocian a la cuenta para que cada usuario pueda modificarlas o borrarlas. El top público de comunidad debe usar resultados agregados por anime, no listados públicos de usuarios.</p>
-            <p>Los mensajes del tablón son públicos, pero se muestran con alias de comunidad y no con el correo electrónico del usuario.</p>
             <p>La lista compartida solo se muestra si el usuario activa voluntariamente su perfil público. El correo electrónico no se muestra en ese perfil.</p>
             <p>NeoAnimeZ no vende datos personales ni utiliza la información de cuenta con fines comerciales ajenos al funcionamiento de la web. Si el usuario deja de utilizar el servicio, podrá dejar de acceder a su cuenta en cualquier momento.</p>
           </div>
@@ -5069,6 +5115,23 @@ body.cookie-banner-visible #intro-screen{
             <p>NeoAnimeZ puede usar <strong>Google Analytics</strong> para conocer actividad general de la web, como visitas, páginas consultadas y datos técnicos aproximados de navegación.</p>
             <p>La analítica solo se activa si el usuario acepta las cookies de analítica desde el aviso mostrado en la web. Si se rechazan, la web sigue funcionando igualmente.</p>
             <p>La preferencia de aceptar o rechazar se guarda en el navegador para no preguntar en cada visita.</p>
+          </div>
+        </details>
+
+        <details class="info-accordion">
+          <summary>Contenido para adultos</summary>
+          <div class="info-accordion-body">
+            <label class="info-setting-row" for="adultContentToggle">
+              <span class="info-setting-copy">
+                <strong>Mostrar contenido 18+</strong>
+                <small>Oculto por defecto. Cambiar esta preferencia no borra animes ni datos de tu cuenta.</small>
+              </span>
+              <span class="info-switch">
+                <input id="adultContentToggle" type="checkbox" role="switch" aria-label="Mostrar contenido para adultos">
+                <span class="info-switch-track" aria-hidden="true"><span class="info-switch-thumb"></span></span>
+              </span>
+            </label>
+            <div class="info-setting-feedback" id="adultContentFeedback" aria-live="polite"></div>
           </div>
         </details>
 
@@ -5559,7 +5622,8 @@ const AUTH_REDIRECT_URL = 'https://neoanimez.com';
 const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
-const APP_VERSION = '20260825-full-refresh';
+const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
+const APP_VERSION = '20260825-adult-content-control';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -5732,6 +5796,7 @@ let searchVisibleCount = 0;
 let titleSearchDebounce = null;
 let analyticsLoaded = false;
 let titleDisplayMode = readTitleDisplayMode();
+let adultContentEnabled = readAdultContentPreference();
 let splitCatalogEnabled = false;
 let animeRelationsLoaded = false;
 let animeRelationsLoadPromise = null;
@@ -6049,6 +6114,94 @@ function readTitleDisplayMode() {
   } catch {
     return 'original';
   }
+}
+
+function readAdultContentPreference() {
+  try {
+    return localStorage.getItem(ADULT_CONTENT_KEY) === 'enabled';
+  } catch {
+    return false;
+  }
+}
+
+function isAdultAnime(anime = {}) {
+  const values = [
+    ...(Array.isArray(anime.genres) ? anime.genres : []),
+    ...(Array.isArray(anime.explicit_genres) ? anime.explicit_genres : []),
+    ...(Array.isArray(anime.source_tags_original) ? anime.source_tags_original : []),
+    anime.rating
+  ]
+    .filter(Boolean)
+    .map(value => String(value).trim().toLowerCase());
+
+  return values.some(value => value === 'hentai' || value.includes('rx - hentai'));
+}
+
+function isAnimeVisible(anime = {}) {
+  return adultContentEnabled || !isAdultAnime(anime);
+}
+
+function updateAdultContentUI() {
+  const toggle = document.getElementById('adultContentToggle');
+  const feedback = document.getElementById('adultContentFeedback');
+  if (toggle) toggle.checked = adultContentEnabled;
+
+  document.querySelectorAll('option[data-adult-only]').forEach(option => {
+    option.hidden = !adultContentEnabled;
+    option.disabled = !adultContentEnabled;
+  });
+
+  if (!adultContentEnabled) {
+    document.querySelectorAll('.genre-select').forEach(select => {
+      if (select.value === 'Hentai') select.value = '';
+    });
+  }
+
+  if (feedback) {
+    const adultCount = DB.filter(isAdultAnime).length;
+    feedback.textContent = adultContentEnabled
+      ? `Contenido 18+ visible${adultCount ? ` · ${adultCount} títulos` : ''}.`
+      : 'Contenido 18+ oculto en toda la web.';
+  }
+}
+
+function refreshAdultContentSurfaces() {
+  const hadCatalogResults = catalogResultsCache.length > 0;
+  const query = document.getElementById('titleSearchInput')?.value?.trim() || '';
+
+  catalogResultsCache = [];
+  searchResultsCache = [];
+  if (hadCatalogResults) applyFilters().catch(error => console.warn('No se pudo refrescar el catálogo:', error));
+  if (query.length >= 2) performTitleSearch();
+  renderCommunityRanking();
+  if (upcomingPayload) loadUpcomingRanking().catch(error => console.warn('No se pudo refrescar Más esperados:', error));
+  renderUserLists();
+}
+
+function setAdultContentEnabled(enabled, { confirmAge = true } = {}) {
+  const shouldEnable = !!enabled;
+  if (shouldEnable && confirmAge) {
+    const confirmed = window.confirm('Confirma que tienes al menos 18 años para mostrar contenido adulto.');
+    if (!confirmed) {
+      updateAdultContentUI();
+      return false;
+    }
+  }
+
+  adultContentEnabled = shouldEnable;
+  try {
+    localStorage.setItem(ADULT_CONTENT_KEY, shouldEnable ? 'enabled' : 'disabled');
+  } catch {}
+
+  if (!shouldEnable) {
+    if (activeAnimeTimeline) closeAnimeTimeline();
+    if (activeAnimeRouteChoice) closeAnimeRouteChooser();
+    if (currentModalAnime && isAdultAnime(currentModalAnime)) closeAnimeModal();
+  }
+
+  updateAdultContentUI();
+  refreshAdultContentSurfaces();
+  return true;
 }
 
 function getAnimeDisplayTitle(anime = {}) {
@@ -7557,7 +7710,9 @@ function getUserStatusCounts() {
     dropped: 0
   };
 
-  userAnimeMap.forEach(status => {
+  userAnimeMap.forEach((status, animeId) => {
+    const anime = getAnimeById(animeId);
+    if (!anime || !isAnimeVisible(anime)) return;
     if (Object.prototype.hasOwnProperty.call(counts, status)) counts[status] += 1;
   });
 
@@ -7579,7 +7734,7 @@ function getContinueWatchingItems(limit = 5) {
     .filter(([, status]) => status === 'watching')
     .map(([animeId, status]) => {
       const anime = getAnimeById(animeId);
-      if (!anime) return null;
+      if (!anime || !isAnimeVisible(anime)) return null;
       const progress = getDisplayProgress(anime, status);
       const episode = Number(progress?.episode_number) || 0;
       const progressUpdatedAt = progress?.updated_at || '';
@@ -7995,7 +8150,7 @@ function readPublicProfileSlugFromUrl() {
 
 function buildPublicProfileAnimeCard(item, options = {}) {
   const anime = getAnimeById(item.anime_id);
-  if (!anime) return null;
+  if (!anime || !isAnimeVisible(anime)) return null;
   const status = item.status || 'pending';
   const title = getAnimeDisplayTitle(anime);
   const progress = {
@@ -8040,7 +8195,11 @@ function renderPublicProfileView(payload = null) {
   }
 
   const profile = payload.profile;
-  const items = Array.isArray(payload.items) ? payload.items : [];
+  const items = (Array.isArray(payload.items) ? payload.items : [])
+    .filter(item => {
+      const anime = getAnimeById(item.anime_id);
+      return anime && isAnimeVisible(anime);
+    });
   const counts = { watching: 0, pending: 0, completed: 0, dropped: 0 };
   items.forEach(item => {
     if (Object.prototype.hasOwnProperty.call(counts, item.status)) counts[item.status] += 1;
@@ -8253,7 +8412,7 @@ function getScheduleEntries() {
       const dayKey = normalizeScheduleDay(item.day || item.broadcast?.day || item.broadcast_string);
       return { item, animeId, anime, dayKey, status: userAnimeMap.get(Number(animeId)) || '' };
     })
-    .filter(entry => entry.animeId && entry.dayKey !== 'unknown');
+    .filter(entry => entry.animeId && entry.dayKey !== 'unknown' && isAnimeVisible(entry.anime));
 }
 
 function getPersonalScheduleEntries() {
@@ -8626,7 +8785,7 @@ function renderUserLists() {
 
   userAnimeMap.forEach((status, animeId) => {
     const anime = getAnimeById(animeId);
-    if (!anime || !buckets[status]) return;
+    if (!anime || !isAnimeVisible(anime) || !buckets[status]) return;
     buckets[status].push(anime);
   });
 
@@ -13611,6 +13770,7 @@ function addGenreSelect(value = '') {
   row.appendChild(select);
   stack.appendChild(row);
   ensureGenreRemoveButtons();
+  updateAdultContentUI();
 }
 
 function ensureGenreRemoveButtons() {
@@ -13819,6 +13979,7 @@ async function applyFilters() {
   const year = document.getElementById('f-year').value;
 
   let results = DB.filter(a => {
+    if (!isAnimeVisible(a)) return false;
     const animeYear = Number(a.year) || 0;
     const animeGenres = a.genres || [];
     const animeThemes = a.themes || [];
@@ -14014,7 +14175,7 @@ function getRandomRecommendationPool() {
   return DB.filter(anime => {
     const type = String(anime?.type || '').toLowerCase();
     if (!allowedTypes.has(type)) return false;
-    if ((anime.genres || []).includes('Hentai')) return false;
+    if (!isAnimeVisible(anime)) return false;
     if (isLikelyFollowUpSeason(anime)) return false;
     return Number(anime?.mal_id) > 0;
   });
@@ -14147,7 +14308,7 @@ function getTasteProfile() {
 
   userAnimeMap.forEach((status, animeId) => {
     const anime = getAnimeById(animeId);
-    if (!anime) return;
+    if (!anime || !isAnimeVisible(anime)) return;
     const rating = Number(userRatingMap.get(Number(animeId)));
     const statusWeight = {
       completed: 3,
@@ -14169,7 +14330,7 @@ function getTasteProfile() {
     if (userAnimeMap.has(Number(animeId))) return;
     const anime = getAnimeById(animeId);
     const numericRating = Number(rating);
-    if (!anime || !Number.isFinite(numericRating) || numericRating < 7) return;
+    if (!anime || !isAnimeVisible(anime) || !Number.isFinite(numericRating) || numericRating < 7) return;
     const weight = (numericRating - 6) * 0.65;
     signalCount += weight;
     addWeightedMapValue(genreWeights, anime.genres || [], weight);
@@ -14256,7 +14417,8 @@ function performTitleSearch({ scrollToResults = false } = {}) {
   }
 
   const results = sortTitleSearchResults(
-    DB.map(anime => ({
+    DB.filter(isAnimeVisible)
+      .map(anime => ({
       ...anime,
       _searchScore: scoreAnimeMatch(anime, query),
       _searchDisplayTitle: getSearchDisplayTitle(anime, query)
@@ -14340,7 +14502,7 @@ function getCommunityRankingItems(mode = communityRankingMode) {
       anime: getAnimeById(animeId),
       rating
     }))
-    .filter(item => item.anime && item.rating?.count);
+    .filter(item => item.anime && isAnimeVisible(item.anime) && item.rating?.count);
 
   const sorters = {
     best: (a, b) => {
@@ -14375,6 +14537,7 @@ function getCommunityRankingEmptyMessage() {
 
 function renderNeoSelection(container) {
   container.innerHTML = '';
+  let visibleRank = 0;
   RANKING_DATA.forEach((rankingItem, index) => {
     const fromCatalog = findAnimeByTitle(rankingItem.title)
       || DB.find(anime => Number(anime.mal_id) === Number(rankingItem.mal_id))
@@ -14384,8 +14547,10 @@ function renderNeoSelection(container) {
       title: fromCatalog.title || rankingItem.title,
       mal_id: fromCatalog.mal_id || rankingItem.mal_id
     };
+    if (!isAnimeVisible(anime)) return;
+    visibleRank += 1;
     const imageId = `ri-${index}`;
-    const card = buildRankingCard({ anime, rank: index + 1, imageId });
+    const card = buildRankingCard({ anime, rank: visibleRank, imageId });
     card.addEventListener('click', () => {
       const image = card.querySelector('.rimg')?.src || BLANK;
       openAnimeModal(anime, image);
@@ -14564,7 +14729,9 @@ async function loadUpcomingRanking() {
 
   sectionOrder.forEach(sectionId => {
     const ids = sections[sectionId] || [];
-    const items = ids.map(id => upcomingAnimeMap.get(Number(id))).filter(Boolean);
+    const items = ids
+      .map(id => upcomingAnimeMap.get(Number(id)))
+      .filter(anime => anime && isAnimeVisible(anime));
     if (!items.length) return;
 
     const details = document.createElement('details');
@@ -14696,7 +14863,9 @@ function normalizeAnimeTimelineFormat(value) {
 }
 
 function isAnimeTimelineIgnoredNode(node = {}) {
-  return ANIME_TIMELINE_IGNORED_FORMATS.has(normalizeAnimeTimelineFormat(node.format || node.type));
+  if (ANIME_TIMELINE_IGNORED_FORMATS.has(normalizeAnimeTimelineFormat(node.format || node.type))) return true;
+  const catalogAnime = getAnimeById(node.mal_id);
+  return !!catalogAnime && !isAnimeVisible(catalogAnime);
 }
 
 function getAnimeTimelineBranchKind(node = {}) {
@@ -14782,7 +14951,7 @@ function getAnimeRouteFormatLabel(anime = {}) {
 function getAnimeRelationCandidates(ids = []) {
   return [...new Set(Array.isArray(ids) ? ids.map(Number) : [])]
     .map(targetId => getAnimeById(targetId))
-    .filter(Boolean)
+    .filter(anime => anime && isAnimeVisible(anime))
     .sort((a, b) => compareAnimeTimelineNodes(a, b));
 }
 
@@ -15833,7 +16002,7 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
   const img = document.getElementById('animeModalImg');
   const statusBox = document.querySelector('.modal-status-box');
 
-  if (!modal || !anime) return;
+  if (!modal || !anime || !isAnimeVisible(anime)) return;
 
   currentModalAnime = anime;
   currentRecommendationReason = options.recommendationReason || '';
@@ -15856,6 +16025,10 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
   if (needsDetails) {
     loadAnimeDetails(anime).then(fullAnime => {
       if (!fullAnime || Number(currentModalAnime?.mal_id) !== Number(anime.mal_id)) return;
+      if (!isAnimeVisible(fullAnime)) {
+        closeAnimeModal();
+        return;
+      }
       currentModalAnime = fullAnime;
       renderAnimeModalContent(fullAnime);
       renderAnimeRelations(fullAnime);
@@ -16005,12 +16178,17 @@ window.addEventListener('online', () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   initCookieBanner();
+  updateAdultContentUI();
+  document.getElementById('adultContentToggle')?.addEventListener('change', event => {
+    setAdultContentEnabled(event.currentTarget.checked);
+  });
   renderIntroFlashMessage();
   document.getElementById('animeTimelineViewport')?.addEventListener('scroll', updateAnimeTimelineScrollProgress, { passive: true });
   loadAnimeSchedule().catch(error => {
     console.warn('No se pudo precargar el calendario:', error);
   });
   await loadDB();
+  updateAdultContentUI();
   window.setTimeout(() => {
     loadAnimeRelations().catch(error => {
       console.warn('No se pudo precargar anime-relations.json:', error);
