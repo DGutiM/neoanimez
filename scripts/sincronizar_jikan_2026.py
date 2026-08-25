@@ -479,6 +479,8 @@ def build_anime_record(item: Dict[str, Any]) -> Dict[str, Any]:
     emotional = infer_emotional(genres, themes, synopsis)
     title = clean_text(item.get("title"))
     title_synonyms = item.get("title_synonyms") if isinstance(item.get("title_synonyms"), list) else []
+    aired = item.get("aired") if isinstance(item.get("aired"), dict) else {}
+    broadcast = item.get("broadcast") if isinstance(item.get("broadcast"), dict) else {}
 
     return {
         "title": title,
@@ -498,6 +500,13 @@ def build_anime_record(item: Dict[str, Any]) -> Dict[str, Any]:
         "type": item.get("type") or "",
         "franchise": infer_franchise(title),
         "ongoing": bool(item.get("airing")),
+        "airing_status": clean_text(item.get("status")),
+        "aired_from": aired.get("from"),
+        "aired_to": aired.get("to"),
+        "broadcast_day": clean_text(broadcast.get("day")),
+        "broadcast_time": clean_text(broadcast.get("time")),
+        "broadcast_timezone": clean_text(broadcast.get("timezone")),
+        "broadcast_string": clean_text(broadcast.get("string")),
         "source_tags_original": unique_values([item.get("source"), item.get("rating")]),
         "themes": unique_values(themes),
         "score": score,

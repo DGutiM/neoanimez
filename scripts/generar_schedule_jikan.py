@@ -35,6 +35,19 @@ DAY_LABELS = {
     "sunday": "Domingo",
     "unknown": "Sin dia",
 }
+ADULT_MARKERS = ("hentai", "rx - hentai")
+
+
+def is_adult(item: dict) -> bool:
+    values: list[str] = []
+    for field in ("genres", "themes", "source_tags_original"):
+        raw = item.get(field)
+        if isinstance(raw, list):
+            values.extend(str(value or "").strip().casefold() for value in raw)
+        else:
+            values.append(str(raw or "").strip().casefold())
+    values.append(str(item.get("rating") or "").strip().casefold())
+    return any(marker in value for value in values for marker in ADULT_MARKERS)
 
 
 def normalize_day(value: str) -> str:
@@ -153,7 +166,7 @@ def load_local_schedule() -> dict[str, list[dict]]:
         return days
 
     for anime in master if isinstance(master, list) else []:
-        if not anime.get("ongoing") or not anime.get("mal_id"):
+        if not anime.get("ongoing") or not anime.get("mal_id") or is_adult(anime):
             continue
         day = normalize_day(anime.get("broadcast_day"))
         if day == "unknown":
@@ -188,7 +201,7 @@ def fetch_remote_days(url: str) -> dict[str, list[dict]]:
         payload = fetch_json(f"{url}?page={page}", retries=2)
         data = payload.get("data") or []
         for item in data:
-            if not item.get("mal_id"):
+            if not item.get("mal_id") or is_adult(item):
                 continue
             broadcast = item.get("broadcast") or {}
             day = normalize_day(broadcast.get("day"))

@@ -2645,7 +2645,7 @@
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Wednesdays at 22:00 (JST)",
     "aired_from": "2026-04-08",
-    "aired_to": ""
+    "aired_to": "2026-09-30"
   },
   {
     "title": "One Piece",
@@ -24054,7 +24054,7 @@
     "title": "Tensei shitara Slime Datta Ken 4th Season",
     "mal_id": 59970,
     "image": "https://myanimelist.net/images/anime/1695/156389l.jpg",
-    "episodes": 0,
+    "episodes": 24,
     "length": "medio",
     "demographic": "Shounen",
     "genres": [
@@ -24107,7 +24107,7 @@
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Fridays at 23:00 (JST)",
     "aired_from": "2026-04-03",
-    "aired_to": ""
+    "aired_to": "2026-09-25"
   },
   {
     "title": "Cang Yuan Tu 2",
@@ -92677,10 +92677,10 @@
       "Hermana criadora"
     ],
     "airing_status": "Currently Airing",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
     "aired_from": "2025-09-26",
     "aired_to": ""
   },
@@ -142140,7 +142140,7 @@
     "description": "Chen Nan, who has been asleep for ten thousand years, awakens in the Cemetery of Gods and Demons and becomes famous after a series of adventures. With Chen Nan's arrival in the Yangjin Kingdom and his encounter with Chen Xi, a new adventure begins: a great battle in Kaiyuan City, a search for the mystery of his origins in the Deathly Abyss, and a battle against the Ling family in pursuit of justice and clarity. In this season, Chen Nan will continue his adventure to uncover the mystery of his origins while searching for Yu Xin's whereabouts.",
     "type": "ONA",
     "franchise": "Shen Mu: Nian Fan",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [],
     "themes": [
       "Historical",
@@ -142174,13 +142174,13 @@
       "Shen Mu: Nian Fan",
       "Shen Mu 3ra temporada"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2025-08-08",
-    "aired_to": ""
+    "aired_to": "2026-07-23"
   },
   {
     "title": "Mirai Nikki (TV)",
@@ -184169,7 +184169,7 @@
     "title": "Wu Shang Shen Di 2nd Season",
     "mal_id": 48956,
     "image": "https://myanimelist.net/images/anime/1558/114920l.jpg",
-    "episodes": 568,
+    "episodes": 620,
     "length": "medio",
     "demographic": "",
     "genres": [
@@ -247920,11 +247920,11 @@
     ],
     "description_es": "Tercera temporada de Kusuriya no Hitorigoto.",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "23:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 23:00 (JST)",
+    "aired_from": "2026-10-02",
     "aired_to": ""
   },
   {
@@ -248094,11 +248094,11 @@
     ],
     "description_es": "Segunda temporada de Tensei Shitara Ken Deshita.",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Thursdays",
+    "broadcast_time": "00:30",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Thursdays at 00:30 (JST)",
+    "aired_from": "2026-10-01",
     "aired_to": ""
   },
   {
@@ -250454,7 +250454,7 @@
     "title": "Koukaku Kidoutai (TV)",
     "mal_id": 58929,
     "image": "https://myanimelist.net/images/anime/1429/156316l.jpg",
-    "episodes": null,
+    "episodes": 10,
     "length": "corto",
     "demographic": "Seinen",
     "genres": [
@@ -250585,7 +250585,7 @@
     "description": "After the Li Tianchen incident came to a close, Time Photo Studio returned to a superficial peace. However, the news of Xia Fei's disappearance once again drew everyone into a crossroads of fate. With Vein's return and Qiao Ling's awakening of her superpowers, Cheng Xiaoshi and Lu Guang gradually uncover the secrets of the Bahati fire case, and Cheng Xiaoshi's father, Cheng Weimin, and mother, Shao Yuanyuan, also seem to have intricate connections to it. As the investigation deepens, Liu Xiao from a mysterious organization begins his operation, and the intervention of Yingdu police officer Jae further complicates this pursuit of the truth...",
     "type": "ONA",
     "franchise": "Shiguang Dailiren",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Original",
       "R - 17+ (violence & profanity)"
@@ -250618,7 +250618,7 @@
       "Shiguang Dailiren III"
     ],
     "description_es": "Después de que el incidente de Li Tianchen llegó a su fin, Time Photo Studio volvió a una paz superficial. Sin embargo, la noticia de la desaparición de Xia Fei una vez más llevó a todos a una encrucijada del destino. Con el regreso de Vein y el despertar de sus superpoderes por parte de Qiao Ling, Cheng Xiaoshi y Lu Guang descubren gradualmente los secretos del caso del incendio de Bahati, y el padre de Cheng Xiaoshi, Cheng Weimin, y su madre, Shao Yuanyuan, también parecen tener conexiones intrincadas con él. A medida que la investigación se profundiza, Liu Xiao, de una organización misteriosa, comienza su operación, y la intervención del oficial de policía de Yingdu, Jae, complica aún más esta búsqueda de la verdad...",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "12:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -253990,11 +253990,11 @@
     ],
     "description_es": "¡El juego mortal ha vuelto! Una vez más, dieciséis Chicas Mágicas se han reunido para un desafío de alto riesgo. Cada tres días, su Magical Phone los lleva a una simulación similar a un juego de rol en la que tienen que trabajar juntos para luchar contra enemigos, resolver acertijos y ganar Magical Candy para avanzar. Al final les espera una asombrosa recompensa de diez mil millones de yenes, pero sólo para los jugadores que den el golpe final. Con un premio tan tentador en juego, es solo cuestión de tiempo antes de que las chicas se enfrenten entre sí, y si sus puntos de vida caen a cero, el fin del juego será la menor de sus preocupaciones...",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Tuesdays",
+    "broadcast_time": "02:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Tuesdays at 02:00 (JST)",
+    "aired_from": "2026-10-06",
     "aired_to": ""
   },
   {
@@ -254561,7 +254561,7 @@
     "title": "Sora wa Akai Kawa no Hotori",
     "mal_id": 63489,
     "image": "https://myanimelist.net/images/anime/1274/155459l.jpg",
-    "episodes": null,
+    "episodes": 24,
     "length": "corto",
     "demographic": "Shoujo",
     "genres": [
@@ -257034,7 +257034,7 @@
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Fridays at 23:30 (JST)",
     "aired_from": "2026-07-03",
-    "aired_to": ""
+    "aired_to": "2026-09-25"
   },
   {
     "title": "Rilakkuma",
@@ -258624,11 +258624,11 @@
     ],
     "description_es": "Misaki, una estudiante universitaria, sintiendo el peso de la vida cotidiana e insegura sobre su futuro, anhela la aventura y algo que realmente le apasione. Al comienzo del nuevo día en el campus, los miembros del Travel Train Club (comúnmente conocido como Tetsuryo Club) invitan a Misaki a unirse a ellos, mientras ella ingresa al mundo de los ferrocarriles, el corazón de Misaki late con entusiasmo por el viaje que le espera.",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
+    "aired_from": "2026-10-09",
     "aired_to": ""
   },
   {
@@ -261998,7 +261998,7 @@
     "description": "The story takes place in the barbaric era of Yan Emperor and Huang Emperor. Just when many heroes were vying for supremacy in the Central Plains, the world-recognized leader, Emperor Shennong, passed away, and the heroes of the gold, wood, water, fire, and earth tribes were all ready to make a move. In the turbulent times, the young boy Tuoba Ye suddenly appeared and by chance obtained the dying inheritance of Emperor Shennong, thus starting a thrilling legendary journey.",
     "type": "ONA",
     "franchise": "Sou Shen Ji (ONA)",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -262026,13 +262026,13 @@
       "En busca de dioses"
     ],
     "description_es": "La historia tiene lugar en la era bárbara del Emperador Yan y el Emperador Huang. Justo cuando muchos héroes competían por la supremacía en las Llanuras Centrales, el líder mundialmente reconocido, el Emperador Shennong, falleció y los héroes de las tribus del oro, la madera, el agua, el fuego y la tierra estaban listos para actuar. En tiempos turbulentos, el joven Tuoba Ye apareció de repente y por casualidad obtuvo la herencia moribunda del emperador Shennong, iniciando así un emocionante viaje legendario.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-03-25",
-    "aired_to": ""
+    "aired_to": "2026-08-16"
   },
   {
     "title": "Wanmei Shijie Movie: Jiu Jie Fen Tian",
@@ -262517,7 +262517,7 @@
     "description": "The protagonist Ning Que travels to a seemingly real Tang Dynasty world, only to find that it is a dangerous world of cultivation. He originally thought that he could live a life of luxury and become superior, but he finds that he had no talent for cultivation. Additionally, he witnessed the massacre of his entire family at the age of four and was hunted for thousands of miles. While escaping death, he picked up a black umbrella in a sea of ​​blood and corpses and found the infant Sangsang. In despair, he found the motivation to live. Unwilling to bow to fate, he takes the big black umbrella and Sangsang, and begins a thrilling counterattack.",
     "type": "ONA",
     "franchise": "Jiang Ye",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -262544,13 +262544,13 @@
       "Cada noche"
     ],
     "description_es": "El protagonista Ning Que viaja a un mundo aparentemente real de la dinastía Tang, sólo para descubrir que es un mundo de cultivo peligroso. Originalmente pensó que podría vivir una vida de lujo y llegar a ser superior, pero descubre que no tenía talento para la cultivación. Además, fue testigo de la masacre de toda su familia a la edad de cuatro años y fue perseguido por miles de kilómetros. Mientras escapaba de la muerte, recogió un paraguas negro en un mar de sangre y cadáveres y encontró al bebé Sangsang. Desesperado, encontró la motivación para vivir. No dispuesto a ceder ante el destino, toma el gran paraguas negro y a Sangsang y comienza un emocionante contraataque.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-04-23",
-    "aired_to": ""
+    "aired_to": "2026-08-20"
   },
   {
     "title": "Pure feat. Eriko Hashimoto",
@@ -262594,7 +262594,10 @@
     "search_titles_es": [
       "Pura hazaña. Eriko Hashimoto"
     ],
-    "description_es": "Vídeo musical de la canción Pure feat. Eriko Hashimoto de PAS TASTA. La canción se utilizó como tema final del anime Seihantai na Kimi to Boku."
+    "description_es": "Vídeo musical de la canción Pure feat. Eriko Hashimoto de PAS TASTA. La canción se utilizó como tema final del anime Seihantai na Kimi to Boku.",
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-03-04",
+    "aired_to": "2026-03-04"
   },
   {
     "title": "Paihame Kazoku",
@@ -263857,7 +263860,7 @@
       "Shiranuhi"
     ],
     "description_es": "El corto está ambientado en una ciudad costera de Kumamoto a finales del verano de 1996. Minato, un niño de 10 años, vive una vida precaria con su padre borracho. La única fuente de fuerza de Minato es Ben-chan, una diosa con forma de niña que apareció en la isla Benten. El tiempo que pasa con ella son los únicos momentos en los que se siente como él mismo. Pero cuando está a punto de ser separado de Ben-chan debido a que lo enviarán a un hogar para niños, Minato le reza a un Shiranuhi, una luz misteriosa que flota sobre el mar, para que le conceda un deseo. Su deseo, lleno de odio hacia su padre, acaba convirtiéndose en una maldición.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -271734,7 +271737,8 @@
       "Cyberpunk: Edgerunners 2"
     ],
     "description_es": "Secuela de Cyberpunk: Edgerunners.",
-    "airing_status": "Not yet aired"
+    "airing_status": "Not yet aired",
+    "aired_from": "2026-10-20"
   },
   {
     "title": "Kaijuu 8-gou: Narumi no Heijitsu",
@@ -271941,11 +271945,11 @@
       "Hyouken no Majutsushi ga Sekai wo Suberu 2nd Season"
     ],
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "01:28",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 01:28 (JST)",
+    "aired_from": "2026-10-09",
     "aired_to": "",
     "title_es": "El hechicero Iceblade gobernará el mundo II",
     "title_es_reviewed": false,
@@ -271996,7 +272000,7 @@
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
-    "aired_from": "",
+    "aired_from": "2026-11-26",
     "aired_to": "",
     "title_es": "Noche de tontos",
     "title_es_reviewed": false,
@@ -272175,7 +272179,7 @@
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
-    "aired_from": "",
+    "aired_from": "2026-10-02",
     "aired_to": "",
     "title_es": "sobrecargado",
     "title_es_reviewed": false,
@@ -272305,7 +272309,7 @@
     "title": "Hua Xianzi: Mofa Xiang Dui Lun",
     "mal_id": 56234,
     "image": "https://cdn.myanimelist.net/images/anime/1849/158636l.jpg",
-    "episodes": null,
+    "episodes": 26,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -272322,7 +272326,7 @@
     "description": "Lumi, an apprentice aspiring to become a perfumer, is attacked by black mist on her way home. Guided by a black cat claiming to be a messenger of the Flower Star, she awakens the power of an antique flower key left by her ancestors and transforms into a Flower Fairy. Because the Seven-Colored Flower has withered due to dark magic, its seven petals are scattered throughout Flower City, causing strange phenomena that erode people's minds. For the safety of Flower City, Lumi, as a descendant of the Flower Fairy bloodline, shoulders the mission of purifying and collecting the seven petals, using floral magic to dispel the darkness in people's hearts, embarking on a magical girl's journey of growth. However, during this adventure, Lumi is attacked by another mysterious Flower Fairy, and the black cat beside her has an unexpected identity...",
     "type": "ONA",
     "franchise": "Hua Xianzi",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Other",
       "G - All Ages"
@@ -272355,13 +272359,13 @@
       "新花仙子",
       "Xin Hua Xianzi"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-07-04",
-    "aired_to": "",
+    "aired_to": "2026-08-15",
     "title_es": "Hua Xianzi: Mofa Xiang Dui Lun",
     "title_es_reviewed": false,
     "title_es_source": "title",
@@ -272392,7 +272396,7 @@
     "description": "After the Cangnan crisis was resolved, Lin Qiye completed the year-long Night Watchman training and assessment at Jinnan Mountain and became a formal Night Watchman. He then returned to Squad 136 and, together with his partners, embarked on a new battle against the Church of the Ancient Gods... A new Western evil god made his debut, and the pinnacle of humanity gathered in Cangnan, where a massive storm of disaster was quietly brewing.",
     "type": "ONA",
     "franchise": "Zhan Shen",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web novel",
       "PG-13 - Teens 13 or older"
@@ -272429,8 +272433,9 @@
       "Zhan Shen: Fanchen Shenyu II"
     ],
     "description_es": "Después de que se resolvió la crisis de Cangnan, Lin Qiye completó el entrenamiento y evaluación de Night Watchman de un año de duración en la montaña Jinnan y se convirtió en un Night Watchman formal. Luego regresó al Escuadrón 136 y, junto con sus compañeros, se embarcó en una nueva batalla contra la Iglesia de los Dioses Antiguos... Un nuevo dios maligno occidental hizo su debut, y la cima de la humanidad se reunió en Cangnan, donde una enorme tormenta de desastre se estaba gestando silenciosamente.",
-    "airing_status": "Currently Airing",
-    "aired_from": "2026-06-25"
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-06-25",
+    "aired_to": "2026-08-13"
   },
   {
     "title": "Zombie Stage",
@@ -274094,7 +274099,10 @@
     "search_titles_es": [
       "Todos los deseos se hacen realidad"
     ],
-    "description_es": "Frente a una riqueza que podría durar diez vidas, ¿te atreverías a apostarlo todo? Liderados por Lü Dongbin y Zhongli Quan, y acompañados por He Xiangu, Tieguai Li, Han Xiangzi, Cao Guojiu, Lan Caihe y Zhang Guolao, ocho mortales de diversos orígenes se han reunido sin darse cuenta en Penglai Wonderland. Algunos actuaron por impulso, otros se unieron instantáneamente y se hacen pasar por inmortales, participando en varios planes peligrosos en preparación para un gran atraco. ¡Ha comenzado oficialmente una estafa de \"inmortalidad\" planeada desde hace mucho tiempo! Debajo de la apariencia de falsos inmortales se esconde una ardiente ambición de riqueza repentina; dentro de la fachada improvisada se esconde la audacia de engañar a los cielos. No sabían que una conspiración impactante se cernía silenciosamente sobre ellos. ¿A dónde conducirá en última instancia este viaje ridículo y fantástico?"
+    "description_es": "Frente a una riqueza que podría durar diez vidas, ¿te atreverías a apostarlo todo? Liderados por Lü Dongbin y Zhongli Quan, y acompañados por He Xiangu, Tieguai Li, Han Xiangzi, Cao Guojiu, Lan Caihe y Zhang Guolao, ocho mortales de diversos orígenes se han reunido sin darse cuenta en Penglai Wonderland. Algunos actuaron por impulso, otros se unieron instantáneamente y se hacen pasar por inmortales, participando en varios planes peligrosos en preparación para un gran atraco. ¡Ha comenzado oficialmente una estafa de \"inmortalidad\" planeada desde hace mucho tiempo! Debajo de la apariencia de falsos inmortales se esconde una ardiente ambición de riqueza repentina; dentro de la fachada improvisada se esconde la audacia de engañar a los cielos. No sabían que una conspiración impactante se cernía silenciosamente sobre ellos. ¿A dónde conducirá en última instancia este viaje ridículo y fantástico?",
+    "airing_status": "Finished Airing",
+    "aired_from": "2026-07-18",
+    "aired_to": "2026-07-18"
   },
   {
     "title": "Airman ga Taosenai Team.Nekokan [Neko] Premium Version",
@@ -274196,7 +274204,9 @@
     "search_titles_es": [
       "Manténgase bajo perfil, jefe de secta"
     ],
-    "description_es": "Mientras una fuerte nieve cubría las puertas, los cultivadores demoníacos lanzaron un ataque sorpresa, masacrando a toda la Secta Mo. El joven Lu Chaoge perdió a sus familiares más cercanos en la tragedia. Al enfrentarse a una muerte segura, despertó a un sistema que desafiaba a los cielos, escapó por poco de la muerte a través del despertar espiritual del elemento agua, y juró purgar el mundo de los demonios y el mal. Después de una década de reclusión y arduo cultivo, permaneció atrapado en el Reino Inicial, incapaz de hacer ningún progreso. Un día, una oportunidad casual reactivó el sistema. Salió de la montaña con su hermana menor, Lu Dongli, en busca de hierbas espirituales para romper su barrera de cultivo. En el camino, resolvió ingeniosamente un desafío planteado por una extraña bestia, desafió a los cielos para convocar nueve Decretos Celestiales para despertar su poder espiritual y atravesó cinco reinos de cultivo seguidos. Incluso enfrentó el desafío de un prodigio de la Secta de la Espada. El otrora inútil maestro de secta comenzó así un poderoso regreso."
+    "description_es": "Mientras una fuerte nieve cubría las puertas, los cultivadores demoníacos lanzaron un ataque sorpresa, masacrando a toda la Secta Mo. El joven Lu Chaoge perdió a sus familiares más cercanos en la tragedia. Al enfrentarse a una muerte segura, despertó a un sistema que desafiaba a los cielos, escapó por poco de la muerte a través del despertar espiritual del elemento agua, y juró purgar el mundo de los demonios y el mal. Después de una década de reclusión y arduo cultivo, permaneció atrapado en el Reino Inicial, incapaz de hacer ningún progreso. Un día, una oportunidad casual reactivó el sistema. Salió de la montaña con su hermana menor, Lu Dongli, en busca de hierbas espirituales para romper su barrera de cultivo. En el camino, resolvió ingeniosamente un desafío planteado por una extraña bestia, desafió a los cielos para convocar nueve Decretos Celestiales para despertar su poder espiritual y atravesó cinco reinos de cultivo seguidos. Incluso enfrentó el desafío de un prodigio de la Secta de la Espada. El otrora inútil maestro de secta comenzó así un poderoso regreso.",
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-06-02"
   },
   {
     "title": "Mou Hitori no Alice",
@@ -275693,7 +275703,12 @@
     "search_titles_es": [
       "Seitokai ni mo Ana wa Aru!"
     ],
-    "description_es": "Mizunoe Ume solo quería evitar repetir grado cuando se unió al consejo estudiantil. Después de todo, parecía una solución fácil a sus problemas académicos actuales. Pero luego conoció a sus compañeros del consejo. Cada uno de ellos es excéntrico a su manera: uno es un cabeza hueca, otro da miedo, uno es secretamente un pervertido, pero en general, ¡son realmente raros! Sin embargo, de alguna manera, también son extrañamente lindos y entrañables. Lo que significa que Mizunoe está atrapada con ellos y con todo el caos que traen a la mesa."
+    "description_es": "Mizunoe Ume solo quería evitar repetir grado cuando se unió al consejo estudiantil. Después de todo, parecía una solución fácil a sus problemas académicos actuales. Pero luego conoció a sus compañeros del consejo. Cada uno de ellos es excéntrico a su manera: uno es un cabeza hueca, otro da miedo, uno es secretamente un pervertido, pero en general, ¡son realmente raros! Sin embargo, de alguna manera, también son extrañamente lindos y entrañables. Lo que significa que Mizunoe está atrapada con ellos y con todo el caos que traen a la mesa.",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "00:30",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 00:30 (JST)",
+    "aired_from": "2026-10-04"
   },
   {
     "title": "Mob Psycho 100: 10 Shuunen Kinen Tokubetsu Eizou",
@@ -391729,7 +391744,7 @@
     "title_es": "Jing: Rey de los Bandidos - Séptimo Cielo",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Jing: Rey de los Bandidos - Séptimo Cielo"
     ],
@@ -391788,7 +391803,7 @@
     "title_es": "chicas bravas",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "chicas bravas"
     ],
@@ -391840,7 +391855,7 @@
     "title_es": "Akazukin Chacha OVA",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Akazukin Chacha OVA"
     ],
@@ -391898,7 +391913,7 @@
     "title_es": "Película del chico mermelada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Película del chico mermelada"
     ],
@@ -391953,7 +391968,7 @@
     "title_es": "Capitán irresponsable Tylor OVA",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Capitán irresponsable Tylor OVA"
     ],
@@ -392007,7 +392022,7 @@
     "title_es": "Jardín Rojo: Chicas Muertas",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Jardín Rojo: Chicas Muertas"
     ],
@@ -392062,7 +392077,7 @@
     "title_es": "LIBERTAD PREVISITA",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "LIBERTAD PREVISITA"
     ],
@@ -392116,7 +392131,7 @@
     "title_es": "Conferencia de boin",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Conferencia de boin"
     ],
@@ -392176,7 +392191,7 @@
     "title_es": "Mei y el autobús del gato bebé",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Mei y el autobús del gato bebé"
     ],
@@ -392241,7 +392256,7 @@
     "title_es": "Hengen Taima Yakou Karura Mau! Nara Onryou Emaki",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hengen Taima Yakou Karura Mau! Nara Onryou Emaki"
     ],
@@ -392304,7 +392319,7 @@
     "title_es": "Liberador de cometas",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Liberador de cometas"
     ],
@@ -392357,7 +392372,7 @@
     "title_es": "Sumomomo Momomo: Chijou Saikyou no Yome Especiales",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sumomomo Momomo: Chijou Saikyou no Yome Especiales"
     ],
@@ -392417,7 +392432,7 @@
     "title_es": "Espíritus Medabots",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Espíritus Medabots"
     ],
@@ -392474,7 +392489,7 @@
     "title_es": "Hatsu Inu 2 La animación: Un tipo extraño de mujer - otra vez",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hatsu Inu 2 La animación: Un tipo extraño de mujer - otra vez"
     ],
@@ -392532,7 +392547,7 @@
     "title_es": "Kokoro Toshokan: Comunicación wa Kiru",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kokoro Toshokan: Comunicación wa Kiru"
     ],
@@ -392590,7 +392605,7 @@
     "title_es": "Chica mágica sexy ai",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Chica mágica sexy ai"
     ],
@@ -392647,7 +392662,7 @@
     "title_es": "Llama de Recca: Quema final",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Llama de Recca: Quema final"
     ],
@@ -392702,7 +392717,7 @@
     "title_es": "Kishin Douji Zenki Gaiden: Anki Kitan",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kishin Douji Zenki Gaiden: Anki Kitan"
     ],
@@ -392766,7 +392781,7 @@
     "title_es": "Especial Kannagi",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Especial Kannagi"
     ],
@@ -392829,7 +392844,7 @@
     "title_es": "ÁLBUM BLANCO 2ª Temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "ÁLBUM BLANCO 2ª Temporada"
     ],
@@ -392881,7 +392896,7 @@
     "title_es": "Leyenda de Regios",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Leyenda de Regios"
     ],
@@ -392937,7 +392952,7 @@
     "title_es": "Asura llorando 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Asura llorando 2"
     ],
@@ -392995,7 +393010,7 @@
     "title_es": "DISCIPLINA Rei",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "DISCIPLINA Rei"
     ],
@@ -393052,7 +393067,7 @@
     "title_es": "ROKUDENASHAZULES",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "ROKUDENASHAZULES"
     ],
@@ -393108,7 +393123,7 @@
     "title_es": "ARTERIAL DE FORTUNE: Akai Yakusoku - Tadoritsuita Basho",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "ARTERIAL DE FORTUNE: Akai Yakusoku - Tadoritsuita Basho"
     ],
@@ -393174,7 +393189,7 @@
     "title_es": "Control terrestre a Chica psicoeléctrica: El sol nocturno",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Control terrestre a Chica psicoeléctrica: El sol nocturno"
     ],
@@ -393227,7 +393242,7 @@
     "title_es": "Un puente hacia los cielos estrellados OVA",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Un puente hacia los cielos estrellados OVA"
     ],
@@ -393284,7 +393299,7 @@
     "title_es": "Zoku Attacker ¡TÚ! Medalla Kin e no Michi",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Zoku Attacker ¡TÚ! Medalla Kin e no Michi"
     ],
@@ -393334,7 +393349,7 @@
     "title_es": "Patema Invertida: Comienzo del Día",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Patema Invertida: Comienzo del Día"
     ],
@@ -393394,7 +393409,7 @@
     "title_es": "Piratas espaciales bodacious: abismo del hiperespacio",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Piratas espaciales bodacious: abismo del hiperespacio"
     ],
@@ -393453,7 +393468,7 @@
     "title_es": "NAKAIMO - ¡Mi hermana pequeña está entre ellos!: Ani, Imouto, Koibito",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "NAKAIMO - ¡Mi hermana pequeña está entre ellos!: Ani, Imouto, Koibito"
     ],
@@ -393518,7 +393533,7 @@
     "title_es": "Amor, elección y chocolate OVA",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Amor, elección y chocolate OVA"
     ],
@@ -393579,7 +393594,7 @@
     "title_es": "Kamisama no Inai Nichiyoubi: Kioku",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kamisama no Inai Nichiyoubi: Kioku"
     ],
@@ -393647,7 +393662,7 @@
     "title_es": "Hyperdimension Neptunia: La Eternidad (Final Verdadero) Prometida",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hyperdimension Neptunia: La Eternidad (Final Verdadero) Prometida"
     ],
@@ -393709,7 +393724,7 @@
     "title_es": "GJ-bu@",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "GJ-bu@"
     ],
@@ -393767,7 +393782,7 @@
     "title_es": "Inari, Konkon, Koi Iroha.: Inari, Konkon, Semishigure.",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Inari, Konkon, Koi Iroha.: Inari, Konkon, Semishigure."
     ],
@@ -393821,7 +393836,7 @@
     "title_es": "Cinta no Kishi Piloto",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Cinta no Kishi Piloto"
     ],
@@ -393879,7 +393894,7 @@
     "title_es": "Sekai Seifuku: Bouryaku no Zvezda - Shin Zvezda Daisakusen",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sekai Seifuku: Bouryaku no Zvezda - Shin Zvezda Daisakusen"
     ],
@@ -393936,7 +393951,7 @@
     "title_es": "Especial Historia del Acertijo del Diablo",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Especial Historia del Acertijo del Diablo"
     ],
@@ -393990,7 +394005,7 @@
     "title_es": "Especial Domo-kun de los Gigantes Milagrosos",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Especial Domo-kun de los Gigantes Milagrosos"
     ]
@@ -394049,7 +394064,7 @@
     "title_es": "Yaoguai Mingdan",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Yaoguai Mingdan"
     ],
@@ -394100,7 +394115,7 @@
     "title_es": "Ushinawareta Mirai wo Motomete: Ushinawareta Natsuyasumi wo Motomete",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Ushinawareta Mirai wo Motomete: Ushinawareta Natsuyasumi wo Motomete"
     ],
@@ -394160,7 +394175,7 @@
     "title_es": "Revolución Concreta: LA ÚLTIMA CANCIÓN",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Revolución Concreta: LA ÚLTIMA CANCIÓN"
     ],
@@ -394216,7 +394231,7 @@
     "title_es": "Sukisho: ¡Onsen ni Ikou!",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sukisho: ¡Onsen ni Ikou!"
     ],
@@ -394278,7 +394293,7 @@
     "title_es": "Reikenzan: Eichi y no Shikaku",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Reikenzan: Eichi y no Shikaku"
     ],
@@ -394339,7 +394354,7 @@
     "title_es": "De Ojisan a Marshmallow: Hige-san y Marshmallow",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "De Ojisan a Marshmallow: Hige-san y Marshmallow"
     ],
@@ -394399,7 +394414,7 @@
     "title_es": "Wo Jiao Bai Xiaofei",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Wo Jiao Bai Xiaofei"
     ],
@@ -394463,7 +394478,7 @@
     "title_es": "Ser heroína",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Ser heroína"
     ],
@@ -394524,7 +394539,7 @@
     "title_es": "Gurazeni: Lanzamiento de dinero",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Gurazeni: Lanzamiento de dinero"
     ],
@@ -394590,7 +394605,7 @@
     "title_es": "Poupelle de Chimney Town",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Poupelle de Chimney Town"
     ],
@@ -394649,7 +394664,7 @@
     "title_es": "Basilisco: Los pergaminos de Ouka Ninja",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Basilisco: Los pergaminos de Ouka Ninja"
     ],
@@ -394718,7 +394733,7 @@
     "title_es": "Aishen Qiaokeli-ESP... II",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Aishen Qiaokeli-ESP... II"
     ],
@@ -394776,7 +394791,7 @@
     "title_es": "El amor es como un cóctel Episodio 14",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "El amor es como un cóctel Episodio 14"
     ],
@@ -394847,7 +394862,7 @@
     "title_es": "Código: Realizar ~Guardian of Rebirth~ Establecer un ladrón para atrapar a un ladrón",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Código: Realizar ~Guardian of Rebirth~ Establecer un ladrón para atrapar a un ladrón"
     ],
@@ -394913,7 +394928,7 @@
     "title_es": "B: El comienzo: la sucesión",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "B: El comienzo: la sucesión"
     ],
@@ -394973,7 +394988,7 @@
     "title_es": "Línea del diablo: en cualquier momento y en cualquier lugar",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Línea del diablo: en cualquier momento y en cualquier lugar"
     ],
@@ -395045,7 +395060,7 @@
     "title_es": "¡Mira, puedo ver tus orejas!",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "¡Mira, puedo ver tus orejas!"
     ],
@@ -395101,7 +395116,7 @@
     "title_es": "Pingu en la ciudad 2",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Pingu en la ciudad 2"
     ],
@@ -395166,7 +395181,7 @@
     "title_es": "Dalí Si Rizhi",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Dalí Si Rizhi"
     ],
@@ -395241,7 +395256,7 @@
     "title_es": "The Promised Neverland",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "manual",
+    "title_es_status": "kept",
     "search_titles_es": [
       "The Promised Neverland"
     ],
@@ -395298,7 +395313,7 @@
     "title_es": "POPEE el Artista Especial de Cuenta Regresiva",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "POPEE el Artista Especial de Cuenta Regresiva"
     ],
@@ -395357,7 +395372,7 @@
     "title_es": "¡A3! Temporada Otoño e Invierno",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "¡A3! Temporada Otoño e Invierno"
     ],
@@ -395420,7 +395435,7 @@
     "title_es": "22/7: 8+3=?",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "22/7: 8+3=?"
     ],
@@ -395474,7 +395489,7 @@
     "title_es": "Muramata-san no Himitsu",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Muramata-san no Himitsu"
     ],
@@ -395529,7 +395544,7 @@
     "title_es": "Wu Shang Shen Di",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Wu Shang Shen Di"
     ]
@@ -395588,7 +395603,7 @@
     "title_es": "Adiós, mi querido Cramer",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Adiós, mi querido Cramer"
     ],
@@ -395661,7 +395676,7 @@
     "title_es": "Chuan Shu Zijiu Zhinan: Xian Meng Pian",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Chuan Shu Zijiu Zhinan: Xian Meng Pian"
     ],
@@ -395742,7 +395757,7 @@
     "title_es": "El detective ya está muerto",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "El detective ya está muerto"
     ],
@@ -395809,7 +395824,7 @@
     "title_es": "Equipo de diseño del cielo: idea 13",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Equipo de diseño del cielo: idea 13"
     ],
@@ -395882,7 +395897,7 @@
     "title_es": "PRIORIDAD DEL HUEVO MARAVILLA: Mi prioridad",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "PRIORIDAD DEL HUEVO MARAVILLA: Mi prioridad"
     ],
@@ -395948,7 +395963,7 @@
     "title_es": "KAGINADO",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "KAGINADO"
     ],
@@ -396013,7 +396028,7 @@
     "title_es": "Kuroinu II LA ANIMACIÓN",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kuroinu II LA ANIMACIÓN"
     ],
@@ -396083,7 +396098,7 @@
     "title_es": "Aula de espías",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Aula de espías"
     ],
@@ -396143,7 +396158,7 @@
     "title_es": "El hechicero Iceblade gobernará el mundo",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "El hechicero Iceblade gobernará el mundo"
     ],
@@ -396198,7 +396213,7 @@
     "title_es": "Sentou Yousei Yukikaze: Película experimental",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sentou Yousei Yukikaze: Película experimental"
     ],
@@ -396262,7 +396277,7 @@
     "title_es": "Leyenda de Xianwu",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Leyenda de Xianwu"
     ],
@@ -396322,7 +396337,7 @@
     "title_es": "3Piezas LA ANIMACIÓN",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "3Piezas LA ANIMACIÓN"
     ],
@@ -396395,7 +396410,7 @@
     "title_es": "Zhongguo Qitan",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Zhongguo Qitan"
     ],
@@ -396456,7 +396471,7 @@
     "title_es": "Sabikui Bisco 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sabikui Bisco 2da temporada"
     ],
@@ -396515,7 +396530,7 @@
     "title_es": "Señor Demonio, ¡Vuelve a intentarlo! R",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Señor Demonio, ¡Vuelve a intentarlo! R"
     ],
@@ -396579,7 +396594,7 @@
     "title_es": "Miburo azul",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Miburo azul"
     ],
@@ -396641,7 +396656,7 @@
     "title_es": "2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "2da temporada"
     ],
@@ -396707,7 +396722,7 @@
     "title_es": "GRAN PRETENDENTE razbliuto",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "GRAN PRETENDENTE razbliuto"
     ],
@@ -396802,7 +396817,7 @@
     "title_es": "Magilumiere Magical Girls Inc.",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Magilumiere Magical Girls Inc."
     ],
@@ -396867,7 +396882,7 @@
     "title_es": "tímido temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "tímido temporada 2"
     ],
@@ -396935,7 +396950,7 @@
     "title_es": "La oscura historia de la villana reencarnada",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "La oscura historia de la villana reencarnada"
     ],
@@ -396999,7 +397014,7 @@
     "title_es": "De todos modos, me estoy enamorando de ti.",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "De todos modos, me estoy enamorando de ti."
     ],
@@ -397065,7 +397080,7 @@
     "title_es": "Sakuna: del arroz y la ruina",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sakuna: del arroz y la ruina"
     ],
@@ -397125,7 +397140,7 @@
     "title_es": "ISHURA Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "ISHURA Temporada 2"
     ],
@@ -397179,7 +397194,7 @@
     "title_es": "Kagami no Kojou no Mae a Ato",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kagami no Kojou no Mae a Ato"
     ],
@@ -397241,7 +397256,7 @@
     "title_es": "Kakuriyo -Bed & Breakfast para bebidas espirituosas- 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kakuriyo -Bed & Breakfast para bebidas espirituosas- 2"
     ],
@@ -397297,7 +397312,7 @@
     "title_es": "Zhui Xu 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Zhui Xu 2da temporada"
     ],
@@ -397354,7 +397369,7 @@
     "title_es": "Oficina de Investigación Paranormal Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Oficina de Investigación Paranormal Temporada 2"
     ],
@@ -397409,7 +397424,7 @@
     "title_es": "La forma incorrecta de utilizar la magia curativa Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "La forma incorrecta de utilizar la magia curativa Temporada 2"
     ],
@@ -397467,7 +397482,7 @@
     "title_es": "Zona de bloqueo: Nivel X",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Zona de bloqueo: Nivel X"
     ],
@@ -397538,7 +397553,7 @@
     "title_es": "Tokidoki Bosotto Rossiya-go de Dereru Tonari no Alya-san Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Tokidoki Bosotto Rossiya-go de Dereru Tonari no Alya-san Temporada 2"
     ],
@@ -397606,7 +397621,7 @@
     "title_es": "Senpai es una película de Otokonoko: Sol después de la lluvia",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Senpai es una película de Otokonoko: Sol después de la lluvia"
     ],
@@ -397666,7 +397681,7 @@
     "title_es": "Con venganza, sinceramente, tu santa rota",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Con venganza, sinceramente, tu santa rota"
     ],
@@ -397736,7 +397751,7 @@
     "title_es": "Mahou Shoujo ni Akogarete 2ª Temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Mahou Shoujo ni Akogarete 2ª Temporada"
     ],
@@ -397804,7 +397819,7 @@
     "title_es": "El principio después del fin",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "El principio después del fin"
     ],
@@ -397860,7 +397875,7 @@
     "title_es": "Hotel Inhumanos",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hotel Inhumanos"
     ],
@@ -397924,7 +397939,7 @@
     "title_es": "2.5-jigen no Ririsa 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "2.5-jigen no Ririsa 2da temporada"
     ],
@@ -397982,7 +397997,7 @@
     "title_es": "Nozomanu Fushi no Boukensha 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Nozomanu Fushi no Boukensha 2da temporada"
     ],
@@ -398044,7 +398059,7 @@
     "title_es": "Anfitrión diario",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Anfitrión diario"
     ],
@@ -398067,7 +398082,7 @@
     "action_level": "bajo",
     "emotional": true,
     "popular": false,
-    "year": null,
+    "year": 2027,
     "description": "The second season of Skip to Loafer .",
     "type": "TV",
     "franchise": "Skip to Loafer",
@@ -398104,7 +398119,7 @@
     "title_es": "Saltar y holgazanear temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Saltar y holgazanear temporada 2"
     ],
@@ -398159,7 +398174,7 @@
     "title_es": "Tongling Fei 2",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Tongling Fei 2"
     ],
@@ -398216,7 +398231,7 @@
     "title_es": "Transformers: Rey Salvaje",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Transformers: Rey Salvaje"
     ],
@@ -398282,7 +398297,7 @@
     "title_es": "¡Haz Heroína ga Oosugiru! 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "¡Haz Heroína ga Oosugiru! 2da temporada"
     ],
@@ -398338,7 +398353,7 @@
     "title_es": "Tonari no Kanojo",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Tonari no Kanojo"
     ],
@@ -398395,7 +398410,7 @@
     "title_es": "Grupo de rango A con Ridatsu Shita Ore wa, Moto Oshiegotachi y Meikyuu Shinbu con Mezasu. 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Grupo de rango A con Ridatsu Shita Ore wa, Moto Oshiegotachi y Meikyuu Shinbu con Mezasu. 2da temporada"
     ],
@@ -398447,7 +398462,7 @@
     "title_es": "Fei Ren Zai 3",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Fei Ren Zai 3"
     ],
@@ -398506,7 +398521,7 @@
     "title_es": "Ore wa Subete wo [Parry] Suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Ore wa Subete wo [Parry] Suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai 2da temporada"
     ],
@@ -398562,7 +398577,7 @@
     "title_es": "TOMICA Y TOM",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "TOMICA Y TOM"
     ],
@@ -398618,7 +398633,7 @@
     "title_es": "Efecto emo 2",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Efecto emo 2"
     ],
@@ -398674,7 +398689,7 @@
     "title_es": "Ano Hola no Kanojotachi: día 09 Miu Takigawa",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Ano Hola no Kanojotachi: día 09 Miu Takigawa"
     ],
@@ -398732,7 +398747,7 @@
     "title_es": "¿Izure Saikyou no Renkinjutsushi? 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "¿Izure Saikyou no Renkinjutsushi? 2da temporada"
     ],
@@ -398785,7 +398800,7 @@
     "title_es": "Re:Monstruo 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Re:Monstruo 2da temporada"
     ],
@@ -398849,7 +398864,7 @@
     "title_es": "Hikaru ga Shinda Natsu 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hikaru ga Shinda Natsu 2da temporada"
     ],
@@ -398912,7 +398927,7 @@
     "title_es": "Vigilancia de brujas 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Vigilancia de brujas 2da temporada"
     ],
@@ -398965,7 +398980,7 @@
     "title_es": "Encuentro oscuro 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Encuentro oscuro 2da temporada"
     ],
@@ -399022,7 +399037,7 @@
     "title_es": "Saijaku Tamer wa Gomi Hiroi no Tabi wo Hajimemashita. 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Saijaku Tamer wa Gomi Hiroi no Tabi wo Hajimemashita. 2da temporada"
     ],
@@ -399083,7 +399098,7 @@
     "title_es": "Gachiakuta Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Gachiakuta Temporada 2"
     ],
@@ -399157,7 +399172,7 @@
     "title_es": "Majo no Tabitabi Película",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Majo no Tabitabi Película"
     ],
@@ -399221,7 +399236,7 @@
     "title_es": "Isshun de Chiryou Shiteita no ni Yakutatazu a Tsuihou Sareta Tensai Chiyushi, Yami Healer Toshite Tanoshiku Ikiru 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Isshun de Chiryou Shiteita no ni Yakutatazu a Tsuihou Sareta Tensai Chiyushi, Yami Healer Toshite Tanoshiku Ikiru 2da temporada"
     ],
@@ -399281,7 +399296,7 @@
     "title_es": "Fiesta Yuusha wo Oidasareta Kiyou Binbou 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Fiesta Yuusha wo Oidasareta Kiyou Binbou 2da temporada"
     ],
@@ -399341,7 +399356,7 @@
     "title_es": "Mayonaka Heart Tune 2.ª temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Mayonaka Heart Tune 2.ª temporada"
     ],
@@ -399398,7 +399413,7 @@
     "title_es": "Sentenciado a ser un héroe temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Sentenciado a ser un héroe temporada 2"
     ],
@@ -399462,7 +399477,7 @@
     "title_es": "La fábula 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "La fábula 2da temporada"
     ],
@@ -399525,7 +399540,7 @@
     "title_es": "Kanan-sama wa Akumade Choroi 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kanan-sama wa Akumade Choroi 2da temporada"
     ],
@@ -399581,7 +399596,7 @@
     "title_es": "Tierra bola de nieve 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Tierra bola de nieve 2da temporada"
     ],
@@ -399636,7 +399651,7 @@
     "title_es": "Mata a Ao 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Mata a Ao 2da temporada"
     ],
@@ -399700,7 +399715,7 @@
     "title_es": "Taller de sombreros de bruja temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Taller de sombreros de bruja temporada 2"
     ],
@@ -399753,7 +399768,7 @@
     "title_es": "Hitoribocchi no Isekai Kouryaku 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Hitoribocchi no Isekai Kouryaku 2da temporada"
     ],
@@ -399809,10 +399824,322 @@
     "title_es": "Lv2 Kara Cheat datta Moto Yuusha Kouho no Mattari Isekai Life 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Lv2 Kara Cheat datta Moto Yuusha Kouho no Mattari Isekai Life 2da temporada"
     ],
     "description_es": "La segunda temporada de Lv2 Kara Cheat datta Moto Yuusha Kouho no Mattari Isekai Life."
+  },
+  {
+    "title": "Takopii no Genzai: Arigatou, Mata Ashita",
+    "mal_id": 64266,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212539-mZ3VbIErKBOr.png",
+    "episodes": 1,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Drama",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "tone": "oscuro",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": true,
+    "popular": false,
+    "year": 2026,
+    "description": "Theatrical compilation of all six episodes of the anime series Takopii no Genzai , including newly added scenes.",
+    "type": "Movie",
+    "franchise": "Takopii no Genzai",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Denpa"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "タコピーの原罪 -ありがとう、また明日-",
+    "title_synonyms": [
+      "Takopi’s Orignal Sin: Thank You, See You Tomorrow",
+      "Takopi’s Original Sin Movie"
+    ],
+    "search_titles": [
+      "Takopii no Genzai: Arigatou, Mata Ashita",
+      "タコピーの原罪 -ありがとう、また明日-",
+      "Takopi’s Orignal Sin: Thank You, See You Tomorrow",
+      "Takopi’s Original Sin Movie"
+    ],
+    "airing_status": "Not yet aired",
+    "aired_from": "2026-11-27",
+    "aired_to": "2026-11-27",
+    "title_es": "Takopii no Genzai: Arigatou, Mata Ashita",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Takopii no Genzai: Arigatou, Mata Ashita"
+    ],
+    "description_es": "Recopilación teatral de los seis episodios de la serie de anime Takopii no Genzai, incluidas escenas recién agregadas."
+  },
+  {
+    "title": "Komadori Mofmof Parade",
+    "mal_id": 64746,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx215695-yMA5eRI5lz9f.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2027,
+    "description": "A stop-motion spinoff of IDOLiSH7. The project takes place \"in a different world\" from the main series, on a planet somewhere out in space. The Mofmof of the title are cute, fluffy aliens based on the 16 idols of the franchise.",
+    "type": "TV",
+    "franchise": "Komadori Mofmof Parade",
+    "ongoing": false,
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "こまどり モフモフパレード",
+    "title_synonyms": [
+      "Komadori Mofumofu Parade",
+      "Komadori Mofu Mofu Parade",
+      "Idolish7: Komadori Mofmof Parade",
+      "KomaMofu",
+      "KomaMof",
+      "こまモフ"
+    ],
+    "search_titles": [
+      "Komadori Mofmof Parade",
+      "こまどり モフモフパレード",
+      "Komadori Mofumofu Parade",
+      "Komadori Mofu Mofu Parade",
+      "Idolish7: Komadori Mofmof Parade",
+      "KomaMofu",
+      "KomaMof",
+      "こまモフ"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "Komadori Mofmof Parade",
+    "title_es_reviewed": true,
+    "title_es_source": "manual",
+    "title_es_status": "manual",
+    "search_titles_es": [
+      "Desfile Komadori Mofmof"
+    ],
+    "description_es": "Un spin-off stop-motion de IDOLiSH7. El proyecto tiene lugar \"en un mundo diferente\" al de la serie principal, en un planeta en algún lugar del espacio. Los Mofmof del título son extraterrestres lindos y esponjosos basados ​​en los 16 ídolos de la franquicia."
+  },
+  {
+    "title": "Pen to Wappa to Jijitsukon",
+    "mal_id": 63970,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211070-ECOdD6WOC6gF.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Mystery",
+      "Romance"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2027,
+    "description": "Forty-year-old detective Eiji Kirisame has found maybe the strangest witness of his life: a silent high school girl named Tsugumi Kuchinashi who was at the scene of the crime. Her statements mostly consist of shoddy doodles on a drawing pad, but Eiji is no stranger to piecing together the truth from limited evidence. He'll take every page seriously if it might help solve the case. But why does the last page say... \"Will you marry me?! \"",
+    "type": "TV",
+    "franchise": "Pen to Wappa to Jijitsukon",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ペンと手錠と事実婚",
+    "title_synonyms": [
+      "A Pen, Handcuffs, and a Common-Law Marriage"
+    ],
+    "search_titles": [
+      "Pen to Wappa to Jijitsukon",
+      "ペンと手錠と事実婚",
+      "A Pen, Handcuffs, and a Common-Law Marriage"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "Pen to Wappa to Jijitsukon",
+    "title_es_reviewed": true,
+    "title_es_source": "manual",
+    "title_es_status": "manual",
+    "search_titles_es": [
+      "De pluma a Wappa a Jijitsukon"
+    ],
+    "description_es": "El detective Eiji Kirisame, de cuarenta años, ha encontrado quizás el testigo más extraño de su vida: una silenciosa chica de secundaria llamada Tsugumi Kuchinashi que estaba en la escena del crimen. Sus declaraciones consisten principalmente en garabatos de mala calidad en un bloc de dibujo, pero Eiji no es ajeno a reconstruir la verdad a partir de evidencia limitada. Tomará en serio cada página si puede ayudar a resolver el caso. Pero, ¿por qué la última página dice... \"¡¿Quieres casarte conmigo?!\""
+  },
+  {
+    "title": "Ore to Yuu-nii!",
+    "mal_id": 61282,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx188546-unC9pna5yjl7.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Romance",
+      "Slice of Life"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2027,
+    "description": "After leaving a scar on his best friend's face years ago, Tsubaki feels responsible and is determined to grow up big and strong so he can protect Yuu. Yuu is already in high school and Tsubaki is only in elementary, but he is sure that his feelings will get through and Yuu will eventually come to rely on him.",
+    "type": "TV",
+    "franchise": "Ore to Yuu-nii!",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Boys' Love",
+      "Male Protagonist"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "俺と悠兄！",
+    "title_synonyms": [
+      "Shota Oni",
+      "ショタおに",
+      "Me and Older Brother Yu"
+    ],
+    "search_titles": [
+      "Ore to Yuu-nii!",
+      "俺と悠兄！",
+      "Shota Oni",
+      "ショタおに",
+      "Me and Older Brother Yu"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "Ore to Yuu-nii!",
+    "title_es_reviewed": true,
+    "title_es_source": "manual",
+    "title_es_status": "manual",
+    "search_titles_es": [
+      "¡Mineral para Yuu-nii!"
+    ],
+    "description_es": "Después de dejar una cicatriz en la cara de su mejor amigo hace años, Tsubaki se siente responsable y está decidido a crecer grande y fuerte para poder proteger a Yuu. Yuu ya está en la escuela secundaria y Tsubaki solo está en la primaria, pero está seguro de que sus sentimientos se transmitirán y Yuu eventualmente llegará a confiar en él."
+  },
+  {
+    "title": "MURCIÉLAGO",
+    "mal_id": 64555,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213877-14DmXYOv4m8W.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [],
+    "tone": "oscuro",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": true,
+    "popular": false,
+    "year": 2027,
+    "description": "Mass murderers may not have much by way of career skills, but Kuroko Koumori seems to have landed her dream job as a hitwoman for the Tokyo police! A license to kill other killers? That's some serious job satisfaction, right there!",
+    "type": "TV",
+    "franchise": "MURCIÉLAGO",
+    "ongoing": false,
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Anti-Hero",
+      "Female Protagonist",
+      "Primarily Female Cast",
+      "LGBTQ+ Themes",
+      "Gore",
+      "Yuri",
+      "Assassins",
+      "Police"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ムルシエラゴ",
+    "title_synonyms": [],
+    "search_titles": [
+      "MURCIÉLAGO",
+      "ムルシエラゴ"
+    ],
+    "airing_status": "Not yet aired",
+    "title_es": "MURCIÉLAGO",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "MURCIÉLAGO"
+    ],
+    "description_es": "Puede que los asesinos en masa no tengan muchas habilidades profesionales, ¡pero Kuroko Koumori parece haber conseguido el trabajo de sus sueños como sicaria para la policía de Tokio! ¿Una licencia para matar a otros asesinos? ¡Esa es una gran satisfacción laboral, ahí mismo!"
+  },
+  {
+    "title": "ONE PIECE FILM: GOD VALLEY",
+    "mal_id": 64858,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b215855-z86bqRqVcr13.png",
+    "episodes": 1,
+    "length": "corto",
+    "demographic": "",
+    "genres": [],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": false,
+    "year": 2027,
+    "description": "",
+    "type": "Movie",
+    "franchise": "ONE PIECE FILM",
+    "ongoing": false,
+    "source_tags_original": [],
+    "themes": [
+      "Pirates",
+      "Conspiracy"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ONE PIECE FILM GOD VALLEY",
+    "title_synonyms": [
+      "One Piece Film 16"
+    ],
+    "search_titles": [
+      "ONE PIECE FILM: GOD VALLEY",
+      "ONE PIECE FILM GOD VALLEY",
+      "One Piece Film 16"
+    ],
+    "title_es": "ONE PIECE FILM: GOD VALLEY",
+    "title_es_reviewed": true,
+    "title_es_source": "manual",
+    "title_es_status": "manual",
+    "search_titles_es": [
+      "PELÍCULA DE UNA PIEZA: VALLE DE DIOS"
+    ],
+    "airing_status": "Not yet aired"
   }
 ]
