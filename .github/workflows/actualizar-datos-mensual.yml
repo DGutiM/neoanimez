@@ -11,7 +11,7 @@ concurrency:
 
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
 
 jobs:
   update-data:
@@ -61,14 +61,25 @@ jobs:
           git commit -m "Actualiza datos de anime (${RUN_DATE})"
           git push --force-with-lease origin "$BRANCH"
 
-          PR_NUMBER="$(gh pr list --head "$BRANCH" --base main --state open --json number --jq '.[0].number // empty')"
-          TITLE="Actualizacion mensual de datos (${RUN_DATE})"
-          BODY="Actualizacion automatica preparada para revision.\n\nIncluye catalogo, estados, episodios, proximos estrenos, calendario, noticias, relaciones, mapas y fichas divididas.\n\nLas validaciones de JSON, JavaScript y referencias internas han terminado correctamente. GitHub Pages no publicara estos cambios hasta fusionar esta PR."
+          COMPARE_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/main...${BRANCH}?expand=1"
+          ISSUE_NUMBER="$(gh issue list --state open --search 'Revision mensual de datos in:title' --json number --jq '.[0].number // empty')"
+          TITLE="Revision mensual de datos lista (${RUN_DATE})"
+          BODY="$(printf '%s\n\n%s\n\n%s\n\n%s' \
+            'La actualizacion automatica mensual ha terminado y permanece aislada de la web publica.' \
+            "Revisar los cambios: ${COMPARE_URL}" \
+            'Incluye catalogo, estados, episodios, proximos estrenos, calendario, noticias, relaciones, mapas y fichas divididas. Las validaciones de JSON, JavaScript y referencias internas han terminado correctamente.' \
+            'Para publicarla, abre la comparacion, crea la pull request y fusionala cuando la revision sea correcta. GitHub Pages no publicara nada antes de ese paso.')"
 
-          if [[ -n "$PR_NUMBER" ]]; then
-            gh pr edit "$PR_NUMBER" --title "$TITLE" --body "$BODY"
+          if [[ -n "$ISSUE_NUMBER" ]]; then
+            gh issue edit "$ISSUE_NUMBER" --title "$TITLE" --body "$BODY"
           else
-            gh pr create --base main --head "$BRANCH" --title "$TITLE" --body "$BODY"
+            gh issue create --title "$TITLE" --body "$BODY"
           fi
 
-          echo "Revision mensual preparada en la rama $BRANCH." >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "## Revision mensual preparada"
+            echo
+            echo "Los cambios estan aislados en \`$BRANCH\` y aun no se han publicado."
+            echo
+            echo "[Abrir comparacion y crear la pull request]($COMPARE_URL)"
+          } >> "$GITHUB_STEP_SUMMARY"
