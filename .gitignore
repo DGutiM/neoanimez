@@ -1,0 +1,15 @@
+# Archivos del sistema
+.DS_Store
+
+# Cocina local: no subir al repositorio publico
+cache/
+backups/
+archivo/
+neoanimez-repo/
+
+# JSON completos de trabajo. La web usa versiones curadas/divididas.
+*.full.json
+
+# Temporales habituales
+*.tmp
+*.log

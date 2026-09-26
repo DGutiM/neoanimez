@@ -1,0 +1,74 @@
+name: Actualizar datos mensuales
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 5 1 * *"
+
+concurrency:
+  group: neoanimez-monthly-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-data:
+    name: Preparar revision de datos
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      PYTHONUNBUFFERED: "1"
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Actualizar catalogo y calendarios
+        run: python3 scripts/actualizar_datos_mensuales.py
+
+      - name: Validar publicacion
+        run: |
+          node --check assets/neoanimez.js
+          node --check service-worker.js
+          python3 scripts/auditar_index_html.py
+          python3 scripts/verificar_publicacion.py
+          git diff --check
+
+      - name: Crear o actualizar la revision
+        shell: bash
+        run: |
+          if git diff --quiet && [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
+            echo "No hay cambios de datos este mes." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="automation/monthly-data-refresh"
+          RUN_DATE="$(date -u +%F)"
+          git config user.name "NeoAnimeZ Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add -A
+          git commit -m "Actualiza datos de anime (${RUN_DATE})"
+          git push --force-with-lease origin "$BRANCH"
+
+          PR_NUMBER="$(gh pr list --head "$BRANCH" --base main --state open --json number --jq '.[0].number // empty')"
+          TITLE="Actualizacion mensual de datos (${RUN_DATE})"
+          BODY="Actualizacion automatica preparada para revision.\n\nIncluye catalogo, estados, episodios, proximos estrenos, calendario, noticias, relaciones, mapas y fichas divididas.\n\nLas validaciones de JSON, JavaScript y referencias internas han terminado correctamente. GitHub Pages no publicara estos cambios hasta fusionar esta PR."
+
+          if [[ -n "$PR_NUMBER" ]]; then
+            gh pr edit "$PR_NUMBER" --title "$TITLE" --body "$BODY"
+          else
+            gh pr create --base main --head "$BRANCH" --title "$TITLE" --body "$BODY"
+          fi
+
+          echo "Revision mensual preparada en la rama $BRANCH." >> "$GITHUB_STEP_SUMMARY"

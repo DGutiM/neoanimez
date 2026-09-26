@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20260926-data-refresh';
+const CACHE_VERSION = '20260926-automation-refactor';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 
@@ -10,7 +10,9 @@ const SHELL_ASSETS = [
   './logo.png',
   './preview.png',
   './robots.txt',
-  './sitemap.xml'
+  './sitemap.xml',
+  `./assets/neoanimez.css?v=${CACHE_VERSION}`,
+  `./assets/neoanimez.js?v=${CACHE_VERSION}`
 ];
 
 self.addEventListener('install', event => {
@@ -50,16 +52,13 @@ function isCatalogRequest(request) {
   const url = new URL(request.url);
   return url.pathname.endsWith('/anime-index.json') ||
     url.pathname.endsWith('/anime-lista.json') ||
-    url.pathname.endsWith('/anime-character-index.json') ||
     url.pathname.endsWith('/anime-upcoming.json') ||
     url.pathname.endsWith('/anime-schedule.json') ||
     url.pathname.endsWith('/anime-news.json') ||
     url.pathname.endsWith('/anime-relations.json') ||
     url.pathname.endsWith('/anime-timeline-index.json') ||
     url.pathname.includes('/anime-details/') ||
-    url.pathname.includes('/anime-timelines/') ||
-    url.pathname.includes('/character-index/') ||
-    url.pathname.includes('/character-details/');
+    url.pathname.includes('/anime-timelines/');
 }
 
 async function cacheFirst(request, cacheName) {
