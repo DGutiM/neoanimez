@@ -70,7 +70,15 @@ python3 scripts/verificar_publicacion.py
 
 Si dice `OK`, puedes subir los archivos de la lista limpia. Si avisa de `FALTA`, primero hay que corregirlo.
 
-La tarea mensual de GitHub Actions prepara estos cambios en una pull request. GitHub Pages solo los publica despues de revisar y fusionar esa propuesta.
+La tarea mensual de GitHub Actions crea una rama aislada y un aviso con el enlace de comparacion. Desde esa comparacion se crea y fusiona la pull request cuando la revision sea correcta. GitHub Pages no publica los cambios antes de ese paso.
+
+Antes de actualizar, la tarea tambien crea un tag inmutable con este formato:
+
+```text
+backup/published-AAAA-MM-DD-COMMIT
+```
+
+Ese tag conserva el punto exacto que estaba publicado. Si pasan varios meses sin fusionar nada, la web sigue usando `main` y la rama mensual se sustituye por la revision mas reciente. Si una futura fusion falla, se puede revertir el commit fusionado y comprobar el estado anterior desde su tag de respaldo.
 
 ## Nota sobre el dominio
 

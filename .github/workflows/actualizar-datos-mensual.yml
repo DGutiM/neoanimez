@@ -28,6 +28,29 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Guardar punto de restauracion
+        shell: bash
+        run: |
+          RUN_DATE="$(date -u +%F)"
+          SHORT_SHA="${GITHUB_SHA::7}"
+          BACKUP_TAG="backup/published-${RUN_DATE}-${SHORT_SHA}"
+
+          if git ls-remote --exit-code --tags origin "refs/tags/${BACKUP_TAG}" >/dev/null 2>&1; then
+            echo "El punto de restauracion \`$BACKUP_TAG\` ya existe." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          git config user.name "NeoAnimeZ Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git tag -a "$BACKUP_TAG" "$GITHUB_SHA" -m "Version publicada antes de la actualizacion mensual ${RUN_DATE}"
+          git push origin "$BACKUP_TAG"
+
+          {
+            echo "## Copia de seguridad"
+            echo
+            echo "Version publicada guardada en \`$BACKUP_TAG\`."
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Preparar Python
         uses: actions/setup-python@v5
         with:
