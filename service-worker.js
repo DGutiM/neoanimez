@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20260825-adult-content-control';
+const CACHE_VERSION = '20260926-data-refresh';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 

@@ -207,21 +207,19 @@ def collect_jikan_items(year: int, include_tba: bool, use_jikan: bool = True) ->
         if source == "upcoming" and not meta.get("season_hint"):
             meta["season_hint"] = season_for_item(item)
 
-    jikan_available = use_jikan
     for season in SEASONS:
-        if not jikan_available:
+        if not use_jikan:
             continue
         print(f"[INFO] Leyendo Jikan season {year}/{season}")
         try:
             season_items = jikan_sync.fetch_paginated(f"/seasons/{year}/{season}")
         except RuntimeError as error:
-            print(f"[WARN] Jikan no disponible; se usara AniList: {error}")
-            jikan_available = False
+            print(f"[WARN] Jikan no disponible para {year}/{season}; se usara AniList: {error}")
             season_items = []
         for item in season_items:
             add_item(item, f"{year}/{season}", season)
 
-    if jikan_available:
+    if use_jikan:
         print("[INFO] Leyendo Jikan upcoming")
         try:
             upcoming_items = jikan_sync.fetch_paginated("/seasons/upcoming")

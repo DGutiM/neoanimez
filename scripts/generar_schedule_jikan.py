@@ -198,7 +198,17 @@ def fetch_remote_days(url: str) -> dict[str, list[dict]]:
     days: dict[str, list[dict]] = {day: [] for day in DAYS}
     page = 1
     while True:
-        payload = fetch_json(f"{url}?page={page}", retries=2)
+        try:
+            payload = fetch_json(f"{url}?page={page}", retries=2)
+        except RuntimeError as error:
+            if page == 1:
+                raise
+            recovered = sum(len(items) for items in days.values())
+            print(
+                f"AVISO: {error}. Se conservan {recovered} emisiones "
+                "de las paginas ya descargadas."
+            )
+            break
         data = payload.get("data") or []
         for item in data:
             if not item.get("mal_id") or is_adult(item):
@@ -220,7 +230,7 @@ def main() -> None:
     args = parser.parse_args()
     days: dict[str, list[dict]] = {}
     local_days = load_local_schedule()
-    seen: set[tuple[str, int]] = set()
+    seen: set[int] = set()
     total = 0
     fallback_days: list[str] = []
     remote_source = "local"
@@ -242,13 +252,18 @@ def main() -> None:
     else:
         fallback_days = list(DAYS)
 
+    remote_ids = {
+        int(item["mal_id"])
+        for items in remote_days.values()
+        for item in items
+        if item.get("mal_id")
+    }
     for day in DAYS:
         raw_items = list(remote_days.get(day, []))
-        remote_ids = {int(item["mal_id"]) for item in raw_items if item.get("mal_id")}
         raw_items.extend(item for item in local_days.get(day, []) if int(item["mal_id"]) not in remote_ids)
         unique_items = []
         for item in raw_items:
-            key = (day, int(item["mal_id"]))
+            key = int(item["mal_id"])
             if key in seen:
                 continue
             seen.add(key)

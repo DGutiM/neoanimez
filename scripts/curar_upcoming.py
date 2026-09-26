@@ -166,6 +166,23 @@ def main() -> int:
             return dict(record)
         merged = dict(record)
         for field in (
+            "title",
+            "title_english",
+            "title_japanese",
+            "title_synonyms",
+            "title_es",
+            "search_titles",
+            "search_titles_es",
+            "description",
+            "description_es",
+            "image",
+            "type",
+            "year",
+            "genres",
+            "themes",
+            "demographic",
+            "score",
+            "scored_by",
             "ongoing",
             "airing_status",
             "aired_from",
@@ -253,7 +270,9 @@ def main() -> int:
             raise ValueError(f"{extra_input} no tiene meta.year valido.")
 
         extra_items = [
-            item for item in extra_payload["items"]
+            item for raw_item in extra_payload["items"]
+            if isinstance(raw_item, dict)
+            for item in [merge_current_master_data(raw_item)]
             if isinstance(item, dict)
             and item.get("mal_id")
             and real_upcoming_year(item) == extra_year

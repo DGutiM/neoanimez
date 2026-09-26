@@ -6,6 +6,8 @@ import json
 import os
 import random
 import re
+import shutil
+import subprocess
 import sys
 import time
 import unicodedata
@@ -18,7 +20,10 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 DEFAULT_INPUT = "anime-lista.json"
 DEFAULT_OUTPUT = "anime-lista.titulos-es.json"
 DEFAULT_CACHE = "cache/title-es-cache.json"
-TRANSLATE_URL = "https://translate.googleapis.com/translate_a/single"
+TRANSLATE_URLS = (
+    "https://translate.google.com/translate_a/single",
+    "https://translate.googleapis.com/translate_a/single",
+)
 
 # Pequena capa manual para titulos muy conocidos. Esto mejora busquedas reales
 # sin convertir el titulo visible de la web en un titulo "oficial".
@@ -166,16 +171,47 @@ def translate_google_gtx(text: str, source_lang: str, timeout: int) -> str:
         "dt": "t",
         "q": text,
     })
-    request = urllib.request.Request(
-        f"{TRANSLATE_URL}?{params}",
-        headers={
-            "User-Agent": "NeoAnimeZ-TitleEnricher/1.0",
-            "Accept": "application/json",
-        },
-    )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        payload = json.loads(response.read().decode("utf-8"))
-    return clean_title("".join(part[0] for part in payload[0] if part and part[0]))
+    last_error: Optional[BaseException] = None
+    for base_url in TRANSLATE_URLS:
+        request = urllib.request.Request(
+            f"{base_url}?{params}",
+            headers={
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+                "Accept": "application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            return clean_title("".join(part[0] for part in payload[0] if part and part[0]))
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError) as error:
+            last_error = error
+    curl = shutil.which("curl")
+    if curl:
+        for base_url in TRANSLATE_URLS:
+            try:
+                result = subprocess.run(
+                    [
+                        curl,
+                        "-fsSL",
+                        "--max-time",
+                        str(timeout),
+                        "-A",
+                        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+                        f"{base_url}?{params}",
+                    ],
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                    timeout=timeout + 5,
+                )
+                payload = json.loads(result.stdout)
+                return clean_title("".join(part[0] for part in payload[0] if part and part[0]))
+            except (OSError, subprocess.SubprocessError, json.JSONDecodeError) as error:
+                last_error = error
+    if last_error:
+        raise last_error
+    return text
 
 
 def translate_many_google_gtx(texts: List[str], source_lang: str, timeout: int) -> List[str]:

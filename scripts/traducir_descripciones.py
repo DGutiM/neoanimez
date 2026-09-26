@@ -8,6 +8,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import time
 import urllib.error
 import urllib.parse
@@ -18,8 +19,11 @@ from typing import Any, Dict, List, Optional, Tuple
 DEFAULT_INPUT = "anime-lista.json"
 DEFAULT_OUTPUT = "anime-lista.descripciones-es.json"
 DEFAULT_CACHE = "cache/description-es-cache.json"
-TRANSLATE_URL = "https://translate.googleapis.com/translate_a/single"
-MAX_CHARS_PER_CHUNK = 3600
+TRANSLATE_URLS = (
+    "https://translate.google.com/translate_a/single",
+    "https://translate.googleapis.com/translate_a/single",
+)
+MAX_CHARS_PER_CHUNK = 900
 
 
 def load_json(path: str, default: Any = None) -> Any:
@@ -99,16 +103,47 @@ def translate_chunk(text: str, source_lang: str, timeout: int) -> str:
         "dt": "t",
         "q": text,
     })
-    request = urllib.request.Request(
-        f"{TRANSLATE_URL}?{params}",
-        headers={
-            "User-Agent": "NeoAnimeZ-DescriptionTranslator/1.0",
-            "Accept": "application/json",
-        },
-    )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        payload = json.loads(response.read().decode("utf-8"))
-    return "".join(part[0] for part in payload[0] if part and part[0]).strip()
+    last_error: Optional[BaseException] = None
+    for base_url in TRANSLATE_URLS:
+        request = urllib.request.Request(
+            f"{base_url}?{params}",
+            headers={
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+                "Accept": "application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            return "".join(part[0] for part in payload[0] if part and part[0]).strip()
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError) as error:
+            last_error = error
+    curl = shutil.which("curl")
+    if curl:
+        for base_url in TRANSLATE_URLS:
+            try:
+                result = subprocess.run(
+                    [
+                        curl,
+                        "-fsSL",
+                        "--max-time",
+                        str(timeout),
+                        "-A",
+                        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+                        f"{base_url}?{params}",
+                    ],
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                    timeout=timeout + 5,
+                )
+                payload = json.loads(result.stdout)
+                return "".join(part[0] for part in payload[0] if part and part[0]).strip()
+            except (OSError, subprocess.SubprocessError, json.JSONDecodeError) as error:
+                last_error = error
+    if last_error:
+        raise last_error
+    return text
 
 
 def translate_text(

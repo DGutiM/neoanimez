@@ -1,74 +1,80 @@
 {
-  "month": "2026-08",
-  "title": "Novedades de Agosto",
-  "subtitle": "Noticias, eventos y emisiones de anime que seguimos este mes en NeoAnimeZ.",
-  "updated_at": "2026-08-01T14:39:15+00:00",
+  "month": "2026-09",
+  "title": "Novedades de Septiembre",
+  "subtitle": "Noticias y eventos de anime que estamos siguiendo este mes en NeoAnimeZ.",
+  "updated_at": "2026-09-26T17:52:34+00:00",
   "source_note": "Selección editorial de titulares enlazados. NeoAnimeZ muestra resumen propio y no copia artículos completos.",
   "items": [
     {
-      "title": "Calendario de agosto actualizado en NeoAnimeZ",
-      "summary": "Hemos renovado las emisiones, episodios y próximos estrenos para que Mi calendario muestre la programación activa de agosto.",
-      "date": "2026-08-01",
-      "source": "NeoAnimeZ",
-      "url": "",
+      "title": "The Fall 2026 Anime Trailer Watch Party Premieres Tonight!",
+      "summary": "The Fall Anime Trailer Watch Party returns with the trailers for your most anticipated anime series. Watch all the trailers for the upcoming season with special guest Geoff Thew and ANN friends Lynzee Loveridge, Jacki Jing, and James Beckett.",
+      "date": "2026-09-25",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/watch/2026-09-25/the-fall-2026-anime-trailer-party-premieres-tonight/.242200",
       "tags": [
-        "Calendario",
-        "Verano 2026",
+        "Tráiler",
         "Estrenos"
       ],
-      "priority": 100
+      "priority": 66
     },
     {
-      "title": "Re:ZERO inicia el arco de la Reconquista el 12 de agosto",
-      "summary": "La cuarta temporada retoma su emisión con un nuevo arco, acompañado de imagen promocional y vídeo musical.",
-      "date": "2026-08-12",
-      "source": "Crunchyroll News",
-      "url": "https://www.crunchyroll.com/news/latest/2026/6/17/re-zero-starting-life-in-another-world-season-4-anime-recapture-arc-visual-music-video",
+      "title": "New Code Geass Star Chaser Aspal Anime Reveals Teaser Trailer, 2027 Premiere",
+      "summary": "Kazuya Nomura directs new anime for Code Geass' 20th anniversary",
+      "date": "2026-09-25",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-25/new-code-geass-star-chaser-aspal-anime-reveals-teaser-trailer-2027-premiere/.242201",
       "tags": [
-        "Re:ZERO",
-        "Nueva emisión",
-        "12 de agosto"
-      ],
-      "priority": 96
-    },
-    {
-      "title": "Link Click temporada 3 llega el 14 de agosto",
-      "summary": "La tercera temporada forma parte de la programación de verano y tiene su estreno previsto para mediados de mes.",
-      "date": "2026-08-14",
-      "source": "Crunchyroll News",
-      "url": "https://www.crunchyroll.com/news/seasonal-lineup/2026/6/17/summer-anime-2026-crunchyroll",
-      "tags": [
-        "Link Click",
-        "Temporada 3",
-        "14 de agosto"
-      ],
-      "priority": 92
-    },
-    {
-      "title": "Anime NYC prepara estrenos y paneles del 20 al 23 de agosto",
-      "summary": "El evento reunirá proyecciones anticipadas y celebraciones de series como Bungo Stray Dogs y Re:ZERO.",
-      "date": "2026-08-20",
-      "source": "Crunchyroll News",
-      "url": "https://www.crunchyroll.com/news/announcements/2026/7/20/anime-nyc-2026-crunchyroll-panels-premieres-schedule",
-      "tags": [
-        "Anime NYC",
-        "Evento",
+        "Tráiler",
         "Estrenos"
       ],
-      "priority": 88
+      "priority": 54
     },
     {
-      "title": "Bleach entra en su parte final con The Calamity",
-      "summary": "La última parte de Thousand-Year Blood War ya está en emisión y ha estrenado nuevas secuencias de apertura y cierre.",
-      "date": "2026-07-25",
-      "source": "Crunchyroll Noticias",
-      "url": "https://www.crunchyroll.com/es-es/news/latest/2026/7/25/bleach-thousand-year-blood-war-final-part-the-calamity-anime-opening-ending",
+      "title": "Crunchyroll Screens Dive in Wonderland Film on November 16 in U.S. as Part of Anime Nights Program",
+      "summary": "English-subbed trailer streamed for anime inspired by Alice in Wonderland",
+      "date": "2026-09-24",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-24/crunchyroll-screens-dive-in-wonderland-film-on-november-16-in-u.s-as-part-of-anime-nights-program/.242152",
       "tags": [
-        "Bleach",
-        "The Calamity",
-        "En emisión"
+        "Crunchyroll",
+        "Tráiler"
       ],
-      "priority": 84
+      "priority": 46
+    },
+    {
+      "title": "The Apothecary Diaries Season 3 Anime's 2nd Trailer Reveals Eve's Ending Theme",
+      "summary": "New season debuts on October 2",
+      "date": "2026-09-25",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-25/the-apothecary-diaries-season-3-anime-2nd-trailer-reveals-eve-ending-theme/.242175",
+      "tags": [
+        "Tráiler",
+        "Estrenos"
+      ],
+      "priority": 46
+    },
+    {
+      "title": "Alya Sometimes Hides Her Feelings in Russian TV Anime's 2nd Season Reveals Teaser Video",
+      "summary": "Original book franchise has 5.5 million copies in circulation worldwide",
+      "date": "2026-09-19",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-19/alya-sometimes-hides-her-feelings-in-russian-tv-anime-2nd-season-reveals-teaser-video/.242003",
+      "tags": [
+        "Tráiler",
+        "Estrenos"
+      ],
+      "priority": 34
+    },
+    {
+      "title": "'Tetsuryō! meet with Tetsudō Musume' Anime's New Trailer Previews Opening Song",
+      "summary": "Asaka performs \"GO! GO! RAILWAY!!\" opening for October 8 series",
+      "date": "2026-09-20",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-20/tetsuryo-meet-with-tetsudo-musume-anime-new-trailer-previews-opening-song/.242014",
+      "tags": [
+        "Tráiler"
+      ],
+      "priority": 34
     }
   ]
 }

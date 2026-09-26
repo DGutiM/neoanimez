@@ -528,23 +528,21 @@ def collect_candidates(year: int, include_upcoming: bool, use_jikan: bool = True
     seasons = ["winter", "spring", "summer", "fall"]
     by_id: Dict[int, Dict[str, Any]] = {}
 
-    jikan_available = use_jikan
     for season in seasons:
-        if not jikan_available:
+        if not use_jikan:
             continue
         print(f"[INFO] Leyendo Jikan season {year}/{season}")
         try:
             season_items = fetch_paginated(f"/seasons/{year}/{season}")
         except RuntimeError as error:
             print(f"[WARN] Jikan no disponible para {year}/{season}: {error}")
-            jikan_available = False
             season_items = []
         for item in season_items:
             mal_id = safe_int(item.get("mal_id"))
             if mal_id:
                 by_id.setdefault(mal_id, item)
 
-    if include_upcoming and jikan_available:
+    if include_upcoming and use_jikan:
         print("[INFO] Leyendo Jikan upcoming")
         try:
             upcoming_items = fetch_paginated("/seasons/upcoming")
