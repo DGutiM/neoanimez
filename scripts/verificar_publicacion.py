@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import datetime as dt
 import hashlib
 import json
 import re
@@ -181,6 +182,29 @@ def check_upcoming_and_schedule(errors: list[str]) -> None:
         }
         if section_ids != upcoming_ids:
             errors.append("Las secciones de anime-upcoming.json no coinciden con sus fichas.")
+
+        premiered_upcoming: list[int] = []
+        today = dt.date.today()
+        for item in upcoming_items:
+            if not isinstance(item, dict):
+                continue
+            aired_from = str(item.get("aired_from") or "").strip()[:10]
+            try:
+                premiere = dt.date.fromisoformat(aired_from)
+            except ValueError:
+                premiere = None
+            status = str(item.get("airing_status") or "").strip().casefold()
+            if (
+                item.get("ongoing") is True
+                or status in {"currently airing", "finished airing", "cancelled"}
+                or (premiere is not None and premiere <= today)
+            ):
+                premiered_upcoming.append(int(item.get("mal_id") or 0))
+        if premiered_upcoming:
+            errors.append(
+                "Proximos estrenos contiene titulos ya estrenados: "
+                f"{premiered_upcoming[:8]}"
+            )
 
         schedule = json.loads((ROOT / "anime-schedule.json").read_text(encoding="utf-8"))
         schedule_items = [

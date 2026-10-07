@@ -2018,8 +2018,8 @@
       "Diario de diferentes países"
     ],
     "airing_status": "Finished Airing",
-    "aired_from": "2026-01-05",
-    "aired_to": "2026-03-30"
+    "aired_from": "2026-01-04",
+    "aired_to": "2026-03-29"
   },
   {
     "title": "Mob Psycho 100 II",
@@ -35699,7 +35699,7 @@
     "description": "Anime adaptation of part three of the Honzuki no Gekokujou light novel.",
     "type": "TV",
     "franchise": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen - Ryoushu no Youjo",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [],
     "themes": [
       "Isekai",
@@ -35731,7 +35731,7 @@
       "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen - Ryoushu no Youjo",
       "El ascenso de un ratón de biblioteca cuarta temporada"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "17:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -211643,7 +211643,7 @@
     "description": "BanG Dream Chan — who took the world of girl bands by storm — is back!?\n\nA poppy, cute, all-star gathering of band members, an avant-garde, laugh-out-loud girl band comedy full of charm!\n\n\"Come join us, BanG Dream Chan — you're BanG Dream Chan, and so am I!\"\n\nGANSO! BanG Dream Chan is a new mini Anime series for BanG Dream!, featuring members of the ten bands from BanG Dream!.",
     "type": "ONA",
     "franchise": "GANSO! BanG Dream Chan",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [],
     "themes": [
       "Music"
@@ -211671,13 +211671,13 @@
     "search_titles_es": [
       "¡GANSO! BanG Sueño Chan"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Thursdays",
     "broadcast_time": "22:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Thursdays at 22:00 (JST)",
     "aired_from": "2025-10-02",
-    "aired_to": ""
+    "aired_to": "2026-10-01"
   },
   {
     "title": "Busou Shoujo Machiavellianism",
@@ -247869,7 +247869,7 @@
     "title": "Kusuriya no Hitorigoto 3rd Season",
     "mal_id": 61987,
     "image": "https://myanimelist.net/images/anime/1862/152811l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -247885,7 +247885,7 @@
     "description": "Third season of Kusuriya no Hitorigoto.",
     "type": "TV",
     "franchise": "Kusuriya no Hitorigoto",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel",
       "PG-13 - Teens 13 or older"
@@ -247919,7 +247919,7 @@
       "Los diarios de la boticaria"
     ],
     "description_es": "Tercera temporada de Kusuriya no Hitorigoto.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "23:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -248043,7 +248043,7 @@
     "title": "Tensei shitara Ken deshita 2",
     "mal_id": 53913,
     "image": "https://myanimelist.net/images/anime/1955/150906l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -248181,7 +248181,7 @@
     "description": "Second season of Black Clover.",
     "type": "TV",
     "franchise": "Black Clover",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -248206,7 +248206,7 @@
       "Trébol negro temporada 2"
     ],
     "description_es": "Segunda temporada de Black Clover.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "23:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -248498,7 +248498,7 @@
     "title": "Ao no Hako Season 2",
     "mal_id": 61323,
     "image": "https://myanimelist.net/images/anime/1976/156319l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Shounen",
     "genres": [
@@ -248514,7 +248514,7 @@
     "description": "Second season of Ao no Hako.",
     "type": "TV",
     "franchise": "Ao no Hako Season",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -248543,7 +248543,7 @@
       "Caja azul temporada 2"
     ],
     "description_es": "Segunda temporada de Ao no Hako.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "16:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -248825,7 +248825,7 @@
     "title": "Tantei wa Mou, Shindeiru. Season 2",
     "mal_id": 52480,
     "image": "https://myanimelist.net/images/anime/1164/156604l.jpg",
-    "episodes": null,
+    "episodes": 13,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -248842,7 +248842,7 @@
     "description": "Second season of Tantei wa Mou, Shindeiru.",
     "type": "TV",
     "franchise": "Tantei wa Mou, Shindeiru. Season",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel",
       "PG-13 - Teens 13 or older"
@@ -248872,7 +248872,7 @@
       "El detective ya está muerto temporada 2"
     ],
     "description_es": "Segunda temporada de Tantei wa Mou, Shindeiru.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Wednesdays",
     "broadcast_time": "21:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -248942,7 +248942,7 @@
     "title": "Tokyo Revengers: Santen Sensou-hen",
     "mal_id": 59088,
     "image": "https://myanimelist.net/images/anime/1340/148694l.jpg",
-    "episodes": null,
+    "episodes": 13,
     "length": "corto",
     "demographic": "Shounen",
     "genres": [
@@ -248958,7 +248958,7 @@
     "description": "Sequel to Tokyo Revengers: Tenjiku-hen.",
     "type": "TV",
     "franchise": "Tokyo Revengers",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "R - 17+ (violence & profanity)"
@@ -248985,7 +248985,7 @@
       "Vengadores de Tokio: Santen Sensou-hen"
     ],
     "description_es": "Secuela de Tokyo Revengers: Tenjiku-hen.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "01:53",
     "broadcast_timezone": "Asia/Tokyo",
@@ -249729,7 +249729,7 @@
     "description": "Second season of Kikansha no Mahou wa Tokubetsu desu.",
     "type": "TV",
     "franchise": "Kikansha no Mahou wa Tokubetsu desu",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga",
       "PG-13 - Teens 13 or older"
@@ -249762,7 +249762,7 @@
       "La magia de un retornado debería ser especial temporada 2"
     ],
     "description_es": "Segunda temporada de Kikansha no Mahou wa Tokubetsu desu.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Thursdays",
     "broadcast_time": "00:45",
     "broadcast_timezone": "Asia/Tokyo",
@@ -250297,7 +250297,7 @@
     "description": "Second season of Nige Jouzu no Wakagimi.",
     "type": "TV",
     "franchise": "Nige Jouzu no Wakagimi",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Manga",
       "R - 17+ (violence & profanity)"
@@ -250328,7 +250328,7 @@
       "El esquivo samurái temporada 2"
     ],
     "description_es": "Segunda temporada de Nige Jouzu no Wakagimi.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -250356,7 +250356,7 @@
     "description": "Second season of Seihantai na Kimi to Boku.",
     "type": "TV",
     "franchise": "Seihantai na Kimi to Boku",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -250383,7 +250383,7 @@
       "Tú y yo somos polos opuestos temporada 2"
     ],
     "description_es": "Segunda temporada de Seihantai na Kimi to Boku.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "17:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -250751,7 +250751,7 @@
     "description": "Second season of Ao Ashi.",
     "type": "TV",
     "franchise": "Ao Ashi Season",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -250778,11 +250778,11 @@
       "Aoashi Temporada 2"
     ],
     "description_es": "Segunda temporada de Ao Ashi.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
-    "broadcast_time": "23:00",
+    "broadcast_time": "17:00",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Sundays at 23:00 (JST)",
+    "broadcast_string": "Sundays at 17:00 (JST)",
     "aired_from": "2026-10-04",
     "aired_to": ""
   },
@@ -250954,7 +250954,7 @@
     "title": "Sasaki to Pii-chan Season 2",
     "mal_id": 58518,
     "image": "https://myanimelist.net/images/anime/1454/153633l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -250971,7 +250971,7 @@
     "description": "Second season of Sasaki to Pii-chan.",
     "type": "TV",
     "franchise": "Sasaki to Pii-chan Season",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel",
       "PG-13 - Teens 13 or older"
@@ -251001,11 +251001,11 @@
       "Sasaki y Peeps Temporada 2"
     ],
     "description_es": "Segunda temporada de Sasaki a Pii-chan.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Wednesdays",
-    "broadcast_time": "23:00",
+    "broadcast_time": "22:00",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Wednesdays at 23:00 (JST)",
+    "broadcast_string": "Wednesdays at 22:00 (JST)",
     "aired_from": "2026-10-07",
     "aired_to": ""
   },
@@ -251691,7 +251691,7 @@
     "description": "Third season of Ranma ½ (2024).",
     "type": "TV",
     "franchise": "Ranma ½ (2024)",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -251723,7 +251723,7 @@
       "Ranma ½ (2024) Temporada 3"
     ],
     "description_es": "Tercera temporada de Ranma ½ (2024).",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "00:56",
     "broadcast_timezone": "Asia/Tokyo",
@@ -251961,7 +251961,7 @@
     "title": "Tougen Anki: Nikko Kegon no Taki-hen",
     "mal_id": 63181,
     "image": "https://myanimelist.net/images/anime/1243/154648l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Shounen",
     "genres": [
@@ -251977,7 +251977,7 @@
     "description": "Sequel of Tougen Anki.",
     "type": "TV",
     "franchise": "Tougen Anki",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "R - 17+ (violence & profanity)"
@@ -252004,7 +252004,7 @@
       "Tougen Anki: Arco de las cataratas Nikko Kegon"
     ],
     "description_es": "Secuela de Tougen Anki.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -252353,7 +252353,7 @@
     "description": "Satoko, the eldest daughter of the honorable Kirigaya family, has received many marriage proposals from men captivated by her beauty and grace. However, she has turned them all down due to her secret heart defect. Despite her condition, Satoko is still willing to find a husband to ease her beloved father's concerns. While on a stroll, Satoko is kidnapped by a group of mercenaries, one of them being Shinpei Gotou—a legendary assassin tasked with executing her. Satoko tries to bribe Gotou into freeing her, but it proves unsuccessful. Out of options, Satoko makes a desperate gamble: under the pretense of love at first sight, she asks him to marry her. Unexpectedly, Gotou takes the bait and vows to protect her. As the couple escapes to freedom, Satoko struggles to keep up the ruse and make sense of the mysterious man she has eloped with.",
     "type": "TV",
     "franchise": "Hotaru no Yomeiri",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga"
     ],
@@ -252381,7 +252381,7 @@
       "hotaru no yomeiri"
     ],
     "description_es": "Satoko, la hija mayor de la honorable familia Kirigaya, ha recibido muchas propuestas de matrimonio de hombres cautivados por su belleza y gracia. Sin embargo, ella los rechazó todos debido a su defecto cardíaco secreto. A pesar de su condición, Satoko todavía está dispuesta a encontrar un marido que alivie las preocupaciones de su amado padre. Durante un paseo, Satoko es secuestrada por un grupo de mercenarios, uno de ellos Shinpei Gotou, un asesino legendario encargado de ejecutarla. Satoko intenta sobornar a Gotou para que la libere, pero no tiene éxito. Sin opciones, Satoko hace una apuesta desesperada: bajo el pretexto de amor a primera vista, le pide que se case con ella. Inesperadamente, Gotou muerde el anzuelo y promete protegerla. Mientras la pareja escapa hacia la libertad, Satoko lucha por mantener la artimaña y encontrarle sentido al misterioso hombre con el que se ha fugado.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -252905,7 +252905,7 @@
     "description": "Fia always dreamed of becoming a knight. Born into a family of knights, she's the least talented among them, but she still clutches to her hope and trains with everything she has. When the day comes for her to slay a small demon and prove her worth, she ends up face to face with a dragon instead! A deadly injury makes her life flash before her eyes... and she suddenly remembers her former life, when she was a powerful Saint in a bygone era who defeated the Demon King. That life ended in pain because of who she was, making her fear ever becoming a Saint again. Now that the magic from her previous life has been rekindled, she may become a more powerful knight than she ever dreamed–if only she can survive long enough!",
     "type": "TV",
     "franchise": "Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -252936,7 +252936,7 @@
       "Un cuento del santo secreto"
     ],
     "description_es": "Fia siempre soñó con convertirse en caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y entrena con todo lo que tiene. Cuando llega el día en que debe matar a un pequeño demonio y demostrar su valía, ¡termina cara a cara con un dragón! Una herida mortal hace que su vida pase ante sus ojos... y de repente recuerda su vida anterior, cuando era una santa poderosa en una época pasada que derrotó al Rey Demonio. Esa vida terminó en dolor por quién era ella, lo que le hizo temer volver a convertirse en santa. Ahora que la magia de su vida anterior ha sido reavivada, puede convertirse en una caballero más poderosa de lo que jamás había soñado... ¡si tan solo pudiera sobrevivir el tiempo suficiente!",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "22:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -252964,7 +252964,7 @@
     "description": "New anime project for Magic Knight Rayearth to celebrate the anime's 30th anniversary.",
     "type": "TV",
     "franchise": "Magic Knight Rayearth (2026)",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -252992,7 +252992,7 @@
       "El caballero mágico Rayearth (2026)"
     ],
     "description_es": "Nuevo proyecto de anime para Magic Knight Rayearth para celebrar el 30 aniversario del anime.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Wednesdays",
     "broadcast_time": "23:46",
     "broadcast_timezone": "Asia/Tokyo",
@@ -253971,7 +253971,7 @@
     "description": "The deadly game is back! Once again, sixteen Magical Girls have been assembled for a high-stakes challenge. Every three days, their Magical Phone pulls them into an RPG-like simulation where they have to work together to fight enemies, solve puzzles, and earn Magical Candy to advance. A staggering ten billion yen reward awaits them at the end—but only for the players who land the finishing blow. With such a tantalizing prize on the line, it's only a matter of time before the girls turn on each other—and if their hit points drop to zero, a game over will be the least of their worries...",
     "type": "TV",
     "franchise": "Mahou Shoujo Ikusei Keikaku",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -253999,7 +253999,7 @@
       "Mahou Shoujo Ikusei Keikaku: Reiniciar"
     ],
     "description_es": "¡El juego mortal ha vuelto! Una vez más, dieciséis Chicas Mágicas se han reunido para un desafío de alto riesgo. Cada tres días, su Magical Phone los lleva a una simulación similar a un juego de rol en la que tienen que trabajar juntos para luchar contra enemigos, resolver acertijos y ganar Magical Candy para avanzar. Al final les espera una asombrosa recompensa de diez mil millones de yenes, pero sólo para los jugadores que den el golpe final. Con un premio tan tentador en juego, es solo cuestión de tiempo antes de que las chicas se enfrenten entre sí, y si sus puntos de vida caen a cero, el fin del juego será la menor de sus preocupaciones...",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Tuesdays",
     "broadcast_time": "02:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -254529,7 +254529,7 @@
     "description": "Ageha Yoshina is a self-confident high school student who helps others for a fee. On his way back from a job, he finds a strange calling card with the word \"Psyren\" imprinted left behind in a phone booth and decides to keep it, unaware of its purpose. The very next day, Ageha discovers that his classmate Sakurako Amamiya has the exact same calling card in her possession. When he questions her, Sakurako asks him to save her, signaling the day his troubles begin. Confused by the circumstances of this encounter, Ageha realizes something is wrong when Sakurako goes missing. In an attempt to figure out what is happening, he decides to call the number provided on the calling card and is asked a series of questions by a mysterious voice, ending with a final, cryptic question: \"Would you like to go to Psyren?\" Thus begins two teenagers' participation in a game of life or death within a strange world inhabited by monsters called Taboo. Granted the ability to use psychic powers known as PSI, the duo fight to return to the place they call home.",
     "type": "TV",
     "franchise": "Psyren",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -254560,7 +254560,7 @@
       "psiren"
     ],
     "description_es": "Ageha Yoshina es una estudiante de secundaria segura de sí misma que ayuda a otros por una tarifa. En su camino de regreso de su trabajo, encuentra una extraña tarjeta de visita con la palabra \"Psyren\" impresa en una cabina telefónica y decide conservarla, sin darse cuenta de su propósito. Al día siguiente, Ageha descubre que su compañera de clase Sakurako Amamiya tiene exactamente la misma tarjeta de visita en su poder. Cuando él la interroga, Sakurako le pide que la salve, señalando el día en que comienzan sus problemas. Confundida por las circunstancias de este encuentro, Ageha se da cuenta de que algo anda mal cuando Sakurako desaparece. En un intento por descubrir qué está sucediendo, decide llamar al número que figura en la tarjeta telefónica y una voz misteriosa le hace una serie de preguntas, que terminan con una pregunta final y críptica: \"¿Te gustaría ir a Psyren?\" Así comienza la participación de dos adolescentes en un juego de vida o muerte dentro de un extraño mundo habitado por monstruos llamado Taboo. Al obtener la capacidad de usar poderes psíquicos conocidos como PSI, el dúo lucha por regresar al lugar que llaman hogar.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Mondays",
     "broadcast_time": "23:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -255198,7 +255198,7 @@
     "title": "Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku",
     "mal_id": 63382,
     "image": "https://myanimelist.net/images/anime/1116/155161l.jpg",
-    "episodes": null,
+    "episodes": 25,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -255213,7 +255213,7 @@
     "description": "Lying on her deathbed with seemingly no chance at recovery, a young Nia Liston is soon to succumb to her illness. Unable to give up hope, her parents desperately search for a cure in even the most obscure places, leading to the appearance of a hooded man claiming he can help rid Nia of her condition. But rather than curing her, the hooded man transplants the soul of a deceased hero who was undefeated in battle into the girl's frail body. Given a second chance at life as Nia, the hero is determined to recover her new body's strength by using a technique known as chi to target and eliminate the illness at its roots. With her enthusiastic hunger for combat having also been carried over, Nia is eager to return to exploring the world. However, the hero's restless soul yearns to find a worthy opponent who can defeat her on the battlefield, sparking chaos wherever Nia may go.",
     "type": "TV",
     "franchise": "Kyouran Reijou Nia Liston",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -255241,7 +255241,7 @@
       "Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei mierda Kamigoroshi no Bujin no Karei Naru Musouroku"
     ],
     "description_es": "Tumbada en su lecho de muerte sin aparentemente ninguna posibilidad de recuperarse, la joven Nia Liston pronto sucumbirá a su enfermedad. Incapaces de perder la esperanza, sus padres buscan desesperadamente una cura incluso en los lugares más oscuros, lo que lleva a la aparición de un hombre encapuchado que afirma que puede ayudar a Nia a deshacerse de su enfermedad. Pero en lugar de curarla, el hombre encapuchado trasplanta el alma de un héroe fallecido que quedó invicto en la batalla al frágil cuerpo de la niña. Al tener una segunda oportunidad en la vida como Nia, la heroína está decidida a recuperar la fuerza de su nuevo cuerpo mediante el uso de una técnica conocida como chi para atacar y eliminar la enfermedad desde sus raíces. Como su entusiasmo por el combate también ha quedado atrás, Nia está ansiosa por volver a explorar el mundo. Sin embargo, el alma inquieta del héroe anhela encontrar un oponente digno que pueda derrotarla en el campo de batalla, provocando el caos donde quiera que vaya Nia.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Tuesdays",
     "broadcast_time": "21:26",
     "broadcast_timezone": "Asia/Tokyo",
@@ -255363,7 +255363,7 @@
     "title": "Magical★Explorer",
     "mal_id": 56733,
     "image": "https://myanimelist.net/images/anime/1414/156298l.jpg",
-    "episodes": null,
+    "episodes": 13,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -255414,9 +255414,9 @@
     "description_es": "Reencarnado como un personaje del legendario juego erótico \"Magical Explorer\", nuestro héroe no tarda mucho en descubrir que ha sido designado como el desafortunado personaje secundario en lugar de como el protagonista del juego. ¡Pero no te preocupes! Armado con su vasto conocimiento del juego (y algunos trucos), hará lo que sea necesario para ganarse los corazones de las heroínas del juego y emerger como el estudiante más destacado de la Academia de Hechiceros.",
     "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
-    "broadcast_time": "00:00",
+    "broadcast_time": "07:16",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Saturdays at 00:00 (JST)",
+    "broadcast_string": "Saturdays at 07:16 (JST)",
     "aired_from": "2026-09-26",
     "aired_to": ""
   },
@@ -255583,7 +255583,7 @@
     "title": "FX Senshi Kurumi-chan",
     "mal_id": 63337,
     "image": "https://myanimelist.net/images/anime/1517/155052l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Seinen",
     "genres": [],
@@ -255596,7 +255596,7 @@
     "description": "When middle school student, Fukuga Kurumi's mother commits suicide after losing 20 million yen in FX trading (Foreign Exchange trading), she vows to recoup the money her mother lost \"I'll easily get that much back!\" Now, when she is a university student she makes her long-awaited debut in FX trading, unaware that the world she just entered could turn from heaven to hell in the blink of an eye. This is a cute and slightly dangerous story as it explains technical terms by thrilling market fluctuations as the chart drives up and down, which becomes more heated with the entry of quirky FX warriors: Yasuko Takane, Mochiko Kogane, and Mebuki Yamashi. Can Kurumi and her friends survive this world with unstoppable heartbeat moments and unrealized losses!?",
     "type": "TV",
     "franchise": "FX Senshi Kurumi-chan",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -255624,7 +255624,7 @@
       "FX Senshi Kurumi-chan"
     ],
     "description_es": "Cuando la madre de Fukuga Kurumi, estudiante de secundaria, se suicida después de perder 20 millones de yenes en el comercio de divisas (comercio de divisas), ella promete recuperar el dinero que su madre perdió \"¡fácilmente recuperaré esa cantidad!\" Ahora, cuando es estudiante universitaria, hace su tan esperado debut en el comercio de divisas, sin saber que el mundo al que acaba de entrar podría pasar del cielo al infierno en un abrir y cerrar de ojos. Esta es una historia linda y ligeramente peligrosa, ya que explica los términos técnicos mediante emocionantes fluctuaciones del mercado a medida que el gráfico sube y baja, lo que se vuelve más acalorado con la entrada de extravagantes guerreros FX: Yasuko Takane, Mochiko Kogane y Mebuki Yamashi. ¿Podrán Kurumi y sus amigos sobrevivir a este mundo con momentos de latidos imparables y pérdidas no realizadas?",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Thursdays",
     "broadcast_time": "21:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -255814,7 +255814,7 @@
     "description": "Sato Takahiro was an ordinary office worker and hobbyist gamer until the day he woke up on a spaceship–one that strangely resembled a craft from a favorite space-shooter game. With a decked-out ship, a crew full of babes, and a fantastic universe to explore, he's going to make the most of his good luck and create the life he's always dreamed of!",
     "type": "TV",
     "franchise": "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -255843,7 +255843,7 @@
       "Mezametara Saikyou Soubi al nodo Uchuusenmochi Datta, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai"
     ],
     "description_es": "Sato Takahiro era un oficinista común y corriente y un jugador aficionado hasta el día en que se despertó en una nave espacial, una que extrañamente se parecía a una nave de uno de sus juegos de disparos espaciales favoritos. Con un barco engalanado, una tripulación llena de chicas y un universo fantástico para explorar, ¡aprovechará al máximo su buena suerte y creará la vida que siempre ha soñado!",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "21:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -256122,7 +256122,7 @@
     "title": "Hotel Inhumans 2nd Season",
     "mal_id": 62590,
     "image": "https://myanimelist.net/images/anime/1990/155811l.jpg",
-    "episodes": null,
+    "episodes": 13,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -256138,7 +256138,7 @@
     "description": "Second season of Hotel Inhumans.",
     "type": "TV",
     "franchise": "Hotel Inhumans",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga",
       "PG-13 - Teens 13 or older"
@@ -256165,7 +256165,7 @@
       "Hotel Inhumanos Temporada 2"
     ],
     "description_es": "Segunda temporada de Hotel Inhumanos.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "23:45",
     "broadcast_timezone": "Asia/Tokyo",
@@ -256472,7 +256472,7 @@
     "title": "Shiotaiou no Satou-san ga Ore ni dake Amai",
     "mal_id": 63754,
     "image": "https://myanimelist.net/images/anime/1001/156154l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -256488,7 +256488,7 @@
     "description": "Koharu Satou is known to her classmates as the \"unattainable flower\" a cold and distant girl whose refusal to smile keeps everyone at arm's length. However, Souta Oshio accidentally stumbles upon Satou's secret at her family's cafe. It turns out the \"icy Satou-san\" is actually an incredibly shy and clumsy girl who struggles even with something as simple as taking photos of sweets for the cafe's social media. Bonding over their shared love for cameras and desserts, the distance between the two gradually shrinks. This charming romantic comedy follows two socially awkward people as they navigate their feelings in a story that is as sweet as it is endearing.",
     "type": "TV",
     "franchise": "Shiotaiou no Satou-san ga Ore ni dake Amai",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -256515,7 +256515,7 @@
       "El frío Sato-san es sólo dulce para mí"
     ],
     "description_es": "Koharu Satou es conocida por sus compañeros de clase como la \"flor inalcanzable\", una chica fría y distante cuya negativa a sonreír mantiene a todos a distancia. Sin embargo, Souta Oshio accidentalmente descubre el secreto de Satou en el café de su familia. Resulta que la \"helada Satou-san\" es en realidad una chica increíblemente tímida y torpe que tiene dificultades incluso con algo tan simple como tomar fotografías de dulces para las redes sociales del café. Uniéndose por su amor compartido por las cámaras y los postres, la distancia entre los dos se reduce gradualmente. Esta encantadora comedia romántica sigue a dos personas socialmente incómodas mientras navegan por sus sentimientos en una historia tan dulce como entrañable.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Tuesdays",
     "broadcast_time": "22:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -256638,7 +256638,7 @@
     "title": "Doumo, Suki na Hito ni Horegusuri wo Irai sareta Majo desu.",
     "mal_id": 63409,
     "image": "https://myanimelist.net/images/anime/1806/156103l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Josei",
     "genres": [
@@ -256654,7 +256654,7 @@
     "description": "Deep within the forest, a cozy and rather cluttered cottage sits on the lakeshore, housing a mysterious, feared witch. In truth, she is a lovely young woman named Rose, who has learned the art of potion-making from her wise grandmother. Rose cherishes her tucked-away life, yet there is a longing in her heart—for a handsome knight she once saw, Sir Harij Azm. For four years, Rose's feelings for Harij have lingered, but she can never act on them; witches live outside of human affairs and belong to no country or man. So, when Harij suddenly appears on her doorstep looking for a love potion, Rose is both surprised and heartbroken. Although another woman has captured the noble knight's heart, Rose decides to help him. But before crafting the potion, Rose sends Harij on a series of ridiculous quests for each ingredient, hoping to delay the inevitable and savor their fleeting time together.",
     "type": "TV",
     "franchise": "Doumo, Suki na Hito ni Horegusuri wo Irai sareta Majo desu.",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -256683,7 +256683,7 @@
       "Soy una bruja que está enamorada y pidió una poción de amor."
     ],
     "description_es": "En lo profundo del bosque, una acogedora y bastante desordenada cabaña se encuentra a la orilla del lago y alberga a una misteriosa y temida bruja. En verdad, es una joven encantadora llamada Rose, que aprendió el arte de hacer pociones de su sabia abuela. Rose aprecia su vida apartada, pero en su corazón hay un anhelo por un apuesto caballero que vio una vez, Sir Harij Azm. Durante cuatro años, los sentimientos de Rose por Harij han persistido, pero nunca podrá actuar en consecuencia; Las brujas viven fuera de los asuntos humanos y no pertenecen a ningún país ni a ningún hombre. Entonces, cuando Harij aparece de repente en su puerta buscando una poción de amor, Rose está sorprendida y desconsolada. Aunque otra mujer ha capturado el corazón del noble caballero, Rose decide ayudarlo. Pero antes de elaborar la poción, Rose envía a Harij a una serie de misiones ridículas para cada ingrediente, con la esperanza de retrasar lo inevitable y saborear el fugaz tiempo que pasan juntos.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Mondays",
     "broadcast_time": "21:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -257490,7 +257490,7 @@
     "description": "Rising from the ashes, a fallen noblewoman stands to save humanity! After the Demon King's defeat, Countess Romelia's world is shattered when Prince Henri, her fiancé, publicly breaks off their engagement, dismissing her as \"useless\" alongside his new allies: Saint Elizabeth, the sage Ekaterina, and the swordswoman Lu Hime. What they don't realize is that Romelia possesses a secret power called \"Grace,\" which brings her extraordinary luck. Left abandoned and humiliated, Romelia refuses to give up. With her homeland still under siege by the remnants of the demon army and her people enslaved, she embarks on a desperate mission to save them. Facing overwhelming challenges—no army, no healers, no funds, and only inexperienced recruits—Romelia uses her wit and determination to turn the odds in her favor. She seizes fortresses from local lords to build her forces, negotiates with the church for healing, secures funds from merchants, and has her soldiers gain experience through monster hunting. Against all expectations, Romelia rises from the ashes, leading her loyal followers in a daring campaign to rescue her people and prove her worth.",
     "type": "TV",
     "franchise": "Romelia Senki",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -257523,7 +257523,7 @@
       "Crónica de guerra de Romelia"
     ],
     "description_es": "¡Resurgiendo de las cenizas, una mujer noble caída se levanta para salvar a la humanidad! Después de la derrota del Rey Demonio, el mundo de la condesa Romelia se hace añicos cuando el príncipe Enrique, su prometido, rompe públicamente su compromiso, descartándola como \"inútil\" junto con sus nuevos aliados: Santa Isabel, la sabia Ekaterina y la espadachina Lu Hime. Lo que no se dan cuenta es que Romelia posee un poder secreto llamado \"Grace\", que le trae una suerte extraordinaria. Abandonada y humillada, Romelia se niega a darse por vencida. Con su tierra natal todavía sitiada por los restos del ejército de demonios y su pueblo esclavizado, se embarca en una misión desesperada para salvarlos. Enfrentando desafíos abrumadores (sin ejército, sin curanderos, sin fondos y solo reclutas sin experiencia), Romelia usa su ingenio y determinación para cambiar las probabilidades a su favor. Se apodera de las fortalezas de los señores locales para fortalecer sus fuerzas, negocia con la iglesia para curarse, consigue fondos de los comerciantes y hace que sus soldados adquieran experiencia cazando monstruos. Contra todas las expectativas, Romelia resurge de las cenizas y lidera a sus leales seguidores en una audaz campaña para rescatar a su pueblo y demostrar su valía.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "21:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -257535,7 +257535,7 @@
     "title": "Gensou Suikoden",
     "mal_id": 61140,
     "image": "https://myanimelist.net/images/anime/1405/156377l.jpg",
-    "episodes": null,
+    "episodes": 23,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -257552,7 +257552,7 @@
     "description": "Anime adaptation of the game Gensou Suikoden II.",
     "type": "TV",
     "franchise": "Gensou Suikoden",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Game"
     ],
@@ -257576,7 +257576,7 @@
       "Suikoden: el anime"
     ],
     "description_es": "Adaptación al anime del juego Gensou Suikoden II.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "20:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -257645,7 +257645,7 @@
     "title": "#Zombie Sagashitemasu",
     "mal_id": 62524,
     "image": "https://myanimelist.net/images/anime/1479/156166l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Shounen",
     "genres": [
@@ -257660,7 +257660,7 @@
     "description": "Set in a world where 90% of humanity has contracted and died from a deadly, virulent disease, only to rise again as attacking zombies, thirteen years have passed since the \"Red Day\" of societal collapse. The surviving humans now live away from the big cities, still hoping to reclaim them one day. An entirely new generation, unaware of the pre-Red Day world, is coming into its own. The story begins when Aki, who has no memories of the world before its fall, escapes her village with her close friends Haru and Natsuki to search for her missing father. As they venture into the outside world, they find themselves surrounded by zombies on all sides! Along the way, they rescue Yuu and Sakura and take refuge in a home improvement store. They regroup, and now the counterattack begins—!!",
     "type": "TV",
     "franchise": "#Zombie Sagashitemasu",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -257686,7 +257686,7 @@
       "#Estoy Buscando Zombi"
     ],
     "description_es": "Ambientado en un mundo donde el 90% de la humanidad se contrajo y murió a causa de una enfermedad mortal y virulenta, solo para resurgir como zombis atacantes, han pasado trece años desde el \"Día Rojo\" del colapso social. Los humanos supervivientes ahora viven lejos de las grandes ciudades, con la esperanza de recuperarlas algún día. Una generación completamente nueva, que desconoce el mundo anterior al Día Rojo, está cobrando importancia. La historia comienza cuando Aki, que no tiene recuerdos del mundo antes de su caída, escapa de su aldea con sus amigos cercanos Haru y Natsuki para buscar a su padre desaparecido. Mientras se aventuran en el mundo exterior, ¡se encuentran rodeados de zombis por todos lados! En el camino, rescatan a Yuu y Sakura y se refugian en una tienda de mejoras para el hogar. ¡¡Se reagrupan y ahora comienza el contraataque—!!",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -258062,7 +258062,11 @@
     ],
     "description_es": "Yuuma Ashihara, estudiante de sexto grado, y su hermana gemela, Sawa, están jugando Actual Magic, un nuevo MMORPG de realidad virtual, cuando de repente comienza a fusionarse con el mundo real. En medio de todo el caos y la confusión, queda claro que la muerte acecha en cada esquina, incluso cuando Yuuma se encuentra con su compañera de clase Sumika. Antes, ella era una de las chicas más lindas de su clase, pero desde entonces ha sufrido una terrible metamorfosis: ¡se ha convertido en uno de los monstruos más horripilantes del juego! Del autor de Sword Art Online y Accel World llega una historia más allá de la realidad virtual y la realidad aumentada, donde los juegos y la realidad son lo mismo... ¡y mantenerse con vida es solo el comienzo!",
     "airing_status": "Not yet aired",
-    "aired_from": "2026-11-06"
+    "aired_from": "2026-11-06",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "11:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 11:00 (JST)"
   },
   {
     "title": "Chiikawa Movie: Ningyo no Shima no Himitsu",
@@ -258185,7 +258189,7 @@
     "description": "Shizuka takes on the most dangerous of assassin jobs, but she's not the one doing the killing. Rather, it's her brother, Nagi, a strong assassin who took a bullet to protect his sister, leaving him in a comatose state and having to use a wheelchair. However, Shizuka has figured out the key to waking her brother up: he must be faced with killing intent! Thus begins a violent journey of recovery, battling the most dangerous foes!",
     "type": "TV",
     "franchise": "Tank Chair",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga"
     ],
@@ -258214,11 +258218,11 @@
       "Silla de tanque"
     ],
     "description_es": "Shizuka asume el trabajo de asesina más peligroso, pero no es ella quien mata. Más bien, es su hermano, Nagi, un fuerte asesino que recibió un balazo para proteger a su hermana, dejándolo en estado de coma y teniendo que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse a una intención asesina! ¡Así comienza un violento viaje de recuperación, luchando contra los enemigos más peligrosos!",
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "23:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 23:00 (JST)",
     "aired_from": "2026-10-04",
     "aired_to": ""
   },
@@ -258561,7 +258565,7 @@
     "description": "A new Keroro Gunsou from scratch.",
     "type": "TV",
     "franchise": "Keroro Gunsou☆",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -258591,7 +258595,7 @@
       "Kerero Gunsou ☆"
     ],
     "description_es": "Un nuevo Keroro Gunsou desde cero.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "09:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -258602,7 +258606,7 @@
     "title": "Tetsuryou! Meet with Tetsudou Musume",
     "mal_id": 62615,
     "image": "https://myanimelist.net/images/anime/1489/156321l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -258674,7 +258678,7 @@
     "description": "In Chinjuku, the city that never sleeps, there is a psychic senior police officer who has powers beyond human comprehension! His name is Meguru Choujou! Along with his judo expert partner Nao Ippongi, this hilarious duo will keep the streets clean by any means necessary!",
     "type": "TV",
     "franchise": "Choujun! Choujou-senpai",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -258702,7 +258706,7 @@
       "¡Choujun! Choujou-senpai"
     ],
     "description_es": "En Chinjuku, la ciudad que nunca duerme, hay un oficial de policía psíquico que tiene poderes más allá de la comprensión humana. ¡Su nombre es Meguru Choujou! ¡Junto con su compañero experto en judo Nao Ippongi, este divertido dúo mantendrá las calles limpias por cualquier medio necesario!",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Tuesdays",
     "broadcast_time": "23:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -258731,7 +258735,7 @@
     "description": "Noriko Tachiki has dreamt of a beautiful fantasy land for some time, though her friends think it is only her imagination. One day, on her way home, Noriko stumbles upon a bomb disguised as a paper bag that explodes right in front of her. However, instead of dying, she is transported to a mysterious forest full of strange plants and creatures. As she begins navigating through the woods, Noriko is suddenly attacked by a giant, worm-like monster. Fortunately, she is saved by Izark Kia Tarj, a swordsman who does not speak her language. Lacking the strength to survive on her own, Noriko decides to follow her stoic savior, taking the opportunity to learn the foreign land's language and be more useful to Izark. Unbeknownst to her, Noriko is a crucial piece of an ancient prophecy. She is \"The Awakening\"—a being destined to unleash the greatest evil known as the \"Sky Demon.\" With influential people plotting to capture Noriko for her supposed powers, both she and Izark must fend for themselves and overcome a future laced with chaos.",
     "type": "TV",
     "franchise": "Kanata kara",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -258762,7 +258766,7 @@
       "kanata kara"
     ],
     "description_es": "Noriko Tachiki lleva algún tiempo soñando con una hermosa tierra de fantasía, aunque sus amigos creen que es sólo su imaginación. Un día, de camino a casa, Noriko se topa con una bomba disfrazada de bolsa de papel que explota justo delante de ella. Sin embargo, en lugar de morir, es transportada a un misterioso bosque lleno de extrañas plantas y criaturas. Mientras comienza a navegar por el bosque, Noriko es repentinamente atacada por un monstruo gigante parecido a un gusano. Afortunadamente, es salvada por Izark Kia Tarj, un espadachín que no habla su idioma. Al carecer de la fuerza para sobrevivir por sí misma, Noriko decide seguir a su estoico salvador, aprovechando la oportunidad para aprender el idioma de la tierra extranjera y ser más útil para Izark. Sin que ella lo sepa, Noriko es una pieza crucial de una antigua profecía. Ella es \"El Despertar\", un ser destinado a desatar el mayor mal conocido como el \"Demonio del Cielo\". Mientras personas influyentes conspiran para capturar a Noriko por sus supuestos poderes, tanto ella como Izark deben valerse por sí mismos y superar un futuro plagado de caos.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Mondays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -258790,7 +258794,7 @@
     "description": "Lent is part of the up-and-coming party known as the \"Skypiercers,\" and thanks to his unique Gift, he can loan massive amounts of magic to others. No MP? No problem with Lent around! Except, now that his companions have become formidable heroes (thanks to his skill), his usefulness is questioned. Kicked out of the group, Lent is furious...until he discovers a hidden power to his Gift. Now, with his adorably devious fairy partner, he's going to claw back every last scrap of magic from his former party—with interest!",
     "type": "TV",
     "franchise": "Kashita Maryoku wa \"Revo Barai\" de Kyousei Choushuu",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga"
     ],
@@ -258822,7 +258826,7 @@
       "Kashita Maryoku wa \"Revo Barai\" de Kyousei Choushuu"
     ],
     "description_es": "Lent es parte del prometedor grupo conocido como \"Skypiercers\" y, gracias a su don único, puede prestar enormes cantidades de magia a otros. ¿Ningún diputado? ¡No hay problema con la Cuaresma! Excepto que ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), se cuestiona su utilidad. Expulsado del grupo, Lent está furioso... hasta que descubre un poder oculto en su Don. Ahora, con su adorable y tortuosa compañera hada, recuperará hasta el último fragmento de magia de su antiguo grupo... ¡con interés!",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "01:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -259328,7 +259332,7 @@
     "description": "Office worker Akira Yagami's altruistic nature usually gets him the short end of the stick. When he dies after saving a kid from oncoming traffic...he reincarnates in another world as a goblin?! Normally, goblins only live for seven days, but Akira's newfound powers let him defy the species' normal life span... and are the key to his path to becoming the strongest goblin ever!",
     "type": "TV",
     "franchise": "Tensei Goblin dakedo Shitsumon Aru?",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga"
     ],
@@ -259357,11 +259361,11 @@
       "Tensei Goblin dakedo Shitsumon Aru?"
     ],
     "description_es": "La naturaleza altruista del oficinista Akira Yagami generalmente le saca la peor parte. Cuando muere después de salvar a un niño del tráfico que se aproximaba... ¡¿se reencarna en otro mundo como un duende?! Normalmente, los duendes solo viven siete días, pero los nuevos poderes de Akira le permiten desafiar la esperanza de vida normal de la especie... ¡y son la clave en su camino para convertirse en el duende más fuerte de todos los tiempos!",
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Mondays",
+    "broadcast_time": "22:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Mondays at 22:00 (JST)",
     "aired_from": "2026-10-05",
     "aired_to": ""
   },
@@ -259436,7 +259440,7 @@
     "description": "",
     "type": "TV",
     "franchise": "Vertex Force",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Original"
     ],
@@ -259458,7 +259462,7 @@
     "search_titles_es": [
       "Fuerza de vértice"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -260243,7 +260247,7 @@
     "title": "Ojisan wa Kawaii Mono ga Osuki.",
     "mal_id": 62907,
     "image": "https://myanimelist.net/images/anime/1842/153411l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -260258,7 +260262,7 @@
     "description": "Mitsutaka Oji is a 40-year-old, handsome office worker that is admired by his colleagues. Of course, he has a secret he is trying to hide from everyone: he loves cute things. But with his nephew going to his apartment, Mitsutaka's secret is now in danger!",
     "type": "TV",
     "franchise": "Ojisan wa Kawaii Mono ga Osuki.",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga"
     ],
@@ -260281,7 +260285,7 @@
       "Ojisan wa Kawaii Mono ga Osuki."
     ],
     "description_es": "Mitsutaka Oji es un apuesto oficinista de 40 años que es admirado por sus colegas. Por supuesto, tiene un secreto que intenta ocultar a todos: le encantan las cosas lindas. Pero con su sobrino yendo a su apartamento, ¡el secreto de Mitsutaka ahora está en peligro!",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "22:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -260397,7 +260401,7 @@
     "title": "Dark Summoner to Dekiteiru",
     "mal_id": 63509,
     "image": "https://myanimelist.net/images/anime/1847/157371l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -260414,7 +260418,7 @@
     "description": "Amona, a dark summoner and demi-human who uses demonic powers, is the newest addition to the party of the uptight priest Roni. Everyone expected the two to dislike each other and to have nothing to do with each other. But to their surprise, on their first day together as an adventuring party, they had a one-night stand...!",
     "type": "TV",
     "franchise": "Dark Summoner to Dekiteiru",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga"
     ],
@@ -260440,7 +260444,7 @@
       "Invocador Oscuro a Dekiteiru"
     ],
     "description_es": "Amona, una invocadora oscura y semihumana que usa poderes demoníacos, es la última incorporación al grupo del tenso sacerdote Roni. Todos esperaban que los dos no se agradaran y no tuvieran nada que ver el uno con el otro. Pero para su sorpresa, en su primer día juntos como grupo de aventureros, ¡tuvieron una aventura de una noche...!",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Mondays",
     "broadcast_time": "01:20",
     "broadcast_timezone": "Asia/Tokyo",
@@ -260469,7 +260473,7 @@
     "description": "When Lorna manifests a completely useless ability, she's labeled an embarrassment to her family and kicked out of the house. With no money or food, she's about to hit rock bottom. But then, she figures out how to use her supposedly worthless SSS-Rank skill, \"Internet.\" This cheat-level talent gives her the know-how to gather an unlimited amount of valuable items and easily acquire rare equipment. Armed with godlike knowledge, Lorna's free to do anything she wants! If only she could figure out what \"lmfao\" means...",
     "type": "TV",
     "franchise": "Sekai Saikyou no Majo, Hajimemashita",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -260495,7 +260499,7 @@
       "Sekai Saikyou no Majo, Hajimemashita"
     ],
     "description_es": "Cuando Lorna manifiesta una habilidad completamente inútil, la etiquetan como una vergüenza para su familia y la echan de la casa. Sin dinero ni comida, está a punto de tocar fondo. Pero luego, descubre cómo usar su habilidad de rango SSS supuestamente inútil, \"Internet\". Este talento de nivel trampa le brinda el conocimiento para reunir una cantidad ilimitada de artículos valiosos y adquirir fácilmente equipos raros. Armada con un conocimiento divino, ¡Lorna es libre de hacer lo que quiera! Si tan solo pudiera descubrir qué significa \"lmfao\"...",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Wednesdays",
     "broadcast_time": "22:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -263092,7 +263096,7 @@
     "title": "Kanojo no Tomodachi",
     "mal_id": 64131,
     "image": "https://myanimelist.net/images/anime/1868/157327l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -263108,7 +263112,7 @@
     "description": "Takeru Hidaka is an ambitious high school student aiming for medical school. He has just started dating his first girlfriend, Kaori Koga, and to everyone else, their relationship seems perfectly harmonious. However, that peace is threatened when Kaori's best friend, Tomoko Yoshioka, begins to flirt with and seduce Takeru. Caught between loyalty to his girlfriend and Tomoko's advances, Takeru falls into a double life and a complicated affair. Now, he must navigate a web of lies that puts both his academic future and his emotional connections at risk, all while the constant threat of his secret being exposed looms over him.",
     "type": "TV",
     "franchise": "Kanojo no Tomodachi",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga"
     ],
@@ -263132,13 +263136,13 @@
       "El amigo de mi novia"
     ],
     "description_es": "Takeru Hidaka es un ambicioso estudiante de secundaria que aspira a ingresar a la escuela de medicina. Acaba de empezar a salir con su primera novia, Kaori Koga, y para todos los demás, su relación parece perfectamente armoniosa. Sin embargo, esa paz se ve amenazada cuando la mejor amiga de Kaori, Tomoko Yoshioka, comienza a coquetear y seducir a Takeru. Atrapado entre la lealtad a su novia y los avances de Tomoko, Takeru cae en una doble vida y en una aventura complicada. Ahora, debe navegar por una red de mentiras que pone en riesgo tanto su futuro académico como sus conexiones emocionales, mientras la amenaza constante de que su secreto sea expuesto se cierne sobre él.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Mondays",
     "broadcast_time": "01:05",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Mondays at 01:05 (JST)",
     "aired_from": "2026-10-05",
-    "aired_to": ""
+    "aired_to": "2026-12-21"
   },
   {
     "title": "Hana no Akuta: Re;bloom PV",
@@ -263320,7 +263324,7 @@
     "description": "",
     "type": "TV",
     "franchise": "Battle Spirits [Re]",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Card game",
       "PG-13 - Teens 13 or older"
@@ -263344,7 +263348,13 @@
     "title_es_status": "kept",
     "search_titles_es": [
       "Espíritus de batalla [Re]: Zekkai no Kuu"
-    ]
+    ],
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Tuesdays",
+    "broadcast_time": "23:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Tuesdays at 23:00 (JST)",
+    "aired_from": "2026-10-06"
   },
   {
     "title": "Di Yi Xulie 2",
@@ -263913,7 +263923,7 @@
     "title": "PetitCure: Precure Fairies Season 3",
     "mal_id": 63773,
     "image": "https://myanimelist.net/images/anime/1909/156227l.jpg",
-    "episodes": null,
+    "episodes": 27,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -263928,7 +263938,7 @@
     "description": "Third season of PetitCure: Precure Fairies.",
     "type": "ONA",
     "franchise": "PetitCure",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Original",
       "G - All Ages"
@@ -263955,13 +263965,13 @@
       "PetitCure: Precure Hadas Temporada 3"
     ],
     "description_es": "Tercera temporada de PetitCure: Precure Fairies.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Thursdays",
     "broadcast_time": "18:30",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Thursdays at 18:30 (JST)",
     "aired_from": "2026-03-26",
-    "aired_to": ""
+    "aired_to": "2026-09-24"
   },
   {
     "title": "Tower Dungeon Manga PV",
@@ -265491,7 +265501,8 @@
     "search_titles_es": [
       "La montaña azul"
     ],
-    "description_es": "Después de ser confinado en el Hospital Mental de Qingshan, el talentoso joven Chen Ji mata al enemigo que mató a sus padres. Luego, accidentalmente, viaja en el tiempo al mundo antiguo y se convierte en aprendiz en la Clínica Médica de la Dinastía Ning. Involucrado en un caso que involucra al Servicio Secreto, se convierte en miembro no perteneciente al personal de la agencia, solo para descubrir que también es un espía de la nación enemiga. La historia gira en torno a esta doble identidad. Atrapado en la vorágine del poder, Chen Ji lucha en secreto por sobrevivir, utilizando el conocimiento moderno para deconstruir sistemas de cultivo espiritual y maniobrando para derribar el tablero de ajedrez. Al final, se transforma de peón a maestro, empuñando las montañas Qingshan como su espada y prometiendo destruir la hipocresía del cielo."
+    "description_es": "Después de ser confinado en el Hospital Mental de Qingshan, el talentoso joven Chen Ji mata al enemigo que mató a sus padres. Luego, accidentalmente, viaja en el tiempo al mundo antiguo y se convierte en aprendiz en la Clínica Médica de la Dinastía Ning. Involucrado en un caso que involucra al Servicio Secreto, se convierte en miembro no perteneciente al personal de la agencia, solo para descubrir que también es un espía de la nación enemiga. La historia gira en torno a esta doble identidad. Atrapado en la vorágine del poder, Chen Ji lucha en secreto por sobrevivir, utilizando el conocimiento moderno para deconstruir sistemas de cultivo espiritual y maniobrando para derribar el tablero de ajedrez. Al final, se transforma de peón a maestro, empuñando las montañas Qingshan como su espada y prometiendo destruir la hipocresía del cielo.",
+    "airing_status": "Not yet aired"
   },
   {
     "title": "Da Yu Hai Tang: Rong Song Chuan",
@@ -267783,7 +267794,8 @@
     "search_titles_es": [
       "Shenmi Fusu"
     ],
-    "description_es": "\"Mi nombre es Yang Jian, y cuando leas esto, estaré muerto\". El estudiante común Yang Jian se ve atrapado en una extraña invasión, adquiere un pergamino del futuro y un ojo misterioso, convirtiéndose en un portador de fantasmas. Yang Jian y sus compañeros escapan del campus, pero la crisis apenas comienza. En este mundo siniestro, el mundo humano es una prisión. El precio de mirar la oscuridad es la pérdida eterna en medio de un asombro sin fin."
+    "description_es": "\"Mi nombre es Yang Jian, y cuando leas esto, estaré muerto\". El estudiante común Yang Jian se ve atrapado en una extraña invasión, adquiere un pergamino del futuro y un ojo misterioso, convirtiéndose en un portador de fantasmas. Yang Jian y sus compañeros escapan del campus, pero la crisis apenas comienza. En este mundo siniestro, el mundo humano es una prisión. El precio de mirar la oscuridad es la pérdida eterna en medio de un asombro sin fin.",
+    "airing_status": "Not yet aired"
   },
   {
     "title": "Dadao Zhishang",
@@ -268372,7 +268384,7 @@
     "title": "Wangu Zhizun: Li Yunxiao Zhuan",
     "mal_id": 62954,
     "image": "https://myanimelist.net/images/anime/1068/153712l.jpg",
-    "episodes": null,
+    "episodes": 34,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -269694,7 +269706,7 @@
     "description": "The picture books center on a piece of bread that also steals bread from bakeries in the city.",
     "type": "",
     "franchise": "Pan Dorobou",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Picture book",
       "G - All Ages"
@@ -269720,7 +269732,7 @@
       "Pan Dorobou"
     ],
     "description_es": "Los libros ilustrados se centran en un trozo de pan que también roba pan en las panaderías de la ciudad.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "18:40",
     "broadcast_timezone": "Asia/Tokyo",
@@ -271031,7 +271043,7 @@
     "description": "",
     "type": "TV",
     "franchise": "Sirotan",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Unknown",
       "G - All Ages"
@@ -271054,11 +271066,11 @@
     "search_titles_es": [
       "Sirotán"
     ],
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Saturdays",
+    "broadcast_time": "16:29",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Saturdays at 16:29 (JST)",
     "aired_from": "2026-10-03",
     "aired_to": ""
   },
@@ -271358,7 +271370,7 @@
     "description": "Second season of Kizu darake Seijo yori Houfuku wo Komete.",
     "type": "TV",
     "franchise": "Kizu darake Seijo yori Houfuku wo Komete Season",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga",
       "PG-13 - Teens 13 or older"
@@ -271386,11 +271398,11 @@
       "Con venganza, sinceramente, tu santa rota temporada 2"
     ],
     "description_es": "Segunda temporada de Kizu darake Seijo yori Houfuku wo Komete.",
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
     "aired_from": "2026-10-02",
     "aired_to": ""
   },
@@ -272138,7 +272150,7 @@
     "title": "Yowaki Max Reijou nanoni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta",
     "mal_id": 62753,
     "image": "https://cdn.myanimelist.net/images/anime/1649/152609l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Shoujo",
     "genres": [
@@ -272153,7 +272165,7 @@
     "description": "I was reborn as a villainous daughter in a reverse harem otome game. After being sick with a high fever at the age of 10, Pia Rockwell suddenly remembered her past life as a university student in Japan. But far from going down the villainess route, all this super timid girl wants is to finally use her knowledge from when she was a grad student studying to get her doctorate in paleontology. Her ultimate goal is to become a commoner, excavate fossils, build a museum, and then become a curator. So in order to escape the villainess route and avoid being deported by her fiancé during the graduation ball, Pia decides to avoid the upcoming hurt and heartache and asks to break off her engagement to Rufus, the Prime Minister's son. But will her cunning fiancé let her go that easily?",
     "type": "TV",
     "franchise": "Yowaki Max Reijou nanoni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -272176,7 +272188,7 @@
       "Even Though I'm a Super Timid Noble Girl",
       "I Accepted the Bet From My Cunning Fiancé"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -272196,7 +272208,7 @@
     "title": "Tempal: Item no Chikara",
     "mal_id": 64340,
     "image": "https://cdn.myanimelist.net/images/anime/1382/158336l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -272267,7 +272279,7 @@
     "description": "Rein, an enchanter who strengthens equipment with his magic, is suddenly expelled from his guild, simply because every piece of gear in the guild has already been enhanced enough. Outraged by the absurd treatment, Rein decides to take back the enormous amount of mana he had poured into their equipment. When he casually channels it into a random copper sword, it transforms into a cheat-level weapon with 10,000 enhancement points! With zero combat experience but armed with magic that can turn anything into overpowered gear, this enchanter sets off to enjoy a new, carefree life as an adventurer!",
     "type": "TV",
     "franchise": "Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru. Ore wa Buki dake ja Naku, Arayuru Mono ni \"Kyouka Point\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -272293,7 +272305,7 @@
       "and I Can Unlock the Effect at Any Time of My Will",
       "But are the Rest Okay?"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Wednesdays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -272566,7 +272578,7 @@
     "description": "At the center of a continent made up of eight kingdoms lies the Kingdom of Marronnier. Leading the nation is the female general Baribara, who has seven sons, each with a personality all his own. Sleepy, benevolent, sensitive to heat, sensitive to cold, gifted with animals, proud of his swordsmanship, and always hungry—the brothers possess very different qualities, but they are united by a single goal: \"Someday, we'll rescue a princess in a cool way!\" Before long, the brothers set out for the seven neighboring kingdoms as ambassadors. What encounters, trials, and destinies await them in these unfamiliar lands? Set in a medieval-inspired fantasy world, this tale of romance and adventure begins.",
     "type": "TV",
     "franchise": "Marronnier Oukoku no Shichinin no Kishi",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -272584,11 +272596,11 @@
       "The Seven Knights of the Marronnier Kingdom",
       "マロニエ王国の七人の騎士"
     ],
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Saturdays",
+    "broadcast_time": "18:25",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Saturdays at 18:25 (JST)",
     "aired_from": "2026-10-03",
     "aired_to": "",
     "title_es": "Los siete caballeros del reino de Marronnier",
@@ -272617,7 +272629,7 @@
     "description": "Second part of Mahou no Shimai Lulutto Lilly.",
     "type": "TV",
     "franchise": "Mahou no Shimai Lulutto Lilly Part",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Original",
       "G - All Ages"
@@ -272636,7 +272648,7 @@
       "Magical Sisters Lulutto Lilly Part 2",
       "魔法の姉妹ルルットリリィ 第2クール"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "22:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -273105,7 +273117,7 @@
     "description": "Twenty years have passed since the combining robot Dandivine defeated the mysterious invaders known as the Aposdoll. With the threat gone, the world has enjoyed a long era of peace. But for toy manufacturer Casga, whose fortunes were built on the popularity of Dandivine merchandise, that peace has come at a cost. Having relied too heavily on the legendary robot's fame, the company has steadily fallen into decline. Desperate to revive both Dandivine and his struggling business, Casga's president, Genjurou Shijima, dreams of the robot's return—even if it means disrupting the peace. Then, as if in answer to his wish, the Aposdolls suddenly reappear in Tokyo. As panic spreads among a population that has known nothing but peace for two decades, high school student Gekiha Shijima is recruited by his uncle, Yuusaku Kuroiwa, the former main pilot of Dandivine. Drawn into the cockpit of the legendary machine, Gekiha finds himself at the center of a new battle. Why have the Aposdolls returned after all these years? And can Dandivine rise once again to face the threat? A new chapter in the fight for humanity is about to begin.",
     "type": "TV",
     "franchise": "Juuou Mujin Dandivine",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Original"
     ],
@@ -273125,7 +273137,7 @@
       "獣王武神ダンデヴァイン",
       "Beast King War God Dandivine"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Thursdays",
     "broadcast_time": "00:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -274856,7 +274868,7 @@
     "description": "Gakken's hugely popular illustrated encyclopedia series, which everyone can enjoy with its laid-back four-panel comics, is finally being adapted into a TV anime! Discover surprising aspects and fun facts about living creatures—full of secrets that will make you say, \"Wow!\" Enjoy this new kind of anime that makes even scary things fun and easy to watch, with its cute art style.",
     "type": "TV",
     "franchise": "Yuruyuru Zukan",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Picture book"
     ],
@@ -274878,7 +274890,13 @@
     "search_titles_es": [
       "Yuruyuru Zukan"
     ],
-    "description_es": "¡La muy popular serie de enciclopedia ilustrada de Gakken, que todos pueden disfrutar con sus relajados cómics de cuatro paneles, finalmente se está adaptando a un anime para televisión! Descubre aspectos sorprendentes y datos curiosos sobre los seres vivos, llenos de secretos que te harán decir \"¡Guau!\" Disfruta de este nuevo tipo de anime que hace que incluso las cosas aterradoras sean divertidas y fáciles de ver, con su lindo estilo artístico."
+    "description_es": "¡La muy popular serie de enciclopedia ilustrada de Gakken, que todos pueden disfrutar con sus relajados cómics de cuatro paneles, finalmente se está adaptando a un anime para televisión! Descubre aspectos sorprendentes y datos curiosos sobre los seres vivos, llenos de secretos que te harán decir \"¡Guau!\" Disfruta de este nuevo tipo de anime que hace que incluso las cosas aterradoras sean divertidas y fáciles de ver, con su lindo estilo artístico.",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "07:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 07:00 (JST)",
+    "aired_from": "2026-10-04"
   },
   {
     "title": "Abyss in the World",
@@ -275646,7 +275664,7 @@
     "description": "The landlord finds a ring that can control yokai and proceeds to use it on a beautiful snow woman living in one of the apartments!",
     "type": "TV",
     "franchise": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "OTHER"
     ],
@@ -275664,7 +275682,7 @@
       "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
       "The Shy Snow Woman and the Cursed Ring"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "title_es": "Hitozukiai ga Nigate na Miboujin no Yukionna-san a Noroi no Yubiwa",
     "title_es_reviewed": false,
     "title_es_source": "title",
@@ -275673,7 +275691,11 @@
       "Hitozukiai ga Nigate na Miboujin no Yukionna-san a Noroi no Yubiwa"
     ],
     "description_es": "¡El propietario encuentra un anillo que puede controlar yokai y procede a usarlo con una hermosa mujer de las nieves que vive en uno de los apartamentos!",
-    "aired_from": "2026-10-04"
+    "aired_from": "2026-10-05",
+    "broadcast_day": "Mondays",
+    "broadcast_time": "01:05",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Mondays at 01:05 (JST)"
   },
   {
     "title": "Diamond no Ace act II: Second Season Part 2",
@@ -275744,7 +275766,7 @@
     "description": "Mizunoe Ume just wanted to avoid repeating a grade when he joined the student council. After all, it seemed like an easy fix to his current academic problems. But then, he met his fellow council members. Each of them is eccentric in their own way-one's an airhead, another's scary, one's secretly a pervert, but all in all, they're just really weird! Yet somehow, they're also oddly cute and endearing. Which means Mizunoe is stuck with them and all the chaos they bring to the table.",
     "type": "TV",
     "franchise": "Seitokai ni mo Ana wa Aru!",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "MANGA"
     ],
@@ -275769,7 +275791,7 @@
       "生穴る",
       "NamaAnaru"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "title_es": "Seitokai ni mo Ana wa Aru!",
     "title_es_reviewed": false,
     "title_es_source": "title",
@@ -372273,7 +372295,7 @@
     "title": "Kusuriya no Hitorigoto 3rd Season Part 2",
     "mal_id": 62841,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200927-IXFYyIb728bM.png",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -400499,7 +400521,7 @@
     "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
     "mal_id": 63381,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206774-s1a2BAAifoUD.png",
-    "episodes": null,
+    "episodes": 8,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -400516,8 +400538,8 @@
     "description": "What if you could control reality with a mouse cursor? One day during class, Takumi— an otaku — notices his mouse cursor has sprung out of the screen. Panicked, he asks his childhood friend Mone, sitting next to him, to take a look, only to be brushed off... Once Takumi realizes he could actually control it himself, he uses the mouse cursor— visible only to him— to slip it in between Mone's clothes and starts clicking away... Here's Japan’s (probably) first new genre of romcom, \"Clicking Away at a Gyaru Who's Mean to Otakus with a Mouse Cursor\"! Note: Episode 1 receives an advanced distribution on AnimeFesta on September 11th, 2026. The start date reflects the start of the regular series broadcasting.",
     "type": "TV",
     "franchise": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
-    "ongoing": false,
-    "airing_status": "Not yet aired",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
     "aired_from": "2026-10-05",
     "aired_to": null,
     "broadcast_day": "Mondays",
@@ -401307,8 +401329,8 @@
     "description": "The third season of Dawang Raoming .",
     "type": "ONA",
     "franchise": "Dawang Raoming",
-    "ongoing": false,
-    "airing_status": "Not yet aired",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
     "aired_from": "2026-10-03",
     "aired_to": "",
     "broadcast_day": "Saturdays",
@@ -402778,7 +402800,7 @@
     "title_es": "Entrega Gatito Unyan",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Entrega Gatito Unyan"
     ],
@@ -402833,7 +402855,7 @@
     "title_es": "Shen Yin Wangzuo: Sheng Babie Zhi Zhan",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Shen Yin Wangzuo: Sheng Babie Zhi Zhan"
     ]
@@ -402890,7 +402912,7 @@
     "title_es": "Kore Kaite Shine 2da temporada",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Kore Kaite Shine 2da temporada"
     ],
@@ -402953,7 +402975,7 @@
     "title_es": "Mushoku Tensei III: Isekai Ittara Honki Dasu Parte 2",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Mushoku Tensei III: Isekai Ittara Honki Dasu Parte 2"
     ],
@@ -403010,10 +403032,1071 @@
     "title_es": "Seirei Gensouki 3",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "translated",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Seirei Gensouki 3"
     ],
     "description_es": "La tercera temporada de Seirei Gensouki."
+  },
+  {
+    "title": "Pop Pap Polters",
+    "mal_id": 64211,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b217787-NHLlgGiqy59P.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Slice of Life"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2026,
+    "description": "",
+    "type": "TV",
+    "franchise": "Pop Pap Polters",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-10-04",
+    "aired_to": null,
+    "broadcast_day": "Sundays",
+    "broadcast_time": "10:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 10:00 (JST)",
+    "source_tags_original": [
+      "ORIGINAL"
+    ],
+    "themes": [
+      "Stop Motion"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ポップパップポルターズ",
+    "title_synonyms": [],
+    "search_titles": [
+      "Pop Pap Polters",
+      "ポップパップポルターズ"
+    ],
+    "title_es": "Pop Pap Polters",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Pop Pap Polters"
+    ]
+  },
+  {
+    "title": "PetitCure: Precure Fairies Season 4",
+    "mal_id": 65095,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217624-Cwkze5dZ5txL.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2026,
+    "description": "Fourth season of PetitCure: Precure Fairies.",
+    "type": "ONA",
+    "franchise": "PetitCure",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-10-01",
+    "aired_to": null,
+    "broadcast_day": "Thursdays",
+    "broadcast_time": "18:30",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Thursdays at 18:30 (JST)",
+    "source_tags_original": [
+      "ORIGINAL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ぷちきゅあ～Precure Fairies～ シーズン4",
+    "title_synonyms": [],
+    "search_titles": [
+      "PetitCure: Precure Fairies Season 4",
+      "ぷちきゅあ～Precure Fairies～ シーズン4"
+    ],
+    "title_es": "PetitCure: Precure Fairies Season 4",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "PetitCure: Precure Fairies Season 4"
+    ],
+    "description_es": "Cuarta temporada de PetitCure: Precure Fairies."
+  },
+  {
+    "title": "Shin no Seijo de aru Watashi wa Tsuihou Saremashita. Dakara Kono Kuni wa Mou Owari desu",
+    "mal_id": 64665,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214461-BoVsaagZiyLJ.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Romance"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": true,
+    "popular": true,
+    "year": 2027,
+    "description": "“You are not the real saint, you’re nothing but a fake—!!!” I, Eliane, am suddenly exiled. Not only that, my engagement was also annulled by Claude, who was both my fiancé and the first prince of my country. Claude claims that Leticia is the ‘real saint’, but I know from the beginning, she is the woman he has been cheating on me with. So here I am, sharing his wish to cancel our engagement. But, is exiling me truly a wise decision, I wonder? Exiling this me, the actual ‘real saint’ who has been setting up barriers and supporting this kingdom from shadows? Maybe, just maybe, dragons and archdemons will invade my kingdom starting from tomorrow. Who knows— —not like it’s any of my business anymore. I have abandoned my own country and have thus decided to have a peaceful life. Meanwhile, the kingdom, which has lost its true saint, is on the path to ruin.",
+    "type": "TV",
+    "franchise": "Shin no Seijo de aru Watashi wa Tsuihou Saremashita. Dakara Kono Kuni wa Mou Owari desu",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "LIGHT_NOVEL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "真の聖女である私は追放されました。だからこの国はもう終わりです",
+    "title_synonyms": [
+      "Because I, the True Saint, was Banished, that Country is Done For!"
+    ],
+    "search_titles": [
+      "Shin no Seijo de aru Watashi wa Tsuihou Saremashita. Dakara Kono Kuni wa Mou Owari desu",
+      "真の聖女である私は追放されました。だからこの国はもう終わりです",
+      "Because I, the True Saint, was Banished, that Country is Done For!"
+    ],
+    "title_es": "Shin no Seijo de aru Watashi wa Tsuihou Saremashita. Dakara Kono Kuni wa Mou Owari desu",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Shin no Seijo de aru Watashi wa Tsuihou Saremashita. Dakara Kono Kuni wa Mou Owari desu"
+    ],
+    "description_es": "«No eres la verdadera santa, no eres más que una impostora». Eliane es desterrada de repente y Claude, su prometido y primer príncipe del reino, anula su compromiso. Él asegura que Leticia es la auténtica santa, aunque Eliane sabe que también es la mujer con la que la ha estado engañando. Eliane acepta marcharse, pero se pregunta si expulsar a quien realmente levantaba las barreras y protegía al reino ha sido una decisión sensata. Ya libre de su país, decide buscar una vida tranquila mientras el reino que ha perdido a su verdadera santa avanza hacia la ruina."
+  },
+  {
+    "title": "Otome Game no Heroine de Saikyou Survival",
+    "mal_id": 60739,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186057-ZgfJFfmaqBpt.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": false,
+    "year": 2027,
+    "description": "Orphaned by a monster attack on her village, young Alicia spends three horrid years in an orphanage before finally running away. When she flees, however, Alicia has a violent encounter with an older woman hell-bent on killing her. During their tussle, she comes into contact with a strange crystal that bestows upon her a wealth of knowledge, transforming her from an innocent child into a cool and calculated planner. Now aware that she was meant to be the protagonist of an otome game and disgusted with her supposed fate, Alicia decides to take matters into her own hands and become strong—by any means necessary. Using her newfound knowledge, and with some help from a stranger she meets in the woods, she learns to survive by herself in a world far too harsh and unforgiving for a girl her age. Ready or not, she’s determined to carve her own path.",
+    "type": "",
+    "franchise": "Otome Game no Heroine de Saikyou Survival",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "LIGHT_NOVEL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "乙女ゲームのヒロインで最強サバイバル",
+    "title_synonyms": [
+      "The Otome Heroine's Fight for Survival"
+    ],
+    "search_titles": [
+      "Otome Game no Heroine de Saikyou Survival",
+      "乙女ゲームのヒロインで最強サバイバル",
+      "The Otome Heroine's Fight for Survival"
+    ],
+    "title_es": "Otome Game no Heroine de Saikyou Survival",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Otome Game no Heroine de Saikyou Survival"
+    ],
+    "description_es": "Tras quedar huérfana por el ataque de un monstruo a su aldea, la joven Alicia pasa tres años terribles en un orfanato antes de escapar. Durante la huida se enfrenta a una mujer decidida a matarla y entra en contacto con un extraño cristal que le transmite una enorme cantidad de conocimientos. La experiencia la transforma en una muchacha fría y calculadora. Al descubrir que estaba destinada a ser la protagonista de un juego otome, Alicia rechaza ese futuro y decide hacerse fuerte por cualquier medio. Con sus nuevos conocimientos y la ayuda de un desconocido del bosque, aprende a sobrevivir sola en un mundo demasiado cruel para alguien de su edad y se propone abrir su propio camino."
+  },
+  {
+    "title": "Houkago Kitaku Biyori",
+    "mal_id": 61199,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187918-LFFlYD1rMutc.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": false,
+    "year": 2027,
+    "description": "During his time in middle school, Shun was a well-known soccer player, but an injury sidelined him, making it impossible not only to play soccer but also to engage in any physical activity. Upon entering high school, he grew weary of continually turning down invitations to various clubs. Frustrated, he absentmindedly expressed his desire to just go home one day. Hearing this, a girl named Naoki invited him to join the \"Hyper Go-Home Club\". They ended up gradually walking home together, and the romantic comedy unfolds.",
+    "type": "TV",
+    "franchise": "Houkago Kitaku Biyori",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Iyashikei",
+      "School"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "放課後帰宅びより",
+    "title_synonyms": [
+      "Journey Home After School"
+    ],
+    "search_titles": [
+      "Houkago Kitaku Biyori",
+      "放課後帰宅びより",
+      "Journey Home After School"
+    ],
+    "title_es": "Houkago Kitaku Biyori",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Houkago Kitaku Biyori"
+    ],
+    "description_es": "Durante la secundaria, Shun fue un conocido futbolista, pero una lesión lo apartó del deporte y le impidió realizar cualquier actividad física. Al comenzar el instituto se cansó de rechazar continuamente invitaciones para unirse a distintos clubes y, frustrado, comentó distraídamente que solo quería volver a casa. Al oírlo, una chica llamada Naoki lo invitó al «Club de Volver a Casa Híper». Poco a poco empiezan a regresar juntos y así comienza esta comedia romántica."
+  },
+  {
+    "title": "Biblia Koshodou no Jiken Techou",
+    "mal_id": 63997,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98476-humj2ScdtAj3.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": true,
+    "popular": false,
+    "year": 2027,
+    "description": "Biblia Koshodou no Jiken Techou is a mystery series where Shinokawa Shioriko, a young owner of a bookstore in Kamakura, unravel mysteries of ancient books that are taken there. The story begins with a young man named Daisuke, who grew up practically without reading books due to a \"phobia,\" brings the complete (and autographed) works of Natsume Soseki, Japanese writer of the Meiji era, inherited from his grandmother in the mysterious bookstore. Will the shy and introvert Shioriko solve the mystery of the books?",
+    "type": "TV",
+    "franchise": "Biblia Koshodou no Jiken Techou",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ビブリア古書堂の事件手帖",
+    "title_synonyms": [
+      "The Case Files of Biblia Bookstore"
+    ],
+    "search_titles": [
+      "Biblia Koshodou no Jiken Techou",
+      "ビブリア古書堂の事件手帖",
+      "The Case Files of Biblia Bookstore"
+    ],
+    "title_es": "Biblia Koshodou no Jiken Techou",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Biblia Koshodou no Jiken Techou"
+    ],
+    "description_es": "Biblia Koshodou no Jiken Techou es una serie de misterio protagonizada por Shinokawa Shioriko, la joven propietaria de una librería de Kamakura que resuelve los enigmas escondidos en los libros antiguos que llegan al establecimiento. La historia comienza cuando Daisuke, un joven que apenas ha leído debido a su fobia a los libros, lleva a la misteriosa librería una colección completa y autografiada de las obras del escritor de la era Meiji Natsume Soseki, heredada de su abuela. ¿Conseguirá la tímida e introvertida Shioriko descubrir el secreto de esos volúmenes?"
+  },
+  {
+    "title": "Battle Spirits: Shounen Toppa Bashin",
+    "mal_id": 5082,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5082-TPZqtEmnSqSx.jpg",
+    "episodes": 50,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Slice of Life"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": true,
+    "popular": true,
+    "year": 2008,
+    "description": "Meet Toppa Bassin, a hero sixth-grader's favorite trading card. Bassin Kadobatora got a special ability. The legend is a rumor at school Reakado X. Bassin actually know that there are rivals with the pyroxene in the same way, the X over the Reakado, intense card battle we protest. Stocked all the time Reakado X, say the battle to achieve the strongest and legendary champion. The ultimate battle and win the world champion's best put to everyone.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2008-09-07",
+    "aired_to": "2009-09-06",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle",
+      "School"
+    ],
+    "score": 5.9,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ 少年突破バシン",
+    "title_synonyms": [
+      "Battle Spirits: Shonen Toppa Version",
+      "Shounen Toppa Bashin"
+    ],
+    "search_titles": [
+      "Battle Spirits: Shounen Toppa Bashin",
+      "バトルスピリッツ 少年突破バシン",
+      "Battle Spirits: Shonen Toppa Version",
+      "Shounen Toppa Bashin"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Shounen Toppa Bashin",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Shounen Toppa Bashin"
+    ],
+    "description_es": "Toppa Bashin es un estudiante de sexto curso apasionado por el juego de cartas Battle Spirits. Gracias a una habilidad especial se adentra en el mundo de las codiciadas cartas X-Rare y descubre que otros rivales poseen poderes semejantes. Bashin deberá superar intensos duelos, reunir cartas cada vez más poderosas y abrirse camino hasta convertirse en un campeón legendario."
+  },
+  {
+    "title": "Battle Spirits: Shounen Gekiha Dan",
+    "mal_id": 6901,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6901-DCQE7Lzhrvhy.png",
+    "episodes": 50,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": false,
+    "year": 2009,
+    "description": "Dan Bashin is a spirited teenager known for his aggressive playstyle in the card game Battle Spirits, earning him the title of \"Clash King.\" One day, a mysterious green-haired girl transports him to the otherworldly land of \"Grand Rolo,\" where disputes are settled by card duels. Upon his arrival, Dan is immediately thrust into a conflict between the kingdom's imperial army and its oppressed natives. There, he learns that he is a prophetic warrior known as a \"bearer of cores' light,\" chosen to save the land from its evil king. Accompanied by a young boy named Zungurii and the eccentric witch Magisa, Dan travels across Grand Rolo and encounters the other chosen warriors through card battles. With the name of the Clash King gaining fame throughout Grand Rolo, secrets that lurk within the shadows of the kingdom's colonial past begin to surface. Only time will tell if Dan's campaign will affect the world on a scale much larger than he ever could have imagined.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2009-09-13",
+    "aired_to": "2010-09-05",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle"
+    ],
+    "score": 6.7,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ 少年激覇ダン",
+    "title_synonyms": [],
+    "search_titles": [
+      "Battle Spirits: Shounen Gekiha Dan",
+      "バトルスピリッツ 少年激覇ダン"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Shounen Gekiha Dan",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Shounen Gekiha Dan"
+    ],
+    "description_es": "Dan Bashin es un adolescente enérgico conocido como el «Rey del Choque» por su agresivo estilo en el juego de cartas Battle Spirits. Un día, una misteriosa chica de cabello verde lo transporta a Grand Rolo, un mundo donde los conflictos se resuelven mediante duelos de cartas. Nada más llegar queda atrapado en la lucha entre el ejército imperial y los habitantes oprimidos. Allí descubre que es uno de los guerreros profetizados, un portador de la luz de los núcleos destinado a salvar la tierra de su malvado rey. Junto al joven Zungurii y la excéntrica bruja Magisa, Dan recorre Grand Rolo, conoce a otros elegidos y desvela los secretos ocultos tras el pasado colonial del reino."
+  },
+  {
+    "title": "Battle Spirits: Brave",
+    "mal_id": 9346,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9346-JM5x2yIXjqtM.png",
+    "episodes": 50,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": false,
+    "year": 2010,
+    "description": "Dan wishes to have exciting battles like in Grand Rolo again. He gets his chance when Mai invites him to the future, where the humans are being conquered by demons. There, he joins the crew of The Beautiful Sophia, and creates a deck based upon the newest type of cards, Brave.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2010-09-12",
+    "aired_to": "2011-09-11",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle"
+    ],
+    "score": 6.6,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ ブレイヴ",
+    "title_synonyms": [
+      "Battlespirits: Brave"
+    ],
+    "search_titles": [
+      "Battle Spirits: Brave",
+      "バトルスピリッツ ブレイヴ",
+      "Battlespirits: Brave"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Brave",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Brave"
+    ],
+    "description_es": "Dan desea volver a vivir combates tan emocionantes como los de Grand Rolo. Su oportunidad llega cuando Mai lo invita a viajar al futuro, una época en la que los demonios están conquistando a la humanidad. Allí se une a la tripulación de la Beautiful Sophia y crea una baraja basada en el nuevo tipo de cartas Brave."
+  },
+  {
+    "title": "Battle Spirits: Heroes",
+    "mal_id": 11017,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11017-DPHTLtFvyDeN.jpg",
+    "episodes": 50,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Action"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2011,
+    "description": "An anime project adapted from an original trading card game, in which cards represent dragons, demons, birds, insects, and other spirits that the players can control in battles.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2011-09-18",
+    "aired_to": "2012-09-02",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle"
+    ],
+    "score": 6.1,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ 覇王（ヒーローズ）",
+    "title_synonyms": [
+      "Battle Spirits: Haou",
+      "Battlespirits Heroes"
+    ],
+    "search_titles": [
+      "Battle Spirits: Heroes",
+      "バトルスピリッツ 覇王（ヒーローズ）",
+      "Battle Spirits: Haou",
+      "Battlespirits Heroes"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Heroes",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Heroes"
+    ],
+    "description_es": "Proyecto de anime adaptado de un juego de cartas original en el que las cartas representan dragones, demonios, aves, insectos y otros espíritus que los jugadores pueden controlar durante los combates."
+  },
+  {
+    "title": "Battle Spirits: Sword Eyes",
+    "mal_id": 14913,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14913-0loTaP0agXoa.jpg",
+    "episodes": 29,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2012,
+    "description": "The story is set 14 years after Atlantia, the largest country in the world of Legendia, was torn apart by riots. The protagonist Tsurugi Tatewaki was secreted away from the chaos at a young age. Oblivious to his true birthplace, Tsurugi grows up as a spirited boy in the neighboring rocky land of Pacifis. One day, Tsurugi suddenly comes across the \"Shining Sword,\" and his great adventure begin. An army of darkness is hunting down the 12 Sword Braves, and as the army pursues Tsurugi, a figure appears before him. Bringer is a Card Battle Droid entrusted with the duty of protecting Tsurugi. Trained by Bringer in the ways of the Battle Spirits combat, Tsurugi joins the other Sword Braves in rising up against the army of darkness with his Key Spirit \"Shining Dragon.\"",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2012-09-09",
+    "aired_to": "2013-03-31",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Male Protagonist",
+      "Card Battle"
+    ],
+    "score": 6.3,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ ソードアイズ",
+    "title_synonyms": [],
+    "search_titles": [
+      "Battle Spirits: Sword Eyes",
+      "バトルスピリッツ ソードアイズ"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Sword Eyes",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Sword Eyes"
+    ],
+    "description_es": "La historia transcurre catorce años después de que Atlantia, el país más grande de Legendia, quedara devastado por los disturbios. Tsurugi Tatewaki fue apartado del caos cuando era pequeño y creció como un muchacho enérgico en la rocosa región vecina de Pacifis, sin conocer su verdadero lugar de nacimiento. Un día encuentra de forma inesperada la «Espada Brillante» y comienza su gran aventura. Un ejército de la oscuridad persigue a los doce Sword Braves y también a Tsurugi, pero Bringer, un androide de combate de cartas encargado de protegerlo, aparece ante él. Entrenado por Bringer en Battle Spirits, Tsurugi se une a los demás Sword Braves para enfrentarse al ejército oscuro con su espíritu clave, Shining Dragon."
+  },
+  {
+    "title": "Battle Spirits: Saikyou Ginga Ultimate Zero",
+    "mal_id": 19825,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19825-tYWnHBZlqCzY.jpg",
+    "episodes": 49,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2013,
+    "description": "Saikyou Ginga Ultimate Zero: Battle Spirits is an anime inspired by Bandai's Battle Spirits trading card game and produced by Sunrise. It is not related to any previous Battle Spirits anime work. Rei is an adventurer called a \"Card Quester.\" He wishes to collect strong cards scattered throughout space, and a battle with his rivals unfold.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2013-09-22",
+    "aired_to": "2014-09-21",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle",
+      "Space",
+      "Henshin"
+    ],
+    "score": 6.1,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "Battle Spirits: Strongest Galaxy Ultimate Zero",
+    "title_japanese": "最強銀河 究極[アルティメット]ゼロ~バトルスピリッツ~",
+    "title_synonyms": [
+      "The Greatest Galaxy Ultimate Zero -Battle Spirits-"
+    ],
+    "search_titles": [
+      "Battle Spirits: Saikyou Ginga Ultimate Zero",
+      "Battle Spirits: Strongest Galaxy Ultimate Zero",
+      "最強銀河 究極[アルティメット]ゼロ~バトルスピリッツ~",
+      "The Greatest Galaxy Ultimate Zero -Battle Spirits-"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Strongest Galaxy Ultimate Zero",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Strongest Galaxy Ultimate Zero"
+    ],
+    "description_es": "Saikyou Ginga Ultimate Zero: Battle Spirits es un anime inspirado en el juego de cartas Battle Spirits de Bandai y producido por Sunrise. Su historia no está relacionada con las anteriores series de la franquicia. Rei es un aventurero conocido como «Card Quester» que recorre el espacio en busca de cartas poderosas mientras se enfrenta a sus rivales."
+  },
+  {
+    "title": "Battle Spirits: Sword Eyes Gekitouden",
+    "mal_id": 19877,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/19877.jpg",
+    "episodes": 21,
+    "length": "medio",
+    "demographic": "",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2013,
+    "description": "The continuation of Battle Spirits Sword Eyes.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2013-04-07",
+    "aired_to": "2013-09-08",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle"
+    ],
+    "score": 6.2,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "Battle Spirits: Sword Eyes Fierce Battle Legend",
+    "title_japanese": "バトルスピリッツ ソードアイズ激闘伝",
+    "title_synonyms": [],
+    "search_titles": [
+      "Battle Spirits: Sword Eyes Gekitouden",
+      "Battle Spirits: Sword Eyes Fierce Battle Legend",
+      "バトルスピリッツ ソードアイズ激闘伝"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Sword Eyes Fierce Battle Legend",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Sword Eyes Fierce Battle Legend"
+    ],
+    "description_es": "Continuación de Battle Spirits: Sword Eyes."
+  },
+  {
+    "title": "Battle Spirits: Burning Soul",
+    "mal_id": 27737,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21020-NTBIpthsCJ5k.jpg",
+    "episodes": 51,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Action"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2015,
+    "description": "In the near future, a battle card game called \"Battle Spirits\" has gained enormous popularity. Players of the game -- known as \"Battlers\" -- start duelings everywhere using their color-coded cards with different attributes, creating a \"Sengoku (Warring States) period\" for the game.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2015-04-01",
+    "aired_to": "2016-03-30",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Kids",
+      "Card Battle"
+    ],
+    "score": 6.0,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ 烈火魂",
+    "title_synonyms": [
+      "バトルスピリッツバーニングソウル"
+    ],
+    "search_titles": [
+      "Battle Spirits: Burning Soul",
+      "バトルスピリッツ 烈火魂",
+      "バトルスピリッツバーニングソウル"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Burning Soul",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Burning Soul"
+    ],
+    "description_es": "En un futuro cercano, el juego de cartas Battle Spirits ha alcanzado una enorme popularidad. Sus jugadores, conocidos como «Battlers», disputan duelos por todas partes empleando cartas de distintos colores y atributos, hasta dar lugar a una auténtica era Sengoku, o periodo de los Estados Combatientes, dentro del juego."
+  },
+  {
+    "title": "Battle Spirits: Double Drive",
+    "mal_id": 32670,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21635-aZCTEl0HhzUZ.jpg",
+    "episodes": 51,
+    "length": "largo",
+    "demographic": "",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2016,
+    "description": "Shunta Mogami loves the Battle Spirits game. One day he is transported by a light from a Battle Spirits card to Spirits World, the origin of all Battle Spirits. He meets a girl named Eto, who claims to have summoned him to Spirits World in order to prevent its destruction at the hands of the revived Evil God-King, who once plotted the destruction of Spirits World before being defeated and sealed away. Together with the confident, green-deck-wielding Yoku Albatrosa, who also came from another world, Shunta sets out to find the twelve God-Kings whose power originally sealed the Evil God-King.",
+    "type": "TV",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2016-04-06",
+    "aired_to": "2017-03-29",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Kids",
+      "Card Battle"
+    ],
+    "score": 4.8,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ ダブルドライブ",
+    "title_synonyms": [],
+    "search_titles": [
+      "Battle Spirits: Double Drive",
+      "バトルスピリッツ ダブルドライブ"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Double Drive",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Double Drive"
+    ],
+    "description_es": "Shunta Mogami adora el juego Battle Spirits. Un día, la luz de una de sus cartas lo transporta al Mundo de los Espíritus, lugar de origen de Battle Spirits. Allí conoce a Eto, una chica que afirma haberlo invocado para impedir que el revivido Rey Dios Maligno destruya ese mundo. Junto a Yoku Albatrosa, un seguro jugador de baraja verde que también procede de otro mundo, Shunta parte en busca de los doce Reyes Dios cuyo poder logró sellar originalmente al enemigo."
+  },
+  {
+    "title": "LIAR GAME 2nd Season",
+    "mal_id": 65083,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217460-gM4hkk1jV5ER.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Drama",
+      "Psychological"
+    ],
+    "tone": "oscuro",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": true,
+    "popular": false,
+    "year": null,
+    "description": "The second season of LIAR GAME .",
+    "type": "TV",
+    "franchise": "LIAR GAME",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": "",
+    "aired_to": "",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Gambling",
+      "Female Protagonist",
+      "Seinen"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "LIAR GAME 第2期",
+    "title_synonyms": [
+      "ライアーゲーム 2",
+      "LIAR GAME Season 2"
+    ],
+    "search_titles": [
+      "LIAR GAME 2nd Season",
+      "LIAR GAME 第2期",
+      "ライアーゲーム 2",
+      "LIAR GAME Season 2"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "LIAR GAME 2nd Season",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "LIAR GAME 2nd Season"
+    ],
+    "description_es": "Segunda temporada de LIAR GAME."
+  },
+  {
+    "title": "Battle Spirits: Saga Brave",
+    "mal_id": 38916,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx111121-Euqj0r007tSF.jpg",
+    "episodes": 3,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Action"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2019,
+    "description": "The 9th installment of the Battle Spirits franchise The year is 2661 CE, ten years after Bashin Dan heroically became the trigger to stop the Earth's reset. On the anniversary of this sacrifice, Barone and Clackey hold a conference, celebrating the union of Mazoku and humanity, and also Dan's feats. However, beneath that peace, an organization named Cardinal Sign advocates for the subjugation of Mazoku and human supremacy. They resort to terrorist attacks, violence, and have somehow obtained the 12 Zodiac X-Rares which ought to have vanished together with Dan. Amidst all this chaos, the core bearers feel a weird sensation, one they recognize before. What could be the meaning of it, and what is the meaning behind the card that appeared within their decks, named \"The Clash King's Miracle\"?",
+    "type": "ONA",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2019-06-14",
+    "aired_to": "2020-01-24",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle",
+      "Kids"
+    ],
+    "score": 6.4,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ サーガブレイヴ",
+    "title_synonyms": [],
+    "search_titles": [
+      "Battle Spirits: Saga Brave",
+      "バトルスピリッツ サーガブレイヴ"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Saga Brave",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Saga Brave"
+    ],
+    "description_es": "Novena entrega de la franquicia Battle Spirits. En el año 2661, diez años después de que Bashin Dan se sacrificara para detener el reinicio de la Tierra, Barone y Clackey celebran una conferencia para conmemorar la unión entre los Mazoku y la humanidad. Bajo esa aparente paz, la organización Cardinal Sign defiende la supremacía humana y la sumisión de los Mazoku mediante atentados y violencia. Además, ha conseguido las doce Zodiac X-Rares, que deberían haber desaparecido junto a Dan. En medio del caos, los portadores de núcleos vuelven a sentir una presencia conocida y encuentran en sus barajas una carta llamada «El milagro del Rey del Choque»."
+  },
+  {
+    "title": "Battle Spirits: Kakumei no Gallet",
+    "mal_id": 41137,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114943-5arViLxJRtL7.jpg",
+    "episodes": 5,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2020,
+    "description": "Centuries after the events of Saga Brave, a third race called the Mauve has emerged alongside Humans and Mazoku. Identified by their purple blood and immense intelligence, the Mauve are shunned by the other two races and are viewed as a threat to the peace of the world. Having experienced this prejudice first-hand, a teenage Mauve named Galette Revolt journeys forth to find a way for all races to understand each other by playing Battle Spirits. However, other factions from each race aim to maintain the peace/reform the world through more nefarious ways...",
+    "type": "ONA",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2020-08-28",
+    "aired_to": "2021-04-23",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle"
+    ],
+    "score": 5.5,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツ 赫盟のガレット",
+    "title_synonyms": [],
+    "search_titles": [
+      "Battle Spirits: Kakumei no Gallet",
+      "バトルスピリッツ 赫盟のガレット"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Kakumei no Gallet",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Battle Spirits: Kakumei no Gallet"
+    ],
+    "description_es": "Siglos después de los acontecimientos de Saga Brave, una tercera raza llamada Mauve ha surgido junto a humanos y Mazoku. Identificados por su sangre púrpura y su enorme inteligencia, los Mauve son rechazados por las otras dos razas y considerados una amenaza para la paz mundial. Tras sufrir esa discriminación, el adolescente Mauve Galette Revolt inicia un viaje para encontrar una forma de que todas las razas se comprendan mediante Battle Spirits. Sin embargo, distintas facciones pretenden preservar la paz o reformar el mundo recurriendo a métodos mucho más siniestros."
+  },
+  {
+    "title": "Battle Spirits: Mirage",
+    "mal_id": 48810,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132893-7qCP15oM5gam.jpg",
+    "episodes": 4,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2021,
+    "description": "",
+    "type": "ONA",
+    "franchise": "Battle Spirits",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2021-10-29",
+    "aired_to": "2022-04-01",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [
+      "Card Battle"
+    ],
+    "score": 5.4,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "バトルスピリッツミラージュ",
+    "title_synonyms": [],
+    "search_titles": [
+      "Battle Spirits: Mirage",
+      "バトルスピリッツミラージュ"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Battle Spirits: Mirage",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "fallback",
+    "search_titles_es": [
+      "Battle Spirits: Mirage"
+    ]
   }
 ]

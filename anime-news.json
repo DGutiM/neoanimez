@@ -2,64 +2,78 @@
   "month": "2026-10",
   "title": "Novedades de Octubre",
   "subtitle": "Noticias y eventos de anime que estamos siguiendo este mes en NeoAnimeZ.",
-  "updated_at": "2026-10-01T11:56:11+00:00",
+  "updated_at": "2026-10-07T19:10:29+00:00",
   "source_note": "Selección editorial de titulares enlazados. NeoAnimeZ muestra resumen propio y no copia artículos completos.",
   "items": [
     {
-      "title": "Shin Oishinbo TV Anime Streams Teaser Video",
-      "summary": "New anime starring Yōhei Azakami as protagonist Shirō Yamaoka debuts next year",
-      "date": "2026-10-01",
+      "title": "Manhwa-Based Live-Action Series The Blue Road Set to Premiere on November 20",
+      "summary": "Netflix also releases show's 1st poster, trailer",
+      "date": "2026-10-04",
       "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-01/shin-oishinbo-tv-anime-streams-teaser-video/.242377",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-04/manhwa-based-live-action-series-the-blue-road-set-to-premiere-on-november-20/.242463",
       "tags": [
-        "Tráiler"
+        "Tráiler",
+        "Estrenos"
       ],
-      "priority": 22
+      "priority": 54
     },
     {
-      "title": "Super Psychic Policeman Chojo Anime's New Video Previews Ending Song",
-      "summary": "Shifuku Poncho performs \"Mata Ashita\" ending song for October 6 series",
+      "title": "The Ramparts of Ice Season 2 Anime Streams English Dub Trailer",
+      "summary": "2nd season debuted on Thursday",
       "date": "2026-10-01",
       "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-01/super-psychic-policeman-chojo-anime-new-video-previews-ending-song/.242378",
-      "tags": [],
-      "priority": 12
+      "url": "https://www.animenewsnetwork.com/news/2026-10-01/the-ramparts-of-ice-season-2-anime-streams-english-dub-trailer/.242386",
+      "tags": [
+        "Tráiler",
+        "Estrenos"
+      ],
+      "priority": 46
     },
     {
-      "title": "OceanVeil Announces Simulcast Stream of My Girlfriend's Friend Anime",
-      "summary": "Anime debuts on October 4",
-      "date": "2026-10-01",
+      "title": "Black Clover Joins Fortnite Battle Royale for Annual Fortnightmares Event",
+      "summary": "Just in time for the new anime's premiere",
+      "date": "2026-10-04",
       "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-01/oceanveil-announces-simulcast-stream-of-my-girlfriend-friend-anime/.242374",
-      "tags": [],
-      "priority": 12
+      "url": "https://www.animenewsnetwork.com/interest/2026-10-04/black-clover-joins-fortnite-battle-royale-for-annual-fortnightmares-event/.242475",
+      "tags": [
+        "Estrenos"
+      ],
+      "priority": 44
     },
     {
-      "title": "Netflix to Stream Dragon Ball Super: Beerus Anime",
-      "summary": "Anime starts streaming in U.S. on October 17, in selected areas on October 14",
-      "date": "2026-10-01",
+      "title": "Crunchyroll Streams New Battle Spirits TV Anime",
+      "summary": "Anime premiered on Tuesday",
+      "date": "2026-10-06",
       "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-01/netflix-to-stream-dragon-ball-super-beerus-anime/.242369",
-      "tags": [],
-      "priority": 12
+      "url": "https://www.animenewsnetwork.com/news/2026-10-06/crunchyroll-streams-new-battle-spirits-tv-anime/.242553",
+      "tags": [
+        "Crunchyroll",
+        "Estrenos"
+      ],
+      "priority": 44
     },
     {
-      "title": "Yasuaki Mikami's Looks like a Job for a Maid! Light Novels Get TV Anime",
-      "summary": "Story of falsely accused then dismissed supermaid launched in 2021",
-      "date": "2026-10-01",
+      "title": "A Returner's Magic Should Be Special Season 2 Anime Reveals Same-Day Dub Release, Cast",
+      "summary": "Season debuts on Wednesday",
+      "date": "2026-10-06",
       "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-01/yasuaki-mikami-looks-like-a-job-for-a-maid-light-novels-get-tv-anime/.242376",
-      "tags": [],
-      "priority": 12
+      "url": "https://www.animenewsnetwork.com/news/2026-10-06/a-returner-magic-should-be-special-season-2-anime-reveals-same-day-dub-release-cast/.242551",
+      "tags": [
+        "Estrenos"
+      ],
+      "priority": 36
     },
     {
-      "title": "Battle in 5 Seconds Manga Resumes",
-      "summary": "Manga went on hiatus due to author's poor health",
-      "date": "2026-10-01",
+      "title": "Spice & Wolf: merchant meets the wise wolf Season 2 Anime Reveals Teaser Promo Video, More Cast",
+      "summary": "Romi Park joins cast as Eve Bolan",
+      "date": "2026-10-03",
       "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-01/battle-in-5-seconds-manga-resumes/.242363",
-      "tags": [],
-      "priority": 0
+      "url": "https://www.animenewsnetwork.com/news/2026-10-03/spice-and-wolf-merchant-meets-the-wise-wolf-season-2-anime-reveals-teaser-promo-video-more-cast/.242439",
+      "tags": [
+        "Tráiler",
+        "Estrenos"
+      ],
+      "priority": 34
     }
   ]
 }

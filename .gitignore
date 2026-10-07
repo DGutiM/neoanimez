@@ -11,5 +11,7 @@ neoanimez-repo/
 *.full.json
 
 # Temporales habituales
+__pycache__/
+*.py[cod]
 *.tmp
 *.log

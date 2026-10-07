@@ -39,7 +39,7 @@ def translate_and_clean_catalog() -> None:
         "--input", "anime-lista.json",
         "--in-place",
         "--batch-size", 20,
-        "--save-every", 20,
+        "--save-every", 500,
         "--quiet",
     )
     run_script(
@@ -47,7 +47,7 @@ def translate_and_clean_catalog() -> None:
         "--input", "anime-lista.json",
         "--in-place",
         "--workers", 4,
-        "--save-every", 20,
+        "--save-every", 100,
         "--quiet",
     )
     run_script(

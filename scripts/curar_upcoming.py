@@ -151,12 +151,14 @@ def main() -> int:
             return False
         if record_status in {"currently airing", "finished airing", "cancelled"}:
             return False
-        aired_from = clean_text(record.get("aired_from"))[:10]
+        aired_from = clean_text((current or {}).get("aired_from") or record.get("aired_from"))[:10]
         try:
             premiere = dt.date.fromisoformat(aired_from)
         except ValueError:
             premiere = None
-        if premiere and premiere <= dt.date.today() and status != "not yet aired":
+        # AniList y Jikan pueden conservar "Not yet aired" durante horas o dias.
+        # Una fecha de estreno ya alcanzada es suficiente para retirar la ficha.
+        if premiere and premiere <= dt.date.today():
             return False
         return True
 

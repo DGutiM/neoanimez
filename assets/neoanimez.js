@@ -52,7 +52,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261001-monthly-data';
+const APP_VERSION = '20261007-monthly-data';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -1563,8 +1563,9 @@ function isUpcomingAnime(anime = null) {
   const premiereValue = anime.aired_from || anime.airing_start || anime.start_date || anime.premiere_date;
   const premiereTime = Date.parse(String(premiereValue || ''));
   if (anime.ongoing === true || airingStatus === 'currently airing' || airingStatus === 'finished airing') return false;
-  if (airingStatus === 'not yet aired') return true;
+  // La fecha conocida manda sobre un estado remoto que puede tardar en actualizarse.
   if (Number.isFinite(premiereTime)) return premiereTime > Date.now();
+  if (airingStatus === 'not yet aired') return true;
   const releaseYear = Number(anime.year || anime.upcoming_year);
   if (Number.isInteger(releaseYear) && releaseYear > new Date().getFullYear()) return true;
   return anime._update_status === 'jikan_upcoming' || !!anime.upcoming_season || !!anime.upcoming_year;
