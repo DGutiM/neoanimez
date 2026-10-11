@@ -52,7 +52,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261011-catalog-navigation';
+const APP_VERSION = '20261011-timeline-return';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -221,6 +221,7 @@ let activeAnimeRouteChoice = null;
 let animeTimelineMode = 'continuity';
 let animeTimelineDrawFrame = 0;
 let animeTimelineResizeTimer = 0;
+let animeTimelineDetailReturn = null;
 const screenScrollPositions = {};
 const detailBlockCache = new Map();
 const detailBlockRequests = new Map();
@@ -920,7 +921,7 @@ async function addCurrentAnimeToList() {
   if (!currentUser) {
     writePendingListIntent({ animeId: Number(anime.mal_id), title: getAnimeDisplayTitle(anime).slice(0, 300), createdAt: Date.now() });
     trackProductEvent('list_save_requested');
-    closeAnimeModal();
+    closeAnimeModal({ returnToTimeline: false });
     renderAuthContext();
     switchAuthTab('signup');
     setAuthFeedback('');
@@ -5322,7 +5323,7 @@ function hardResetAfterPasswordChange(message) {
   renderUserScreen();
   renderUserLists();
   updateUserTriggers();
-  closeAnimeModal();
+  closeAnimeModal({ returnToTimeline: false });
   setResetCursor(false);
 
   const cleanUrl = getCleanAppUrl();
@@ -7003,7 +7004,7 @@ function startApp() {
 
 function goHome() {
   setResetCursor(false);
-  closeAnimeModal();
+  closeAnimeModal({ returnToTimeline: false });
   startApp();
 }
 
@@ -8668,6 +8669,18 @@ async function openAnimeTimeline(anime = currentModalAnime) {
   const requestedId = Number(anime?.mal_id);
   if (!modal || !requestedId) return;
 
+  if (animeTimelineDetailReturn && activeAnimeTimelineNodes.has(requestedId)) {
+    closeAnimeModal();
+    return;
+  }
+  animeTimelineDetailReturn = null;
+  modal.classList.remove('is-suspended');
+  modal.inert = false;
+  const animeModal = document.getElementById('animeModal');
+  if (animeModal) {
+    animeModal.inert = true;
+    animeModal.setAttribute('aria-hidden', 'true');
+  }
   activeAnimeTimelineCurrentId = requestedId;
   activeAnimeTimeline = null;
   activeAnimeTimelineNodes = new Map();
@@ -8689,6 +8702,7 @@ async function openAnimeTimeline(anime = currentModalAnime) {
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  modal.querySelector('.timeline-close')?.focus({ preventScroll: true });
 
   try {
     if (!animeTimelineIndexLoaded) await loadAnimeTimelineIndex();
@@ -8734,8 +8748,10 @@ async function openAnimeTimeline(anime = currentModalAnime) {
 function closeAnimeTimeline() {
   const modal = document.getElementById('animeTimelineModal');
   if (!modal) return;
-  modal.classList.remove('open');
+  modal.classList.remove('open', 'is-suspended');
+  modal.inert = true;
   modal.setAttribute('aria-hidden', 'true');
+  animeTimelineDetailReturn = null;
   if (animeTimelineDrawFrame) cancelAnimationFrame(animeTimelineDrawFrame);
   if (animeTimelineResizeTimer) window.clearTimeout(animeTimelineResizeTimer);
   animeTimelineDrawFrame = 0;
@@ -8745,7 +8761,62 @@ function closeAnimeTimeline() {
   activeAnimeTimelineCurrentId = 0;
   activeAnimeTimelineDisplayEdges = [];
   activeAnimeTimelineNarrativeIds = new Set();
+  const animeModal = document.getElementById('animeModal');
+  if (animeModal?.classList.contains('open')) {
+    animeModal.inert = false;
+    animeModal.setAttribute('aria-hidden', 'false');
+    animeModal.querySelector('.modal-close')?.setAttribute('aria-label', 'Cerrar');
+    (animeModal.querySelector('#animeTimelineAction button') || animeModal.querySelector('.modal-close'))?.focus({ preventScroll: true });
+  }
   document.body.style.overflow = document.querySelector('.modal-backdrop.open') ? 'hidden' : '';
+}
+
+function openAnimeFromTimeline(anime) {
+  const timeline = document.getElementById('animeTimelineModal');
+  const viewport = document.getElementById('animeTimelineViewport');
+  if (!anime || !isAnimeVisible(anime) || !timeline?.classList.contains('open') || animeTimelineDetailReturn) return;
+
+  // Keep the existing graph mounted, including its mode and scroll position.
+  animeTimelineDetailReturn = {
+    parentAnime: currentModalAnime,
+    recommendationReason: currentRecommendationReason,
+    parentScrollTop: document.querySelector('#animeModal .modal-sheet')?.scrollTop || 0,
+    scrollLeft: viewport?.scrollLeft || 0,
+    scrollTop: viewport?.scrollTop || 0,
+    nodeId: Number(anime.mal_id)
+  };
+  timeline.inert = true;
+  timeline.classList.add('is-suspended');
+  timeline.setAttribute('aria-hidden', 'true');
+  openAnimeModal(anime, anime.image || BLANK);
+  document.querySelector('#animeModal .modal-close')?.focus({ preventScroll: true });
+}
+
+function resumeAnimeTimeline(context) {
+  const timeline = document.getElementById('animeTimelineModal');
+  if (!timeline?.classList.contains('open') || !activeAnimeTimeline) return;
+  const retainedTimeline = activeAnimeTimeline;
+  const animeModal = document.getElementById('animeModal');
+  if (context.parentAnime && isAnimeVisible(context.parentAnime)) {
+    openAnimeModal(context.parentAnime, context.parentAnime.image || BLANK, {
+      recommendationReason: context.recommendationReason,
+      trackOpen: false
+    });
+    animeModal.inert = true;
+    animeModal.setAttribute('aria-hidden', 'true');
+  }
+  timeline.classList.remove('is-suspended');
+  timeline.inert = false;
+  timeline.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => {
+    if (activeAnimeTimeline !== retainedTimeline || animeTimelineDetailReturn || !timeline.classList.contains('open')) return;
+    const sheet = animeModal?.querySelector('.modal-sheet');
+    if (sheet) sheet.scrollTop = context.parentScrollTop;
+    document.getElementById('animeTimelineViewport')?.scrollTo({ left: context.scrollLeft, top: context.scrollTop, behavior: 'instant' });
+    (document.querySelector(`#animeTimelineGrid [data-timeline-node-id="${context.nodeId}"]`) || timeline.querySelector('.timeline-close'))?.focus({ preventScroll: true });
+    updateAnimeTimelineScrollProgress();
+  });
 }
 
 function setAnimeTimelineMode(mode) {
@@ -8777,8 +8848,7 @@ function buildAnimeTimelineNode(node, index) {
   if (isLocal) {
     card.setAttribute('aria-label', isCurrent ? `${displayTitle}, ficha actual` : `Abrir ficha de ${displayTitle}`);
     card.addEventListener('click', () => {
-      closeAnimeTimeline();
-      openAnimeModal(localAnime, localAnime.image || BLANK);
+      openAnimeFromTimeline(localAnime);
     });
   }
 
@@ -9343,10 +9413,12 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
   renderAnimeRelationsForModal(anime);
   statusBox?.classList.toggle('hidden', !currentUser);
   setModalStatusMessage('');
-  trackProductEvent('anime_open');
+  if (options.trackOpen !== false) trackProductEvent('anime_open');
 
   modal.classList.add('open');
+  modal.inert = false;
   modal.setAttribute('aria-hidden', 'false');
+  modal.querySelector('.modal-close')?.setAttribute('aria-label', animeTimelineDetailReturn ? 'Cerrar ficha y volver al mapa' : 'Cerrar');
   document.body.style.overflow = 'hidden';
   resetAnimeModalScroll(modal);
   updateModalStatusUI();
@@ -9370,16 +9442,24 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
   }
 }
 
-function closeAnimeModal() {
+function closeAnimeModal({ returnToTimeline = true } = {}) {
   const modal = document.getElementById('animeModal');
   if (!modal) return;
+  const context = animeTimelineDetailReturn;
+  animeTimelineDetailReturn = null;
+  if (!returnToTimeline) {
+    closeAnimeRouteChooser();
+    closeAnimeTimeline();
+  }
   modal.classList.remove('open');
+  modal.inert = true;
   modal.setAttribute('aria-hidden', 'true');
   resetAnimeModalScroll(modal);
-  document.body.style.overflow = '';
+  document.body.style.overflow = document.querySelector('.modal-backdrop.open, .timeline-backdrop.open') ? 'hidden' : '';
   currentModalAnime = null;
   currentRecommendationReason = '';
   clearAnimeRelationsUI();
+  if (context && returnToTimeline) resumeAnimeTimeline(context);
 }
 
 document.addEventListener('click', (e) => {
@@ -9407,6 +9487,10 @@ document.addEventListener('keydown', (e) => {
       closeAnimeRouteChooser();
       return;
     }
+    if (animeTimelineDetailReturn) {
+      closeAnimeModal();
+      return;
+    }
     const timelineModal = document.getElementById('animeTimelineModal');
     if (timelineModal?.classList.contains('open')) {
       closeAnimeTimeline();
@@ -9421,10 +9505,11 @@ document.addEventListener('keydown', (e) => {
 
 window.addEventListener('resize', () => {
   if (!activeAnimeTimeline) return;
+  const preservePosition = !!animeTimelineDetailReturn;
   if (animeTimelineResizeTimer) window.clearTimeout(animeTimelineResizeTimer);
   animeTimelineResizeTimer = window.setTimeout(() => {
     animeTimelineResizeTimer = 0;
-    if (activeAnimeTimeline) renderAnimeTimelineGraph({ centerCurrent: true });
+    if (activeAnimeTimeline) renderAnimeTimelineGraph({ centerCurrent: !preservePosition });
   }, 120);
 }, { passive: true });
 

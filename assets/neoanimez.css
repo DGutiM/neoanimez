@@ -3633,6 +3633,7 @@ button:disabled,
   padding:16px;background:rgba(2,4,12,.95)
 }
 .timeline-backdrop.open{display:flex}
+.timeline-backdrop.is-suspended{visibility:hidden;pointer-events:none}
 .timeline-sheet{
   position:relative;isolation:isolate;contain:layout paint;
   width:min(1180px,100%);height:min(90dvh,840px);min-height:420px;display:flex;flex-direction:column;
