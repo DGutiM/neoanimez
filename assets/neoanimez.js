@@ -52,7 +52,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261011-discovery-auth-r2';
+const APP_VERSION = '20261011-discovery-visual';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -580,6 +580,7 @@ function refreshAdultContentSurfaces() {
   if (hadCatalogResults) applyFilters().catch(error => console.warn('No se pudo refrescar el catálogo:', error));
   if (query.length >= 2) performTitleSearch();
   renderCommunityRanking();
+  renderDiscoveryShelf();
   if (upcomingPayload) loadUpcomingRanking().catch(error => console.warn('No se pudo refrescar Más esperados:', error));
   renderUserLists();
 }
@@ -656,6 +657,7 @@ function toggleUserSettingsPanel(forceOpen = null) {
 }
 
 function refreshVisibleAnimeTitles() {
+  renderDiscoveryShelf();
   document.querySelectorAll('.fcard[data-anime-id]').forEach(card => {
     const anime = getAnimeById(Number(card.dataset.animeId));
     const titleEl = card.querySelector('.fcard-title');
@@ -798,6 +800,49 @@ function writeAppState(patch = {}) {
 
 function getInitialScreen({ user = null, recovery = false, passwordUpdated = false, authRedirect = false } = {}) {
   return user || recovery || passwordUpdated || authRedirect ? 'user' : 'search';
+}
+
+function getDiscoveryAnimeItems(catalog = DB) {
+  const byId = new Map(catalog.map(anime => [Number(anime.mal_id), anime]));
+  const ids = [52991, 1, 11061, 1535, 38000, 9253, ...RANKING_DATA.map(item => item.mal_id)];
+  return [...new Set(ids)].map(id => byId.get(id))
+    .filter(anime => anime && !isAdultAnime(anime) && !isUpcomingAnime(anime)).slice(0, 6);
+}
+
+function renderDiscoveryShelf() {
+  const shelf = document.getElementById('discoveryCovers');
+  if (!shelf) return;
+  const items = getDiscoveryAnimeItems();
+  shelf.replaceChildren();
+  shelf.hidden = !items.length;
+  shelf.setAttribute('aria-busy', 'false');
+  items.forEach(anime => {
+    const title = getAnimeDisplayTitle(anime);
+    const item = document.createElement('li');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'discovery-cover';
+    button.title = title;
+    button.setAttribute('aria-label', `Ver ${title}`);
+    const image = document.createElement('img');
+    image.className = 'discovery-cover-img';
+    image.alt = '';
+    image.width = 100;
+    image.height = 150;
+    const caption = document.createElement('span');
+    caption.className = 'discovery-cover-title';
+    caption.textContent = title;
+    button.append(image, caption);
+    button.addEventListener('click', () => openAnimeModal(anime, image.src));
+    item.appendChild(button);
+    shelf.appendChild(item);
+    loadAnimeImageElement(image, anime);
+  });
+}
+
+function openDiscoveryHome() {
+  screenScrollPositions.search = 0;
+  showScreen('search');
 }
 
 function validateListIntent(value, now = Date.now()) {
@@ -5025,6 +5070,8 @@ function scheduleResumeRefresh(delay = 300) {
 
 function renderUserScreen() {
   renderAuthContext();
+  const welcome = document.getElementById('listWelcome');
+  if (welcome) welcome.hidden = isPasswordRecoveryFlow;
   const guest = document.getElementById('userGuestView');
   const logged = document.getElementById('userLoggedView');
   const email = document.getElementById('userEmailText');
@@ -9380,6 +9427,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   await loadDB();
   setDiscoveryLoading(false);
+  renderDiscoveryShelf();
   updateAdultContentUI();
   window.setTimeout(() => {
     loadAnimeRelations().catch(error => {

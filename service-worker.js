@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20261011-discovery-auth-r2';
+const CACHE_VERSION = '20261011-discovery-visual';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 

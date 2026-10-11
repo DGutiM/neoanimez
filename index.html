@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-discovery-auth-r2">
+<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-discovery-visual">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -406,12 +406,20 @@
 
 <!-- BUSCAR -->
 <div id="search-screen" class="screen active">
-  <div class="sec-head">Descubrir anime</div>
+  <div class="sec-head">Descubrir</div>
   <div class="glow"></div>
 
   <div class="search-panel">
     <h1 class="search-title">Tu próximo anime</h1>
-    <div class="search-sub">Descubre qué ver y lleva al día tu lista, capítulos y estrenos.</div>
+    <div class="search-sub">Descubre anime y guarda tus series, notas y capítulos.</div>
+    <ul class="discovery-covers" id="discoveryCovers" aria-label="Animes para descubrir" aria-busy="true">
+      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+    </ul>
     <div class="search-field">
       <input aria-label="Buscar anime por título" id="titleSearchInput" class="search-input" type="search" placeholder="Escribe un título..." autocomplete="off" spellcheck="false">
       <button id="titleSearchClear" class="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
@@ -424,10 +432,10 @@
     <div id="discoveryFeedback" class="discovery-feedback" role="status" aria-live="polite"></div>
   </div>
 
-  <div class="random-panel">
+  <section class="random-panel" aria-labelledby="discoveryRecommendationTitle">
     <div class="random-copy">
-      <div class="random-title">¿No sabes qué ver?</div>
-      <div class="random-sub">Una serie o película por descubrir.</div>
+      <h2 class="random-title" id="discoveryRecommendationTitle">¿No sabes qué ver?</h2>
+      <div class="random-sub">Encuentra tu próxima historia.</div>
     </div>
     <div class="random-actions">
       <button class="random-btn for-you hidden" id="tasteAnimeButton" type="button" onclick="openTasteRecommendation()" aria-label="Recomendar según tus gustos" title="Según tus gustos">
@@ -453,7 +461,7 @@
         <span class="random-btn-label">Sorpresa</span>
       </button>
     </div>
-  </div>
+  </section>
 
   <div class="mood-panel" id="moodRecommendationPanel">
     <div class="mood-head">
@@ -647,6 +655,13 @@
 
   <div id="userLoggedView" class="user-shell" style="display:none">
     <div id="userAccountNotice" class="auth-feedback" role="status" aria-live="polite"></div>
+    <section class="list-welcome" id="listWelcome" aria-labelledby="listWelcomeTitle">
+      <div>
+        <h2 id="listWelcomeTitle">Tu rincón de anime</h2>
+        <p>Tus series, notas y capítulos, al día.</p>
+      </div>
+      <button class="discovery-filter-btn" type="button" onclick="openDiscoveryHome()">Descubrir anime</button>
+    </section>
     <div class="user-card">
       <div class="user-account-row">
         <div class="user-email-line" id="userEmailText"></div>
@@ -880,7 +895,7 @@
   </button>
   <button class="nbtn active" id="nav-search" onclick="showScreen('search')">
     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><line x1="16" y1="16" x2="20" y2="20"></line></svg>
-    Buscar
+    Descubrir
   </button>
   <button class="nbtn" id="nav-info" onclick="showScreen('info')">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="10" x2="12" y2="16"></line><circle cx="12" cy="7" r="1"></circle></svg>
@@ -1042,6 +1057,6 @@
   </div>
 </div>
 
-<script src="assets/neoanimez.js?v=20261011-discovery-auth-r2"></script>
+<script src="assets/neoanimez.js?v=20261011-discovery-visual"></script>
 </body>
 </html>
