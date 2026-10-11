@@ -52,7 +52,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261011-discovery-visual';
+const APP_VERSION = '20261011-discovery-flow';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -833,7 +833,10 @@ function renderDiscoveryShelf() {
     caption.className = 'discovery-cover-title';
     caption.textContent = title;
     button.append(image, caption);
-    button.addEventListener('click', () => openAnimeModal(anime, image.src));
+    button.addEventListener('click', () => {
+      trackProductEvent('discovery_cover_open');
+      openAnimeModal(anime, image.src);
+    });
     item.appendChild(button);
     shelf.appendChild(item);
     loadAnimeImageElement(image, anime);
@@ -880,9 +883,14 @@ function renderAuthContext() {
   const title = document.getElementById('authContextTitle');
   const copy = document.getElementById('authContextText');
   const pending = document.getElementById('authPendingAnime');
-  if (title) title.textContent = intent ? 'Guarda este anime en tu lista' : 'Tu lista, siempre contigo';
+  const signupActive = document.getElementById('authTabSignup')?.classList.contains('active');
+  if (title) title.textContent = intent
+    ? (signupActive ? 'Crea tu cuenta gratis para guardar este anime' : 'Entra para guardar este anime')
+    : 'Tu lista, siempre contigo';
   if (copy) copy.textContent = intent
-    ? 'Inicia sesión o crea una cuenta gratis. Tu anime te espera para guardarlo en Pendientes.'
+    ? (signupActive
+      ? 'Confirma el correo en este navegador y este anime quedará en Pendientes.'
+      : 'Lo guardaremos en Pendientes, sin cambiar nada si ya está en tu lista.')
     : 'Guarda tus animes, notas y capítulos y continúa desde cualquier dispositivo. Explorar NeoAnimeZ no requiere cuenta.';
   if (pending) {
     pending.hidden = !intent;
@@ -899,7 +907,9 @@ function continueBrowsing() {
 
 function trackProductEvent(name) {
   if (!analyticsLoaded || readCookieConsent() !== 'accepted') return;
-  if (!['anime_open', 'list_save_requested', 'list_saved', 'login', 'sign_up'].includes(name)) return;
+  if (!['anime_open', 'list_save_requested', 'list_saved', 'login', 'sign_up',
+    'search_submitted', 'recommendation_surprise', 'recommendation_personal', 'recommendation_mood',
+    'discovery_cover_open', 'featured_open', 'signup_submitted', 'signup_confirmation_prompted'].includes(name)) return;
   gtag('event', name, { page_location: window.location.origin + window.location.pathname, page_referrer: '' });
 }
 
@@ -911,7 +921,7 @@ async function addCurrentAnimeToList() {
     trackProductEvent('list_save_requested');
     closeAnimeModal();
     renderAuthContext();
-    switchAuthTab('login');
+    switchAuthTab('signup');
     setAuthFeedback('');
     screenScrollPositions.user = 0;
     showScreen('user');
@@ -1654,8 +1664,11 @@ function switchAuthTab(tab) {
   const loginActive = tab !== 'signup';
   loginTab.classList.toggle('active', loginActive);
   signupTab.classList.toggle('active', !loginActive);
+  loginTab.setAttribute('aria-pressed', String(loginActive));
+  signupTab.setAttribute('aria-pressed', String(!loginActive));
   loginForm.classList.toggle('hidden', !loginActive);
   signupForm.classList.toggle('hidden', loginActive);
+  renderAuthContext();
   setAuthFeedback('');
 }
 
@@ -5210,6 +5223,7 @@ async function handleSignup(event) {
   }
 
   await runLocked('auth:signup', async () => {
+    trackProductEvent('signup_submitted');
     setButtonBusy(submitBtn, true, 'Creando...');
     setAuthFeedback('Creando cuenta...');
     bindListIntentToEmail(email);
@@ -5228,6 +5242,7 @@ async function handleSignup(event) {
         setAuthFeedback('Cuenta creada. Ya tienes la sesión iniciada.', 'success');
         trackProductEvent('sign_up');
       } else {
+        trackProductEvent('signup_confirmation_prompted');
         setAuthFeedback('Revisa tu correo para confirmar la cuenta. Si no lo ves, mira en Spam, Promociones o correo no deseado.' + (readPendingListIntent() ? ' Hemos recordado el anime en este navegador para cuando vuelvas.' : ''), 'success');
       }
     } catch (error) {
@@ -6993,6 +7008,7 @@ function showScreen(name) {
   dismissIntroIfNeeded(true);
   if (name !== 'ranking') stopNeoArcadeLoop();
   setActiveScreen(name + '-screen', 'nav-' + name, true);
+  if (name === 'ranking') trackProductEvent('featured_open');
   if (name === 'ranking') loadRanking();
   if (name === 'ranking' && !document.getElementById('communityArcadeView')?.classList.contains('hidden')) initNeoArcadeGame();
   if (name === 'user') loadAnimeSchedule();
@@ -7507,16 +7523,18 @@ function getMoodRecommendationPool(key) {
 }
 
 function openMoodRecommendation(key) {
+  showRecommendationUnavailable('');
   if (!DB.length) {
-    showRecommendationUnavailable('La base de datos todavía no está lista.<br><small>Recarga la página si el problema continúa.</small>');
+    showRecommendationUnavailable('El catálogo aún está cargando. Prueba de nuevo en unos segundos.');
     return;
   }
   const mood = MOOD_RECOMMENDATIONS[key];
   const anime = pickRandomAnime(getMoodRecommendationPool(key));
   if (!anime || !mood) {
-    showRecommendationUnavailable('No encontré una recomendación clara para ese mood. Prueba con otro estado.');
+    showRecommendationUnavailable('No encontré una recomendación para ese tipo de historia. Prueba con otro.');
     return;
   }
+  trackProductEvent('recommendation_mood');
   openAnimeModal(anime, anime.image || BLANK, {
     recommendationReason: `Te lo recomiendo porque ${mood.reason}.`
   });
@@ -7535,19 +7553,26 @@ function rollRecommendationButton(button, anime, recommendationReason = '') {
 }
 
 function showRecommendationUnavailable(message = 'No hay recomendaciones suficientes todavía.') {
-  updateSimpleSummary('searchResultsSummary', 0);
-  const container = document.getElementById('titleSearchResults');
-  if (container) container.innerHTML = `<div class="no-res">${message}</div>`;
+  const feedback = document.getElementById('recommendationFeedback');
+  if (!feedback) return;
+  feedback.textContent = message;
+  feedback.hidden = !message;
 }
 
 function openRandomRecommendation() {
+  showRecommendationUnavailable('');
   const button = document.getElementById('randomAnimeButton');
   if (!DB.length) {
-    showRecommendationUnavailable('La base de datos todavía no está lista.<br><small>Recarga la página si el problema continúa.</small>');
+    showRecommendationUnavailable('El catálogo aún está cargando. Prueba de nuevo en unos segundos.');
     return;
   }
 
   const anime = pickRandomAnime(getRandomRecommendationPool());
+  if (!anime) {
+    showRecommendationUnavailable();
+    return;
+  }
+  trackProductEvent('recommendation_surprise');
   rollRecommendationButton(button, anime, 'Sorpresa total del catálogo NeoAnimeZ: una primera temporada o película para descubrir sin darle demasiadas vueltas.');
 }
 
@@ -7620,10 +7645,11 @@ function getTasteRecommendationPool() {
 }
 
 function openTasteRecommendation() {
+  showRecommendationUnavailable('');
   const button = document.getElementById('tasteAnimeButton');
   if (!currentUser) return;
   if (!DB.length) {
-    showRecommendationUnavailable('La base de datos todavía no está lista.<br><small>Recarga la página si el problema continúa.</small>');
+    showRecommendationUnavailable('El catálogo aún está cargando. Prueba de nuevo en unos segundos.');
     return;
   }
 
@@ -7633,7 +7659,13 @@ function openTasteRecommendation() {
     return;
   }
 
+  trackProductEvent('recommendation_personal');
   rollRecommendationButton(button, anime, 'Te lo recomiendo porque comparte géneros, temas o señales con animes que tienes en tu lista y tus puntuaciones.');
+}
+
+function updateDiscoverySearchMode(query) {
+  const explore = document.getElementById('discoveryExplore');
+  if (explore) explore.hidden = query.length >= 2;
 }
 
 function scrollToTitleSearchResults() {
@@ -7655,6 +7687,8 @@ function performTitleSearch({ scrollToResults = false } = {}) {
 
   const rawQuery = input.value || '';
   const query = normalizeLoose(rawQuery);
+  updateDiscoverySearchMode(query);
+  if (scrollToResults && query.length >= 2 && DB.length) trackProductEvent('search_submitted');
   toggleSearchClearButton();
   updateAccountModeUI();
   container.innerHTML = '';
@@ -7668,7 +7702,7 @@ function performTitleSearch({ scrollToResults = false } = {}) {
 
   if (query.length < 2) {
     updateSimpleSummary('searchResultsSummary', 0);
-    container.innerHTML = '<div class="pre-search-note">Escribe al menos <strong>2 letras</strong> para buscar coincidencias por título, alias o nombre alternativo.</div>';
+    container.innerHTML = query.length ? '<div class="pre-search-note">Escribe al menos <strong>2 letras</strong>.</div>' : '';
     if (scrollToResults) scrollToTitleSearchResults();
     return;
   }
@@ -9450,23 +9484,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const searchInput = document.getElementById('titleSearchInput');
   const searchClear = document.getElementById('titleSearchClear');
-  const searchButton = document.getElementById('titleSearchButton');
+  const searchForm = document.getElementById('titleSearchForm');
   if (searchInput) {
     searchInput.addEventListener('input', () => {
       toggleSearchClearButton();
       scheduleTitleSearch();
     });
     searchInput.addEventListener('search', performTitleSearch);
-    searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        window.clearTimeout(titleSearchDebounce);
-        performTitleSearch({ scrollToResults: true });
-      }
-    });
   }
-  if (searchButton) {
-    searchButton.addEventListener('click', () => performTitleSearch({ scrollToResults: true }));
+  if (searchForm) {
+    searchForm.addEventListener('submit', event => {
+      event.preventDefault();
+      window.clearTimeout(titleSearchDebounce);
+      performTitleSearch({ scrollToResults: true });
+    });
   }
   if (searchClear) {
     searchClear.addEventListener('click', () => {

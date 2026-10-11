@@ -28,7 +28,7 @@ function setup(overrides = {}) {
     getAnimeDisplayTitle: a => a.title, getAnimeById: () => anime, isAnimeVisible: () => true,
     readPublicProfileSlugFromUrl: () => '', renderAuthContext: () => {},
     closeAnimeModal: () => calls.push('close'), openAnimeModal: () => calls.push('open'),
-    switchAuthTab: () => {}, showScreen: s => calls.push(s), setAuthFeedback: () => {},
+    switchAuthTab: tab => calls.push(`auth:${tab}`), showScreen: s => calls.push(s), setAuthFeedback: () => {},
     setModalStatusMessage: () => {}, updateModalStatusUI: () => {},
     saveAnimeStatus: async () => { calls.push('save'); return true; },
     fetchUserStatuses: async () => true, loadUpcomingRanking: async () => {},
@@ -62,6 +62,7 @@ test('storage unavailable still preserves intent within the tab', () => {
 test('guest save opens account and does not write data', async () => {
   const {ctx,calls} = setup(); await ctx.addCurrentAnimeToList();
   assert.equal(ctx.readPendingListIntent().animeId,1); assert.ok(calls.includes('user')); assert.ok(!calls.includes('save'));
+  assert.ok(calls.includes('auth:signup'));
 });
 test('member adds directly; existing state is never replaced', async () => {
   const {ctx,calls} = setup({currentUser:{id:'u1'}}); await ctx.addCurrentAnimeToList(); assert.ok(calls.includes('save'));
@@ -115,10 +116,53 @@ test('metrics require consent and never accept arbitrary data/events', () => {
   ctx.analyticsLoaded=true; ctx.readCookieConsent=()=> 'accepted'; ctx.trackProductEvent('email'); assert.equal(calls.length,0);
   ctx.trackProductEvent('list_saved'); assert.equal(calls[0][0],'event'); assert.equal(calls[0][1],'list_saved');
   assert.equal(calls[0][2].page_location,'https://neoanimez.com/'); assert.equal(calls[0][2].page_referrer,''); assert.ok(!JSON.stringify(calls).includes('secret'));
+  for (const name of ['search_submitted','recommendation_surprise','recommendation_personal','recommendation_mood','discovery_cover_open','featured_open','signup_submitted','signup_confirmation_prompted']) {
+    ctx.trackProductEvent(name);
+    assert.equal(calls.at(-1)[1],name);
+    assert.deepEqual(Object.keys(calls.at(-1)[2]),['page_location','page_referrer']);
+  }
+  const count=calls.length; ctx.readCookieConsent=()=> 'rejected'; ctx.trackProductEvent('search_submitted'); assert.equal(calls.length,count);
 });
 test('HTML opens discovery and has accessible save and account controls', () => {
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
   assert.ok(!html.includes('id="intro-screen"')); assert.match(html,/id="search-screen" class="screen active"/);
   assert.match(html,/id="modalAddToList"/); assert.match(html,/id="authFeedback"[^>]+role="status"/);
-  for(const file of ['assets/neoanimez.css','assets/neoanimez.js']) assert.ok(html.includes(`${file}?v=20261011-discovery-visual`));
+  for(const file of ['assets/neoanimez.css','assets/neoanimez.js']) assert.ok(html.includes(`${file}?v=20261011-discovery-flow`));
+});
+
+function signupSetup({ password='test-only-password', confirmation=password, response={data:{session:null}}, fails=false }={}) {
+  const messages=[], events=[], requests=[];
+  const fields={
+    signupEmail:{value:' test@example.invalid '},signupPassword:{value:password},signupPasswordConfirm:{value:confirmation},
+    signupForm:{reset(){events.push('form-reset');},querySelector(){return {};}}
+  };
+  const ctx={
+    document:{getElementById:id=>fields[id]},AUTH_REDIRECT_URL:'https://neoanimez.com/',
+    runLocked:async(name,fn)=>fn(),setButtonBusy:()=>{},bindListIntentToEmail:email=>requests.push({email}),
+    setAuthFeedback:(text,type)=>messages.push({text,type}),trackProductEvent:name=>events.push(name),readPendingListIntent:()=>({animeId:1}),
+    safeSupabase:async(name,fn)=>fn(),userFacingSupabaseError:(error,fallback)=>fallback,
+    supabaseClient:{auth:{signUp:async args=>{requests.push(args);if(fails)throw Error('offline');return response;}}}
+  };
+  vm.createContext(ctx);vm.runInContext(source.match(/^async function handleSignup\([^]*?^}/m)[0],ctx);
+  return {ctx,messages,events,requests};
+}
+test('email-confirmation signup explains next step, preserves intent and is not counted as confirmed',async()=>{
+  const {ctx,messages,events,requests}=signupSetup();await ctx.handleSignup({preventDefault(){}});
+  assert.match(messages.at(-1).text,/Revisa tu correo/);assert.match(messages.at(-1).text,/Spam/);assert.match(messages.at(-1).text,/anime/);
+  assert.ok(events.includes('signup_confirmation_prompted'));assert.ok(!events.includes('sign_up'));
+  assert.equal(requests[1].options.emailRedirectTo,'https://neoanimez.com/');
+});
+test('signup with immediate session keeps the success path',async()=>{
+  const {ctx,messages,events}=signupSetup({response:{data:{session:{user:{id:'test-only'}}}}});await ctx.handleSignup({preventDefault(){}});
+  assert.match(messages.at(-1).text,/sesión iniciada/);assert.ok(events.includes('sign_up'));assert.ok(!events.includes('signup_confirmation_prompted'));
+});
+test('invalid signup does not call auth or count a submission',async()=>{
+  for (const values of [{password:'short'},{confirmation:'different'}]) {
+    const {ctx,messages,events,requests}=signupSetup(values);await ctx.handleSignup({preventDefault(){}});
+    assert.equal(messages.at(-1).type,'error');assert.deepEqual(requests,[]);assert.deepEqual(events,[]);
+  }
+});
+test('failed signup leaves a retryable error, not a confirmation message',async()=>{
+  const {ctx,messages,events}=signupSetup({fails:true});await ctx.handleSignup({preventDefault(){}});
+  assert.equal(messages.at(-1).type,'error');assert.deepEqual(events,['signup_submitted']);
 });

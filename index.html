@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-discovery-visual">
+<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-discovery-flow">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -206,7 +206,7 @@
 
 <!-- COMUNIDAD -->
 <div id="ranking-screen" class="screen">
-  <div class="sec-head">Comunidad</div>
+  <div class="sec-head">Destacados</div>
   <div class="glow"></div>
 
   <div class="community-overview" id="communityOverview">
@@ -411,31 +411,22 @@
 
   <div class="search-panel">
     <h1 class="search-title">Tu próximo anime</h1>
-    <div class="search-sub">Descubre anime y guarda tus series, notas y capítulos.</div>
-    <ul class="discovery-covers" id="discoveryCovers" aria-label="Animes para descubrir" aria-busy="true">
-      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
-      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
-      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
-      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
-      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
-      <li class="discovery-cover-placeholder" aria-hidden="true"></li>
-    </ul>
-    <div class="search-field">
-      <input aria-label="Buscar anime por título" id="titleSearchInput" class="search-input" type="search" placeholder="Escribe un título..." autocomplete="off" spellcheck="false">
-      <button id="titleSearchClear" class="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
-    </div>
-    <button class="apply-btn" type="button" id="titleSearchButton">BUSCAR ANIME</button>
-    <div class="discovery-tools">
-      <button type="button" class="discovery-filter-btn" onclick="showScreen('filter')">Explorar por filtros</button>
-      <button type="button" class="discovery-filter-btn" onclick="showScreen('ranking')">Ver estrenos y comunidad</button>
-    </div>
+    <div class="search-sub">Descubre qué ver, lleva tus capítulos al día y sigue los próximos estrenos.</div>
+    <form class="search-controls" id="titleSearchForm" role="search">
+      <div class="search-field">
+        <input aria-label="Buscar anime por título" id="titleSearchInput" class="search-input" type="search" placeholder="¿Qué anime buscas?" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <button id="titleSearchClear" class="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
+      </div>
+      <button class="apply-btn" type="submit" id="titleSearchButton">BUSCAR ANIME</button>
+    </form>
     <div id="discoveryFeedback" class="discovery-feedback" role="status" aria-live="polite"></div>
   </div>
 
-  <section class="random-panel" aria-labelledby="discoveryRecommendationTitle">
+  <div id="discoveryExplore">
+  <section class="discovery-recommendations" aria-labelledby="discoveryRecommendationTitle">
+  <div class="random-panel">
     <div class="random-copy">
       <h2 class="random-title" id="discoveryRecommendationTitle">¿No sabes qué ver?</h2>
-      <div class="random-sub">Encuentra tu próxima historia.</div>
     </div>
     <div class="random-actions">
       <button class="random-btn for-you hidden" id="tasteAnimeButton" type="button" onclick="openTasteRecommendation()" aria-label="Recomendar según tus gustos" title="Según tus gustos">
@@ -461,15 +452,10 @@
         <span class="random-btn-label">Sorpresa</span>
       </button>
     </div>
-  </section>
+  </div>
 
-  <div class="mood-panel" id="moodRecommendationPanel">
-    <div class="mood-head">
-      <div>
-        <div class="mood-title">¿Qué te apetece hoy?</div>
-        <div class="mood-sub">Elige cómo te apetece ver anime hoy y te saco una propuesta con motivo.</div>
-      </div>
-    </div>
+  <details class="mood-panel" id="moodRecommendationPanel">
+    <summary class="mood-title">Elegir por tipo de historia <span aria-hidden="true">+</span></summary>
     <div class="mood-grid">
       <button class="mood-chip" type="button" style="--mood-color:#72ff9a" onclick="openMoodRecommendation('short')">Algo corto</button>
       <button class="mood-chip" type="button" style="--mood-color:#ff2d78" onclick="openMoodRecommendation('intense')">Intenso</button>
@@ -478,12 +464,26 @@
       <button class="mood-chip" type="button" style="--mood-color:#7b4fff" onclick="openMoodRecommendation('mystery')">Misterio</button>
       <button class="mood-chip" type="button" style="--mood-color:#ff8bd4" onclick="openMoodRecommendation('romance')">Romance</button>
     </div>
+  </details>
+  <div id="recommendationFeedback" class="recommendation-feedback" role="status" aria-live="polite" hidden></div>
+  </section>
+
+  <ul class="discovery-covers" id="discoveryCovers" aria-label="Animes para descubrir" aria-busy="true">
+    <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+    <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+    <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+    <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+    <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+    <li class="discovery-cover-placeholder" aria-hidden="true"></li>
+  </ul>
+  <div class="discovery-tools">
+    <button type="button" class="discovery-filter-btn" onclick="showScreen('filter')">Explorar por filtros</button>
+    <button type="button" class="discovery-filter-btn" onclick="showScreen('ranking')">Estrenos y destacados</button>
+  </div>
   </div>
 
-  <div class="results-summary" id="searchResultsSummary"></div>
-  <div class="fresults" id="titleSearchResults">
-    <div class="pre-search-note">Escribe al menos <strong>2 letras</strong> para buscar coincidencias por título, alias o nombre alternativo.</div>
-  </div>
+  <div class="results-summary" id="searchResultsSummary" role="status" aria-live="polite"></div>
+  <div class="fresults" id="titleSearchResults"></div>
 </div>
 
 <!-- INFO -->
@@ -633,20 +633,20 @@
       <div class="user-text" id="authContextText">Guarda tus animes, notas y capítulos y continúa desde cualquier dispositivo. Explorar NeoAnimeZ no requiere cuenta.</div>
       <div class="auth-pending-anime" id="authPendingAnime" hidden></div>
       <div class="auth-tabs">
-        <button class="auth-tab active" id="authTabLogin" type="button" onclick="switchAuthTab('login')">Iniciar sesión</button>
-        <button class="auth-tab" id="authTabSignup" type="button" onclick="switchAuthTab('signup')">Registrarse</button>
+        <button class="auth-tab" id="authTabSignup" type="button" aria-pressed="false" aria-controls="signupForm" onclick="switchAuthTab('signup')">Crear cuenta gratis</button>
+        <button class="auth-tab active" id="authTabLogin" type="button" aria-pressed="true" aria-controls="loginForm" onclick="switchAuthTab('login')">Ya tengo cuenta</button>
       </div>
       <form id="loginForm" class="auth-form">
-        <input class="auth-input" id="loginEmail" type="email" placeholder="Correo electrónico" autocomplete="email" required>
-        <input class="auth-input" id="loginPassword" type="password" placeholder="Contraseña" autocomplete="current-password" required>
+        <label class="auth-field">Correo electrónico<input class="auth-input" id="loginEmail" type="email" autocomplete="email" required></label>
+        <label class="auth-field">Contraseña<input class="auth-input" id="loginPassword" type="password" autocomplete="current-password" required></label>
         <button class="auth-submit" type="submit">Entrar</button>
         <button class="forgot-password-btn" type="button" onclick="handleForgotPasswordRequest()">¿Olvidaste tu contraseña?</button>
       </form>
       <form id="signupForm" class="auth-form hidden">
-        <input class="auth-input" id="signupEmail" type="email" placeholder="Correo electrónico" autocomplete="email" required>
-        <input class="auth-input" id="signupPassword" type="password" placeholder="Contraseña (mínimo 6 caracteres)" autocomplete="new-password" required>
-        <input class="auth-input" id="signupPasswordConfirm" type="password" placeholder="Repite la contraseña" autocomplete="new-password" required>
-        <button class="auth-submit" type="submit">Crear cuenta</button>
+        <label class="auth-field">Correo electrónico<input class="auth-input" id="signupEmail" type="email" autocomplete="email" required></label>
+        <label class="auth-field">Contraseña<input class="auth-input" id="signupPassword" type="password" placeholder="Mínimo 6 caracteres" minlength="6" autocomplete="new-password" required></label>
+        <label class="auth-field">Repite la contraseña<input class="auth-input" id="signupPasswordConfirm" type="password" minlength="6" autocomplete="new-password" required></label>
+        <button class="auth-submit" type="submit">Crear cuenta gratis</button>
       </form>
       <div id="authFeedback" class="auth-feedback" role="status" aria-live="polite"></div>
       <button type="button" class="auth-browse-btn" onclick="continueBrowsing()">Seguir explorando sin cuenta</button>
@@ -887,7 +887,7 @@
   </button>
   <button class="nbtn" id="nav-ranking" onclick="showScreen('ranking')">
     <svg viewBox="0 0 24 24"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
-    Comunidad
+    Destacados
   </button>
   <button class="nbtn" id="nav-user" onclick="showScreen('user')">
     <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="8" r="4"></circle></svg>
@@ -1057,6 +1057,6 @@
   </div>
 </div>
 
-<script src="assets/neoanimez.js?v=20261011-discovery-visual"></script>
+<script src="assets/neoanimez.js?v=20261011-discovery-flow"></script>
 </body>
 </html>

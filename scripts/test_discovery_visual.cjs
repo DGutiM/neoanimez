@@ -32,6 +32,7 @@ function setup() {
     getAnimeDisplayTitle: anime => anime.title,
     loadAnimeImageElement: (image, anime) => { image.src = `cover-${anime.mal_id}.jpg`; loaded.push(anime.mal_id); },
     openAnimeModal: (...args) => opened.push(args),
+    trackProductEvent: () => {},
     screenScrollPositions: {search:900, user:400}, showScreen: name => opened.push(name)
   };
   vm.createContext(ctx); vm.runInContext(functions, ctx);
