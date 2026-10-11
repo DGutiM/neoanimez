@@ -17,6 +17,7 @@ function setup(overrides = {}) {
   const anime = { mal_id: 1, title: 'Cowboy Bebop' };
   const ctx = {
     console, Date, URL, URLSearchParams, Map, Set,
+    window: {location: {origin:'https://neoanimez.com',pathname:'/',search:'?code=secret',hash:'#access_token=secret'}},
     PENDING_LIST_INTENT_KEY: 'intent', LIST_INTENT_TTL: 604800000,
     pendingListIntentMemory: null, resumingListIntent: false,
     currentUser: null, currentModalAnime: anime, userAnimeMap: new Map(),
@@ -112,11 +113,12 @@ test('current recovery link stays in recovery mode', async () => {
 test('metrics require consent and never accept arbitrary data/events', () => {
   const {ctx,calls} = setup(); ctx.trackProductEvent('list_saved'); assert.equal(calls.length,0);
   ctx.analyticsLoaded=true; ctx.readCookieConsent=()=> 'accepted'; ctx.trackProductEvent('email'); assert.equal(calls.length,0);
-  ctx.trackProductEvent('list_saved'); assert.deepEqual(calls,[['event','list_saved']]);
+  ctx.trackProductEvent('list_saved'); assert.equal(calls[0][0],'event'); assert.equal(calls[0][1],'list_saved');
+  assert.equal(calls[0][2].page_location,'https://neoanimez.com/'); assert.equal(calls[0][2].page_referrer,''); assert.ok(!JSON.stringify(calls).includes('secret'));
 });
 test('HTML opens discovery and has accessible save and account controls', () => {
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
   assert.ok(!html.includes('id="intro-screen"')); assert.match(html,/id="search-screen" class="screen active"/);
   assert.match(html,/id="modalAddToList"/); assert.match(html,/id="authFeedback"[^>]+role="status"/);
-  for(const file of ['assets/neoanimez.css','assets/neoanimez.js']) assert.ok(html.includes(`${file}?v=20261011-discovery-auth`));
+  for(const file of ['assets/neoanimez.css','assets/neoanimez.js']) assert.ok(html.includes(`${file}?v=20261011-discovery-auth-r2`));
 });

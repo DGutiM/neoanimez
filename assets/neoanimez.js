@@ -52,7 +52,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261011-discovery-auth';
+const APP_VERSION = '20261011-discovery-auth-r2';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -703,6 +703,8 @@ function setTitleDisplayMode(mode) {
 
 function loadAnalytics() {
   if (analyticsLoaded || !ANALYTICS_ID) return;
+  const authUrl = getAuthUrlState();
+  if (authUrl.code || authUrl.accessToken || authUrl.refreshToken || authUrl.type === 'recovery') return;
   analyticsLoaded = true;
 
   const script = document.createElement('script');
@@ -711,7 +713,7 @@ function loadAnalytics() {
   document.head.appendChild(script);
 
   gtag('js', new Date());
-  gtag('config', ANALYTICS_ID);
+  gtag('config', ANALYTICS_ID, { page_location: window.location.origin + window.location.pathname, page_referrer: '' });
 }
 
 function hideCookieBanner() {
@@ -853,7 +855,7 @@ function continueBrowsing() {
 function trackProductEvent(name) {
   if (!analyticsLoaded || readCookieConsent() !== 'accepted') return;
   if (!['anime_open', 'list_save_requested', 'list_saved', 'login', 'sign_up'].includes(name)) return;
-  gtag('event', name);
+  gtag('event', name, { page_location: window.location.origin + window.location.pathname, page_referrer: '' });
 }
 
 async function addCurrentAnimeToList() {
