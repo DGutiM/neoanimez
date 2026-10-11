@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-discovery-flow">
+<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-catalog-navigation">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -69,27 +69,14 @@
   <div class="sec-head">Catálogo por filtros</div>
   <div class="section-helper">Combina uno o varios filtros. Cuantos más añadas, más precisa será la recomendación.</div>
   <div class="glow"></div>
-  <div class="filter-grid">
-    <div class="fg full">
-      <label>Demografía</label>
-      <div class="filter-section demo-section">
-        <select class="fsel" id="f-demo">
-          <option value="">Cualquiera</option>
-          <option value="Josei">Josei</option>
-          <option value="Kids">Kodomo</option>
-          <option value="Seinen">Seinen</option>
-          <option value="Shoujo">Shoujo</option>
-          <option value="Shounen">Shounen</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="fg full">
-      <label>Géneros</label>
+  <form id="catalogFilters" class="catalog-filters" onsubmit="event.preventDefault(); applyFilters()" onchange="updateCatalogFilterUI()" aria-label="Filtros del catálogo">
+  <div class="filter-grid filter-primary">
+    <div class="fg">
+      <label for="f-genre">Géneros</label>
       <div class="filter-section genre-section">
         <div id="genreFilters" class="genre-stack">
           <div class="genre-row">
-            <select class="fsel genre-select">
+            <select class="fsel genre-select" id="f-genre">
               <option value="">Cualquiera</option>
               <option value="Action">Acción</option>
               <option value="Adventure">Aventura</option>
@@ -119,12 +106,30 @@
       </div>
     </div>
 
+    <div class="fg">
+      <label for="f-type">Tipo</label>
+      <div class="filter-section type-section">
+        <select class="fsel" id="f-type">
+          <option value="">Cualquiera</option>
+          <option value="TV">Serie</option>
+          <option value="Movie">Película</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <details class="filter-advanced" id="catalogAdvancedFilters">
+    <summary>
+      <span>Más filtros</span>
+      <span class="filter-active-count" id="advancedFilterCount" role="status" hidden></span>
+      <span class="filter-expand-icon" aria-hidden="true">+</span>
+    </summary>
+    <div class="filter-grid">
     <div class="fg full">
-      <label>Temas</label>
+      <label for="f-theme">Temas</label>
       <div class="filter-section theme-section">
         <div id="themeFilters" class="theme-stack">
         <div class="theme-row">
-          <select class="fsel theme-select">
+          <select class="fsel theme-select" id="f-theme">
             <option value="">Cualquiera</option>
             <option value="Adult Cast">Adulto</option>
             <option value="Anthropomorphic">Antropomórfico</option>
@@ -175,18 +180,21 @@
     </div>
 
     <div class="fg">
-      <label>Tipo</label>
-      <div class="filter-section type-section">
-        <select class="fsel" id="f-type">
+      <label for="f-demo">Demografía</label>
+      <div class="filter-section demo-section">
+        <select class="fsel" id="f-demo">
           <option value="">Cualquiera</option>
-          <option value="TV">Serie</option>
-          <option value="Movie">Película</option>
+          <option value="Josei">Josei</option>
+          <option value="Kids">Kodomo</option>
+          <option value="Seinen">Seinen</option>
+          <option value="Shoujo">Shoujo</option>
+          <option value="Shounen">Shounen</option>
         </select>
       </div>
     </div>
 
     <div class="fg">
-      <label>Fecha estreno</label>
+      <label for="f-year">Década</label>
       <div class="filter-section year-section">
         <select class="fsel" id="f-year">
           <option value="">Cualquiera</option>
@@ -194,13 +202,18 @@
           <option value="2010s">2010s</option>
           <option value="2000s">2000s</option>
           <option value="1990s">1990s</option>
-          <option value="classic">Clásicos</option>
+          <option value="classic">Antes de 1990</option>
         </select>
       </div>
     </div>
   </div>
-  <button class="apply-btn" onclick="applyFilters()">BUSCAR ANIME</button>
-  <div class="results-summary" id="resultsSummary"></div>
+  </details>
+  <div class="catalog-filter-actions">
+    <button class="apply-btn" type="submit">Buscar anime</button>
+    <button class="filter-reset-btn" id="resetCatalogFilters" type="button" onclick="clearCatalogResults({preserveFilters:false})" disabled>Limpiar filtros</button>
+  </div>
+  </form>
+  <div class="results-summary" id="resultsSummary" role="status"></div>
   <div class="fresults" id="filterResults"><div class="pre-search-note">Selecciona tus filtros y pulsa <strong>Buscar anime</strong> para ver resultados.</div></div>
 </div>
 
@@ -880,22 +893,22 @@
 
 
 
-<nav>
+<nav aria-label="Navegación principal">
+  <button class="nbtn active" id="nav-search" onclick="showScreen('search')" aria-current="page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"></circle><line x1="16" y1="16" x2="20" y2="20"></line></svg>
+    Descubrir
+  </button>
   <button class="nbtn" id="nav-filter" onclick="showScreen('filter')">
     <svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
     Catálogo
-  </button>
-  <button class="nbtn" id="nav-ranking" onclick="showScreen('ranking')">
-    <svg viewBox="0 0 24 24"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
-    Destacados
   </button>
   <button class="nbtn" id="nav-user" onclick="showScreen('user')">
     <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="8" r="4"></circle></svg>
     Mi lista
   </button>
-  <button class="nbtn active" id="nav-search" onclick="showScreen('search')">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><line x1="16" y1="16" x2="20" y2="20"></line></svg>
-    Descubrir
+  <button class="nbtn" id="nav-ranking" onclick="showScreen('ranking')">
+    <svg viewBox="0 0 24 24"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
+    Destacados
   </button>
   <button class="nbtn" id="nav-info" onclick="showScreen('info')">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="10" x2="12" y2="16"></line><circle cx="12" cy="7" r="1"></circle></svg>
@@ -1057,6 +1070,6 @@
   </div>
 </div>
 
-<script src="assets/neoanimez.js?v=20261011-discovery-flow"></script>
+<script src="assets/neoanimez.js?v=20261011-catalog-navigation"></script>
 </body>
 </html>

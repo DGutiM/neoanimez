@@ -52,7 +52,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261011-discovery-flow';
+const APP_VERSION = '20261011-catalog-navigation';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -569,6 +569,7 @@ function updateAdultContentUI() {
       ? `Contenido 18+ visible${adultCount ? ` · ${adultCount} títulos` : ''}.`
       : 'Contenido 18+ oculto en toda la web.';
   }
+  updateCatalogFilterUI();
 }
 
 function refreshAdultContentSurfaces() {
@@ -6792,10 +6793,16 @@ function setActiveScreen(screenId, navId = null, animate = false) {
   if (fromScreen !== targetName) saveScreenScrollPosition(fromScreen);
   scheduleHeavyScreenReset(fromScreen, targetName);
 
-  document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.nbtn').forEach(b => {
+    b.classList.remove('active');
+    b.removeAttribute('aria-current');
+  });
   if (navId) {
     const nav = document.getElementById(navId);
-    if (nav) nav.classList.add('active');
+    if (nav) {
+      nav.classList.add('active');
+      nav.setAttribute('aria-current', 'page');
+    }
   }
 
   const current = screens.find(s => s.classList.contains('active') && s.id !== screenId);
@@ -7014,6 +7021,22 @@ function showScreen(name) {
   if (name === 'user') loadAnimeSchedule();
 }
 
+function updateCatalogFilterUI() {
+  const form = document.getElementById('catalogFilters');
+  if (!form) return;
+  const selects = [...form.querySelectorAll('select')];
+  selects.forEach(select => select.classList.toggle('has-value', !!select.value));
+  const advanced = document.getElementById('catalogAdvancedFilters');
+  const activeAdvanced = new Set([...advanced.querySelectorAll('select')]
+    .filter(select => select.value)
+    .map(select => `${select.classList.contains('theme-select') ? 'theme' : select.id}:${select.value}`));
+  const count = document.getElementById('advancedFilterCount');
+  count.hidden = activeAdvanced.size === 0;
+  count.textContent = activeAdvanced.size ? `${activeAdvanced.size} ${activeAdvanced.size === 1 ? 'activo' : 'activos'}` : '';
+  document.getElementById('resetCatalogFilters').disabled = !selects.some(select => select.value)
+    && document.querySelectorAll('#genreFilters .genre-row, #themeFilters .theme-row').length === 2;
+}
+
 function addGenreSelect(value = '') {
   const stack = document.getElementById('genreFilters');
   if (!stack) return;
@@ -7023,6 +7046,7 @@ function addGenreSelect(value = '') {
   row.className = 'genre-row';
 
   const select = firstSelect.cloneNode(true);
+  select.removeAttribute('id');
   select.value = value;
 
   const actions = document.createElement('div');
@@ -7044,11 +7068,13 @@ function addGenreSelect(value = '') {
   stack.appendChild(row);
   ensureGenreRemoveButtons();
   updateAdultContentUI();
+  select.focus();
 }
 
 function ensureGenreRemoveButtons() {
   const rows = [...document.querySelectorAll('#genreFilters .genre-row')];
   rows.forEach((row, index) => {
+    row.querySelector('select')?.setAttribute('aria-label', `Género ${index + 1}`);
     let actions = row.querySelector('.genre-row-actions');
     if (!actions) {
       actions = document.createElement('div');
@@ -7073,6 +7099,7 @@ function ensureGenreRemoveButtons() {
       actions.appendChild(btn);
     }
   });
+  updateCatalogFilterUI();
 }
 
 function getSelectedGenres() {
@@ -7091,6 +7118,7 @@ function addThemeSelect(value = '') {
   row.className = 'theme-row';
 
   const select = firstSelect.cloneNode(true);
+  select.removeAttribute('id');
   select.value = value;
 
   const actions = document.createElement('div');
@@ -7111,11 +7139,13 @@ function addThemeSelect(value = '') {
   row.appendChild(select);
   stack.appendChild(row);
   ensureThemeRemoveButtons();
+  select.focus();
 }
 
 function ensureThemeRemoveButtons() {
   const rows = [...document.querySelectorAll('#themeFilters .theme-row')];
   rows.forEach((row, index) => {
+    row.querySelector('select')?.setAttribute('aria-label', `Tema ${index + 1}`);
     let actions = row.querySelector('.theme-row-actions');
     if (!actions) {
       actions = document.createElement('div');
@@ -7140,6 +7170,7 @@ function ensureThemeRemoveButtons() {
       actions.appendChild(btn);
     }
   });
+  updateCatalogFilterUI();
 }
 
 function getSelectedThemes() {

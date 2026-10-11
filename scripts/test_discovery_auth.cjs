@@ -127,7 +127,8 @@ test('HTML opens discovery and has accessible save and account controls', () => 
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
   assert.ok(!html.includes('id="intro-screen"')); assert.match(html,/id="search-screen" class="screen active"/);
   assert.match(html,/id="modalAddToList"/); assert.match(html,/id="authFeedback"[^>]+role="status"/);
-  for(const file of ['assets/neoanimez.css','assets/neoanimez.js']) assert.ok(html.includes(`${file}?v=20261011-discovery-flow`));
+  const version = source.match(/const APP_VERSION = '([^']+)'/)[1];
+  for(const file of ['assets/neoanimez.css','assets/neoanimez.js']) assert.ok(html.includes(`${file}?v=${version}`));
 });
 
 function signupSetup({ password='test-only-password', confirmation=password, response={data:{session:null}}, fails=false }={}) {
