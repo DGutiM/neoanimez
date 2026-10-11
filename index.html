@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/neoanimez.css?v=20261007-monthly-data">
+<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-discovery-auth">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -63,65 +63,6 @@
   </div>
 </div>
 
-
-<!-- INTRO -->
-<div id="intro-screen" class="screen active">
-  <div class="intro-card">
-    <img class="intro-logo" src="logo.png" alt="NeoAnimeZ"
-      onerror="this.outerHTML='<span class=\'logo-fallback\'>NeoAnimeZ</span>'">
-    <div class="intro-title">Descubre tu próximo anime</div>
-    <div class="intro-sub">Elige filtros y descubre series o pelis que encajen contigo en segundos.</div>
-
-    <button class="intro-start" onclick="startApp()">EMPEZAR</button>
-    
-    <div class="intro-socials" aria-label="Redes sociales">
-
-      <!-- Twitter -->
-      <a href="https://twitter.com/neoanimez" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
-        <svg viewBox="0 0 24 24">
-          <path d="M4 4l16 16"></path>
-          <path d="M20 4L4 20"></path>
-        </svg>
-      </a>
-
-      <!-- Twitch -->
-      <a href="https://www.twitch.tv/neoanimez" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
-        <svg viewBox="0 0 24 24">
-          <path d="M5 4h14v10l-4 4h-4l-2 2v-2H5z"></path>
-          <path d="M10 8v4"></path>
-          <path d="M14 8v4"></path>
-        </svg>
-      </a>
-
-      <!-- INSTAGRAM -->
-      <a href="https://www.instagram.com/neoanimez?igsh=djlnbzU5eGUycDNp&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="insta">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-          <circle cx="12" cy="12" r="4"></circle>
-          <circle cx="17" cy="7" r="1.2"></circle>
-        </svg>
-      </a>
-
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@neoanimez" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg viewBox="0 0 24 24">
-          <path d="M14 5c1 2 2.5 3 4.5 3"></path>
-          <path d="M14 5v9.5a4 4 0 1 1-4-4"></path>
-        </svg>
-      </a>
-
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/@neoanimez" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="6.5" width="18" height="11" rx="3"></rect>
-          <path d="M10 9.5l5 3-5 3z"></path>
-        </svg>
-      </a>
-
-    </div>
-
-  </div>
-</div>
 
 <!-- FILTROS -->
 <div id="filter-screen" class="screen">
@@ -464,24 +405,29 @@
 
 
 <!-- BUSCAR -->
-<div id="search-screen" class="screen">
-  <div class="sec-head">Buscar por título</div>
+<div id="search-screen" class="screen active">
+  <div class="sec-head">Descubrir anime</div>
   <div class="glow"></div>
 
   <div class="search-panel">
-    <div class="search-title">Encuentra un anime por nombre</div>
-    <div class="search-sub">Escribe una palabra, un título completo o un nombre alternativo y te mostraré las coincidencias más cercanas.</div>
+    <h1 class="search-title">Tu próximo anime</h1>
+    <div class="search-sub">Descubre qué ver y lleva al día tu lista, capítulos y estrenos.</div>
     <div class="search-field">
-      <input id="titleSearchInput" class="search-input" type="search" placeholder="Escribe un título..." autocomplete="off" spellcheck="false">
+      <input aria-label="Buscar anime por título" id="titleSearchInput" class="search-input" type="search" placeholder="Escribe un título..." autocomplete="off" spellcheck="false">
       <button id="titleSearchClear" class="search-clear" type="button" aria-label="Limpiar búsqueda">×</button>
     </div>
     <button class="apply-btn" type="button" id="titleSearchButton">BUSCAR ANIME</button>
+    <div class="discovery-tools">
+      <button type="button" class="discovery-filter-btn" onclick="showScreen('filter')">Explorar por filtros</button>
+      <button type="button" class="discovery-filter-btn" onclick="showScreen('ranking')">Ver estrenos y comunidad</button>
+    </div>
+    <div id="discoveryFeedback" class="discovery-feedback" role="status" aria-live="polite"></div>
   </div>
 
   <div class="random-panel">
     <div class="random-copy">
       <div class="random-title">¿No sabes qué ver?</div>
-      <div class="random-sub">Elige una recomendación según tus gustos o una sorpresa total.</div>
+      <div class="random-sub">Una serie o película por descubrir.</div>
     </div>
     <div class="random-actions">
       <button class="random-btn for-you hidden" id="tasteAnimeButton" type="button" onclick="openTasteRecommendation()" aria-label="Recomendar según tus gustos" title="Según tus gustos">
@@ -512,7 +458,7 @@
   <div class="mood-panel" id="moodRecommendationPanel">
     <div class="mood-head">
       <div>
-        <div class="mood-title">Recomiéndame por mood</div>
+        <div class="mood-title">¿Qué te apetece hoy?</div>
         <div class="mood-sub">Elige cómo te apetece ver anime hoy y te saco una propuesta con motivo.</div>
       </div>
     </div>
@@ -543,6 +489,52 @@
       <div class="info-text">Proyecto independiente para descubrir anime de forma rápida, visual y cómoda tanto en móvil como en escritorio.</div>
       <a class="info-mail" href="mailto:neoanimeztweet@gmail.com">neoanimeztweet@gmail.com</a>
       <span class="info-mini">Si ves errores en fichas, títulos o traducciones, escríbeme y lo reviso.</span>
+    <div class="info-socials" aria-label="Redes sociales">
+
+      <!-- Twitter -->
+      <a href="https://twitter.com/neoanimez" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 4l16 16"></path>
+          <path d="M20 4L4 20"></path>
+        </svg>
+      </a>
+
+      <!-- Twitch -->
+      <a href="https://www.twitch.tv/neoanimez" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 4h14v10l-4 4h-4l-2 2v-2H5z"></path>
+          <path d="M10 8v4"></path>
+          <path d="M14 8v4"></path>
+        </svg>
+      </a>
+
+      <!-- INSTAGRAM -->
+      <a href="https://www.instagram.com/neoanimez?igsh=djlnbzU5eGUycDNp&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="insta">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17" cy="7" r="1.2"></circle>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@neoanimez" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 24 24">
+          <path d="M14 5c1 2 2.5 3 4.5 3"></path>
+          <path d="M14 5v9.5a4 4 0 1 1-4-4"></path>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@neoanimez" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="6.5" width="18" height="11" rx="3"></rect>
+          <path d="M10 9.5l5 3-5 3z"></path>
+        </svg>
+      </a>
+
+    </div>
+
     </div>
 
     <div class="info-card">
@@ -629,8 +621,9 @@
 
   <div id="userGuestView" class="user-shell">
     <div class="auth-card">
-      <div class="user-title">Personaliza tu lista de anime</div>
-      <div class="user-text">Inicia sesión o crea una cuenta para guardar tus animes en <strong>En progreso</strong>, <strong>Completados</strong>, <strong>Pendientes</strong> y <strong>Droppeados</strong>.</div>
+      <div class="user-title" id="authContextTitle">Tu lista, siempre contigo</div>
+      <div class="user-text" id="authContextText">Guarda tus animes, notas y capítulos y continúa desde cualquier dispositivo. Explorar NeoAnimeZ no requiere cuenta.</div>
+      <div class="auth-pending-anime" id="authPendingAnime" hidden></div>
       <div class="auth-tabs">
         <button class="auth-tab active" id="authTabLogin" type="button" onclick="switchAuthTab('login')">Iniciar sesión</button>
         <button class="auth-tab" id="authTabSignup" type="button" onclick="switchAuthTab('signup')">Registrarse</button>
@@ -647,11 +640,13 @@
         <input class="auth-input" id="signupPasswordConfirm" type="password" placeholder="Repite la contraseña" autocomplete="new-password" required>
         <button class="auth-submit" type="submit">Crear cuenta</button>
       </form>
-      <div id="authFeedback" class="auth-feedback"></div>
+      <div id="authFeedback" class="auth-feedback" role="status" aria-live="polite"></div>
+      <button type="button" class="auth-browse-btn" onclick="continueBrowsing()">Seguir explorando sin cuenta</button>
     </div>
   </div>
 
   <div id="userLoggedView" class="user-shell" style="display:none">
+    <div id="userAccountNotice" class="auth-feedback" role="status" aria-live="polite"></div>
     <div class="user-card">
       <div class="user-account-row">
         <div class="user-email-line" id="userEmailText"></div>
@@ -883,7 +878,7 @@
     <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="8" r="4"></circle></svg>
     Mi lista
   </button>
-  <button class="nbtn" id="nav-search" onclick="showScreen('search')">
+  <button class="nbtn active" id="nav-search" onclick="showScreen('search')">
     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><line x1="16" y1="16" x2="20" y2="20"></line></svg>
     Buscar
   </button>
@@ -909,6 +904,12 @@
         <div id="animeModalTags" class="modal-tags"></div>
         <div id="animeRecommendationNote" class="modal-reco-note hidden"></div>
       </div>
+    </div>
+    <div class="modal-save-action">
+      <button id="modalAddToList" class="modal-add-btn" type="button" onclick="addCurrentAnimeToList()">
+        <span aria-hidden="true">+</span><span id="modalAddToListLabel">Añadir a mi lista</span>
+      </button>
+      <div id="modalSaveFeedback" class="modal-save-feedback" role="status" aria-live="polite"></div>
     </div>
     <div id="animeRelationsSection" class="anime-relations-section hidden" aria-live="polite">
       <div class="modal-section-title">Orden para ver</div>
@@ -1041,6 +1042,6 @@
   </div>
 </div>
 
-<script src="assets/neoanimez.js?v=20261007-monthly-data"></script>
+<script src="assets/neoanimez.js?v=20261011-discovery-auth"></script>
 </body>
 </html>

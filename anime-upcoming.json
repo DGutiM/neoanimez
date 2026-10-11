@@ -5,11 +5,11 @@
     "year": 2026,
     "include_tba": true,
     "sort": "Más esperados: members desc, favorites desc, popularity asc mediante anticipation_score",
-    "total": 35,
+    "total": 32,
     "translated_descriptions": 0,
     "cleaned_description_fields": 282,
     "curated": true,
-    "curated_at": "2026-10-07T19:07:07+00:00",
+    "curated_at": "2026-10-11T14:27:39.181Z",
     "source_total": 383,
     "source_after_filter": 30,
     "limits": {
@@ -53,9 +53,6 @@
       62582,
       62844,
       64459,
-      63367,
-      64254,
-      63423,
       62484
     ],
     "winter_2027": [
@@ -643,7 +640,7 @@
       "members": 36809,
       "favorites": 408,
       "mal_popularity": 36809,
-      "anticipation_score": 548.0,
+      "anticipation_score": 548,
       "jikan_url": "https://anilist.co/anime/177704",
       "trailer_url": "",
       "title_es": "MASHLE: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
@@ -1503,78 +1500,6 @@
       "description_es": "Parte 3 de la cuarta temporada de Tensei Shitara Slime Datta Ken. Nota: Al ser el tercer curso de la temporada, está etiquetado como \"Parte 3\"."
     },
     {
-      "title": "Dragon Ball Super: Beerus",
-      "mal_id": 63367,
-      "image": "https://myanimelist.net/images/anime/1015/155108l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "Shounen",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2026,
-      "description": "Dragon Ball Super: Beerus, a project that was started a few years ago, is the newly ENHANCED edition of the anime Dragon Ball Super. ENHANCED by the latest visual expression, every scene, especially the battle scenes, is even more immersive, providing a more faithful and detailed reproduction of the original work by Akira Toriyama, and it will deliver a quality that is sure to fully satisfy audiences.",
-      "type": "TV",
-      "franchise": "Dragon Ball Super",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-10-11",
-      "aired_to": "",
-      "broadcast_day": "Sundays",
-      "broadcast_time": "23:16",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Sundays at 23:16 (JST)",
-      "source_tags_original": [
-        "OTHER"
-      ],
-      "themes": [
-        "Martial Arts"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Dragon Ball Super: Beerus",
-      "title_japanese": "ドラゴンボール超 ビルス",
-      "title_synonyms": [],
-      "search_titles": [
-        "Dragon Ball Super: Beerus",
-        "ドラゴンボール超 ビルス"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Sundays",
-        "time": "23:16",
-        "timezone": "Asia/Tokyo",
-        "string": "Sundays at 23:16 (JST)"
-      },
-      "members": 13494,
-      "favorites": 234,
-      "mal_popularity": 13494,
-      "anticipation_score": 509.24,
-      "jikan_url": "https://anilist.co/anime/206814",
-      "trailer_url": "",
-      "title_es": "Dragon Ball Super: Beerus",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Dragon Ball Super: Beerus"
-      ],
-      "description_es": "Dragon Ball Super: Beerus, un proyecto que se inició hace unos años, es la edición recientemente MEJORADA del anime Dragon Ball Super. MEJORADA por la última expresión visual, cada escena, especialmente las escenas de batalla, es aún más inmersiva, proporcionando una reproducción más fiel y detallada de la obra original de Akira Toriyama, y ​​ofrecerá una calidad que seguramente satisfará plenamente al público."
-    },
-    {
       "title": "Kakunaru Ue wa",
       "mal_id": 62989,
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202564-gLnCiyS8vHsB.jpg",
@@ -1799,155 +1724,6 @@
         "Los diarios de la boticaria"
       ],
       "description_es": "El segundo curso de la tercera temporada de Kusuriya no Hitorigoto."
-    },
-    {
-      "title": "Hyouken no Majutsushi ga Sekai wo Suberu II",
-      "mal_id": 64254,
-      "image": "https://cdn.myanimelist.net/images/anime/1968/158143l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2026,
-      "description": "Second season of Hyouken no Majutsushi ga Sekai wo Suberu.",
-      "type": "TV",
-      "franchise": "Hyouken no Majutsushi ga Sekai wo Suberu",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-10-09",
-      "aired_to": "",
-      "broadcast_day": "Fridays",
-      "broadcast_time": "01:28",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Fridays at 01:28 (JST)",
-      "source_tags_original": [
-        "LIGHT_NOVEL"
-      ],
-      "themes": [
-        "School"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "The Iceblade Sorcerer Shall Rule the World II",
-      "title_japanese": "冰剣の魔術師が世界を統べるII",
-      "title_synonyms": [
-        "Hyouken no Majutsushi ga Sekai wo Suberu 2nd Season"
-      ],
-      "search_titles": [
-        "Hyouken no Majutsushi ga Sekai wo Suberu II",
-        "The Iceblade Sorcerer Shall Rule the World II",
-        "冰剣の魔術師が世界を統べるII",
-        "Hyouken no Majutsushi ga Sekai wo Suberu 2nd Season"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Fridays",
-        "time": "01:28",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 01:28 (JST)"
-      },
-      "members": 11773,
-      "favorites": 144,
-      "mal_popularity": 11773,
-      "anticipation_score": 499.07,
-      "jikan_url": "https://anilist.co/anime/212503",
-      "trailer_url": "",
-      "title_es": "El hechicero Iceblade gobernará el mundo II",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "El hechicero Iceblade gobernará el mundo II"
-      ],
-      "description_es": "Segunda temporada de Hyouken no Majutsushi ga Sekai wo Suberu."
-    },
-    {
-      "title": "Doko yori mo Tooi Basho ni Iru Kimi e",
-      "mal_id": 63423,
-      "image": "https://myanimelist.net/images/anime/1429/156614l.jpg",
-      "episodes": 1,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Mystery",
-        "Romance"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Kazuki Tsukigase is a high school boy who carries a certain secret. In search of a place where no one knows him, he enrolls at Sakijima High School on a remote island. On Sakijima, there is a place known as the \"Cove of Spiriting Away.\" One early summer day, Kazuki finds a girl lying unconscious in the cove. The girl—Nanao, 16 years old—later regains consciousness in the hospital, but her identity remains unknown. What is the meaning behind the word \"1974\" that she murmured? A touching boy-meets-girl story.",
-      "type": "Movie",
-      "franchise": "Doko yori mo Tooi Basho ni Iru Kimi e",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-10-09",
-      "aired_to": "2026-10-09",
-      "broadcast_day": "Fridays",
-      "broadcast_time": "00:00",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Fridays at 00:00 (JST)",
-      "source_tags_original": [
-        "LIGHT_NOVEL"
-      ],
-      "themes": [
-        "School"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "To You in the Beyond",
-      "title_japanese": "どこよりも遠い場所にいる君へ",
-      "title_synonyms": [
-        "To You in the Beyond"
-      ],
-      "search_titles": [
-        "Doko yori mo Tooi Basho ni Iru Kimi e",
-        "どこよりも遠い場所にいる君へ",
-        "To You in the Beyond"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Fridays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:00 (JST)"
-      },
-      "members": 12086,
-      "favorites": 103,
-      "mal_popularity": 12086,
-      "anticipation_score": 496.6,
-      "jikan_url": "https://anilist.co/anime/207327",
-      "trailer_url": "",
-      "title_es": "Doko yori mo Tooi Basho ni Iru Kimi e",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Doko yori mo Tooi Basho ni Iru Kimi e"
-      ],
-      "description_es": "Kazuki Tsukigase es un chico de secundaria que guarda cierto secreto. En busca de un lugar donde nadie lo conozca, se matricula en la escuela secundaria Sakijima en una isla remota. En Sakijima, hay un lugar conocido como la \"Cala del viaje espiritual\". Un día de principios de verano, Kazuki encuentra a una niña inconsciente en la cala. La niña, Nanao, de 16 años, recupera el conocimiento más tarde en el hospital, pero se desconoce su identidad. ¿Cuál es el significado de la palabra \"1974\" que murmuró? Una conmovedora historia de chico conoce a chica."
     },
     {
       "title": "Chitose-kun wa Ramune Bin no Naka Part 2",

@@ -52,7 +52,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261007-monthly-data';
+const APP_VERSION = '20261011-discovery-auth';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -162,8 +162,8 @@ let communityRatingMap = new Map();
 let communityRankingMode = 'selection';
 let upcomingAnimeMap = new Map();
 let upcomingPayload = null;
-let activeScreenName = 'intro';
-let lastScreenName = 'intro';
+let activeScreenName = 'search';
+let lastScreenName = 'search';
 let needsCatalogReset = false;
 let needsSearchReset = false;
 let isCleaningHeavyResults = false;
@@ -760,15 +760,18 @@ function initCookieBanner() {
 }
 
 const APP_STATE_KEY = 'neoanimez_app_state_v2';
-const MOBILE_INTRO_SESSION_KEY = 'neoanimez_mobile_intro_seen_session_v1';
+const PENDING_LIST_INTENT_KEY = 'neoanimez_pending_list_intent_v1';
+const LIST_INTENT_TTL = 7 * 24 * 60 * 60 * 1000;
+let pendingListIntentMemory = null;
+let resumingListIntent = false;
 const USER_DATA_CACHE_PREFIX = 'neoanimez_user_data_v1:';
 const PENDING_WRITES_CACHE_PREFIX = 'neoanimez_pending_writes_v1:';
 const COMMUNITY_RATINGS_CACHE_KEY = 'neoanimez_community_ratings_v1';
 const COMMUNITY_THREADS_CACHE_KEY = 'neoanimez_community_threads_v1';
 const AUTH_FLASH_MESSAGE_KEY = 'neoanimez_auth_flash_message';
 const APP_DEFAULT_STATE = {
-  introDismissed: false,
-  activeScreen: 'intro'
+  introDismissed: true,
+  activeScreen: 'search'
 };
 const PASSWORD_SUCCESS_MESSAGE_KEY = 'neoanimez_password_success_message';
 function readAppState() {
@@ -791,32 +794,154 @@ function writeAppState(patch = {}) {
   }
 }
 
-function isMobileExperience() {
-  return window.matchMedia('(max-width: 720px)').matches ||
-    /Android|iPhone|iPad|iPod|Mobi/i.test(navigator.userAgent || '');
+function getInitialScreen({ user = null, recovery = false, passwordUpdated = false, authRedirect = false } = {}) {
+  return user || recovery || passwordUpdated || authRedirect ? 'user' : 'search';
 }
 
-function hasSeenIntroInCurrentMobileSession() {
-  if (!isMobileExperience()) return true;
+function validateListIntent(value, now = Date.now()) {
+  if (!value || !Number.isSafeInteger(value.animeId) || value.animeId <= 0) return null;
+  if (!Number.isFinite(value.createdAt) || value.createdAt > now || now - value.createdAt > LIST_INTENT_TTL) return null;
+  if (typeof value.title !== 'string' || value.title.length > 300) return null;
+  if (value.email != null && typeof value.email !== 'string') return null;
+  return value;
+}
+
+function readPendingListIntent() {
   try {
-    return sessionStorage.getItem(MOBILE_INTRO_SESSION_KEY) === '1';
+    const stored = localStorage.getItem(PENDING_LIST_INTENT_KEY);
+    return validateListIntent(stored ? JSON.parse(stored) : pendingListIntentMemory);
   } catch {
-    return false;
+    return validateListIntent(pendingListIntentMemory);
   }
 }
 
-function markIntroSeenInCurrentMobileSession() {
-  if (!isMobileExperience()) return;
+function writePendingListIntent(intent) {
+  pendingListIntentMemory = intent;
   try {
-    sessionStorage.setItem(MOBILE_INTRO_SESSION_KEY, '1');
+    if (intent) localStorage.setItem(PENDING_LIST_INTENT_KEY, JSON.stringify(intent));
+    else localStorage.removeItem(PENDING_LIST_INTENT_KEY);
   } catch {}
 }
 
-function shouldRestoreSavedAppScreen(savedAppState, passwordJustUpdated = false) {
-  if (passwordJustUpdated) return false;
-  if (!savedAppState?.introDismissed) return false;
-  if (!['filter', 'ranking', 'user', 'search', 'info'].includes(savedAppState.activeScreen)) return false;
-  return hasSeenIntroInCurrentMobileSession();
+function bindListIntentToEmail(email) {
+  const intent = readPendingListIntent();
+  if (intent) writePendingListIntent({ ...intent, email: email.trim().toLowerCase() });
+}
+
+function renderAuthContext() {
+  const intent = readPendingListIntent();
+  const title = document.getElementById('authContextTitle');
+  const copy = document.getElementById('authContextText');
+  const pending = document.getElementById('authPendingAnime');
+  if (title) title.textContent = intent ? 'Guarda este anime en tu lista' : 'Tu lista, siempre contigo';
+  if (copy) copy.textContent = intent
+    ? 'Inicia sesión o crea una cuenta gratis. Tu anime te espera para guardarlo en Pendientes.'
+    : 'Guarda tus animes, notas y capítulos y continúa desde cualquier dispositivo. Explorar NeoAnimeZ no requiere cuenta.';
+  if (pending) {
+    pending.hidden = !intent;
+    pending.textContent = intent ? intent.title : '';
+  }
+}
+
+function continueBrowsing() {
+  writePendingListIntent(null);
+  renderAuthContext();
+  setAuthFeedback('');
+  showScreen('search');
+}
+
+function trackProductEvent(name) {
+  if (!analyticsLoaded || readCookieConsent() !== 'accepted') return;
+  if (!['anime_open', 'list_save_requested', 'list_saved', 'login', 'sign_up'].includes(name)) return;
+  gtag('event', name);
+}
+
+async function addCurrentAnimeToList() {
+  const anime = currentModalAnime;
+  if (!anime?.mal_id) return;
+  if (!currentUser) {
+    writePendingListIntent({ animeId: Number(anime.mal_id), title: getAnimeDisplayTitle(anime).slice(0, 300), createdAt: Date.now() });
+    trackProductEvent('list_save_requested');
+    closeAnimeModal();
+    renderAuthContext();
+    switchAuthTab('login');
+    setAuthFeedback('');
+    screenScrollPositions.user = 0;
+    showScreen('user');
+    return;
+  }
+  if (userAnimeMap.has(Number(anime.mal_id))) {
+    document.querySelector('.modal-status-box')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  const userId = currentUser.id;
+  const button = document.getElementById('modalAddToList');
+  if (button) button.disabled = true;
+  try {
+    const ready = await fetchUserStatuses({ silent: true });
+    if (currentUser?.id !== userId) return;
+    if (!ready) {
+      setModalStatusMessage('No se pudo comprobar tu lista. Vuelve a intentarlo; no hemos cambiado nada.', 'error');
+      return;
+    }
+    if (userAnimeMap.has(Number(anime.mal_id))) {
+      updateModalStatusUI();
+      setModalStatusMessage('Este anime ya estaba en tu lista. Hemos conservado su estado.', 'success');
+      return;
+    }
+    const saved = await saveAnimeStatus(anime, 'pending');
+    if (saved) writePendingListIntent(null);
+  } finally {
+    if (button) button.disabled = false;
+  }
+}
+
+async function resumePendingListIntent() {
+  const intent = readPendingListIntent();
+  const user = currentUser;
+  if (!intent || !user?.id || resumingListIntent || isPasswordRecoveryFlow || readPublicProfileSlugFromUrl()) return;
+  if (!intent.email || intent.email !== String(user.email || '').toLowerCase()) return;
+  resumingListIntent = true;
+  try {
+    let anime = getAnimeById(intent.animeId);
+    if (!anime) {
+      await loadUpcomingRanking();
+      anime = getAnimeById(intent.animeId);
+    }
+    if (!anime || !isAnimeVisible(anime)) return;
+    openAnimeModal(anime);
+    setModalStatusMessage('Comprobando tu lista...');
+    // Confirm existing membership before saving: never turn a completed anime into pending.
+    const ready = await fetchUserStatuses({ silent: true });
+    const activeIntent = readPendingListIntent();
+    if (currentUser?.id !== user.id || activeIntent?.createdAt !== intent.createdAt || activeIntent?.animeId !== intent.animeId) return;
+    if (!ready) {
+      setModalStatusMessage('Tu anime sigue aquí. No hemos cambiado tu lista; puedes volver a intentar guardarlo.', 'error');
+      return;
+    }
+    if (userAnimeMap.has(intent.animeId)) {
+      writePendingListIntent(null);
+      updateModalStatusUI();
+      setModalStatusMessage('Este anime ya estaba en tu lista. Hemos conservado su estado, nota y progreso.', 'success');
+    } else if (await saveAnimeStatus(anime, 'pending')) {
+      writePendingListIntent(null);
+    }
+  } catch (error) {
+    console.warn('No se pudo recuperar el anime elegido:', error);
+    setAuthFeedback('Hemos conservado el anime elegido. Puedes volver a intentarlo cuando tengas conexión.', 'error');
+  } finally {
+    resumingListIntent = false;
+    renderAuthContext();
+  }
+}
+
+function setDiscoveryLoading(loading) {
+  const ready = !loading && DB.length > 0;
+  document.querySelectorAll('#titleSearchInput, #titleSearchButton, .random-btn, .mood-chip').forEach(button => {
+    button.disabled = !ready;
+  });
+  const message = document.getElementById('discoveryFeedback');
+  if (message) message.textContent = loading ? 'Cargando catálogo…' : (ready ? '' : 'No se pudo cargar el catálogo. Comprueba tu conexión y vuelve a intentarlo.');
 }
 
 function readStoredSupabaseUser() {
@@ -1195,21 +1320,10 @@ function consumePasswordSuccessMessage() {
   }
 }
 
-function renderIntroFlashMessage(messageOverride = '') {
-  const introSub = document.querySelector('.intro-sub');
-  if (!introSub) return;
-  if (!introSub.dataset.defaultText) {
-    introSub.dataset.defaultText = introSub.textContent || '';
-  }
-  const message = messageOverride || consumeAuthFlashMessage() || consumePasswordSuccessMessage();
-  introSub.textContent = message || introSub.dataset.defaultText;
-  introSub.style.color = message ? '#8ff0ff' : '';
-}
-
 function persistActiveScreen(name) {
   writeAppState({
     introDismissed: name !== 'intro',
-    activeScreen: name || 'intro'
+    activeScreen: name || 'search'
   });
 }
 
@@ -1234,6 +1348,7 @@ function resetAuthForms() {
 }
 
 async function forceLocalSignOut() {
+  writePendingListIntent(null);
   try {
     await supabaseClient.auth.signOut({ scope: 'local' });
   } catch (err) {
@@ -1303,7 +1418,7 @@ async function bootstrapAuthFromUrl() {
     const { data, error } = await supabaseClient.auth.exchangeCodeForSession(state.code);
     if (!error && data?.session) {
       session = data.session;
-      recoveryDetected = recoveryDetected || data.session.user?.recovery_sent_at != null || state.type === 'recovery';
+      recoveryDetected = recoveryDetected || state.type === 'recovery';
     } else if (error) {
       console.error('Error intercambiando code por sesión:', error);
     }
@@ -1325,7 +1440,6 @@ async function bootstrapAuthFromUrl() {
     isPasswordRecoveryFlow = true;
   } else if (session && authRedirectDetected) {
     pendingAuthNotice = 'Email confirmado. Tu cuenta ya está activa en NeoAnimeZ.';
-    setAuthFlashMessage(pendingAuthNotice);
   }
 
   return session;
@@ -1348,7 +1462,7 @@ function formatAuthError(message = '') {
 }
 
 function setAuthFeedback(message = '', type = '') {
-  ['authFeedback', 'accountFeedback'].forEach(id => {
+  ['authFeedback', 'accountFeedback', 'userAccountNotice'].forEach(id => {
     const box = document.getElementById(id);
     if (!box) return;
     box.textContent = message;
@@ -1363,6 +1477,11 @@ function setModalStatusMessage(message = '', type = '') {
   box.textContent = message;
   box.className = 'modal-status-message';
   if (type) box.classList.add(type);
+  const feedback = document.getElementById('modalSaveFeedback');
+  if (feedback) {
+    feedback.textContent = message;
+    feedback.className = 'modal-save-feedback' + (type ? ` ${type}` : '');
+  }
 }
 
 function updateAccountModeUI() {
@@ -1513,6 +1632,10 @@ function updateModalStatusUI() {
   const currentStatus = currentModalAnime ? userAnimeMap.get(Number(currentModalAnime.mal_id)) : null;
   const upcomingOnly = isUpcomingAnime(currentModalAnime);
 
+  const addButton = document.getElementById('modalAddToList');
+  const addLabel = document.getElementById('modalAddToListLabel');
+  if (addLabel) addLabel.textContent = currentStatus && currentUser ? `En mi lista · ${STATUS_LABELS[currentStatus]}` : 'Añadir a mi lista';
+  addButton?.classList.toggle('is-saved', !!(currentStatus && currentUser));
   statusBox?.classList.toggle('upcoming-only', upcomingOnly);
   statusGrid?.classList.toggle('upcoming-only', upcomingOnly);
   buttons.forEach(btn => {
@@ -1540,6 +1663,8 @@ function updateModalStatusUI() {
   }
   if (!currentUser) {
     statusBox?.classList.add('hidden');
+    const feedback = document.getElementById('modalSaveFeedback');
+    if (feedback) feedback.textContent = 'Cuenta gratis para guardar tu lista y verla en otros dispositivos.';
     return;
   }
 
@@ -3032,6 +3157,7 @@ function applyUserAnimeBundle(payload = {}) {
 
 async function fetchUserAnimeBundle({ silent = false } = {}) {
   if (!currentUser || !userAnimeBundleFeatureAvailable) return false;
+  const userId = currentUser.id;
 
   try {
     const { data } = await safeSupabase(
@@ -3039,9 +3165,11 @@ async function fetchUserAnimeBundle({ silent = false } = {}) {
       () => supabaseClient.rpc('get_my_anime_data'),
       { timeout: 12000, retries: 1 }
     );
+    if (currentUser?.id !== userId) return false;
     applyUserAnimeBundle(data || {});
     return true;
   } catch (error) {
+    if (currentUser?.id !== userId) return false;
     if (isMissingSupabaseResourceError(error)) {
       userAnimeBundleFeatureAvailable = false;
       return false;
@@ -3061,6 +3189,7 @@ async function fetchUserStatuses({ silent = false } = {}) {
     renderUserLists();
     return true;
   }
+  const userId = currentUser.id;
 
   try {
     const { data } = await safeSupabase(
@@ -3068,11 +3197,12 @@ async function fetchUserStatuses({ silent = false } = {}) {
       () => supabaseClient
         .from('user_anime_status')
         .select('anime_id, status, updated_at')
-        .eq('user_id', currentUser.id)
+        .eq('user_id', userId)
         .order('updated_at', { ascending: false }),
       { timeout: 12000, retries: 1 }
     );
 
+    if (currentUser?.id !== userId) return false;
     userAnimeMap = new Map((data || []).map(row => [Number(row.anime_id), row.status]));
     userStatusUpdatedMap = new Map((data || [])
       .map(row => [Number(row.anime_id), row.updated_at || null])
@@ -3081,6 +3211,7 @@ async function fetchUserStatuses({ silent = false } = {}) {
     renderUserLists();
     return true;
   } catch (error) {
+    if (currentUser?.id !== userId) return false;
     console.error('Error cargando estados:', error);
     if (!silent) {
       setModalStatusMessage(userFacingSupabaseError(error, 'No se pudo actualizar tu lista.'), 'error');
@@ -3096,6 +3227,7 @@ async function fetchUserRatings({ silent = false } = {}) {
     renderUserLists();
     return true;
   }
+  const userId = currentUser.id;
 
   try {
     const { data } = await safeSupabase(
@@ -3103,16 +3235,18 @@ async function fetchUserRatings({ silent = false } = {}) {
       () => supabaseClient
         .from('user_anime_ratings')
         .select('anime_id, rating')
-        .eq('user_id', currentUser.id),
+        .eq('user_id', userId),
       { timeout: 12000, retries: 1 }
     );
 
+    if (currentUser?.id !== userId) return false;
     ratingsFeatureAvailable = true;
     userRatingMap = new Map((data || []).map(row => [Number(row.anime_id), Number(row.rating)]));
     persistCachedUserAnimeData();
     renderUserLists();
     return true;
   } catch (error) {
+    if (currentUser?.id !== userId) return false;
     console.error('Error cargando puntuaciones:', error);
     if (isMissingSupabaseResourceError(error)) {
       ratingsFeatureAvailable = false;
@@ -3134,6 +3268,7 @@ async function fetchUserProgress({ silent = false } = {}) {
     renderUserLists();
     return true;
   }
+  const userId = currentUser.id;
 
   try {
     const { data } = await safeSupabase(
@@ -3141,11 +3276,12 @@ async function fetchUserProgress({ silent = false } = {}) {
       () => supabaseClient
         .from('user_anime_progress')
         .select('anime_id, season_number, episode_number, total_episodes, updated_at')
-        .eq('user_id', currentUser.id)
+        .eq('user_id', userId)
         .order('updated_at', { ascending: false }),
       { timeout: 12000, retries: 1 }
     );
 
+    if (currentUser?.id !== userId) return false;
     progressFeatureAvailable = true;
     userProgressMap = new Map((data || []).map((row, index) => [Number(row.anime_id), {
       season_number: Number(row.season_number) || 1,
@@ -3158,6 +3294,7 @@ async function fetchUserProgress({ silent = false } = {}) {
     renderUserLists();
     return true;
   } catch (error) {
+    if (currentUser?.id !== userId) return false;
     console.error('Error cargando progreso:', error);
     if (isMissingSupabaseResourceError(error)) {
       progressFeatureAvailable = false;
@@ -4885,6 +5022,7 @@ function scheduleResumeRefresh(delay = 300) {
 }
 
 function renderUserScreen() {
+  renderAuthContext();
   const guest = document.getElementById('userGuestView');
   const logged = document.getElementById('userLoggedView');
   const email = document.getElementById('userEmailText');
@@ -4950,7 +5088,6 @@ async function syncAuthState() {
   if (currentUser) hydrateCachedUserAnimeData(currentUser.id);
   renderUserScreen();
   if (pendingAuthNotice) {
-    renderIntroFlashMessage(pendingAuthNotice);
     if (currentUser) {
       dismissIntroIfNeeded(false);
       setActiveScreen('user-screen', 'nav-user', false);
@@ -4965,6 +5102,7 @@ async function syncAuthState() {
     fetchCommunityRatings({ silent: true }),
     processPendingWrites({ silent: true })
   ]);
+  if (confirmedUser) await resumePendingListIntent();
   if (sessionReadFailed && sessionReadWasTransient && currentUser) scheduleResumeRefresh(3500);
   if (communityBoardLoaded) loadCommunityThreads({ silent: true });
   if (activeCommunityThread) loadCommunityReplies(activeCommunityThread.id, { silent: true });
@@ -4987,6 +5125,7 @@ async function handleLogin(event) {
   await runLocked('auth:login', async () => {
     setButtonBusy(submitBtn, true, 'Entrando...');
     setAuthFeedback('Entrando...');
+    bindListIntentToEmail(email);
     try {
       await safeSupabase(
         'auth.signInWithPassword',
@@ -4995,6 +5134,7 @@ async function handleLogin(event) {
       );
       form?.reset();
       setAuthFeedback('Sesión iniciada.', 'success');
+      trackProductEvent('login');
     } catch (error) {
       setAuthFeedback(userFacingSupabaseError(error, 'No se pudo iniciar sesión.'), 'error');
     } finally {
@@ -5023,6 +5163,7 @@ async function handleSignup(event) {
   await runLocked('auth:signup', async () => {
     setButtonBusy(submitBtn, true, 'Creando...');
     setAuthFeedback('Creando cuenta...');
+    bindListIntentToEmail(email);
     try {
       const { data } = await safeSupabase(
         'auth.signUp',
@@ -5036,8 +5177,9 @@ async function handleSignup(event) {
       form?.reset();
       if (data?.session) {
         setAuthFeedback('Cuenta creada. Ya tienes la sesión iniciada.', 'success');
+        trackProductEvent('sign_up');
       } else {
-        setAuthFeedback('Cuenta creada. Revisa tu correo para confirmarla y pulsa el enlace. Si no lo ves, mira en Spam, Promociones o correo no deseado.', 'success');
+        setAuthFeedback('Revisa tu correo para confirmar la cuenta. Si no lo ves, mira en Spam, Promociones o correo no deseado.' + (readPendingListIntent() ? ' Hemos recordado el anime en este navegador para cuando vuelvas.' : ''), 'success');
       }
     } catch (error) {
       setAuthFeedback(userFacingSupabaseError(error, 'No se pudo crear la cuenta.'), 'error');
@@ -5215,6 +5357,8 @@ async function handleChangePassword(event) {
 
 async function saveAnimeStatus(anime, status) {
   if (!anime?.mal_id) return;
+  const requestedUserId = currentUser?.id;
+  if (!requestedUserId) return false;
   if (isUpcomingAnime(anime) && status !== 'pending') {
     setModalStatusMessage('Los próximos estrenos solo pueden guardarse en Pendientes.', 'error');
     return;
@@ -5224,13 +5368,14 @@ async function saveAnimeStatus(anime, status) {
   const previousStatus = userAnimeMap.get(animeId) || null;
   const previousStatusUpdatedAt = userStatusUpdatedMap.get(animeId) || null;
 
-  await runLocked(`anime-status:${animeId}`, async () => {
-    setElementsBusy('[data-status-btn], .status-clear-btn, .user-start-watching-btn', true);
+  return await runLocked(`anime-status:${animeId}`, async () => {
+    setElementsBusy('[data-status-btn], .status-clear-btn, .user-start-watching-btn, #modalAddToList', true);
     setModalStatusMessage('Guardando estado...', '');
     let queuedPayload = null;
 
     try {
       const sessionUser = await ensureSupabaseWriteReady();
+      if (currentUser?.id !== requestedUserId || (sessionUser && sessionUser.id !== requestedUserId)) return false;
       if (!sessionUser) {
         setCurrentUser(null);
         renderUserScreen();
@@ -5264,22 +5409,26 @@ async function saveAnimeStatus(anime, status) {
         { timeout: 9000, retries: 1 }
       );
 
+      if (currentUser?.id !== requestedUserId) return true;
       const refreshed = await fetchUserStatuses({ silent: true });
       if (!refreshed) {
         setModalStatusMessage('Guardado, pero no se pudo refrescar tu lista. Recarga si no lo ves.', 'error');
-        return;
+        return true;
       }
 
       setModalStatusMessage(`Guardado en ${STATUS_LABELS[status]}.`, 'success');
+      trackProductEvent('list_saved');
+      return true;
     } catch (error) {
       console.error('Error guardando estado:', error);
+      if (currentUser?.id !== requestedUserId) return false;
       if (queuedPayload && keepOptimisticWriteOnTransient(
         error,
         'status_upsert',
         queuedPayload,
         setModalStatusMessage,
         `Guardado en ${STATUS_LABELS[status]}. Se sincronizará en segundo plano.`
-      )) return;
+      )) return true;
       if (previousStatus) {
         userAnimeMap.set(animeId, previousStatus);
         if (previousStatusUpdatedAt) userStatusUpdatedMap.set(animeId, previousStatusUpdatedAt);
@@ -5290,8 +5439,9 @@ async function saveAnimeStatus(anime, status) {
       persistCachedUserAnimeData();
       renderUserLists();
       setModalStatusMessage(userFacingSupabaseError(error, 'No se pudo guardar el estado.'), 'error');
+      return false;
     } finally {
-      setElementsBusy('[data-status-btn], .status-clear-btn, .user-start-watching-btn', false);
+      setElementsBusy('[data-status-btn], .status-clear-btn, .user-start-watching-btn, #modalAddToList', false);
     }
   });
 }
@@ -6564,74 +6714,8 @@ function flushBackgroundScreenResets(targetName) {
   });
 }
 
-function openIntro(noAnimation = false) {
-  const intro = document.getElementById('intro-screen');
-  if (!intro) return;
-
-  closeAnimeModal();
-  document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('active'));
-  document.body.classList.add('intro-open');
-
-  const current = [...document.querySelectorAll('.screen')].find(s => s.classList.contains('active'));
-
-  if (noAnimation) {
-    document.querySelectorAll('.screen').forEach(s => {
-      s.classList.remove('active', 'fade-in', 'fade-out');
-    });
-    lastScreenName = activeScreenName;
-    activeScreenName = 'intro';
-    persistActiveScreen('intro');
-    intro.classList.remove('fade-in', 'fade-out');
-    intro.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    return;
-  }
-
-  document.body.classList.add('screen-transitioning');
-  if (current) current.classList.add('fade-out');
-  if (intro.classList.contains('active')) return;
-
-  setTimeout(() => {
-    document.querySelectorAll('.screen').forEach(s => {
-      s.classList.remove('active', 'fade-in', 'fade-out');
-    });
-    lastScreenName = activeScreenName;
-    activeScreenName = 'intro';
-    persistActiveScreen('intro');
-    intro.classList.remove('fade-out');
-    intro.classList.add('active', 'fade-in');
-    setTimeout(() => {
-      intro.classList.remove('fade-in');
-      document.body.classList.remove('screen-transitioning');
-    }, 300);
-  }, current ? 170 : 0);
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function dismissIntroIfNeeded(animate = false) {
-  const intro = document.getElementById('intro-screen');
-  if (!intro || !intro.classList.contains('active')) {
-    document.body.classList.remove('intro-open');
-    hasStarted = true;
-    markIntroSeenInCurrentMobileSession();
-    return;
-  }
-
+function dismissIntroIfNeeded() {
   hasStarted = true;
-  markIntroSeenInCurrentMobileSession();
-  document.body.classList.remove('intro-open');
-
-  if (!animate) {
-    intro.classList.remove('active', 'fade-in', 'fade-out');
-    return;
-  }
-
-  intro.classList.remove('fade-in');
-  intro.classList.add('fade-out');
-  setTimeout(() => {
-    intro.classList.remove('active', 'fade-out');
-  }, 220);
 }
 
 function setActiveScreen(screenId, navId = null, animate = false) {
@@ -6837,9 +6921,10 @@ function goNeoTodayAction(action) {
 }
 
 function startApp() {
-  markIntroSeenInCurrentMobileSession();
-  dismissIntroIfNeeded(true);
-  setActiveScreen('user-screen', 'nav-user', true);
+  dismissIntroIfNeeded();
+  const target = currentUser ? 'user' : 'search';
+  screenScrollPositions[target] = 0;
+  setActiveScreen(target + '-screen', 'nav-' + target, true);
   scheduleResumeRefresh(120);
   schedulePendingWriteSync(500);
   window.scrollTo({ top: 0, behavior: 'instant' });
@@ -6847,7 +6932,8 @@ function startApp() {
 
 function goHome() {
   setResetCursor(false);
-  openIntro(false);
+  closeAnimeModal();
+  startApp();
 }
 
 function showScreen(name) {
@@ -9142,6 +9228,8 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
   renderAnimeModalContent(anime, { loadingDetails: needsDetails });
   renderAnimeRelationsForModal(anime);
   statusBox?.classList.toggle('hidden', !currentUser);
+  setModalStatusMessage('');
+  trackProductEvent('anime_open');
 
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
@@ -9268,12 +9356,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('adultContentToggle')?.addEventListener('change', event => {
     setAdultContentEnabled(event.currentTarget.checked);
   });
-  renderIntroFlashMessage();
+  const authUrlState = getAuthUrlState();
+  const passwordJustUpdated = new URL(window.location.href).searchParams.get('password_updated') === '1';
+  const publicProfileSlug = readPublicProfileSlugFromUrl();
+  const storedUser = readStoredSupabaseUser();
+  if (storedUser && !passwordJustUpdated) setCurrentUser(storedUser);
+  const initialScreen = getInitialScreen({ user: currentUser, recovery: isRecoveryUrl(), passwordUpdated: passwordJustUpdated, authRedirect: !!(authUrlState.code || authUrlState.accessToken) });
+  let initialRoutePending = true;
+  const keepChosenScreen = () => { initialRoutePending = false; };
+  document.addEventListener('pointerdown', keepChosenScreen, { once: true });
+  document.addEventListener('keydown', keepChosenScreen, { once: true });
+  dismissIntroIfNeeded();
+  if (!publicProfileSlug) setActiveScreen(initialScreen + '-screen', 'nav-' + initialScreen, false);
+  renderUserScreen();
+  const authFlash = consumeAuthFlashMessage() || consumePasswordSuccessMessage();
+  if (authFlash && !isRecoveryUrl()) setAuthFeedback(authFlash, 'success');
+  setDiscoveryLoading(true);
   document.getElementById('animeTimelineViewport')?.addEventListener('scroll', updateAnimeTimelineScrollProgress, { passive: true });
   loadAnimeSchedule().catch(error => {
     console.warn('No se pudo precargar el calendario:', error);
   });
   await loadDB();
+  setDiscoveryLoading(false);
   updateAdultContentUI();
   window.setTimeout(() => {
     loadAnimeRelations().catch(error => {
@@ -9283,27 +9387,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.warn('No se pudo precargar anime-timeline-index.json:', error);
     });
   }, 700);
-  const publicProfileSlug = readPublicProfileSlugFromUrl();
-  const savedAppState = readAppState();
-  const passwordJustUpdated = (() => {
-    try {
-      const currentUrl = new URL(window.location.href);
-      return currentUrl.searchParams.get('password_updated') === '1';
-    } catch {
-      return false;
-    }
-  })();
-
-  if (publicProfileSlug) {
-    openPublicProfileRoute(publicProfileSlug);
-  } else if (shouldRestoreSavedAppScreen(savedAppState, passwordJustUpdated)) {
-    dismissIntroIfNeeded(false);
-    setActiveScreen(savedAppState.activeScreen + '-screen', 'nav-' + savedAppState.activeScreen, false);
-    if (savedAppState.activeScreen === 'ranking') loadRanking();
-  } else {
-    openIntro(true);
-    persistActiveScreen('intro');
-  }
+  if (publicProfileSlug) openPublicProfileRoute(publicProfileSlug);
   ensureGenreRemoveButtons();
   ensureThemeRemoveButtons();
   updateResultsSummary(0);
@@ -9389,6 +9473,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (communityBoardLoaded) authRefreshTasks.push(loadCommunityThreads({ silent: true }));
       if (activeCommunityThread) authRefreshTasks.push(loadCommunityReplies(activeCommunityThread.id, { silent: true }));
       Promise.allSettled(authRefreshTasks).then(() => {
+        if (session?.user && currentUser?.id === session.user.id && event !== 'TOKEN_REFRESHED') resumePendingListIntent().catch(error => console.warn('No se pudo recuperar el anime elegido:', error));
         if (isPasswordRecoveryFlow && currentUser) {
           showScreen('user');
           toggleUserSettingsPanel(true);
@@ -9400,6 +9485,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   await syncAuthState();
+  if (initialRoutePending && currentUser && !publicProfileSlug && initialScreen === 'search' && activeScreenName === 'search') showScreen('user');
+  document.removeEventListener('pointerdown', keepChosenScreen);
+  document.removeEventListener('keydown', keepChosenScreen);
+  if (!currentUser && !publicProfileSlug && initialScreen === 'user' && !authFlash && !passwordJustUpdated && !authUrlState.code && !authUrlState.accessToken && activeScreenName === 'user' && !readPendingListIntent()) showScreen('search');
   if (currentUser) loadMyPublicProfile({ silent: true });
   cleanupAuthRedirectUrl();
   if (passwordJustUpdated) {
