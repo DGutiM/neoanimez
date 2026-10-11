@@ -3442,6 +3442,12 @@ button:disabled,
 .modal-meta{font-size:13px;color:#a4a4bf;line-height:1.7;margin-bottom:10px}
 .modal-desc{font-size:15px;line-height:1.75;color:var(--text);margin:14px 0 0}
 .modal-desc.loading{color:#9a9ab4}
+.load-retry-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;margin-top:8px;border:1px solid rgba(0,212,255,.4);border-radius:8px;background:rgba(0,212,255,.08);color:#b8f2ff;font:inherit;cursor:pointer}
+.load-retry-btn[hidden],.detail-load-feedback[hidden]{display:none}
+.detail-load-feedback{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;color:#b8bdd0;font-size:14px}
+.detail-load-feedback .load-retry-btn{margin:0}
+.card-clickable:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.user-anime-open{display:block;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;min-height:44px}
 .modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .modal-reco-note{
   margin-top:14px;

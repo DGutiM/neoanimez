@@ -33,7 +33,7 @@ function setup() {
     if(selector.includes('.modal-backdrop.open'))return modal.classList.contains('open')?modal:selector.includes('.timeline-backdrop.open')&&timeline.classList.contains('open')?timeline:null;
     return null;
   }},requestAnimationFrame:fn=>{frames.push(fn);return frames.length;},cancelAnimationFrame:()=>{},window:{clearTimeout:()=>{}},
-    currentModalAnime:parent,currentRecommendationReason:'Original recommendation',currentUser:null,BLANK:'',
+    currentModalAnime:parent,animeModalReturnFocus:null,currentRecommendationReason:'Original recommendation',currentUser:null,BLANK:'',
     activeAnimeTimeline:{id:'saga'},activeAnimeTimelineCurrentId:1,activeAnimeTimelineNodes:new Map([[1,parent],[2,child]]),
     activeAnimeTimelineDisplayEdges:[{from:1,to:2}],activeAnimeTimelineNarrativeIds:new Set([1,2]),animeTimelineMode:'all',
     animeTimelineDetailReturn:null,animeTimelineDrawFrame:0,animeTimelineResizeTimer:0,splitCatalogEnabled:false,
@@ -69,6 +69,13 @@ test('closing the map after returning leaves the original anime usable; closing 
   assert.equal(modal.classList.contains('open'),true);assert.equal(modal.inert,false);assert.equal(timeline.classList.contains('open'),false);
   assert.equal(ctx.activeAnimeTimeline,null);assert.equal(ctx.document.body.style.overflow,'hidden');
   ctx.closeAnimeModal();flush();assert.equal(ctx.document.body.style.overflow,'');assert.equal(ctx.currentModalAnime,null);
+});
+test('a restored parent retains the original outside focus target',()=>{
+  const {ctx,child,close,flush}=setup();const origin=element();origin.isConnected=true;
+  ctx.animeModalReturnFocus=origin;ctx.document.activeElement=close;
+  ctx.openAnimeFromTimeline(child);ctx.closeAnimeModal();flush();
+  assert.equal(ctx.animeModalReturnFocus,origin);
+  ctx.closeAnimeTimeline();ctx.closeAnimeModal();assert.equal(origin.focused.preventScroll,true);
 });
 test('following another anime inside the child retains the original map return point',()=>{
   const {ctx,child,parent,flush}=setup();ctx.openAnimeFromTimeline(child);const context=ctx.animeTimelineDetailReturn;

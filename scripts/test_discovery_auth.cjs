@@ -20,7 +20,7 @@ function setup(overrides = {}) {
     window: {location: {origin:'https://neoanimez.com',pathname:'/',search:'?code=secret',hash:'#access_token=secret'}},
     PENDING_LIST_INTENT_KEY: 'intent', LIST_INTENT_TTL: 604800000,
     pendingListIntentMemory: null, resumingListIntent: false,
-    currentUser: null, currentModalAnime: anime, userAnimeMap: new Map(),
+    currentUser: null, currentModalAnime: anime, userAnimeMap: new Map(), DB:[anime], catalogLoadPromise:null,
     isPasswordRecoveryFlow: false, pendingAuthNotice: '', analyticsLoaded: false,
     localStorage: { getItem: k => storage.get(k) || null, setItem: (k,v) => storage.set(k,v), removeItem: k => storage.delete(k) },
     screenScrollPositions: {},
@@ -76,6 +76,14 @@ test('confirmed matching account resumes once and clears saved intent', async ()
   const {ctx,calls} = setup({currentUser:{id:'u1',email:'test@example.invalid'}}); intent(ctx);
   await Promise.all([ctx.resumePendingListIntent(),ctx.resumePendingListIntent()]);
   assert.equal(calls.filter(x=>x==='save').length,1); assert.equal(ctx.readPendingListIntent(),null);
+});
+test('pending save waits for a slow catalogue and rechecks the current intent', async()=>{
+  let release;
+  const {ctx,calls}=setup({currentUser:{id:'u1',email:'test@example.invalid'},DB:[],catalogLoadPromise:new Promise(r=>release=r)});
+  intent(ctx);
+  const pending=ctx.resumePendingListIntent();assert.ok(!calls.includes('save'));
+  ctx.writePendingListIntent(null);release(true);await pending;assert.ok(!calls.includes('save'));
+  intent(ctx);await ctx.resumePendingListIntent();assert.ok(calls.includes('save'));
 });
 test('existing completed anime keeps its state on resumption', async () => {
   const {ctx,calls} = setup({currentUser:{id:'u1',email:'test@example.invalid'}}); intent(ctx); ctx.userAnimeMap.set(1,'completed');

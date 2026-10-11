@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'assets/neoanimez.js'), 'utf8');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const functions = ['getSelectedGenres', 'getSelectedThemes', 'updateCatalogFilterUI', 'applyFilters', 'setActiveScreen']
+const functions = ['getSelectedGenres', 'getSelectedThemes', 'updateCatalogFilterUI', 'applyFilters', 'setActiveScreen', 'catalogUnavailableMarkup']
   .map(name => source.match(new RegExp(`^(?:async )?function ${name}\\([^]*?^}`, 'm'))[0]).join('\n');
 
 function element(id, classNames = []) {
@@ -32,7 +32,7 @@ function setup() {
     if(selector==='.theme-select')return selects.filter(e=>e.classList.contains('theme-select'));
     if(selector==='#genreFilters .genre-row, #themeFilters .theme-row')return selects.filter(e=>e.classList.contains('genre-select')||e.classList.contains('theme-select'));
     return [];
-  }},DB:[],catalogResultsCache:[],isAnimeVisible:a=>!a.adult,sortAnimeResults:r=>r,
+  }},DB:[],catalogLoading:false,catalogResultsCache:[],isAnimeVisible:a=>!a.adult,sortAnimeResults:r=>r,
     updateResultsSummary:count=>ctx.count=count,renderCatalogBatch:()=>{},
     activeScreenName:'search',lastScreenName:'',saveScreenScrollPosition:()=>{},scheduleHeavyScreenReset:()=>{},
     persistActiveScreen:()=>{},flushPendingScreenResets:()=>{},flushBackgroundScreenResets:()=>{},restoreScreenScrollPosition:()=>{},window:{innerWidth:1200}};
@@ -49,7 +49,7 @@ test('advanced filters start closed, remain in the form, and keep every original
   assert.match(html,/<details class="filter-advanced" id="catalogAdvancedFilters">/);
   const form=html.match(/<form id="catalogFilters"[^]*?<\/form>/)[0];
   assert.deepEqual([...form.matchAll(/<select\b[^>]*>([\s\S]*?)<\/select>/g)]
-    .map(m=>[...m[1].matchAll(/<option\b/g)].length),[21,3,41,6,6]);
+    .map(m=>[...m[1].matchAll(/<option\b/g)].length),[21,7,41,6,6]);
   assert.ok(form.indexOf('id="f-genre"')<form.indexOf('<details'));
   assert.ok(form.indexOf('id="f-type"')<form.indexOf('<details'));
   for(const id of ['f-theme','f-demo','f-year']) assert.ok(form.indexOf(`id="${id}"`)>form.indexOf('<details'));
@@ -94,7 +94,7 @@ test('decade boundaries and unknown years preserve catalogue behaviour',async()=
   }
 });
 test('unavailable catalogue and empty matches give feedback',async()=>{
-  const {ctx,ids}=setup();await ctx.applyFilters();assert.match(ids.filterResults.innerHTML,/todavía no está lista/);
+  const {ctx,ids}=setup();await ctx.applyFilters();assert.match(ids.filterResults.innerHTML,/Reintentar carga/);
   ctx.DB=[{genres:['Action']}];ids['f-genre'].value='Comedy';await ctx.applyFilters();assert.match(ids.filterResults.innerHTML,/Sin resultados/);
 });
 test('navigation marks exactly the selected section, including a signed-in My List',()=>{

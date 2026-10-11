@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'assets/neoanimez.js'), 'utf8');
-const names = ['renderAuthContext','switchAuthTab','updateDiscoverySearchMode','performTitleSearch',
+const names = ['renderAuthContext','switchAuthTab','updateDiscoverySearchMode','performTitleSearch','catalogUnavailableMarkup',
   'showRecommendationUnavailable','openRandomRecommendation','openMoodRecommendation','openTasteRecommendation'];
 const functions = names.map(name => {
   const match = source.match(new RegExp(`^function ${name}\\([^]*?^}`, 'm'));
@@ -27,7 +27,7 @@ function setup() {
   const anime={mal_id:1,title:'Cowboy Bebop'};
   const ctx={
     document:{getElementById:id=>elements[id] || null},readPendingListIntent:()=>({title:'<Anime elegido>'}),setAuthFeedback:()=>{},
-    DB:[anime],currentUser:{id:'test-only'},normalizeLoose:q=>q.trim().toLowerCase(),toggleSearchClearButton:()=>{},updateAccountModeUI:()=>{},
+    DB:[anime],catalogLoading:false,currentUser:{id:'test-only'},normalizeLoose:q=>q.trim().toLowerCase(),toggleSearchClearButton:()=>{},updateAccountModeUI:()=>{},
     updateSimpleSummary:()=>{},scrollToTitleSearchResults:()=>events.push('scroll'),isAnimeVisible:()=>true,
     scoreAnimeMatch:()=>400,getSearchDisplayTitle:a=>a.title,sortTitleSearchResults:r=>r,searchResultsCache:[],
     renderSearchBatch:()=>{elements.titleSearchResults.innerHTML='results';},trackProductEvent:name=>events.push(name),
@@ -76,7 +76,7 @@ test('one-letter, empty and failed-catalogue searches stay usable',()=>{
   const {ctx,elements,events}=setup();elements.titleSearchInput.value='c';ctx.performTitleSearch();
   assert.equal(elements.discoveryExplore.hidden,false);assert.match(elements.titleSearchResults.innerHTML,/2 letras/);
   ctx.DB=[];elements.titleSearchInput.value='Cow';ctx.performTitleSearch({scrollToResults:true});
-  assert.match(elements.titleSearchResults.innerHTML,/no est/);assert.deepEqual(events,['scroll']);
+  assert.match(elements.titleSearchResults.innerHTML,/Reintentar carga/);assert.deepEqual(events,['scroll']);
 });
 test('zero matches leaves the clear button/search workflow intact',()=>{
   const {ctx,elements}=setup();ctx.scoreAnimeMatch=()=>0;elements.titleSearchInput.value='nomatch';ctx.performTitleSearch();

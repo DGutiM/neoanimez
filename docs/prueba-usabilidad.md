@@ -39,10 +39,32 @@ Priorizar dificultades repetidas en las pruebas humanas. Con poco trafico, una d
 ## Verificacion tecnica
 
 ```sh
-node --test scripts/test_discovery_auth.cjs scripts/test_discovery_visual.cjs scripts/test_discovery_flow.cjs
+node --test scripts/test_*.cjs
 node scripts/serve-preview.cjs --port=4195 --mock-auth
 ```
 
 La vista previa usa cuentas ficticias y bloquea peticiones a Supabase. Probar `?scenario=guest`, `?scenario=member` y `?scenario=recovery&type=recovery`; nunca introducir credenciales reales en la vista previa. Verificar en movil y escritorio: busqueda al escribir, boton/Enter, borrar consulta, recomendacion, registro contextual, cambio a cuenta existente y recuperacion de contrasena.
 
 No hace falta ejecutar SQL ni cambiar la configuracion de Supabase para estos ajustes de interfaz.
+
+## Revision del 11 de octubre de 2026
+
+Se conserva la entrada directa, el registro solo al querer guardar, el logo y el aspecto general. No se han migrado ni editado cuentas, listas, puntuaciones o datos de produccion.
+
+Correcciones verificables:
+- Los formularios se conectan antes de esperar al catalogo. La sesion y el catalogo cargan en paralelo.
+- Catalogo, fichas, calendario y proximos estrenos ofrecen reintento cuando falla la carga.
+- Una descarga de detalles rechazada se retira de las peticiones compartidas; no bloquea reintentos posteriores. Los bloques ya cargados no se vuelven a descargar innecesariamente.
+- El calendario comparte una sola peticion en curso y conserva los datos anteriores si falla un refresco.
+- La cache de la aplicacion valida JSON antes de guardarlo y descarta entradas que no se pueden leer.
+- El catalogo admite OVA, ONA y especiales. Solo la busqueda enviada desplaza a resultados; las actualizaciones de fondo no mueven la pantalla.
+- Tarjetas accesibles por teclado, foco dentro de los dialogos, nombres completos de los dias y estados anunciados en los selectores.
+- Los titulos y etiquetas importados se escapan al construir tarjetas. Un anime sin puntuacion no se presenta como un cero.
+
+Escenarios locales, siempre con `--mock-auth`:
+- `?scenario=catalogRetry`: fallan las dos primeras descargas del catalogo; el boton debe recuperar la pagina sin recargarla.
+- `?scenario=detailRetry`: falla el primer bloque de detalles; reintentar debe recuperar la descripcion completa.
+- `?scenario=scheduleRetry`: cuenta ficticia y primera descarga del calendario fallida; la lista sigue disponible.
+- `?scenario=slowCatalog`: cinco segundos de demora artificial; formularios y navegacion deben responder durante la espera.
+
+Estas comprobaciones no equivalen a probar todos los dispositivos fisicos ni a una auditoria de disponibilidad de Supabase. Sigue siendo util observar a personas nuevas realizando las cinco tareas iniciales. No se debe prometer un aumento de visitas sin medirlo.

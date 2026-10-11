@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-timeline-return">
+<link rel="stylesheet" href="assets/neoanimez.css?v=20261011-usability-resilience">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -69,7 +69,7 @@
   <div class="sec-head">Catálogo por filtros</div>
   <div class="section-helper">Combina uno o varios filtros. Cuantos más añadas, más precisa será la recomendación.</div>
   <div class="glow"></div>
-  <form id="catalogFilters" class="catalog-filters" onsubmit="event.preventDefault(); applyFilters()" onchange="updateCatalogFilterUI()" aria-label="Filtros del catálogo">
+  <form id="catalogFilters" class="catalog-filters" onsubmit="event.preventDefault(); applyFilters({scrollToResults:true})" onchange="updateCatalogFilterUI()" aria-label="Filtros del catálogo">
   <div class="filter-grid filter-primary">
     <div class="fg">
       <label for="f-genre">Géneros</label>
@@ -113,6 +113,10 @@
           <option value="">Cualquiera</option>
           <option value="TV">Serie</option>
           <option value="Movie">Película</option>
+          <option value="OVA">OVA</option>
+          <option value="ONA">Serie web (ONA)</option>
+          <option value="Special">Especial</option>
+          <option value="TV Special">Especial de TV</option>
         </select>
       </div>
     </div>
@@ -233,7 +237,7 @@
           <span class="ranking-toggle-icon">⌄</span>
         </button>
         <div class="ranking-body">
-          <div class="community-ranking-tabs" role="tablist" aria-label="Orden de Top Comunidad">
+          <div class="community-ranking-tabs" role="group" aria-label="Orden de Top Comunidad">
             <button class="community-ranking-tab active" type="button" data-community-ranking-mode="selection" onclick="setCommunityRankingMode('selection')">Selección NeoAnimeZ</button>
             <button class="community-ranking-tab" type="button" data-community-ranking-mode="best" onclick="setCommunityRankingMode('best')">Mejor valorados</button>
             <button class="community-ranking-tab" type="button" data-community-ranking-mode="popular" onclick="setCommunityRankingMode('popular')">Más votados</button>
@@ -433,6 +437,7 @@
       <button class="apply-btn" type="submit" id="titleSearchButton">BUSCAR ANIME</button>
     </form>
     <div id="discoveryFeedback" class="discovery-feedback" role="status" aria-live="polite"></div>
+    <button id="catalogRetry" class="load-retry-btn" type="button" onclick="loadCatalogInterface()" hidden>Reintentar carga</button>
   </div>
 
   <div id="discoveryExplore">
@@ -798,7 +803,7 @@
       <div class="user-schedule-body">
         <div class="user-schedule-sub" id="userScheduleSub">Emisiones de tus animes en progreso y pendientes.</div>
         <div class="data-updated-line hidden" id="userScheduleUpdated"></div>
-        <div class="user-schedule-tabs" role="tablist" aria-label="Tipo de calendario">
+        <div class="user-schedule-tabs" role="group" aria-label="Tipo de calendario">
           <button class="user-schedule-tab active" type="button" data-schedule-mode="mine" onclick="setUserScheduleMode('mine')">Mi lista</button>
           <button class="user-schedule-tab" type="button" data-schedule-mode="featured" onclick="setUserScheduleMode('featured')">Destacados</button>
         </div>
@@ -946,6 +951,10 @@
     </div>
     <div class="modal-section-title">Descripción</div>
     <div id="animeModalDesc" class="modal-desc"></div>
+    <div id="animeDetailsFeedback" class="detail-load-feedback" role="status" hidden>
+      <span>No se pudo cargar la ficha completa.</span>
+      <button class="load-retry-btn" type="button" onclick="retryAnimeModalDetails()">Reintentar</button>
+    </div>
     <div class="modal-status-box">
       <div class="modal-status-title">Tu estado</div>
       <div class="modal-status-grid">
@@ -1070,6 +1079,6 @@
   </div>
 </div>
 
-<script src="assets/neoanimez.js?v=20261011-timeline-return"></script>
+<script src="assets/neoanimez.js?v=20261011-usability-resilience"></script>
 </body>
 </html>
