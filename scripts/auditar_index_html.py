@@ -50,6 +50,9 @@ def main() -> int:
     inline_scripts = [block for block in find_blocks(html, "script") if block.strip()]
     css = APP_CSS.read_text(encoding="utf-8") if APP_CSS.exists() else "\n".join(inline_styles)
     javascript = APP_JS.read_text(encoding="utf-8") if APP_JS.exists() else "\n".join(inline_scripts)
+    extras = ROOT / "assets" / "anime-extras.js"
+    if extras.exists():
+        javascript += "\n" + extras.read_text(encoding="utf-8")
     ids = re.findall(r'\bid=["\']([^"\']+)["\']', html)
     functions = re.findall(r"\bfunction\s+([A-Za-z_$][\w$]*)\s*\(", javascript)
     inline_handlers = re.findall(r"\s(on[a-z]+)=['\"]", html, flags=re.IGNORECASE)

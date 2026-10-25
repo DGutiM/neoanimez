@@ -38,7 +38,7 @@ function setup() {
     activeAnimeTimelineDisplayEdges:[{from:1,to:2}],activeAnimeTimelineNarrativeIds:new Set([1,2]),animeTimelineMode:'all',
     animeTimelineDetailReturn:null,animeTimelineDrawFrame:0,animeTimelineResizeTimer:0,splitCatalogEnabled:false,
     isAnimeVisible:a=>!a.hidden,loadAnimeImageElement:()=>{},renderAnimeModalContent:a=>events.push(`render:${a.mal_id}`),
-    renderAnimeRelationsForModal:()=>{},setModalStatusMessage:()=>{},trackProductEvent:name=>events.push(name),
+    renderAnimeRelationsForModal:()=>{},renderAnimeExtras:()=>{},clearSharedSagaRoute:()=>{},setModalStatusMessage:()=>{},trackProductEvent:name=>events.push(name),
     updateModalStatusUI:()=>{},updateModalRatingUI:()=>{},updateModalProgressUI:()=>{},clearAnimeRelationsUI:()=>{},
     updateAnimeTimelineScrollProgress:()=>events.push('scroll-progress'),closeAnimeRouteChooser:()=>events.push('close-routes')};
   vm.createContext(ctx);vm.runInContext(functions,ctx);

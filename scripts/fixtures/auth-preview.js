@@ -3,11 +3,16 @@
   const scenario=new URL(location.href).searchParams.get('scenario') || 'guest';
   if(['catalogRetry','detailRetry','scheduleRetry','slowCatalog'].includes(scenario)) Object.defineProperty(window,'caches',{value:undefined});
   const user={id:'00000000-0000-4000-8000-000000000001',email:'test@example.invalid'};
-  let session=['member','lateMember','recovery','confirm','scheduleRetry'].includes(scenario) ? {user,access_token:'test-only',refresh_token:'test-only'} : null;
+  let session=['member','lateMember','recovery','confirm','scheduleRetry','daily'].includes(scenario) ? {user,access_token:'test-only',refresh_token:'test-only'} : null;
   const sourceKey='sb-edygetjrdnbziidcmuww-auth-token';
   if(session && scenario!=='lateMember') localStorage.setItem(sourceKey,JSON.stringify(session)); else localStorage.removeItem(sourceKey);
   const rows={user_anime_status:[],user_anime_ratings:[],user_anime_progress:[]};
   if(['member','scheduleRetry'].includes(scenario)) rows.user_anime_status.push({anime_id:1,status:'watching',updated_at:new Date().toISOString()});
+  if(scenario==='daily') [20,21,223,249,269,52991].forEach((id,index)=>{
+    const updated_at=new Date(Date.UTC(2026,9,20-index)).toISOString();
+    rows.user_anime_status.push({anime_id:id,status:'watching',updated_at});
+    rows.user_anime_progress.push({anime_id:id,episode_number:2,updated_at});
+  });
   const listeners=[];
   const realFetch=window.fetch.bind(window);
   let catalogFailures=0,detailFailures=0,scheduleFailures=0;

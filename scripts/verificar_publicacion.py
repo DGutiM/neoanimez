@@ -17,6 +17,7 @@ REQUIRED_ROOT_FILES = [
     "index.html",
     "assets/neoanimez.css",
     "assets/neoanimez.js",
+    "assets/anime-extras.js",
     "service-worker.js",
     "manifest.json",
     "CNAME",
@@ -33,6 +34,7 @@ REQUIRED_ROOT_FILES = [
     "anime-news.json",
     "anime-relations.json",
     "anime-timeline-index.json",
+    "anime-extras-index.json",
 ]
 
 REQUIRED_JSON_FILES = [
@@ -49,6 +51,7 @@ REQUIRED_JSON_FILES = [
 REQUIRED_DIRS = {
     "anime-details": 24,
     "anime-timelines": 12,
+    "anime-extras": 16,
 }
 
 DO_NOT_PUBLISH = [
@@ -232,9 +235,9 @@ def check_asset_versions(errors: list[str]) -> None:
         worker = (ROOT / "service-worker.js").read_text(encoding="utf-8")
         app_match = re.search(r"const APP_VERSION = '([^']+)';", script)
         worker_match = re.search(r"const CACHE_VERSION = '([^']+)';", worker)
-        asset_versions = re.findall(r"assets/neoanimez\.(?:css|js)\?v=([^\"']+)", index)
+        asset_versions = re.findall(r"assets/(?:neoanimez\.(?:css|js)|anime-extras\.js)\?v=([^\"']+)", index)
         versions = [app_match.group(1) if app_match else "", worker_match.group(1) if worker_match else "", *asset_versions]
-        if len(asset_versions) != 2 or not versions[0] or len(set(versions)) != 1:
+        if len(asset_versions) != 3 or not versions[0] or len(set(versions)) != 1:
             errors.append("Las versiones de index, JavaScript y service worker no coinciden.")
     except Exception as exc:  # noqa: BLE001
         errors.append(f"No se pudo validar la version de los assets ({exc})")
@@ -413,6 +416,11 @@ def main() -> int:
     check_asset_versions(errors)
     check_anime_relations(errors)
     check_anime_timelines(errors)
+    try:
+        from actualizar_extras_anime import validate
+        validate(ROOT)
+    except Exception as exc:
+        errors.append(f"Extras de anime invalidos: {exc}")
     check_do_not_publish(warnings)
     compare_repo_copy(warnings)
 

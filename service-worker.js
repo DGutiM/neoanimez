@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20261025-sources-c5e4669fb3';
+const CACHE_VERSION = '20261025-sources-38c1f68331';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 
@@ -12,7 +12,8 @@ const SHELL_ASSETS = [
   './robots.txt',
   './sitemap.xml',
   `./assets/neoanimez.css?v=${CACHE_VERSION}`,
-  `./assets/neoanimez.js?v=${CACHE_VERSION}`
+  `./assets/neoanimez.js?v=${CACHE_VERSION}`,
+  `./assets/anime-extras.js?v=${CACHE_VERSION}`
 ];
 
 self.addEventListener('install', event => {
@@ -57,6 +58,8 @@ function isCatalogRequest(request) {
     url.pathname.endsWith('/anime-news.json') ||
     url.pathname.endsWith('/anime-relations.json') ||
     url.pathname.endsWith('/anime-timeline-index.json') ||
+    url.pathname.endsWith('/anime-extras-index.json') ||
+    url.pathname.includes('/anime-extras/') ||
     url.pathname.includes('/anime-details/') ||
     url.pathname.includes('/anime-timelines/');
 }

@@ -123,24 +123,53 @@ Referencias:
 - https://github.com/LucasHenriqueDiniz/jikan-edge
 - https://docs.anilist.co/guide/terms-of-use
 
-## Las cuatro mejoras, despues de la transicion
+## Extras de las fichas
 
-No se activan en este cambio. Ninguna es de riesgo cero.
+Las cuatro mejoras estan integradas en las fichas y los mapas, sin nuevas tablas:
 
-1. **Paginas compartibles de orden de visionado:** viables con nuestros mapas,
-   sin otra API. Primera candidata: aprovechar los datos ya validados, aclarar
-   rutas alternativas y probar enlaces directos, retroceso y movil.
-2. **Guia de episodios y relleno:** las fuentes ofrecen episodios y marcas
-   filler/recap. Probar primero unas pocas series; ausencia de una marca no
-   demuestra que el capitulo sea canon. Los arcos requieren una fuente/editorial
-   adicional, no se deben inventar ni prometer para todos los animes.
-3. **Si te gusto este anime:** hay recomendaciones por ID MAL. Se pueden cruzar
-   con el catalogo, guardar offline y filtrar duplicados, secuelas y contenido
-   adulto. Son recomendaciones de una comunidad, no afinidad personal garantizada.
-4. **Openings/endings por temporada:** hay metadatos de canciones. Los videos
-   oficiales necesitan verificacion adicional; no hay garantia de un enlace
-   oficial para cada cancion. No descargar musica ni subir videos de terceros.
+1. **Compartir mapa:** copia un enlace `?saga=<ID MAL>` que abre el orden existente,
+   con las rutas alternativas y los formatos. Funciona sin cuenta. El enlace no
+   incluye correo, perfil ni tokens de sesion. Es una ruta de la misma web, no una
+   pagina HTML independiente para SEO.
+2. **Guia de episodios:** piloto de 10 series, incluida One Piece con cobertura
+   parcial mientras sigue en emision. Solo numeros y marcas filler/recap de MAL;
+   no se publican titulos, sinopsis, supuestos arcos ni deducciones de canon.
+   Paginacion de 50 filas y filtros por relleno/resumen. No cambia el progreso.
+3. **Si te gusto este anime:** recomendaciones MAL cruzadas por ID con el catalogo,
+   excluyendo la misma saga, precuelas conocidas, estrenos futuros, contenido adulto
+   y duplicados. Se muestran hasta seis. No son una promesa de afinidad personal.
+4. **Openings/endings:** nombres originales de canciones, artistas y tramos de
+   episodios. La interfaz esta en espanol; los nombres propios no se traducen.
+   Enlace a la ficha fuente de MAL, sin alojar musica, letras ni videos no verificados.
 
-Recomendacion: empezar por 1 y 3, incorporar 2 de forma piloto y dejar 4 para
-cuando podamos verificar los enlaces. Todas pueden anadirse mediante datos
-estaticos, de forma opcional, sin hacer depender la web de una API en directo.
+Primera carga: 104 animes con recomendaciones y canciones. `anime-extras-index.json`
+indica la disponibilidad; `anime-extras/` contiene 16 bloques descargados al abrir
+un apartado. Los tres apartados empiezan cerrados. Un fallo deja la ficha utilizable
+y ofrece reintento; el navegador no consulta a las APIs de catalogo para estos extras.
+
+`actualizar_extras_anime.py` actualiza 80 fichas por pasada, priorizando las pendientes
+y las mas antiguas, ademas de las diez guias piloto. Las respuestas se guardan en
+cache, por lo que una interrupcion no obliga a repetir las descargas. Un error de un
+recurso conserva su version anterior, registrada con su fecha real; el informe
+`cache/extras-report.json` enumera esos casos. Una pagina incompleta no se acepta
+como guia completa. El workflow mensual ya incluye este paso dentro del candidato.
+
+```sh
+python3 scripts/actualizar_extras_anime.py --limit 80
+python3 scripts/actualizar_extras_anime.py --validate
+python3 scripts/catalog_release_version.py
+python3 scripts/verificar_publicacion.py
+```
+
+El comando aislado conserva copia previa de los extras; el actualizador mensual
+conserva ademas la publicacion completa antes de promoverla. Publicar juntos indice,
+bloques y version, nunca carpetas cache/backups. Para ampliar el piloto de episodios,
+anadir IDs comprobados a `PILOT_IDS` y revisar cobertura y marcas antes de publicarlo.
+
+## Orden de Mi lista
+
+Continuar viendo mantiene el orden de sus cinco tarjetas durante la visita a
+Mi lista. Los cambios de episodios conservan sus fechas reales; el orden por
+actividad se recalcula al salir a otra seccion y volver. Ir a segundo plano o abrir
+una ficha no reinicia ese orden. Completados o eliminados dejan de mostrarse y los
+animes nuevos ocupan las vacantes. La lista completa mantiene su orden alfabetico.

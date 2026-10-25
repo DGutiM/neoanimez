@@ -161,7 +161,19 @@ test('finishing a save does not enable episode buttons blocked by zero or the ep
   const ctx=scope(['setElementsBusy'],{document:{querySelectorAll:()=>buttons}});
   ctx.setElementsBusy('steps',true);assert.ok(buttons.every(button=>button.disabled));
   ctx.setElementsBusy('steps',false);assert.deepEqual(buttons.map(button=>button.disabled),[true,false,true]);
-  assert.equal((source.match(/data-progress-blocked="\$\{!can(?:Decrement|Increment)Episode\}"/g)||[]).length,4);
+  assert.equal((source.match(/data-progress-blocked="\$\{!can(?:Decrement|Increment)Episode\}"/g)||[]).length,2);
+});
+test('in-place daily updates preserve zero/maximum/busy button limits',()=>{
+  let busy=false;
+  const nodes={};
+  const node=key=>nodes[key]||(nodes[key]={style:{},dataset:{},setAttribute(){},querySelector:node,classList:{contains:()=>busy}});
+  const card={setAttribute(){},querySelector:node};
+  const ctx=scope(['updateDailyContinueCard'],{currentUser:{id:'test'},getAnimeDisplayTitle:()=> 'Test',
+    getAnimeTotalEpisodes:()=>12,getProgressLabel:()=>'',getProgressPercent:()=>0,isUpcomingAnime:()=>false});
+  const update=episode=>ctx.updateDailyContinueCard(card,{anime:{type:'TV'},progress:{episode_number:episode}});
+  update(0);assert.equal(node('.user-episode-minus-btn').disabled,true);assert.equal(node('.user-episode-plus-btn').disabled,false);
+  update(12);assert.equal(node('.user-episode-plus-btn').disabled,true);assert.equal(node('.user-episode-minus-btn').disabled,false);
+  busy=true;update(4);assert.equal(node('.user-episode-minus-btn').disabled,true);assert.equal(node('.user-episode-plus-btn').disabled,true);
 });
 
 function releaseScope(current = []) {

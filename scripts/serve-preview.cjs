@@ -5,7 +5,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const port = Number(process.argv.find(x => /^--port=/.test(x))?.split('=')[1] || 4192);
 const mock = process.argv.includes('--mock-auth');
-const publicFiles = new Set(['index.html','service-worker.js','manifest.json','logo.png','icon.png','preview.png','robots.txt','sitemap.xml','anime-index.json','anime-lista.json','anime-upcoming.json','anime-schedule.json','anime-news.json','anime-relations.json','anime-timeline-index.json']);
+const publicFiles = new Set(['index.html','service-worker.js','manifest.json','logo.png','icon.png','preview.png','robots.txt','sitemap.xml','anime-index.json','anime-lista.json','anime-upcoming.json','anime-schedule.json','anime-news.json','anime-relations.json','anime-timeline-index.json','anime-extras-index.json']);
 const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.png':'image/png'};
 http.createServer((req,res) => {
   let name;
@@ -20,7 +20,7 @@ http.createServer((req,res) => {
     res.setHeader('Cache-Control','no-store');
     res.end("self.addEventListener('install',()=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(self.registration.unregister()));"); return;
   }
-  if (name.includes('..') || !(publicFiles.has(name) || /^(assets|anime-details|anime-timelines)\/[a-zA-Z0-9_.-]+\.(js|css|json)$/.test(name))) { res.writeHead(404).end(); return; }
+  if (name.includes('..') || !(publicFiles.has(name) || /^(assets|anime-details|anime-timelines|anime-extras)\/[a-zA-Z0-9_.-]+\.(js|css|json)$/.test(name))) { res.writeHead(404).end(); return; }
   const file=path.join(root,name);
   if (!fs.existsSync(file)) { res.writeHead(404).end(); return; }
   res.setHeader('Content-Type',types[path.extname(name)] || 'text/plain');

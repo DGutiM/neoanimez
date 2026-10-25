@@ -17,6 +17,10 @@ def update_publication_version(today: dt.date) -> None:
         if not path.name.endswith(".full.json"):
             signature.update(path.read_bytes())
     signature.update(re.sub(r"const APP_VERSION = '[^']+';", "", js).encode())
+    for name in ("assets/anime-extras.js", "assets/neoanimez.css", "index.html"):
+        signature.update(re.sub(r"\?v=[^\"']+", "", (ROOT / name).read_text(encoding="utf-8")).encode())
+    for path in sorted((ROOT / "anime-extras").glob("*.json")):
+        signature.update(path.read_bytes())
     version = f"{today:%Y%m%d}-sources-{signature.hexdigest()[:10]}"
     js, count = re.subn(r"const APP_VERSION = '[^']+';", f"const APP_VERSION = '{version}';", js, count=1)
     if count != 1:
@@ -29,10 +33,10 @@ def update_publication_version(today: dt.date) -> None:
         raise ValueError("No se pudo actualizar CACHE_VERSION")
     worker_path.write_text(worker, encoding="utf-8")
     index_path = ROOT / "index.html"
-    index, count = re.subn(r"(assets/neoanimez\.(?:css|js)\?v=)[^\"']+", rf"\g<1>{version}",
+    index, count = re.subn(r"(assets/(?:neoanimez\.(?:css|js)|anime-extras\.js)\?v=)[^\"']+", rf"\g<1>{version}",
                            index_path.read_text(encoding="utf-8"))
-    if count != 2:
-        raise ValueError("Se esperaban dos assets versionados")
+    if count != 3:
+        raise ValueError("Se esperaban tres assets versionados")
     index_path.write_text(index, encoding="utf-8")
     sitemap_path = ROOT / "sitemap.xml"
     sitemap, count = re.subn(r"<lastmod>[^<]+</lastmod>", f"<lastmod>{today.isoformat()}</lastmod>",

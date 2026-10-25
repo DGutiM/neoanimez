@@ -35,7 +35,7 @@ function setup() {
   }},DB:[],catalogLoading:false,catalogResultsCache:[],isAnimeVisible:a=>!a.adult,sortAnimeResults:r=>r,
     updateResultsSummary:count=>ctx.count=count,renderCatalogBatch:()=>{},
     activeScreenName:'search',lastScreenName:'',saveScreenScrollPosition:()=>{},scheduleHeavyScreenReset:()=>{},
-    persistActiveScreen:()=>{},flushPendingScreenResets:()=>{},flushBackgroundScreenResets:()=>{},restoreScreenScrollPosition:()=>{},window:{innerWidth:1200}};
+    renderUserLists:()=>{},persistActiveScreen:()=>{},flushPendingScreenResets:()=>{},flushBackgroundScreenResets:()=>{},restoreScreenScrollPosition:()=>{},window:{innerWidth:1200}};
   vm.createContext(ctx); vm.runInContext(functions,ctx);
   return {ctx,ids,selects,nav,screens};
 }

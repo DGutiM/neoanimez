@@ -15,6 +15,7 @@ Archivos de raiz:
 - `index.html`
 - `assets/neoanimez.css`
 - `assets/neoanimez.js`
+- `assets/anime-extras.js`
 - `service-worker.js`
 - `manifest.json`
 - `CNAME`
@@ -31,11 +32,13 @@ Archivos de raiz:
 - `anime-news.json`
 - `anime-relations.json`
 - `anime-timeline-index.json`
+- `anime-extras-index.json`
 
 Carpetas necesarias para la web:
 
 - `anime-details/`
 - `anime-timelines/`
+- `anime-extras/`
 
 ## Subir si quieres mantener herramientas en el repo
 

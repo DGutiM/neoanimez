@@ -255,6 +255,51 @@ class CatalogClient:
                     raise
         raise SourceError("; ".join(errors))
 
+    def extra(self, anime_id, resource, *, max_age=604800):
+        """Fetch a complete optional resource, never a mixture of provider pages."""
+        if resource not in {"episodes", "themes", "recommendations"}:
+            raise ValueError("Recurso no permitido")
+        errors = []
+        for provider in BASES:
+            try:
+                items, seen = [], set()
+                for page in range(1, 101):
+                    params = {"page": page} if resource == "episodes" else {}
+                    payload, fetched_at = self._request(provider, f"/anime/{int(anime_id)}/{resource}", params, max_age)
+                    data = payload["data"]
+                    if resource == "themes":
+                        if not isinstance(data, dict) or any(not isinstance(data.get(k), list) for k in ("openings", "endings")):
+                            raise SourceError("Canciones incompletas")
+                        return {"data": data, "provider": provider, "fetched_at": fetched_at}
+                    if not isinstance(data, list):
+                        raise SourceError("Listado de extras invalido")
+                    if resource == "recommendations":
+                        return {"data": data, "provider": provider, "fetched_at": fetched_at}
+                    for row in data:
+                        if not isinstance(row, dict):
+                            raise SourceError("Episodio sin campos reconocibles")
+                        number = row.get("mal_id") if provider == "tenrai" else row.get("number")
+                        if not isinstance(number, int) or isinstance(number, bool) or number < 1 or number in seen:
+                            raise SourceError("Numeracion de episodios invalida o repetida")
+                        seen.add(number)
+                        items.append({"number": number,
+                                      "filler": row.get("filler") if isinstance(row.get("filler"), bool) else None,
+                                      "recap": row.get("recap") if isinstance(row.get("recap"), bool) else None})
+                    pagination = payload.get("pagination") if provider == "tenrai" else (payload.get("meta") or {}).get("pagination")
+                    next_page = (pagination or {}).get("has_next_page" if provider == "tenrai" else "hasNextPage")
+                    if not isinstance(next_page, bool):
+                        raise SourceError("Falta paginacion de episodios")
+                    if not next_page:
+                        return {"data": sorted(items, key=lambda row: row["number"]), "provider": provider, "fetched_at": fetched_at}
+                    if not data:
+                        raise SourceError("Pagina vacia antes del final de episodios")
+                raise SourceError("Demasiadas paginas de episodios")
+            except SourceError as error:
+                errors.append(str(error))
+                if "Acceso rechazado" in str(error) or "Limite de" in str(error):
+                    raise
+        raise SourceError("; ".join(errors))
+
 
 _client = None
 

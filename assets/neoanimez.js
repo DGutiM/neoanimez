@@ -56,7 +56,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261025-sources-c5e4669fb3';
+const APP_VERSION = '20261025-sources-38c1f68331';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -168,6 +168,7 @@ let communityRankingMode = 'selection';
 let upcomingAnimeMap = new Map();
 let upcomingPayload = null;
 let activeScreenName = 'search';
+let dailyVisitOrder = null;
 let lastScreenName = 'search';
 let needsCatalogReset = false;
 let needsSearchReset = false;
@@ -691,6 +692,7 @@ function refreshVisibleAnimeTitles() {
     const title = document.getElementById('animeModalTitle');
     if (title) title.textContent = getAnimeDisplayTitle(currentModalAnime);
     renderAnimeRelations(currentModalAnime);
+    if (typeof renderAnimeExtras === 'function') renderAnimeExtras(currentModalAnime);
   }
   if (activeAnimeTimeline) {
     const currentNode = activeAnimeTimelineNodes.get(activeAnimeTimelineCurrentId);
@@ -2019,6 +2021,7 @@ function buildUserAnimeCard(anime, status) {
   const row = document.createElement('div');
   row.className = `user-anime-row status-${status}`;
   const animeId = Number(anime.mal_id);
+  row.dataset.animeId = String(animeId);
   const displayTitle = getAnimeDisplayTitle(anime);
   const rating = userRatingMap.get(animeId);
   const progress = getDisplayProgress(anime, status);
@@ -2140,7 +2143,7 @@ function getTimestamp(value) {
 }
 
 function getContinueWatchingItems(limit = 5) {
-  return Array.from(userAnimeMap.entries())
+  const items = Array.from(userAnimeMap.entries())
     .filter(([, status]) => status === 'watching')
     .map(([animeId, status]) => {
       const anime = getAnimeById(animeId);
@@ -2166,8 +2169,26 @@ function getContinueWatchingItems(limit = 5) {
       const orderDiff = a.orderHint - b.orderHint;
       if (orderDiff) return orderDiff;
       return String(getAnimeDisplayTitle(a.anime)).localeCompare(String(getAnimeDisplayTitle(b.anime)), 'es', { sensitivity: 'base' });
-    })
-    .slice(0, limit);
+    });
+  return stabilizeDailyVisitOrder(items).slice(0, limit);
+}
+
+function stabilizeDailyVisitOrder(items) {
+  if (activeScreenName !== 'user' || !currentUser) return items;
+  if (!dailyVisitOrder || dailyVisitOrder.userId !== currentUser.id) {
+    dailyVisitOrder = { userId: currentUser.id, ids: [] };
+  }
+  // Keep activity timestamps accurate, but apply their new order on the next visit.
+  const known = new Set(dailyVisitOrder.ids);
+  items.forEach(item => {
+    const id = Number(item.anime.mal_id);
+    if (!known.has(id)) {
+      dailyVisitOrder.ids.push(id);
+      known.add(id);
+    }
+  });
+  const positions = new Map(dailyVisitOrder.ids.map((id, index) => [id, index]));
+  return items.slice().sort((a, b) => positions.get(Number(a.anime.mal_id)) - positions.get(Number(b.anime.mal_id)));
 }
 
 function getSchedulePreviewDayLabel(dayKey) {
@@ -2199,24 +2220,6 @@ function buildDailyContinueCard(item) {
   const anime = item.anime;
   const animeId = Number(anime.mal_id);
   const title = getAnimeDisplayTitle(anime);
-  const progress = item.progress;
-  const totalEpisodes = getAnimeTotalEpisodes(anime);
-  const currentEpisode = Number(progress?.episode_number) || 0;
-  const progressPercent = getProgressPercent(progress, anime);
-  const progressLabel = getProgressLabel(progress, anime);
-  const showProgressBar = progress && totalEpisodes;
-  const canAdjustEpisode =
-    currentUser &&
-    anime.type !== 'Movie' &&
-    !isUpcomingAnime(anime);
-  const canIncrementEpisode = canAdjustEpisode && (!totalEpisodes || currentEpisode < totalEpisodes);
-  const canDecrementEpisode = canAdjustEpisode && currentEpisode > 0;
-  const minusLabel = currentEpisode > 1
-    ? `Restar a episodio ${currentEpisode - 1} en ${title}`
-    : `Quitar progreso de episodios en ${title}`;
-  const plusLabel = totalEpisodes
-    ? `Sumar episodio ${Math.min(currentEpisode + 1, totalEpisodes)} de ${totalEpisodes} en ${title}`
-    : `Sumar un episodio visto en ${title}`;
 
   const card = document.createElement('div');
   card.className = 'daily-continue-card status-watching';
@@ -2227,20 +2230,19 @@ function buildDailyContinueCard(item) {
   card.innerHTML = `
     <img class="daily-continue-cover" src="${EMPTY_IMAGE}" alt="${escapeHtml(title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
     <div class="daily-continue-main">
-      <div class="daily-continue-title">${escapeHtml(title)}</div>
-      <div class="daily-continue-meta">${escapeHtml(progressLabel || 'Sin episodio guardado')}</div>
-      ${showProgressBar ? `
-        <div class="daily-continue-progress" aria-label="Progreso ${escapeHtml(progressLabel)}">
-          <div class="user-progress-bar"><div class="user-progress-fill" style="width:${progressPercent}%"></div></div>
-          <div class="user-progress-text">${escapeHtml(progressLabel)}</div>
-        </div>
-      ` : ''}
+      <div class="daily-continue-title"></div>
+      <div class="daily-continue-meta"></div>
+      <div class="daily-continue-progress">
+        <div class="user-progress-bar"><div class="user-progress-fill"></div></div>
+        <div class="user-progress-text"></div>
+      </div>
     </div>
     <div class="daily-continue-actions">
-      <button type="button" class="user-episode-step-btn user-episode-minus-btn" data-progress-blocked="${!canDecrementEpisode}" aria-label="${escapeHtml(minusLabel)}" title="Restar episodio" ${canDecrementEpisode ? '' : 'disabled'}>-</button>
-      <button type="button" class="user-episode-step-btn user-episode-plus-btn" data-progress-blocked="${!canIncrementEpisode}" aria-label="${escapeHtml(plusLabel)}" title="Sumar episodio" ${canIncrementEpisode ? '' : 'disabled'}>+</button>
+      <button type="button" class="user-episode-step-btn user-episode-minus-btn" title="Restar episodio">-</button>
+      <button type="button" class="user-episode-step-btn user-episode-plus-btn" title="Sumar episodio">+</button>
     </div>
   `;
+  updateDailyContinueCard(card, item);
 
   card.addEventListener('click', () => {
     const imgNow = card.querySelector('.daily-continue-cover')?.src || anime.image || BLANK;
@@ -2267,6 +2269,44 @@ function buildDailyContinueCard(item) {
 
   loadAnimeImageElement(card.querySelector('.daily-continue-cover'), anime, 0);
   return card;
+}
+
+function updateDailyContinueCard(card, item) {
+  const anime = item.anime;
+  const title = getAnimeDisplayTitle(anime);
+  const total = getAnimeTotalEpisodes(anime);
+  const episode = Number(item.progress?.episode_number) || 0;
+  const label = getProgressLabel(item.progress, anime);
+  card.setAttribute('aria-label', `Abrir ${title}`);
+  card.querySelector('.daily-continue-title').textContent = title;
+  card.querySelector('.daily-continue-meta').textContent = label || 'Sin episodio guardado';
+  card.querySelector('img').alt = title;
+  const bar = card.querySelector('.daily-continue-progress');
+  bar.style.display = item.progress && total ? '' : 'none';
+  bar.setAttribute('aria-label', `Progreso ${label}`);
+  bar.querySelector('.user-progress-fill').style.width = `${getProgressPercent(item.progress, anime)}%`;
+  bar.querySelector('.user-progress-text').textContent = label;
+  const canAdjust = !!currentUser && anime.type !== 'Movie' && !isUpcomingAnime(anime);
+  const minus = card.querySelector('.user-episode-minus-btn');
+  const plus = card.querySelector('.user-episode-plus-btn');
+  minus.dataset.progressBlocked = String(!canAdjust || episode <= 0);
+  plus.dataset.progressBlocked = String(!canAdjust || !!total && episode >= total);
+  minus.setAttribute('aria-label', episode > 1 ? `Restar a episodio ${episode - 1} en ${title}` : `Quitar progreso de episodios en ${title}`);
+  plus.setAttribute('aria-label', total ? `Sumar episodio ${Math.min(episode + 1, total)} de ${total} en ${title}` : `Sumar un episodio visto en ${title}`);
+  [minus, plus].forEach(button => { button.disabled = button.dataset.progressBlocked === 'true' || button.classList.contains('is-saving'); });
+}
+
+function reconcileDailyContinueCards(container, items) {
+  const existing = new Map([...container.querySelectorAll('.daily-continue-card')].map(card => [Number(card.dataset.animeId), card]));
+  const ids = new Set(items.map(item => Number(item.anime.mal_id)));
+  // Retain the actual cards/buttons: replacing them also disrupts focus and scroll anchoring.
+  [...container.children].forEach(child => { if (!ids.has(Number(child.dataset.animeId))) child.remove(); });
+  items.forEach((item, index) => {
+    const id = Number(item.anime.mal_id);
+    const card = existing.get(id) || buildDailyContinueCard(item);
+    updateDailyContinueCard(card, item);
+    if (container.children[index] !== card) container.insertBefore(card, container.children[index] || null);
+  });
 }
 
 function buildDailyScheduleCard(entry, index = 0) {
@@ -2333,6 +2373,7 @@ function showAllWatchingFromDailyPanel() {
 }
 
 function renderUserDailyPanel() {
+  const restoreEpisodeFocus = preserveEpisodeActionFocus();
   const panel = document.getElementById('userDailyPanel');
   const continueSection = document.getElementById('dailyContinueSection');
   const scheduleSection = document.getElementById('dailyScheduleSection');
@@ -2362,9 +2403,8 @@ function renderUserDailyPanel() {
   const continueItems = getContinueWatchingItems(5);
   showAllWatchingBtn?.classList.toggle('hidden', counts.watching <= continueItems.length);
   if (continueList) {
-    continueList.innerHTML = '';
     if (continueItems.length) {
-      continueItems.forEach(item => continueList.appendChild(buildDailyContinueCard(item)));
+      reconcileDailyContinueCards(continueList, continueItems);
     } else {
       continueList.innerHTML = '<div class="user-daily-soft-empty">Cuando tengas animes en progreso, aparecerán aquí para seguir rápido.</div>';
     }
@@ -2387,6 +2427,21 @@ function renderUserDailyPanel() {
   }
   scheduleSection?.classList.toggle('hidden', totalSaved === 0);
   empty?.classList.toggle('hidden', totalSaved !== 0);
+  restoreEpisodeFocus();
+}
+
+function preserveEpisodeActionFocus() {
+  const button = document.activeElement?.closest?.('.user-episode-step-btn');
+  const card = button?.closest('[data-anime-id]');
+  const container = button?.closest('#dailyContinueList, #userWatchingList, #userPendingList');
+  const direction = button?.classList.contains('user-episode-plus-btn') ? 'plus' : 'minus';
+  const id = Number(card?.dataset.animeId);
+  if (!container || !Number.isSafeInteger(id)) return () => {};
+  return () => {
+    if (document.activeElement !== document.body && document.activeElement !== button && document.activeElement?.isConnected) return;
+    const target = container.querySelector(`[data-anime-id="${id}"] .user-episode-${direction}-btn:not(:disabled)`);
+    target?.focus({ preventScroll: true });
+  };
 }
 
 function normalizePublicSlug(value = '') {
@@ -3234,6 +3289,7 @@ function loadAnimeSchedule({ force = false } = {}) {
 }
 
 function renderUserLists() {
+  const restoreEpisodeFocus = preserveEpisodeActionFocus();
   const buckets = {
     watching: [],
     completed: [],
@@ -3275,6 +3331,7 @@ function renderUserLists() {
   updateModalProgressUI();
   refreshAnimeStatusMarkers();
   renderUserSchedule();
+  restoreEpisodeFocus();
 }
 
 function applyUserAnimeBundle(payload = {}) {
@@ -5823,6 +5880,7 @@ async function saveAnimeProgress(anime, episodeNumber) {
   }
 
   await runLocked(`anime-progress:${animeId}`, async () => {
+    const restoreEpisodeFocus = preserveEpisodeActionFocus();
     setElementsBusy('.progress-save-btn, .progress-clear-btn, .user-episode-step-btn', true);
     setModalProgressMessage('Guardando progreso...', '');
     let queuedPayload = null;
@@ -5893,6 +5951,7 @@ async function saveAnimeProgress(anime, episodeNumber) {
       setModalProgressMessage(userFacingSupabaseError(error, 'No se pudo guardar el progreso. Revisa que la tabla exista en Supabase.'), 'error');
     } finally {
       setElementsBusy('.progress-save-btn, .progress-clear-btn, .user-episode-step-btn', false);
+      restoreEpisodeFocus();
     }
   });
 }
@@ -5904,6 +5963,7 @@ async function clearAnimeProgress(anime) {
   const previousProgress = userProgressMap.get(animeId);
 
   await runLocked(`anime-progress:${animeId}`, async () => {
+    const restoreEpisodeFocus = preserveEpisodeActionFocus();
     setElementsBusy('.progress-save-btn, .progress-clear-btn, .user-episode-step-btn', true);
     setModalProgressMessage('Quitando progreso...', '');
     let queuedPayload = null;
@@ -5954,6 +6014,7 @@ async function clearAnimeProgress(anime) {
       setModalProgressMessage(userFacingSupabaseError(error, 'No se pudo quitar el progreso.'), 'error');
     } finally {
       setElementsBusy('.progress-save-btn, .progress-clear-btn, .user-episode-step-btn', false);
+      restoreEpisodeFocus();
     }
   });
 }
@@ -6914,6 +6975,7 @@ function setActiveScreen(screenId, navId = null, animate = false) {
 
   const targetName = screenId.replace(/-screen$/, '');
   const fromScreen = activeScreenName;
+  if (fromScreen !== targetName) dailyVisitOrder = null;
   if (fromScreen !== targetName) saveScreenScrollPosition(fromScreen);
   scheduleHeavyScreenReset(fromScreen, targetName);
 
@@ -6939,6 +7001,7 @@ function setActiveScreen(screenId, navId = null, animate = false) {
   lastScreenName = fromScreen;
   activeScreenName = targetName;
   persistActiveScreen(targetName);
+  if (fromScreen !== targetName && targetName === 'user') renderUserLists();
 
   const shouldAnimate = animate && window.innerWidth < 600 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -8863,6 +8926,11 @@ async function openAnimeTimeline(anime = currentModalAnime) {
     animeModal.setAttribute('aria-hidden', 'true');
   }
   activeAnimeTimelineCurrentId = requestedId;
+  const shareButton = document.getElementById('sagaShareBtn');
+  if (shareButton) shareButton.disabled = typeof shareAnimeSaga !== 'function';
+  document.getElementById('sagaShareLink')?.setAttribute('hidden', '');
+  const shareFeedback = document.getElementById('sagaShareFeedback');
+  if (shareFeedback) shareFeedback.textContent = '';
   activeAnimeTimeline = null;
   activeAnimeTimelineNodes = new Map();
   activeAnimeTimelineDisplayEdges = [];
@@ -8932,6 +9000,7 @@ function closeAnimeTimeline() {
   modal.classList.remove('open', 'is-suspended');
   modal.inert = true;
   modal.setAttribute('aria-hidden', 'true');
+  if (typeof clearSharedSagaRoute === 'function') clearSharedSagaRoute();
   animeTimelineDetailReturn = null;
   if (animeTimelineDrawFrame) cancelAnimationFrame(animeTimelineDrawFrame);
   if (animeTimelineResizeTimer) window.clearTimeout(animeTimelineResizeTimer);
@@ -9615,6 +9684,7 @@ function openAnimeModal(anime, imgSrc = BLANK, options = {}) {
   const needsDetails = splitCatalogEnabled && !!getCatalogDetailFile(anime) && !anime._details_loaded;
   renderAnimeModalContent(anime, { loadingDetails: needsDetails });
   renderAnimeRelationsForModal(anime);
+  if (typeof renderAnimeExtras === 'function') renderAnimeExtras(anime);
   statusBox?.classList.toggle('hidden', !currentUser);
   setModalStatusMessage('');
   if (options.trackOpen !== false) trackProductEvent('anime_open');
@@ -9775,10 +9845,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   const authUrlState = getAuthUrlState();
   const passwordJustUpdated = new URL(window.location.href).searchParams.get('password_updated') === '1';
   const publicProfileSlug = readPublicProfileSlugFromUrl();
+  const sharedSagaId = typeof readSharedSagaId === 'function' ? readSharedSagaId() : 0;
   const storedUser = readStoredSupabaseUser();
   if (storedUser && !passwordJustUpdated) setCurrentUser(storedUser);
   const initialScreen = getInitialScreen({ user: currentUser, recovery: isRecoveryUrl(), passwordUpdated: passwordJustUpdated, authRedirect: !!(authUrlState.code || authUrlState.accessToken) });
-  let initialRoutePending = true;
+  let initialRoutePending = !sharedSagaId;
   const keepChosenScreen = () => { initialRoutePending = false; };
   document.addEventListener('pointerdown', keepChosenScreen, { once: true });
   document.addEventListener('keydown', keepChosenScreen, { once: true });
@@ -9793,6 +9864,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.warn('No se pudo precargar el calendario:', error);
   });
   const catalogReady = loadCatalogInterface();
+  if (sharedSagaId && !publicProfileSlug && !isRecoveryUrl() && !passwordJustUpdated && !authUrlState.code && !authUrlState.accessToken) {
+    catalogReady.then(() => openSharedSagaRoute(sharedSagaId)).catch(error => console.warn('No se pudo abrir la saga compartida:', error));
+  }
   window.setTimeout(() => {
     loadAnimeRelations().catch(error => {
       console.warn('No se pudo precargar anime-relations.json:', error);
@@ -9900,7 +9974,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (initialRoutePending && currentUser && !publicProfileSlug && initialScreen === 'search' && activeScreenName === 'search') showScreen('user');
   document.removeEventListener('pointerdown', keepChosenScreen);
   document.removeEventListener('keydown', keepChosenScreen);
-  if (!currentUser && !publicProfileSlug && initialScreen === 'user' && !authFlash && !passwordJustUpdated && !authUrlState.code && !authUrlState.accessToken && activeScreenName === 'user' && !readPendingListIntent()) showScreen('search');
+  if (!currentUser && !publicProfileSlug && !sharedSagaId && initialScreen === 'user' && !authFlash && !passwordJustUpdated && !authUrlState.code && !authUrlState.accessToken && activeScreenName === 'user' && !readPendingListIntent()) showScreen('search');
   if (currentUser) loadMyPublicProfile({ silent: true });
   cleanupAuthRedirectUrl();
   if (passwordJustUpdated) {

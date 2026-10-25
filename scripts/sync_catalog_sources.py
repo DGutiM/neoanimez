@@ -24,7 +24,7 @@ from verificar_publicacion import REQUIRED_ROOT_FILES, REQUIRED_DIRS
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILES = ["anime-lista.json", "anime-index.json", "anime-upcoming.json", "anime-schedule.json",
-              "anime-relations.json", "anime-timeline-index.json"]
+              "anime-relations.json", "anime-timeline-index.json", "anime-extras-index.json"]
 RELEASE_FILES = ["assets/neoanimez.js", "index.html", "service-worker.js", "sitemap.xml"]
 
 
@@ -209,6 +209,8 @@ def sync(stage, root, args, report):
     schedule["stats"]["remote_source"] = schedule["source"]
     atomic_json(schedule_path, schedule)
     run(stage, "generar_catalogo_web.py")
+    run(stage, "actualizar_extras_anime.py", *( ["--offline"] if args.offline else [] ))
+    report["extras"] = read_json(stage / "cache" / "extras-report.json", {})
     report.update(initial_count=len(before), final_count=len(catalog), added=added, network=client.stats)
     pending_relations = (missing | set(report.get("missing_related_ids", []))) - {item["mal_id"] for item in before}
     atomic_json(root / "cache" / "catalog-related-pending.json", sorted(pending_relations))
