@@ -56,7 +56,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261025-sources-b1135c0396';
+const APP_VERSION = '20261025-sources-c53a3dc0ab';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
