@@ -21,6 +21,7 @@ class AiringRefreshTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 updater.fetch_anilist_batch([1], Mock())
 
+    @patch.dict("os.environ", {"NEO_ANILIST_AUTHORIZED": "yes"})
     def test_rate_limit_waits_and_retries(self):
         response = Mock()
         response.__enter__ = Mock(return_value=response)

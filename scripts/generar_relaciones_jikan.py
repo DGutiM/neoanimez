@@ -136,6 +136,8 @@ def fetch_graphql(
     pacer: RequestPacer,
     variables: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    from catalog_sources import require_anilist_permission
+    require_anilist_permission()
     body = json.dumps(
         {"query": query, "variables": variables or {}},
         separators=(",", ":"),
@@ -157,7 +159,7 @@ def fetch_graphql(
             )
             with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as response:
                 payload = json.loads(response.read().decode("utf-8"))
-            if not isinstance(payload.get("data"), dict):
+            if payload.get("errors") or not isinstance(payload.get("data"), dict):
                 errors = payload.get("errors") or []
                 message = "; ".join(str(item.get("message") or item) for item in errors)
                 raise RuntimeError(message or "AniList no devolvio datos.")
@@ -944,4 +946,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    from sync_catalog_sources import main as safe_main
+    raise SystemExit(safe_main())

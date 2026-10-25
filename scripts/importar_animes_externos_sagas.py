@@ -99,6 +99,8 @@ def safe_int(value: Any) -> int | None:
 
 
 def fetch_batch(anime_ids: list[int], *, query: str = QUERY_BY_MAL) -> list[dict[str, Any]]:
+    from catalog_sources import require_anilist_permission
+    require_anilist_permission()
     request = urllib.request.Request(
         ANILIST_URL,
         data=json.dumps({"query": query, "variables": {"ids": anime_ids}}).encode("utf-8"),
@@ -360,4 +362,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    from sync_catalog_sources import main as safe_main
+    raise SystemExit(safe_main())

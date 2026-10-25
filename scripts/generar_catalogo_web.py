@@ -19,6 +19,7 @@ INDEX_FIELDS = [
     "title",
     "mal_id",
     "image",
+    "image_candidates",
     "episodes",
     "length",
     "demographic",

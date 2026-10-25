@@ -204,6 +204,8 @@ class RequestPacer:
 
 
 def fetch_graphql(query: str, variables: dict[str, Any], pacer: RequestPacer) -> dict[str, Any]:
+    from catalog_sources import require_anilist_permission
+    require_anilist_permission()
     body = json.dumps({"query": query, "variables": variables}, separators=(",", ":")).encode("utf-8")
     last_error: Exception | None = None
     for attempt in range(1, MAX_RETRIES + 1):
@@ -221,7 +223,7 @@ def fetch_graphql(query: str, variables: dict[str, Any], pacer: RequestPacer) ->
             )
             with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as response:
                 payload = json.loads(response.read().decode("utf-8"))
-            if not isinstance(payload.get("data"), dict):
+            if payload.get("errors") or not isinstance(payload.get("data"), dict):
                 message = "; ".join(
                     str(item.get("message") or item) for item in (payload.get("errors") or [])
                 )
@@ -766,4 +768,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    from sync_catalog_sources import main as safe_main
+    raise SystemExit(safe_main())

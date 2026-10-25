@@ -22,6 +22,7 @@ const RANKING_DATA = [
 
 const imgCache = {};
 const imgRequests = {};
+const imgMetadataFailureUntil = {};
 const imageProbeCache = {};
 const imageResolveRequests = {};
 const imageLoadQueue = [];
@@ -55,7 +56,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261025-release-state';
+const APP_VERSION = '20261025-sources-c5e4669fb3';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -1797,7 +1798,7 @@ function isUpcomingAnime(anime = null) {
   const premiereTime = Date.parse(String(premiereValue || ''));
   if (anime.ongoing === true || airingStatus === 'currently airing' || airingStatus === 'finished airing') return false;
   // La fecha conocida manda sobre un estado remoto que puede tardar en actualizarse.
-  if (Number.isFinite(premiereTime)) return premiereTime > Date.now();
+  if (/^\d{4}-\d{2}-\d{2}/.test(String(premiereValue || '')) && Number.isFinite(premiereTime)) return premiereTime > Date.now();
   if (airingStatus === 'not yet aired') return true;
   const releaseYear = Number(anime.year || anime.upcoming_year);
   if (Number.isInteger(releaseYear) && releaseYear > new Date().getFullYear()) return true;
@@ -6505,6 +6506,7 @@ function getAnimeImageCandidates(anime) {
   const raw = String(anime?.image || '').trim();
   return uniqueImageUrls([
     normalizeAnimeImageUrl(raw),
+    ...(Array.isArray(anime?.image_candidates) ? anime.image_candidates.map(normalizeAnimeImageUrl) : []),
     getOriginalAnimeImageUrl(raw)
   ]);
 }
@@ -6704,20 +6706,42 @@ function findAnimeByTitle(title) {
 
 
 async function getImgById(id) {
-  if (!id) return '';
+  id = Number(id);
+  if (!Number.isInteger(id) || id <= 0) return '';
   const key = 'id-' + id;
   if (imgCache[key]) return imgCache[key];
+  if ((imgMetadataFailureUntil[key] || 0) > Date.now()) return '';
   if (imgRequests[key]) return imgRequests[key];
 
   imgRequests[key] = (async () => {
     try {
-      const r = await fetch('https://api.jikan.moe/v4/anime/' + id);
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      const d = await r.json();
-      const url = normalizeAnimeImageUrl(d?.data?.images?.jpg?.large_image_url || d?.data?.images?.jpg?.image_url || '');
-      if (url) imgCache[key] = url;
-      return url;
-    } catch {
+      for (const base of ['https://api.tenrai.org/v1', 'https://jikan.lucashdo.com/v1']) {
+        const controller = new AbortController();
+        const timer = window.setTimeout(() => controller.abort(), 4500);
+        try {
+          const response = await fetch(base + '/anime/' + id + '/full', { signal: controller.signal, credentials: 'omit' });
+          if ([401, 403, 429].includes(response.status)) {
+            const retrySeconds = Number(response.headers?.get('Retry-After')) || 60;
+            imgMetadataFailureUntil[key] = Date.now() + Math.max(60, retrySeconds) * 1000;
+            return '';
+          }
+          if (!response.ok) continue;
+          const payload = await response.json();
+          const data = payload?.data;
+          if (payload?.errors || payload?.meta?.stale || payload?.meta?.refreshFailed || Number(data?.mal_id ?? data?.malId) !== id) continue;
+          const jpg = data?.images?.jpg;
+          const url = normalizeAnimeImageUrl(jpg?.large_image_url || jpg?.image_url || jpg?.largeImageUrl || jpg?.imageUrl || data?.images?.large || data?.images?.medium || data?.imageUrl || '');
+          if (url.startsWith('https://')) {
+            imgCache[key] = url;
+            return url;
+          }
+        } catch {
+          // A missing cover must never block the rest of the page.
+        } finally {
+          window.clearTimeout(timer);
+        }
+      }
+      imgMetadataFailureUntil[key] = Date.now() + 60000;
       return '';
     } finally {
       delete imgRequests[key];
@@ -6751,14 +6775,8 @@ async function getImg(animeOrTitle) {
         }
       }
 
-      await new Promise(r => setTimeout(r, 350));
-      const query = anime.title_japanese || anime.title || '';
-      const r = await fetch('https://api.jikan.moe/v4/anime?q=' + encodeURIComponent(query) + '&limit=1');
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      const d = await r.json();
-      const url = normalizeAnimeImageUrl(d?.data?.[0]?.images?.jpg?.large_image_url || d?.data?.[0]?.images?.jpg?.image_url || '');
-      if (url) imgCache[cacheKey] = url;
-      return url;
+      // Never guess a cover from the first title-search hit (sequels share names).
+      return '';
     } catch {
       return '';
     } finally {
@@ -8093,6 +8111,11 @@ function formatCompactNumber(value) {
 function formatUpcomingDate(anime = {}) {
   const raw = String(anime.aired_from || '').trim();
   if (!raw) return 'Fecha desconocida';
+  if (/^\d{4}$/.test(raw)) return raw;
+  if (/^\d{4}-\d{2}$/.test(raw)) {
+    return new Intl.DateTimeFormat('es-ES', { month: 'long', year: 'numeric', timeZone: 'UTC' })
+      .format(new Date(raw + '-01T00:00:00Z'));
+  }
   const date = new Date(raw);
   if (Number.isNaN(date.getTime())) return 'Fecha desconocida';
   const isoDate = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);

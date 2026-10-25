@@ -1,17 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-10-25T09:03:43+00:00",
-    "source": "AniList API",
     "year": 2026,
-    "include_tba": true,
-    "sort": "Más esperados: members desc, favorites desc, popularity asc mediante anticipation_score",
-    "total": 36,
-    "translated_descriptions": 0,
-    "cleaned_description_fields": 289,
+    "generated_at": "2026-10-25T11:36:03+00:00",
+    "source": "Tenrai/Jikan-Edge + preserved catalogue",
+    "total": 45,
     "curated": true,
-    "curated_at": "2026-10-25T09:08:35+00:00",
-    "source_total": 388,
-    "source_after_filter": 10,
+    "curated_at": "2026-10-25T11:36:04+00:00",
+    "source_total": 722,
+    "source_after_filter": 336,
     "limits": {
       "most_anticipated": 20,
       "season": 10,
@@ -28,10 +24,10 @@
     "winter_2027",
     "spring_2027",
     "summer_2027",
-    "fall_2027"
+    "fall_2027",
+    "unknown"
   ],
   "section_labels": {
-    "most_anticipated": "Más esperados",
     "winter": "Invierno 2026",
     "spring": "Primavera 2026",
     "summer": "Verano 2026",
@@ -47,75 +43,85 @@
     "spring": [],
     "summer": [],
     "fall": [
-      50668,
       62844,
+      50668,
       64459,
-      59217,
       64266,
-      63045,
       57961,
+      60348,
+      63045,
       63323,
       63938,
-      63221
+      62958
     ],
     "winter_2027": [
+      56732,
       61338,
       58934,
-      61035,
-      57557,
-      56732,
       63139,
-      62312,
+      57557,
+      61035,
       63193,
+      63822,
       62989,
-      64524
+      61304
     ],
     "spring_2027": [
+      62841,
       64058,
       60548,
-      62841,
+      65070,
       62613,
+      61944,
       64006,
       63958,
       64501,
-      61199,
-      63997,
-      62024
+      65023
     ],
     "summer_2027": [
       63129,
-      64858,
       60739,
       65180
     ],
     "fall_2027": [
-      63816,
-      59068
+      59068,
+      63816
     ],
-    "unknown": []
+    "unknown": [
+      61006,
+      62546,
+      59139,
+      63143,
+      63794,
+      63147,
+      63824,
+      64516,
+      59230,
+      64546
+    ]
   },
   "items": [
     {
-      "title": "Sousou no Frieren 3rd Season",
-      "mal_id": 63816,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209939-g2Njkml1rheG.jpg",
+      "title": "Bocchi the Rock! 2nd Season",
+      "mal_id": 61006,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186712-d5I2TjUQcHuI.jpg",
       "episodes": null,
       "length": "corto",
       "demographic": "",
       "genres": [
-        "Adventure",
-        "Drama",
-        "Fantasy"
+        "Comedy",
+        "Music",
+        "Slice of Life"
       ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
+      "tone": "ligero",
+      "fast_start": false,
+      "action_level": "bajo",
       "emotional": true,
       "popular": false,
-      "year": 2027,
-      "description": "The third season of Sousou no Frieren .",
+      "year": null,
+      "description": "We will Be back！ The second season of Bocchi the Rock!",
       "type": "TV",
-      "franchise": "Sousou no Frieren",
+      "franchise": "Bocchi the Rock!",
       "ongoing": false,
       "airing_status": "Not yet aired",
       "aired_from": "",
@@ -128,34 +134,32 @@
         "MANGA"
       ],
       "themes": [
-        "Magic",
         "Female Protagonist",
-        "Travel",
-        "Elf",
-        "Demons"
+        "Rock Music",
+        "Band",
+        "Primarily Female Cast",
+        "Primarily Teen Cast",
+        "Cute Girls Doing Cute Things",
+        "Hikikomori"
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "葬送のフリーレン 第3期",
+      "_update_status": "anilist_saga_import",
+      "title_english": "Bocchi the Rock! Season 2",
+      "title_japanese": "ぼっち・ざ・ろっく！ 2期",
       "title_synonyms": [
-        "Frieren: Beyond Journey’s End Season 3 Golden Land Arc",
-        "葬送のフリーレン 第3期【黄金郷編】",
-        "Sousou no Frieren 3rd Season [Ougonkyou-hen]"
+        "BTR2"
       ],
       "search_titles": [
-        "Sousou no Frieren 3rd Season",
-        "葬送のフリーレン 第3期",
-        "Frieren: Beyond Journey’s End Season 3 Golden Land Arc",
-        "葬送のフリーレン 第3期【黄金郷編】",
-        "Sousou no Frieren 3rd Season [Ougonkyou-hen]"
+        "Bocchi the Rock! 2nd Season",
+        "ぼっち・ざ・ろっく！ 2期",
+        "BTR2"
       ],
-      "upcoming_year": 2027,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -163,96 +167,28 @@
         "timezone": null,
         "string": null
       },
-      "members": 47329,
-      "favorites": 544,
-      "mal_popularity": 47329,
-      "anticipation_score": 557.13,
-      "jikan_url": "https://anilist.co/anime/209939",
-      "trailer_url": "",
-      "title_es": "Frieren",
+      "members": 123390,
+      "favorites": 830,
+      "mal_popularity": 2121,
+      "anticipation_score": 627.51,
+      "jikan_url": "https://myanimelist.net/anime/61006/Bocchi_the_Rock_2nd_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=2z5nOlwq9XU",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "¡Bocchi la Roca! 2da temporada",
       "title_es_reviewed": false,
       "title_es_source": "title",
       "title_es_status": "kept",
       "search_titles_es": [
-        "Frieren",
-        "Frieren: Tras finalizar el viaje"
+        "¡Bocchi la Roca! 2da temporada"
       ],
-      "description_es": "La tercera temporada de Sousou no Frieren."
-    },
-    {
-      "title": "Mahoutsukai no Yoru",
-      "mal_id": 50668,
-      "image": "https://myanimelist.net/images/anime/1121/156211l.jpg",
-      "episodes": 1,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Mystery",
-        "Supernatural"
+      "description_es": "¡Volveremos! ¡La segunda temporada de Bocchi the Rock!",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1142/148003l.jpg"
       ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Set near the end of the Showa period in the late 1980s, an old mansion in Misaki Town is rumored to be the home of a witch. Aoko abruptly enters the world of magi after her grandfather suddenly decides to have Aoko become the Aozaki family's successor. Since then, Aoko moves into the Kuonji Mansion and begins to learn magecraft from the young magus Alice Kuonji, the rumored witch of the mansion. After witnessing the two using magecraft, Soujuurou Shizuki is also forced to live with them until a rune to remove his memories is discovered.",
-      "type": "Movie",
-      "franchise": "Mahoutsukai no Yoru",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-11-20",
-      "aired_to": "",
-      "broadcast_day": "Fridays",
-      "broadcast_time": "00:00",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Fridays at 00:00 (JST)",
-      "source_tags_original": [
-        "VISUAL_NOVEL"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Witch on the Holy Night",
-      "title_japanese": "魔法使いの夜",
-      "title_synonyms": [
-        "A Magician's Night",
-        "MahoYo"
-      ],
-      "search_titles": [
-        "Mahoutsukai no Yoru",
-        "Witch on the Holy Night",
-        "魔法使いの夜",
-        "A Magician's Night",
-        "MahoYo"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Fridays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:00 (JST)"
-      },
-      "members": 42463,
-      "favorites": 493,
-      "mal_popularity": 42463,
-      "anticipation_score": 553.6,
-      "jikan_url": "https://anilist.co/anime/143103",
-      "trailer_url": "",
-      "title_es": "Bruja en la Noche Santa",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Bruja en la Noche Santa"
-      ],
-      "description_es": "Ambientada cerca del final del período Showa, a finales de la década de 1980, se rumorea que una antigua mansión en la ciudad de Misaki es el hogar de una bruja. Aoko ingresa abruptamente al mundo de los magos después de que su abuelo de repente decide que Aoko se convierta en la sucesora de la familia Aozaki. Desde entonces, Aoko se muda a la Mansión Kuonji y comienza a aprender hechicería de la joven maga Alice Kuonji, la rumoreada bruja de la mansión. Después de presenciar a los dos usando magia, Soujuurou Shizuki también se ve obligado a vivir con ellos hasta que se descubre una runa para eliminar sus recuerdos."
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
     },
     {
       "title": "Dungeon Meshi 2nd Season",
@@ -277,7 +213,7 @@
       "franchise": "Dungeon Meshi",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2027-10",
       "aired_to": "",
       "broadcast_day": "",
       "broadcast_time": "",
@@ -298,7 +234,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "jikan_2026_new",
       "title_english": "Delicious in Dungeon Season 2",
       "title_japanese": "ダンジョン飯 第２期",
       "title_synonyms": [
@@ -315,7 +251,7 @@
       "upcoming_season": "fall",
       "upcoming_season_label": "Otoño",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -323,12 +259,12 @@
         "timezone": null,
         "string": null
       },
-      "members": 46832,
-      "favorites": 386,
-      "mal_popularity": 46832,
-      "anticipation_score": 553.33,
-      "jikan_url": "https://anilist.co/anime/178031",
-      "trailer_url": "",
+      "members": 124995,
+      "favorites": 507,
+      "mal_popularity": 2100,
+      "anticipation_score": 623.95,
+      "jikan_url": "https://myanimelist.net/anime/59068/Dungeon_Meshi_Season_2",
+      "trailer_url": "https://www.youtube.com/watch?v=qRrXciq7-88",
       "title_es": "Tragones y mazmorras",
       "title_es_reviewed": false,
       "title_es_source": "title_english",
@@ -337,7 +273,463 @@
         "Tragones y mazmorras",
         "Delicious in Dungeon"
       ],
-      "description_es": "La segunda temporada de Dungeon Meshi."
+      "description_es": "La segunda temporada de Dungeon Meshi.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1830/158890l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru 2nd Season",
+      "mal_id": 56732,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169579-zB34n31Rm8xS.png",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Mystery",
+        "Romance"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": 2027,
+      "description": "The second season of Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru.",
+      "type": "TV",
+      "franchise": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-01",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "LIGHT_NOVEL"
+      ],
+      "themes": [
+        "Assassins",
+        "Isekai"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat Season 2",
+      "title_japanese": "世界最高の暗殺者、異世界貴族に転生する 2ndシーズン",
+      "title_synonyms": [
+        "Ansatsu Kizoku"
+      ],
+      "search_titles": [
+        "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru 2nd Season",
+        "世界最高の暗殺者、異世界貴族に転生する 2ndシーズン",
+        "Ansatsu Kizoku"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "winter",
+      "upcoming_season_label": "Invierno",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 96766,
+      "favorites": 371,
+      "mal_popularity": 2519,
+      "anticipation_score": 621.74,
+      "jikan_url": "https://myanimelist.net/anime/56732/Sekai_Saikou_no_Ansatsusha_Isekai_Kizoku_ni_Tensei_suru_Season_2",
+      "trailer_url": "https://www.youtube.com/watch?v=DAXn92SSHIo",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "2da temporada",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "2da temporada"
+      ],
+      "description_es": "La segunda temporada de Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1582/159858l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
+    },
+    {
+      "title": "Kimetsu no Yaiba: Mugenjou-hen Movie 2",
+      "mal_id": 62546,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195200-wJaLJ4mDDKGc.png",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Supernatural"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": null,
+      "description": "Part 2 of the theatrical trilogy adaptation of the Infinity Castle Arc.",
+      "type": "Movie",
+      "franchise": "Kimetsu no Yaiba",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Swordplay",
+        "Demons"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Demon Slayer: Kimetsu no Yaiba Infinity Castle Part 2",
+      "title_japanese": "劇場版「鬼滅の刃」無限城編 第二章",
+      "title_synonyms": [
+        "Demon Slayer: Kimetsu no Yaiba - The Movie: Infinity Castle - Part 2"
+      ],
+      "search_titles": [
+        "Kimetsu no Yaiba: Mugenjou-hen Movie 2",
+        "Demon Slayer: Kimetsu no Yaiba Infinity Castle Part 2",
+        "劇場版「鬼滅の刃」無限城編 第二章"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 112412,
+      "favorites": 326,
+      "mal_popularity": 2270,
+      "anticipation_score": 619.26,
+      "jikan_url": "https://myanimelist.net/anime/62546/Kimetsu_no_Yaiba_Movie_2__Mugenjou-hen",
+      "trailer_url": "",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Guardianes de la noche",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Guardianes de la noche",
+        "Demon Slayer",
+        "Cazador de demonios"
+      ],
+      "description_es": "Parte 2 de la trilogía teatral adaptación del Arco del Castillo Infinito.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1000/152184l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Sousou no Frieren 3rd Season",
+      "mal_id": 63816,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209939-g2Njkml1rheG.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": 2027,
+      "description": "The third season of Sousou no Frieren .",
+      "type": "TV",
+      "franchise": "Sousou no Frieren",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-10",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Magic",
+        "Female Protagonist",
+        "Travel",
+        "Elf",
+        "Demons"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Frieren: Beyond Journey's End - Golden Land Arc",
+      "title_japanese": "葬送のフリーレン 第3期",
+      "title_synonyms": [
+        "Frieren: Beyond Journey’s End Season 3 Golden Land Arc",
+        "葬送のフリーレン 第3期【黄金郷編】",
+        "Sousou no Frieren 3rd Season [Ougonkyou-hen]"
+      ],
+      "search_titles": [
+        "Sousou no Frieren 3rd Season",
+        "葬送のフリーレン 第3期",
+        "Frieren: Beyond Journey’s End Season 3 Golden Land Arc",
+        "葬送のフリーレン 第3期【黄金郷編】",
+        "Sousou no Frieren 3rd Season [Ougonkyou-hen]"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "fall",
+      "upcoming_season_label": "Otoño",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 117837,
+      "favorites": 348,
+      "mal_popularity": 2197,
+      "anticipation_score": 616.43,
+      "jikan_url": "https://myanimelist.net/anime/63816/Sousou_no_Frieren__Ougonkyou-hen",
+      "trailer_url": "",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Frieren",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Frieren",
+        "Frieren: Tras finalizar el viaje"
+      ],
+      "description_es": "La tercera temporada de Sousou no Frieren.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1619/156313l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+      "mal_id": 59139,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178467-mw0zYp9gVfiO.png",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": null,
+      "description": "The third season of Tsuki ga Michibiku Isekai Douchuu .",
+      "type": "TV",
+      "franchise": "Tsuki ga Michibiku Isekai Douchuu",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "LIGHT_NOVEL"
+      ],
+      "themes": [
+        "Isekai",
+        "Magic",
+        "Male Protagonist",
+        "Medieval"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Tsukimichi -Moonlit Fantasy- Season 3",
+      "title_japanese": "月が導く異世界道中 第三幕",
+      "title_synonyms": [
+        "Tsukimichi Moonlit Fantasy Season 3"
+      ],
+      "search_titles": [
+        "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+        "月が導く異世界道中 第三幕",
+        "Tsukimichi Moonlit Fantasy Season 3"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 81026,
+      "favorites": 378,
+      "mal_popularity": 2807,
+      "anticipation_score": 599.34,
+      "jikan_url": "https://myanimelist.net/anime/59139/Tsuki_ga_Michibiku_Isekai_Douchuu_3rd_Season",
+      "trailer_url": "",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Tsuki ga Michibiku Isekai Douchuu 3ª temporada",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Tsuki ga Michibiku Isekai Douchuu 3ª temporada"
+      ],
+      "description_es": "La tercera temporada de Tsuki ga Michibiku Isekai Douchuu.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1055/143718l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Chainsaw Man: Shikaku-hen",
+      "mal_id": 63143,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204429-9scYA2ab3Zz3.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Drama",
+        "Horror",
+        "Supernatural"
+      ],
+      "tone": "oscuro",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": null,
+      "description": "Sequel to Chainsaw Man: Reze-hen .",
+      "type": "",
+      "franchise": "Chainsaw Man",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Assassins",
+        "Urban Fantasy",
+        "Demons",
+        "Male Protagonist",
+        "Urban",
+        "Gore",
+        "Henshin",
+        "Shounen",
+        "Monster Boy",
+        "Politics",
+        "Body Horror"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Chainsaw Man: Assassins Arc",
+      "title_japanese": "チェンソーマン 刺客篇",
+      "title_synonyms": [
+        "CSM",
+        "Chainsaw Man: Assassins Arc"
+      ],
+      "search_titles": [
+        "Chainsaw Man: Shikaku-hen",
+        "チェンソーマン 刺客篇",
+        "CSM",
+        "Chainsaw Man: Assassins Arc"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 87868,
+      "favorites": 244,
+      "mal_popularity": 2679,
+      "anticipation_score": 595.96,
+      "jikan_url": "https://myanimelist.net/anime/63143/Chainsaw_Man__Shikaku-hen",
+      "trailer_url": "https://www.youtube.com/watch?v=s8cP1Vt5US8",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Hombre de la motosierra: Shikaku-hen",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Hombre de la motosierra: Shikaku-hen"
+      ],
+      "description_es": "Secuela de Chainsaw Man: Reze-hen.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1432/154522l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
     },
     {
       "title": "Shangri-La Frontier 3rd Season",
@@ -381,7 +773,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "anilist_saga_import",
       "title_english": "Shangri-La Frontier Season 3",
       "title_japanese": "シャングリラ・フロンティア 3rd season",
       "title_synonyms": [
@@ -403,7 +795,7 @@
       "upcoming_season": "winter",
       "upcoming_season_label": "Invierno",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": "Sundays",
@@ -411,12 +803,13 @@
         "timezone": "Asia/Tokyo",
         "string": "Sundays at 17:00 (JST)"
       },
-      "members": 38414,
-      "favorites": 610,
-      "mal_popularity": 38414,
-      "anticipation_score": 553.31,
-      "jikan_url": "https://anilist.co/anime/189323",
-      "trailer_url": "",
+      "members": 80348,
+      "favorites": 245,
+      "mal_popularity": 2818,
+      "anticipation_score": 594.46,
+      "jikan_url": "https://myanimelist.net/anime/61338/Shangri-La_Frontier__Kusoge_Hunter_Kamige_ni_Idoman_to_su_3rd_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=84JvYWUOOaU",
+      "_neo_source": "anilist_saga_import",
       "title_es": "Frontera Shangri-La Temporada 3",
       "title_es_reviewed": false,
       "title_es_source": "title_english",
@@ -424,7 +817,106 @@
       "search_titles_es": [
         "Frontera Shangri-La Temporada 3"
       ],
-      "description_es": "La tercera temporada de Shangri-La Frontier."
+      "description_es": "La tercera temporada de Shangri-La Frontier.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1058/160088l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
+    },
+    {
+      "title": "[Oshi no Ko] Final Season",
+      "mal_id": 63794,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209827-rjOeCZB6LqAg.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Psychological",
+        "Supernatural"
+      ],
+      "tone": "oscuro",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": true,
+      "popular": false,
+      "year": null,
+      "description": "The fourth and final season of [Oshi no Ko] .",
+      "type": "TV",
+      "franchise": "[Oshi no Ko] Final Season",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Revenge",
+        "Idol",
+        "Acting",
+        "Male Protagonist",
+        "Female Protagonist"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "[Oshi No Ko] Season 4",
+      "title_japanese": "【推しの子】第4期 Final Season",
+      "title_synonyms": [
+        "OSHI NO KO Season 4",
+        "[OSHI NO KO] Season 4",
+        "【OSHI NO KO】Season 4"
+      ],
+      "search_titles": [
+        "[Oshi no Ko] Final Season",
+        "【推しの子】第4期 Final Season",
+        "OSHI NO KO Season 4",
+        "[OSHI NO KO] Season 4",
+        "【OSHI NO KO】Season 4"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 75964,
+      "favorites": 184,
+      "mal_popularity": 2918,
+      "anticipation_score": 592.19,
+      "jikan_url": "https://myanimelist.net/anime/63794/Oshi_no_Ko_4th_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=FcxJPTzjSqw",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "[Oshi no Ko] Temporada final",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "[Oshi no Ko] Temporada final"
+      ],
+      "description_es": "La cuarta y última temporada de [Oshi no Ko].",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1052/159561l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
     },
     {
       "title": "MASHLE: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
@@ -449,7 +941,7 @@
       "franchise": "MASHLE",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2027-01",
       "aired_to": "",
       "broadcast_day": "",
       "broadcast_time": "",
@@ -466,8 +958,8 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
+      "_update_status": "anilist_saga_import",
+      "title_english": "Mashle: Magic and Muscles - The Tri-Magicathlon Divine Visionary Final Exam Arc",
       "title_japanese": "マッシュル-MASHLE- 三魔対争神覚者最終試験編",
       "title_synonyms": [
         "MASHLE: MAGIC AND MUSCLES Season 3",
@@ -485,7 +977,7 @@
       "upcoming_season": "winter",
       "upcoming_season_label": "Invierno",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -493,12 +985,13 @@
         "timezone": null,
         "string": null
       },
-      "members": 40084,
-      "favorites": 484,
-      "mal_popularity": 40084,
-      "anticipation_score": 551.99,
-      "jikan_url": "https://anilist.co/anime/177704",
-      "trailer_url": "",
+      "members": 85076,
+      "favorites": 173,
+      "mal_popularity": 2739,
+      "anticipation_score": 590.96,
+      "jikan_url": "https://myanimelist.net/anime/58934/Mashle__Sanma_Taisou_Shinkakusha_Saishuu_Shiken-hen",
+      "trailer_url": "https://www.youtube.com/watch?v=ZivADyFlILE",
+      "_neo_source": "anilist_saga_import",
       "title_es": "MASHLE: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -506,7 +999,626 @@
       "search_titles_es": [
         "MASHLE: Sanma Taisou Shinkakusha Saishuu Shiken-hen"
       ],
-      "description_es": "La tercera temporada de MASHLE, adaptando el arco del examen final del Tri-Magic-Athalon Divine Visionary."
+      "description_es": "La tercera temporada de MASHLE, adaptando el arco del examen final del Tri-Magic-Athalon Divine Visionary.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1085/154496l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
+    },
+    {
+      "title": "Gachiakuta 2nd Season",
+      "mal_id": 63147,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204436-bJJsu28NEiIO.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": null,
+      "description": "The second season of Gachiakuta .",
+      "type": "TV",
+      "franchise": "Gachiakuta",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Shounen",
+        "Urban Fantasy",
+        "Dystopian",
+        "Super Power",
+        "Revenge",
+        "Post-Apocalyptic"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Gachiakuta Season 2",
+      "title_japanese": "ガチアクタ 第2期",
+      "title_synonyms": [],
+      "search_titles": [
+        "Gachiakuta 2nd Season",
+        "Gachiakuta Season 2",
+        "ガチアクタ 第2期"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 78625,
+      "favorites": 150,
+      "mal_popularity": 2864,
+      "anticipation_score": 588.41,
+      "jikan_url": "https://myanimelist.net/anime/63147/Gachiakuta_2nd_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=WQWAROhiRe0",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Gachiakuta Temporada 2",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Gachiakuta Temporada 2"
+      ],
+      "description_es": "La segunda temporada de Gachiakuta.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1224/154534l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Jujutsu Kaisen: Shimetsu Kaiyuu - Kouhen",
+      "mal_id": 63824,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209895-rrl9Ys8iVTiV.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Drama",
+        "Supernatural"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": null,
+      "description": "The fourth season of Jujutsu Kaisen .",
+      "type": "",
+      "franchise": "Jujutsu Kaisen",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Shounen",
+        "Curses",
+        "Urban Fantasy",
+        "Battle Royale",
+        "Male Protagonist",
+        "Henshin",
+        "Urban",
+        "Super Power"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Jujutsu Kaisen: The Culling Game Part 2",
+      "title_japanese": "呪術廻戦 死滅回游 後編",
+      "title_synonyms": [
+        "Jujutsu Kaisen 4th Season",
+        "呪術廻戦 第4期",
+        "JUJUTSU KAISEN Season 4: The Culling Game Part 2"
+      ],
+      "search_titles": [
+        "Jujutsu Kaisen: Shimetsu Kaiyuu - Kouhen",
+        "呪術廻戦 死滅回游 後編",
+        "Jujutsu Kaisen 4th Season",
+        "呪術廻戦 第4期",
+        "JUJUTSU KAISEN Season 4: The Culling Game Part 2"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 75643,
+      "favorites": 133,
+      "mal_popularity": 2927,
+      "anticipation_score": 585.46,
+      "jikan_url": "https://myanimelist.net/anime/63824/Jujutsu_Kaisen__Shimetsu_Kaiyuu_-_Kouhen",
+      "trailer_url": "https://www.youtube.com/watch?v=HGCsAcFzaFw",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Jujutsu Kaisen: Shimetsu Kaiyuu - Kouhen",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Jujutsu Kaisen: Shimetsu Kaiyuu - Kouhen"
+      ],
+      "description_es": "La cuarta temporada de Jujutsu Kaisen.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1915/159776l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Tensei Shitara Slime Datta Ken 4th Season Part 3",
+      "mal_id": 63129,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217331-iennFNPU2f7K.png",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2027,
+      "description": "Part 3 of Tensei Shitara Slime Datta Ken 4th Season . Note: Being the third cour of the season, it is labeled \"Part 3\".",
+      "type": "TV",
+      "franchise": "Tensei Shitara Slime Datta Ken",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-07",
+      "aired_to": null,
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "LIGHT_NOVEL"
+      ],
+      "themes": [
+        "Kingdom Management",
+        "Politics",
+        "Medieval"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "That Time I Got Reincarnated as a Slime Season 4 Part 2",
+      "title_japanese": "転生したらスライムだった件 第4期 第3クール",
+      "title_synonyms": [
+        "Tensura 4 Part 3"
+      ],
+      "search_titles": [
+        "Tensei Shitara Slime Datta Ken 4th Season Part 3",
+        "転生したらスライムだった件 第4期 第3クール",
+        "Tensura 4 Part 3"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "summer",
+      "upcoming_season_label": "Verano",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 61928,
+      "favorites": 108,
+      "mal_popularity": 3291,
+      "anticipation_score": 579.27,
+      "jikan_url": "https://myanimelist.net/anime/63129/Tensei_shitara_Slime_Datta_Ken_4th_Season_Part_2",
+      "trailer_url": "",
+      "title_es": "Tensei Shitara Slime Datta Ken 4th Season Part 3",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Tensei Shitara Slime Datta Ken 4th Season Part 3"
+      ],
+      "description_es": "Parte 3 de la cuarta temporada de Tensei Shitara Slime Datta Ken. Nota: Al ser el tercer curso de la temporada, está etiquetado como \"Parte 3\".",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1803/154473l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Kusuriya no Hitorigoto Movie",
+      "mal_id": 62844,
+      "image": "https://myanimelist.net/images/anime/1059/152815l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "Original Kusuriya no Hitorigoto movie.",
+      "type": "Movie",
+      "franchise": "Kusuriya no Hitorigoto Movie",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2026-12-11",
+      "aired_to": "2026-12-11",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)",
+      "source_tags_original": [
+        "Light novel",
+        "PG-13 - Teens 13 or older"
+      ],
+      "themes": [
+        "Historical",
+        "Medical"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "The Apothecary Diaries Movie",
+      "title_japanese": "劇場版 薬屋のひとりごと",
+      "title_synonyms": [],
+      "search_titles": [
+        "Kusuriya no Hitorigoto Movie",
+        "The Apothecary Diaries Movie",
+        "劇場版 薬屋のひとりごと"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "fall",
+      "upcoming_season_label": "Otoño",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 68758,
+      "favorites": 135,
+      "mal_popularity": 3101,
+      "anticipation_score": 578.98,
+      "jikan_url": "https://myanimelist.net/anime/62844/Kusuriya_no_Hitorigoto_Movie__Bouhi_no_Hihou",
+      "trailer_url": "https://www.youtube.com/watch?v=1riTxHHBTX4",
+      "title_es": "La película El diario del boticario",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "La película El diario del boticario"
+      ],
+      "description_es": "Película original de Kusuriya no Hitorigoto.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1751/160650l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:19+00:00"
+      }
+    },
+    {
+      "title": "Kusuriya no Hitorigoto 3rd Season Part 2",
+      "mal_id": 62841,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200927-IXFYyIb728bM.png",
+      "episodes": 12,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": true,
+      "popular": false,
+      "year": 2027,
+      "description": "The second cour of the third season of Kusuriya no Hitorigoto .",
+      "type": "TV",
+      "franchise": "Kusuriya no Hitorigoto",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-04",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "LIGHT_NOVEL"
+      ],
+      "themes": [
+        "Female Protagonist",
+        "Medicine"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "The Apothecary Diaries Season 3 Part 2",
+      "title_japanese": "薬屋のひとりごと 第3期 第2クール",
+      "title_synonyms": [
+        "The Apothecary Diaries Season 3 Part 2",
+        "The Apothecary Diaries Season 3 Cour 2"
+      ],
+      "search_titles": [
+        "Kusuriya no Hitorigoto 3rd Season Part 2",
+        "薬屋のひとりごと 第3期 第2クール",
+        "The Apothecary Diaries Season 3 Part 2",
+        "The Apothecary Diaries Season 3 Cour 2"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "spring",
+      "upcoming_season_label": "Primavera",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 67321,
+      "favorites": 90,
+      "mal_popularity": 3137,
+      "anticipation_score": 578.68,
+      "jikan_url": "https://myanimelist.net/anime/62841/Kusuriya_no_Hitorigoto_3rd_Season_Part_2",
+      "trailer_url": "",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Los diarios de la boticaria",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Los diarios de la boticaria"
+      ],
+      "description_es": "El segundo curso de la tercera temporada de Kusuriya no Hitorigoto.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1667/152812l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
+    },
+    {
+      "title": "Tongari Boushi no Atelier 2nd Season",
+      "mal_id": 64516,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213702-vCWQFcAfDF8c.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": null,
+      "description": "The second season of Tongari Boushi no Atelier .",
+      "type": "TV",
+      "franchise": "Tongari Boushi no Atelier",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Witch",
+        "Magic",
+        "Female Protagonist",
+        "Coming of Age",
+        "Primarily Female Cast",
+        "Found Family",
+        "Primarily Child Cast",
+        "Drawing",
+        "Medieval"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Witch Hat Atelier Season 2",
+      "title_japanese": "とんがり帽子のアトリエ 第2期",
+      "title_synonyms": [
+        "Atelier of Witch Hat"
+      ],
+      "search_titles": [
+        "Tongari Boushi no Atelier 2nd Season",
+        "Witch Hat Atelier Season 2",
+        "とんがり帽子のアトリエ 第2期"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 66052,
+      "favorites": 69,
+      "mal_popularity": 3171,
+      "anticipation_score": 575.1,
+      "jikan_url": "https://myanimelist.net/anime/64516/Tongari_Boushi_no_Atelier_2nd_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=LK3xyZa1VXw",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Taller de sombreros de bruja temporada 2",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Taller de sombreros de bruja temporada 2"
+      ],
+      "description_es": "La segunda temporada de Tongari Boushi no Atelier.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1928/158795l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "Zenchi-teki na Dokusha no Shiten kara",
+      "mal_id": 59230,
+      "image": "https://cdn.myanimelist.net/images/anime/1549/144140l.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": null,
+      "description": "Kim Dokja does not consider himself the protagonist of his own life. Befitting the name his parents gave him, he is a solitary person whose sole hobby is reading web novels. For over a decade, he has lived vicariously through Yoo Joonghyuk, the main character of the web novel Three Ways to Survive the Apocalypse (TWSA). Through Joonghyuk, Dokja has experienced secondhand the trials of repeatedly regressing in time, in search of an end to life-threatening \"scenarios\" that force people to act out narratives for the amusement of god-like \"Constellations.\" After reading 3,149 chapters—long after all other readers lost interest—Dokja finally resigns himself to the story ending. However, he receives an enigmatic message from the author, stating that the story will soon be monetized, before his surroundings suddenly go dark. He swiftly realizes that fiction has become reality and he is now living through TWSA. Although he is the singular omniscient reader of the events yet to come, his success in the scenarios is not guaranteed—but perhaps his advantage will empower him to step into the protagonist role that never suited him before.",
+      "type": "TV",
+      "franchise": "Zenchi-teki na Dokusha no Shiten kara",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": null,
+      "aired_to": null,
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "Web manga"
+      ],
+      "themes": [
+        "Urban Fantasy"
+      ],
+      "score": null,
+      "scored_by": 1,
+      "_update_status": "catalog_sources_v1_new",
+      "title_english": "Omniscient Reader",
+      "title_japanese": "全知的な読者の視点から",
+      "title_synonyms": [
+        "Jeonji-jeok Dokja Sijeom",
+        "전지적 독자 시점",
+        "Omniscient Reader's Viewpoint",
+        "ORV",
+        "Zendokushi"
+      ],
+      "search_titles": [
+        "Zenchi-teki na Dokusha no Shiten kara",
+        "Omniscient Reader",
+        "全知的な読者の視点から",
+        "Jeonji-jeok Dokja Sijeom",
+        "전지적 독자 시점",
+        "Omniscient Reader's Viewpoint",
+        "ORV",
+        "Zendokushi"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 42102,
+      "favorites": 484,
+      "mal_popularity": 4107,
+      "anticipation_score": 572.89,
+      "jikan_url": "https://myanimelist.net/anime/59230/Zenchi-teki_na_Dokusha_no_Shiten_kara",
+      "trailer_url": "https://www.youtube.com/watch?v=jzIGTLlqeRE",
+      "_neo_source": "tenrai",
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:26:13+00:00",
+        "details_fetched_at": "2026-10-25T11:26:13+00:00",
+        "score_source": "myanimelist"
+      },
+      "title_es": "Lector omnisciente",
+      "title_es_source": "title_english",
+      "title_es_status": "translated",
+      "search_titles_es": [
+        "Lector omnisciente"
+      ],
+      "description_es": "Kim Dokja no se considera protagonista de su propia vida. Como corresponde al nombre que le dieron sus padres, es una persona solitaria cuyo único pasatiempo es leer novelas web. Durante más de una década, ha vivido indirectamente a través de Yoo Joonghyuk, el personaje principal de la novela web Three Ways to Survive the Apocalypse (TWSA). A través de Joonghyuk, Dokja ha experimentado de segunda mano las pruebas de retroceder repetidamente en el tiempo, en busca de un fin a \"escenarios\" que amenazan la vida y que obligan a las personas a representar narrativas para divertirse con \"Constelaciones\" divinas. Después de leer 3.149 capítulos, mucho después de que todos los demás lectores perdieran el interés, Dokja finalmente se resigna al final de la historia. Sin embargo, recibe un enigmático mensaje del autor, afirmando que la historia pronto será monetizada, antes de que su entorno se vuelva repentinamente oscuro. Rápidamente se da cuenta de que la ficción se ha convertido en realidad y ahora vive a través de TWSA. Aunque es el singular lector omnisciente de los acontecimientos que están por venir, su éxito en los escenarios no está garantizado, pero tal vez su ventaja le permita asumir el papel de protagonista que nunca antes le convenía."
     },
     {
       "title": "Kagurabachi",
@@ -531,7 +1643,7 @@
       "franchise": "Kagurabachi",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2027-04",
       "aired_to": "",
       "broadcast_day": "",
       "broadcast_time": "",
@@ -553,7 +1665,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "jikan_2026_new",
       "title_english": "Kagurabachi",
       "title_japanese": "カグラバチ",
       "title_synonyms": [
@@ -568,7 +1680,7 @@
       "upcoming_season": "spring",
       "upcoming_season_label": "Primavera",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -576,12 +1688,12 @@
         "timezone": null,
         "string": null
       },
-      "members": 31702,
-      "favorites": 590,
-      "mal_popularity": 31702,
-      "anticipation_score": 547.67,
-      "jikan_url": "https://anilist.co/anime/211496",
-      "trailer_url": "",
+      "members": 43507,
+      "favorites": 302,
+      "mal_popularity": 4033,
+      "anticipation_score": 571.85,
+      "jikan_url": "https://myanimelist.net/anime/64058/Kagurabachi",
+      "trailer_url": "https://www.youtube.com/watch?v=pC39732i1bA",
       "title_es": "Kagurabachi",
       "title_es_reviewed": false,
       "title_es_source": "title_english",
@@ -589,7 +1701,352 @@
       "search_titles_es": [
         "Kagurabachi"
       ],
-      "description_es": "El joven Chihiro pasa sus días entrenando con su famoso padre herrero. Algún día espera convertirse él mismo en un gran fabricante de espadas. El padre tonto y el hijo serio... pensaron que estos días durarían para siempre. Pero, de repente, sobreviene la tragedia. Un día oscuro empapado de sangre. Chihiro y su espada ahora viven sólo para vengarse."
+      "description_es": "El joven Chihiro pasa sus días entrenando con su famoso padre herrero. Algún día espera convertirse él mismo en un gran fabricante de espadas. El padre tonto y el hijo serio... pensaron que estos días durarían para siempre. Pero, de repente, sobreviene la tragedia. Un día oscuro empapado de sangre. Chihiro y su espada ahora viven sólo para vengarse.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1653/157089l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
+    },
+    {
+      "title": "SAKAMOTO DAYS 2nd Season",
+      "mal_id": 63139,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204363-pUGhxMRo5rvD.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2027,
+      "description": "The second season of SAKAMOTO DAYS .",
+      "type": "TV",
+      "franchise": "SAKAMOTO DAYS",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-01",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Assassins",
+        "Found Family",
+        "Guns",
+        "Male Protagonist",
+        "Primarily Male Cast",
+        "Shounen"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "SAKAMOTO DAYS Season 2",
+      "title_japanese": "SAKAMOTO DAYS 第2期",
+      "title_synonyms": [],
+      "search_titles": [
+        "SAKAMOTO DAYS 2nd Season",
+        "SAKAMOTO DAYS Season 2",
+        "SAKAMOTO DAYS 第2期"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "winter",
+      "upcoming_season_label": "Invierno",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 60437,
+      "favorites": 78,
+      "mal_popularity": 3332,
+      "anticipation_score": 571.43,
+      "jikan_url": "https://myanimelist.net/anime/63139/Sakamoto_Days_2nd_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=1YSQ1mD20G0",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "DÍAS DE SAKAMOTO Temporada 2",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "DÍAS DE SAKAMOTO Temporada 2"
+      ],
+      "description_es": "La segunda temporada de SAKAMOTO DAYS.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1506/159677l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
+    },
+    {
+      "title": "Mahoutsukai no Yoru",
+      "mal_id": 50668,
+      "image": "https://myanimelist.net/images/anime/1121/156211l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Mystery",
+        "Supernatural"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "Set near the end of the Showa period in the late 1980s, an old mansion in Misaki Town is rumored to be the home of a witch. Aoko abruptly enters the world of magi after her grandfather suddenly decides to have Aoko become the Aozaki family's successor. Since then, Aoko moves into the Kuonji Mansion and begins to learn magecraft from the young magus Alice Kuonji, the rumored witch of the mansion. After witnessing the two using magecraft, Soujuurou Shizuki is also forced to live with them until a rune to remove his memories is discovered.",
+      "type": "Movie",
+      "franchise": "Mahoutsukai no Yoru",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2026-11-20",
+      "aired_to": "",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)",
+      "source_tags_original": [
+        "Visual novel"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "Witch on the Holy Night",
+      "title_japanese": "魔法使いの夜",
+      "title_synonyms": [
+        "A Magician's Night",
+        "MahoYo"
+      ],
+      "search_titles": [
+        "Mahoutsukai no Yoru",
+        "Witch on the Holy Night",
+        "魔法使いの夜",
+        "A Magician's Night",
+        "MahoYo"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "fall",
+      "upcoming_season_label": "Otoño",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 47885,
+      "favorites": 208,
+      "mal_popularity": 3813,
+      "anticipation_score": 571.24,
+      "jikan_url": "https://myanimelist.net/anime/50668/Mahoutsukai_no_Yoru",
+      "trailer_url": "https://www.youtube.com/watch?v=k1jyM2kSBzA",
+      "title_es": "Bruja en la Noche Santa",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Bruja en la Noche Santa"
+      ],
+      "description_es": "Ambientada cerca del final del período Showa, a finales de la década de 1980, se rumorea que una antigua mansión en la ciudad de Misaki es el hogar de una bruja. Aoko ingresa abruptamente al mundo de los magos después de que su abuelo de repente decide que Aoko se convierta en la sucesora de la familia Aozaki. Desde entonces, Aoko se muda a la Mansión Kuonji y comienza a aprender hechicería de la joven maga Alice Kuonji, la rumoreada bruja de la mansión. Después de presenciar a los dos usando magia, Soujuurou Shizuki también se ve obligado a vivir con ellos hasta que se descubre una runa para eliminar sus recuerdos.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1403/159274l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:32:15+00:00",
+        "details_fetched_at": "2026-10-25T11:32:15+00:00"
+      }
+    },
+    {
+      "title": "Ore dake Level Up na Ken: Beyond the System",
+      "mal_id": 64546,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213846-M5s9a58Vng7Q.png",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": null,
+      "description": "Sequel movie to Ore dake Level Up na Ken: Season 2 - Arise from the Shadow .",
+      "type": "Movie",
+      "franchise": "Ore dake Level Up na Ken",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Male Protagonist",
+        "Manhwa",
+        "Korean Webtoon"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "Solo Leveling: Beyond the System",
+      "title_japanese": "俺だけレベルアップな件 - Beyond the System -",
+      "title_synonyms": [],
+      "search_titles": [
+        "Ore dake Level Up na Ken: Beyond the System",
+        "Solo Leveling: Beyond the System",
+        "俺だけレベルアップな件 - Beyond the System -"
+      ],
+      "upcoming_year": null,
+      "upcoming_season": "unknown",
+      "upcoming_season_label": "Fecha indefinida",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 55426,
+      "favorites": 108,
+      "mal_popularity": 3495,
+      "anticipation_score": 570.95,
+      "jikan_url": "https://myanimelist.net/anime/64546/Ore_dake_Level_Up_na_Ken__Beyond_the_System",
+      "trailer_url": "https://www.youtube.com/watch?v=k7OooFaXW5Q",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Nivelación en solitario: más allá del sistema",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Nivelación en solitario: más allá del sistema"
+      ],
+      "description_es": "Película secuela de Ore dake Level Up na Ken: Temporada 2 - Levántate de la sombra.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1775/158856l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:37+00:00"
+      }
+    },
+    {
+      "title": "THE ONE PIECE",
+      "mal_id": 57557,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171630-CW3kbduXmmUE.jpg",
+      "episodes": 7,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Adventure"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2027,
+      "description": "To commemorate the ONE PIECE anime's 25th anniversary: THE ONE PIECE anime by WIT Studio will recreate the story of the original ONE PIECE manga, starting from the East Blue arc.",
+      "type": "",
+      "franchise": "THE ONE PIECE",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-02",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [
+        "Pirates",
+        "Ensemble Cast",
+        "Travel",
+        "Shounen",
+        "Found Family",
+        "Super Power",
+        "Male Protagonist",
+        "Ships",
+        "Politics"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "THE ONE PIECE",
+      "title_japanese": "THE ONE PIECE",
+      "title_synonyms": [
+        "ザワンピース"
+      ],
+      "search_titles": [
+        "THE ONE PIECE",
+        "ザワンピース"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "winter",
+      "upcoming_season_label": "Invierno",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 44635,
+      "favorites": 264,
+      "mal_popularity": 3982,
+      "anticipation_score": 570.59,
+      "jikan_url": "https://myanimelist.net/anime/57557/The_One_Piece",
+      "trailer_url": "https://www.youtube.com/watch?v=zVXKN5pxbcI",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "LA UNA PIEZA",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "LA UNA PIEZA"
+      ],
+      "description_es": "Para conmemorar el 25 aniversario del anime ONE PIECE: el anime THE ONE PIECE de WIT Studio recreará la historia del manga original ONE PIECE, comenzando desde el arco de East Blue.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1914/159659l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
     },
     {
       "title": "Ki ni Natteru Hito ga Otoko ja Nakatta",
@@ -635,7 +2092,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "jikan_2026_new",
       "title_english": "The Guy She Was Interested In Wasn't a Guy At All",
       "title_japanese": "気になってる人が男じゃなかった",
       "title_synonyms": [
@@ -656,7 +2113,7 @@
       "upcoming_season": "winter",
       "upcoming_season_label": "Invierno",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": "Fridays",
@@ -664,12 +2121,12 @@
         "timezone": "Asia/Tokyo",
         "string": "Fridays at 23:00 (JST)"
       },
-      "members": 31712,
-      "favorites": 514,
-      "mal_popularity": 31712,
-      "anticipation_score": 546.25,
-      "jikan_url": "https://anilist.co/anime/186822",
-      "trailer_url": "",
+      "members": 43602,
+      "favorites": 223,
+      "mal_popularity": 4029,
+      "anticipation_score": 570.21,
+      "jikan_url": "https://myanimelist.net/anime/61035/Kininatteru_Hito_ga_Otoko_ja_Nakatta",
+      "trailer_url": "https://www.youtube.com/watch?v=kLO7KyjhGR0",
       "title_es": "El chico que le interesaba no era un chico en absoluto",
       "title_es_reviewed": false,
       "title_es_source": "title_english",
@@ -677,455 +2134,14 @@
       "search_titles_es": [
         "El chico que le interesaba no era un chico en absoluto"
       ],
-      "description_es": "Aya, una estudiante de secundaria moderna y alegre, se enamora perdidamente de un empleado de una tienda de CD local. Tiene un aire de misterio, un gran estilo y un gusto musical impecable. Lo que ella no sabe es que este supuesto empleado es en realidad su compañera de clase Mitsuki. Mitsuki generalmente se mantiene reservada, pero como su asiento está justo al lado del de Aya, no puede evitar ser extremadamente consciente del enamoramiento de la otra. Revelar la verdad está fuera de discusión para Mitsuki, pero tal vez acercarse a Aya no sería tan malo..."
-    },
-    {
-      "title": "THE ONE PIECE",
-      "mal_id": 57557,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171630-CW3kbduXmmUE.jpg",
-      "episodes": 7,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Adventure"
+      "description_es": "Aya, una estudiante de secundaria moderna y alegre, se enamora perdidamente de un empleado de una tienda de CD local. Tiene un aire de misterio, un gran estilo y un gusto musical impecable. Lo que ella no sabe es que este supuesto empleado es en realidad su compañera de clase Mitsuki. Mitsuki generalmente se mantiene reservada, pero como su asiento está justo al lado del de Aya, no puede evitar ser extremadamente consciente del enamoramiento de la otra. Revelar la verdad está fuera de discusión para Mitsuki, pero tal vez acercarse a Aya no sería tan malo...",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1892/158854l.jpg"
       ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2027,
-      "description": "To commemorate the ONE PIECE anime's 25th anniversary: THE ONE PIECE anime by WIT Studio will recreate the story of the original ONE PIECE manga, starting from the East Blue arc.",
-      "type": "",
-      "franchise": "THE ONE PIECE",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "MANGA"
-      ],
-      "themes": [
-        "Pirates",
-        "Ensemble Cast",
-        "Travel",
-        "Shounen",
-        "Found Family",
-        "Super Power",
-        "Male Protagonist",
-        "Ships",
-        "Politics"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "THE ONE PIECE",
-      "title_japanese": "THE ONE PIECE",
-      "title_synonyms": [
-        "ザワンピース"
-      ],
-      "search_titles": [
-        "THE ONE PIECE",
-        "ザワンピース"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 29393,
-      "favorites": 480,
-      "mal_popularity": 29393,
-      "anticipation_score": 543.29,
-      "jikan_url": "https://anilist.co/anime/171630",
-      "trailer_url": "",
-      "title_es": "LA UNA PIEZA",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "LA UNA PIEZA"
-      ],
-      "description_es": "Para conmemorar el 25 aniversario del anime ONE PIECE: el anime THE ONE PIECE de WIT Studio recreará la historia del manga original ONE PIECE, comenzando desde el arco de East Blue."
-    },
-    {
-      "title": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru 2nd Season",
-      "mal_id": 56732,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169579-zB34n31Rm8xS.png",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Fantasy",
-        "Mystery",
-        "Romance"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": false,
-      "year": 2027,
-      "description": "The second season of Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru.",
-      "type": "TV",
-      "franchise": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "LIGHT_NOVEL"
-      ],
-      "themes": [
-        "Assassins",
-        "Isekai"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "世界最高の暗殺者、異世界貴族に転生する 2ndシーズン",
-      "title_synonyms": [
-        "Ansatsu Kizoku"
-      ],
-      "search_titles": [
-        "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru 2nd Season",
-        "世界最高の暗殺者、異世界貴族に転生する 2ndシーズン",
-        "Ansatsu Kizoku"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 29851,
-      "favorites": 378,
-      "mal_popularity": 29851,
-      "anticipation_score": 541.27,
-      "jikan_url": "https://anilist.co/anime/169579",
-      "trailer_url": "",
-      "title_es": "2da temporada",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "2da temporada"
-      ],
-      "description_es": "La segunda temporada de Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru."
-    },
-    {
-      "title": "Kusuriya no Hitorigoto Movie",
-      "mal_id": 62844,
-      "image": "https://myanimelist.net/images/anime/1059/152815l.jpg",
-      "episodes": 1,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Drama",
-        "Mystery"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Original Kusuriya no Hitorigoto movie.",
-      "type": "Movie",
-      "franchise": "Kusuriya no Hitorigoto",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-12-11",
-      "aired_to": "2026-12-11",
-      "broadcast_day": "Fridays",
-      "broadcast_time": "00:00",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Fridays at 00:00 (JST)",
-      "source_tags_original": [
-        "ORIGINAL"
-      ],
-      "themes": [
-        "Historical",
-        "Medical"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "The Apothecary Diaries Movie",
-      "title_japanese": "劇場版 薬屋のひとりごと",
-      "title_synonyms": [],
-      "search_titles": [
-        "Kusuriya no Hitorigoto Movie",
-        "The Apothecary Diaries Movie",
-        "劇場版 薬屋のひとりごと"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Fridays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:00 (JST)"
-      },
-      "members": 31510,
-      "favorites": 309,
-      "mal_popularity": 31510,
-      "anticipation_score": 540.77,
-      "jikan_url": "https://anilist.co/anime/200929",
-      "trailer_url": "",
-      "title_es": "La película El diario del boticario",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "La película El diario del boticario"
-      ],
-      "description_es": "Película original de Kusuriya no Hitorigoto."
-    },
-    {
-      "title": "SAKAMOTO DAYS 2nd Season",
-      "mal_id": 63139,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204363-pUGhxMRo5rvD.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Comedy"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2027,
-      "description": "The second season of SAKAMOTO DAYS .",
-      "type": "TV",
-      "franchise": "SAKAMOTO DAYS",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "MANGA"
-      ],
-      "themes": [
-        "Assassins",
-        "Found Family",
-        "Guns",
-        "Male Protagonist",
-        "Primarily Male Cast",
-        "Shounen"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "SAKAMOTO DAYS Season 2",
-      "title_japanese": "SAKAMOTO DAYS 第2期",
-      "title_synonyms": [],
-      "search_titles": [
-        "SAKAMOTO DAYS 2nd Season",
-        "SAKAMOTO DAYS Season 2",
-        "SAKAMOTO DAYS 第2期"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 28360,
-      "favorites": 293,
-      "mal_popularity": 28360,
-      "anticipation_score": 537.08,
-      "jikan_url": "https://anilist.co/anime/204363",
-      "trailer_url": "",
-      "title_es": "DÍAS DE SAKAMOTO Temporada 2",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "DÍAS DE SAKAMOTO Temporada 2"
-      ],
-      "description_es": "La segunda temporada de SAKAMOTO DAYS."
-    },
-    {
-      "title": "Fool Night",
-      "mal_id": 64459,
-      "image": "https://cdn.myanimelist.net/images/anime/1977/158669l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "Seinen",
-      "genres": [
-        "Drama",
-        "Sci-Fi"
-      ],
-      "tone": "oscuro",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "The earth of the distant future is covered in thick clouds, and the sun no longer shines. Plants wither, and oxygen is thin. To fight extinction, humankind has developed a technology that turns humans into plants, providing a small amount of oxygen. Is this process sustainable? Is it ethical? Toshiro Kamiya must consider these questions as he's faced with a difficult choice—save his family or save himself. Kamiya is at the end of his rope. His mother is ill, and his job barely pays for her medication, much less food. With few options left, he considers the life-changing process of floromorphosis. Ready to give his body up for a payday, Kamiya is about to explore the limits of society's waning humanity.",
-      "type": "ONA",
-      "franchise": "Fool Night",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-11-26",
-      "aired_to": "",
-      "broadcast_day": "Thursdays",
-      "broadcast_time": "16:00",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Thursdays at 16:00 (JST)",
-      "source_tags_original": [
-        "MANGA"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Fool Night",
-      "title_japanese": "フールナイト",
-      "title_synonyms": [],
-      "search_titles": [
-        "Fool Night",
-        "フールナイト"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Thursdays",
-        "time": "16:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Thursdays at 16:00 (JST)"
-      },
-      "members": 24123,
-      "favorites": 163,
-      "mal_popularity": 24123,
-      "anticipation_score": 525.89,
-      "jikan_url": "https://anilist.co/anime/213457",
-      "trailer_url": "",
-      "title_es": "Noche de tontos",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Noche de tontos"
-      ],
-      "description_es": "La tierra del futuro lejano está cubierta de espesas nubes y el sol ya no brilla. Las plantas se marchitan y el oxígeno es escaso. Para luchar contra la extinción, la humanidad ha desarrollado una tecnología que convierte a los humanos en plantas, proporcionándoles una pequeña cantidad de oxígeno. ¿Es este proceso sostenible? ¿Es ético? Toshiro Kamiya debe considerar estas preguntas mientras se enfrenta a una decisión difícil: salvar a su familia o salvarse a sí mismo. Kamiya está al final de su cuerda. Su madre está enferma y su trabajo apenas le permite pagar sus medicamentos, y mucho menos la comida. Con pocas opciones restantes, considera el proceso de la floromorfosis que cambia la vida. Listo para entregar su cuerpo a cambio de un día de pago, Kamiya está a punto de explorar los límites de la menguante humanidad de la sociedad."
-    },
-    {
-      "title": "Sekiro: No Defeat",
-      "mal_id": 62312,
-      "image": "https://myanimelist.net/images/anime/1944/157379l.jpg",
-      "episodes": 8,
-      "length": "medio",
-      "demographic": "",
-      "genres": [
-        "Action"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2027,
-      "description": "The time is Sengoku. Japan is fractured into many independent nations entangled in ceaseless war. At the center lies Ashina, a land of sacred earth and ancient mystery. Two decades after Sword Saint Isshin Ashina reclaimed the region in a brutal coup, a new threat emerges from within: The Interior Ministry. Desperate to protect his homeland, Isshin's grandson Gen'ichirou turns to forbidden powers. The only hope lies in a kidnapped boy—the Divine Heir—and his silent protector: a loyal shinobi known only as Sekiro. This is the story of a lord and his retainer—and their quest to restore balance to a nation on the edge.",
-      "type": "Movie",
-      "franchise": "SEKIRO",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "VIDEO_GAME"
-      ],
-      "themes": [
-        "Historical",
-        "Samurai"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Sekiro: No Defeat",
-      "title_japanese": "SEKIRO: NO DEFEAT",
-      "title_synonyms": [],
-      "search_titles": [
-        "Sekiro: No Defeat"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "winter",
-      "upcoming_season_label": "Invierno",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 19541,
-      "favorites": 165,
-      "mal_popularity": 19541,
-      "anticipation_score": 518.95,
-      "jikan_url": "https://anilist.co/anime/197620",
-      "trailer_url": "",
-      "title_es": "Sekiro: Sin derrota",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Sekiro: Sin derrota"
-      ],
-      "description_es": "El tiempo es Sengoku. Japón está dividido en muchas naciones independientes enredadas en guerras incesantes. En el centro se encuentra Ashina, una tierra de tierra sagrada y misterio antiguo. Dos décadas después de que Sword Saint Isshin Ashina recuperara la región mediante un brutal golpe de estado, surge una nueva amenaza desde dentro: el Ministerio del Interior. Desesperado por proteger su tierra natal, el nieto de Isshin, Gen'ichirou, recurre a poderes prohibidos. La única esperanza reside en un niño secuestrado, el Heredero Divino, y su protector silencioso: un shinobi leal conocido sólo como Sekiro. Esta es la historia de un señor y su vasallo, y su búsqueda para restablecer el equilibrio en una nación al límite."
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
     },
     {
       "title": "Skip to Loafer 2nd Season",
@@ -1150,7 +2166,7 @@
       "franchise": "Skip to Loafer",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2027-04",
       "aired_to": "",
       "broadcast_day": "",
       "broadcast_time": "",
@@ -1165,7 +2181,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "anilist_saga_import",
       "title_english": "Skip and Loafer Season 2",
       "title_japanese": "スキップとローファー 第2期",
       "title_synonyms": [
@@ -1181,7 +2197,7 @@
       "upcoming_season": "spring",
       "upcoming_season_label": "Primavera",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -1189,12 +2205,13 @@
         "timezone": null,
         "string": null
       },
-      "members": 21024,
-      "favorites": 124,
-      "mal_popularity": 21024,
-      "anticipation_score": 518.5,
-      "jikan_url": "https://anilist.co/anime/185657",
-      "trailer_url": "",
+      "members": 45416,
+      "favorites": 78,
+      "mal_popularity": 3932,
+      "anticipation_score": 554.93,
+      "jikan_url": "https://myanimelist.net/anime/60548/Skip_to_Loafer_2nd_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=SizD56s6guU",
+      "_neo_source": "anilist_saga_import",
       "title_es": "Saltar y holgazanear temporada 2",
       "title_es_reviewed": false,
       "title_es_source": "title_english",
@@ -1202,85 +2219,14 @@
       "search_titles_es": [
         "Saltar y holgazanear temporada 2"
       ],
-      "description_es": "La segunda temporada de Skip to Loafer."
-    },
-    {
-      "title": "Tensei Shitara Slime Datta Ken 4th Season Part 3",
-      "mal_id": 63129,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217331-iennFNPU2f7K.png",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Fantasy"
+      "description_es": "La segunda temporada de Skip to Loafer.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1800/148268l.jpg"
       ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2027,
-      "description": "Part 3 of Tensei Shitara Slime Datta Ken 4th Season . Note: Being the third cour of the season, it is labeled \"Part 3\".",
-      "type": "TV",
-      "franchise": "Tensei Shitara Slime Datta Ken",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "LIGHT_NOVEL"
-      ],
-      "themes": [
-        "Kingdom Management",
-        "Politics",
-        "Medieval"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "転生したらスライムだった件 第4期 第3クール",
-      "title_synonyms": [
-        "Tensura 4 Part 3"
-      ],
-      "search_titles": [
-        "Tensei Shitara Slime Datta Ken 4th Season Part 3",
-        "転生したらスライムだった件 第4期 第3クール",
-        "Tensura 4 Part 3"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 18098,
-      "favorites": 192,
-      "mal_popularity": 18098,
-      "anticipation_score": 517.85,
-      "jikan_url": "https://anilist.co/anime/217331",
-      "trailer_url": "",
-      "title_es": "Tensei Shitara Slime Datta Ken 4th Season Part 3",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Tensei Shitara Slime Datta Ken 4th Season Part 3"
-      ],
-      "description_es": "Parte 3 de la cuarta temporada de Tensei Shitara Slime Datta Ken. Nota: Al ser el tercer curso de la temporada, está etiquetado como \"Parte 3\"."
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
     },
     {
       "title": "One Punch Man 3 Part 2",
@@ -1306,7 +2252,7 @@
       "franchise": "One Punch Man",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2027-01",
       "aired_to": "",
       "broadcast_day": "",
       "broadcast_time": "",
@@ -1320,10 +2266,13 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "anilist_saga_import",
       "title_english": "One Punch Man Season 3 Part 2",
       "title_japanese": "ワンパンマン 第3期第2クール",
-      "title_synonyms": [],
+      "title_synonyms": [
+        "One Punch Man 3rd Season Part 2",
+        "OPM 3"
+      ],
       "search_titles": [
         "One Punch Man 3 Part 2",
         "One Punch Man Season 3 Part 2",
@@ -1333,7 +2282,7 @@
       "upcoming_season": "winter",
       "upcoming_season_label": "Invierno",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -1341,12 +2290,13 @@
         "timezone": null,
         "string": null
       },
-      "members": 16318,
-      "favorites": 154,
-      "mal_popularity": 16318,
-      "anticipation_score": 511.87,
-      "jikan_url": "https://anilist.co/anime/204747",
-      "trailer_url": "",
+      "members": 47830,
+      "favorites": 28,
+      "mal_popularity": 3822,
+      "anticipation_score": 552.38,
+      "jikan_url": "https://myanimelist.net/anime/63193/One_Punch_Man_3_Part_2",
+      "trailer_url": "https://www.youtube.com/watch?v=VR9MRmP2GF8",
+      "_neo_source": "anilist_saga_import",
       "title_es": "One Punch Man Temporada 3 Parte 2",
       "title_es_reviewed": false,
       "title_es_source": "title_english",
@@ -1354,7 +2304,169 @@
       "search_titles_es": [
         "One Punch Man Temporada 3 Parte 2"
       ],
-      "description_es": "El segundo curso de la tercera temporada de One Punch Man."
+      "description_es": "El segundo curso de la tercera temporada de One Punch Man.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1008/160499l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
+    },
+    {
+      "title": "Fool Night",
+      "mal_id": 64459,
+      "image": "https://cdn.myanimelist.net/images/anime/1977/158669l.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "Seinen",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "The earth of the distant future is covered in thick clouds, and the sun no longer shines. Plants wither, and oxygen is thin. To fight extinction, humankind has developed a technology that turns humans into plants, providing a small amount of oxygen. Is this process sustainable? Is it ethical? Toshiro Kamiya must consider these questions as he's faced with a difficult choice—save his family or save himself. Kamiya is at the end of his rope. His mother is ill, and his job barely pays for her medication, much less food. With few options left, he considers the life-changing process of floromorphosis. Ready to give his body up for a payday, Kamiya is about to explore the limits of society's waning humanity.",
+      "type": "ONA",
+      "franchise": "Fool Night",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2026-11-26",
+      "aired_to": "",
+      "broadcast_day": "Thursdays",
+      "broadcast_time": "16:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Thursdays at 16:00 (JST)",
+      "source_tags_original": [
+        "Manga"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "Fool Night",
+      "title_japanese": "フールナイト",
+      "title_synonyms": [],
+      "search_titles": [
+        "Fool Night",
+        "フールナイト"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "fall",
+      "upcoming_season_label": "Otoño",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 34262,
+      "favorites": 63,
+      "mal_popularity": 4512,
+      "anticipation_score": 540.23,
+      "jikan_url": "https://myanimelist.net/anime/64459/Fool_Night",
+      "trailer_url": "https://www.youtube.com/watch?v=8E_SDmeOtVw",
+      "title_es": "Noche de tontos",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Noche de tontos"
+      ],
+      "description_es": "La tierra del futuro lejano está cubierta de espesas nubes y el sol ya no brilla. Las plantas se marchitan y el oxígeno es escaso. Para luchar contra la extinción, la humanidad ha desarrollado una tecnología que convierte a los humanos en plantas, proporcionándoles una pequeña cantidad de oxígeno. ¿Es este proceso sostenible? ¿Es ético? Toshiro Kamiya debe considerar estas preguntas mientras se enfrenta a una decisión difícil: salvar a su familia o salvarse a sí mismo. Kamiya está al final de su cuerda. Su madre está enferma y su trabajo apenas le permite pagar sus medicamentos, y mucho menos la comida. Con pocas opciones restantes, considera el proceso de la floromorfosis que cambia la vida. Listo para entregar su cuerpo a cambio de un día de pago, Kamiya está a punto de explorar los límites de la menguante humanidad de la sociedad.",
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:20+00:00"
+      }
+    },
+    {
+      "title": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta 2nd Season",
+      "mal_id": 63822,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209980-ilH3QHcKPw7t.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": 2027,
+      "description": "The second season of Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta .",
+      "type": "TV",
+      "franchise": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-01",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "LIGHT_NOVEL"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "anilist_saga_import",
+      "title_english": "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too Season 2",
+      "title_japanese": "異世界でチート能力を手にした俺は、現実世界をも無双する ～レベルアップは人生を変えた～ 第2期",
+      "title_synonyms": [
+        "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too Season 2"
+      ],
+      "search_titles": [
+        "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta 2nd Season",
+        "異世界でチート能力を手にした俺は、現実世界をも無双する ～レベルアップは人生を変えた～ 第2期",
+        "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too Season 2"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "winter",
+      "upcoming_season_label": "Invierno",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 30132,
+      "favorites": 45,
+      "mal_popularity": 4780,
+      "anticipation_score": 535.91,
+      "jikan_url": "https://myanimelist.net/anime/63822/Isekai_de_Cheat_Skill_wo_Te_ni_Shita_Ore_wa_Genjitsu_Sekai_wo_mo_Musou_Suru__Level_Up_wa_Jinsei_wo_Kaeta_2nd_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=twGVFfRI-7s",
+      "_neo_source": "anilist_saga_import",
+      "title_es": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta 2da temporada",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta 2da temporada"
+      ],
+      "description_es": "La segunda temporada de Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1605/160555l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
     },
     {
       "title": "Kakunaru Ue wa",
@@ -1379,8 +2491,8 @@
       "franchise": "Kakunaru Ue wa",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
+      "aired_from": "2027-01",
+      "aired_to": null,
       "broadcast_day": "",
       "broadcast_time": "",
       "broadcast_timezone": "",
@@ -1396,8 +2508,8 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
+      "_update_status": "jikan_2026_new",
+      "title_english": "Now That We Draw",
       "title_japanese": "描くなるうえは",
       "title_synonyms": [
         "Now That We Draw"
@@ -1411,7 +2523,7 @@
       "upcoming_season": "winter",
       "upcoming_season_label": "Invierno",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -1419,12 +2531,12 @@
         "timezone": null,
         "string": null
       },
-      "members": 13783,
-      "favorites": 158,
-      "mal_popularity": 13783,
-      "anticipation_score": 505.96,
-      "jikan_url": "https://anilist.co/anime/202564",
-      "trailer_url": "",
+      "members": 22461,
+      "favorites": 81,
+      "mal_popularity": 5419,
+      "anticipation_score": 524.07,
+      "jikan_url": "https://myanimelist.net/anime/62989/Kakunaru_Ue_wa",
+      "trailer_url": "https://www.youtube.com/watch?v=u05QQa7wun4",
       "title_es": "Kakunaru Uewa",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -1432,33 +2544,38 @@
       "search_titles_es": [
         "Kakunaru Uewa"
       ],
-      "description_es": "¡Los opuestos se atraen en esta histérica comedia romántica sobre dos artistas de manga de secundaria que no pueden tomar un descanso! Uehara Yuuki, estudiante de secundaria de Dweeby, ha creado la heroína de comedia romántica perfecta: es tímida, cabeza hueca y completamente casta. Cuando un editor de la editorial soñada de Uehara descarta fríamente su historia de manga como trillada y carente de realismo, Uehara cae en una espiral de desesperación que lo empuja al camino de su alegre y hermosa compañera de clase, Miyamoto Niina, ¡una aspirante a artista de manga! Habiendo recibido comentarios similares sobre su propio manga, Miyamoto propone que ella y Uehara entablen una relación falsa, ya que ninguno de los dos tiene ninguna experiencia romántica. Pero Miyamoto está lejos de ser la heroína perfecta que inventó Uehara, y ciertamente tampoco es el héroe engreído de su historia. ¿Podrá su extraña relación convertir sus sueños de manga en realidad o conducirá a más desastres cómicos?"
+      "description_es": "¡Los opuestos se atraen en esta histérica comedia romántica sobre dos artistas de manga de secundaria que no pueden tomar un descanso! Uehara Yuuki, estudiante de secundaria de Dweeby, ha creado la heroína de comedia romántica perfecta: es tímida, cabeza hueca y completamente casta. Cuando un editor de la editorial soñada de Uehara descarta fríamente su historia de manga como trillada y carente de realismo, Uehara cae en una espiral de desesperación que lo empuja al camino de su alegre y hermosa compañera de clase, Miyamoto Niina, ¡una aspirante a artista de manga! Habiendo recibido comentarios similares sobre su propio manga, Miyamoto propone que ella y Uehara entablen una relación falsa, ya que ninguno de los dos tiene ninguna experiencia romántica. Pero Miyamoto está lejos de ser la heroína perfecta que inventó Uehara, y ciertamente tampoco es el héroe engreído de su historia. ¿Podrá su extraña relación convertir sus sueños de manga en realidad o conducirá a más desastres cómicos?",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1841/158839l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
     },
     {
-      "title": "MARRIAGETOXIN 2nd Season",
-      "mal_id": 64524,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213752-Xk0bI7fiMaKz.jpg",
+      "title": "Kuroiwa Medaka ni Watashi no Kawaii ga Tsuujinai 2nd Season",
+      "mal_id": 61304,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx188892-KpzXYChwPxyT.jpg",
       "episodes": null,
       "length": "corto",
       "demographic": "",
       "genres": [
-        "Action",
         "Comedy",
-        "Drama",
         "Romance"
       ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
+      "tone": "ligero",
+      "fast_start": false,
+      "action_level": "bajo",
       "emotional": true,
       "popular": false,
       "year": 2027,
-      "description": "The second season of MARRIAGETOXIN .",
+      "description": "The second season of Kuroiwa Medaka ni Watashi no Kawaii ga Tsuujinai .",
       "type": "TV",
-      "franchise": "MARRIAGETOXIN",
+      "franchise": "Kuroiwa Medaka ni Watashi no Kawaii ga Tsuujinai",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2027-01",
       "aired_to": "",
       "broadcast_day": "",
       "broadcast_time": "",
@@ -1467,22 +2584,27 @@
       "source_tags_original": [
         "MANGA"
       ],
-      "themes": [],
+      "themes": [
+        "Heterosexual"
+      ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "マリッジトキシン 第2期",
-      "title_synonyms": [],
+      "_update_status": "jikan_2026_new",
+      "title_english": "Medaka Kuroiwa is Impervious to My Charms Season 2",
+      "title_japanese": "黒岩メダカに私の可愛いが通じない 第2期",
+      "title_synonyms": [
+        "Medaka Kuroiwa is Impervious to My Charms Season 2"
+      ],
       "search_titles": [
-        "MARRIAGETOXIN 2nd Season",
-        "マリッジトキシン 第2期"
+        "Kuroiwa Medaka ni Watashi no Kawaii ga Tsuujinai 2nd Season",
+        "黒岩メダカに私の可愛いが通じない 第2期",
+        "Medaka Kuroiwa is Impervious to My Charms Season 2"
       ],
       "upcoming_year": 2027,
       "upcoming_season": "winter",
       "upcoming_season_label": "Invierno",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -1490,76 +2612,82 @@
         "timezone": null,
         "string": null
       },
-      "members": 14486,
-      "favorites": 127,
-      "mal_popularity": 14486,
-      "anticipation_score": 505.54,
-      "jikan_url": "https://anilist.co/anime/213752",
-      "trailer_url": "",
-      "title_es": "MATRIMONIOXINA 2ª Temporada",
+      "members": 22444,
+      "favorites": 69,
+      "mal_popularity": 5423,
+      "anticipation_score": 522.38,
+      "jikan_url": "https://myanimelist.net/anime/61304/Kuroiwa_Medaka_ni_Watashi_no_Kawaii_ga_Tsuujinai_Season_2",
+      "trailer_url": "https://www.youtube.com/watch?v=OOHTPQCmfYA",
+      "title_es": "Kuroiwa Medaka ni Watashi no Kawaii ga Tsuujinai 2da temporada",
       "title_es_reviewed": false,
       "title_es_source": "title",
       "title_es_status": "kept",
       "search_titles_es": [
-        "MATRIMONIOXINA 2ª Temporada"
+        "Kuroiwa Medaka ni Watashi no Kawaii ga Tsuujinai 2da temporada"
       ],
-      "description_es": "La segunda temporada de MARRIAGETOXIN."
+      "description_es": "La segunda temporada de Kuroiwa Medaka ni Watashi no Kawaii ga Tsuujinai.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1953/158845l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:26+00:00"
+      }
     },
     {
-      "title": "Kusuriya no Hitorigoto 3rd Season Part 2",
-      "mal_id": 62841,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200927-IXFYyIb728bM.png",
-      "episodes": 12,
-      "length": "medio",
+      "title": "Tensei Shitara Slime Datta Ken: Clayman REVENGE",
+      "mal_id": 65070,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217330-sk1dvlFIsM2O.png",
+      "episodes": null,
+      "length": "corto",
       "demographic": "",
       "genres": [
-        "Drama",
-        "Mystery"
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
       ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": false,
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": true,
       "year": 2027,
-      "description": "The second cour of the third season of Kusuriya no Hitorigoto .",
+      "description": "Demon Lord Clayman was killed by Rimuru at Walpurgis. But, Clayman acquired the unique skill \"Regressor\" while on the verge of death and woke up in his room 70 years ago. Considering the situation, it appears that this it's actually real. Clayman begins to look for ways to avoid the same mistakes he has made in the past, butー Will Clayman be able to avoid a doomed future by taking advantage of his loop?",
       "type": "TV",
-      "franchise": "Kusuriya no Hitorigoto",
+      "franchise": "Tensei Shitara Slime Datta Ken",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
+      "aired_from": "2027-04",
+      "aired_to": null,
       "broadcast_day": "",
       "broadcast_time": "",
       "broadcast_timezone": "",
       "broadcast_string": "",
       "source_tags_original": [
-        "LIGHT_NOVEL"
+        "MANGA"
       ],
       "themes": [
-        "Female Protagonist",
-        "Medicine"
+        "Kingdom Management"
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "薬屋のひとりごと 第3期 第2クール",
+      "_update_status": "jikan_2026_new",
+      "title_english": "That Time I Got Reincarnated as a Slime: Clayman's Revenge",
+      "title_japanese": "転生したらスライムだった件 クレイマンREVENGE",
       "title_synonyms": [
-        "The Apothecary Diaries Season 3 Part 2",
-        "The Apothecary Diaries Season 3 Cour 2"
+        "TenSura: Clayman Revenge"
       ],
       "search_titles": [
-        "Kusuriya no Hitorigoto 3rd Season Part 2",
-        "薬屋のひとりごと 第3期 第2クール",
-        "The Apothecary Diaries Season 3 Part 2",
-        "The Apothecary Diaries Season 3 Cour 2"
+        "Tensei Shitara Slime Datta Ken: Clayman REVENGE",
+        "転生したらスライムだった件 クレイマンREVENGE",
+        "TenSura: Clayman Revenge"
       ],
       "upcoming_year": 2027,
       "upcoming_season": "spring",
       "upcoming_season_label": "Primavera",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -1567,85 +2695,27 @@
         "timezone": null,
         "string": null
       },
-      "members": 14051,
-      "favorites": 113,
-      "mal_popularity": 14051,
-      "anticipation_score": 503.21,
-      "jikan_url": "https://anilist.co/anime/200927",
-      "trailer_url": "",
-      "title_es": "Los diarios de la boticaria",
+      "members": 20564,
+      "favorites": 12,
+      "mal_popularity": 5606,
+      "anticipation_score": 500.95,
+      "jikan_url": "https://myanimelist.net/anime/65070/Tensei_shitara_Slime_Datta_Ken__Clayman_Revenge",
+      "trailer_url": "https://www.youtube.com/watch?v=p84CPBTin5I",
+      "title_es": "Tensei Shitara Slime Datta Ken: Clayman REVENGE",
       "title_es_reviewed": false,
       "title_es_source": "title",
       "title_es_status": "kept",
       "search_titles_es": [
-        "Los diarios de la boticaria"
+        "Tensei Shitara Slime Datta Ken: Clayman REVENGE"
       ],
-      "description_es": "El segundo curso de la tercera temporada de Kusuriya no Hitorigoto."
-    },
-    {
-      "title": "Grotesque",
-      "mal_id": 59217,
-      "image": "https://myanimelist.net/images/anime/1173/144034l.jpg",
-      "episodes": 3,
-      "length": "corto",
-      "demographic": "",
-      "genres": [],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": false,
-      "year": 2026,
-      "description": "Anthology movie consisting of three original animation segments: Q1 - ÆLIENS (エリィアンズ) Earth has entered an era of intergalatic exchange. Amidst swirling prejudice and fear of aliens, Elie, an alien girl, arrives as a space goodwill ambassador. She loves Earth's culture and its often absurd daily life, and has teamed up with a civil servant working at the space agency to search for \"friends\". Q2 - Yoroshiku★Shoujo (夜露死駆★少女) GALs TOKYO, a city where morning never comes. Night after night, girls who have lost their place in reality, known as \"Gal P\", gather here. Their goal is to become the winner, the \"Queen\" in a game called \"Queen of Butterfly\" or \"QoB\" for short. Q3 - Nocturne: Kono Grotesque na Yoru ni (ノクターン～このグロテスクな夜に～) A world after humanity has perished. Traveling in a van are Ayame, a pure-blooded vampire, and three girls who survived by being bitten and \"infected\" by her. There, they find a sky full of stars that illuminate the night as brightly as day, and fields of glittering golden grass—even a desolate world looks so beautiful through the eyes of a vampire. They enjoy a simple everyday life in this world left behind. (Souce: Official Website, translated)",
-      "type": "Movie",
-      "franchise": "GROTESQQQUE",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-11-06",
-      "aired_to": "2026-11-06",
-      "broadcast_day": "Fridays",
-      "broadcast_time": "00:00",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Fridays at 00:00 (JST)",
-      "source_tags_original": [
-        "ORIGINAL"
+      "description_es": "El Señor Demonio Clayman fue asesinado por Rimuru en Walpurgis. Pero Clayman adquirió la habilidad única \"Regresor\" mientras estaba al borde de la muerte y se despertó en su habitación hace 70 años. Considerando la situación, parece que esto es realmente real. Clayman comienza a buscar formas de evitar los mismos errores que cometió en el pasado, pero ¿Podrá Clayman evitar un futuro condenado aprovechando su bucle?",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1261/160258l.jpg"
       ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "GROTESQQQUE-グロテスク-",
-      "title_synonyms": [],
-      "search_titles": [
-        "Grotesque",
-        "GROTESQQQUE-グロテスク-"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Fridays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:00 (JST)"
-      },
-      "members": 14367,
-      "favorites": 89,
-      "mal_popularity": 14367,
-      "anticipation_score": 501.57,
-      "jikan_url": "https://anilist.co/anime/178972",
-      "trailer_url": "",
-      "title_es": "Grotesco",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Grotesco"
-      ]
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
     },
     {
       "title": "Youchien WARS",
@@ -1671,7 +2741,7 @@
       "franchise": "Youchien WARS",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2027-04",
       "aired_to": "",
       "broadcast_day": "",
       "broadcast_time": "",
@@ -1690,7 +2760,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "jikan_2026_new",
       "title_english": "",
       "title_japanese": "幼稚園WARS",
       "title_synonyms": [
@@ -1705,7 +2775,7 @@
       "upcoming_season": "spring",
       "upcoming_season_label": "Primavera",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -1713,12 +2783,12 @@
         "timezone": null,
         "string": null
       },
-      "members": 9110,
-      "favorites": 73,
-      "mal_popularity": 9110,
-      "anticipation_score": 482.13,
-      "jikan_url": "https://anilist.co/anime/199597",
-      "trailer_url": "",
+      "members": 13824,
+      "favorites": 40,
+      "mal_popularity": 6523,
+      "anticipation_score": 495.26,
+      "jikan_url": "https://myanimelist.net/anime/62613/Youchien_Wars",
+      "trailer_url": "https://www.youtube.com/watch?v=jee6QLmJ2mU",
       "title_es": "GUERRAS Youchien",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -1726,152 +2796,14 @@
       "search_titles_es": [
         "GUERRAS Youchien"
       ],
-      "description_es": "Bienvenido a Kindergarten Noir, una escuela exclusiva que atiende a niños de la élite mundial. Rita, una de las profesoras, ha estado buscando novio, pero hasta ahora no ha tenido ninguna suerte. Un día, un asesino persigue a uno de los niños... ¡¿y está totalmente soñador?! ¡Sumérgete en esta comedia romántica llena de acción mientras se desarrolla dentro del jardín de infantes \"más seguro\" del mundo!"
-    },
-    {
-      "title": "ONE PIECE FILM: GOD VALLEY",
-      "mal_id": 64858,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b215855-z86bqRqVcr13.png",
-      "episodes": 1,
-      "length": "corto",
-      "demographic": "",
-      "genres": [],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": false,
-      "popular": false,
-      "year": 2027,
-      "description": "",
-      "type": "Movie",
-      "franchise": "ONE PIECE FILM",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [],
-      "themes": [
-        "Pirates",
-        "Conspiracy"
+      "description_es": "Bienvenido a Kindergarten Noir, una escuela exclusiva que atiende a niños de la élite mundial. Rita, una de las profesoras, ha estado buscando novio, pero hasta ahora no ha tenido ninguna suerte. Un día, un asesino persigue a uno de los niños... ¡¿y está totalmente soñador?! ¡Sumérgete en esta comedia romántica llena de acción mientras se desarrolla dentro del jardín de infantes \"más seguro\" del mundo!",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1242/156360l.jpg"
       ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "ONE PIECE FILM GOD VALLEY",
-      "title_synonyms": [
-        "One Piece Film 16"
-      ],
-      "search_titles": [
-        "ONE PIECE FILM: GOD VALLEY",
-        "ONE PIECE FILM GOD VALLEY",
-        "One Piece Film 16"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "summer",
-      "upcoming_season_label": "Verano",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 7152,
-      "favorites": 64,
-      "mal_popularity": 7152,
-      "anticipation_score": 471.16,
-      "jikan_url": "https://anilist.co/anime/215855",
-      "trailer_url": "",
-      "title_es": "ONE PIECE FILM: GOD VALLEY",
-      "title_es_reviewed": true,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "PELÍCULA DE UNA PIEZA: VALLE DE DIOS",
-        "ONE PIECE FILM: GOD VALLEY"
-      ]
-    },
-    {
-      "title": "Megane, Tokidoki, Yankee-kun",
-      "mal_id": 64006,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211304-PItzmt5h2yMC.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Romance"
-      ],
-      "tone": "ligero",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": false,
-      "year": 2027,
-      "description": "Momose has always longed for a peaceful high school life. She wants nothing to do with hoodlums, delinquents, or troublemakers. When she meets Ichikura, an inconspicuous black-haired boy with glasses, he looks like a normal, nice guy. But it turns out that back in junior high he was a nefarious delinquent! He keeps assuring her that he’s changed his ways, but he still has a knack for picking fights! Has Ichikura really turned over a new leaf? And will Momose keep the secret about his rowdy past?",
-      "type": "TV",
-      "franchise": "Megane, Tokidoki, Yankee-kun",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "MANGA"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "メガネ、時々、ヤンキーくん",
-      "title_synonyms": [
-        "Otasukebu",
-        "Glasses With a Chance of Delinquent"
-      ],
-      "search_titles": [
-        "Megane, Tokidoki, Yankee-kun",
-        "メガネ、時々、ヤンキーくん",
-        "Otasukebu",
-        "Glasses With a Chance of Delinquent"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 6023,
-      "favorites": 82,
-      "mal_popularity": 6023,
-      "anticipation_score": 466.76,
-      "jikan_url": "https://anilist.co/anime/211304",
-      "trailer_url": "",
-      "title_es": "Megane, Tokidoki, Yankee-kun",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Megane, Tokidoki, Yankee-kun"
-      ],
-      "description_es": "Momose siempre ha anhelado una vida pacífica en la escuela secundaria. No quiere tener nada que ver con matones, delincuentes o alborotadores. Cuando conoce a Ichikura, un discreto chico de pelo negro con gafas, parece un chico normal y agradable. ¡Pero resulta que en la secundaria él era un delincuente nefasto! Él sigue asegurándole que ha cambiado sus costumbres, ¡pero todavía tiene una habilidad especial para buscar peleas! ¿Ichikura realmente ha pasado página? ¿Y Momose guardará el secreto de su ruidoso pasado?"
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
     },
     {
       "title": "Takopii no Genzai: Arigatou, Mata Ashita",
@@ -1910,7 +2842,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "jikan_2026_new",
       "title_english": "",
       "title_japanese": "タコピーの原罪 -ありがとう、また明日-",
       "title_synonyms": [
@@ -1927,20 +2859,20 @@
       "upcoming_season": "fall",
       "upcoming_season_label": "Otoño",
       "upcoming_sources": [
-        "anilist/2026"
+        "tenrai"
       ],
       "broadcast": {
-        "day": "Fridays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:00 (JST)"
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
       },
-      "members": 5642,
-      "favorites": 50,
-      "mal_popularity": 5642,
-      "anticipation_score": 459.02,
-      "jikan_url": "https://anilist.co/anime/212539",
-      "trailer_url": "",
+      "members": 12102,
+      "favorites": 27,
+      "mal_popularity": 6898,
+      "anticipation_score": 490.16,
+      "jikan_url": "https://myanimelist.net/anime/64266/Takopii_no_Genzai_Movie__Arigatou_Mata_Ashita",
+      "trailer_url": "https://www.youtube.com/watch?v=mnoR-kTU25E",
       "title_es": "Takopii no Genzai: Arigatou, Mata Ashita",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -1948,7 +2880,566 @@
       "search_titles_es": [
         "Takopii no Genzai: Arigatou, Mata Ashita"
       ],
-      "description_es": "Recopilación teatral de los seis episodios de la serie de anime Takopii no Genzai, incluidas escenas recién agregadas."
+      "description_es": "Recopilación teatral de los seis episodios de la serie de anime Takopii no Genzai, incluidas escenas recién agregadas.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1691/160653l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:21+00:00"
+      }
+    },
+    {
+      "title": "Eleceed",
+      "mal_id": 61944,
+      "image": "https://myanimelist.net/images/anime/1868/150829l.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2026,
+      "description": "Jiwoo is a kind-hearted young man who harnesses the lightning quick reflexes of a cat to secretly make the world a better place—one saved little child or foster pet at a time. Kayden is a secret agent on the run, who finds himself stuck in the body of a...um...decidedly fat old fluffy cat. Together, armed with Jiwoo's super powers and Kayden's uber-smarts, they're out to fight those forces who would let evil rule this world. That is, if they can stand each other long enough to get the job done.",
+      "type": "TV",
+      "franchise": "Eleceed",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-04",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "Web manga"
+      ],
+      "themes": [
+        "Super Power"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "Eleceed",
+      "title_japanese": "エレキシード / 일렉시드",
+      "title_synonyms": [
+        "일렉시드"
+      ],
+      "search_titles": [
+        "Eleceed",
+        "エレキシード / 일렉시드"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "spring",
+      "upcoming_season_label": "Primavera",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 8476,
+      "favorites": 46,
+      "mal_popularity": 7967,
+      "anticipation_score": 474.79,
+      "jikan_url": "https://myanimelist.net/anime/61944/Eleceed",
+      "trailer_url": "https://www.youtube.com/watch?v=q7eT3oVvko4",
+      "title_es": "Elegido",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Elegido"
+      ],
+      "description_es": "Jiwoo es un joven de buen corazón que aprovecha los rápidos reflejos de un gato para hacer secretamente del mundo un lugar mejor: un niño pequeño salvado o una mascota adoptiva a la vez. Kayden es un agente secreto en fuga, que se encuentra atrapado en el cuerpo de un... um... gato viejo y peludo decididamente gordo. Juntos, armados con los superpoderes de Jiwoo y la súper inteligencia de Kayden, se proponen luchar contra aquellas fuerzas que permitirían que el mal gobierne este mundo. Es decir, si pueden soportarse el tiempo suficiente para hacer el trabajo.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1273/158725l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
+    },
+    {
+      "title": "Rakuen Tsuihou: Kokoro no Resonance",
+      "mal_id": 57961,
+      "image": "https://myanimelist.net/images/anime/1188/153747l.jpg",
+      "episodes": 1,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Sci-Fi"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": false,
+      "popular": false,
+      "year": 2026,
+      "description": "Sequel to Rakuen Tsuihou.",
+      "type": "Movie",
+      "franchise": "Rakuen Tsuihou",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2026-11-13",
+      "aired_to": "2026-11-13",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)",
+      "source_tags_original": [
+        "Original"
+      ],
+      "themes": [
+        "Mecha"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "",
+      "title_japanese": "楽園追放 心のレゾナンス",
+      "title_synonyms": [
+        "Liberated from Paradise: Resonance of the Heart"
+      ],
+      "search_titles": [
+        "Rakuen Tsuihou: Kokoro no Resonance",
+        "楽園追放 心のレゾナンス",
+        "Liberated from Paradise: Resonance of the Heart"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "fall",
+      "upcoming_season_label": "Otoño",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 9358,
+      "favorites": 21,
+      "mal_popularity": 7660,
+      "anticipation_score": 471.31,
+      "jikan_url": "https://myanimelist.net/anime/57961/Rakuen_Tsuihou__Kokoro_no_Resonance",
+      "trailer_url": "https://www.youtube.com/watch?v=gdqs6y-6R3g",
+      "title_es": "Rakuen Tsuihou: Kokoro sin resonancia",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Rakuen Tsuihou: Kokoro sin resonancia"
+      ],
+      "description_es": "Secuela de Rakuen Tsuihou.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1987/160533l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:21+00:00"
+      }
+    },
+    {
+      "title": "Megane, Tokidoki, Yankee-kun",
+      "mal_id": 64006,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211304-PItzmt5h2yMC.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "tone": "ligero",
+      "fast_start": false,
+      "action_level": "bajo",
+      "emotional": true,
+      "popular": false,
+      "year": 2027,
+      "description": "Momose has always longed for a peaceful high school life. She wants nothing to do with hoodlums, delinquents, or troublemakers. When she meets Ichikura, an inconspicuous black-haired boy with glasses, he looks like a normal, nice guy. But it turns out that back in junior high he was a nefarious delinquent! He keeps assuring her that he’s changed his ways, but he still has a knack for picking fights! Has Ichikura really turned over a new leaf? And will Momose keep the secret about his rowdy past?",
+      "type": "TV",
+      "franchise": "Megane, Tokidoki, Yankee-kun",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-04",
+      "aired_to": null,
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "MANGA"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "",
+      "title_japanese": "メガネ、時々、ヤンキーくん",
+      "title_synonyms": [
+        "Otasukebu",
+        "Glasses With a Chance of Delinquent"
+      ],
+      "search_titles": [
+        "Megane, Tokidoki, Yankee-kun",
+        "メガネ、時々、ヤンキーくん",
+        "Otasukebu",
+        "Glasses With a Chance of Delinquent"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "spring",
+      "upcoming_season_label": "Primavera",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 8674,
+      "favorites": 21,
+      "mal_popularity": 7898,
+      "anticipation_score": 470.32,
+      "jikan_url": "https://myanimelist.net/anime/64006/Megane_Tokidoki_Yankee-kun",
+      "trailer_url": "https://www.youtube.com/watch?v=_NDtGmyPz1w",
+      "title_es": "Megane, Tokidoki, Yankee-kun",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Megane, Tokidoki, Yankee-kun"
+      ],
+      "description_es": "Momose siempre ha anhelado una vida pacífica en la escuela secundaria. No quiere tener nada que ver con matones, delincuentes o alborotadores. Cuando conoce a Ichikura, un discreto chico de pelo negro con gafas, parece un chico normal y agradable. ¡Pero resulta que en la secundaria él era un delincuente nefasto! Él sigue asegurándole que ha cambiado sus costumbres, ¡pero todavía tiene una habilidad especial para buscar peleas! ¿Ichikura realmente ha pasado página? ¿Y Momose guardará el secreto de su ruidoso pasado?",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1662/159450l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
+    },
+    {
+      "title": "Majo to Youhei",
+      "mal_id": 63958,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210945-uVcWtO8UYiOv.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2027,
+      "description": "Nothing in this world is more dangerous than a witch. The epitome of fear and terror, they can summon floods on a whim, conjure balls of fire out of the air, or even destroy entire countries overnight. Incur their wrath, and no one is safe. At least, that’s what everyone thinks, and it’s the very reason they all want Siasha dead. After yet another violent battle for her life, she teams up with Zig, a mercenary, and they depart for unknown lands to find somewhere she can live in peace. But is the pair any match for the lost magic and vicious monstrosities that lie ahead?",
+      "type": "TV",
+      "franchise": "Majo to Youhei",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-04",
+      "aired_to": null,
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "LIGHT_NOVEL"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "Witch and Mercenary",
+      "title_japanese": "魔女と傭兵",
+      "title_synonyms": [
+        "Witch and Mercenary"
+      ],
+      "search_titles": [
+        "Majo to Youhei",
+        "魔女と傭兵",
+        "Witch and Mercenary"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "spring",
+      "upcoming_season_label": "Primavera",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 7642,
+      "favorites": 15,
+      "mal_popularity": 8298,
+      "anticipation_score": 458.91,
+      "jikan_url": "https://myanimelist.net/anime/63958/Majo_to_Youhei",
+      "trailer_url": "https://www.youtube.com/watch?v=Rn0HhyVi72Y",
+      "title_es": "Majo to Youhei",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Majo to Youhei"
+      ],
+      "description_es": "Nada en este mundo es más peligroso que una bruja. Son el epítome del miedo y el terror y pueden provocar inundaciones a su antojo, conjurar bolas de fuego en el aire o incluso destruir países enteros de la noche a la mañana. Incurre en su ira y nadie estará a salvo. Al menos eso es lo que todo el mundo piensa, y es la razón por la que todos quieren muerta a Siasha. Después de otra violenta batalla por su vida, se une a Zig, un mercenario, y parten hacia tierras desconocidas para encontrar un lugar donde pueda vivir en paz. Pero, ¿podrá la pareja hacer frente a la magia perdida y las feroces monstruosidades que se avecinan?",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1572/160082l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
+    },
+    {
+      "title": "LONA",
+      "mal_id": 64501,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213655-DVYMaIH4YtEV.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Sci-Fi"
+      ],
+      "tone": "emocional",
+      "fast_start": false,
+      "action_level": "medio",
+      "emotional": false,
+      "popular": false,
+      "year": 2027,
+      "description": "A broken world in the not-so distant future. Humanity is facing a new incident. \"We’re being attacked by humans who should be dead.\" The government has decided to request a specialized organization to deal with this situation. The Laboratory of Optics and Neural Analysis, commonly known as \"LONA.\" Researcher Ao and her apprentice Sango will try to get to the bottom of the mystery by analyzing the brains of the dead. What do people think of, and what do they leave behind before they die? Countless memories engraved in the neural circuits. What did they see in those deep depths?",
+      "type": "TV",
+      "franchise": "LONA",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-04",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "ORIGINAL"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "Laboratory of Optics and Neural Analysis",
+      "title_japanese": "LONA",
+      "title_synonyms": [
+        "Laboratory of Optics and Neural Analysis"
+      ],
+      "search_titles": [
+        "LONA",
+        "Laboratory of Optics and Neural Analysis"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "spring",
+      "upcoming_season_label": "Primavera",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 7275,
+      "favorites": 16,
+      "mal_popularity": 8454,
+      "anticipation_score": 457.33,
+      "jikan_url": "https://myanimelist.net/anime/64501/LONA",
+      "trailer_url": "https://www.youtube.com/watch?v=zuhk83AZq2o",
+      "title_es": "SU",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "SU"
+      ],
+      "description_es": "Un mundo roto en un futuro no muy lejano. La humanidad se enfrenta a un nuevo incidente. \"Estamos siendo atacados por humanos que deberían estar muertos\". El gobierno ha decidido solicitar una organización especializada para hacer frente a esta situación. El Laboratorio de Óptica y Análisis Neural, comúnmente conocido como “LONA”. La investigadora Ao y su aprendiz Sango intentarán llegar al fondo del misterio analizando los cerebros de los muertos. ¿Qué piensa la gente y qué deja atrás antes de morir? Innumerables recuerdos grabados en los circuitos neuronales. ¿Qué vieron en esas profundidades?",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1722/158767l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:29+00:00"
+      }
+    },
+    {
+      "title": "Tougen Anki: Nikko Kegon no Taki-hen Part 2",
+      "mal_id": 65023,
+      "image": "https://cdn.myanimelist.net/images/anime/1466/160148l.jpg",
+      "episodes": 12,
+      "length": "medio",
+      "demographic": "Shounen",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2027,
+      "description": "Second part of Tougen Anki: Nikko Kegon no Taki-hen.",
+      "type": "TV",
+      "franchise": "Tougen Anki",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2027-04",
+      "aired_to": null,
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "Manga",
+        "R - 17+ (violence & profanity)"
+      ],
+      "themes": [
+        "Mythology"
+      ],
+      "score": null,
+      "scored_by": 0,
+      "_update_status": "catalog_sources_v1_new",
+      "title_english": "Tougen Anki: Nikko Kegon Falls Arc Part 2",
+      "title_japanese": "桃源暗鬼 日光・華厳の滝編 第2クール",
+      "title_synonyms": [],
+      "search_titles": [
+        "Tougen Anki: Nikko Kegon no Taki-hen Part 2",
+        "Tougen Anki: Nikko Kegon Falls Arc Part 2",
+        "桃源暗鬼 日光・華厳の滝編 第2クール"
+      ],
+      "upcoming_year": 2027,
+      "upcoming_season": "spring",
+      "upcoming_season_label": "Primavera",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 7306,
+      "favorites": 11,
+      "mal_popularity": 8438,
+      "anticipation_score": 453.89,
+      "jikan_url": "https://myanimelist.net/anime/65023/Tougen_Anki__Nikko_Kegon_no_Taki-hen_Part_2",
+      "trailer_url": "",
+      "_neo_source": "tenrai",
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:31:00+00:00",
+        "details_fetched_at": "2026-10-25T11:31:00+00:00",
+        "score_source": "myanimelist"
+      },
+      "title_es": "Tougen Anki: Arco de las cataratas Nikko Kegon, parte 2",
+      "title_es_source": "title_english",
+      "title_es_status": "translated",
+      "search_titles_es": [
+        "Tougen Anki: Arco de las cataratas Nikko Kegon, parte 2"
+      ],
+      "description_es": "Segunda parte de Tougen Anki: Nikko Kegon no Taki-hen."
+    },
+    {
+      "title": "Disney Twisted-Wonderland: THE ANIMATION - Season 2: EPISODE of SAVANACLAW",
+      "mal_id": 60348,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202282-4KJHHwWKebwv.jpg",
+      "episodes": null,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": false,
+      "popular": false,
+      "year": 2027,
+      "description": "The second season of Disney Twisted-Wonderland: THE ANIMATION .",
+      "type": "ONA",
+      "franchise": "Disney Twisted-Wonderland",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2026-12",
+      "aired_to": "",
+      "broadcast_day": "",
+      "broadcast_time": "",
+      "broadcast_timezone": "",
+      "broadcast_string": "",
+      "source_tags_original": [
+        "VIDEO_GAME"
+      ],
+      "themes": [],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "",
+      "title_japanese": "ディズニー ツイステッドワンダーランド ザ アニメーション シーズン2「エピソード オブ サバナクロー」",
+      "title_synonyms": [],
+      "search_titles": [
+        "Disney Twisted-Wonderland: THE ANIMATION - Season 2: EPISODE of SAVANACLAW",
+        "ディズニー ツイステッドワンダーランド ザ アニメーション シーズン2「エピソード オブ サバナクロー」"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "fall",
+      "upcoming_season_label": "Otoño",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 6482,
+      "favorites": 14,
+      "mal_popularity": 8846,
+      "anticipation_score": 450.84,
+      "jikan_url": "https://myanimelist.net/anime/60348/Disney_Twisted-Wonderland_The_Animation__Episode_of_Savanaclaw",
+      "trailer_url": "https://www.youtube.com/watch?v=-NF3hbmXclE",
+      "title_es": "Disney Twisted-Wonderland: LA ANIMACIÓN - Temporada 2: EPISODIO de SAVANACLAW",
+      "title_es_reviewed": false,
+      "title_es_source": "title",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Disney Twisted-Wonderland: LA ANIMACIÓN - Temporada 2: EPISODIO de SAVANACLAW"
+      ],
+      "description_es": "La segunda temporada de Disney Twisted-Wonderland: LA ANIMACIÓN.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1746/159211l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:21+00:00"
+      }
     },
     {
       "title": "Demons' Crest",
@@ -1980,7 +3471,7 @@
       "broadcast_timezone": "Asia/Tokyo",
       "broadcast_string": "Fridays at 11:00 (JST)",
       "source_tags_original": [
-        "LIGHT_NOVEL"
+        "Light novel"
       ],
       "themes": [
         "Survival",
@@ -1988,7 +3479,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "jikan_2026_new",
       "title_english": "Devils' Crest",
       "title_japanese": "デモンズ・クレスト",
       "title_synonyms": [],
@@ -2000,20 +3491,20 @@
       "upcoming_season": "fall",
       "upcoming_season_label": "Otoño",
       "upcoming_sources": [
-        "anilist/2026"
+        "tenrai"
       ],
       "broadcast": {
-        "day": "Fridays",
-        "time": "11:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 11:00 (JST)"
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
       },
-      "members": 5781,
-      "favorites": 39,
-      "mal_popularity": 5781,
-      "anticipation_score": 457.48,
-      "jikan_url": "https://anilist.co/anime/203275",
-      "trailer_url": "",
+      "members": 6174,
+      "favorites": 5,
+      "mal_popularity": 9032,
+      "anticipation_score": 439.09,
+      "jikan_url": "https://myanimelist.net/anime/63045/Demons_Crest",
+      "trailer_url": "https://www.youtube.com/watch?v=z_aHrTag3Ig",
       "title_es": "Cresta de los demonios",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -2021,525 +3512,14 @@
       "search_titles_es": [
         "Cresta de los demonios"
       ],
-      "description_es": "Yuuma Ashihara, estudiante de sexto grado, y su hermana gemela, Sawa, están jugando Actual Magic, un nuevo MMORPG de realidad virtual, cuando de repente comienza a fusionarse con el mundo real. En medio de todo el caos y la confusión, queda claro que la muerte acecha en cada esquina, incluso cuando Yuuma se encuentra con su compañera de clase Sumika. Antes, ella era una de las chicas más lindas de su clase, pero desde entonces ha sufrido una terrible metamorfosis: ¡se ha convertido en uno de los monstruos más horripilantes del juego! Del autor de Sword Art Online y Accel World llega una historia más allá de la realidad virtual y la realidad aumentada, donde los juegos y la realidad son lo mismo... ¡y mantenerse con vida es solo el comienzo!"
-    },
-    {
-      "title": "Majo to Youhei",
-      "mal_id": 63958,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210945-uVcWtO8UYiOv.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Fantasy"
+      "description_es": "Yuuma Ashihara, estudiante de sexto grado, y su hermana gemela, Sawa, están jugando Actual Magic, un nuevo MMORPG de realidad virtual, cuando de repente comienza a fusionarse con el mundo real. En medio de todo el caos y la confusión, queda claro que la muerte acecha en cada esquina, incluso cuando Yuuma se encuentra con su compañera de clase Sumika. Antes, ella era una de las chicas más lindas de su clase, pero desde entonces ha sufrido una terrible metamorfosis: ¡se ha convertido en uno de los monstruos más horripilantes del juego! Del autor de Sword Art Online y Accel World llega una historia más allá de la realidad virtual y la realidad aumentada, donde los juegos y la realidad son lo mismo... ¡y mantenerse con vida es solo el comienzo!",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1551/158889l.jpg"
       ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2027,
-      "description": "Nothing in this world is more dangerous than a witch. The epitome of fear and terror, they can summon floods on a whim, conjure balls of fire out of the air, or even destroy entire countries overnight. Incur their wrath, and no one is safe. At least, that’s what everyone thinks, and it’s the very reason they all want Siasha dead. After yet another violent battle for her life, she teams up with Zig, a mercenary, and they depart for unknown lands to find somewhere she can live in peace. But is the pair any match for the lost magic and vicious monstrosities that lie ahead?",
-      "type": "TV",
-      "franchise": "Majo to Youhei",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "LIGHT_NOVEL"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "魔女と傭兵",
-      "title_synonyms": [
-        "Witch and Mercenary"
-      ],
-      "search_titles": [
-        "Majo to Youhei",
-        "魔女と傭兵",
-        "Witch and Mercenary"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 4525,
-      "favorites": 46,
-      "mal_popularity": 4525,
-      "anticipation_score": 449.1,
-      "jikan_url": "https://anilist.co/anime/210945",
-      "trailer_url": "",
-      "title_es": "Majo to Youhei",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Majo to Youhei"
-      ],
-      "description_es": "Nada en este mundo es más peligroso que una bruja. Son el epítome del miedo y el terror y pueden provocar inundaciones a su antojo, conjurar bolas de fuego en el aire o incluso destruir países enteros de la noche a la mañana. Incurre en su ira y nadie estará a salvo. Al menos eso es lo que todo el mundo piensa, y es la razón por la que todos quieren muerta a Siasha. Después de otra violenta batalla por su vida, se une a Zig, un mercenario, y parten hacia tierras desconocidas para encontrar un lugar donde pueda vivir en paz. Pero, ¿podrá la pareja hacer frente a la magia perdida y las feroces monstruosidades que se avecinan?"
-    },
-    {
-      "title": "Rakuen Tsuihou: Kokoro no Resonance",
-      "mal_id": 57961,
-      "image": "https://myanimelist.net/images/anime/1188/153747l.jpg",
-      "episodes": 1,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Sci-Fi"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": false,
-      "popular": false,
-      "year": 2026,
-      "description": "Sequel to Rakuen Tsuihou.",
-      "type": "Movie",
-      "franchise": "Rakuen Tsuihou",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-11-13",
-      "aired_to": "2026-11-13",
-      "broadcast_day": "Fridays",
-      "broadcast_time": "00:00",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Fridays at 00:00 (JST)",
-      "source_tags_original": [
-        "ORIGINAL"
-      ],
-      "themes": [
-        "Mecha"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "楽園追放 心のレゾナンス",
-      "title_synonyms": [
-        "Liberated from Paradise: Resonance of the Heart"
-      ],
-      "search_titles": [
-        "Rakuen Tsuihou: Kokoro no Resonance",
-        "楽園追放 心のレゾナンス",
-        "Liberated from Paradise: Resonance of the Heart"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Fridays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:00 (JST)"
-      },
-      "members": 4283,
-      "favorites": 37,
-      "mal_popularity": 4283,
-      "anticipation_score": 444.61,
-      "jikan_url": "https://anilist.co/anime/157330",
-      "trailer_url": "",
-      "title_es": "Rakuen Tsuihou: Kokoro sin resonancia",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Rakuen Tsuihou: Kokoro sin resonancia"
-      ],
-      "description_es": "Secuela de Rakuen Tsuihou."
-    },
-    {
-      "title": "LONA",
-      "mal_id": 64501,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213655-DVYMaIH4YtEV.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Sci-Fi"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": false,
-      "popular": false,
-      "year": 2027,
-      "description": "A broken world in the not-so distant future. Humanity is facing a new incident. \"We’re being attacked by humans who should be dead.\" The government has decided to request a specialized organization to deal with this situation. The Laboratory of Optics and Neural Analysis, commonly known as \"LONA.\" Researcher Ao and her apprentice Sango will try to get to the bottom of the mystery by analyzing the brains of the dead. What do people think of, and what do they leave behind before they die? Countless memories engraved in the neural circuits. What did they see in those deep depths?",
-      "type": "TV",
-      "franchise": "LONA",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "ORIGINAL"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "LONA",
-      "title_synonyms": [
-        "Laboratory of Optics and Neural Analysis"
-      ],
-      "search_titles": [
-        "LONA",
-        "Laboratory of Optics and Neural Analysis"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 4604,
-      "favorites": 16,
-      "mal_popularity": 4604,
-      "anticipation_score": 439.22,
-      "jikan_url": "https://anilist.co/anime/213655",
-      "trailer_url": "",
-      "title_es": "SU",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "SU"
-      ],
-      "description_es": "Un mundo roto en un futuro no muy lejano. La humanidad se enfrenta a un nuevo incidente. \"Estamos siendo atacados por humanos que deberían estar muertos\". El gobierno ha decidido solicitar una organización especializada para hacer frente a esta situación. El Laboratorio de Óptica y Análisis Neural, comúnmente conocido como “LONA”. La investigadora Ao y su aprendiz Sango intentarán llegar al fondo del misterio analizando los cerebros de los muertos. ¿Qué piensa la gente y qué deja atrás antes de morir? Innumerables recuerdos grabados en los circuitos neuronales. ¿Qué vieron en esas profundidades?"
-    },
-    {
-      "title": "Houkago Kitaku Biyori",
-      "mal_id": 61199,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187918-LFFlYD1rMutc.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Comedy",
-        "Romance",
-        "Slice of Life"
-      ],
-      "tone": "ligero",
-      "fast_start": false,
-      "action_level": "bajo",
-      "emotional": true,
-      "popular": false,
-      "year": 2027,
-      "description": "During his time in middle school, Shun was a well-known soccer player, but an injury sidelined him, making it impossible not only to play soccer but also to engage in any physical activity. Upon entering high school, he grew weary of continually turning down invitations to various clubs. Frustrated, he absentmindedly expressed his desire to just go home one day. Hearing this, a girl named Naoki invited him to join the \"Hyper Go-Home Club\". They ended up gradually walking home together, and the romantic comedy unfolds.",
-      "type": "TV",
-      "franchise": "Houkago Kitaku Biyori",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "MANGA"
-      ],
-      "themes": [
-        "Iyashikei",
-        "School"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "放課後帰宅びより",
-      "title_synonyms": [
-        "Journey Home After School"
-      ],
-      "search_titles": [
-        "Houkago Kitaku Biyori",
-        "放課後帰宅びより",
-        "Journey Home After School"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 3477,
-      "favorites": 39,
-      "mal_popularity": 3477,
-      "anticipation_score": 436.46,
-      "jikan_url": "https://anilist.co/anime/187918",
-      "trailer_url": "",
-      "title_es": "Houkago Kitaku Biyori",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Houkago Kitaku Biyori"
-      ],
-      "description_es": "Durante la secundaria, Shun fue un conocido futbolista, pero una lesión lo apartó del deporte y le impidió realizar cualquier actividad física. Al comenzar el instituto se cansó de rechazar continuamente invitaciones para unirse a distintos clubes y, frustrado, comentó distraídamente que solo quería volver a casa. Al oírlo, una chica llamada Naoki lo invitó al «Club de Volver a Casa Híper». Poco a poco empiezan a regresar juntos y así comienza esta comedia romántica."
-    },
-    {
-      "title": "Biblia Koshodou no Jiken Techou",
-      "mal_id": 63997,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98476-humj2ScdtAj3.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Drama",
-        "Mystery"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": true,
-      "popular": false,
-      "year": 2027,
-      "description": "Biblia Koshodou no Jiken Techou is a mystery series where Shinokawa Shioriko, a young owner of a bookstore in Kamakura, unravel mysteries of ancient books that are taken there. The story begins with a young man named Daisuke, who grew up practically without reading books due to a \"phobia,\" brings the complete (and autographed) works of Natsume Soseki, Japanese writer of the Meiji era, inherited from his grandmother in the mysterious bookstore. Will the shy and introvert Shioriko solve the mystery of the books?",
-      "type": "TV",
-      "franchise": "Biblia Koshodou no Jiken Techou",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "OTHER"
-      ],
-      "themes": [],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "ビブリア古書堂の事件手帖",
-      "title_synonyms": [
-        "The Case Files of Biblia Bookstore"
-      ],
-      "search_titles": [
-        "Biblia Koshodou no Jiken Techou",
-        "ビブリア古書堂の事件手帖",
-        "The Case Files of Biblia Bookstore"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 3668,
-      "favorites": 23,
-      "mal_popularity": 3668,
-      "anticipation_score": 433.37,
-      "jikan_url": "https://anilist.co/anime/98476",
-      "trailer_url": "",
-      "title_es": "Biblia Koshodou no Jiken Techou",
-      "title_es_reviewed": false,
-      "title_es_source": "title",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Biblia Koshodou no Jiken Techou"
-      ],
-      "description_es": "Biblia Koshodou no Jiken Techou es una serie de misterio protagonizada por Shinokawa Shioriko, la joven propietaria de una librería de Kamakura que resuelve los enigmas escondidos en los libros antiguos que llegan al establecimiento. La historia comienza cuando Daisuke, un joven que apenas ha leído debido a su fobia a los libros, lleva a la misteriosa librería una colección completa y autografiada de las obras del escritor de la era Meiji Natsume Soseki, heredada de su abuela. ¿Conseguirá la tímida e introvertida Shioriko descubrir el secreto de esos volúmenes?"
-    },
-    {
-      "title": "Unmei no Makimodoshi",
-      "mal_id": 62024,
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195787-Ct3WxeyXouhh.png",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Action",
-        "Drama",
-        "Mystery",
-        "Sci-Fi"
-      ],
-      "tone": "epico",
-      "fast_start": true,
-      "action_level": "alto",
-      "emotional": true,
-      "popular": false,
-      "year": 2027,
-      "description": "The series follows Chrono, a 14-year-old boy who is a member of the Space-Time Police Special Forces Unit called the “Rewinders”. The organization uses its “Retry Eye” to save people who have already died, using future knowledge to repeatedly go back in time to get to a future where the victim is alive and well.",
-      "type": "TV",
-      "franchise": "Unmei no Makimodoshi",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
-      "source_tags_original": [
-        "MANGA"
-      ],
-      "themes": [
-        "Male Protagonist",
-        "Rescue"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Fate Rewinder",
-      "title_japanese": "運命の巻戻士",
-      "title_synonyms": [
-        "Fate Rewinder: All Great Achievements Require Time"
-      ],
-      "search_titles": [
-        "Unmei no Makimodoshi",
-        "Fate Rewinder",
-        "運命の巻戻士",
-        "Fate Rewinder: All Great Achievements Require Time"
-      ],
-      "upcoming_year": 2027,
-      "upcoming_season": "spring",
-      "upcoming_season_label": "Primavera",
-      "upcoming_sources": [
-        "anilist/2027"
-      ],
-      "broadcast": {
-        "day": null,
-        "time": null,
-        "timezone": null,
-        "string": null
-      },
-      "members": 2622,
-      "favorites": 12,
-      "mal_popularity": 2622,
-      "anticipation_score": 412.88,
-      "jikan_url": "https://anilist.co/anime/195787",
-      "trailer_url": "",
-      "title_es": "Rebobinador de destino",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Rebobinador de destino"
-      ],
-      "description_es": "La serie sigue a Chrono, un niño de 14 años que es miembro de la Unidad de Fuerzas Especiales de la Policía del Espacio-Tiempo llamada \"Rewinders\". La organización utiliza su “Retry Eye” para salvar a personas que ya han muerto, utilizando conocimientos futuros para retroceder repetidamente en el tiempo y llegar a un futuro en el que la víctima esté viva y bien."
-    },
-    {
-      "title": "Soukou Kihei Votoms: Haiiro no Hexe",
-      "mal_id": 63323,
-      "image": "https://myanimelist.net/images/anime/1275/155032l.jpg",
-      "episodes": null,
-      "length": "corto",
-      "demographic": "",
-      "genres": [
-        "Drama",
-        "Sci-Fi"
-      ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
-      "emotional": false,
-      "popular": false,
-      "year": 2026,
-      "description": "New Soukou Kihei Votoms anime, part of the Sunrise 50th Anniversary project.",
-      "type": "Movie",
-      "franchise": "Soukou Kihei Votoms",
-      "ongoing": false,
-      "airing_status": "Not yet aired",
-      "aired_from": "2026-11-20",
-      "aired_to": "2026-11-20",
-      "broadcast_day": "Fridays",
-      "broadcast_time": "00:00",
-      "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Fridays at 00:00 (JST)",
-      "source_tags_original": [
-        "ORIGINAL"
-      ],
-      "themes": [
-        "Mecha",
-        "Military",
-        "Space"
-      ],
-      "score": null,
-      "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "Armored Trooper Votoms: Die Graue Hexe",
-      "title_japanese": "装甲騎兵ボトムズ 灰色の魔女",
-      "title_synonyms": [
-        "Soukou Kihei Votoms: Haiiro no Majo"
-      ],
-      "search_titles": [
-        "Soukou Kihei Votoms: Haiiro no Hexe",
-        "Armored Trooper Votoms: Die Graue Hexe",
-        "装甲騎兵ボトムズ 灰色の魔女",
-        "Soukou Kihei Votoms: Haiiro no Majo"
-      ],
-      "upcoming_year": 2026,
-      "upcoming_season": "fall",
-      "upcoming_season_label": "Otoño",
-      "upcoming_sources": [
-        "anilist/2026"
-      ],
-      "broadcast": {
-        "day": "Fridays",
-        "time": "00:00",
-        "timezone": "Asia/Tokyo",
-        "string": "Fridays at 00:00 (JST)"
-      },
-      "members": 2387,
-      "favorites": 15,
-      "mal_popularity": 2387,
-      "anticipation_score": 411.07,
-      "jikan_url": "https://anilist.co/anime/206163",
-      "trailer_url": "",
-      "title_es": "Soldado blindado Votoms: Die Graue Hexe",
-      "title_es_reviewed": false,
-      "title_es_source": "title_english",
-      "title_es_status": "kept",
-      "search_titles_es": [
-        "Soldado blindado Votoms: Die Graue Hexe"
-      ],
-      "description_es": "Nuevo anime de Soukou Kihei Votoms, parte del proyecto 50 Aniversario de Sunrise."
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:21+00:00"
+      }
     },
     {
       "title": "Otome Game no Heroine de Saikyou Survival",
@@ -2564,8 +3544,8 @@
       "franchise": "Otome Game no Heroine de Saikyou Survival",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
+      "aired_from": "2027-07",
+      "aired_to": null,
       "broadcast_day": "",
       "broadcast_time": "",
       "broadcast_timezone": "",
@@ -2576,8 +3556,8 @@
       "themes": [],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
+      "_update_status": "jikan_2026_new",
+      "title_english": "The Otome Heroine's Fight for Survival",
       "title_japanese": "乙女ゲームのヒロインで最強サバイバル",
       "title_synonyms": [
         "The Otome Heroine's Fight for Survival"
@@ -2591,7 +3571,7 @@
       "upcoming_season": "summer",
       "upcoming_season_label": "Verano",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -2599,12 +3579,12 @@
         "timezone": null,
         "string": null
       },
-      "members": 2012,
-      "favorites": 30,
-      "mal_popularity": 2012,
-      "anticipation_score": 410.72,
-      "jikan_url": "https://anilist.co/anime/186057",
-      "trailer_url": "",
+      "members": 3595,
+      "favorites": 27,
+      "mal_popularity": 10853,
+      "anticipation_score": 430.84,
+      "jikan_url": "https://myanimelist.net/anime/60739/Otome_Game_no_Heroine_de_Saikyou_Survival",
+      "trailer_url": "https://www.youtube.com/watch?v=DGPf04O404Y",
       "title_es": "Otome Game no Heroine de Saikyou Survival",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -2612,7 +3592,98 @@
       "search_titles_es": [
         "Otome Game no Heroine de Saikyou Survival"
       ],
-      "description_es": "Tras quedar huérfana por el ataque de un monstruo a su aldea, la joven Alicia pasa tres años terribles en un orfanato antes de escapar. Durante la huida se enfrenta a una mujer decidida a matarla y entra en contacto con un extraño cristal que le transmite una enorme cantidad de conocimientos. La experiencia la transforma en una muchacha fría y calculadora. Al descubrir que estaba destinada a ser la protagonista de un juego otome, Alicia rechaza ese futuro y decide hacerse fuerte por cualquier medio. Con sus nuevos conocimientos y la ayuda de un desconocido del bosque, aprende a sobrevivir sola en un mundo demasiado cruel para alguien de su edad y se propone abrir su propio camino."
+      "description_es": "Tras quedar huérfana por el ataque de un monstruo a su aldea, la joven Alicia pasa tres años terribles en un orfanato antes de escapar. Durante la huida se enfrenta a una mujer decidida a matarla y entra en contacto con un extraño cristal que le transmite una enorme cantidad de conocimientos. La experiencia la transforma en una muchacha fría y calculadora. Al descubrir que estaba destinada a ser la protagonista de un juego otome, Alicia rechaza ese futuro y decide hacerse fuerte por cualquier medio. Con sus nuevos conocimientos y la ayuda de un desconocido del bosque, aprende a sobrevivir sola en un mundo demasiado cruel para alguien de su edad y se propone abrir su propio camino.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1208/160425l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:44+00:00"
+      }
+    },
+    {
+      "title": "Soukou Kihei Votoms: Haiiro no Hexe",
+      "mal_id": 63323,
+      "image": "https://myanimelist.net/images/anime/1275/155032l.jpg",
+      "episodes": 2,
+      "length": "corto",
+      "demographic": "",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ],
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
+      "emotional": true,
+      "popular": false,
+      "year": 2026,
+      "description": "New Soukou Kihei Votoms anime, part of the Sunrise 50th Anniversary project.",
+      "type": "",
+      "franchise": "Soukou Kihei Votoms",
+      "ongoing": false,
+      "airing_status": "Not yet aired",
+      "aired_from": "2026-11-20",
+      "aired_to": "2026-11-20",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "00:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 00:00 (JST)",
+      "source_tags_original": [
+        "Original"
+      ],
+      "themes": [
+        "Mecha",
+        "Military",
+        "Space"
+      ],
+      "score": null,
+      "scored_by": null,
+      "_update_status": "jikan_2026_new",
+      "title_english": "Armored Trooper Votoms: Die Graue Hexe",
+      "title_japanese": "装甲騎兵ボトムズ 灰色の魔女",
+      "title_synonyms": [
+        "Soukou Kihei Votoms: Haiiro no Majo"
+      ],
+      "search_titles": [
+        "Soukou Kihei Votoms: Haiiro no Hexe",
+        "Armored Trooper Votoms: Die Graue Hexe",
+        "装甲騎兵ボトムズ 灰色の魔女",
+        "Soukou Kihei Votoms: Haiiro no Majo"
+      ],
+      "upcoming_year": 2026,
+      "upcoming_season": "fall",
+      "upcoming_season_label": "Otoño",
+      "upcoming_sources": [
+        "tenrai"
+      ],
+      "broadcast": {
+        "day": null,
+        "time": null,
+        "timezone": null,
+        "string": null
+      },
+      "members": 3496,
+      "favorites": 8,
+      "mal_popularity": 10974,
+      "anticipation_score": 417.74,
+      "jikan_url": "https://myanimelist.net/anime/63323/Soukou_Kihei_Votoms__Haiiro_no_Hexe",
+      "trailer_url": "https://www.youtube.com/watch?v=7NH-89IIBZ4",
+      "title_es": "Soldado blindado Votoms: Die Graue Hexe",
+      "title_es_reviewed": false,
+      "title_es_source": "title_english",
+      "title_es_status": "kept",
+      "search_titles_es": [
+        "Soldado blindado Votoms: Die Graue Hexe"
+      ],
+      "description_es": "Nuevo anime de Soukou Kihei Votoms, parte del proyecto 50 Aniversario de Sunrise.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1974/160684l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:23+00:00"
+      }
     },
     {
       "title": "Nue no Onmyouji",
@@ -2636,8 +3707,8 @@
       "franchise": "Nue no Onmyouji",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
-      "aired_to": "",
+      "aired_from": "2027-07",
+      "aired_to": null,
       "broadcast_day": "",
       "broadcast_time": "",
       "broadcast_timezone": "",
@@ -2653,7 +3724,7 @@
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
+      "_update_status": "jikan_2026_new",
       "title_english": "",
       "title_japanese": "鵺の陰陽師",
       "title_synonyms": [
@@ -2668,7 +3739,7 @@
       "upcoming_season": "summer",
       "upcoming_season_label": "Verano",
       "upcoming_sources": [
-        "anilist/2027"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -2676,12 +3747,12 @@
         "timezone": null,
         "string": null
       },
-      "members": 1307,
-      "favorites": 16,
-      "mal_popularity": 1307,
-      "anticipation_score": 386.05,
-      "jikan_url": "https://anilist.co/anime/218216",
-      "trailer_url": "",
+      "members": 1771,
+      "favorites": 8,
+      "mal_popularity": 13373,
+      "anticipation_score": 387.12,
+      "jikan_url": "https://myanimelist.net/anime/65180/Nue_no_Onmyouji",
+      "trailer_url": "https://www.youtube.com/watch?v=OZx5W4o4KT8",
       "title_es": "Nue no Onmyouji",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -2689,7 +3760,14 @@
       "search_titles_es": [
         "Nue no Onmyouji"
       ],
-      "description_es": "Yajima ha podido ver espíritus desde que era pequeño. En su nueva escuela hay una habitación que nadie más puede ver. Y dentro hay un espíritu al que le encantan los videojuegos. ¡Comienza una nueva saga exorcista moderna!"
+      "description_es": "Yajima ha podido ver espíritus desde que era pequeño. En su nueva escuela hay una habitación que nadie más puede ver. Y dentro hay un espíritu al que le encantan los videojuegos. ¡Comienza una nueva saga exorcista moderna!",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1606/160517l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:46+00:00"
+      }
     },
     {
       "title": "Cardfight!! Vanguard: Divinez Unmei Seisen-hen",
@@ -2705,29 +3783,30 @@
       "fast_start": true,
       "action_level": "alto",
       "emotional": false,
-      "popular": true,
+      "popular": false,
       "year": 2026,
       "description": "Final Arc of Cardfight!! Vanguard: D Series.",
       "type": "TV",
-      "franchise": "Cardfight!! Vanguard Divinez Unmei Seisen-hen",
+      "franchise": "Cardfight!! Vanguard",
       "ongoing": false,
       "airing_status": "Not yet aired",
       "aired_from": "2026-11-07",
       "aired_to": "2026-11-21",
       "broadcast_day": "Saturdays",
-      "broadcast_time": "23:30",
+      "broadcast_time": "08:00",
       "broadcast_timezone": "Asia/Tokyo",
-      "broadcast_string": "Saturdays at 23:30 (JST)",
+      "broadcast_string": "Saturdays at 08:00 (JST)",
       "source_tags_original": [
-        "ORIGINAL"
+        "Original",
+        "PG-13 - Teens 13 or older"
       ],
       "themes": [
         "Strategy Game"
       ],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "CARDFIGHT!! VANGUARD Divinez: Parallactic Fate",
+      "_update_status": "jikan_2026_new",
+      "title_english": "Cardfight!! Vanguard: Divinez Parallactic Fate",
       "title_japanese": "カードファイト!! ヴァンガード DivineZ 運命星戦編",
       "title_synonyms": [],
       "search_titles": [
@@ -2738,20 +3817,20 @@
       "upcoming_season": "fall",
       "upcoming_season_label": "Otoño",
       "upcoming_sources": [
-        "anilist/2026"
+        "tenrai"
       ],
       "broadcast": {
         "day": "Saturdays",
-        "time": "23:30",
+        "time": "08:00",
         "timezone": "Asia/Tokyo",
-        "string": "Saturdays at 23:30 (JST)"
+        "string": "Saturdays at 08:00 (JST)"
       },
-      "members": 436,
-      "favorites": 5,
-      "mal_popularity": 436,
-      "anticipation_score": 327.98,
-      "jikan_url": "https://anilist.co/anime/214536",
-      "trailer_url": "",
+      "members": 1040,
+      "favorites": 1,
+      "mal_popularity": 15485,
+      "anticipation_score": 355.02,
+      "jikan_url": "https://myanimelist.net/anime/63938/Cardfight_Vanguard__Divinez_Unmei_Seisen-hen",
+      "trailer_url": "https://www.youtube.com/watch?v=zxgmRfemSMI",
       "title_es": "¡¡Pelea de cartas!! Vanguardia: Divinez Unmei Seisen-hen",
       "title_es_reviewed": false,
       "title_es_source": "title",
@@ -2759,55 +3838,70 @@
       "search_titles_es": [
         "¡¡Pelea de cartas!! Vanguardia: Divinez Unmei Seisen-hen"
       ],
-      "description_es": "¡¡Arco final de Cardfight!! Vanguardia: Serie D."
+      "description_es": "¡¡Arco final de Cardfight!! Vanguardia: Serie D.",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1380/159150l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:23+00:00"
+      }
     },
     {
-      "title": "Norman the Snowman: Kodomo-tachi no Hitotsuboshi",
-      "mal_id": 63221,
-      "image": "https://myanimelist.net/images/anime/1505/154780l.jpg",
-      "episodes": 1,
+      "title": "Zhen Hun Jie 5th Season",
+      "mal_id": 62958,
+      "image": "https://myanimelist.net/images/anime/1586/153607l.jpg",
+      "episodes": 30,
       "length": "corto",
-      "demographic": "Kids",
+      "demographic": "",
       "genres": [
+        "Action",
         "Adventure",
         "Fantasy"
       ],
-      "tone": "emocional",
-      "fast_start": false,
-      "action_level": "medio",
+      "tone": "epico",
+      "fast_start": true,
+      "action_level": "alto",
       "emotional": false,
-      "popular": true,
+      "popular": false,
       "year": 2026,
-      "description": "The boy has grown into a young man, living apart from his mother. Although he returned to his hometown, he is unable to be honest with her. After reuniting with Norman, a mysterious child searching for \"snow flowers\" suddenly appears before them. Norman and the young man venture into the snow-covered forest with the child.",
-      "type": "Movie",
-      "franchise": "Norman the Snowman",
+      "description": "The world of Rakshasa Street is engulfed in conflict, with various forces stirring with ambition. The united forces of Cao, Sun, and Liu, are unstoppable, the Hall of Heroes suffers a devastating blow, and the Spirit Realm's rule is on the verge of collapse. Countless heroes are emerging, and a new crisis is about to erupt due to the ambitions of the Kingdom Organization. In the world of Rakshasa Street, no one dares to say \"no!\" Cao Yanbing's path to becoming king has officially begun!",
+      "type": "ONA",
+      "franchise": "Zhen Hun Jie",
       "ongoing": false,
       "airing_status": "Not yet aired",
-      "aired_from": "",
+      "aired_from": "2026-12-11",
       "aired_to": "",
-      "broadcast_day": "",
-      "broadcast_time": "",
-      "broadcast_timezone": "",
-      "broadcast_string": "",
+      "broadcast_day": "Fridays",
+      "broadcast_time": "12:00",
+      "broadcast_timezone": "Asia/Tokyo",
+      "broadcast_string": "Fridays at 12:00 (JST)",
       "source_tags_original": [
-        "ORIGINAL"
+        "Web manga",
+        "PG-13 - Teens 13 or older"
       ],
       "themes": [],
       "score": null,
       "scored_by": null,
-      "_update_status": "jikan_upcoming",
-      "title_english": "",
-      "title_japanese": "ノーマン・ザ・スノーマン ~こどもたちのひとつ星~",
-      "title_synonyms": [],
+      "_update_status": "jikan_2026_new",
+      "title_english": "Rakshasa Street 5",
+      "title_japanese": "镇魂街 第五季",
+      "title_synonyms": [
+        "镇魂街 王国纷争篇",
+        "Zhen Hun Jie Wangguo Fenzheng Pian"
+      ],
       "search_titles": [
-        "Norman the Snowman: Kodomo-tachi no Hitotsuboshi",
-        "ノーマン・ザ・スノーマン ~こどもたちのひとつ星~"
+        "Zhen Hun Jie 5th Season",
+        "Rakshasa Street 5",
+        "镇魂街 第五季",
+        "镇魂街 王国纷争篇",
+        "Zhen Hun Jie Wangguo Fenzheng Pian"
       ],
       "upcoming_year": 2026,
       "upcoming_season": "fall",
       "upcoming_season_label": "Otoño",
       "upcoming_sources": [
-        "anilist/2026"
+        "tenrai"
       ],
       "broadcast": {
         "day": null,
@@ -2815,20 +3909,27 @@
         "timezone": null,
         "string": null
       },
-      "members": 182,
-      "favorites": 2,
-      "mal_popularity": 182,
-      "anticipation_score": 283.07,
-      "jikan_url": "https://anilist.co/anime/205289",
-      "trailer_url": "",
-      "title_es": "Norman el muñeco de nieve: Kodomo-tachi no Hitotsuboshi",
+      "members": 939,
+      "favorites": 3,
+      "mal_popularity": 15882,
+      "anticipation_score": 350.0,
+      "jikan_url": "https://myanimelist.net/anime/62958/Zhen_Hun_Jie_5th_Season",
+      "trailer_url": "https://www.youtube.com/watch?v=tvvpH3Wk61U",
+      "title_es": "Calle Rakshasa 5",
       "title_es_reviewed": false,
-      "title_es_source": "title",
+      "title_es_source": "title_english",
       "title_es_status": "kept",
       "search_titles_es": [
-        "Norman el muñeco de nieve: Kodomo-tachi no Hitotsuboshi"
+        "Calle Rakshasa 5"
       ],
-      "description_es": "El niño se ha convertido en un hombre joven y vive separado de su madre. Aunque regresó a su ciudad natal, no puede ser honesto con ella. Después de reunirse con Norman, un niño misterioso que busca \"flores de nieve\" aparece de repente ante ellos. Norman y el joven se aventuran con el niño en el bosque nevado."
+      "description_es": "El mundo de Rakshasa Street está sumido en un conflicto, con varias fuerzas agitadas por la ambición. Las fuerzas unidas de Cao, Sun y Liu son imparables, el Salón de los Héroes sufre un golpe devastador y el gobierno del Reino de los Espíritus está al borde del colapso. Están surgiendo innumerables héroes y una nueva crisis está a punto de estallar debido a las ambiciones de la Organización del Reino. En el mundo de Rakshasa Street, nadie se atreve a decir \"¡no!\" ¡El camino de Cao Yanbing para convertirse en rey ha comenzado oficialmente!",
+      "image_candidates": [
+        "https://cdn.myanimelist.net/images/anime/1613/160193l.jpg"
+      ],
+      "_catalog_sync": {
+        "provider": "tenrai",
+        "fetched_at": "2026-10-25T11:19:23+00:00"
+      }
     }
   ]
 }

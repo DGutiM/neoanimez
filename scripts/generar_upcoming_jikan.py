@@ -402,4 +402,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    from sync_catalog_sources import main as safe_main
+    raise SystemExit(safe_main())

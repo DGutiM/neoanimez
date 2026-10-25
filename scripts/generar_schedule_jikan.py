@@ -22,8 +22,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT_PATH = ROOT / "anime-schedule.json"
 MASTER_PATH = ROOT / "anime-lista.json"
-API_URL = "https://api.jikan.moe/v4/schedules"
-SEASON_NOW_URL = "https://api.jikan.moe/v4/seasons/now"
+API_URL = "https://api.tenrai.org/v1/schedules"
+SEASON_NOW_URL = "https://api.tenrai.org/v1/seasons/now"
 DAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "unknown"]
 DAY_LABELS = {
     "monday": "Lunes",
@@ -195,32 +195,15 @@ def load_local_schedule() -> dict[str, list[dict]]:
 
 
 def fetch_remote_days(url: str) -> dict[str, list[dict]]:
+    from catalog_sources import default_client
     days: dict[str, list[dict]] = {day: [] for day in DAYS}
-    page = 1
-    while True:
-        try:
-            payload = fetch_json(f"{url}?page={page}", retries=2)
-        except RuntimeError as error:
-            if page == 1:
-                raise
-            recovered = sum(len(items) for items in days.values())
-            print(
-                f"AVISO: {error}. Se conservan {recovered} emisiones "
-                "de las paginas ya descargadas."
-            )
-            break
-        data = payload.get("data") or []
-        for item in data:
-            if not item.get("mal_id") or is_adult(item):
-                continue
-            broadcast = item.get("broadcast") or {}
-            day = normalize_day(broadcast.get("day"))
-            days[day].append(normalize_item(item, day))
-        pagination = payload.get("pagination") or {}
-        if not pagination.get("has_next_page"):
-            break
-        page += 1
-        time.sleep(0.8)
+    path = "/schedules" if url == API_URL else "/seasons/now"
+    for item in default_client().listing(path):
+        if not item.get("mal_id") or is_adult(item):
+            continue
+        broadcast = item.get("broadcast") or {}
+        day = normalize_day(broadcast.get("day"))
+        days[day].append(normalize_item(item, day))
     return days
 
 
@@ -274,7 +257,7 @@ def main() -> None:
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": remote_source,
-        "timezone_note": "Los horarios vienen de MyAnimeList/Jikan y normalmente estan en JST.",
+        "timezone_note": "Horarios publicados por las fuentes del catalogo; normalmente estan en JST.",
         "day_order": DAYS,
         "day_labels": DAY_LABELS,
         "days": days,

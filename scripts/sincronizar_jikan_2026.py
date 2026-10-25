@@ -309,6 +309,8 @@ def anilist_to_jikan(item: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def fetch_anilist_year(year: int) -> List[Dict[str, Any]]:
+    from catalog_sources import require_anilist_permission
+    require_anilist_permission()
     query = """
     query ($page: Int, $year: Int) {
       Page(page: $page, perPage: 50) {
@@ -621,4 +623,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    from sync_catalog_sources import main as safe_main
+    raise SystemExit(safe_main())

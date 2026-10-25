@@ -2,6 +2,12 @@
 
 Esta es la lista limpia para publicar NeoAnimeZ sin subir archivos de trabajo, backups o caches locales.
 
+Desde la transicion del 25 de octubre de 2026, el proceso recomendado es
+`python3 scripts/actualizar_datos_mensuales.py --apply`. Consultar
+`docs/fuentes-y-actualizaciones.md` para backups, proveedores y revision.
+Los scripts y `.github/workflows/actualizar-datos-mensual.yml` deben estar en el
+repositorio para que la actualizacion mensual funcione; no hace falta tocar SQL.
+
 ## Subir siempre
 
 Archivos de raiz:

@@ -56,16 +56,41 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Recuperar cache de fuentes y traducciones
+        uses: actions/cache@v4
+        with:
+          path: |
+            cache/catalog-sources-v1
+            cache/title-es-cache.json
+            cache/description-es-cache.json
+            cache/catalog-related-pending.json
+          key: catalog-sources-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            catalog-sources-v1-
+
+      - name: Comprobar protecciones antes de descargar
+        run: python3 -m unittest discover -s scripts -p 'test_catalog_sources.py' -v
+
       - name: Actualizar catalogo y calendarios
-        run: python3 scripts/actualizar_datos_mensuales.py
+        run: python3 scripts/actualizar_datos_mensuales.py --apply
 
       - name: Validar publicacion
         run: |
           node --check assets/neoanimez.js
           node --check service-worker.js
+          node --test scripts/test_*.cjs
           python3 scripts/auditar_index_html.py
           python3 scripts/verificar_publicacion.py
           git diff --check
+
+      - name: Guardar informe de la actualizacion
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-sync-report
+          path: cache/catalog-sync-report.json
+          if-no-files-found: ignore
+          retention-days: 90
 
       - name: Crear o actualizar la revision
         shell: bash
@@ -90,7 +115,7 @@ jobs:
           BODY="$(printf '%s\n\n%s\n\n%s\n\n%s' \
             'La actualizacion automatica mensual ha terminado y permanece aislada de la web publica.' \
             "Revisar los cambios: ${COMPARE_URL}" \
-            'Incluye catalogo, estados, episodios, proximos estrenos, calendario, noticias, relaciones, mapas y fichas divididas. Las validaciones de JSON, JavaScript y referencias internas han terminado correctamente.' \
+            'Incluye catalogo, estados, episodios, proximos estrenos, calendario, relaciones, mapas y fichas divididas. Conserva las traducciones y los datos anteriores si una fuente discrepa. El informe catalog-sync-report del workflow detalla los casos pendientes de revision.' \
             'Para publicarla, abre la comparacion, crea la pull request y fusionala cuando la revision sea correcta. GitHub Pages no publicara nada antes de ese paso.')"
 
           if [[ -n "$ISSUE_NUMBER" ]]; then
