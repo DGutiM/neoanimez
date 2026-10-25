@@ -1,4 +1,4 @@
-const CACHE_VERSION = '20261025-sources-6b3a7f2650';
+const CACHE_VERSION = '20261025-sources-0319873120';
 const SHELL_CACHE = `neoanimez-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `neoanimez-data-${CACHE_VERSION}`;
 
