@@ -20,12 +20,13 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from generar_relaciones_jikan import ANILIST_REQUEST_INTERVAL, RequestPacer, fetch_graphql
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "anime-lista.json"
 DEFAULT_CACHE = ROOT / "cache" / "jikan-airing-cache.json"
 JIKAN_BASE = "https://api.jikan.moe/v4"
-ANILIST_URL = "https://graphql.anilist.co"
 SEASONS = ("winter", "spring", "summer", "fall")
 REQUEST_DELAY = 1.15
 MAX_RETRIES = 5
@@ -118,7 +119,7 @@ def fetch_anime(anime_id: int) -> dict[str, Any] | None:
         raise
 
 
-def fetch_anilist_batch(anime_ids: list[int]) -> list[dict[str, Any]]:
+def fetch_anilist_batch(anime_ids: list[int], pacer: RequestPacer) -> list[dict[str, Any]]:
     query = """
     query ($ids: [Int]) {
       Page(perPage: 50) {
@@ -135,20 +136,11 @@ def fetch_anilist_batch(anime_ids: list[int]) -> list[dict[str, Any]]:
       }
     }
     """
-    payload = json.dumps({"query": query, "variables": {"ids": anime_ids}}).encode("utf-8")
-    request = urllib.request.Request(
-        ANILIST_URL,
-        data=payload,
-        headers={
-            "User-Agent": "NeoAnimeZ airing updater/1.0",
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-        },
-        method="POST",
-    )
-    with urllib.request.urlopen(request, timeout=35) as response:
-        body = json.loads(response.read().decode("utf-8"))
-    return (((body.get("data") or {}).get("Page") or {}).get("media") or [])
+    body = fetch_graphql(query, pacer, {"ids": anime_ids})
+    media = ((body.get("data") or {}).get("Page") or {}).get("media")
+    if not isinstance(media, list):
+        raise RuntimeError("AniList no devolvio una lista de fichas valida.")
+    return media
 
 
 def anilist_record(item: dict[str, Any]) -> dict[str, Any]:
@@ -302,19 +294,23 @@ def main() -> int:
         for anime in master
         if anime_year(anime) == args.year
         or anime.get("ongoing")
+        or str(anime.get("airing_status") or "").casefold() == "not yet aired"
         or safe_int(anime.get("episodes")) in (None, 0)
     }
     candidates.discard(None)
     print(f"[INFO] Candidatos: {len(candidates)}")
 
     remote_by_id: dict[int, dict[str, Any]] = {}
+    failed_batches: set[int] = set()
+    pacer = RequestPacer(ANILIST_REQUEST_INTERVAL)
     candidate_list = sorted(int(anime_id) for anime_id in candidates)
     for start in range(0, len(candidate_list), 50):
         batch = candidate_list[start:start + 50]
         try:
-            anilist_items = fetch_anilist_batch(batch)
+            anilist_items = fetch_anilist_batch(batch, pacer)
         except Exception as error:  # noqa: BLE001
             print(f"[WARN] Fallo temporal de AniList en lote {start // 50 + 1}: {error}")
+            failed_batches.update(batch)
             anilist_items = []
         for item in anilist_items:
             record = anilist_record(item)
@@ -322,7 +318,6 @@ def main() -> int:
             if anime_id in candidates:
                 remote_by_id[anime_id] = record
         print(f"[INFO] AniList {min(start + 50, len(candidate_list))}/{len(candidate_list)}")
-        time.sleep(0.45)
     if not args.skip_seasons and not args.anilist_only:
         for season in SEASONS:
             print(f"[INFO] Jikan {args.year}/{season}")
@@ -338,7 +333,7 @@ def main() -> int:
             time.sleep(REQUEST_DELAY)
 
     remaining = sorted(anime_id for anime_id in candidates if anime_id not in remote_by_id)
-    print(f"[INFO] Resueltos por temporada: {len(remote_by_id)}; fichas individuales: {len(remaining)}")
+    print(f"[INFO] Fichas recibidas: {len(remote_by_id)}; sin respuesta de AniList: {len(remaining)}")
     failed_ids: list[int] = []
 
     for position, anime_id in enumerate([] if args.anilist_only else remaining, start=1):
@@ -359,6 +354,14 @@ def main() -> int:
         if position % 25 == 0:
             save_json(args.cache, cache)
             print(f"[INFO] Fichas individuales {position}/{len(remaining)}")
+
+    failed_ids = sorted(set(failed_ids) | (failed_batches - remote_by_id.keys()))
+    if failed_ids:
+        save_json(args.cache, cache)
+        raise RuntimeError(
+            f"No se actualiza el maestro: faltan {len(failed_ids)} fichas por errores de red. "
+            f"Repite la actualizacion. IDs: {failed_ids}"
+        )
 
     changed_anime = 0
     episodes_completed = 0

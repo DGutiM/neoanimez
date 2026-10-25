@@ -172471,10 +172471,10 @@
       "Watame no hizo nada malo"
     ],
     "airing_status": "Currently Airing",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "19:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 19:00 (JST)",
     "aired_from": "2022-01-07",
     "aired_to": ""
   },
@@ -248032,12 +248032,12 @@
     ],
     "description_es": "Parte final de Bleach: Sennen Kessen-hen.",
     "airing_status": "Currently Airing",
-    "broadcast_day": "Mondays",
-    "broadcast_time": "23:00",
+    "broadcast_day": "Tuesdays",
+    "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Mondays at 23:00 (JST)",
+    "broadcast_string": "Tuesdays at 00:00 (JST)",
     "aired_from": "2026-07-25",
-    "aired_to": "2026-10-26"
+    "aired_to": "2026-10-27"
   },
   {
     "title": "Tensei shitara Ken deshita 2",
@@ -248429,12 +248429,13 @@
       "Hecho en el abismo: Mezameru Shinpi"
     ],
     "description_es": "Secuela de Made in Abyss: Retsujitsu no Ougonkyou.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Fridays at 00:00 (JST)",
-    "aired_from": "2026-10-23"
+    "aired_from": "2026-10-23",
+    "aired_to": "2026-10-23"
   },
   {
     "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? Season 2",
@@ -249530,7 +249531,7 @@
       "Rascal no sueña con un querido amigo"
     ],
     "description_es": "Secuela de Seishun Buta Yarou wa Santa Claus no Yume wo Minai.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -250568,7 +250569,7 @@
     "title": "Shiguang Dailiren III",
     "mal_id": 61607,
     "image": "https://myanimelist.net/images/anime/1904/153615l.jpg",
-    "episodes": 24,
+    "episodes": 12,
     "length": "largo",
     "demographic": "",
     "genres": [
@@ -250585,7 +250586,7 @@
     "description": "After the Li Tianchen incident came to a close, Time Photo Studio returned to a superficial peace. However, the news of Xia Fei's disappearance once again drew everyone into a crossroads of fate. With Vein's return and Qiao Ling's awakening of her superpowers, Cheng Xiaoshi and Lu Guang gradually uncover the secrets of the Bahati fire case, and Cheng Xiaoshi's father, Cheng Weimin, and mother, Shao Yuanyuan, also seem to have intricate connections to it. As the investigation deepens, Liu Xiao from a mysterious organization begins his operation, and the intervention of Yingdu police officer Jae further complicates this pursuit of the truth...",
     "type": "ONA",
     "franchise": "Shiguang Dailiren",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Original",
       "R - 17+ (violence & profanity)"
@@ -250618,12 +250619,13 @@
       "Shiguang Dailiren III"
     ],
     "description_es": "Después de que el incidente de Li Tianchen llegó a su fin, Time Photo Studio volvió a una paz superficial. Sin embargo, la noticia de la desaparición de Xia Fei una vez más llevó a todos a una encrucijada del destino. Con el regreso de Vein y el despertar de sus superpoderes por parte de Qiao Ling, Cheng Xiaoshi y Lu Guang descubren gradualmente los secretos del caso del incendio de Bahati, y el padre de Cheng Xiaoshi, Cheng Weimin, y su madre, Shao Yuanyuan, también parecen tener conexiones intrincadas con él. A medida que la investigación se profundiza, Liu Xiao, de una organización misteriosa, comienza su operación, y la intervención del oficial de policía de Yingdu, Jae, complica aún más esta búsqueda de la verdad...",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "12:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Fridays at 12:00 (JST)",
-    "aired_from": "2026-08-14"
+    "aired_from": "2026-08-14",
+    "aired_to": "2026-10-23"
   },
   {
     "title": "Nijusseiki Denki Mokuroku: Eureka Evrika",
@@ -251302,7 +251304,7 @@
     "description": "Dragon Ball Super: Beerus, a project that was started a few years ago, is the newly ENHANCED edition of the anime Dragon Ball Super. ENHANCED by the latest visual expression, every scene, especially the battle scenes, is even more immersive, providing a more faithful and detailed reproduction of the original work by Akira Toriyama, and it will deliver a quality that is sure to fully satisfy audiences.",
     "type": "TV",
     "franchise": "Dragon Ball Super",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -251328,7 +251330,7 @@
       "Dragon Ball Super: Beerus"
     ],
     "description_es": "Dragon Ball Super: Beerus, un proyecto que se inició hace unos años, es la edición recientemente MEJORADA del anime Dragon Ball Super. MEJORADA por la última expresión visual, cada escena, especialmente las escenas de batalla, es aún más inmersiva, proporcionando una reproducción más fiel y detallada de la obra original de Akira Toriyama, y ​​ofrecerá una calidad que seguramente satisfará plenamente al público.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Sundays",
     "broadcast_time": "23:16",
     "broadcast_timezone": "Asia/Tokyo",
@@ -251895,7 +251897,7 @@
       "Chicas y Panzer: Saishuushou Parte 5"
     ],
     "description_es": "La quinta película de la serie de seis partes Girls & Panzer: Saishuushou.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -252063,7 +252065,7 @@
     "title": "Chitose-kun wa Ramune Bin no Naka Part 2",
     "mal_id": 62484,
     "image": "https://myanimelist.net/images/anime/1342/152043l.jpg",
-    "episodes": null,
+    "episodes": 11,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -252079,7 +252081,7 @@
     "description": "Second part of Chitose-kun wa Ramune Bin no Naka.",
     "type": "TV",
     "franchise": "Chitose-kun wa Ramune Bin no Naka Part",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel",
       "PG-13 - Teens 13 or older"
@@ -252114,13 +252116,13 @@
       "Chitose está en la botella de Ramune, parte 2"
     ],
     "description_es": "Segunda parte de Chitose-kun wa Ramune Bin no Naka.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Tuesdays",
     "broadcast_time": "23:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Tuesdays at 23:00 (JST)",
     "aired_from": "2026-10-13",
-    "aired_to": ""
+    "aired_to": "2026-12-22"
   },
   {
     "title": "Yani Neko",
@@ -252338,7 +252340,7 @@
     "title": "Hotaru no Yomeiri",
     "mal_id": 63293,
     "image": "https://myanimelist.net/images/anime/1889/156269l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -254707,7 +254709,7 @@
     "description": "In Academy City, where supernatural abilities are part of everyday science, the city's peace is upheld by an unseen force—the dark side. Among the covert operatives is ITEM, a four-member elite unit. With Rikou Takitsubo's tracking abilities, Frenda Seivelun's explosive expertise, Saiai Kinuhata's impenetrable defense, and Shizuri Mugino's overwhelming power as one of Academy City's seven Level 5 espers, they navigate the city's underbelly, taking on secret missions that never make the headlines. As their latest assignment unfolds, the team moves with precision, unaware that their actions are setting the stage for a tragedy that will test their bonds of trust, friendship, and survival in the unforgiving darkness of Academy City.",
     "type": "TV",
     "franchise": "Toaru Anbu no Item",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel"
     ],
@@ -254738,7 +254740,7 @@
       "Toaru Anbu sin artículo"
     ],
     "description_es": "En Ciudad Academia, donde las habilidades sobrenaturales son parte de la ciencia cotidiana, la paz de la ciudad es mantenida por una fuerza invisible: el lado oscuro. Entre los agentes encubiertos se encuentra ITEM, una unidad de élite de cuatro miembros. Con las habilidades de rastreo de Rikou Takitsubo, la experiencia explosiva de Frenda Seivelun, la defensa impenetrable de Saiai Kinuhata y el poder abrumador de Shizuri Mugino como uno de los siete espers de nivel 5 de Ciudad Academia, navegan por los puntos más vulnerables de la ciudad, asumiendo misiones secretas que nunca aparecen en los titulares. A medida que se desarrolla su última misión, el equipo se mueve con precisión, sin darse cuenta de que sus acciones están preparando el escenario para una tragedia que pondrá a prueba sus lazos de confianza, amistad y supervivencia en la implacable oscuridad de Ciudad Academia.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "22:30",
     "broadcast_timezone": "Asia/Tokyo",
@@ -254796,11 +254798,11 @@
     ],
     "description_es": "Es el comienzo de un nuevo semestre, y Kuroki, estudiante de secundaria, se encuentra sentado junto a la chica de la que todos susurran: Mai Chihara. Con su moda gótica, cabello negro azabache y mirada intensa, se dice que Chihara es una chica \"mina terrestre\" o jirai-kei, la estética oscura e hiperfemenina a menudo asociada con tendencias yandere y personalidades inestables. Pero cuando Kuroki accidentalmente llama la atención de Chihara, él descubre que ella no es tan inestable como la gente dice. Debajo del aura intimidante hay una chica sorprendentemente dulce... aunque un poco rara. Vacilante, Kuroki comienza a aprender más sobre Chihara y sus extrañas peculiaridades. ¿Hay algo más en ella que su volátil reputación? ¿O toda la ropa oscura es sólo una bandera roja disfrazada?",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
-    "aired_from": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:26",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:26 (JST)",
+    "aired_from": "2027-01-08",
     "aired_to": ""
   },
   {
@@ -255413,11 +255415,11 @@
     ],
     "description_es": "Reencarnado como un personaje del legendario juego erótico \"Magical Explorer\", nuestro héroe no tarda mucho en descubrir que ha sido designado como el desafortunado personaje secundario en lugar de como el protagonista del juego. ¡Pero no te preocupes! Armado con su vasto conocimiento del juego (y algunos trucos), hará lo que sea necesario para ganarse los corazones de las heroínas del juego y emerger como el estudiante más destacado de la Academia de Hechiceros.",
     "airing_status": "Currently Airing",
-    "broadcast_day": "Saturdays",
-    "broadcast_time": "07:16",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Saturdays at 07:16 (JST)",
-    "aired_from": "2026-09-26",
+    "broadcast_string": "Sundays at 00:00 (JST)",
+    "aired_from": "2026-09-27",
     "aired_to": ""
   },
   {
@@ -255798,7 +255800,7 @@
     "title": "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
     "mal_id": 60948,
     "image": "https://myanimelist.net/images/anime/1334/156252l.jpg",
-    "episodes": null,
+    "episodes": 13,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -256059,7 +256061,7 @@
       "Doko yori mo Tooi Basho ni Iru Kimi e"
     ],
     "description_es": "Kazuki Tsukigase es un chico de secundaria que guarda cierto secreto. En busca de un lugar donde nadie lo conozca, se matricula en la escuela secundaria Sakijima en una isla remota. En Sakijima, hay un lugar conocido como la \"Cala del viaje espiritual\". Un día de principios de verano, Kazuki encuentra a una niña inconsciente en la cala. La niña, Nanao, de 16 años, recupera el conocimiento más tarde en el hospital, pero se desconoce su identidad. ¿Cuál es el significado de la palabra \"1974\" que murmuró? Una conmovedora historia de chico conoce a chica.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -256248,7 +256250,7 @@
     "description": "The mask brings calamity. The mask revels in slaughter. The mask has a will of its own... Pelle, a traveling mask merchant, possesses the ability to craft mysterious masks that give its wearers unique powers. In a city shrouded in an eerie atmosphere, he encounters Sonah, a mysterious young girl. As revelations unfold and inner conflicts arise, a young boy takes his first steps forward! Immerse yourself in a thrilling mask battle fantasy!",
     "type": "TV",
     "franchise": "Shuiro no Kamen",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga"
     ],
@@ -256272,11 +256274,11 @@
       "La máscara bermellón"
     ],
     "description_es": "La máscara trae calamidad. La máscara se deleita con la matanza. La máscara tiene voluntad propia... Pelle, un comerciante ambulante de máscaras, posee la capacidad de crear máscaras misteriosas que otorgan a sus portadores poderes únicos. En una ciudad envuelta en una atmósfera espeluznante, se encuentra con Sonah, una joven misteriosa. A medida que se desarrollan revelaciones y surgen conflictos internos, ¡un joven da sus primeros pasos hacia adelante! ¡Sumérgete en una emocionante fantasía de batalla de máscaras!",
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Saturdays",
+    "broadcast_time": "17:30",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Saturdays at 17:30 (JST)",
     "aired_from": "2026-10-10",
     "aired_to": ""
   },
@@ -256895,7 +256897,7 @@
       "¡Sueño de explosión! Ave Mujica: Primer Amanecer"
     ],
     "description_es": "¡Nueva película para BanG Dream! Ave Mujica.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "aired_from": "2026-10-16",
     "aired_to": "2026-10-16",
     "broadcast_day": "Fridays",
@@ -257474,7 +257476,7 @@
     "title": "Romelia Senki",
     "mal_id": 59787,
     "image": "https://myanimelist.net/images/anime/1112/156366l.jpg",
-    "episodes": null,
+    "episodes": 24,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -257577,10 +257579,10 @@
     ],
     "description_es": "Adaptación al anime del juego Gensou Suikoden II.",
     "airing_status": "Currently Airing",
-    "broadcast_day": "Saturdays",
-    "broadcast_time": "20:00",
+    "broadcast_day": "Tuesdays",
+    "broadcast_time": "23:30",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Saturdays at 20:00 (JST)",
+    "broadcast_string": "Tuesdays at 23:30 (JST)",
     "aired_from": "2026-10-03",
     "aired_to": ""
   },
@@ -258621,7 +258623,7 @@
     "description": "Misaki, a university student, feeling the weight of everyday life and uncertain about her future, she longs for adventure and something she can be truly passionate about. At the start of the new day on campus, members of the Travel Train Club (commonly known as the Tetsuryo Club) invite Misaki to join them, as she steps into the world of railways, Misaki's heart beats with excitement for the journey that awaits her.",
     "type": "TV",
     "franchise": "Tetsuryou! Meet with Tetsudou Musume",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Original"
     ],
@@ -258650,7 +258652,7 @@
       "¡Tetsuryú! Reúnete con Tetsudou Musume"
     ],
     "description_es": "Misaki, una estudiante universitaria, sintiendo el peso de la vida cotidiana e insegura sobre su futuro, anhela la aventura y algo que realmente le apasione. Al comienzo del nuevo día en el campus, los miembros del Travel Train Club (comúnmente conocido como Tetsuryo Club) invitan a Misaki a unirse a ellos, mientras ella ingresa al mundo de los ferrocarriles, el corazón de Misaki late con entusiasmo por el viaje que le espera.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -258662,7 +258664,7 @@
     "title": "Choujun! Choujou-senpai",
     "mal_id": 62696,
     "image": "https://myanimelist.net/images/anime/1351/152531l.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "Shounen",
     "genres": [
@@ -258886,10 +258888,10 @@
     ],
     "description_es": "Nuevo anime de Soukou Kihei Votoms, parte del proyecto 50 Aniversario de Sunrise.",
     "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
     "aired_from": "2026-11-20",
     "aired_to": "2026-11-20"
   },
@@ -259878,7 +259880,7 @@
     "description": "In the near future, the e-sport Dark Machine has become a global phenomenon, reshaping society and even Japan's economy. The only region in Japan designated as a special economic zone for Dark Machine is Golden Valley, a city dominated by its reigning top player Ajima, the seventh person to inherit the title of Senki—the strongest player in the game. Following his late grandfather's last words, \"Find Senki,\" Kairi travels to Golden Valley. There, he unexpectedly meets Rudra, a girl being hunted by Ajima's group, the Aldabil. Drawn into her troubles, Kairi becomes a Dark Machine player himself. Through one intense battle after another, he begins to develop his own hidden talent. As Kairi rises through the ranks, he moves closer to facing Senki—and to discovering the truth behind his grandfather's final message. His fight to reach the top of Dark Machine is about to begin.",
     "type": "TV",
     "franchise": "Dark Machine",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Mixed media"
     ],
@@ -259904,7 +259906,7 @@
       "Máquina Oscura: La Animación"
     ],
     "description_es": "En un futuro próximo, el deporte electrónico Dark Machine se ha convertido en un fenómeno global que está remodelando la sociedad e incluso la economía de Japón. La única región de Japón designada como zona económica especial para Dark Machine es Golden Valley, una ciudad dominada por su mejor jugador reinante, Ajima, la séptima persona en heredar el título de Senki, el jugador más fuerte del juego. Tras las últimas palabras de su difunto abuelo, \"Encuentra a Senki\", Kairi viaja a Golden Valley. Allí, conoce inesperadamente a Rudra, una chica perseguida por el grupo de Ajima, los Aldabil. Atraída por sus problemas, Kairi se convierte en jugadora de Dark Machine. A través de una intensa batalla tras otra, comienza a desarrollar su propio talento oculto. A medida que Kairi asciende de rango, se acerca a enfrentar a Senki y a descubrir la verdad detrás del mensaje final de su abuelo. Su lucha por llegar a la cima de Dark Machine está a punto de comenzar.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Wednesdays",
     "broadcast_time": "01:45",
     "broadcast_timezone": "Asia/Tokyo",
@@ -260679,7 +260681,7 @@
     "description": "The internet is full of creepypastas, cryptid sightings, tales of paranormal activity, and unsolved disappearances. These are mostly rumors and pranks fueled by trolls—entertainment. But the unlucky few learn the hard way that some legends are true. Many of these unfortunate souls are doomed, but their luck may change if they cross paths with the boy in the red hood. He roams from town to town and appears wherever strange things occur. Is he a light in the dark? Or living proof that monsters are all too real...?",
     "type": "TV",
     "franchise": "Kyoufu Collector",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Novel"
     ],
@@ -260703,7 +260705,7 @@
       "Coleccionista de terror"
     ],
     "description_es": "Internet está lleno de creepypastas, avistamientos de críptidos, historias de actividad paranormal y desapariciones sin resolver. En su mayoría son rumores y bromas alimentadas por trolls: entretenimiento. Pero los pocos desafortunados aprenden por las malas que algunas leyendas son ciertas. Muchas de estas almas desafortunadas están condenadas, pero su suerte puede cambiar si se cruzan con el chico de la capucha roja. Vaga de pueblo en pueblo y aparece dondequiera que ocurran cosas extrañas. ¿Es él una luz en la oscuridad? ¿O una prueba viviente de que los monstruos son demasiado reales...?",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Saturdays",
     "broadcast_time": "23:45",
     "broadcast_timezone": "Asia/Tokyo",
@@ -264043,7 +264045,7 @@
     "description": "The third season of Da Li Si Rizhi.",
     "type": "ONA",
     "franchise": "Da Li Si Rizhi",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga",
       "PG-13 - Teens 13 or older"
@@ -264078,7 +264080,7 @@
       "Leyenda del gato blanco temporada 3"
     ],
     "description_es": "La tercera temporada de Da Li Si Rizhi.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Thursdays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -268649,7 +268651,7 @@
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Fridays at 00:00 (JST)",
     "aired_from": "2026-07-03",
-    "aired_to": ""
+    "aired_to": "2027-02-05"
   },
   {
     "title": "Endless Dance",
@@ -270074,7 +270076,7 @@
     "description": "",
     "type": "TV",
     "franchise": "Tanuki to Kitsune (TV)",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Web manga",
       "G - All Ages"
@@ -270096,7 +270098,13 @@
     "title_es_status": "kept",
     "search_titles_es": [
       "Tanuki a Kitsune (TV)"
-    ]
+    ],
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "07:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 07:00 (JST)",
+    "aired_from": "2026-10-04"
   },
   {
     "title": "You & Aizu",
@@ -270517,7 +270525,7 @@
     "title": "Yani Neko Mini Anime",
     "mal_id": 64008,
     "image": "https://myanimelist.net/images/anime/1255/156995l.jpg",
-    "episodes": null,
+    "episodes": 21,
     "length": "corto",
     "demographic": "Seinen",
     "genres": [
@@ -270532,7 +270540,7 @@
     "description": "Mini anime of Yani Neko released on YouTube.",
     "type": "ONA",
     "franchise": "Yani Neko Mini Anime",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -270559,13 +270567,13 @@
       "Yani Neko Mini Anime"
     ],
     "description_es": "Mini anime de Yani Neko lanzado en YouTube.",
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-02-22",
-    "aired_to": ""
+    "aired_to": "2026-09-27"
   },
   {
     "title": "Ma-eumgwa Mal",
@@ -271801,12 +271809,13 @@
       "Cyberpunk: Edgerunners 2"
     ],
     "description_es": "Secuela de Cyberpunk: Edgerunners.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "aired_from": "2026-10-20",
     "broadcast_day": "Tuesdays",
     "broadcast_time": "16:00",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Tuesdays at 16:00 (JST)"
+    "broadcast_string": "Tuesdays at 16:00 (JST)",
+    "aired_to": "2026-10-20"
   },
   {
     "title": "Kaijuu 8-gou: Narumi no Heijitsu",
@@ -271990,7 +271999,7 @@
     "description": "Second season of Hyouken no Majutsushi ga Sekai wo Suberu.",
     "type": "TV",
     "franchise": "Hyouken no Majutsushi ga Sekai wo Suberu",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Light novel",
       "PG-13 - Teens 13 or older"
@@ -272012,7 +272021,7 @@
       "冰剣の魔術師が世界を統べるII",
       "Hyouken no Majutsushi ga Sekai wo Suberu 2nd Season"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "01:28",
     "broadcast_timezone": "Asia/Tokyo",
@@ -272820,7 +272829,7 @@
     "title": "Yami Shibai 17",
     "mal_id": 64435,
     "image": "https://cdn.myanimelist.net/images/anime/1320/158574l.jpg",
-    "episodes": null,
+    "episodes": 13,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -272837,7 +272846,7 @@
     "description": "Seventeenth season of Yami Shibai.",
     "type": "TV",
     "franchise": "Yami Shibai",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Original",
       "PG-13 - Teens 13 or older"
@@ -272859,13 +272868,13 @@
       "Yamishibai: Japanese Ghost Stories Seventeenth Season",
       "Yamishibai: Japanese Ghost Stories 17"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Mondays",
     "broadcast_time": "03:20",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Mondays at 03:20 (JST)",
     "aired_from": "2026-07-13",
-    "aired_to": "",
+    "aired_to": "2026-10-12",
     "title_es": "Teatro de las Tinieblas: Yamishibai 17",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
@@ -272920,7 +272929,7 @@
       "Brujas Maebashi: Emoemories - Brujas florecientes"
     ],
     "description_es": "Recopilación teatral de Brujas Maebashi.",
-    "airing_status": "Not yet aired",
+    "airing_status": "Finished Airing",
     "aired_from": "2026-10-23",
     "aired_to": "2026-10-23"
   },
@@ -273273,7 +273282,7 @@
     "description": "",
     "type": "OVA",
     "franchise": "Netorareta Bakunyuu Tsuma-tachi",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Manga",
       "Rx - Hentai"
@@ -273289,7 +273298,7 @@
       "Netorareta Bakunyuu Tsuma-tachi 2",
       "寝取られた爆乳妻たち2"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Fridays",
     "broadcast_time": "00:00",
     "broadcast_timezone": "Asia/Tokyo",
@@ -273984,7 +273993,7 @@
     "description": "Sixth season of You Shou Yan.",
     "type": "ONA",
     "franchise": "You Shou Yan",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Web manga",
       "PG-13 - Teens 13 or older"
@@ -274001,13 +274010,13 @@
       "Fabulous Beasts 6th Season",
       "有兽焉 第六季"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "Wednesdays",
     "broadcast_time": "11:00",
     "broadcast_timezone": "Asia/Tokyo",
     "broadcast_string": "Wednesdays at 11:00 (JST)",
     "aired_from": "2026-08-05",
-    "aired_to": "",
+    "aired_to": "2026-10-14",
     "title_es": "Bestias fabulosas 6ta temporada",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
@@ -274709,7 +274718,7 @@
     "title": "Tomica to Tom (TV) Season 2",
     "mal_id": 64357,
     "image": "https://cdn.myanimelist.net/images/anime/1218/158374l.jpg",
-    "episodes": null,
+    "episodes": 13,
     "length": "corto",
     "demographic": "Kids",
     "genres": [
@@ -274724,7 +274733,7 @@
     "description": "Second season of Tomica to Tom.",
     "type": "TV",
     "franchise": "Tomica to Tom (TV) Season",
-    "ongoing": true,
+    "ongoing": false,
     "source_tags_original": [
       "Other",
       "G - All Ages"
@@ -274746,13 +274755,13 @@
       "トミカとトム シーズン2",
       "Tomica and Tom (TV) Season 2"
     ],
-    "airing_status": "Currently Airing",
+    "airing_status": "Finished Airing",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
     "broadcast_string": "",
     "aired_from": "2026-07-05",
-    "aired_to": "",
+    "aired_to": "2026-09-27",
     "title_es": "Tomica y Tom (TV) Temporada 2",
     "title_es_reviewed": false,
     "title_es_source": "title_english",
@@ -275204,7 +275213,7 @@
     "description": "Part two of Yozakura-san Chi no Daisakusen 2nd Season.",
     "type": "TV",
     "franchise": "Yozakura-san Chi no Daisakusen",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "Manga",
       "PG-13 - Teens 13 or older"
@@ -275221,11 +275230,11 @@
       "Mission: Yozakura Family Season 2 Part 2",
       "夜桜さんちの大作戦 第2期2クール"
     ],
-    "airing_status": "Not yet aired",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "airing_status": "Currently Airing",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "17:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 17:00 (JST)",
     "aired_from": "2026-10-11",
     "aired_to": "",
     "title_es": "Misión: Familia Yozakura Temporada 2 Parte 2",
@@ -275609,7 +275618,7 @@
     "description": "RPG player Makoto Takatsuki is hurled into another world with awful skills and stats. But he soon meets a goddess named Noah, who asks him to become her 1st believer in return for blessings.",
     "type": "TV",
     "franchise": "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "LIGHT_NOVEL"
     ],
@@ -275629,7 +275638,7 @@
       "Full Clearing Another World under a Goddess with Zero Believers",
       "Clear the world like a game with the zero believer goddess"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "title_es": "Shinja Zero no Megami-sama a Hajimeru Isekai Kouryaku",
     "title_es_reviewed": false,
     "title_es_source": "title",
@@ -275716,7 +275725,7 @@
     "description": "The second cour of the second season of Diamond no Ace act II .",
     "type": "TV",
     "franchise": "Diamond no Ace act",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "MANGA"
     ],
@@ -275731,7 +275740,7 @@
       "Diamond no Ace act II: Second Season Part 2",
       "ダイヤのA actⅡ -Second Season- 第2クール"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "title_es": "Diamond no Ace acto II: Segunda temporada Parte 2",
     "title_es_reviewed": false,
     "title_es_source": "title",
@@ -275877,7 +275886,7 @@
     "description": "The second season of Koori no Jouheki .",
     "type": "TV",
     "franchise": "Koori no Jouheki",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "MANGA"
     ],
@@ -275893,11 +275902,11 @@
       "The Ramparts of Ice Season 2",
       "氷の城壁 第2期"
     ],
-    "airing_status": "Not yet aired",
+    "airing_status": "Currently Airing",
     "broadcast_day": "Thursdays",
-    "broadcast_time": "11:56",
+    "broadcast_time": "23:56",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Thursdays at 11:56 (JST)",
+    "broadcast_string": "Thursdays at 23:56 (JST)",
     "aired_from": "2026-10-01",
     "title_es": "Las murallas de hielo temporada 2",
     "title_es_reviewed": false,
@@ -368163,8 +368172,8 @@
       "Love Live! Nijigasaki Gakuen School Idol Doukoukai: Kanketsu-hen 3"
     ],
     "airing_status": "Not yet aired",
-    "aired_from": "",
-    "aired_to": "",
+    "aired_from": "2027-02-05",
+    "aired_to": "2027-02-05",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
@@ -368183,7 +368192,7 @@
     "title": "Kidou Senshi Gundam SEED FREEDOM ZERO",
     "mal_id": 60230,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx183692-0V7IiVQKCyMC.jpg",
-    "episodes": null,
+    "episodes": 1,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -368198,7 +368207,7 @@
     "action_level": "alto",
     "emotional": true,
     "popular": true,
-    "year": null,
+    "year": 2027,
     "description": "A prequel to the Kidou Senshi Gundam SEED FREEDOM movie.",
     "type": "",
     "franchise": "Kidou Senshi Gundam SEED FREEDOM ZERO",
@@ -368218,12 +368227,12 @@
       "機動戦士ガンダムSEED FREEDOM ZERO"
     ],
     "airing_status": "Not yet aired",
-    "aired_from": "",
-    "aired_to": "",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "aired_from": "2027-01-15",
+    "aired_to": "2027-01-15",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
     "_neo_source": "anilist_saga_import",
     "title_es": "Kidou Senshi Gundam SEMILLA LIBERTAD CERO",
     "title_es_reviewed": false,
@@ -372590,7 +372599,7 @@
     "title": "Kaijuu 8-gou: Kanketsu-hen",
     "mal_id": 63136,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204362-H89tolgEPFxh.jpg",
-    "episodes": null,
+    "episodes": 1,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -373112,12 +373121,12 @@
       "劇場版 メダリスト"
     ],
     "airing_status": "Not yet aired",
-    "aired_from": "",
-    "aired_to": "",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "aired_from": "2027-02-19",
+    "aired_to": "2027-02-19",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
     "_neo_source": "anilist_saga_import",
     "title_es": "Película medallista",
     "title_es_reviewed": false,
@@ -373648,7 +373657,7 @@
     "action_level": "alto",
     "emotional": true,
     "popular": false,
-    "year": null,
+    "year": 2027,
     "description": "The second season of Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta .",
     "type": "TV",
     "franchise": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru",
@@ -373941,7 +373950,7 @@
     "title": "Date A Live F Last Date",
     "mal_id": 63934,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx190244-pxpZRICro9Sv.jpg",
-    "episodes": null,
+    "episodes": 1,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -373958,7 +373967,7 @@
     "action_level": "alto",
     "emotional": true,
     "popular": false,
-    "year": null,
+    "year": 2027,
     "description": "Sequel to Date A Live V .",
     "type": "",
     "franchise": "Date A Live F Last Date",
@@ -373984,8 +373993,8 @@
       "DATE A LIVE F: Last Date"
     ],
     "airing_status": "Not yet aired",
-    "aired_from": "",
-    "aired_to": "",
+    "aired_from": "2027-03-26",
+    "aired_to": "2027-03-26",
     "broadcast_day": "",
     "broadcast_time": "",
     "broadcast_timezone": "",
@@ -374401,7 +374410,7 @@
     "title": "Yao Shen Ji 10",
     "mal_id": 64455,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b214259-iWViyzBfHZnc.jpg",
-    "episodes": 52,
+    "episodes": 56,
     "length": "largo",
     "demographic": "",
     "genres": [
@@ -375444,7 +375453,12 @@
     "search_titles_es": [
       "Kizuguchi a Houtai"
     ],
-    "description_es": "Kiritani, el vicelíder del grupo Kurotorikai yakuza, es asignado como cuidador de Riyo Washizu, la hija del gran presidente de la organización Washizugumi. Aunque Kiritani inicialmente piensa que esta tarea será fácil porque Riyo parece obediente, Kiritani luego descubre que Riyo tiene un fetiche específico llamado \"Yowaraa\". Este fetiche hace que Riyo se excite cada vez que ve a alguien fuerte o duro volverse débil e indefenso. La historia se centra en la relación de comedia romántica entre la joven yakuza y su cuidador."
+    "description_es": "Kiritani, el vicelíder del grupo Kurotorikai yakuza, es asignado como cuidador de Riyo Washizu, la hija del gran presidente de la organización Washizugumi. Aunque Kiritani inicialmente piensa que esta tarea será fácil porque Riyo parece obediente, Kiritani luego descubre que Riyo tiene un fetiche específico llamado \"Yowaraa\". Este fetiche hace que Riyo se excite cada vez que ve a alguien fuerte o duro volverse débil e indefenso. La historia se centra en la relación de comedia romántica entre la joven yakuza y su cuidador.",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "02:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 02:00 (JST)",
+    "aired_from": "2027-01-10"
   },
   {
     "title": "Game Sekai Tensei <Dankatsu>: Gamer wa [Dungeon Shuukatsu no Susume] wo <Hajime kara> Play Suru",
@@ -375655,7 +375669,7 @@
     "title": "Love Live! Hasunosora Jogakuin School Idol Club",
     "mal_id": 63851,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210157-TsOt9K0ADCmK.jpg",
-    "episodes": null,
+    "episodes": 7,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -375699,7 +375713,12 @@
     "search_titles_es": [
       "¡Ama vive! Club de ídolos de la escuela Hasunosora Jogakuin"
     ],
-    "description_es": "Nota: Las relaciones son provisionales y están sujetas a cambios cuando se anuncie más información."
+    "description_es": "Nota: Las relaciones son provisionales y están sujetas a cambios cuando se anuncie más información.",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "22:30",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 22:30 (JST)",
+    "aired_from": "2027-01-10"
   },
   {
     "title": "Tenkaichi: Nihon Saikyou Bugeisha Ketteisen",
@@ -376145,7 +376164,8 @@
     "search_titles_es": [
       "Mejoras mágicas: ¡el lanzador de apoyo es más fuerte de lo que pensaba!"
     ],
-    "description_es": "Wim Strauss es un “lanzador otorgante”, un mago de apoyo que puede aumentar la fuerza de sus aliados mediante el poder de sus hechizos. Es un talento útil, pero como no se puede usar directamente en la batalla, los demás miembros de su grupo no lo respetan. En lo que a ellos respecta, la magia de apoyo es un peso muerto. No pasa mucho tiempo antes de que lo saquen de la oreja, dejando a Wim preguntándose si su carrera como aventurero ha terminado. Por suerte para Wim, tiene una gran oportunidad: su amiga de la infancia, Heidemarie, puede conseguirle una audición con su grupo de élite de rango A, Nachtlibelle. Los dos saben que su magia es buena para algo más que un simple respaldo, pero ahora tendrá que demostrarlo. ¡Es hora de mostrarle al mundo que los magos de apoyo pueden hacer más que quedarse en la retaguardia!"
+    "description_es": "Wim Strauss es un “lanzador otorgante”, un mago de apoyo que puede aumentar la fuerza de sus aliados mediante el poder de sus hechizos. Es un talento útil, pero como no se puede usar directamente en la batalla, los demás miembros de su grupo no lo respetan. En lo que a ellos respecta, la magia de apoyo es un peso muerto. No pasa mucho tiempo antes de que lo saquen de la oreja, dejando a Wim preguntándose si su carrera como aventurero ha terminado. Por suerte para Wim, tiene una gran oportunidad: su amiga de la infancia, Heidemarie, puede conseguirle una audición con su grupo de élite de rango A, Nachtlibelle. Los dos saben que su magia es buena para algo más que un simple respaldo, pero ahora tendrá que demostrarlo. ¡Es hora de mostrarle al mundo que los magos de apoyo pueden hacer más que quedarse en la retaguardia!",
+    "aired_from": "2027-01-04"
   },
   {
     "title": "Unmei no Makimodoshi",
@@ -376767,7 +376787,12 @@
     "search_titles_es": [
       "El chico que le interesaba no era un chico en absoluto"
     ],
-    "description_es": "Aya, una estudiante de secundaria moderna y alegre, se enamora perdidamente de un empleado de una tienda de CD local. Tiene un aire de misterio, un gran estilo y un gusto musical impecable. Lo que ella no sabe es que este supuesto empleado es en realidad su compañera de clase Mitsuki. Mitsuki generalmente se mantiene reservada, pero como su asiento está justo al lado del de Aya, no puede evitar ser extremadamente consciente del enamoramiento de la otra. Revelar la verdad está fuera de discusión para Mitsuki, pero tal vez acercarse a Aya no sería tan malo..."
+    "description_es": "Aya, una estudiante de secundaria moderna y alegre, se enamora perdidamente de un empleado de una tienda de CD local. Tiene un aire de misterio, un gran estilo y un gusto musical impecable. Lo que ella no sabe es que este supuesto empleado es en realidad su compañera de clase Mitsuki. Mitsuki generalmente se mantiene reservada, pero como su asiento está justo al lado del de Aya, no puede evitar ser extremadamente consciente del enamoramiento de la otra. Revelar la verdad está fuera de discusión para Mitsuki, pero tal vez acercarse a Aya no sería tan malo...",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "23:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 23:00 (JST)",
+    "aired_from": "2027-01-08"
   },
   {
     "title": "Kagurabachi",
@@ -388051,7 +388076,7 @@
     "description": "The thirteenth season of Huyao Xiao Hongniang .",
     "type": "ONA",
     "franchise": "Huyao Xiao Hongniang",
-    "ongoing": false,
+    "ongoing": true,
     "source_tags_original": [
       "MANGA"
     ],
@@ -388071,8 +388096,8 @@
       "狐妖小红娘13 黄风岭",
       "Fox Spirit Matchmaker 13"
     ],
-    "airing_status": "Not yet aired",
-    "aired_from": "",
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-09-11",
     "aired_to": "",
     "broadcast_day": "",
     "broadcast_time": "",
@@ -399568,12 +399593,12 @@
       "The Fable Season 2"
     ],
     "airing_status": "Not yet aired",
-    "aired_from": "",
+    "aired_from": "2027-01-10",
     "aired_to": "",
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "broadcast_day": "Sundays",
+    "broadcast_time": "00:56",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Sundays at 00:56 (JST)",
     "_neo_source": "anilist_saga_import",
     "title_es": "La fábula 2da temporada",
     "title_es_reviewed": false,
@@ -399984,7 +400009,11 @@
     "search_titles_es": [
       "Takopii no Genzai: Arigatou, Mata Ashita"
     ],
-    "description_es": "Recopilación teatral de los seis episodios de la serie de anime Takopii no Genzai, incluidas escenas recién agregadas."
+    "description_es": "Recopilación teatral de los seis episodios de la serie de anime Takopii no Genzai, incluidas escenas recién agregadas.",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)"
   },
   {
     "title": "Komadori Mofmof Parade",
@@ -400376,8 +400405,8 @@
     "description": "Sequel to Duel Masters LOST: Boukyaku no Taiyou .",
     "type": "ONA",
     "franchise": "Duel Masters LOST",
-    "ongoing": false,
-    "airing_status": "Not yet aired",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
     "aired_from": "2026-10-09",
     "aired_to": null,
     "broadcast_day": "Fridays",
@@ -400485,9 +400514,9 @@
     "aired_from": "2026-09-27",
     "aired_to": null,
     "broadcast_day": "Sundays",
-    "broadcast_time": "22:30",
+    "broadcast_time": "21:00",
     "broadcast_timezone": "Asia/Tokyo",
-    "broadcast_string": "Sundays at 22:30 (JST)",
+    "broadcast_string": "Sundays at 21:00 (JST)",
     "source_tags_original": [
       "VIDEO_GAME"
     ],
@@ -402435,14 +402464,14 @@
     "description": "Mazenchu is set in a school where all kinds of food can live out their youth and form friendships, rivalries, and bittersweet romances.",
     "type": "TV",
     "franchise": "Mazenchu",
-    "ongoing": false,
-    "airing_status": "Not yet aired",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
     "aired_from": "2026-10-02",
     "aired_to": null,
-    "broadcast_day": "",
-    "broadcast_time": "",
-    "broadcast_timezone": "",
-    "broadcast_string": "",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "09:50",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 09:50 (JST)",
     "source_tags_original": [
       "OTHER"
     ],
@@ -402523,7 +402552,7 @@
     "title": "Aoki Denshou: Welsh & Shedar",
     "mal_id": 65009,
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216895-Ofx4FSKFa4CQ.jpg",
-    "episodes": null,
+    "episodes": 12,
     "length": "corto",
     "demographic": "",
     "genres": [
@@ -402539,8 +402568,8 @@
     "description": "The story of Aoki Denshou Welsh & Shedar follows Welsh, a teenage boy from the country who loves to cook, and Shedar, a young prince who is destined to become king one day. When the two young men with very different lives are thrown together by a chance encounter, the wheels of fate begin to turn, and soon they must work together to bring about a peaceful future by stopping a cruel despot from conquering the world.",
     "type": "TV",
     "franchise": "Aoki Denshou",
-    "ongoing": false,
-    "airing_status": "Not yet aired",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
     "aired_from": "2026-10-02",
     "aired_to": null,
     "broadcast_day": "Fridays",
@@ -404094,9 +404123,665 @@
     "title_es": "Battle Spirits: Mirage",
     "title_es_reviewed": false,
     "title_es_source": "title",
-    "title_es_status": "fallback",
+    "title_es_status": "kept",
     "search_titles_es": [
       "Battle Spirits: Mirage"
     ]
+  },
+  {
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "mal_id": 64789,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214968-rrPSP2nKF40C.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Fantasy"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2026,
+    "description": "Second season of Nezumi-kun no Chokki (TV)",
+    "type": "TV",
+    "franchise": "Nezumi-kun no Chokki (TV)",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-10-03",
+    "aired_to": null,
+    "broadcast_day": "Saturdays",
+    "broadcast_time": "09:30",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Saturdays at 09:30 (JST)",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "ねずみくんのチョッキ (TV) 第2期",
+    "title_synonyms": [
+      "Little Mouse's Red Vest 2"
+    ],
+    "search_titles": [
+      "Nezumi-kun no Chokki (TV) 2nd Season",
+      "ねずみくんのチョッキ (TV) 第2期",
+      "Little Mouse's Red Vest 2"
+    ],
+    "title_es": "Nezumi-kun no Chokki (TV) 2da temporada",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Nezumi-kun no Chokki (TV) 2da temporada"
+    ],
+    "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
+  },
+  {
+    "title": "JK Dark Summoner to Deki......Dei Nai!?",
+    "mal_id": 65169,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
+    "episodes": 12,
+    "length": "medio",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Ecchi",
+      "Fantasy",
+      "Romance"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2026,
+    "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
+    "type": "TV",
+    "franchise": "JK Dark Summoner to Deki......Dei Nai!?",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-10-05",
+    "aired_to": null,
+    "broadcast_day": "Mondays",
+    "broadcast_time": "03:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Mondays at 03:00 (JST)",
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "JKダークサモナーとデキ。。。。。。でいない!?",
+    "title_synonyms": [
+      "Dark Summoner to Dekiteiru Mini Anime Gekijou",
+      "ダークサモナーとできているミニアニメ劇場"
+    ],
+    "search_titles": [
+      "JK Dark Summoner to Deki......Dei Nai!?",
+      "JKダークサモナーとデキ。。。。。。でいない!?",
+      "Dark Summoner to Dekiteiru Mini Anime Gekijou",
+      "ダークサモナーとできているミニアニメ劇場"
+    ],
+    "title_es": "JK Dark Summoner a Deki... ¿¡Dei Nai!?",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "JK Dark Summoner a Deki... ¿¡Dei Nai!?"
+    ],
+    "description_es": "Un mini anime semanal que se muestra con cada episodio de Dark Summoner to Dekiteiru exclusivamente en la transmisión AT-X del anime televisivo y en línea en Abema."
+  },
+  {
+    "title": "Kanojo no Tomodachi Mini Anime Gekijou",
+    "mal_id": 65167,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217782-DV0vODQ68ZRk.png",
+    "episodes": 12,
+    "length": "medio",
+    "demographic": "",
+    "genres": [
+      "Drama",
+      "Ecchi",
+      "Romance"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": true,
+    "year": 2026,
+    "description": "A weekly mini anime shown with each episode of Kanojo no Tomodachi exclusively on the AT-X broadcast of the TV anime and online on OceanVeil.",
+    "type": "TV",
+    "franchise": "Kanojo no Tomodachi Mini Anime Gekijou",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-10-05",
+    "aired_to": "2026-12-21",
+    "broadcast_day": "Mondays",
+    "broadcast_time": "01:17",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Mondays at 01:17 (JST)",
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "My Girlfriend's Friend Mini Anime",
+    "title_japanese": "彼女の友達 ミニアニメ劇場",
+    "title_synonyms": [],
+    "search_titles": [
+      "Kanojo no Tomodachi Mini Anime Gekijou",
+      "My Girlfriend's Friend Mini Anime",
+      "彼女の友達 ミニアニメ劇場"
+    ],
+    "title_es": "El amigo de mi novia mini anime",
+    "title_es_reviewed": false,
+    "title_es_source": "title_english",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "El amigo de mi novia mini anime"
+    ],
+    "description_es": "Un mini anime semanal que se muestra con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime televisivo y en línea en OceanVeil."
+  },
+  {
+    "title": "Maomao no Hitorigoto 3rd Season",
+    "mal_id": 65119,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2026,
+    "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
+    "type": "ONA",
+    "franchise": "Maomao no Hitorigoto",
+    "ongoing": true,
+    "airing_status": "Currently Airing",
+    "aired_from": "2026-10-05",
+    "aired_to": null,
+    "broadcast_day": "Mondays",
+    "broadcast_time": "12:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Mondays at 12:00 (JST)",
+    "source_tags_original": [
+      "LIGHT_NOVEL"
+    ],
+    "themes": [
+      "Chibi"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "猫猫のひとりごと 第3期",
+    "title_synonyms": [
+      "Kusuriya no Hitorigoto 3rd Season Mini Anime",
+      "The Apothecary Diaries Season 3 Mini Anime",
+      "薬屋のひとりごと 第3期 ミニアニメ",
+      "The Apothecary Diaries: Maomao's Monologue Season 3"
+    ],
+    "search_titles": [
+      "Maomao no Hitorigoto 3rd Season",
+      "猫猫のひとりごと 第3期",
+      "Kusuriya no Hitorigoto 3rd Season Mini Anime",
+      "The Apothecary Diaries Season 3 Mini Anime",
+      "薬屋のひとりごと 第3期 ミニアニメ",
+      "The Apothecary Diaries: Maomao's Monologue Season 3"
+    ],
+    "title_es": "Maomao no Hitorigoto 3ra temporada",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Maomao no Hitorigoto 3ra temporada"
+    ],
+    "description_es": "Cortometrajes de Chibi para la tercera temporada de Kusuriya no Hitorigoto lanzados en el canal de animación de YouTube de TOHO. Nota: el recuento de episodios comienza en 49."
+  },
+  {
+    "title": "Aikatsu Stars!: Hoshiboshi no Progress",
+    "mal_id": 64541,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213814-x9VFB4jU2TQJ.png",
+    "episodes": 1,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Music"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2027,
+    "description": "A movie celebrating the Aikatsu Stars 's 10th anniversary.",
+    "type": "Movie",
+    "franchise": "Aikatsu Stars!",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": "2027-01-22",
+    "aired_to": "2027-01-22",
+    "broadcast_day": "Fridays",
+    "broadcast_time": "00:00",
+    "broadcast_timezone": "Asia/Tokyo",
+    "broadcast_string": "Fridays at 00:00 (JST)",
+    "source_tags_original": [
+      "VIDEO_GAME"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "アイカツスターズ！ ～星々のProgress～",
+    "title_synonyms": [],
+    "search_titles": [
+      "Aikatsu Stars!: Hoshiboshi no Progress",
+      "アイカツスターズ！ ～星々のProgress～"
+    ],
+    "title_es": "¡Estrellas de Aikatsu!: Hoshiboshi sin progreso",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "¡Estrellas de Aikatsu!: Hoshiboshi sin progreso"
+    ],
+    "description_es": "Una película que celebra el décimo aniversario de Aikatsu Stars."
+  },
+  {
+    "title": "Shiawase Kanako no Koroshiya Seikatsu",
+    "mal_id": 65205,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218439-deyWUlrU5uk4.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2027,
+    "description": "When Kanako accidentally applies to work at an assassination agency, the timid office worker discovers that she has a knack for bumping people off. Will she ever earn the respect of Sakurai, her prickly and kinda hot co-worker–and why is she still having silly workplace problems when she’s employed with hitmen?! This full-color manga is dangerously funny!",
+    "type": "TV",
+    "franchise": "Shiawase Kanako no Koroshiya Seikatsu",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "幸せカナコの殺し屋生活",
+    "title_synonyms": [
+      "Happy Kanako's Killer Life"
+    ],
+    "search_titles": [
+      "Shiawase Kanako no Koroshiya Seikatsu",
+      "幸せカナコの殺し屋生活",
+      "Happy Kanako's Killer Life"
+    ],
+    "title_es": "Shiawase Kanako no Koroshiya Seikatsu",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Shiawase Kanako no Koroshiya Seikatsu"
+    ],
+    "description_es": "Cuando Kanako accidentalmente solicita trabajo en una agencia de asesinatos, la tímida oficinista descubre que tiene una habilidad especial para liquidar a la gente. ¿Alguna vez se ganará el respeto de Sakurai, su quisquilloso y algo atractivo compañero de trabajo, y por qué sigue teniendo tontos problemas en el lugar de trabajo cuando trabaja con sicarios? ¡Este manga a todo color es peligrosamente divertido!"
+  },
+  {
+    "title": "Akazukin, Tabi no Tochuu de Shitai to Deau.",
+    "mal_id": 64782,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214969-1bRdzmZnYFbq.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Fantasy",
+      "Mystery"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2027,
+    "description": "The fairytale of Little Red Riding Hood is as classic as they come, a familiar delivery of cookies and wine. But on this particular journey, Little Red Riding Hood... encounters a dead body?! As the mystery begins to unfold, familiar faces from other fairytales such as \"Cinderella,\" \"Hansel and Gretel,\" and \"Sleeping Beauty\" bring their own countless twists and tricks. Will she be able to solve the larger puzzle at the center of it all? A new detective is born!",
+    "type": "TV",
+    "franchise": "Akazukin, Tabi no Tochuu de Shitai to Deau.",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "赤ずきん、旅の途中で死体と出会う。",
+    "title_synonyms": [
+      "Red Riding Hood: A Detective Story"
+    ],
+    "search_titles": [
+      "Akazukin, Tabi no Tochuu de Shitai to Deau.",
+      "赤ずきん、旅の途中で死体と出会う。",
+      "Red Riding Hood: A Detective Story"
+    ],
+    "title_es": "Akazukin, Tabi no Tochuu de Shitai a Deau.",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Akazukin, Tabi no Tochuu de Shitai a Deau."
+    ],
+    "description_es": "El cuento de hadas de Caperucita Roja es tan clásico como parece, una entrega familiar de galletas y vino. Pero en este viaje en particular, Caperucita Roja... ¡¿se encuentra con un cadáver?! A medida que el misterio comienza a revelarse, rostros familiares de otros cuentos de hadas como \"Cenicienta\", \"Hansel y Gretel\" y \"La Bella Durmiente\" aportan sus innumerables giros y trucos. ¿Podrá resolver el rompecabezas más grande que está en el centro de todo? ¡Ha nacido un nuevo detective!"
+  },
+  {
+    "title": "Nue no Onmyouji",
+    "mal_id": 65180,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218216-H2xJqVSDyHmE.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": true,
+    "year": 2027,
+    "description": "Yajima has been able to see spirits since he was small. At his new school is a room that nobody else can see. And inside is a spirit who loves playing video games. A new modern exorcist saga now begins!",
+    "type": "TV",
+    "franchise": "Nue no Onmyouji",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Shounen",
+      "Male Protagonist",
+      "Female Harem",
+      "Exorcism"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "鵺の陰陽師",
+    "title_synonyms": [
+      "Nue's Exorcist"
+    ],
+    "search_titles": [
+      "Nue no Onmyouji",
+      "鵺の陰陽師",
+      "Nue's Exorcist"
+    ],
+    "title_es": "Nue no Onmyouji",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Nue no Onmyouji"
+    ],
+    "description_es": "Yajima ha podido ver espíritus desde que era pequeño. En su nueva escuela hay una habitación que nadie más puede ver. Y dentro hay un espíritu al que le encantan los videojuegos. ¡Comienza una nueva saga exorcista moderna!"
+  },
+  {
+    "title": "Boukensha License wo Hakudatsu Sareta Ossan Dakedo, Manamusume ga Dekita no de Nonbiri Jinsei wo Ouka Suru",
+    "mal_id": 63256,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205430-u0DOkPrpzBOI.jpg",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "tone": "epico",
+    "fast_start": true,
+    "action_level": "alto",
+    "emotional": false,
+    "popular": false,
+    "year": 2027,
+    "description": "Douglas, once known as a legendary enhancement spellcaster, is now little more than your average, weak old man. On top of that, he was kicked out of the hero party, and eventually had his adventurer's license revoked... And that's how he ended up a vagabond, wandering aimlessly. After an encounter with Rabi, a cursed little girl, a new adventure begins...",
+    "type": "TV",
+    "franchise": "Boukensha License wo Hakudatsu Sareta Ossan Dakedo, Manamusume ga Dekita no de Nonbiri Jinsei wo Ouka Suru",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "LIGHT_NOVEL"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "冒険者ライセンスを剥奪されたおっさんだけど、愛娘ができたのでのんびり人生を謳歌する",
+    "title_synonyms": [
+      "I Lost My Adventurer's License, but It's Fine Because I Have an Adorable Daughter Now"
+    ],
+    "search_titles": [
+      "Boukensha License wo Hakudatsu Sareta Ossan Dakedo, Manamusume ga Dekita no de Nonbiri Jinsei wo Ouka Suru",
+      "冒険者ライセンスを剥奪されたおっさんだけど、愛娘ができたのでのんびり人生を謳歌する",
+      "I Lost My Adventurer's License, but It's Fine Because I Have an Adorable Daughter Now"
+    ],
+    "title_es": "Licencia Boukensha wo Hakudatsu Sareta Ossan Dakedo, Manamusume ga Dekita no de Nonbiri Jinsei wo Ouka Suru",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Licencia Boukensha wo Hakudatsu Sareta Ossan Dakedo, Manamusume ga Dekita no de Nonbiri Jinsei wo Ouka Suru"
+    ],
+    "description_es": "Douglas, alguna vez conocido como un lanzador de conjuros de mejora legendario, ahora es poco más que un anciano débil y promedio. Además de eso, lo expulsaron del grupo de héroes y finalmente le revocaron su licencia de aventurero... Y así fue como terminó siendo un vagabundo, vagando sin rumbo. Después de un encuentro con Rabi, una niña maldita, comienza una nueva aventura..."
+  },
+  {
+    "title": "Doukyo Shiteiru Kensei no Onna Shishou ga Kawaisugite Mainichi Shiawase desu",
+    "mal_id": 63350,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206798-WBoAkt6k7sx9.png",
+    "episodes": null,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Comedy",
+      "Ecchi",
+      "Fantasy",
+      "Romance"
+    ],
+    "tone": "ligero",
+    "fast_start": false,
+    "action_level": "bajo",
+    "emotional": true,
+    "popular": false,
+    "year": 2027,
+    "description": "Eugene Dawson, a lad who aims to get stronger, is currently training under his master, Liza Pulsandra, who is extolled as the Sword Saint. His days are spent happily with his master, who is the strongest in terms of physical strength, but whose private life is a bit of a mess. Or so one would think, but her undefended and erotic body and unconscious physical contact make something like training seem impossible...!? Can he really get stronger like this?",
+    "type": "TV",
+    "franchise": "Doukyo Shiteiru Kensei no Onna Shishou ga Kawaisugite Mainichi Shiawase desu",
+    "ongoing": false,
+    "airing_status": "Not yet aired",
+    "aired_from": null,
+    "aired_to": null,
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "MANGA"
+    ],
+    "themes": [
+      "Nudity"
+    ],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "jikan_2026_new",
+    "title_english": "",
+    "title_japanese": "同居している剣聖の女師匠が可愛すぎて毎日幸せです",
+    "title_synonyms": [
+      "My Female Sword Master, Who I Live with, Is So Cute That I’m Happy Every Day"
+    ],
+    "search_titles": [
+      "Doukyo Shiteiru Kensei no Onna Shishou ga Kawaisugite Mainichi Shiawase desu",
+      "同居している剣聖の女師匠が可愛すぎて毎日幸せです",
+      "My Female Sword Master, Who I Live with, Is So Cute That I’m Happy Every Day"
+    ],
+    "title_es": "Doukyo Shiteiru Kensei no Onna Shishou ga Kawaisugite Mainichi Shiawase desu",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "kept",
+    "search_titles_es": [
+      "Doukyo Shiteiru Kensei no Onna Shishou ga Kawaisugite Mainichi Shiawase desu"
+    ],
+    "description_es": "Eugene Dawson, un muchacho que aspira a fortalecerse, actualmente está entrenando con su maestra, Liza Pulsandra, quien es ensalzada como la Santa de la Espada. Sus días los pasa felizmente con su maestro, que es el más fuerte en términos de fuerza física, pero cuya vida privada es un poco desordenada. ¿¡O eso uno podría pensar, pero su cuerpo indefenso y erótico y su contacto físico inconsciente hacen que algo como entrenar parezca imposible...!? ¿Realmente puede volverse más fuerte así?"
+  },
+  {
+    "title": "Tobidasu Ehon 3D",
+    "mal_id": 24803,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b187214-p2Yz5oDE7Ymk.png",
+    "episodes": 1,
+    "length": "corto",
+    "demographic": "",
+    "genres": [
+      "Fantasy"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 2010,
+    "description": "A film encompassing five short stories, presented in an animated 3D method.",
+    "type": "Movie",
+    "franchise": "Tobidasu Ehon 3D",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "2010-10-23",
+    "aired_to": "2010-10-23",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "とびだす絵本3D",
+    "title_synonyms": [],
+    "search_titles": [
+      "Tobidasu Ehon 3D",
+      "とびだす絵本3D"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Tobidasu Ehon modelo 3d",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Tobidasu Ehon modelo 3d"
+    ],
+    "description_es": "Una película que abarca cinco cuentos, presentados en un método animado en 3D."
+  },
+  {
+    "title": "Nezumi-kun no Chokki",
+    "mal_id": 27849,
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx198412-B8TOnvjsQdi3.png",
+    "episodes": 12,
+    "length": "medio",
+    "demographic": "",
+    "genres": [
+      "Fantasy"
+    ],
+    "tone": "emocional",
+    "fast_start": false,
+    "action_level": "medio",
+    "emotional": false,
+    "popular": true,
+    "year": 1997,
+    "description": "Based on a well known children's book by Yoshio Nakae with illustrations by Noriko Ueno. It features various simple stories about a mouse in his red vest and his other animal friends.",
+    "type": "OVA",
+    "franchise": "Nezumi-kun no Chokki",
+    "ongoing": false,
+    "airing_status": "Finished Airing",
+    "aired_from": "1997-07-21",
+    "aired_to": "2000-01-21",
+    "broadcast_day": "",
+    "broadcast_time": "",
+    "broadcast_timezone": "",
+    "broadcast_string": "",
+    "source_tags_original": [
+      "OTHER"
+    ],
+    "themes": [],
+    "score": null,
+    "scored_by": null,
+    "_update_status": "anilist_saga_import",
+    "title_english": "",
+    "title_japanese": "ねずみくんのチョッキ",
+    "title_synonyms": [],
+    "search_titles": [
+      "Nezumi-kun no Chokki",
+      "ねずみくんのチョッキ"
+    ],
+    "_neo_source": "anilist_saga_import",
+    "title_es": "Nezumi-kun no Chokki",
+    "title_es_reviewed": false,
+    "title_es_source": "title",
+    "title_es_status": "translated",
+    "search_titles_es": [
+      "Nezumi-kun no Chokki"
+    ],
+    "description_es": "Basado en un conocido libro infantil de Yoshio Nakae con ilustraciones de Noriko Ueno. Presenta varias historias sencillas sobre un ratón con su chaleco rojo y sus otros amigos animales."
   }
 ]

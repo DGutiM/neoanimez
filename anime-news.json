@@ -2,7 +2,7 @@
   "month": "2026-10",
   "title": "Novedades de Octubre",
   "subtitle": "Noticias y eventos de anime que estamos siguiendo este mes en NeoAnimeZ.",
-  "updated_at": "2026-10-07T19:10:29+00:00",
+  "updated_at": "2026-10-25T09:07:12+00:00",
   "source_note": "Selección editorial de titulares enlazados. NeoAnimeZ muestra resumen propio y no copia artículos completos.",
   "items": [
     {
@@ -18,6 +18,18 @@
       "priority": 54
     },
     {
+      "title": "Manhwa-Based Live-Action Series The Blue Road Releases Teaser Trailer Ahead of November 20 Premiere",
+      "summary": "Seok-gu Son, Eita Nagayama star in series based on 2002 Korean-Japanese collaborative comic",
+      "date": "2026-10-23",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-23/manhwa-based-live-action-series-the-blue-road-releases-teaser-trailer-ahead-of-november-20-premiere/.243124",
+      "tags": [
+        "Tráiler",
+        "Estrenos"
+      ],
+      "priority": 54
+    },
+    {
       "title": "The Ramparts of Ice Season 2 Anime Streams English Dub Trailer",
       "summary": "2nd season debuted on Thursday",
       "date": "2026-10-01",
@@ -26,6 +38,17 @@
       "tags": [
         "Tráiler",
         "Estrenos"
+      ],
+      "priority": 46
+    },
+    {
+      "title": "Eleceed TV Anime's English-Subtitled Trailer Reveals April 2027 Delay",
+      "summary": "Anime previously announced to debut this year",
+      "date": "2026-10-21",
+      "source": "Anime News Network",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-21/eleceed-tv-anime-english-subtitled-trailer-reveals-april-2027-delay/.243063",
+      "tags": [
+        "Tráiler"
       ],
       "priority": 46
     },
@@ -51,29 +74,6 @@
         "Estrenos"
       ],
       "priority": 44
-    },
-    {
-      "title": "A Returner's Magic Should Be Special Season 2 Anime Reveals Same-Day Dub Release, Cast",
-      "summary": "Season debuts on Wednesday",
-      "date": "2026-10-06",
-      "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-06/a-returner-magic-should-be-special-season-2-anime-reveals-same-day-dub-release-cast/.242551",
-      "tags": [
-        "Estrenos"
-      ],
-      "priority": 36
-    },
-    {
-      "title": "Spice & Wolf: merchant meets the wise wolf Season 2 Anime Reveals Teaser Promo Video, More Cast",
-      "summary": "Romi Park joins cast as Eve Bolan",
-      "date": "2026-10-03",
-      "source": "Anime News Network",
-      "url": "https://www.animenewsnetwork.com/news/2026-10-03/spice-and-wolf-merchant-meets-the-wise-wolf-season-2-anime-reveals-teaser-promo-video-more-cast/.242439",
-      "tags": [
-        "Tráiler",
-        "Estrenos"
-      ],
-      "priority": 34
     }
   ]
 }
