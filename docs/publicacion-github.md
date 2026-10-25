@@ -8,6 +8,16 @@ Desde la transicion del 25 de octubre de 2026, el proceso recomendado es
 Los scripts y `.github/workflows/actualizar-datos-mensual.yml` deben estar en el
 repositorio para que la actualizacion mensual funcione; no hace falta tocar SQL.
 
+La ampliacion inicial de episodios, recomendaciones y canciones se ejecuta con
+`.github/workflows/ampliar-extras-catalogo.yml`. Este proceso finito publica lotes
+validados directamente en `main`, con copia anterior y 64 bloques de extras.
+La carpeta contiene ademas 16 bloques antiguos de compatibilidad: subir los 80.
+Incluye `scripts/data/anime-extras-state.json` para conservar los errores pendientes.
+Antes de publicar de nuevo desde una copia local, comprobar si este workflow sigue
+activo y traer primero la version mas reciente de GitHub. No sobrescribir los extras
+ampliados en GitHub con una copia local antigua. Esto no cambia la revision mensual
+aislada del catalogo.
+
 ## Subir siempre
 
 Archivos de raiz:

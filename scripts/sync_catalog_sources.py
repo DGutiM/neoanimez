@@ -24,7 +24,8 @@ from verificar_publicacion import REQUIRED_ROOT_FILES, REQUIRED_DIRS
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILES = ["anime-lista.json", "anime-index.json", "anime-upcoming.json", "anime-schedule.json",
-              "anime-relations.json", "anime-timeline-index.json", "anime-extras-index.json"]
+              "anime-relations.json", "anime-timeline-index.json", "anime-extras-index.json",
+              "scripts/data/anime-extras-state.json"]
 RELEASE_FILES = ["assets/neoanimez.js", "index.html", "service-worker.js", "sitemap.xml"]
 
 

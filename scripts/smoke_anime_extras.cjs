@@ -81,6 +81,14 @@ async function expand(page,kind) {
       assert.notEqual(await page.locator('#animeModalTitle').textContent(),old);
       await page.evaluate(()=>closeAnimeModal());
 
+      // An expanded guide outside the original ten pilots uses the same lazy UI.
+      await page.evaluate(()=>openAnimeModal(getAnimeById(16498)));
+      await expand(page,'episodes');
+      assert.ok(await page.locator('.extra-episode-grid li').count()>0);
+      assert.ok(await page.locator('#animeModal .modal-sheet').evaluate(el=>el.scrollWidth<=el.clientWidth+1));
+      await page.screenshot({path:`/tmp/neoanimez-expanded-guide-${name}.png`});
+      await page.locator('#animeModal .modal-close').click();
+
       // A fresh, signed-out tab can open the exact shared map without a user account.
       await enter(page,'?saga=52991');
       await page.waitForFunction(()=>activeAnimeTimeline && document.querySelector('#animeTimelineModal.open'));

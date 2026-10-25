@@ -1,0 +1,165 @@
+name: Ampliar extras del catalogo
+
+on:
+  workflow_dispatch:
+
+# The monthly updater and this finite expansion never run against the sources together.
+concurrency:
+  group: neoanimez-monthly-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      batches: ${{ steps.plan.outputs.batches }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Guardar punto de restauracion
+        env:
+          BACKUP_TAG: backup/pre-extras-expansion-${{ github.run_id }}
+        run: |
+          git config user.name "NeoAnimeZ Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          if ! git ls-remote --exit-code --tags origin "refs/tags/$BACKUP_TAG" >/dev/null 2>&1; then
+            git tag -a "$BACKUP_TAG" -m "Antes de ampliar todos los extras del catalogo"
+            git push origin "$BACKUP_TAG"
+          fi
+          echo "Copia de seguridad: \`$BACKUP_TAG\`." >> "$GITHUB_STEP_SUMMARY"
+      - name: Planificar lotes de 250 animes
+        id: plan
+        run: |
+          python3 scripts/actualizar_extras_anime.py --status > /tmp/extras-status.json
+          python3 - <<'PY'
+          import json, math, os
+          status = json.load(open('/tmp/extras-status.json'))
+          # Finite run, with a few extra batches for retries or newly added titles.
+          count = min(64, max(1, math.ceil(status['pending_anime'] / 250) + 4))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('batches=' + json.dumps(list(range(1, count + 1))) + '\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as output:
+              output.write(f"\nPendientes: {status['pending_anime']} animes. Hasta {count} lotes secuenciales.\n")
+          PY
+
+  batch:
+    needs: prepare
+    name: Lote ${{ matrix.batch }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      max-parallel: 1
+      fail-fast: true
+      matrix:
+        batch: ${{ fromJSON(needs.prepare.outputs.batches) }}
+    env:
+      PYTHONUNBUFFERED: "1"
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Comprobar trabajo pendiente
+        id: pending
+        run: |
+          python3 scripts/actualizar_extras_anime.py --status > /tmp/extras-status.json
+          python3 - <<'PY'
+          import json, os
+          status = json.load(open('/tmp/extras-status.json'))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('needed=' + str(status['pending_anime'] > 0).lower() + '\n')
+          PY
+      - uses: actions/setup-python@v5
+        if: steps.pending.outputs.needed == 'true'
+        with:
+          python-version: "3.12"
+      - name: Recuperar avance interrumpido
+        if: steps.pending.outputs.needed == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: cache/extras-checkpoints-v1
+          key: extras-expansion-v1-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.batch }}
+          restore-keys: extras-expansion-v1-
+      - name: Probar las protecciones
+        if: steps.pending.outputs.needed == 'true'
+        run: python3 -m unittest discover -s scripts -p 'test_anime_extras.py'
+      - name: Descargar un lote reanudable
+        id: download
+        if: steps.pending.outputs.needed == 'true'
+        env:
+          BATCH_NUMBER: ${{ matrix.batch }}
+        run: |
+          LIMIT=250
+          if [[ "$BATCH_NUMBER" == 1 ]]; then
+            LIMIT=25
+          fi
+          set +e
+          python3 scripts/actualizar_extras_anime.py --bootstrap --limit "$LIMIT" --max-seconds 1500
+          STATUS=$?
+          set -e
+          if [[ "$STATUS" != 0 && "$STATUS" != 2 ]]; then
+            exit "$STATUS"
+          fi
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+      - name: Validar el lote y preparar la version
+        if: steps.pending.outputs.needed == 'true'
+        run: |
+          python3 scripts/actualizar_extras_anime.py --validate
+          python3 scripts/catalog_release_version.py
+          python3 scripts/verificar_publicacion.py
+          node --check assets/anime-extras.js
+          node --test scripts/test_anime_extras.cjs
+          git diff --check
+      - name: Publicar solo los extras validados
+        if: steps.pending.outputs.needed == 'true'
+        run: |
+          git config user.name "NeoAnimeZ Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add anime-extras-index.json anime-extras scripts/data/anime-extras-state.json assets/neoanimez.js index.html service-worker.js sitemap.xml
+          if ! git diff --cached --quiet; then
+            git commit -m "Amplia extras del catalogo (lote ${{ matrix.batch }})"
+            # Never force-push or overwrite work published by someone else.
+            git push origin HEAD:main
+            gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+          fi
+          python3 scripts/actualizar_extras_anime.py --status >> "$GITHUB_STEP_SUMMARY"
+      - name: Guardar checkpoints aunque se interrumpa el lote
+        if: always() && steps.pending.outputs.needed == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: cache/extras-checkpoints-v1
+          key: extras-expansion-v1-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.batch }}
+      - name: Guardar informe del lote
+        if: always() && steps.pending.outputs.needed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: extras-lote-${{ matrix.batch }}
+          path: cache/extras-report.json
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Detenerse si la fuente pide esperar
+        if: steps.download.outputs.status == '2'
+        run: |
+          echo 'La fuente ha pedido una pausa. El avance validado esta guardado; reanudar mas tarde.' >> "$GITHUB_STEP_SUMMARY"
+          exit 1
+
+  summary:
+    needs: [prepare, batch]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Informar de la cobertura real
+        run: |
+          python3 scripts/actualizar_extras_anime.py --status >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/actualizar_extras_anime.py --validate >> "$GITHUB_STEP_SUMMARY"
+          echo 'Consultado sin datos no es lo mismo que error. Los recursos fallidos quedan pendientes, conservando sus versiones anteriores.' >> "$GITHUB_STEP_SUMMARY"

@@ -51,7 +51,7 @@ REQUIRED_JSON_FILES = [
 REQUIRED_DIRS = {
     "anime-details": 24,
     "anime-timelines": 12,
-    "anime-extras": 16,
+    "anime-extras": 80,  # 64 active blocks + 16 immutable blocks for cached older clients.
 }
 
 DO_NOT_PUBLISH = [

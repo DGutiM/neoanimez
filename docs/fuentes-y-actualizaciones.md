@@ -131,8 +131,8 @@ Las cuatro mejoras estan integradas en las fichas y los mapas, sin nuevas tablas
    con las rutas alternativas y los formatos. Funciona sin cuenta. El enlace no
    incluye correo, perfil ni tokens de sesion. Es una ruta de la misma web, no una
    pagina HTML independiente para SEO.
-2. **Guia de episodios:** piloto de 10 series, incluida One Piece con cobertura
-   parcial mientras sigue en emision. Solo numeros y marcas filler/recap de MAL;
+2. **Guia de episodios:** disponible para cualquier anime que tenga registros de
+   episodios en las fuentes, con cobertura parcial cuando falten datos. Solo numeros y marcas filler/recap de MAL;
    no se publican titulos, sinopsis, supuestos arcos ni deducciones de canon.
    Paginacion de 50 filas y filtros por relleno/resumen. No cambia el progreso.
 3. **Si te gusto este anime:** recomendaciones MAL cruzadas por ID con el catalogo,
@@ -142,20 +142,25 @@ Las cuatro mejoras estan integradas en las fichas y los mapas, sin nuevas tablas
    episodios. La interfaz esta en espanol; los nombres propios no se traducen.
    Enlace a la ficha fuente de MAL, sin alojar musica, letras ni videos no verificados.
 
-Primera carga: 104 animes con recomendaciones y canciones. `anime-extras-index.json`
-indica la disponibilidad; `anime-extras/` contiene 16 bloques descargados al abrir
+La primera carga de 104 animes se amplia al catalogo completo, sin lista de pilotos.
+`anime-extras-index.json` indica la disponibilidad; `anime-extras/` contiene 64 bloques descargados al abrir
 un apartado. Los tres apartados empiezan cerrados. Un fallo deja la ficha utilizable
 y ofrece reintento; el navegador no consulta a las APIs de catalogo para estos extras.
+Los bloques activos son `extras-16.json` a `extras-79.json`. Se conservan sin cambios
+los 16 antiguos (`00` a `15`) para no romper fichas en navegadores que aun tengan
+el indice previo en cache: hay 80 archivos en la carpeta, pero el indice usa 64.
 
-`actualizar_extras_anime.py` actualiza 80 fichas por pasada, priorizando las pendientes
-y las mas antiguas, ademas de las diez guias piloto. Las respuestas se guardan en
-cache, por lo que una interrupcion no obliga a repetir las descargas. Un error de un
+`actualizar_extras_anime.py` actualiza 80 fichas por pasada mensual, priorizando las pendientes
+y las mas antiguas. Consulta los tres recursos en cualquier formato (TV, OVA, pelicula, etc.).
+Las respuestas y los recursos ya transformados se guardan en cache, por lo que una interrupcion no obliga a repetir las descargas. Un error de un
 recurso conserva su version anterior, registrada con su fecha real; el informe
 `cache/extras-report.json` enumera esos casos. Una pagina incompleta no se acepta
 como guia completa. El workflow mensual ya incluye este paso dentro del candidato.
 
 ```sh
 python3 scripts/actualizar_extras_anime.py --limit 80
+python3 scripts/actualizar_extras_anime.py --bootstrap --limit 250 --max-seconds 1500
+python3 scripts/actualizar_extras_anime.py --status
 python3 scripts/actualizar_extras_anime.py --validate
 python3 scripts/catalog_release_version.py
 python3 scripts/verificar_publicacion.py
@@ -163,8 +168,31 @@ python3 scripts/verificar_publicacion.py
 
 El comando aislado conserva copia previa de los extras; el actualizador mensual
 conserva ademas la publicacion completa antes de promoverla. Publicar juntos indice,
-bloques y version, nunca carpetas cache/backups. Para ampliar el piloto de episodios,
-anadir IDs comprobados a `PILOT_IDS` y revisar cobertura y marcas antes de publicarlo.
+bloques y version, nunca carpetas cache/backups.
+
+### Ampliacion completa por fases
+
+El workflow manual **Ampliar extras del catalogo** procesa lotes secuenciales de
+250 animes (primer lote reducido a 25 para comprobar el despliegue), con un presupuesto de 25 minutos por lote. No exige dejar el ordenador
+encendido. Solo consulta recursos aun no comprobados: una respuesta vacia valida
+queda registrada y no se vuelve a pedir durante la ampliacion. Las guias no se
+inventan a partir del numero total de capitulos. Las recomendaciones siguen limitadas
+a animes adecuados que ya existan en el catalogo local.
+
+Cada lote valida los 64 bloques y publica indice, bloques y version juntos en un
+commit. No modifica usuarios, traducciones, catalogo maestro, mapas ni calendarios.
+Guarda un tag de restauracion antes de empezar. Los commits son sin force-push: si
+alguien cambia main mientras se descarga, la publicacion se detiene para no pisarlo.
+Pages se solicita explicitamente porque los commits del token de Actions no lo
+disparan por si solos. No se cambia el workflow mensual de revision a publicacion directa.
+
+Los checkpoints de `cache/extras-checkpoints-v1` se guardan tambien en la cache de
+Actions. `scripts/data/anime-extras-state.json` conserva los fallos y su plazo de
+reintento; no contiene datos de usuarios. Un 403/429 o diez errores seguidos detienen
+la expansion, sin cambiar de IP ni ignorar limites. Un reinicio recupera el avance.
+Los lotes son finitos: si quedan errores al terminar, el resumen los mantiene como
+pendientes; no se afirma cobertura total. Se puede volver a ejecutar el workflow.
+La rutina mensual normal revisa de nuevo los recursos, incluidos los antes vacios.
 
 ## Orden de Mi lista
 
