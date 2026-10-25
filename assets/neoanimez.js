@@ -55,7 +55,7 @@ const ANALYTICS_ID = 'G-SF806D05CQ';
 const COOKIE_CONSENT_KEY = 'neoanimez_cookie_consent_v1';
 const TITLE_DISPLAY_MODE_KEY = 'neoanimez_title_display_mode_v1';
 const ADULT_CONTENT_KEY = 'neoanimez_adult_content_v1';
-const APP_VERSION = '20261025-monthly-data';
+const APP_VERSION = '20261025-release-state';
 const CATALOG_VERSION = APP_VERSION;
 const CATALOG_DETAIL_BLOCKS = 24;
 const CATALOG_INDEX_URL = `anime-index.json?v=${CATALOG_VERSION}`;
@@ -1036,6 +1036,7 @@ function loadCatalogInterface() {
       if (catalogFilterRequested) applyFilters();
       if (document.getElementById('titleSearchInput')?.value) performTitleSearch();
       if (rankingLoaded && loaded) renderCommunityRanking();
+      if (loaded && upcomingPayload) await loadUpcomingRanking();
       return loaded;
     } finally {
       setDiscoveryLoading(false);
@@ -1805,6 +1806,15 @@ function isUpcomingAnime(anime = null) {
 
 function hasAnimePremiered(anime = null) {
   return !!anime && !isUpcomingAnime(anime);
+}
+
+function getAnimeReleaseStatusLabel(anime) {
+  const status = String(anime?.airing_status || '').trim().toLowerCase();
+  if (status === 'cancelled') return 'Cancelado';
+  if (isUpcomingAnime(anime)) return 'Próximo estreno';
+  if (anime?.ongoing || status === 'currently airing') return 'En emisión';
+  if (status === 'finished airing') return 'Finalizado';
+  return 'Estrenado';
 }
 
 function setModalRatingMessage(message = '', type = '') {
@@ -7908,6 +7918,9 @@ function initRankingAccordions() {
       if (!group) return;
       group.classList.toggle('open');
       btn.setAttribute('aria-expanded', group.classList.contains('open') ? 'true' : 'false');
+      if (btn.dataset.target === 'rankingUpcomingList' && group.classList.contains('open')) {
+        loadUpcomingRanking().catch(error => console.warn('No se pudo revisar Más esperados:', error));
+      }
     });
   });
 }
@@ -8153,6 +8166,15 @@ function buildUpcomingCard(anime, sectionId) {
   return div;
 }
 
+function getCurrentUpcomingAnime(animeId) {
+  const cached = upcomingAnimeMap.get(Number(animeId));
+  if (!cached) return null;
+  const current = getAnimeById(animeId);
+  const anime = current ? { ...cached, ...current } : cached;
+  const status = String(anime.airing_status || '').trim().toLowerCase();
+  return status !== 'cancelled' && isUpcomingAnime(anime) ? anime : null;
+}
+
 async function loadUpcomingRanking() {
   const container = document.getElementById('rankingUpcomingList');
   const updatedAt = document.getElementById('rankingUpcomingUpdated');
@@ -8184,18 +8206,22 @@ async function loadUpcomingRanking() {
   const sectionOrder = upcomingPayload.section_order || ['most_anticipated', 'winter', 'spring', 'summer', 'fall', 'unknown'];
   const labels = upcomingPayload.section_labels || {};
   const sections = upcomingPayload.sections || {};
+  const openSections = new Set(
+    [...container.querySelectorAll('details[open][data-section]')].map(section => section.dataset.section)
+  );
   container.innerHTML = '';
 
   sectionOrder.forEach(sectionId => {
     const ids = sections[sectionId] || [];
     const items = ids
-      .map(id => upcomingAnimeMap.get(Number(id)))
+      .map(id => getCurrentUpcomingAnime(id))
       .filter(anime => anime && isAnimeVisible(anime));
     if (!items.length) return;
 
     const details = document.createElement('details');
     details.className = 'upcoming-season';
     details.dataset.section = sectionId;
+    details.open = openSections.has(sectionId);
 
     const label = labels[sectionId] || sectionId;
     details.innerHTML = `
@@ -8219,6 +8245,7 @@ async function loadUpcomingRanking() {
 
     details.addEventListener('toggle', () => loadUpcomingSectionImages(details));
     container.appendChild(details);
+    if (details.open) loadUpcomingSectionImages(details);
   });
 
   if (!container.children.length) {
@@ -8271,7 +8298,7 @@ function renderAnimeModalContent(anime, { loadingDetails = false } = {}) {
   if (anime.demographic) metaParts.push(anime.demographic);
   if (anime.tone) metaParts.push(`Tono ${anime.tone}`);
   if (typeof anime.ongoing === 'boolean') {
-    metaParts.push(isUpcomingAnime(anime) ? 'Próximo estreno' : (anime.ongoing ? 'En emisión' : 'Finalizado'));
+    metaParts.push(getAnimeReleaseStatusLabel(anime));
     const premiereDate = formatUpcomingDate(anime);
     if (premiereDate !== 'Fecha desconocida') metaParts.push(`Fecha de estreno: ${premiereDate}`);
   }

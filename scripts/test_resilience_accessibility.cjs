@@ -95,14 +95,14 @@ test('loading and failed states offer appropriate feedback without requiring a p
 });
 test('catalogue retry is deduplicated and restores search, lists and selected filters',async()=>{
   let resolve;const events=[];
-  const ctx=scope(['loadCatalogInterface'],{catalogLoadPromise:null,currentUser:{id:'fake'},catalogFilterRequested:true,rankingLoaded:true,
+  const ctx=scope(['loadCatalogInterface'],{catalogLoadPromise:null,currentUser:{id:'fake'},catalogFilterRequested:true,rankingLoaded:true,upcomingPayload:{},
     document:{getElementById:()=>({value:'frieren'})},loadDB:()=>new Promise(r=>resolve=r),
     setDiscoveryLoading:v=>events.push(v?'loading':'ready'),renderDiscoveryShelf:()=>events.push('shelf'),updateAdultContentUI(){},
     renderUserLists:()=>events.push('list'),applyFilters:()=>events.push('filters'),performTitleSearch:()=>events.push('search'),
-    renderCommunityRanking:()=>events.push('ranking')});
+    renderCommunityRanking:()=>events.push('ranking'),loadUpcomingRanking:async()=>events.push('upcoming')});
   const first=ctx.loadCatalogInterface();assert.equal(ctx.loadCatalogInterface(),first);
   resolve(true);assert.equal(await first,true);assert.equal(ctx.catalogLoadPromise,null);
-  for(const event of ['shelf','list','filters','search','ranking'])assert.ok(events.includes(event));
+  for(const event of ['shelf','list','filters','search','ranking','upcoming'])assert.ok(events.includes(event));
 });
 test('form bindings precede the first bootstrap await; authentication does not wait for the catalogue',()=>{
   const boot=source.slice(source.indexOf("document.addEventListener('DOMContentLoaded', async () =>"));
@@ -162,4 +162,64 @@ test('finishing a save does not enable episode buttons blocked by zero or the ep
   ctx.setElementsBusy('steps',true);assert.ok(buttons.every(button=>button.disabled));
   ctx.setElementsBusy('steps',false);assert.deepEqual(buttons.map(button=>button.disabled),[true,false,true]);
   assert.equal((source.match(/data-progress-blocked="\$\{!can(?:Decrement|Increment)Episode\}"/g)||[]).length,4);
+});
+
+function releaseScope(current = []) {
+  const now = Date.UTC(2026, 9, 25, 12);
+  class FixedDate extends Date {
+    constructor(...args) { super(...(args.length ? args : [now])); }
+    static now() { return now; }
+  }
+  return scope(['isUpcomingAnime','getAnimeReleaseStatusLabel','getAnimeById','getCurrentUpcomingAnime'],{
+    Date:FixedDate, DB:current, upcomingAnimeMap:new Map()
+  });
+}
+test('canonical airing and finished records remove stale upcoming entries without mutating data',()=>{
+  const current=[{mal_id:1,airing_status:'Currently Airing',ongoing:true},{mal_id:2,airing_status:'Finished Airing'}];
+  const ctx=releaseScope(current);
+  for(const anime of current)ctx.upcomingAnimeMap.set(anime.mal_id,{mal_id:anime.mal_id,airing_status:'Not yet aired',aired_from:'2027-01-01'});
+  const before=JSON.stringify({current,cached:[...ctx.upcomingAnimeMap.values()]});
+  assert.equal(ctx.getCurrentUpcomingAnime(1),null);assert.equal(ctx.getCurrentUpcomingAnime(2),null);
+  assert.equal(JSON.stringify({current,cached:[...ctx.upcomingAnimeMap.values()]}),before);
+});
+test('upcoming retains future and undated announcements but excludes elapsed dates and cancellations',()=>{
+  const ctx=releaseScope();
+  const items=[
+    {mal_id:1,airing_status:'Not yet aired',aired_from:'2026-11-01'},
+    {mal_id:2,airing_status:'Not yet aired'},
+    {mal_id:3,airing_status:'Not yet aired',aired_from:'2026-10-25'},
+    {mal_id:4,airing_status:'Cancelled',aired_from:'2027-01-01'}
+  ];
+  for(const anime of items)ctx.upcomingAnimeMap.set(anime.mal_id,anime);
+  assert.equal(ctx.getCurrentUpcomingAnime(1).mal_id,1);assert.equal(ctx.getCurrentUpcomingAnime(2).mal_id,2);
+  assert.equal(ctx.getCurrentUpcomingAnime(3),null);assert.equal(ctx.getCurrentUpcomingAnime(4),null);
+  assert.equal(ctx.getCurrentUpcomingAnime(999),null);
+});
+test('catalogue premiere metadata supersedes a stale upcoming date',()=>{
+  const ctx=releaseScope([{mal_id:1,airing_status:'Not yet aired',aired_from:'2026-10-25'}]);
+  ctx.upcomingAnimeMap.set(1,{mal_id:1,airing_status:'Not yet aired',aired_from:'2027-01-01',title:'Anime'});
+  assert.equal(ctx.getCurrentUpcomingAnime(1),null);
+});
+test('release label distinguishes aired from confirmed finished and respects cancellations',()=>{
+  const ctx=releaseScope();
+  for(const [anime,label] of [
+    [{airing_status:'Not yet aired',aired_from:'2026-11-01'},'Próximo estreno'],
+    [{airing_status:'Not yet aired',aired_from:'2026-10-25',ongoing:false},'Estrenado'],
+    [{airing_status:'Currently Airing'},'En emisión'],
+    [{airing_status:'Finished Airing'},'Finalizado'],
+    [{airing_status:'Cancelled',aired_from:'2027-01-01'},'Cancelado']
+  ])assert.equal(ctx.getAnimeReleaseStatusLabel(anime),label);
+});
+test('opening upcoming revalidates its contents; closing it and other sections do not',()=>{
+  let calls=0;
+  function toggle(target) {
+    let open=false;
+    const group={classList:{contains:()=>open,toggle:()=>open=!open}};
+    return {dataset:{target},closest:()=>group,setAttribute(){},addEventListener(_,handler){this.click=handler;}};
+  }
+  const upcoming=toggle('rankingUpcomingList'),other=toggle('rankingCommunityList');
+  const ctx=scope(['initRankingAccordions'],{document:{querySelectorAll:()=>[upcoming,other]},loadUpcomingRanking:async()=>{calls++;}});
+  ctx.initRankingAccordions();upcoming.click();assert.equal(calls,1);
+  upcoming.click();other.click();assert.equal(calls,1);
+  upcoming.click();assert.equal(calls,2);
 });
